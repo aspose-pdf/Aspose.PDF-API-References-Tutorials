@@ -57,7 +57,7 @@ Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
  Denna kodrad laddar PDF-filen i`pdfDocument` objekt. Se till att filnamnet matchar det i din katalog, annars kommer programmet att skicka ett felmeddelande.
 
-## Steg 3: Ställ in XMP-metadataegenskaper
+## Steg 3: Ställ in egenskaper för XMP-metadata
 
 Här händer magin! Nu när vi har laddat PDF-dokumentet kan vi ställa in metadataegenskaperna som skapelsedatum, ett smeknamn eller vilken egendom du vill ha.
 

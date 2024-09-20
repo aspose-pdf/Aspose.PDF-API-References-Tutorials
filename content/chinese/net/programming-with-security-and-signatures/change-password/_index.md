@@ -117,7 +117,7 @@ Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + 
 不幸的是，如果您忘记了所有者密码，您可能无法更改它。
 
 ### 我可以一次更改多个 PDF 的密码吗？
-如果多个 PDF 位于一个目录中，您可以使用循环来处理它们。
+如果多个 PDF 位于目录中，则可以使用循环来处理它们。
 
 ### 在哪里可以找到有关 Aspose.PDF 的更多信息？
 如需详细文档，请访问[Aspose.Reference](https://reference.aspose.com/pdf/net/).

@@ -56,7 +56,7 @@ Aspose.Pdf.LoadOptions loadopt = new Aspose.Pdf.PclLoadOptions();
 
 Ahora que tiene configuradas sus LoadOptions, es momento de crear un objeto Documento que represente su archivo PCL.
 
- Creará una nueva instancia de la`Document` Clase, pasando la ruta a su archivo PCL y el objeto LoadOptions que acaba de crear. Este paso es donde comienza la magia, ya que Aspose lee su archivo PCL y lo prepara para la conversión.
+ Creará una nueva instancia de la`Document` clase, pasando la ruta a su archivo PCL y el objeto LoadOptions que acaba de crear. Este paso es donde comienza la magia, ya que Aspose lee su archivo PCL y lo prepara para la conversión.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "hidetext.pcl", loadopt);

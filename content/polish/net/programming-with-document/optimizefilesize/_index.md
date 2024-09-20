@@ -9,7 +9,7 @@ url: /pl/net/programming-with-document/optimizefilesize/
 ---
 ## Wstęp
 
-dzisiejszym cyfrowym świecie zarządzanie rozmiarami plików jest kluczowe, zwłaszcza jeśli chodzi o pliki PDF. Niezależnie od tego, czy udostępniasz dokumenty za pośrednictwem poczty e-mail, przesyłasz je na stronę internetową, czy przechowujesz w chmurze, duże pliki PDF mogą być uciążliwe. Mogą one spowalniać czas ładowania i zużywać niepotrzebną przestrzeń dyskową. Na szczęście dzięki Aspose.PDF dla .NET optymalizacja rozmiarów plików PDF to pestka! W tym samouczku przeprowadzimy Cię przez kroki, aby skutecznie zmniejszyć rozmiar plików PDF, zachowując jednocześnie jakość. Więc do dzieła!
+dzisiejszym cyfrowym świecie zarządzanie rozmiarami plików jest kluczowe, zwłaszcza jeśli chodzi o pliki PDF. Niezależnie od tego, czy udostępniasz dokumenty za pośrednictwem poczty e-mail, przesyłasz je na stronę internetową, czy przechowujesz w chmurze, duże pliki PDF mogą być uciążliwe. Mogą one spowalniać czas ładowania i zajmować niepotrzebną przestrzeń dyskową. Na szczęście dzięki Aspose.PDF dla .NET optymalizacja rozmiarów plików PDF to pestka! W tym samouczku przeprowadzimy Cię przez kroki, aby skutecznie zmniejszyć rozmiar plików PDF, zachowując jednocześnie jakość. Więc do dzieła!
 
 ## Wymagania wstępne
 

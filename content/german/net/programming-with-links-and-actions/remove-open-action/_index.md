@@ -47,7 +47,7 @@ using System;
 
 Jetzt, da alles eingerichtet und bereit ist, können wir uns mit den Einzelheiten des Entfernens der offenen Aktionen aus einem PDF-Dokument befassen.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zunächst müssen Sie angeben, wo sich Ihre PDF-Datei befindet. Stellen Sie sich das so vor, als würden Sie Ihren Arbeitsbereich einrichten. So geht's:
 

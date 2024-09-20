@@ -2,162 +2,155 @@
 title: Not Yapısı Elemanı Oluştur
 linktitle: Not Yapısı Elemanı Oluştur
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak bir PDF belgesinde yapılandırılmış not öğeleri oluşturmaya yönelik adım adım kılavuz.
+description: Bu ayrıntılı, adım adım eğitimle Aspose.PDF for .NET ile PDF'lerde not yapı öğeleri oluşturmayı öğrenin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde not yapısı öğesinin nasıl oluşturulacağına dair adım adım bir kılavuz sağlayacağız. Aspose.PDF, PDF belgelerini programatik olarak oluşturmanıza, düzenlemenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'nin işaretli içerik yapısı özelliklerini kullanarak PDF belgenize yapılandırılmış notlar ekleyebilirsiniz.
+## giriiş
+
+Günümüzün dijital dünyasında, özellikle PDF'lerle uğraşırken, yapılandırılmış belgeler oluşturmak esastır. Belge erişilebilirliği söz konusu olduğunda, .NET için Aspose.PDF kitaplığı, geliştiricilerin PDF içeriğini sorunsuz bir şekilde yönetmesine yardımcı olan güçlü bir araçtır. Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF içinde not yapı öğelerinin nasıl oluşturulacağını derinlemesine inceleyeceğiz. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuz sizi her adımda konuşma dilinde, anlaşılması kolay bir şekilde yönlendirecektir. Hadi başlayalım!
 
 ## Ön koşullar
 
-Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
+Kodlamaya ve not yapı öğelerini oluşturmaya başlamadan önce, ihtiyacınız olan her şeyin hazır olduğundan emin olalım:
 
-1. .NET framework ile Visual Studio kuruldu.
-2. .NET için Aspose.PDF kütüphanesi.
+1. .NET Ortamı: Visual Studio gibi bir .NET geliştirme ortamınız olmalıdır.
+2.  Aspose.PDF Kütüphanesi: Aspose.PDF kütüphanesini indirip yüklemeniz gerekecek. Bunu şuradan alabilirsiniz:[Burada](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: Bu eğitimden en iyi şekilde faydalanmak için C# programlamaya aşinalık gereklidir.
+4. .NET Framework'e Erişim: Projenizin .NET Framework'ün uyumlu bir sürümünü hedeflediğinden emin olun.
+5. Belge Dizini: PDF ve günlük dosyalarınızı depolamak için bir dizin ayarlayın. 
 
-## Adım 1: Proje Kurulumu
+Her şey hazır mı? Harika! Hadi kodlara geçelim!
 
-Başlamak için, Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
+## Paketleri İçe Aktar
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-
-C# kod dosyanıza, Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını içe aktarın:
+İlk adım gerekli paketleri içe aktarmaktır. Bu, geliştirme ortamınızda yapılabilir. Bunu yapmanın basit bir yolu şudur:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Adım 3: PDF Belgesini Oluşturma ve Yapılandırılmış Öğeleri Not Etme
+Bu ad alanları, PDF belgelerini oluşturmak ve düzenlemek için gereken sınıflara ve yöntemlere erişim sağlar.
 
-Bir PDF belgesi oluşturmak ve not yapılandırılmış öğeler eklemek için aşağıdaki kodu kullanın:
+## Adım 1: Belgeyi Ayarlama
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "45929_doc.pdf";
-string logFile = dataDir + "45929_log.xml";
-
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Sample Grade Items");
-taggedContent.SetLanguage("fr-FR");
-
-ParagraphElement paragraph = taggedContent.CreateParagraphElement();
-taggedContent.RootElement.AppendChild(paragraph);
-
-NoteElement note1 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note1);
-note1.SetText("Note with automatically generated ID. ");
-
-NoteElement note2 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note2);
-note2.SetText("Note with ID = 'note_002'.");
-note2.SetId("note_002");
-
-NoteElement note3 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note3);
-note3.SetText("Note with ID = 'note_003'.");
-note3.SetId("note_003");
-```
-
-Bu kod boş bir PDF belgesi oluşturur ve bir paragrafa yapılandırılmış not öğeleri ekler. Her not Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur.
-
-## Adım 4: PDF Belgesini Kaydetme
-
-PDF belgesini kaydetmek için aşağıdaki kodu kullanın:
-
-```csharp
-document. Save(outFile);
-```
-
-Bu kod, not yapılandırılmış öğeleri içeren PDF belgesini belirtilen bir dosyaya kaydeder.
-
-### .NET için Aspose.PDF kullanarak Not Yapısı Elemanı Oluşturma için örnek kaynak kodu 
+Başlamak için yeni bir belge örneği oluşturmanız gerekir. Bu, oluşturmak istediğiniz herhangi bir PDF'nin başlangıç noktasıdır. Bunu şu şekilde yaparsınız:
 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "45929_doc.pdf";
 string logFile = dataDir + "45929_log.xml";
+
 // PDF Belgesi Oluştur
 Document document = new Document();
+```
+Bu kod yeni bir kod başlatır`Document` nesne ve çıktı PDF ve günlük dosyaları için dosya yollarını ayarlar. Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` gerçek dizin yolunuzla.
+
+## Adım 2: Etiketli İçerik Niteliklerini Ayarlama
+
+Şimdi, PDF'niz için etiketli içeriği ayarlamaya geçelim. Bu, başlık ve dil niteliklerini tanımlamayı içerir.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Sample of Note Elements");
 taggedContent.SetLanguage("en-US");
+```
+ Burada, şuraya erişiyoruz:`TaggedContent` Belgenin başlığını ve dilini ayarlamak. Bu, erişilebilirlik standartları için önemlidir ve belgenize daha profesyonel bir dokunuş kazandırır.
+
+## Adım 3: Bir Paragraf Öğesi Oluşturma
+
+Şimdi, etiketli içeriğe bir paragraf öğesi ekleyeceğiz. Bu, notlarınız için bir kapsayıcı görevi görecek.
+
+```csharp
 // Paragraf Öğesi Ekle
 ParagraphElement paragraph = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(paragraph);
+```
+ Bir tane oluşturarak`ParagraphElement`, not öğelerinin ekleneceği bir temel sağlıyoruz. Duvarları inşa etmeden önce bir evin temelini atmaya benzer.
+
+## Adım 4: Not Öğelerinin Eklenmesi
+
+Şimdi eğlenceli kısım: not öğeleri ekleme! Birden fazla not oluşturabilirsiniz—hadi bunu üç adımda yapalım!
+
+### Adım 4.1: İlk Notu Ekleyin
+
+```csharp
 // NoteElement'i ekle
 NoteElement note1 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note1);
-note1.SetText("Note with auto generate ID. ");
+note1.SetText("Note with auto generate ID.");
+```
+Bu kod otomatik olarak oluşturulmuş bir ID ile ilk notu oluşturur. Önceki paragrafımıza içerik eklemenin ne kadar kolay olduğuna dikkat edin.
+
+### Adım 4.2: İkinci Notayı Ekleyin
+
+```csharp
 // NoteElement'i ekle
 NoteElement note2 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note2);
 note2.SetText("Note with ID = 'note_002'. ");
 note2.SetId("note_002");
+```
+ İkinci not için açıkça bir kimlik belirledik`note_002`. Kimliklere dikkat etmek önemlidir çünkü bunlar daha sonra belirli notlara başvurmanın bir yolunu sağlar.
+
+### Adım 4.3: Üçüncü Notu Ekleyin
+
+```csharp
 // NoteElement'i ekle
 NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-//İstisna atılmalıdır - Aspose.Pdf.Tagged.TaggedException: ID='note_002' olan yapı öğesi zaten mevcut
-//not3.SetId("not_002");
-// ClearId() Not Yapı Elemanı için kullanılırsa, ortaya çıkan belge PDF/UA ile uyumlu değildir
-//not3.ClearId();
+// İstisna atılmalıdır - Aspose.Pdf.Tagged.TaggedException: ID='note_002' olan yapı öğesi zaten mevcut
+```
+ Bu üçüncü not ikincisine çok benzer ancak başka bir benzersiz kimlik kullanır. Dikkatli olun; aynı kimliğe sahip başka bir not oluşturmaya çalışmak`note_002` bir istisna fırlatacaktır. 
+
+## Adım 5: Belgeyi Kaydetme
+
+Notlarınız eklendikten sonra, belgeyi kaydetme zamanı geldi!
+
+```csharp
 // Etiketli PDF Belgesini Kaydet
 document.Save(outFile);
+```
+Bu basit satır tüm emeklerinizi belirtilen PDF dosyasına kaydeder. 
+
+## Adım 6: PDF/UA Uyumluluğunu Doğrulayın
+
+Belgenizin erişilebilirlik standartlarını karşıladığından emin olmak için onu doğrulayabilirsiniz.
+
+```csharp
 // PDF/UA uyumluluğunun kontrol edilmesi
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+Bu kod parçası PDF'nizi PDF/UA (Evrensel Erişilebilirlik) standardına göre kontrol eder. Uyumluluğu belirten bir boole değeri alacaksınız!
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde not yapı öğelerinin nasıl oluşturulacağını öğrendiniz. Yapılandırılmış not öğeleri, PDF belgenize ek, yapılandırılmış bilgiler eklemenize olanak tanır.
+İşte oldu! Artık .NET için Aspose.PDF sayesinde daha iyi erişilebilirlik ve yapı sağlayan bir PDF belgesi içinde not yapısı öğelerini başarıyla oluşturdunuz! Bu adımları izleyerek PDF'lerinizi daha verimli bir şekilde yönetebilir ve daha kullanıcı dostu hale getirebilirsiniz. 
 
-### SSS
+## SSS
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapı öğeleri oluşturmanın amacı nedir?
+### PDF'lerde not yapı öğeleri nelerdir?
+Not öğeleri, PDF'in belirli bölümlerine eklenen, netliği ve anlaşılırlığı artıran açıklamalar veya yorumlardır.
 
-A: Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapı öğeleri oluşturmak, belgenin içeriğine yapılandırılmış notlar eklemenize olanak tanır. Bu notlar, içeriğin belirli bölümlerine ek bağlam, açıklamalar veya referanslar sağlayabilir.
+### Aspose.PDF for .NET ücretsiz mi?
+Ücretsiz deneme imkânı sunmasına rağmen Aspose.PDF ticari bir üründür; fiyatları kullanımınıza ve ihtiyaç duyduğunuz özelliklere göre değişmektedir.
 
-#### S: Aspose.PDF kütüphanesi bir PDF belgesinde not yapı öğelerinin oluşturulmasına nasıl yardımcı olur?
+### Aspose.PDF ile başka türde öğeler oluşturabilir miyim?
+Evet! Aspose.PDF belgelerinizi zenginleştirmek için resim, tablo ve köprü metni gibi çok sayıda öğeyi destekler.
 
-A: Aspose.PDF for .NET, PDF belgelerini programatik olarak oluşturma, düzenleme ve dönüştürme işlevleri sağlayan güçlü bir kütüphanedir. Bu eğitimde, kütüphanenin işaretli içerik yapısı özellikleri PDF belgesinin içeriğinde yapılandırılmış not öğeleri oluşturmak için kullanılır.
+### PDF/UA uyumluluğu nedir?
+PDF/UA uyumluluğu, PDF'lerin küresel standartlarla uyumlu olacak şekilde engelli bireyler tarafından erişilebilir olmasını sağlar.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapı öğeleri oluşturmanın ön koşulları nelerdir?
-
-C: Başlamadan önce, Visual Studio'nun .NET Framework ile birlikte yüklü olduğundan ve projenizde .NET için Aspose.PDF kütüphanesine başvurulduğundan emin olun.
-
-#### S: Sağlanan C# kodu PDF belgesinin içeriğinde not yapı elemanlarını nasıl oluşturur?
-
-A: Kod, bir PDF belgesinin nasıl oluşturulacağını, not yapılandırılmış öğelerin nasıl tanımlanacağını ve bunların bir paragrafa nasıl ekleneceğini gösterir. Her not, Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur ve yapılandırılmış notları içeriğe dahil etmenize olanak tanır.
-
-#### S: Oluşturduğum not yapı öğelerinin içeriğini ve özelliklerini özelleştirebilir miyim?
-
-C: Evet, Aspose.PDF kütüphanesi tarafından sağlanan yöntemleri ve özellikleri kullanarak not yapı öğelerinin içeriğini ve özelliklerini özelleştirebilirsiniz. Kod, not öğelerinin metninin ve kimliğinin nasıl ayarlanacağını gösterir, ancak bunları gerektiği gibi daha da özelleştirebilirsiniz.
-
-#### S: Not yapı unsurları ile belgenin içeriği arasındaki hiyerarşik ilişki nasıl kurulur?
-
- A: Hiyerarşik ilişki, paragraflar gibi diğer yapılandırılmış öğelerin çocukları olarak not yapı öğeleri eklenerek kurulur. Kodda, not öğeleri bir paragraf öğesine şu şekilde eklenir:`AppendChild` Yöntem.
-
-#### S: Not yapı elemanlarına benzersiz kimlikler atayabilir miyim?
-
- A: Evet, not yapı öğelerine benzersiz kimlikler atayabilirsiniz.`SetId` yöntem. Kod, not öğelerinin kimliklerinin benzersiz değerlere nasıl ayarlanacağını gösterir.
-
-#### S: Bir not yapı öğesine yinelenen bir kimlik atamayı denersem ne olur?
-
-A: Bir not yapı öğesine yinelenen bir kimlik atamaya çalışmak bir istisnayla sonuçlanacaktır. Eğitimde sağlanan kod, bu senaryoyu gösteren bir yorum içerir.
-
-#### S: Not yapı öğeleri oluştururken PDF/UA uyumluluğunu nasıl sağlayabilirim?
-
-A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen not yapı öğelerinin erişilebilirlik yönergelerine uymasını sağlayabilirsiniz.
-
-#### S: Bu yaklaşımı mevcut bir PDF belgesine not yapısı öğeleri eklemek için kullanabilir miyim?
-
-A: Evet, not yapısı öğelerini mevcut bir PDF belgesine eklemek için sağlanan yaklaşımı değiştirebilirsiniz. Yeni bir belge oluşturmak yerine, Aspose.PDF kullanarak mevcut belgeyi yükler ve ardından not öğelerini eklemek için benzer adımları izlersiniz.
+### Aspose.PDF için desteği nereden alabilirim?
+ Destek için şu adresi ziyaret edin:[Aspose forumu](https://forum.aspose.com/c/pdf/10) Sorularınızı sorabileceğiniz ve deneyimlerinizi paylaşabileceğiniz bir yer.

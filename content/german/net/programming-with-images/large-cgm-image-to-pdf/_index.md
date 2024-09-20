@@ -92,7 +92,7 @@ Durch dieses Feedback bleiben Ihre Benutzer engagiert und informiert:
 Console.WriteLine("\nLarge CGM file converted to PDF successfully.\nFile saved at " + dataDir);
 ```
 
-Und da haben Sie es! Sie haben ein großes CGM-Bild in einem einfachen Prozess in ein gestochen scharfes PDF umgewandelt. Feiern Sie Ihren Programmiererfolg!
+Und da haben Sie es! Sie haben ein umfangreiches CGM-Bild in einem einfachen Prozess in ein gestochen scharfes PDF umgewandelt. Feiern Sie Ihren Programmiererfolg!
 
 ## Abschluss
 

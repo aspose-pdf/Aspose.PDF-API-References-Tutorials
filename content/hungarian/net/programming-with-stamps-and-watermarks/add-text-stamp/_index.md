@@ -9,7 +9,7 @@ url: /hu/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
 ## Bevezetés
 
-mai digitális korban a PDF-ek a dokumentumok megosztásának és kézbesítésének elterjedt formátuma. Legyen szó fejlesztőről, tartalomkészítőről vagy csak valaki, aki szeretné javítani a PDF-fájljait, a PDF-ek programozott kezelésének ismerete megváltoztathatja a játékot. Az egyik remek funkció, amelyet érdemes használni, az a lehetőség, hogy szöveges bélyegzőket adjon hozzá a PDF-fájlokhoz. Szöveges bélyegző hozzáadásával professzionális megjelenést kölcsönözhet a dokumentumoknak, vagy olyan fontos információkat közvetíthet, mint a „Minta”, „Bizalmas” vagy akár egy vízjel.
+mai digitális korban a PDF-ek a dokumentumok megosztásának és kézbesítésének elterjedt formátuma. Legyen szó fejlesztőről, tartalomkészítőről vagy csak PDF-fájljait javítani kívánó személyről, a PDF-ek programozott kezelésének ismerete megváltoztathatja a játékot. Az egyik remek funkció, amelyet érdemes használni, az a lehetőség, hogy szöveges bélyegzőket adjon hozzá a PDF-fájlokhoz. Szöveges bélyegző hozzáadásával professzionális megjelenést kölcsönözhet a dokumentumoknak, vagy olyan fontos információkat közvetíthet, mint a „Minta”, „Bizalmas” vagy akár egy vízjel.
 
 ## Előfeltételek
 
@@ -26,7 +26,7 @@ Ha ezeket az előfeltételeket rendezted, folytathatjuk a kódolást!
 
 Most importáljuk a szükséges csomagokat. Ez a lépés kulcsfontosságú, mivel elérhetővé teszi az Aspose könyvtár osztályait és metódusait a projektben.
 
-### Importálja az Aspose.PDF összeállítást
+### Importálja az Aspose.PDF Assembly fájlt
 
 A kezdéshez importálnia kell az Aspose.PDF névteret. Adja hozzá a következőt a C# fájl tetejéhez direktíva használatával:
 

@@ -2,208 +2,186 @@
 title: Posizionamento del testo attorno all'immagine nel file PDF
 linktitle: Posizionamento del testo attorno all'immagine nel file PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come posizionare del testo attorno a un'immagine in un file PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come posizionare il testo attorno alle immagini nei PDF usando Aspose.PDF per .NET. Segui la nostra guida passo passo per creare PDF professionali con immagini e testo affiancati.
 type: docs
 weight: 260
 url: /it/net/programming-with-text/placing-text-around-image/
 ---
-In questo tutorial, spiegheremo come posizionare il testo attorno a un'immagine in un file PDF utilizzando la libreria Aspose.PDF per .NET. Esamineremo passo dopo passo il processo di creazione di una tabella, aggiunta di un'immagine e posizionamento del testo attorno all'immagine utilizzando il codice sorgente C# fornito.
+## Introduzione
 
-## Requisiti
+Hai mai provato a posizionare del testo attorno a un'immagine in un file PDF ma l'hai trovato impegnativo? Se sì, sei nel posto giusto! Aspose.PDF per .NET semplifica questo processo, consentendoti di posizionare del testo accanto alle immagini con solo poche righe di codice. Che tu stia creando report, documenti o presentazioni, questa funzionalità è un modo fantastico per migliorare il layout del tuo contenuto e renderlo più accattivante visivamente. Oggi, ti mostreremo come utilizzare Aspose.PDF per .NET per posizionare del testo attorno alle immagini in un documento PDF.
 
-Prima di iniziare, assicurati di avere quanto segue:
+## Prerequisiti
 
-- È stata installata la libreria Aspose.PDF per .NET.
-- Conoscenza di base della programmazione C#.
+Prima di buttarci nel codice, assicuriamoci di aver impostato tutto. Ecco cosa ti servirà:
 
-## Passaggio 1: impostare la directory dei documenti
+-  Aspose.PDF per .NET: puoi scaricarlo da[Qui](https://releases.aspose.com/pdf/net/).
+- Visual Studio: assicurati di avere installata la versione più recente per procedere senza problemi.
+- .NET Framework: questo esempio utilizza .NET, quindi assicurati che il tuo ambiente sia configurato per lo sviluppo .NET.
+-  Una licenza temporanea: puoi richiedere una licenza temporanea[Qui](https://purchase.aspose.com/temporary-license/) se stai valutando il prodotto.
 
- Per prima cosa, devi impostare il percorso della directory in cui vuoi salvare il file PDF generato. Sostituisci`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso della directory desiderata.
+Se non hai ancora configurato Aspose.PDF per .NET, segui le istruzioni di installazione in[documentazione](https://reference.aspose.com/pdf/net/).
+
+## Importazione degli spazi dei nomi
+
+Prima di iniziare a scrivere codice, dobbiamo importare i namespace necessari. Ecco il frammento di codice per farlo:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+ Questi namespace sono essenziali in quanto forniscono l'accesso a classi come`Document`, `Page`, `Image` , E`HtmlFragment`, che utilizzeremo per creare e manipolare il PDF.
+
+Ora che abbiamo impostato la scena, analizziamo come posizionare il testo attorno a un'immagine nel tuo file PDF usando Aspose.PDF per .NET. Ti guideremo passo dopo passo.
+
+## Passaggio 1: creare un'istanza dell'oggetto documento
+
+ Per prima cosa, devi creare un documento PDF. In Aspose.PDF, questo viene fatto istanziando un`Document` oggetto. Questo oggetto servirà come base per tutto il contenuto che aggiungeremo.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Passaggio 2: creare un documento e una pagina
+Qui abbiamo creato un documento PDF vuoto. Non ha ancora pagine, ma non preoccuparti, ne aggiungeremo una nel prossimo passaggio.
 
- Successivamente, creiamo un`Document` oggetto e aggiungi una pagina ad esso utilizzando il`Pages.Add()` metodo.
+## Passaggio 2: aggiungere una pagina al documento
+
+Ora che abbiamo il nostro documento, è il momento di aggiungere una pagina. Immagina di creare un foglio bianco su cui aggiungere il tuo contenuto.
 
 ```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Passaggio 3: creare una tabella
+Questo codice aggiunge una nuova pagina al documento. Di default, la pagina è vuota, ma stiamo per cambiarla.
 
- Creiamo una tabella utilizzando il`Table` classe e aggiungerla alla raccolta dei paragrafi della pagina.
+## Passaggio 3: creare una tabella per organizzare i contenuti
+
+Per mantenere la nostra immagine e il testo correttamente allineati, useremo una tabella. Le tabelle nei PDF possono aiutare a strutturare il tuo layout, proprio come nei documenti Word o HTML.
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(table1);
 ```
 
-## Passaggio 4: impostare la larghezza e i margini delle colonne della tabella
+Questo frammento crea una tabella e la aggiunge alla pagina. Pensa alla tabella come al framework per allineare la tua immagine e il tuo testo.
 
- Impostiamo la larghezza delle colonne della tabella e creiamo un`MarginInfo` oggetto per impostare i margini.
+## Passaggio 4: impostare la larghezza delle colonne per la tabella
 
-```csharp
-table1. ColumnWidths = "120,270";
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 5f;
-margin. Left = 5f;
-margin. Right = 5f;
-margin. Bottom = 5f;
-table1. DefaultCellPadding = margin;
-```
-
-## Passaggio 5: aggiungere un'immagine alla tabella
-
- Creiamo un`Image` object, specificare il percorso del file immagine e impostare l'altezza e la larghezza fisse dell'immagine. Quindi, aggiungiamo l'immagine alla raccolta di paragrafi della cella della tabella.
+Ora che abbiamo aggiunto una tabella, dobbiamo definire quanto devono essere larghe le colonne. Questo assicura che l'immagine e il testo siano dimensionati in modo appropriato sulla pagina.
 
 ```csharp
-Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-logo.File = dataDir + "aspose-logo.jpg";
-logo.FixHeight = 120;
-logo.FixWidth = 110;
-row1.Cells.Add();
-row1.Cells[0].Paragraphs.Add(logo);
-```
-
-## Passaggio 6: aggiungere testo attorno all'immagine
-
- Creiamo variabili stringa contenenti testo formattato in HTML e creiamo un`HtmlFragment`oggetto. Quindi, aggiungiamo il testo HTML alla cella della tabella contenente l'immagine.
-
-```csharp
-string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>" ;
-
-Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
-row1.Cells.Add();
-row1.Cells[1].Paragraphs.Add(TitleText);
-```
-
-## Passaggio 7: aggiungere testo aggiuntivo
-
- Ne creiamo un altro`HtmlFragment` oggetto contenente testo aggiuntivo formattato in HTML e aggiungerlo a una cella di tabella separata.
-
-```csharp
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
-Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-```
-
-## Passaggio 8: Salvare il documento PDF
-
-Infine, salviamo il documento PDF nel file di output specificato.
-
-```csharp
-doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
-```
-
-### Esempio di codice sorgente per posizionare il testo attorno all'immagine utilizzando Aspose.PDF per .NET 
-```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Crea un'istanza dell'oggetto documento
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Crea una pagina nel Pdf
-Aspose.Pdf.Page page = doc.Pages.Add();
-// Creare un'istanza di un oggetto tabella
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-// Aggiungere la tabella nella raccolta di paragrafi della sezione desiderata
-page.Paragraphs.Add(table1);
-// Impostato con le larghezze delle colonne della tabella
 table1.ColumnWidths = "120 270";
-// Crea l'oggetto MarginInfo e imposta i suoi margini sinistro, inferiore, destro e superiore
+```
+
+Questa riga imposta la larghezza di due colonne, una per l'immagine e una per il testo. Regola questi valori se l'immagine o il testo necessitano di più o meno spazio.
+
+## Passaggio 5: definire margini e spaziatura
+
+Per assicurarci che tutto sia in ordine, aggiungiamo margini e spaziatura alla tabella.
+
+```csharp
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Imposta la spaziatura predefinita delle celle sull'oggetto MarginInfo
 table1.DefaultCellPadding = margin;
-// Crea righe nella tabella e poi celle nelle righe
+```
+
+Queste impostazioni garantiscono che la spaziatura della tabella sia uniforme, rendendo il contenuto visivamente accattivante.
+
+## Passaggio 6: inserire un'immagine nella tabella
+
+Ora, passiamo alla parte divertente: aggiungere un'immagine. In questo caso, aggiungeremo il logo di Aspose, ma sentiti libero di usare qualsiasi immagine tu voglia.
+
+```csharp
 Aspose.Pdf.Row row1 = table1.Rows.Add();
-// Crea un oggetto immagine
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-// Specificare il percorso del file immagine
 logo.File = dataDir + "aspose-logo.jpg";
-// Specificare l'altezza fissa dell'immagine
 logo.FixHeight = 120;
-// Specificare la larghezza fissa dell'immagine
 logo.FixWidth = 110;
 row1.Cells.Add();
-// Aggiungere l'immagine alla raccolta di paragrafi della cella della tabella
 row1.Cells[0].Paragraphs.Add(logo);
-// Crea variabili stringa con testo contenente tag html
+```
+
+Ecco cosa sta succedendo:
+- Carichiamo l'immagine dalla directory specificata.
+- Impostiamo l'altezza e la larghezza dell'immagine.
+- Infine, aggiungiamo l'immagine alla prima cella della tabella.
+
+## Passaggio 7: aggiungere testo accanto all'immagine
+
+Ora che l'immagine è al suo posto, aggiungiamo del testo accanto. Per questo esempio, useremo testo formattato in HTML per definire lo stile del contenuto.
+
+```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
-//Crea un oggetto di testo da aggiungere a destra dell'immagine
+string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF document reporting component that enables .NET applications to <b>create PDF documents from scratch</b> without utilizing Adobe Acrobat.</font>";
+
 Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
 row1.Cells.Add();
-// Aggiungere i paragrafi di testo contenenti testo HTML alla cella della tabella
 row1.Cells[1].Paragraphs.Add(TitleText);
-// Imposta l'allineamento verticale del contenuto della riga come In alto
+```
+
+Questo blocco aggiunge un titolo e una descrizione stilizzati nella cella accanto all'immagine. Puoi formattare il testo usando tag HTML per una maggiore personalizzazione.
+
+## Passaggio 8: Regola l'allineamento verticale
+
+Di default, il contenuto nelle celle della tabella potrebbe non essere allineato come desideri. In questo caso, vogliamo assicurarci che il testo sia allineato alla parte superiore della cella.
+
+```csharp
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-//Crea righe nella tabella e poi celle nelle righe
+```
+
+In questo modo il testo viene visualizzato nella parte superiore della cella, mantenendo un layout pulito e professionale.
+
+## Passaggio 9: aggiungere altro testo sotto l'immagine e la descrizione
+
+Potresti voler includere più contenuto sotto l'immagine e il testo. Aggiungiamo un'altra riga alla tabella per questo scopo.
+
+```csharp
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
-// Imposta il valore dell'intervallo di riga per la seconda riga su 2
 SecondRow.Cells[0].ColSpan = 2;
-// Imposta l'allineamento verticale della seconda riga come In alto
 SecondRow.Cells[0].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
+
+string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates.</font>";
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-// Aggiungere i paragrafi di testo contenenti testo HTML alla cella della tabella
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-// Salva il file PDF
+```
+
+Qui abbiamo aggiunto un'altra riga con testo aggiuntivo, che si estende su entrambe le colonne per mantenere l'equilibrio nel layout.
+
+## Passaggio 10: Salvare il documento PDF
+
+Infine, dobbiamo salvare il documento in modo da poter visualizzare le modifiche.
+
+```csharp
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
+In questo modo il PDF verrà salvato con l'immagine e il testo formattati esattamente come li desideriamo.
+
 ## Conclusione
 
-In questo tutorial, hai imparato come posizionare il testo attorno a un'immagine in un documento PDF utilizzando la libreria Aspose.PDF per .NET. Seguendo la guida passo passo ed eseguendo il codice C# fornito, puoi creare una tabella, aggiungere un'immagine e posizionare il testo attorno all'immagine in un documento PDF.
+Posizionare il testo attorno alle immagini in un PDF potrebbe sembrare un compito arduo, ma Aspose.PDF per .NET semplifica il processo. Sfruttando tabelle, immagini e testo formattato, puoi creare PDF dall'aspetto professionale con il minimo sforzo. Con solo poche righe di codice, puoi posizionare il contenuto esattamente dove vuoi, dando ai tuoi documenti un aspetto raffinato e ben organizzato.
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Qual è lo scopo del tutorial "Posizionamento del testo attorno all'immagine in un file PDF"?
+### Posso usare questo metodo per inserire più immagini con testo?
+Sì, basta aggiungere più righe e celle alla tabella per includere immagini e testo aggiuntivi.
 
-R: Il tutorial "Posizionare il testo attorno all'immagine nel file PDF" illustra come utilizzare la libreria Aspose.PDF per .NET per posizionare il testo attorno a un'immagine in un documento PDF. Il tutorial fornisce una guida passo passo e un codice sorgente C# per aiutarti a creare una tabella, aggiungere un'immagine e posizionare il testo attorno all'immagine.
+### Posso modificare l'allineamento dell'immagine?
+Assolutamente! Puoi modificare l'allineamento dell'immagine regolando le proprietà di allineamento della cella.
 
-#### D: Perché dovrei voler inserire del testo attorno a un'immagine in un documento PDF?
+### Come posso formattare ulteriormente il testo?
+ È possibile utilizzare i tag HTML all'interno di`HtmlFragment` oggetto per applicare vari stili come grassetto, corsivo o tipi di carattere diversi.
 
-R: Posizionare del testo attorno a un'immagine migliora la presentazione visiva dei tuoi documenti PDF, rendendoli più coinvolgenti e informativi. Questa tecnica è spesso utilizzata in documenti, brochure, report e altri materiali in cui vuoi combinare immagini e testo in modo esteticamente gradevole.
+### Posso controllare la spaziatura tra il testo e l'immagine?
+ Sì, utilizzando il`MarginInfo` L'oggetto consente di controllare la spaziatura e i margini tra gli elementi.
 
-#### D: Come faccio a impostare la directory dei documenti?
-
-A: Per impostare la directory dei documenti:
-
-1.  Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso della directory in cui si desidera salvare il file PDF generato.
-
-#### D: Come faccio a creare una tabella e ad aggiungervi un'immagine?
-
- A: Il tutorial ti guida attraverso il processo di creazione di una tabella utilizzando`Table` classe e aggiungendo un'immagine alla tabella utilizzando`Image` classe. Specificherai il percorso del file immagine, l'altezza e la larghezza prima di aggiungerlo a una cella della tabella.
-
-#### D: Come posso posizionare il testo attorno all'immagine?
-
- A: Per posizionare il testo attorno all'immagine, creerai un testo formattato in HTML utilizzando`HtmlFragment` classe. Questo testo conterrà sia un titolo che un corpo di testo. Aggiungerai quindi questo testo HTML a una cella della tabella adiacente alla cella dell'immagine.
-
-#### D: Posso personalizzare l'aspetto del testo e dell'immagine?
-
-R: Sì, puoi personalizzare l'aspetto del testo e dell'immagine usando tag e proprietà HTML. Ad esempio, puoi impostare dimensioni del carattere, colori, stili e allineamento per il testo. Inoltre, puoi regolare le dimensioni e le dimensioni dell'immagine.
-
-#### D: Come posso salvare il documento PDF?
-
- A: Dopo aver aggiunto l'immagine e il testo alla tabella, puoi salvare il documento PDF utilizzando`Save` metodo del`Document` classe. Fornire il percorso del file di output desiderato come argomento per`Save` metodo.
-
-#### D: Qual è il risultato atteso da questo tutorial?
-
-A: Seguendo il tutorial ed eseguendo il codice C# fornito, genererai un documento PDF che mostra come posizionare il testo attorno a un'immagine. Il documento di output conterrà una tabella con un'immagine e del testo posizionati attorno ad essa.
-
-#### D: Posso usare formati di immagine diversi dal JPG?
-
- R: Sì, puoi usare diversi formati di immagine supportati dalla libreria Aspose.PDF, come PNG, BMP, GIF e altri. Quando crei il`Image` oggetto, specificare il percorso del file nel formato immagine desiderato.
-
-#### D: Per questo tutorial è richiesta una licenza Aspose valida?
-
-R: Sì, è richiesta una licenza Aspose valida affinché questo tutorial funzioni correttamente. Puoi acquistare una licenza completa o ottenere una licenza temporanea di 30 giorni dal sito Web di Aspose.
+### È possibile aggiungere dei link al testo?
+ Certamente! Puoi incorporare collegamenti ipertestuali nel testo formattato in HTML utilizzando`<a>` etichetta.

@@ -2,7 +2,7 @@
 title: Java を使用して既存の PDF 内の表を操作する
 linktitle: Java を使用して既存の PDF 内の表を操作する
 second_title: Aspose.PDF Java PDF 処理 API
-description: Aspose.PDF for Java を使用して、Java で PDF テーブルを操作する方法を学びます。このステップ バイ ステップ ガイドでは、テーブルの抽出、変更など、効果的な PDF 処理について説明します。
+description: Aspose.PDF for Java を使用して Java で PDF テーブルを操作する方法を学びます。このステップ バイ ステップ ガイドでは、テーブルの抽出、変更など、効果的な PDF 処理について説明します。
 type: docs
 weight: 13
 url: /ja/java/pdf-tables/manipulate-tables-in-existing-pdf-using-java/

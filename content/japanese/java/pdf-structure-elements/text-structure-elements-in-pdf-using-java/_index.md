@@ -16,7 +16,7 @@ url: /ja/java/pdf-structure-elements/text-structure-elements-in-pdf-using-java/
 
 詳細に入る前に、Aspose.PDF for Javaがインストールされていることを確認してください。Webサイトからダウンロードできます。[ここ](https://releases.aspose.com/pdf/java/).
 
-## Java プロジェクトの設定
+## Javaプロジェクトの設定
 
 1. 好みの統合開発環境 (IDE) で新しい Java プロジェクトを作成します。
 

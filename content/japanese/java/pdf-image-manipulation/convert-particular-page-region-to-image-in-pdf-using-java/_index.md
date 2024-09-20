@@ -10,7 +10,7 @@ url: /ja/java/pdf-image-manipulation/convert-particular-page-region-to-image-in-
 
 ## Java を使用して PDF 内の特定のページ領域を画像に変換する方法の紹介
 
-このチュートリアルでは、Aspose.PDF for Java を使用して PDF ドキュメント内の特定のページ領域を画像に変換する方法について説明します。Aspose.PDF for Java は、Java アプリケーションで PDF ファイルを操作できる強力な API です。データの抽出、既存の PDF の操作、または新しい PDF を最初から作成する必要がある場合でも、Aspose.PDF for Java が対応します。
+このチュートリアルでは、Aspose.PDF for Java を使用して、PDF ドキュメント内の特定のページ領域を画像に変換する方法について説明します。Aspose.PDF for Java は、Java アプリケーションで PDF ファイルを操作できる強力な API です。データの抽出、既存の PDF の操作、または新しい PDF を最初から作成する必要がある場合でも、Aspose.PDF for Java が対応します。
 
 ## 前提条件
 

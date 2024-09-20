@@ -25,7 +25,7 @@ url: /zh-hant/net/programming-with-images/resize-images/
 
 ## 導入包
 
-任何軟體專案的第一步都是依序排列依賴項。以下是使用 Aspose.PDF for .NET 的操作方法：
+任何軟體專案的第一步都是依序排列依賴項。以下是使用 Aspose.PDF for .NET 實作此操作的方法：
 
 1. 開啟您的專案：啟動 Visual Studio 並開啟現有專案或建立新專案。
 
@@ -157,5 +157,5 @@ Aspose.PDF for .NET 是一個類別庫，可讓開發人員以程式設計方式
 ### Aspose.PDF僅適用於.NET應用程式嗎？
 不需要，Aspose.PDF 可用於多種平台，包括 Java 和 Android 等。
 
-### 我可以在哪裡獲得 Aspose.PDF 問題的支援？
+### 在哪裡可以獲得 Aspose.PDF 問題的支援？
 您可以在 Aspose 論壇上找到支持[這裡](https://forum.aspose.com/c/pdf/10).

@@ -9,7 +9,7 @@ url: /pl/net/programming-with-stamps-and-watermarks/add-image-stamp/
 ---
 ## Wstęp
 
-Jeśli chodzi o manipulowanie plikami PDF, niewiele narzędzi jest tak solidnych i przyjaznych dla użytkownika jak Aspose.PDF dla .NET. Niezależnie od tego, czy chcesz dodawać adnotacje, tworzyć formularze czy stemplować obrazy, ta biblioteka zapewnia rozbudowaną funkcjonalność, aby sprostać różnym potrzebom manipulacji plikami PDF. W tym samouczku skupimy się na konkretnym zadaniu: dodaniu stempla obrazu do pliku PDF. Nie chodzi tu tylko o umieszczenie obrazu na stronie; chodzi o ulepszenie dokumentów za pomocą brandingu i atrakcyjności wizualnej!
+Jeśli chodzi o manipulowanie plikami PDF, niewiele narzędzi jest tak solidnych i przyjaznych dla użytkownika jak Aspose.PDF dla .NET. Niezależnie od tego, czy chcesz dodawać adnotacje, tworzyć formularze czy stemplować obrazy, ta biblioteka zapewnia rozbudowaną funkcjonalność, aby sprostać różnym potrzebom w zakresie manipulowania plikami PDF. W tym samouczku skupimy się na konkretnym zadaniu: dodaniu stempla obrazu do pliku PDF. Nie chodzi tu tylko o umieszczenie obrazu na stronie; chodzi o ulepszenie dokumentów za pomocą brandingu i atrakcyjności wizualnej!
 
 ## Wymagania wstępne
 

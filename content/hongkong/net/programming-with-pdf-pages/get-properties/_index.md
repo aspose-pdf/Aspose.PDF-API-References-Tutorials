@@ -93,7 +93,7 @@ Page pdfPage = pageCollection[1];
 
 ## 第 5 步：檢索並顯示頁面屬性
 
-現在我們來到了令人興奮的部分——提取頁面的屬性！每個頁面都有多個屬性，例如 ArtBox、BleedBox、CropBox、MediaBox 和 TrimBox，用於描述其尺寸和位置。讓我們訪問這些屬性並顯示它們。
+現在我們來到了令人興奮的部分——提取頁面的屬性！每個頁面都有幾個屬性，例如 ArtBox、BleedBox、CropBox、MediaBox 和 TrimBox，用於描述其尺寸和位置。讓我們訪問這些屬性並顯示它們。
 
 ```csharp
 //取得頁面屬性

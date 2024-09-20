@@ -9,7 +9,7 @@ url: /pl/net/programming-with-document/setpropertiesforprintdialog/
 ---
 ## Wstęp
 
-Czy chcesz wykorzystać moc generowania PDF w swoich aplikacjach? Dzięki Aspose.PDF dla .NET możesz bez wysiłku manipulować plikami PDF, co pozwala na łatwe tworzenie, zarządzanie i przetwarzanie plików PDF. Niezależnie od tego, czy rozwijasz prosty projekt osobisty, czy złożoną aplikację korporacyjną, to narzędzie zmienia zasady gry. W tym przewodniku przyjrzymy się, jak ustawić właściwości okna dialogowego drukowania, zapewniając, że Twoje dokumenty PDF będą gotowe do druku za pomocą zaledwie kilku linijek kodu.
+Czy chcesz wykorzystać moc generowania PDF w swoich aplikacjach? Dzięki Aspose.PDF dla .NET możesz bez wysiłku manipulować plikami PDF, co pozwala na łatwe tworzenie, zarządzanie i przetwarzanie plików PDF. Niezależnie od tego, czy rozwijasz prosty projekt osobisty, czy złożoną aplikację korporacyjną, to narzędzie zmienia zasady gry. W tym przewodniku przyjrzymy się, jak ustawić właściwości okna dialogowego drukowania, zapewniając, że dokumenty PDF będą gotowe do druku za pomocą zaledwie kilku linijek kodu.
 
 ## Wymagania wstępne
 

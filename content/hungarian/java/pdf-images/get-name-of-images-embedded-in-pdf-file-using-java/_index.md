@@ -83,7 +83,7 @@ Ebben a lépésenkénti útmutatóban megtanultuk, hogyan használhatja az Aspos
 
 ## GYIK
 
-### Hogyan telepíthetem az Aspose.PDF for Java-t?
+### Hogyan telepíthetem az Aspose.PDF for Java fájlt?
 
 A korábban említett Maven-függőség hozzáadásával az Aspose.PDF for Java fájlt is belefoglalhatja projektjébe. Alternatív megoldásként letöltheti a könyvtárat az Aspose webhelyéről.
 

@@ -34,7 +34,7 @@ url: /zh-hant/java/pdf-image-manipulation/convert-pdf-pages-to-bmp-image-using-j
 
 ### 第 1 步：載入 PDF 文檔
 
-第一步是載入您要使用的 PDF 文件。您可以使用以下程式碼片段來實現此目的：
+第一步是載入您想要使用的 PDF 文件。您可以使用以下程式碼片段來實現此目的：
 
 ```java
 //載入 PDF 文件

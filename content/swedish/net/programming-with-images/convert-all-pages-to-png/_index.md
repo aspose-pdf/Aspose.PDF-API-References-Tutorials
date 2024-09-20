@@ -113,7 +113,7 @@ Slutligen är det viktigt att stänga bildströmmen efter att vi har slutfört k
 imageStream.Close();
 ```
 
-Och det var allt för slingan! När detta går igenom alla sidor har vi våra PNG-bilder redo.
+Och det är det för slingan! När detta går igenom alla sidor har vi våra PNG-bilder redo.
 
 ## Sista steget: Meddela framgång
 

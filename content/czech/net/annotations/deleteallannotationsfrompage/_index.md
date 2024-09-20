@@ -60,7 +60,7 @@ Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf"
 
 ## Krok 3: Odstraňte všechny anotace z první stránky
 
-Nyní přichází hlavní úkol – odstranění všech anotací z první stránky vašeho PDF. V tomto kroku se stane kouzlo.
+Nyní přichází hlavní úkol – odstranění všech anotací z první stránky vašeho PDF. V tomto kroku se děje kouzlo.
 
 Vysvětlení: Tento řádek kódu zpřístupní první stránku vašeho PDF a odstraní všechny anotace na této stránce.
 
@@ -92,7 +92,7 @@ A je to! Úspěšně jste odstranili všechny anotace ze stránky v dokumentu PD
 ## FAQ
 
 ### Mohu odstranit anotace ze všech stránek v PDF najednou?
- Ano, můžete procházet všechny stránky v dokumentu a použít`Annotations.Delete()` metodu každému.
+ Ano, můžete procházet všechny stránky v dokumentu a použít`Annotations.Delete()` metoda ke každému.
 
 ### Jaké typy anotací lze pomocí této metody odstranit?
 Tato metoda odstraní všechny anotace, včetně textu, zvýraznění, razítek a komentářů.

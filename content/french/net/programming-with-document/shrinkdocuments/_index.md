@@ -9,7 +9,7 @@ url: /fr/net/programming-with-document/shrinkdocuments/
 ---
 ## Introduction
 
-Vous souhaitez réduire la taille de vos fichiers PDF sans effort ? Vous êtes au bon endroit ! Que vous gériez un grand nombre de fichiers ou que vous souhaitiez simplement économiser de l'espace, la réduction de la taille des documents PDF peut vous aider. Aujourd'hui, je vais vous expliquer comment réduire un document PDF à l'aide d'Aspose.PDF pour .NET, un outil puissant qui rend la manipulation des PDF simple et efficace.
+Vous cherchez à réduire la taille de vos fichiers PDF sans effort ? Vous êtes au bon endroit ! Que vous gériez un grand nombre de fichiers ou que vous souhaitiez simplement économiser de l'espace, la réduction des documents PDF peut vous aider. Aujourd'hui, je vais vous expliquer comment réduire un document PDF à l'aide d'Aspose.PDF pour .NET, un outil puissant qui rend la manipulation des PDF simple et efficace.
 
 ## Prérequis
 

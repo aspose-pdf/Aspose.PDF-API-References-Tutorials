@@ -148,7 +148,7 @@ Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + d
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將線條物件新增至 PDF 檔案。本教學將引導您完成每個步驟，確保您理解流程。現在您可以嘗試不同的形狀和樣式來建立您自己獨特的 PDF。快樂編碼！
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將線條物件新增至 PDF 檔案。本教學將引導您完成每個步驟，確保您理解流程。現在您可以嘗試不同的形狀和樣式來建立您自己獨特的 PDF。快樂編碼！
 
 ## 常見問題解答
 

@@ -7,316 +7,175 @@ type: docs
 weight: 110
 url: /id/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-Dalam panduan langkah demi langkah ini, kami akan menunjukkan cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda memanipulasi dokumen PDF secara terprogram. Elemen struktur sebaris memungkinkan Anda membuat struktur hierarkis dalam dokumen PDF menggunakan tajuk dengan tingkat dan paragraf yang berbeda.
+## Perkenalan
 
-Mari selami kodenya dan pelajari cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET.
+Membuat dokumen yang mudah diakses dan terstruktur dengan baik sangat penting dalam lanskap digital saat ini. Jika Anda pernah mendapati diri Anda menggulir PDF dan tersesat di lautan teks, Anda tahu pentingnya pengorganisasian yang baik. Memberi tag pada elemen dalam PDF Anda dapat meningkatkan aksesibilitas, sehingga memudahkan pembaca layar untuk menginterpretasikan konten. Dalam panduan ini, kami akan membahas penggunaan Aspose.PDF for .NET untuk membuat dokumen PDF yang diberi tag, memastikan pekerjaan Anda memenuhi standar modern dalam penataan dokumen.
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Sebelum kita mulai beraksi, mari pastikan Anda memiliki semua yang perlu diikuti:
 
-1. Pustaka Aspose.PDF untuk .NET terpasang.
-2. Pengetahuan dasar tentang bahasa pemrograman C#.
+1. Pengetahuan Dasar C#: Kemampuan dalam pemrograman C# dan dasar-dasar kerangka .NET sangatlah penting.
+2. Visual Studio Terpasang: Anda memerlukan IDE seperti Visual Studio untuk menulis dan menjalankan kode Anda.
+3.  Aspose.PDF untuk .NET: Pastikan Anda mengunduh dan menginstal Aspose.PDF untuk .NET. Anda dapat mengunduhnya dari[tautan unduhan](https://releases.aspose.com/pdf/net/).
+4. Lisensi Sementara: Ini opsional, tetapi jika Anda ingin mengevaluasi semua fitur tanpa batasan, pertimbangkan untuk memperoleh lisensi sementara.[lisensi sementara](https://purchase.aspose.com/temporary-license/).
 
-## Langkah 1: Menyiapkan lingkungan
+Setelah Anda memiliki prasyarat ini, Anda siap membuat dokumen PDF bertag pertama Anda!
 
-Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke pustaka Aspose.PDF untuk .NET dalam proyek Anda.
+## Paket Impor
+
+Untuk memulai, mari impor paket-paket yang diperlukan. Ini memungkinkan proyek Anda memanfaatkan kemampuan pustaka Aspose.PDF.
+
+1. Buka proyek Visual Studio Anda.
+2. Tambahkan referensi ke pustaka Aspose.PDF. Jika Anda belum menambahkannya, Anda dapat menggunakan NuGet Package Manager untuk menginstalnya.
+3. Sertakan namespace berikut di bagian atas file C# Anda:
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 2: Membuat dokumen
+Dengan impor ini, Anda siap meraih kesuksesan.
 
- Langkah pertama adalah membuat dokumen PDF baru menggunakan`Document` kelas.
+## Rincian Kode: Panduan Langkah demi Langkah untuk Membuat PDF yang Ditandai
+
+Setelah semuanya siap, mari kita uraikan kodenya langkah demi langkah. Kita akan membuat PDF yang diberi tag dengan elemen terstruktur seperti tajuk dan paragraf, yang memungkinkan aksesibilitas yang lebih baik.
+
+### Langkah 1: Mengatur Direktori Dokumen
+
+Pertama, tentukan jalur penyimpanan dokumen Anda. Sebaiknya Anda menjaga struktur berkas tetap teratur.
 
 ```csharp
-// Buat dokumen PDF
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ganti dengan jalur Anda yang sebenarnya
+```
+
+### Langkah 2: Buat Contoh Dokumen PDF
+
+ Selanjutnya, buatlah sebuah instance dari`Document` kelas, yang akan berfungsi sebagai wadah untuk konten PDF Anda.
+
+```csharp
 Document document = new Document();
 ```
 
-## Langkah 3: Bekerja dengan konten yang diberi tag
+### Langkah 3: Akses Konten yang Ditandai
 
-Lalu, kita dapatkan konten dokumen yang diberi tag untuk dikerjakan.
+Sekarang, akses konten yang diberi tag pada dokumen. Di sinilah keajaiban terjadi—dengan memberi tag pada konten, kita meningkatkan aksesibilitasnya.
 
 ```csharp
-// Dapatkan konten yang ditandai dari dokumen
-ITaggedContent taggedContent = document.TaggedContent;
+ITaggedContent taggedContent = document.TaggedContent;    
 ```
 
-## Langkah 4: Tetapkan judul dan bahasa dokumen
+### Langkah 4: Atur Judul dan Bahasa
 
-Sekarang kita dapat mengatur judul dokumen dan bahasa.
-
-```csharp
-// Tentukan judul dan bahasa dokumen
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Langkah 5: Tambahkan elemen struktural secara online
-
-Sekarang kita akan menambahkan elemen struktur sebaris seperti judul berbagai tingkat dan paragraf ke dokumen kita.
+Menetapkan judul dan bahasa untuk dokumen PDF Anda sangat penting bagi pengguna dan pembaca layar. Ini membuat dokumen Anda lebih informatif dan mudah diakses.
 
 ```csharp
-// Dapatkan elemen struktur akar
-StructureElement rootElement = taggedContent.RootElement;
-
-// Tambahkan header dari berbagai level
-HeaderElement h1 = taggedContent.CreateHeaderElement(1);
-HeaderElement h2 = taggedContent.CreateHeaderElement(2);
-HeaderElement h3 = taggedContent.CreateHeaderElement(3);
-HeaderElement h4 = taggedContent.CreateHeaderElement(4);
-HeaderElement h5 = taggedContent.CreateHeaderElement(5);
-HeaderElement h6 = taggedContent.CreateHeaderElement(6);
-rootElement.AppendChild(h1);
-rootElement.AppendChild(h2);
-rootElement.AppendChild(h3);
-rootElement.AppendChild(h4);
-rootElement.AppendChild(h5);
-rootElement.AppendChild(h6);
-
-// Tambahkan konten ke setiap header
-SpanElement spanH11 = taggedContent.CreateSpanElement();
-spanH11.SetText("H1.");
-h1.AppendChild(spanH11);
-SpanElement spanH12 = taggedContent.CreateSpanElement();
-spanH12.SetText("Level 1 header");
-h1.AppendChild(spanH12);
-
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2.");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 header");
-h2.AppendChild(spanH22);
-
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3.");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 header");
-h3.AppendChild(spanH32);
-
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4.");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 header");
-h4.AppendChild(spanH42);
-
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5.");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 header");
-h5.AppendChild(spanH52);
-
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6.");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Heading level 6");
-h6.AppendChild(spanH62);
-
-// Tambahkan paragraf
-ParagraphElement p = taggedContent.CreateParagraphElement();
-p.SetText("P.");
-rootElement.AppendChild(p);
-
-// Tambahkan konten ke paragraf
-SpanElement span1 = taggedContent.CreateSpanElement();
-span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet.");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit.");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo.");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit.");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. So cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit.");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-```
-
-Di sini kita membuat elemen struktur sebaris, seperti judul berbagai tingkatan dan paragraf, lalu menambahkan konten ke dalamnya.
-
-## Langkah 6: Simpan dokumen PDF yang diberi tag
-
-Terakhir, kami menyimpan dokumen PDF yang diberi tag.
-
-```csharp
-// Simpan dokumen PDF yang diberi tag
-document.Save(dataDir + "InlineStructureElements.pdf");
-```
-
-### Contoh kode sumber untuk Elemen Struktur Inline menggunakan Aspose.PDF untuk .NET 
-
-```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Buat Dokumen Pdf
-Document document = new Document();
-
-// Dapatkan Konten untuk bekerja dengan TaggedPdf
-ITaggedContent taggedContent = document.TaggedContent;
-
-// Mengatur Judul dan Bahasa untuk Dokumen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Dapatkan Elemen Struktur Root
+### Langkah 5: Dapatkan Elemen Struktur Root
+
+Mari mulai menambahkan elemen ke dokumen Anda. Pertama, dapatkan elemen struktur akar dari konten yang diberi tag, yang berfungsi sebagai fondasi untuk membangun struktur dokumen Anda.
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+### Langkah 6: Buat Elemen Header
+
+Sekarang saatnya membuat elemen header. Ini akan membantu dalam mengatur konten ke dalam hierarki. Kita akan membuat enam tingkat header.
+
+```csharp
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
 HeaderElement h4 = taggedContent.CreateHeaderElement(4);
 HeaderElement h5 = taggedContent.CreateHeaderElement(5);
 HeaderElement h6 = taggedContent.CreateHeaderElement(6);
+```
+
+### Langkah 7: Tambahkan Header ke Elemen Root
+
+Setelah membuat elemen header, tambahkan elemen tersebut ke elemen root. Ini akan membangun hierarki struktural dokumen.
+
+```csharp
 rootElement.AppendChild(h1);
 rootElement.AppendChild(h2);
 rootElement.AppendChild(h3);
 rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
+```
+
+### Langkah 8: Tambahkan Teks ke Setiap Header
+
+Sekarang, mari tambahkan beberapa teks ke setiap tajuk. Ini adalah proses yang mudah tetapi penting untuk membuat dokumen Anda bermanfaat. 
+
+```csharp
+// H1
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1. ");
 h1.AppendChild(spanH11);
 SpanElement spanH12 = taggedContent.CreateSpanElement();
 spanH12.SetText("Level 1 Header");
 h1.AppendChild(spanH12);
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2. ");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 Header");
-h2.AppendChild(spanH22);
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3. ");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 Header");
-h3.AppendChild(spanH32);
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4. ");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 Header");
-h4.AppendChild(spanH42);
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5. ");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 Header");
-h5.AppendChild(spanH52);
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6. ");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Level 6 Header");
-h6.AppendChild(spanH62);
+
+// Ulangi untuk H2 - H6 seperti yang ditunjukkan di atas
+```
+
+### Langkah 9: Buat Elemen Paragraf
+
+Selanjutnya, mari tambahkan elemen paragraf. Ini akan berfungsi sebagai area konten utama PDF Anda. 
+
+```csharp
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P. ");
 rootElement.AppendChild(p);
+```
+
+### Langkah 10: Tambahkan Teks ke Paragraf
+
+Sekarang setelah kita memiliki elemen paragraf, saatnya untuk mengisinya dengan teks. Anda dapat menambahkan beberapa rentang untuk menyusun konten Anda.
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
 p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet. ");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit. ");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo. ");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. ");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. ");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-
-// Simpan Dokumen Pdf yang Ditandai
-document.Save(dataDir + "InlineStructureElements.pdf");
-
+// Terus tambahkan rentang tambahan sesuai kebutuhan
 ```
+
+### Langkah 11: Simpan Dokumen PDF yang Ditandai
+
+Terakhir, setelah menambahkan semua konten, Anda perlu menyimpan dokumen Anda. Mari kita selesaikan!
+
+```csharp
+document.Save(dataDir + "InlineStructureElements.pdf");
+```
+
+Dan voila! Kini Anda memiliki dokumen PDF yang diberi tag, terstruktur, dan mudah diakses.
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menggunakan elemen struktur sebaris dengan Aspose.PDF untuk .NET. Kini Anda dapat membuat struktur hierarkis dalam dokumen PDF Anda dengan menggunakan judul dari berbagai tingkatan dan paragraf. Jelajahi lebih banyak fitur Aspose.PDF untuk menemukan potensi penuhnya.
+Membuat dokumen PDF yang diberi tag mungkin tampak menakutkan, tetapi dengan Aspose.PDF untuk .NET, semuanya menjadi mudah! Dengan mengikuti panduan langkah demi langkah ini, Anda telah menguasai dasar-dasar penataan dokumen. Ingat, pemberian tag yang tepat pada PDF Anda akan meningkatkan aksesibilitasnya, memastikan bahwa konten Anda yang berharga menjangkau audiens yang lebih luas. Jadi, lanjutkan dan buat PDF Anda tidak hanya cantik tetapi juga mudah digunakan!
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa saja elemen struktur sebaris dalam dokumen PDF, dan bagaimana elemen-elemen tersebut berkontribusi dalam menciptakan struktur hierarkis?
+### Apa itu PDF yang diberi tag?
+PDF yang diberi tag adalah PDF yang menyertakan informasi tentang struktur dokumen, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas.
 
-A: Elemen struktur sebaris dalam dokumen PDF, seperti judul dengan berbagai tingkatan dan paragraf, digunakan untuk membuat struktur hierarki yang mengatur dan menyajikan konten secara terstruktur. Elemen-elemen ini memungkinkan Anda membuat hierarki dan alur informasi yang jelas dalam dokumen.
+### Mengapa penandaan penting dalam PDF?
+Penandaan meningkatkan aksesibilitas, memungkinkan pembaca layar menafsirkan dokumen dengan jelas, sehingga memberikan pengalaman yang lebih baik bagi pengguna penyandang disabilitas.
 
-#### T: Bagaimana elemen struktur sebaris dapat meningkatkan keterbacaan dan pengorganisasian dokumen PDF?
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Anda dapat mengevaluasi Aspose.PDF untuk .NET melalui[uji coba gratis](https://releases.aspose.com/).
 
-A: Elemen struktur sebaris, khususnya judul dan paragraf, membantu meningkatkan keterbacaan dan pengaturan dokumen PDF dengan menyediakan struktur yang logis. Judul menunjukkan berbagai tingkat kepentingan dan membantu pembaca menelusuri konten, sementara paragraf mengelompokkan informasi terkait menjadi satu.
+### Di mana saya bisa mendapatkan dukungan untuk Aspose.PDF?
+ Dukungan dapat diakses melalui[Forum dukungan Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi penggunaan elemen struktur sebaris?
-
-A: Aspose.PDF untuk .NET menawarkan kelas dan metode untuk membuat dan memanipulasi elemen struktur sebaris, seperti judul dan paragraf. Elemen-elemen ini dapat disesuaikan, disusun secara hierarkis, dan diperkaya dengan konten untuk meningkatkan tampilan visual dan aksesibilitas dokumen.
-
-####  T: Apa tujuan dari`taggedContent` object in relation to inline structure elements?
-
- Sebuah:`taggedContent` objek, diperoleh dari`TaggedContent` milik suatu`Document`, memungkinkan Anda bekerja dengan elemen terstruktur, termasuk elemen struktur sebaris. Memungkinkan Anda membuat, menyesuaikan, dan mengatur judul dan paragraf dalam dokumen.
-
-#### T: Bagaimana elemen struktur sebaris membantu dalam menciptakan hierarki dokumen yang jelas?
-
-A: Elemen struktur sebaris, seperti judul dengan berbagai tingkatan, berkontribusi dalam membangun hierarki yang jelas dan terdefinisi dengan baik dalam dokumen. Pembaca dapat dengan cepat mengidentifikasi topik utama, subtopik, dan konten terkait, sehingga dokumen lebih mudah dinavigasi dan dipahami.
-
-#### T: Dapatkah saya menyesuaikan tampilan dan pemformatan elemen struktur sebaris menggunakan Aspose.PDF untuk .NET?
-
-A: Ya, Anda dapat menyesuaikan tampilan dan format elemen struktur sebaris. Anda dapat mengatur properti seperti gaya font, ukuran, warna, perataan, indentasi, dan spasi untuk mendapatkan tampilan visual yang diinginkan untuk judul dan paragraf.
-
-#### T: Bagaimana cara membuat dan menambahkan judul berbagai tingkatan ke dokumen PDF menggunakan elemen struktur sebaris di Aspose.PDF untuk .NET?
-
- A: Anda dapat membuat judul dengan level berbeda menggunakan`CreateHeaderElement`metode dan kemudian menambahkannya ke elemen struktur akar. Selanjutnya, Anda dapat menambahkan konten ke setiap elemen judul menggunakan`CreateSpanElement` metode untuk membuat rentang teks.
-
-#### T: Dapatkah saya menggunakan elemen struktur sebaris untuk membuat daftar, poin-poin penting, atau jenis organisasi konten lainnya dalam dokumen PDF?
-
-J: Sementara elemen struktur sebaris sendiri terutama digunakan untuk judul dan paragraf, Anda dapat menggunakannya dalam kombinasi dengan fitur lain yang ditawarkan oleh Aspose.PDF untuk .NET untuk membuat daftar, poin-poin penting, tabel, dan jenis organisasi konten lainnya untuk struktur dokumen yang komprehensif.
-
-#### T: Bagaimana elemen struktur sebaris berkontribusi terhadap aksesibilitas dokumen?
-
-A: Elemen struktur sebaris memainkan peran penting dalam meningkatkan aksesibilitas dokumen. Judul dan paragraf yang terstruktur dengan baik memberikan hierarki dokumen yang jelas yang membantu pembaca layar dan teknologi bantuan lainnya dalam menafsirkan dan menyampaikan konten secara akurat kepada pengguna penyandang disabilitas.
-
-#### T: Dapatkah saya mengeksplorasi penggunaan elemen struktur sebaris yang lebih canggih, seperti membuat elemen interaktif atau menyematkan multimedia?
-
-A: Tentu saja! Meskipun tutorial ini berfokus pada pembuatan judul dan paragraf, Aspose.PDF untuk .NET menawarkan fitur-fitur canggih untuk membuat elemen interaktif, menyematkan multimedia, menambahkan hyperlink, dan banyak lagi. Periksa dokumentasi dan contoh pustaka untuk mempelajari lebih dalam kemampuan-kemampuan canggih ini.
+### Bagaimana saya dapat membeli lisensi Aspose.PDF untuk .NET?
+ Anda dapat membeli lisensi langsung dari[halaman pembelian](https://purchase.aspose.com/buy).

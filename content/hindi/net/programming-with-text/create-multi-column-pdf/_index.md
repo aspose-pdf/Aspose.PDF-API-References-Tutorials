@@ -2,214 +2,179 @@
 title: मल्टी कॉलम पीडीएफ बनाएं
 linktitle: मल्टी कॉलम पीडीएफ बनाएं
 second_title: .NET API संदर्भ के लिए Aspose.PDF
-description: .NET के लिए Aspose.PDF का उपयोग करके बहु-स्तंभ पीडीएफ बनाना सीखें।
+description: .NET के लिए Aspose.PDF का उपयोग करके मल्टी-कॉलम PDF बनाना सीखें। कोड उदाहरणों और विस्तृत स्पष्टीकरण के साथ चरण-दर-चरण मार्गदर्शिका। पेशेवरों के लिए बिल्कुल सही।
 type: docs
 weight: 110
 url: /hi/net/programming-with-text/create-multi-column-pdf/
 ---
-यह ट्यूटोरियल आपको .NET के लिए Aspose.PDF का उपयोग करके मल्टी कॉलम पीडीएफ बनाने की प्रक्रिया के माध्यम से मार्गदर्शन करेगा। प्रदान किया गया C# स्रोत कोड आवश्यक चरणों को प्रदर्शित करता है।
+## परिचय
 
-## आवश्यकताएं
-आरंभ करने से पहले, सुनिश्चित करें कि आपके पास निम्नलिखित हैं:
+मल्टी-कॉलम पीडीएफ बनाना टेक्स्ट को अधिक व्यवस्थित, पठनीय प्रारूप में प्रस्तुत करने का एक शानदार तरीका है। चाहे आप किसी प्रकाशन के लिए रिपोर्ट, लेख या लेआउट तैयार कर रहे हों, मल्टी-कॉलम संरचनाएँ आपकी सामग्री को अधिक आकर्षक बना सकती हैं। इस ट्यूटोरियल में, हम .NET के लिए Aspose.PDF का उपयोग करके मल्टी-कॉलम पीडीएफ बनाने का तरीका बताएंगे। चिंता न करें, हम इसे सरल चरणों में विभाजित करेंगे, जिससे इसे पालन करना आसान हो जाएगा, भले ही आप प्लेटफ़ॉर्म पर नए हों।
 
-- आपके मशीन पर Visual Studio या कोई अन्य C# कंपाइलर स्थापित होना चाहिए।
-- .NET लाइब्रेरी के लिए Aspose.PDF. आप इसे आधिकारिक Aspose वेबसाइट से डाउनलोड कर सकते हैं या इसे इंस्टॉल करने के लिए NuGet जैसे पैकेज मैनेजर का उपयोग कर सकते हैं।
+## आवश्यक शर्तें
 
-## चरण 1: प्रोजेक्ट सेट अप करें
-1. अपने पसंदीदा विकास वातावरण में एक नया C# प्रोजेक्ट बनाएं।
-2. .NET लाइब्रेरी के लिए Aspose.PDF का संदर्भ जोड़ें।
+इससे पहले कि हम कोड में प्रवेश करें, कुछ चीजें हैं जिन्हें आपको सुचारू रूप से अनुसरण करने के लिए तैयार रखना होगा:
 
-## चरण 2: आवश्यक नामस्थान आयात करें
-उस कोड फ़ाइल में जहाँ आप बहु-स्तंभ पीडीएफ बनाना चाहते हैं, फ़ाइल के शीर्ष पर निम्नलिखित using निर्देश जोड़ें:
+1.  .NET के लिए Aspose.PDF: आपको यह लाइब्रेरी इंस्टॉल करनी होगी। आप इसे यहाँ से डाउनलोड कर सकते हैं[यहाँ](https://releases.aspose.com/pdf/net/).
+2. विकास वातावरण: C# कोड लिखने और चलाने के लिए विजुअल स्टूडियो जैसे अपने पसंदीदा IDE को सेट करें।
+3. .NET फ्रेमवर्क: सुनिश्चित करें कि आपके पास .NET का संगत संस्करण स्थापित है।
+4. C# की बुनियादी समझ: C# सिंटैक्स से परिचित होना उपयोगी होगा, लेकिन हम प्रत्येक चरण को विस्तार से समझाएंगे।
+5.  अस्थायी लाइसेंस: Aspose.PDF को वॉटरमार्क या सीमाओं से बचने के लिए लाइसेंस की आवश्यकता होती है। आप एक प्राप्त कर सकते हैं[अस्थायी लाइसेंस](https://purchase.aspose.com/temporary-license/) यदि ज़रूरत हो तो।
+
+## पैकेज आयात करें
+
+कोडिंग शुरू करने से पहले, आपको आवश्यक नेमस्पेस आयात करने की आवश्यकता है जो आपको Aspose.PDF के साथ इंटरैक्ट करने की अनुमति देगा। आपको क्या आयात करना होगा:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## चरण 3: दस्तावेज़ निर्देशिका सेट करें
- कोड में, वह पंक्ति ढूंढें जो कहती है`string dataDir = "YOUR DOCUMENT DIRECTORY";` और प्रतिस्थापित करें`"YOUR DOCUMENT DIRECTORY"` उस निर्देशिका का पथ जहां आपके दस्तावेज़ संग्रहीत हैं.
+ये नामस्थान पीडीएफ बनाने, आकृतियां बनाने और पाठ स्वरूपण को संभालने के लिए आवश्यक वर्गों तक पहुंच प्रदान करते हैं।
 
-## चरण 4: एक नया दस्तावेज़ इंस्टेंस बनाएँ
- एक नया उदाहरण बनाएँ`Document` निम्न कोड पंक्ति जोड़कर ऑब्जेक्ट बनाएँ:
+आइए बहु-स्तंभ पीडीएफ बनाने की प्रक्रिया को सरल, प्रबंधनीय चरणों में विभाजित करें।
 
-```csharp
-Document doc = new Document();
-```
+## चरण 1: दस्तावेज़ सेट करना
 
-## चरण 5: पेज मार्जिन सेट करें
- पीडीएफ फाइल के लिए बाएं और दाएं मार्जिन की जानकारी निर्दिष्ट करें`PageInfo.Margin` की संपत्ति`Document`.
+शुरू करने के लिए, आपको एक नया पीडीएफ दस्तावेज़ बनाना होगा। इसमें मार्जिन को परिभाषित करना और एक पेज जोड़ना शामिल है जहाँ आपकी सामग्री जाएगी।
 
-```csharp
-doc.PageInfo.Margin.Left = 40;
-doc.PageInfo.Margin.Right = 40;
-```
-
-## चरण 6: दस्तावेज़ में एक पृष्ठ जोड़ें
- दस्तावेज़ में नया पृष्ठ जोड़ने के लिए निम्न का उपयोग करें:`Add` की विधि`Pages` संग्रह। प्रदान किए गए कोड में, नया पृष्ठ चर को सौंपा गया है`page`.
-
-```csharp
-Page page = doc.Pages.Add();
-```
-
-## चरण 7: एक ग्राफ़ ऑब्जेक्ट बनाएँ और एक रेखा जोड़ें
- एक नया बनाएँ`Graph` विशिष्ट आयामों वाली वस्तु लें और उसमें एक रेखा जोड़ें। फिर, जोड़ें`Graph` इस पर आपत्ति जताना`Paragraphs` पृष्ठ का संग्रह.
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-float[] backPos = new float[] { 1, 2, 500, 2 };
-Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
-graph1.Shapes.Add(l1);
-page.Paragraphs.Add(graph1);
-```
-
-## चरण 8: HTML फ़ॉर्मेटिंग के साथ शीर्षक टेक्स्ट जोड़ें
- एक बनाएं`HtmlFragment` ऑब्जेक्ट और इसकी सामग्री को वांछित HTML टेक्स्ट पर सेट करें। फिर, फ़्रैगमेंट को इसमें जोड़ें`Paragraphs` पृष्ठ का संग्रह.
-
-```csharp
-string s = "<font face=\"Times New Roman\" size=4>" +
-     "<strong>How to Steer Clear of money scams</<strong>" +
-     "</font>";
-HtmlFragment heading_text = new HtmlFragment(s);
-page.Paragraphs.Add(heading_text);
-```
-
-## चरण 9: एकाधिक कॉलम वाला फ़्लोटिंगबॉक्स बनाएँ
- एक बनाने के`FloatingBox` ऑब्जेक्ट पर जाएं और कॉलम की संख्या और कॉलम स्पेसिंग सेट करें। फिर, टेक्स्ट के टुकड़े और एक लाइन जोड़ें`Paragraphs` का संग्रह`FloatingBox`.
-
-```csharp
-Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-box. ColumnInfo. ColumnCount = 2;
-box.ColumnInfo.ColumnSpacing = "5";
-box.ColumnInfo.ColumnWidths = "105 105";
-
-TextFragment text1 = new TextFragment("By A Googling (The Official Google Blog)");
-text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-
-TextFragment text2 = new TextFragment("Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam...");
-box.Paragraphs.Add(text2);
-
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-float[] posArr2 = new float[] { 1, 10, 100, 10 };
-Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
-graph2.Shapes.Add(l2);
-box.Paragraphs.Add(graph2);
-
-page.Paragraphs.Add(box);
-```
-
-## चरण 10: पीडीएफ दस्तावेज़ सहेजें
- पीडीएफ दस्तावेज़ को सेव करने के लिए निम्न का उपयोग करें:`Save` की विधि`Document` वस्तु।
-
-```csharp
-doc.Save(dataDir);
-```
-
-### .NET के लिए Aspose.PDF का उपयोग करके मल्टी कॉलम पीडीएफ बनाने के लिए नमूना स्रोत कोड 
 ```csharp
 // दस्तावेज़ निर्देशिका का पथ.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// एक नया PDF दस्तावेज़ बनाएँ
 Document doc = new Document();
-// पीडीएफ फाइल के लिए बाएं मार्जिन की जानकारी निर्दिष्ट करें
+
+// पीडीएफ फाइल के लिए मार्जिन सेट करें
 doc.PageInfo.Margin.Left = 40;
-// पीडीएफ फाइल के लिए दाएँ मार्जिन की जानकारी निर्दिष्ट करें
 doc.PageInfo.Margin.Right = 40;
+
+// दस्तावेज़ में एक पृष्ठ जोड़ें
 Page page = doc.Pages.Add();
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// सेक्शन ऑब्जेक्ट के पैराफ्राफ़्स संग्रह में लाइन जोड़ें
+```
+
+ यहाँ, हमने एक बनाया है`Document`ऑब्जेक्ट और बाएं और दाएं मार्जिन को 40 इकाइयों पर सेट करें। फिर, हमने इस दस्तावेज़ में एक नया पृष्ठ जोड़ा, जो हमारे बहु-स्तंभ लेआउट को धारण करेगा।
+
+## चरण 2: अनुभागों को अलग करने के लिए एक पंक्ति जोड़ना
+
+इसके बाद, विज़ुअल सेपरेशन के लिए पेज पर एक क्षैतिज रेखा जोड़ें। इससे एक साफ और पेशेवर लुक बनाने में मदद मिलती है।
+
+```csharp
+// रेखा को पकड़ने के लिए एक ग्राफ ऑब्जेक्ट बनाएं
+Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
+
+// पृष्ठ के पैराग्राफ़ संग्रह में पंक्ति जोड़ें
 page.Paragraphs.Add(graph1);
-// रेखा के लिए निर्देशांक निर्दिष्ट करें
+
+// रेखा के लिए निर्देशांक परिभाषित करें
 float[] posArr = new float[] { 1, 2, 500, 2 };
+
+// एक रेखा बनाएं और उसे ग्राफ़ में जोड़ें
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// HTML टैग वाले टेक्स्ट के साथ स्ट्रिंग वैरिएबल बनाएं
+```
+
+ यहाँ, हम का उपयोग करके एक क्षैतिज रेखा बना रहे हैं`Graph` और`Line` कक्षाएं। यह पंक्ति पृष्ठ के`Paragraphs` संग्रह, जिसमें सभी दृश्य तत्व मौजूद हैं।
+
+## चरण 3: फ़ॉर्मेटिंग के साथ HTML टेक्स्ट जोड़ना
+
+इसके बाद, आइए कुछ पाठ डालें जिसमें HTML टैग शामिल हों, ताकि यह दिखाया जा सके कि आप पीडीएफ में पाठ को गतिशील रूप से कैसे प्रारूपित कर सकते हैं।
+
+```csharp
+// HTML सामग्री के साथ एक स्ट्रिंग बनाएँ
 string s = "<font face=\"Times New Roman\" size=4>" +
-"<strong> How to Steer Clear of money scams</<strong> "
-+ "</font>";
-// HTML टेक्स्ट युक्त टेक्स्ट पैराग्राफ़ बनाएँ
+           "<strong> How to Steer Clear of Money Scams </strong>" +
+           "</font>";
+
+// स्वरूपित पाठ के साथ एक नया HtmlFragment बनाएँ
 HtmlFragment heading_text = new HtmlFragment(s);
+
+// पृष्ठ पर HTML पाठ जोड़ें
 page.Paragraphs.Add(heading_text);
+```
+
+ का उपयोग`HtmlFragment`क्लास में, हम फ़ॉर्मेटेड टेक्स्ट जोड़ सकते हैं जिसमें HTML टैग जैसे फ़ॉन्ट आकार, शैली और बोल्ड टेक्स्ट शामिल हैं। यह आपकी PDF सामग्री की उपस्थिति को बढ़ाने के लिए उपयोगी है।
+
+## चरण 4: बहु-स्तंभ लेआउट बनाना
+
+अब हम एक मल्टी-कॉलम लेआउट बनाएंगे। यहीं पर जादू होता है - आप यह निर्दिष्ट कर सकते हैं कि आपको कितने कॉलम चाहिए और वे कितने चौड़े होने चाहिए।
+
+```csharp
+// कॉलम रखने के लिए एक फ़्लोटिंग बॉक्स बनाएं
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// अनुभाग में चार कॉलम जोड़ें
+
+// स्तंभों की संख्या और उनके बीच की दूरी निर्धारित करें
 box.ColumnInfo.ColumnCount = 2;
-// स्तंभों के बीच अंतर निर्धारित करें
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
+
+// बॉक्स को पेज पर जोड़ें
+page.Paragraphs.Add(box);
+```
+
+यहाँ, हम एक फ़्लोटिंग बॉक्स बना रहे हैं जिसमें दो कॉलम होंगे। हम कॉलम के बीच की दूरी निर्धारित करते हैं और निर्दिष्ट करते हैं कि प्रत्येक कॉलम 105 यूनिट चौड़ा होना चाहिए। यह हमें PDF के भीतर वांछित कॉलम लेआउट बनाने की अनुमति देता है।
+
+## चरण 5: कॉलम में टेक्स्ट जोड़ना
+
+ चलिए अब कॉलम में कुछ टेक्स्ट कंटेंट भरते हैं। आप अलग-अलग टेक्स्ट जोड़ सकते हैं।`TextFragment` प्रत्येक कॉलम में ऑब्जेक्ट जोड़ें.
+
+```csharp
+// पहला पाठ खंड बनाएं और प्रारूपित करें
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
 text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// रेखा खींचने के लिए ग्राफ़ ऑब्जेक्ट बनाएँ
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// रेखा के लिए निर्देशांक निर्दिष्ट करें
+box.Paragraphs.Add(text1);
+
+// पृथक्करण के लिए एक और पंक्ति जोड़ें
+Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-//सेक्शन ऑब्जेक्ट के पैराग्राफ़ संग्रह में लाइन जोड़ें
 box.Paragraphs.Add(graph2);
-TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
+
+//दूसरा पाठ खंड बनाएं और जोड़ें
+TextFragment text2 = new TextFragment("Lorem ipsum dolor sit amet, consectetur adipiscing elit...");
 box.Paragraphs.Add(text2);
-page.Paragraphs.Add(box);
-dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// पीडीएफ फाइल सहेजें
-doc.Save(dataDir);
-Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## निष्कर्ष
-आपने .NET के लिए Aspose.PDF का उपयोग करके सफलतापूर्वक एक बहु-स्तंभ PDF बनाया है। परिणामी PDF फ़ाइल अब निर्दिष्ट आउटपुट फ़ाइल पथ पर पाई जा सकती है।
+ हम एक जोड़ते हैं`TextFragment` फ़्लोटिंग बॉक्स में, उसके बाद एक और क्षैतिज रेखा।`TextFragment` दूसरे कॉलम को भरने के लिए अधिक टेक्स्ट शामिल है। ये टुकड़े हमें पीडीएफ में विभिन्न स्वरूपण विकल्पों के साथ विभिन्न टेक्स्ट तत्व जोड़ने की अनुमति देते हैं।
 
-### अक्सर पूछे जाने वाले प्रश्न
+## चरण 6: पीडीएफ को सेव करना
 
-#### प्रश्न: इस ट्यूटोरियल का फोकस क्या है?
-
-यह ट्यूटोरियल आपको Aspose.PDF for .NET लाइब्रेरी का उपयोग करके मल्टी-कॉलम पीडीएफ बनाने की प्रक्रिया के माध्यम से मार्गदर्शन करने पर केंद्रित है। प्रदान किया गया C# स्रोत कोड इसे प्राप्त करने के लिए आवश्यक चरणों को प्रदर्शित करता है।
-
-#### प्रश्न: इस ट्यूटोरियल के लिए मुझे कौन से नेमस्पेस आयात करने चाहिए?
-
-उत्तर: उस कोड फ़ाइल में जहाँ आप बहु-स्तंभ पीडीएफ बनाना चाहते हैं, फ़ाइल के आरंभ में निम्नलिखित नामस्थान आयात करें:
+अपनी सारी सामग्री जोड़ने के बाद, अंतिम चरण दस्तावेज़ को पीडीएफ फाइल के रूप में सहेजना है।
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+// पीडीएफ के लिए आउटपुट पथ निर्धारित करें
+dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
+
+// पीडीएफ दस्तावेज़ सहेजें
+doc.Save(dataDir);
+
+// आउटपुट सफलता संदेश
+Console.WriteLine("\nMulti-column PDF file created successfully.\nFile saved at " + dataDir);
 ```
 
-#### प्रश्न: मैं दस्तावेज़ निर्देशिका कैसे निर्दिष्ट करूँ?
+यह ब्लॉक पीडीएफ फाइल को निर्दिष्ट निर्देशिका में सहेजता है और कंसोल में एक सफलता संदेश आउटपुट करता है। पीडीएफ अब देखने के लिए तैयार है!
 
- उत्तर: कोड में, पंक्ति ढूंढें`string dataDir = "YOUR DOCUMENT DIRECTORY";` और प्रतिस्थापित करें`"YOUR DOCUMENT DIRECTORY"` आपके दस्तावेज़ निर्देशिका के वास्तविक पथ के साथ.
+## निष्कर्ष
 
-#### प्रश्न: मैं नया दस्तावेज़ उदाहरण कैसे बनाऊं?
+इन सरल चरणों का पालन करके, आप आसानी से .NET के लिए Aspose.PDF का उपयोग करके एक पेशेवर दिखने वाला मल्टी-कॉलम पीडीएफ बना सकते हैं। चाहे वह रिपोर्ट, लेख या न्यूज़लेटर के लिए हो, यह तकनीक सामग्री को एक आकर्षक प्रारूप में व्यवस्थित करने में मदद करती है। Aspose.PDF आपके पीडीएफ को मार्जिन और लेआउट से लेकर टेक्स्ट फ़ॉर्मेटिंग और आकृतियों को बनाने तक के लिए शक्तिशाली उपकरण प्रदान करता है। अब इसे आज़माने और अपने पीडीएफ निर्माण कौशल को अगले स्तर तक ले जाने की आपकी बारी है!
 
- उत्तर: चरण 4 में, आप एक नया इन्स्टेन्सिएट करेंगे`Document` दिए गए कोड का उपयोग करके ऑब्जेक्ट को चिह्नित करें।
+## अक्सर पूछे जाने वाले प्रश्न
 
-#### प्रश्न: मैं पृष्ठ मार्जिन कैसे निर्धारित करूँ?
+### क्या मैं PDF में दो से अधिक कॉलम बना सकता हूँ?
+ हां, आप जितने चाहें उतने कॉलम बना सकते हैं। बस सेटिंग को एडजस्ट करें`ColumnCount` प्रॉपर्टी का चयन करें ताकि आप इच्छित कॉलम की संख्या से मेल खा सकें।
 
- उत्तर: चरण 5 में, आप इसका उपयोग करेंगे`PageInfo.Margin` की संपत्ति`Document` पीडीएफ फाइल के लिए बाएं और दाएं मार्जिन की जानकारी निर्दिष्ट करने के लिए।
+### मैं प्रत्येक कॉलम की चौड़ाई कैसे बदलूं?
+ आप संशोधित कर सकते हैं`ColumnWidths` प्रत्येक कॉलम के लिए अलग-अलग चौड़ाई निर्दिष्ट करने के लिए प्रॉपर्टी। यह प्रॉपर्टी रिक्त स्थान द्वारा अलग किए गए मानों की एक स्ट्रिंग स्वीकार करती है।
 
-#### प्रश्न: मैं दस्तावेज़ में पृष्ठ कैसे जोड़ूं?
+### क्या स्तंभों में छवियाँ जोड़ना संभव है?
+ बिल्कुल! आप इसका उपयोग करके चित्र जोड़ सकते हैं`Image` क्लास में जाकर उन्हें अपने पीडीएफ में फ्लोटिंग बॉक्स या किसी अन्य लेआउट तत्व में शामिल करें।
 
- उत्तर: चरण 6 में, आप दस्तावेज़ में एक नया पृष्ठ जोड़ेंगे`Add` की विधि`Pages` संग्रह।
+### क्या मैं कॉलम में HTML टैग के साथ टेक्स्ट को स्टाइल कर सकता हूँ?
+ हां, आप HTML टैग का उपयोग कर सकते हैं`HtmlFragment` अपने टेक्स्ट को स्टाइल करने के लिए ऑब्जेक्ट्स का उपयोग करें। इसमें फ़ॉन्ट, आकार, रंग और बहुत कुछ जोड़ना शामिल है।
 
-#### प्रश्न: मैं ग्राफ ऑब्जेक्ट कैसे बनाऊं और उसमें रेखा कैसे जोड़ूं?
-
- उत्तर: चरण 7 में, आप एक नया बनाएंगे`Graph` ऑब्जेक्ट, इसमें एक पंक्ति जोड़ें, और फिर जोड़ें`Graph` इस पर आपत्ति जताना`Paragraphs` पृष्ठ का संग्रह.
-
-#### प्रश्न: मैं HTML स्वरूपण के साथ शीर्षक पाठ कैसे जोड़ूं?
-
-उत्तर: चरण 8 में, आप एक बनाएंगे`HtmlFragment` ऑब्जेक्ट और इसकी सामग्री को वांछित HTML पाठ पर सेट करें, फिर खंड को इसमें जोड़ें`Paragraphs` पृष्ठ का संग्रह.
-
-#### प्रश्न: मैं एकाधिक कॉलम वाला फ्लोटिंगबॉक्स कैसे बनाऊं?
-
- उत्तर: चरण 9 में, आप एक बनाएंगे`FloatingBox` एकाधिक स्तंभों और स्तंभ रिक्तियों के साथ ऑब्जेक्ट, फिर पाठ टुकड़े और एक पंक्ति जोड़ें`Paragraphs` का संग्रह`FloatingBox`.
-
-#### प्रश्न: मैं पीडीएफ दस्तावेज़ कैसे सहेजूं?
-
- उत्तर: चरण 10 में, आप PDF दस्तावेज़ को निम्न का उपयोग करके सहेजेंगे`Save` की विधि`Document` वस्तु।
-
-#### प्रश्न: इस ट्यूटोरियल से मुख्य बात क्या है?
-
-उत्तर: इस ट्यूटोरियल का अनुसरण करके, आपने सीखा है कि .NET के लिए Aspose.PDF का उपयोग करके एक बहु-स्तंभ PDF दस्तावेज़ कैसे बनाया जाता है। यह संरचित और संगठित लेआउट में सामग्री प्रदर्शित करने के लिए उपयोगी हो सकता है।
+### मैं समान कॉलम लेआउट वाले अधिक पृष्ठ कैसे जोड़ सकता हूँ?
+ आप इसका उपयोग करके अतिरिक्त पृष्ठ जोड़ सकते हैं`doc.Pages.Add()` और प्रत्येक पृष्ठ के लिए कॉलम और सामग्री जोड़ने की प्रक्रिया को दोहराएं।

@@ -2,7 +2,7 @@
 title: Získat hodnoty ze všech polí v dokumentu PDF
 linktitle: Získat hodnoty ze všech polí v dokumentu PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak extrahovat hodnoty ze všech polí v dokumentu PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce.
+description: Naučte se extrahovat hodnoty ze všech polí v dokumentu PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce.
 type: docs
 weight: 150
 url: /cs/net/programming-with-forms/get-values-from-all-fields/

@@ -10,7 +10,7 @@ url: /sv/java/pdf-tables/add-table-in-existing-pdf-document-using-java/
 
 ## Introduktion till Lägg till tabell i befintliga PDF-dokument med Java
 
-den här artikeln kommer vi att utforska hur man lägger till en tabell i ett befintligt PDF-dokument med Java. Tabeller är en grundläggande del av många dokument, vilket ger ett strukturerat sätt att visa data. Vi kommer att använda Aspose.PDF för Java-biblioteket för att utföra denna uppgift.
+den här artikeln kommer vi att utforska hur man lägger till en tabell i ett befintligt PDF-dokument med Java. Tabeller är en grundläggande del av många dokument och ger ett strukturerat sätt att visa data. Vi kommer att använda Aspose.PDF för Java-biblioteket för att utföra denna uppgift.
 
 ## Krav
 

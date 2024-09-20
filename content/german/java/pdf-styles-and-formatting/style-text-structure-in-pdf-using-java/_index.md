@@ -180,7 +180,7 @@ In diesem Handbuch haben wir untersucht, wie Sie Textstrukturen in PDFs mithilfe
 
 ## Häufig gestellte Fragen
 
-### Wie ändere ich die Textschriftart in einer PDF-Datei?
+### Wie ändere ich die Textschriftart in einer PDF?
 
  Um die Schriftart eines Textes in einer PDF-Datei zu ändern, verwenden Sie die`setTextState()` und geben Sie die gewünschte Schriftart an mit`setFont()`. Zum Beispiel:
 

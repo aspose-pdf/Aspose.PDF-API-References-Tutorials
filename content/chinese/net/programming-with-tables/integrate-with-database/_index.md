@@ -2,138 +2,178 @@
 title: 与 PDF 文件中的数据库集成
 linktitle: 与 PDF 文件中的数据库集成
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 将数据库中的数据嵌入 PDF 文件中。
+description: 通过本简单的分步指南了解如何使用 Aspose.PDF for .NET 将数据库数据集成到 PDF 文件中。
 type: docs
 weight: 120
 url: /zh/net/programming-with-tables/integrate-with-database/
 ---
-在本教程中，我们将学习如何使用 Aspose.PDF for .NET 将数据库中的数据嵌入 PDF 文件中。我们将逐步解释 C# 中的源代码。在本教程结束时，您将了解如何将数据库中的表数据导入 PDF 文档。让我们开始吧！
+## 介绍
 
-## 步骤 1：设置环境
-确保您已使用 Aspose.PDF for .NET 配置了 C# 开发环境。添加对库的引用并导入必要的命名空间。
+创建包含数据库中数据的动态 PDF 文档似乎是一项艰巨的任务，特别是如果您是编程新手。不要害怕！使用 Aspose.PDF for .NET，将数据合并到 PDF 中既简单又高效，使其成为开发人员的宝贵工具。在本指南中，我们将逐步探讨如何将数据库中的数据集成到 PDF 文件中。在本教程结束时，您将能够创建一个具有专业外观的 PDF 文档，其中填充了来自应用程序的数据。所以拿起您的编码工具，让我们开始吧！
 
-## 步骤 2：创建数据表
-我们创建一个 DataTable 实例来表示我们想要嵌入 PDF 文档的数据。在此示例中，我们创建一个包含三列的 DataTable：Employee_ID、Employee_Name 和 Gender。我们还向 DataTable 添加了两行虚拟数据。
+## 先决条件
 
-```csharp
-DataTable dt = new DataTable("Employee");
-dt.Columns.Add("Employee_ID", typeof(Int32));
-dt.Columns.Add("Employee_Name", typeof(string));
-dt.Columns.Add("Gender", typeof(string));
+在我们开始创建 PDF 之前，您需要满足一些先决条件。别担心；它们都很简单！ 
 
-DataRow dr = dt.NewRow();
-dr[0] = 1;
-dr[1] = "John Smith";
-dr[2] = "Male";
-dt.Rows.Add(dr);
+1. .NET Framework：确保您的机器上安装了受支持的 .NET Framework 版本。
+2.  Aspose.PDF for .NET: 您可以从[Aspose 网站](https://releases.aspose.com/pdf/net/)。您需要下载并将其安装到您的项目中。
+3. Visual Studio IDE：编写代码的友好环境。任何最新版本都可以使用。
+4. C# 基础知识：如果您了解 C# 的基础知识，您将轻松完成本教程。
 
-dr = dt. NewRow();
-dr[0] = 2;
-dr[1] = "Mary Miller";
-dr[2] = "Female";
-dt.Rows.Add(dr);
-```
+## 导入包
 
-## 步骤 3：创建 PDF 文档和表格
-我们创建一个 Document 实例并向该文档添加一个页面。接下来，我们创建一个 Table 实例来表示 PDF 文档中的表格。我们定义表格列宽和边框样式。
+在开始处理 PDF 文件之前，我们需要导入必要的包。在您的 C# 文件中，在顶部添加以下 using 指令：
 
 ```csharp
-Document doc = new Document();
-doc.Pages.Add();
-
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "40 100 100 100";
-table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+using System.IO;
+using Aspose.Pdf;
+using System.Data;
+using System;
 ```
 
-## 步骤 4：将数据从 DataTable 导入到表中
-我们使用 ImportDataTable 方法将 DataTable 中的数据导入 PDF 文档中的表中。
+这些软件包将使您能够访问创建和操作 PDF 文档以及使用数据表所需的功能。
 
-```csharp
-table.ImportDataTable(dt, true, 0, 1, 3, 3);
-```
+让我们将其分解为易于管理的步骤。如果看起来很长，请不要担心；我将指导您完成每个步骤。 
 
-## 步骤 5：将表格添加到文档
-我们将表格添加到文档页面的段落集合中。
+## 步骤 1：设置文档目录
 
-```csharp
-doc.Pages[1].Paragraphs.Add(table);
-```
-
-## 步骤 6：保存文档
-我们使用嵌入式数据库中的数据保存 PDF 文档。
-
-```csharp
-doc.Save(dataDir + "DataIntegrated_out.pdf");
-```
-
-恭喜！您现在知道如何使用 Aspose.PDF for .NET 将数据库数据嵌入 PDF 文档。
-
-### 使用 Aspose.PDF for .NET 与数据库集成的示例源代码
+设置文档路径就像选择新家的地址一样。让我们先确定 PDF 的保存位置。
 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+代替`"YOUR DOCUMENT DIRECTORY"`替换为您想要保存 PDF 的实际路径。这样以后就可以轻松找到。 
+
+## 步骤 2：创建数据表
+
+现在，让我们创建一个 DataTable 来保存员工信息。可以将其视为构建一个容器，用于保存我们稍后要使用的所有有用数据。
+
+```csharp
 DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
+```
+
+这里我们定义了三列：员工 ID、姓名和性别。这种结构将帮助我们整齐地组织数据。
+
+## 步骤 3：填充数据表
+
+接下来，让我们将一些示例员工数据添加到我们的 DataTable 中。这就是我们展示宝贵库存的地方！
+
+```csharp
 //以编程方式向 DataTable 对象中添加 2 行
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
 dr[2] = "Male";
 dt.Rows.Add(dr);
+
 dr = dt.NewRow();
 dr[0] = 2;
 dr[1] = "Mary Miller";
 dr[2] = "Female";
 dt.Rows.Add(dr);
-//创建 Document 实例
+```
+
+这是我们创建并向 DataTable 添加行的地方。我们添加了两名员工：John 和 Mary。您可以添加任意数量的员工！
+
+## 步骤 4：创建文档实例
+
+让我们开始创建 PDF 文档。这类似于为我们的杰作构建一块空白画布。
+
+```csharp
 Document doc = new Document();
 doc.Pages.Add();
-//初始化表的新实例
+```
+
+我们启动一个文档的新实例，并添加一个新页面，我们的表格最终将驻留在该页面。
+
+## 步骤 5：初始化表
+
+此时，是时候创建显示员工信息的表格了。想象一下这一步为我们的表格奠定框架。
+
+```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+```
+
+我们已经声明了我们的表但尚未设置它的属性。 
+
+## 步骤 6：设置列宽和边框
+
+让我们通过设置一些样式属性来让我们的表格更加美观并且易于阅读。 
+
+```csharp
 //设置表格的列宽
 table.ColumnWidths = "40 100 100 100";
 //将表格边框颜色设置为LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 //设置表格单元格的边框
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-table.ImportDataTable(dt, true, 0, 1, 3, 3);
+```
 
-//将表格对象添加到输入文档的第一页
+在这里，我们定义每列的宽度并为表格设置边框样式。此步骤可增强视觉冲击力，确保您的表格不仅实用，而且外观美观。
+
+## 步骤 7：将数据导入表
+
+我们的 DataTable 已装满员工数据，表格也已准备就绪，现在是时候将这些数据转移到 PDF 中了。这就像将家具搬进新家一样！
+
+```csharp
+table.ImportDataTable(dt, true, 0, 1, 3, 3);
+```
+
+此行基本上将 DataTable 中的所有数据传输到我们之前创建的 Aspose.PDF 表。
+
+## 步骤 8：将表格添加到文档
+
+现在我们的表格中已经填充了数据，是时候将其放入 PDF 中了！
+
+```csharp
 doc.Pages[1].Paragraphs.Add(table);
+```
+
+我们将表格添加到文档的第一页，它将成为我们 PDF 创建的一部分。
+
+## 步骤 9：保存文档
+
+最后，剩下要做的就是将新创建的 PDF 保存到我们指定的目录中。这就像为您精心装饰的家画上最后的点睛之笔！
+
+```csharp
 dataDir = dataDir + "DataIntegrated_out.pdf";
 //保存包含表对象的更新文档
 doc.Save(dataDir);
+```
 
+此代码指定保存 PDF 的路径并执行保存操作。 
+
+## 步骤 10：确认信息
+
+为了完成我们的流程，收到一条确认信息告诉我们一切进展顺利总是件好事。 
+
+```csharp
 Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDir);
 ```
 
+
 ## 结论
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 将数据库中的数据嵌入 PDF 文档。您可以使用本分步指南从您自己的数据库导入数据并将其显示在 PDF 文档中。进一步探索 Aspose.PDF 文档，以发现这个强大的库提供的其他功能和可能性。
 
-### PDF 文件中与数据库集成的常见问题解答
+就这样！您已经学会了如何使用 Aspose.PDF for .NET 将数据库中的数据无缝集成到 PDF 文件中。通过遵循这些步骤，您可以创建不仅功能齐全而且外观美观的动态文档。因此，下次您需要生成报告或任何需要结构化数据的文档时，请记住本教程。
 
-#### 问：我可以将 Aspose.PDF for .NET 与不同类型的数据库类型（如 MySQL、SQL Server 或 Oracle）一起使用吗？
+## 常见问题解答
 
-答：是的，您可以将 Aspose.PDF for .NET 与不同类型的数据库一起使用，例如 MySQL、SQL Server、Oracle 等。Aspose.PDF for .NET 提供从各种数据源（包括数据库、XML 文件等）读取数据的功能。您可以从所需的数据库类型中检索数据并将其填充到 DataTable 或任何其他与 Aspose.PDF for .NET 兼容的数据结构中。
+### 我可以将 Aspose.PDF 用于其他文件格式吗？
+是的！Aspose 为不同的文件格式（包括 Excel、Word 等）提供了各种库。
 
-#### 问：如何自定义 PDF 文档中表格的外观？
+### Aspose.PDF 有试用版吗？
+当然！你可以从[此链接](https://releases.aspose.com/).
 
-答：您可以使用 Aspose.PDF for .NET 库提供的各种属性自定义 PDF 文档中表格的外观。例如，您可以为表格及其单元格设置不同的边框样式、背景颜色、字体样式和对齐方式。有关自定义表格外观的更多详细信息，请参阅 Aspose.PDF for .NET 文档。
+### 如何获得 Aspose 产品的支持？
+您可以通过以下方式联系他们的支持[Aspose 论坛](https://forum.aspose.com/c/pdf/10).
 
-#### 问：是否可以向从数据库导入的数据添加超链接或交互元素？
+### 临时执照提供什么？
+临时许可证允许您在有限时间内使用该软件，并解锁所有功能。您可以获取一个[这里](https://purchase.aspose.com/temporary-license/).
 
-答：是的，您可以向从数据库导入的数据添加超链接或其他交互元素。Aspose.PDF for .NET 支持向 PDF 文档添加超链接、书签和其他交互元素。您可以在将 DataTable 中的内容导入表格之前对其进行操作，并添加超链接或其他交互功能。
-
-#### 问：如果表格的行数超过一定数量，我可以对其进行分页吗？
-
-答：是的，如果表格超过一定行数，您可以对表格进行分页。为此，您可以使用`IsInNewPage`Row 对象的属性，以指示新页面应在特定行之后开始。您可以计算每页显示的行数，并设置`IsInNewPage`相应的财产。
-
-#### 问：如何将嵌入数据库数据的 PDF 文档导出为不同的文件格式，如 DOCX 或 XLSX？
-
-答：Aspose.PDF for .NET 允许您将 PDF 文档转换为各种其他文件格式，包括 DOCX（Microsoft Word）和 XLSX（Microsoft Excel）。您可以将 Aspose.PDF for .NET 库与其他 Aspose 库（如 Aspose.Words 和 Aspose.Cells）结合使用来实现此目的。首先，使用嵌入数据库数据保存 PDF 文档，然后使用相应的 Aspose 库将其转换为所需的文件格式。
+### PDF 中的数据格式可以自定义吗？
+是的！Aspose.PDF为表格提供了各种自定义选项，包括单元格格式、字体、颜色等。

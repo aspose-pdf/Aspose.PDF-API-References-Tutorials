@@ -2,110 +2,44 @@
 title: Označit obrázek ve stávajícím PDF
 linktitle: Označit obrázek ve stávajícím PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak označit obrázek v existujícím PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce přidáváním značek k obrázkům.
+description: Naučte se označovat obrázky ve stávajících PDF pomocí Aspose.PDF for .NET. Podrobný průvodce pro zlepšení dostupnosti s PDF/UA.
 type: docs
 weight: 210
 url: /cs/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-V tomto podrobném tutoriálu vás provedeme dodaným zdrojovým kódem C# krok za krokem k označení obrázku v existujícím PDF pomocí Aspose.PDF for .NET. Postupujte podle pokynů níže, abyste pochopili, jak přidat tagy k obrázku v PDF.
+## Zavedení
 
-## Krok 1: Nastavení prostředí
+tomto tutoriálu vás provedeme, jak označit obrázek v existujícím PDF pomocí Aspose.PDF pro .NET. Na konci této příručky budete schopni nastavit alternativní text pro obrázky, upravit atributy rozvržení a zajistit, aby vaše PDF odpovídalo standardům přístupnosti.
 
-Než začnete, ujistěte se, že jste své vývojové prostředí nakonfigurovali pro použití Aspose.PDF pro .NET. To zahrnuje instalaci knihovny Aspose.PDF a konfiguraci vašeho projektu tak, aby na něj odkazoval.
+## Předpoklady
 
-## Krok 2: Otevřete existující dokument PDF
+Než se do toho pustíme, pojďme si projít, co budete potřebovat, abyste mohli začít:
 
-tomto kroku otevřeme existující PDF dokument pomocí Aspose.PDF.
+-  Aspose.PDF pro .NET: Ujistěte se, že jste si stáhli a nainstalovali nejnovější verzi Aspose.PDF pro .NET.[Stahujte zde](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Ujistěte se, že máte nastavené vývojové prostředí .NET, jako je Visual Studio.
+- Základní pochopení struktury PDF: Seznámení s prvky struktury PDF, jako jsou odstavce, rozpětí, tabulky a obrázky.
+-  Platná licence: Můžete si buď zakoupit licenci[zde](https://purchase.aspose.com/buy) nebo použijte dočasnou[zde](https://purchase.aspose.com/temporary-license/).
+
+## Importujte balíčky
+
+Chcete-li začít s kódováním, musíte importovat základní jmenné prostory z Aspose.PDF pro .NET. Ty vám umožní přístup k nezbytným třídám a metodám pro manipulaci s dokumentem PDF.
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Vstupní a výstupní cesty k souboru
-string inFile = dataDir + "TH.pdf";
-string outFile = dataDir + "TH_out.pdf";
-string logFile = dataDir + "TH_out.xml";
-
-// Otevřete dokument
-Document document = new Document(inFile);
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Stávající dokument PDF jsme otevřeli pomocí Aspose.PDF.
+Nyní, když jsme připravili scénu, rozdělme proces označování obrázku do několika kroků.
 
-## Krok 3: Získejte označený obsah a prvek kořenové struktury
+## Krok 1: Načtěte existující dokument PDF
 
-Nyní získáme tagovaný obsah dokumentu PDF a odpovídající prvek kořenové struktury.
-
-```csharp
-// Získejte tagovaný obsah a prvek kořenové struktury
-ITaggedContent taggedContent = document.TaggedContent;
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Získali jsme tagovaný obsah dokumentu PDF a odpovídající prvek kořenové struktury.
-
-## Krok 4: Nastavení názvu pro tagovaný dokument PDF
-
-Nyní nastavíme název pro tagovaný dokument PDF.
+Prvním krokem je načtení souboru PDF, se kterým chcete pracovat. Může to být jakýkoli soubor PDF s obrázkem, který chcete označit.
 
 ```csharp
-// Definujte název pro tagovaný dokument PDF
-taggedContent.SetTitle("Document with images");
-```
-
-Nastavili jsme název pro tagovaný dokument PDF.
-
-## Krok 5: Přiřaďte obrázku alternativní texty a ohraničovací rámeček
-
-Nyní každému prvku obrázku přiřadíme alternativní text a ohraničovací rámeček.
-
-```csharp
-foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
-{
-     // Přiřaďte obrázku alternativní text
-     figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Vytvořte a přiřaďte ohraničovací rámeček (bbox)
-     StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-     bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-     StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-     figureLayoutAttributes.SetAttribute(bboxAttribute);
-}
-```
-
-Ke každému prvku obrázku v dokumentu PDF jsme přiřadili alternativní text a ohraničovací rámeček.
-
-## Krok 6: Přesunutí prvku Span do odstavce
-
-Nyní přesuneme prvek Span do odstavce.
-
-```csharp
-// Přesunout prvek Span do odstavce (najít nesprávný rozsah a odstavec v prvním TD)
-TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
-SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
-TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
-ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
-
-// Přesuňte prvek Span v odstavci
-spanElement.ChangeParentElement(paragraph);
-```
-
-Element Span jsme přesunuli do určeného odstavce.
-
-## Krok 7: Uložení upraveného dokumentu PDF
-
-Nyní, když jsme provedli potřebné změny, uložíme upravený dokument PDF.
-
-```csharp
-// Uložte dokument PDF
-document. Save(outFile);
-```
-
-Upravený PDF dokument jsme uložili do určeného adresáře.
-
-### Ukázkový zdrojový kód pro Tag Image In Existing PDF pomocí Aspose.PDF for .NET 
-
-```csharp
-
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
@@ -114,89 +48,112 @@ string logFile = dataDir + "TH_out.xml";
 
 // Otevřete dokument
 Document document = new Document(inFile);
+```
 
-// Získá tagovaný obsah a prvek kořenové struktury
+-  Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k vašemu souboru.
+-  The`Document` třída umožňuje načíst existující PDF. Tento soubor PDF upravíte tak, aby byl obrázek označen.
+
+## Krok 2: Přístup k označenému obsahu a prvku kořenové struktury
+
+Po otevření PDF je dalším krokem přístup k označenému obsahu a identifikace prvku kořenové struktury. To je zásadní, protože vám to umožňuje procházet prvky v PDF a provádět úpravy.
+
+```csharp
+// Získejte tagovaný obsah a prvek kořenové struktury
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
+```
 
-// Nastavit název pro označený dokument pdf
+- `TaggedContent` poskytuje přístup ke strukturovaným prvkům v PDF.
+-  The`RootElement` je nejvyšší prvek struktury, ze kterého můžete přejít dolů k dalším prvkům, jako jsou odstavce, tabulky a obrázky.
+
+## Krok 3: Nastavte název pro tagovaný dokument PDF
+
+Přidáním názvu do tagovaného dokumentu PDF zajistíte, že váš dokument bude správně označen, což je užitečné pro usnadnění přístupu a shodu s PDF/UA.
+
+```csharp
+// Nastavte název pro tagovaný dokument PDF
 taggedContent.SetTitle("Document with images");
+```
+
+- Nastavení názvu pro váš tagovaný PDF zlepšuje přístupnost a zlepšuje srozumitelnost dokumentu pro programy pro čtení z obrazovky a asistenční technologie.
+
+## Krok 4: Najděte a označte obrázek
+
+ Nyní najdeme prvek obrázku (označovaný jako a`FigureElement` v Aspose.PDF), nastavte pro něj alternativní text a nakonfigurujte jeho atributy rozvržení.
+
+```csharp
+// Procházejte všechny prvky obrázku (obrázky) a nastavte alternativní text a atributy rozvržení
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Nastavte alternativní text pro obrázek
-	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Vytvořte a nastavte atribut Bbox
-	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-	figureLayoutAttributes.SetAttribute(bboxAttribute);
+    // Nastavte alternativní text pro obrázek
+    figureElement.AlternativeText = "Figure alternative text (technique 2)";
+    
+    // Vytvořte a nastavte atribut BBox (ohraničující rámeček)
+    StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+    bboxAttribute.SetRectangleValue(new Aspose.Pdf.Rectangle(0.0, 0.0, 100.0, 100.0));
+    
+    // Nastavte atributy rozvržení obrázku
+    StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+    figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
+```
 
-// Přesunout prvek Span do odstavce (najít nesprávný rozsah a odstavec v prvním TD)
+-  Tento kód prochází všemi`FigureElement` objekty v kořenové struktuře, které představují obrázky.
+- Nastaví alternativní text pro usnadnění (čtečky obrazovky jej použijí k popisu obrázku).
+- Ohraničující rámeček (`BBox`určuje souřadnice rozvržení obrázku a zajišťuje, že se v dokumentu zobrazí správně.
+
+## Krok 5: Upravte prvky rozpětí v tabulce
+
+ V některých případech může být nutné upravit prvky span v tabulce. Zde si ukážeme, jak najít a`SpanElement` a přesunout jej do odstavce.
+
+```csharp
+// Najděte prvky tabulky, rozpětí a odstavce
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Přesunout prvek Span do odstavce
+// Přesuňte prvek span do odstavce
 spanElement.ChangeParentElement(paragraph);
+```
 
-// Uložit dokument
+-  Zde najdeme`TableElement`, `SpanElement` a`ParagraphElement` v rámci PDF.
+-  Pomocí`ChangeParentElement` přesuneme rozsah do odstavce, abychom zajistili správné označení a strukturu.
+
+## Krok 6: Uložte dokument a ověřte shodu s PDF/UA
+
+Po provedení všech změn je posledním krokem uložení aktualizovaného PDF a kontrola, zda vyhovuje standardům PDF/UA.
+
+```csharp
+// Uložte aktualizovaný dokument PDF
 document.Save(outFile);
 
-//Kontrola shody s PDF/UA pro váš dokument
+// Ověřte shodu s PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+-  The`Validate` metoda kontroluje PDF dokument podle standardů PDF/UA a zaznamenává výsledky.
+- Zajištění souladu pomáhá zlepšit dostupnost a splnit regulační požadavky na publikování dokumentů.
 
 ## Závěr
 
-V tomto tutoriálu jsme se naučili, jak označit obrázek v existujícím PDF pomocí Aspose.PDF pro .NET. Nyní můžete použít Aspose.PDF k přidávání tagů a úpravám obrázků v dokumentech PDF.
+tomto tutoriálu jsme vám ukázali, jak označit obrázky v existujícím PDF pomocí Aspose.PDF pro .NET. Nastavením alternativního textu, úpravou atributů rozvržení a ověřením souladu dokumentu s PDF/UA můžete zajistit, že vaše PDF budou přístupné a splňují moderní standardy. Aspose.PDF usnadňuje práci se strukturovanými prvky a poskytuje vám kontrolu nad rozložením a přístupností vašeho dokumentu.
 
-### FAQ
+## FAQ
 
-#### Otázka: Co je hlavním cílem tohoto tutoriálu o označování obrázků v existujícím PDF pomocí Aspose.PDF pro .NET?
+### K čemu se používá Aspose.PDF for .NET?
+Aspose.PDF for .NET je výkonná knihovna používaná pro vytváření, úpravy a manipulaci s dokumenty PDF programově v prostředí .NET.
 
-Odpověď: Primárním cílem tohoto tutoriálu je provést vás procesem označení obrázku v existujícím dokumentu PDF pomocí Aspose.PDF for .NET. Výukový program poskytuje podrobné pokyny a příklady zdrojového kódu C#, které vám pomohou pochopit, jak přiřadit alternativní text a ohraničovací rámečky k obrázkům, přesouvat prvky v dokumentu a přidávat k obrázkům tagy.
+### Jak zajistím soulad s PDF/UA?
+ Můžete použít Aspose.PDF`Validate` způsob kontroly souladu s PDF/UA po provedení úprav dokumentu.
 
-#### Otázka: Jaké jsou předpoklady pro následující tutoriál o označování obrázků v PDF pomocí Aspose.PDF pro .NET?
+### Co je alternativní text v PDF?
+Alternativní text je popis přidaný k obrázkům v PDF, aby se zlepšila dostupnost, zejména pro uživatele, kteří se spoléhají na čtečky obrazovky.
 
-A: Než začnete, ujistěte se, že jste nastavili své vývojové prostředí pro použití Aspose.PDF pro .NET. To zahrnuje instalaci knihovny Aspose.PDF a konfiguraci vašeho projektu tak, aby na ni odkazoval.
+### Mohu manipulovat s tabulkami a rozpětími v PDF pomocí Aspose.PDF?
+Ano, Aspose.PDF vám umožňuje manipulovat s tabulkami, rozpětími a dalšími strukturovanými prvky v dokumentu PDF.
 
-#### Otázka: Jak mohu otevřít existující dokument PDF a získat přístup k jeho označenému obsahu pomocí Aspose.PDF for .NET?
-
-Odpověď: Výukový program poskytuje příklady zdrojového kódu C#, které demonstrují, jak otevřít existující dokument PDF pomocí Aspose.PDF pro .NET a přistupovat k jeho označenému obsahu pro další manipulaci.
-
-#### Otázka: Jaký je účel přiřazení alternativního textu a ohraničovacích rámečků k obrázkům v dokumentu PDF?
-
-Odpověď: Přiřazení alternativního textu a ohraničovacích rámečků k obrázkům zlepšuje dostupnost tím, že poskytuje popisný text pro obrázky a definuje jejich rozvržení a umístění v dokumentu. Tyto informace jsou klíčové pro čtečky obrazovky a další pomocné technologie.
-
-#### Otázka: Jak mohu nastavit název pro tagovaný dokument PDF pomocí Aspose.PDF pro .NET?
-
-Odpověď: Výukový program obsahuje příklady zdrojového kódu C#, které ilustrují, jak nastavit název pro tagovaný dokument PDF pomocí Aspose.PDF pro .NET.
-
-#### Otázka: Co zahrnuje proces přesouvání prvků v dokumentu PDF?
-
-Odpověď: Přesouvání prvků v dokumentu PDF zahrnuje změnu nadřazeného prvku určitého prvku. V tomto kurzu se naučíte, jak přesunout prvek Span do zadaného prvku odstavce v tabulce.
-
-#### Otázka: Jak uložím upravený dokument PDF po přidání tagů a úpravách obrázků?
-
- Odpověď: Jakmile přidáte tagy, přiřadíte alternativní text, nastavíte ohraničovací rámečky a provedete úpravy v dokumentu PDF, můžete použít poskytnuté příklady zdrojového kódu C# k uložení upraveného dokumentu PDF pomocí`Save()` metoda.
-
-#### Otázka: Jaký je účel ukázkového zdrojového kódu poskytnutého v tutoriálu?
-
-Odpověď: Ukázkový zdrojový kód slouží jako praktická reference pro implementaci označování obrázků a manipulaci s nimi pomocí Aspose.PDF pro .NET. Tento kód můžete použít jako výchozí bod a upravit jej tak, aby vyhovoval vašim specifickým požadavkům.
-
-#### Otázka: Mohu tyto techniky použít na jiné typy prvků v dokumentu PDF, nejen na obrázky?
-
-Odpověď: Ano, techniky uvedené v tomto tutoriálu lze upravit pro práci s různými typy prvků v dokumentu PDF. Podobné principy můžete použít pro označování a manipulaci s dalšími prvky, jako je text, tabulky a další.
-
-#### Otázka: Jak mohu ověřit shodu upraveného dokumentu PDF s PDF/UA?
-
- Odpověď: Výukový program poskytuje příklady zdrojového kódu C#, které ukazují, jak ověřit shodu upraveného dokumentu PDF s PDF/UA pomocí`Validate()` a generování XML reportu.
-
-#### Otázka: Jaké další funkce nabízí Aspose.PDF for .NET pro práci s dokumenty PDF?
-
-Odpověď: Aspose.PDF for .NET nabízí širokou škálu funkcí pro práci s dokumenty PDF, včetně manipulace s textem, vkládání obrázků, vytváření tabulek, správy polí formuláře, digitálních podpisů, anotací a dalších. Pro další průzkum nahlédněte do oficiální dokumentace a zdrojů.
+### Kde si mohu stáhnout Aspose.PDF pro .NET?
+ Můžete si stáhnout nejnovější verzi Aspose.PDF pro .NET[zde](https://releases.aspose.com/pdf/net/).

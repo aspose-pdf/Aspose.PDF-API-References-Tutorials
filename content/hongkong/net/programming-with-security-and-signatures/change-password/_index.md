@@ -17,7 +17,7 @@ url: /zh-hant/net/programming-with-security-and-signatures/change-password/
 
 1. Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以透過以下方式輕鬆取得它：[網站](https://releases.aspose.com/pdf/net/).
 2. 您的開發環境：確保您擁有適合 .NET 開發的合適 IDE，例如 Visual Studio。
-3. 基本 C# 知識：熟悉 C#。如果您熟悉程式設計概念，您會發現此任務很簡單。
+3. 基本 C# 知識：熟悉 C#。如果您熟悉程式設計概念，您會發現這項任務很簡單。
 4. 存取您的 PDF 文件：準備好 PDF。您將使用該文件來更改其密碼。
 
 現在我們已經滿足了先決條件，讓我們進入有趣的部分！

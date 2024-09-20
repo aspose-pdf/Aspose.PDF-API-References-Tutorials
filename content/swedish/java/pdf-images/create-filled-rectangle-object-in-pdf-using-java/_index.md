@@ -100,7 +100,7 @@ Du kan installera Aspose.PDF för Java genom att ladda ner biblioteket från Asp
 
 ### Är Aspose.PDF för Java gratis att använda?
 
-Aspose.PDF för Java är ett kommersiellt bibliotek, och du kan behöva köpa en licens för att använda det i dina projekt. Kontrollera Asposes webbplats för licensinformation.
+Aspose.PDF för Java är ett kommersiellt bibliotek, och du kan behöva köpa en licens för att använda det i dina projekt. Kolla Asposes webbplats för licensinformation.
 
 ### Var kan jag hitta fler exempel med Aspose.PDF för Java?
 

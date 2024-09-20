@@ -16,7 +16,7 @@ url: /zh-hant/net/programming-with-attachments/add-attachment/
 在我們深入了解添加附件的細節之前，您需要滿足一些先決條件：
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[地點](https://releases.aspose.com/pdf/net/).
-2. Visual Studio：您可以在其中編寫和測試 .NET 程式碼的開發環境。
+2. Visual Studio：一個開發環境，您可以在其中編寫和測試 .NET 程式碼。
 3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
 
 ## 導入包

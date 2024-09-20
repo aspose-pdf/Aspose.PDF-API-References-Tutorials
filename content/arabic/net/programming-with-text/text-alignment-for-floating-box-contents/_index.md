@@ -2,156 +2,133 @@
 title: محاذاة النص لمحتويات المربع العائم في ملف PDF
 linktitle: محاذاة النص لمحتويات المربع العائم في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية محاذاة النص داخل المربعات العائمة في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية محاذاة محتويات المربعات العائمة في ملفات PDF باستخدام Aspose.PDF لـ .NET. أنشئ مستندات مذهلة بتخطيطات احترافية.
 type: docs
 weight: 520
 url: /ar/net/programming-with-text/text-alignment-for-floating-box-contents/
 ---
-يوضح هذا البرنامج التعليمي كيفية محاذاة النص داخل المربعات العائمة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم العملية خطوة بخطوة.
+## مقدمة
+
+إن إنشاء ملفات PDF جذابة بصريًا يعد مهارة بالغة الأهمية في عالمنا الرقمي اليوم، حيث يتنافس الجميع على جذب الانتباه. يجعل برنامج Aspose.PDF for .NET هذه المهمة سهلة ومرنة بشكل لا يصدق، خاصة عندما يتعلق الأمر بتخصيص تخطيط مستنداتك. في هذا البرنامج التعليمي، سنستكشف كيفية محاذاة محتويات المربعات العائمة داخل ملفات PDF الخاصة بك. سيضفي هذا النهج على مستنداتك لمسة مصقولة واحترافية تبرز من بين الحشود.
 
 ## المتطلبات الأساسية
 
-قبل المتابعة بالبرنامج التعليمي، تأكد من توفر ما يلي:
+قبل الخوض في البرنامج التعليمي، هناك بعض الأساسيات التي تحتاج إلى أن تكون لديك:
 
-- المعرفة الأساسية للغة البرمجة C#.
-- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لتثبيتها في مشروعك.
+1. .NET Framework: تأكد من تثبيت .NET Framework متوافق على جهازك، حيث أنه المكان الذي ستقوم فيه بتشغيل الكود الخاص بك.
+2.  مكتبة Aspose.PDF: يجب أن يكون لديك مكتبة Aspose.PDF. إذا لم تقم بتنزيلها بعد، يمكنك القيام بذلك[هنا](https://releases.aspose.com/pdf/net/).
+3. IDE: ستكون بيئة التطوير المتكاملة (IDE) مثل Visual Studio مفيدة للترميز وتصحيح الأخطاء.
+4. المعرفة الأساسية بلغة C#: إن الإلمام ببرمجة C# سيجعل من الأسهل متابعة وفهم مقتطفات التعليمات البرمجية.
 
-## الخطوة 1: إعداد المشروع
+## استيراد الحزم
 
-ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+للبدء، يجب عليك استيراد الحزم اللازمة في مشروع C# الخاص بك. وإليك كيفية القيام بذلك:
 
-## الخطوة 2: استيراد المساحات الأساسية الضرورية
-
-أضف التوجيهات التالية في بداية ملف C# الخاص بك لاستيراد المساحات المطلوبة:
-
+1. افتح مشروعك: قم بتشغيل IDE الخاص بك، وافتح المشروع الذي تريد تنفيذ وظيفة المربع العائم فيه.
+2. تثبيت Aspose.PDF لـ .NET: استخدم NuGet Package Manager لتثبيت حزمة Aspose.PDF. للقيام بذلك:
+   - انقر بزر الماوس الأيمن على مشروعك في مستكشف الحلول، ثم اختر "إدارة حزم NuGet".
+   - ابحث عن "Aspose.PDF" وانقر على "تثبيت".
+   
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 3: تعيين المسار إلى دليل المستند
+بمجرد إعداد الحزم، ستكون جاهزًا للبدء في إنشاء ومحاذاة المربعات العائمة في ملف PDF الخاص بك.
 
- قم بتعيين المسار إلى دليل المستند الخاص بك باستخدام`dataDir` عامل:
+الآن، دعنا نستعرض عملية إضافة ومحاذاة المربعات العائمة في مستند PDF. سننشئ عدة مربعات عائمة ونحاذي محتوياتها بشكل مختلف للتوضيح.
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+## الخطوة 1: إعداد المستند
 
- يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+الخطوة الأولى هي تهيئة مستند PDF جديد وإضافة صفحة إليه. يعمل هذا كلوحة رسم للمربعات العائمة.
 
-## الخطوة 4: إنشاء مستند جديد
-
- إنشاء جديد`Document` هدف:
-
-```csharp
-Aspose.Pdf.Document doc = new Document();
-doc.Pages.Add();
-```
-
-## الخطوة 5: إنشاء مربعات عائمة باستخدام أجزاء نصية
-
- إنشاء متعددة`FloatingBox` الأشياء ذات المحاذاة الرأسية والأفقية المختلفة:
-
-```csharp
-Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
-floatBox.VerticalAlignment = VerticalAlignment.Bottom;
-floatBox.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-floatBox.Paragraphs.Add(new TextFragment("FloatingBox_bottom"));
-floatBox.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Blue);
-doc.Pages[1].Paragraphs.Add(floatBox);
-
-Aspose.Pdf.FloatingBox floatBox1 = new Aspose.Pdf.FloatingBox(100, 100);
-floatBox1.VerticalAlignment = VerticalAlignment.Center;
-floatBox1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-floatBox1.Paragraphs.Add(new TextFragment("FloatingBox_center"));
-floatBox1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Blue);
-doc.Pages[1].Paragraphs.Add(floatBox1);
-
-Aspose.Pdf.FloatingBox floatBox2 = new Aspose.Pdf.FloatingBox(100, 100);
-floatBox2.VerticalAlignment = VerticalAlignment.Top;
-floatBox2.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-floatBox2.Paragraphs.Add(new TextFragment("FloatingBox_top"));
-floatBox2.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Blue);
-doc.Pages[1].Paragraphs.Add(floatBox2);
-```
-
- تعديل النص وتنسيقه`TextFragment` الأشياء حسب الرغبة.
-
-## الخطوة 6: احفظ مستند PDF
-
-حفظ مستند PDF المعدل:
-
-```csharp
-doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
-```
-
- تأكد من الاستبدال`"FloatingBox_alignment_review_out.pdf"` مع اسم ملف الإخراج المطلوب.
-
-### نموذج لمصدر التعليمات البرمجية لمحاذاة النص لمحتويات المربع العائم باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
+```
+
+ في مقتطف التعليمات البرمجية هذا، استبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي الذي تريد حفظ ملف PDF الخاص بك فيه.
+
+## الخطوة 2: إنشاء الصندوق العائم الأول
+
+بعد ذلك، دعنا ننشئ أول صندوق عائم ونحدد محاذاته. هنا، سيتم محاذاة المحتوى إلى أسفل يمين الصندوق.
+
+```csharp
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
 floatBox.VerticalAlignment = VerticalAlignment.Bottom;
 floatBox.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 floatBox.Paragraphs.Add(new TextFragment("FloatingBox_bottom"));
 floatBox.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Blue);
 doc.Pages[1].Paragraphs.Add(floatBox);
+```
+
+- FloatingBox(100, 100): يقوم هذا بتهيئة صندوق عائم بعرض وارتفاع 100 وحدة لكل منهما.
+- المحاذاة الرأسية والأفقية: نحدد أن النص يجب أن يكون محاذيًا لأسفل وإلى اليمين.
+- TextFragment: يمثل النص الذي تريد عرضه داخل المربع العائم.
+- BorderInfo: يؤدي ذلك إلى إنشاء حدود حول المربع العائم، مما يجعله مميزًا بصريًا.
+
+## الخطوة 3: أضف الصندوق العائم الثاني
+
+الآن، دعونا نقوم بإنشاء صندوق عائم ثاني يركز محتواه.
+
+```csharp
 Aspose.Pdf.FloatingBox floatBox1 = new Aspose.Pdf.FloatingBox(100, 100);
 floatBox1.VerticalAlignment = VerticalAlignment.Center;
 floatBox1.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 floatBox1.Paragraphs.Add(new TextFragment("FloatingBox_center"));
 floatBox1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Blue);
 doc.Pages[1].Paragraphs.Add(floatBox1);
+```
+
+تمامًا مثل المربع الأول، قمنا بضبط محاذاته الرأسية على المركز والأفقية على اليمين. تتيح هذه الطريقة إجراء تعديلات ديناميكية على المحتوى وتحسين المظهر المرئي.
+
+## الخطوة 4: إنشاء الصندوق العائم الثالث
+
+الآن، بالنسبة لصندوقنا العائم الثالث والأخير، سنقوم بمحاذاة المحتوى إلى أعلى اليمين.
+
+```csharp
 Aspose.Pdf.FloatingBox floatBox2 = new Aspose.Pdf.FloatingBox(100, 100);
 floatBox2.VerticalAlignment = VerticalAlignment.Top;
 floatBox2.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 floatBox2.Paragraphs.Add(new TextFragment("FloatingBox_top"));
 floatBox2.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Blue);
 doc.Pages[1].Paragraphs.Add(floatBox2);
+```
+
+يقوم هذا المربع بمحاذاة المحتوى في أعلى اليمين، مما يوضح المرونة التي تتمتع بها مع مكتبة Aspose.PDF. يمكن لكل مربع عائم أن يخدم غرضًا مميزًا بناءً على الطريقة التي ترغب في توصيل المعلومات بها بصريًا.
+
+## الخطوة 5: احفظ المستند
+
+أخيرًا، حان الوقت لحفظ مستندك. ستحفظه في الموقع الذي حددته سابقًا.
+
+```csharp
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
+ سيتم حفظ الملف باسم`FloatingBox_alignment_review_out.pdf` في الدليل المحدد. تأكد من التحقق من هذا الموقع لعرض ملف PDF الذي قمت بإنشائه.
+
 ## خاتمة
 
-مبروك! لقد تعلمت بنجاح كيفية محاذاة النص داخل المربعات العائمة في مستند PDF باستخدام Aspose.PDF for .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، من إعداد المشروع إلى حفظ المستند المعدل. يمكنك الآن دمج هذا الكود في مشاريع C# الخاصة بك لتخصيص محاذاة النص داخل المربعات العائمة في ملفات PDF.
+يتيح لك استخدام Aspose.PDF for .NET لمعالجة تخطيطات PDF إنشاء مستندات احترافية وجذابة بصريًا بكفاءة. من خلال فهم كيفية محاذاة محتويات المربعات العائمة، يمكنك تحسين تجربة المستخدم لملفات PDF بشكل كبير. وكما رأينا، فهي بسيطة ولكنها قوية بما يكفي لجعل ملفات PDF الخاصة بك مميزة.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "محاذاة النص لمحتويات المربع العائم في ملف PDF"؟
+### ما هو المربع العائم في Aspose.PDF؟  
+يسمح لك المربع العائم بوضع المحتوى بشكل مرن داخل تخطيط PDF.
 
-أ: يهدف البرنامج التعليمي "محاذاة النص لمحتويات المربعات العائمة في ملف PDF" إلى توجيه المستخدمين حول كيفية محاذاة النص داخل المربعات العائمة في مستند PDF باستخدام Aspose.PDF لـ .NET. يوفر البرنامج التعليمي تعليمات خطوة بخطوة وعينات من التعليمات البرمجية بلغة C# لتوضيح العملية.
+### هل يمكنني تغيير لون حدود الصندوق العائم؟  
+نعم، يمكنك تحديد ألوان مختلفة للحدود عند إنشاء مربع عائم.
 
-#### س: كيف يساعد هذا البرنامج التعليمي في محاذاة النص داخل المربعات العائمة؟
+### هل استخدام Aspose.PDF لـ .NET مجاني؟  
+يقدم Aspose.PDF نسخة تجريبية مجانية، ولكن يلزم الحصول على ترخيص مدفوع للحصول على الوظائف الكاملة.
 
-ج: يساعد هذا البرنامج التعليمي المستخدمين على فهم كيفية استخدام Aspose.PDF for .NET لمحاذاة النص داخل المربعات العائمة في مستند PDF. باتباع الخطوات وأمثلة التعليمات البرمجية المقدمة، يمكن للمستخدمين تخصيص المحاذاة الرأسية والأفقية للنص داخل المربعات العائمة.
+### هل يمكنني إضافة الصور إلى الصناديق العائمة؟  
+بالتأكيد! يمكنك إضافة أنواع مختلفة من المحتوى، بما في ذلك الصور، إلى المربعات العائمة.
 
-#### س: ما هي المتطلبات الأساسية المطلوبة لمتابعة هذا البرنامج التعليمي؟
-
-ج: قبل البدء في البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، يجب أن يكون لديك مكتبة Aspose.PDF for .NET مثبتة. يمكنك الحصول عليها من موقع Aspose على الويب أو تثبيتها في مشروعك باستخدام NuGet.
-
-#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
-
-ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF for .NET. يتيح لك هذا الاستفادة من ميزات المكتبة للعمل مع مستندات PDF ومحاذاة النص داخل المربعات العائمة.
-
-#### س: هل يمكنني استخدام هذا البرنامج التعليمي لمحاذاة النص داخل أي نوع من المربعات العائمة؟
-
-ج: نعم، يوفر هذا البرنامج التعليمي إرشادات حول كيفية محاذاة النص داخل المربعات العائمة في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام عينات التعليمات البرمجية المقدمة لتخصيص المحاذاة الرأسية والأفقية للنص داخل المربعات العائمة.
-
-#### س: كيف يمكنني تحديد محاذاة النص داخل مربع عائم؟
-
- أ: يوضح البرنامج التعليمي كيفية إنشاء`FloatingBox`الأشياء وتعيينها`VerticalAlignment` و`HorizontalAlignment` خصائص للتحكم في محاذاة النص المضمن. يمكنك تعديل هذه الخصائص وفقًا لمتطلباتك.
-
-#### س: كيف يمكنني تخصيص مظهر الصناديق العائمة؟
-
- ج: يمكنك تخصيص مظهر المربعات العائمة عن طريق تعديل خصائص مثل الحدود والحجم ومحتوى النص. يوفر البرنامج التعليمي عينات من التعليمات البرمجية التي توضح كيفية إنشاء المربعات العائمة وتصميمها.`FloatingBox` أشياء.
-
-#### س: هل يمكنني إضافة عدة مربعات عائمة ذات محاذات مختلفة في نفس مستند PDF؟
-
- ج: نعم، يوضح البرنامج التعليمي كيفية إنشاء العديد من`FloatingBox` يمكنك إضافة كائنات ذات محاذاة رأسية وأفقية مختلفة إلى نفس مستند PDF. يتيح لك هذا رؤية تأثيرات المحاذاة المختلفة داخل نفس المستند.
-
-#### س: كيف أحفظ مستند PDF المعدل؟
-
- أ: لحفظ مستند PDF المعدّل، يمكنك استخدام`Save` طريقة`Document` يوفر البرنامج التعليمي عينات من التعليمات البرمجية التي توضح كيفية حفظ مستند PDF الناتج.
+### أين يمكنني العثور على مزيد من المعلومات حول Aspose.PDF؟  
+ يمكن العثور على الوثائق التفصيلية[هنا](https://reference.aspose.com/pdf/net/).

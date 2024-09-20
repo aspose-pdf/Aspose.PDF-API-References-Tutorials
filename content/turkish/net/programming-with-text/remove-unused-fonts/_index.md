@@ -2,132 +2,144 @@
 title: PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldır
 linktitle: PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldır
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki kullanılmayan yazı tiplerinin nasıl kaldırılacağını öğrenin.
+description: Aspose.PDF for .NET kullanarak PDF dosyalarından kullanılmayan yazı tiplerini zahmetsizce nasıl kaldıracağınızı öğrenin. Performansı artırın ve dosya boyutunu azaltın.
 type: docs
 weight: 300
 url: /tr/net/programming-with-text/remove-unused-fonts/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki kullanılmayan fontların nasıl kaldırılacağını açıklayacağız. PDF yükleme, kullanılmayan fontları belirleme ve kaldırma ve güncellenen PDF'yi sağlanan C# kaynak kodunu kullanarak kaydetme adım adım sürecini ele alacağız.
+## giriiş
 
-## Gereksinimler
+Merhaba! Gereksiz yer kaplayan yazı tipleriyle dolu şişkin PDF dosyalarından bıktınız mı? Yalnız değilsiniz! PDF'lerde yazı tipi kullanımını yönetmek, özellikle belgelerinizin temiz ve verimli olmasını istediğinizde, zahmetli olabilir. İyi haber şu ki, .NET için Aspose.PDF ile PDF dosyalarından kullanılmayan yazı tiplerini kolayca kaldırabilir, performansı artırabilir ve dosya boyutunu azaltabilirsiniz. Bu eğitimde, PDF dosya yönetiminizi kolaylaştırabilmeniz için süreci adım adım ele alacağız.
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+## Ön koşullar
 
-- Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temellerini anlamak.
+Başlamadan önce, bu eğitimden en iyi şekilde yararlanmak için aşağıdaki ayarların yapıldığından emin olun:
 
-## Adım 1: Belge Dizinini Ayarlayın
+1. Visual Studio Kurulu: .NET kodunuzu çalıştırmak için bir geliştirme ortamına ihtiyacınız olacak. Visual Studio (herhangi bir sürüm) harika bir seçimdir.
+2.  Aspose.PDF for .NET: Bu kütüphanenin kurulu olduğundan emin olun. İndirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+3. C# Hakkında Temel Bilgi: Bu örnekte C# kullanacağımız için, dile aşinalık faydalı olacaktır.
+4. Bir PDF Dosyası: Hazır bir örnek PDF dosyanız olsun. Kendi dosyanızı oluşturabilir veya mevcut herhangi bir PDF'i kullanabilirsiniz. Sadece adının olduğundan emin olun`ReplaceTextPage.pdf` ve belgeler dizininizde saklanır.
+5.  Geçerli Lisans: Ücretsiz denemeyi kullanabilmenize rağmen, tam işlevsellik için geçerli bir lisans önerilir. Geçici bir lisansa ihtiyacınız varsa, bunu edinebilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).
 
- İlk olarak, PDF dosyalarınızın bulunduğu dizine giden yolu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyalarınızın yolunu içeren değişken.
+## Paketleri İçe Aktar
+
+Artık ön koşullarımız hazır olduğuna göre, gerekli paketleri C# projemize aktaralım. İhtiyacınız olanlar şunlar:
+
+Aspose.PDF Ad Alanı: Bu, PDF dosyalarını işlemek için gereken tüm temel işlevleri sağlar.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Adım 2: Kaynak PDF'yi yükleyin
+Bunları içe aktarmak için, yukarıdaki satırları C# dosyanızın en üstüne ekleyin. Bu, PDF belgelerinizi düzenlemek için kullanacağımız sınıflara ve yöntemlere erişmenizi sağlayacaktır.
 
- Daha sonra, kaynak PDF belgesini kullanarak yüklüyoruz`Document` Aspose.PDF kütüphanesinden sınıf.
+## Adım 1: Proje Ortamınızı Kurun
+
+İlk önce ilk şeyler! Visual Studio'da yeni bir Konsol Uygulaması oluşturmanız gerekiyor. Şu adımları izleyin:
+
+- Visual Studio’yu açın.
+- Dosya > Yeni > Proje’ye tıklayın.
+-  Konsol Uygulamasını (.NET Framework) seçin ve ona bir ad verin (örneğin,`PdfFontCleaner`).
+- Oluştur’a tıklayın.
+
+Artık üzerinde çalışabileceğiniz yepyeni bir projeniz var!
+
+## Adım 2: Aspose.PDF Kütüphanesini ekleyin
+
+Sonra, Aspose.PDF kütüphanesini projenize ekleyeceksiniz. Bunu NuGet aracılığıyla yapabilirsiniz:
+
+1. Çözüm Gezgini'nde projenizin üzerine sağ tıklayın.
+2. NuGet Paketlerini Yönet'i seçin.
+3.  Arama`Aspose.PDF` ve kurun.
+
+## Adım 3: PDF Belgesini Yükleyin
+
+İşlemek istediğiniz belgeyi yükleyelim. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
 
 ```csharp
+// Belgeler dizinine giden yol.
+string dataDir = "YOUR DOCUMENT DIRECTORY/"; // Bunu yolunuza güncelleyin
+// Kaynak PDF dosyasını yükle
 Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Adım 3: Kullanılmayan Yazı Tiplerini Belirleyin ve Kaldırın
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY/"` PDF dosyanızın saklandığı gerçek yol ile. Bu adım önemlidir çünkü Aspose'un PDF belgenize erişmesine izin verir. 
 
- Biz bir tane yaratıyoruz`TextFragmentAbsorber` nesne ile`TextEditOptions` parametre ayarlandı`TextEditOptions.FontReplace.RemoveUnusedFonts` . Bu seçenek, PDF belgesinde kullanılmayan yazı tiplerini belirlememize ve kaldırmamıza olanak tanır. Daha sonra tüm`TextFragments` ve yazı tipini istediğiniz bir yazı tipine ayarlayın.
+## Adım 4: Metin Parçası Emicisini Ayarlayın
+
+Sonra, PDF'den kullanılmayan fontları tanımlamamıza ve kaldırmamıza yardımcı olacak bir işlemci ayarlayacağız. Bunu yapmak için kod şu şekilde:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-doc.Pages.Accept(absorb);
+doc.Pages.Accept(absorber);
+```
 
-foreach(TextFragment textFragment in absorber.TextFragments)
+ Bu kod satırı bir`TextFragmentAbsorber` kullanılmayan yazı tiplerini kaldırmak üzere yapılandırılmış nesne. Çağrılarak`doc.Pages.Accept(absorber)`, Aspose'a belgedeki tüm sayfaları incelemesini ve metin parçalarını tanımlamasını söylüyoruz.
+
+## Adım 5: Metin Parçaları Üzerinde Gezinin ve Yazı Tiplerini Değiştirin
+
+Metin parçalarını tanımladıktan sonra, bunlar arasında yineleme yapmanın ve kullanılmayan yazı tiplerini değiştirmenin zamanı geldi. Bu kodu ekleyin:
+
+```csharp
+//Tüm TextFragments'ı yineleyin
+foreach (TextFragment textFragment in absorber.TextFragments)
 {
-     textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
+    textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
 }
 ```
 
-## Adım 4: Güncellenen PDF'yi Kaydedin
+ Bu döngüde her birinin yazı tipini değiştireceksiniz`TextFragment` "Arial, Bold"a. İhtiyaçlarınıza uygun herhangi bir yazı tipini seçebilirsiniz. Gerçek sihir burada gerçekleşir, çünkü PDF'in temiz, iyi tanımlanmış bir yazı tipiyle kalmasını sağlar.
 
-Son olarak güncellenen PDF dokümanını belirtilen çıktı dosyasına kaydediyoruz.
+## Adım 6: Güncellenen Belgeyi Kaydedin
+
+Gerekli değişiklikleri yaptığımıza göre, güncellenen PDF'i kaydedelim! Aşağıdaki kodu ekleyin:
 
 ```csharp
 dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
-Console.WriteLine("\nUnused fonts removed successfully from the PDF document.\nFile saved at " + dataDir);
+Console.WriteLine("\nUnused fonts removed successfully from pdf document.\nFile saved at " + dataDir);
 ```
 
-### .NET için Aspose.PDF kullanarak Kullanılmayan Yazı Tiplerini Kaldırmak için örnek kaynak kodu 
+ Burada, adında yeni bir dosya oluşturuyoruz`RemoveUnusedFonts_out.pdf` aynı dizinde. Bu size orijinal PDF'nizin bir yedeğini verirken, yine de size akıcı bir sürüm sağlar.
+
+## Adım 7: İstisnaları Yönetin
+
+Son olarak, hata işlemeyi dahil etmek her zaman iyi bir fikirdir. İşte kodunuzu sarmak için basit bir try-catch bloğu:
+
 ```csharp
 try
 {
-	// Belgeler dizinine giden yol.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Kaynak PDF dosyasını yükle
-	Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
-	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-	doc.Pages.Accept(absorber);
-	// Tüm TextFragments'ı yineleyin
-	foreach (TextFragment textFragment in absorber.TextFragments)
-	{
-		textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
-	}
-	dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
-	// Güncellenen belgeyi kaydet
-	doc.Save(dataDir);
-	Console.WriteLine("\nUnused fonts removed successfully from pdf document.\nFile saved at " + dataDir);
+    // ... (önceki kod)
 }
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30-day temporary license from https://satınalma.aspose.com.");
 }
 ```
 
+Bu, işlem sırasında oluşan herhangi bir istisnayı yakalayacak ve kullanıcı dostu hata mesajları sağlayacaktır. Kullanıcılarınızı geçerli bir Aspose lisansına ihtiyaç duyma gibi gereksinimler konusunda bilgilendirmeniz önemlidir.
+
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF belgesinden kullanılmayan fontları nasıl kaldıracağınızı öğrendiniz. Adım adım kılavuzu takip ederek ve sağlanan C# kodunu çalıştırarak bir PDF yükleyebilir, kullanılmayan fontları belirleyip kaldırabilir ve güncellenmiş PDF'i kaydedebilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak PDF dosyasından kullanılmayan fontları nasıl kaldıracağınızı başarıyla öğrendiniz. Yukarıda özetlenen adımları izleyerek PDF dosyalarınızı daha yalın ve düzenli hale getirebilir, daha verimli ve kullanıcı dostu olmalarını sağlayabilirsiniz. Belge işleme yeteneklerinizi daha da geliştirmek için Aspose.PDF'nin diğer işlevlerini keşfetmeyi unutmayın!
 
-### SSS
+## SSS
 
-#### S: "PDF Dosyasındaki Kullanılmayan Fontları Kaldırma" eğitiminin amacı nedir?
+### Bu görev için Aspose.PDF'nin ücretsiz sürümünü kullanabilir miyim?
+Evet, ücretsiz denemeyi kullanabilirsiniz ancak optimum performans için tam lisans önerilir.
 
-A: "PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldır" öğreticisi, .NET için Aspose.PDF kütüphanesinin PDF belgesinden kullanılmayan yazı tiplerini kaldırmak için nasıl kullanılacağını açıklar. Öğretici, bir PDF yükleme, kullanılmayan yazı tiplerini belirleme ve kaldırma ve güncellenmiş PDF'yi kaydetme sürecinde size rehberlik eder.
+### Değiştirilebilecek bir şey yoksa yazı tiplerine ne olur?
+Yedek bir yazı tipi bulunamazsa, metin doğru görüntülenmeyebilir; bu nedenle yaygın olarak bulunan bir yazı tipi seçtiğinizden emin olun.
 
-#### S: Kullanılmayan yazı tiplerini bir PDF belgesinden neden kaldırmak isteyebilirim?
+### Geçici ehliyet nasıl alınır?
+ Geçici lisans talebinde bulunabilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).
 
-A: PDF belgesinden kullanılmayan yazı tiplerini kaldırmak, dosya boyutunu azaltmaya ve belgeyi daha iyi performans için optimize etmeye yardımcı olabilir. Bu, özellikle belgenin içeriğinde gerçekten kullanılmayan gömülü yazı tipleri içeren PDF'lerle uğraşırken faydalıdır.
+### Kullanılmayan yazı tiplerini kaldırmak belgenin görünümünü etkiler mi?
+Hangi yazı tiplerinin kaldırıldığı ve metin parçalarının nasıl değiştirildiğine bağlı olarak bu mümkün olabilir; test yapılması önerilir.
 
-#### S: Belge dizinini nasıl ayarlarım?
-
-A: Belge dizinini ayarlamak için:
-
-1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyalarınızın bulunduğu dizinin yolunu içeren değişken.
-
-#### S: Aspose.PDF kütüphanesini kullanarak PDF belgesinden kullanılmayan yazı tiplerini nasıl kaldırabilirim?
-
-A: Eğitim, sizi adım adım süreçte yönlendirir:
-
-1.  PDF belgesini kullanarak açın`Document` sınıf.
-2.  Bir tane oluştur`TextFragmentAbsorber` nesne ile`TextEditOptions` ayarlandı`FontReplace.RemoveUnusedFonts`.
-3. Kullanılmayan yazı tiplerini PDF'den belirlemek ve kaldırmak için emiciyi kabul edin.
-4.  Tümünü tekrarla`TextFragments` ve yazı tipini istediğiniz bir yazı tipine ayarlayın.
-5. Güncellenen PDF belgesini kaydedin.
-
-####  S: Amacı nedir?`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
-
- A:`TextEditOptions.FontReplace.RemoveUnusedFonts` parametre talimat verir`TextFragmentAbsorber`PDF belgesindeki kullanılmayan yazı tiplerini belirlemek ve kaldırmak için.
-
-#### S: Kullanılmayan fontları kendi seçtiğim bir fontla değiştirebilir miyim?
-
-A: Evet, kullanılmayan yazı tiplerini istediğiniz bir yazı tipiyle değiştirmek için kodu değiştirebilirsiniz. Sağlanan örnek kodda, "Arial, Bold" yazı tipi bir değiştirme olarak kullanılmıştır.
-
-#### S: Nasıl?`TextFragmentAbsorber` work to remove unused fonts?
-
- A:`TextFragmentAbsorber` ile yapılandırılmıştır`TextEditOptions.FontReplace.RemoveUnusedFonts` PDF'nin metin parçalarındaki kullanılmayan yazı tiplerini tanımlayan parametre. Emilimden sonra, yineleme yapabilirsiniz`TextFragments` ve yazı tiplerini istedikleri yedek yazı tipleriyle değiştirebilirler.
-
-#### S: Verilen kodun yürütülmesinin beklenen sonucu nedir?
-
-C: Eğitimi takip ederek ve verilen C# kodunu çalıştırarak, kullanılmayan fontları giriş PDF belgesinden kaldıracak ve güncellenmiş sürümü çıkış PDF dosyası olarak kaydedeceksiniz.
-
-#### S: Kodu yalnızca belirli sayfalardan veya alanlardan yazı tiplerini kaldıracak şekilde değiştirebilir miyim?
-
-A: Sağlanan kod, kullanılmayan yazı tiplerini tüm PDF belgesinden kaldırmaya odaklanır. Yazı tipi kaldırma için belirli sayfaları veya bölgeleri hedeflemek istiyorsanız, yaklaşımı değiştirmeniz ve bu alanlarda kullanılmayan yazı tiplerini tanımlamak için daha karmaşık bir mantık kullanmanız gerekir.
+### Kullanılmayan fontları kaldırmanın alternatif bir yöntemi var mı?
+Bu amaç için Aspose.PDF for .NET oldukça verimlidir, ancak diğer kütüphaneler veya araçlar da benzer işlevler sunabilir.

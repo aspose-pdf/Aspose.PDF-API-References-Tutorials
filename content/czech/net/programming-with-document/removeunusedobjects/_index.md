@@ -11,7 +11,7 @@ url: /cs/net/programming-with-document/removeunusedobjects/
 
 Efektivní správa souborů PDF je v dnešním rychle se měnícím digitálním světě klíčová. Otevřeli jste někdy PDF a přemýšleli jste, proč je tak velký, i když obsahuje jen pár stránek? Může to být způsobeno nepoužitými objekty nebo prvky, které zaplňují soubor. V tomto tutoriálu vás krok za krokem provedu, jak odstranit nepoužívané objekty ze souboru PDF pomocí Aspose.PDF for .NET. 
 
-Na konci tohoto článku budete mít štíhlejší, optimalizovanější PDF, které se načítá rychleji a zabírá méně úložného prostoru. Tak se do toho rovnou vrhneme!
+Na konci tohoto článku budete mít štíhlejší, optimalizovanější PDF, které se načítá rychleji a zabírá méně úložného prostoru. Takže, pojďme se do toho pustit!
 
 ## Předpoklady
 
@@ -94,7 +94,7 @@ Gratuluji! Právě jste se naučili, jak odstranit nepoužívané objekty z PDF 
 
 Nyní byste měli být schopni načíst PDF, použít možnosti optimalizace a uložit optimalizovanou verzi. Je to jednoduchý proces, ale může mít obrovský dopad na výkon a úložiště.
 
-Tak na co čekáš? Pokračujte a zkuste optimalizovat své PDF ještě dnes!
+Tak na co čekáš? Pokračujte a zkuste optimalizovat své soubory PDF ještě dnes!
 
 ## FAQ
 

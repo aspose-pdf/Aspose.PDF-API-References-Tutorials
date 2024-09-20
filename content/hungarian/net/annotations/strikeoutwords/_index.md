@@ -15,7 +15,7 @@ Előfordult már, hogy egy PDF-fájlban egy adott szöveget ki kell hangsúlyozn
 
 Mielőtt belevágnánk a kódba, van néhány előfeltétel, amelyeket teljesítenie kell, hogy kövesse ezt az oktatóanyagot:
 
-1.  Aspose.PDF for .NET Library: Győződjön meg arról, hogy az Aspose.PDF for .NET könyvtár telepítve van. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET Library: Győződjön meg arról, hogy az Aspose.PDF for .NET könyvtár telepítve van. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 
 2. .NET-keretrendszer: Győződjön meg arról, hogy a .NET-keretrendszer telepítve van a számítógépen. Ez az oktatóanyag .NET-alkalmazásokhoz készült.
 

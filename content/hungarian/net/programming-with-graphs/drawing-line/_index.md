@@ -143,7 +143,7 @@ vonalak rajzolása egy PDF-dokumentumban az Aspose.PDF for .NET használatával 
  Teljesen! Csak állítsa be a koordinátákat`Line` objektumot a vonalak szükség szerinti elhelyezéséhez.
 
 ### Hozzáadhatok szöveget a sorokhoz?
- Igen, szöveget hozzáadhat létrehozással`TextFragment` tárgyakat és azok elhelyezését a`Paragraphs` az oldal gyűjteménye.
+ Igen, létrehozhat szöveget`TextFragment` tárgyakat és azok elhelyezését a`Paragraphs` az oldal gyűjteménye.
 
 ### Mi a teendő, ha sorokat szeretnék hozzáadni egy meglévő PDF-hez, nem pedig újat?
  Meglévő PDF-fájlt tölthet be a segítségével`Document` majd hasonló módszerekkel adjon hozzá sorokat a meglévő oldalakhoz.

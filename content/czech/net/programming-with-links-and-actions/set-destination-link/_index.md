@@ -13,7 +13,7 @@ V rychle se měnícím světě digitálních dokumentů vás může odlišit sch
 
 ## Předpoklady
 
-Než začneme, je potřeba mít připraveno několik věcí:
+Než začneme, je třeba mít připraveno několik věcí:
 
 1. Aspose.PDF pro knihovnu .NET:
     Budete si muset stáhnout a nainstalovat balíček Aspose.PDF for .NET. Můžete najít instalační soubory[zde](https://releases.aspose.com/pdf/net/).

@@ -48,7 +48,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 ```
 
- In diesem Schritt geben wir den Dateipfad zu Ihrem PDF-Dokument an.`Document` Mit der Klasse können Sie die PDF-Datei in den Speicher laden, sodass sich der Inhalt problemlos ändern lässt.
+ In diesem Schritt geben wir den Dateipfad zu Ihrem PDF-Dokument an.`Document` Mit der Klasse können Sie die PDF-Datei in den Speicher laden und so den Inhalt problemlos ändern.
 
 ## Schritt 2: Zugriff auf das Formularfeld
 

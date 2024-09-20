@@ -97,4 +97,4 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 Εκτός από το HTML, μπορείτε να μετατρέψετε PDF σε διάφορες μορφές όπως DOCX, XLSX και άλλα χρησιμοποιώντας το Aspose.PDF.
 
 ### Πού μπορώ να βρω υποστήριξη για το Aspose.PDF;
- Μπορείτε να βρείτε υποστήριξη και να κάνετε ερωτήσεις στο φόρουμ του Aspose[εδώ](https://forum.aspose.com/c/pdf/10).
+ Μπορείτε να βρείτε υποστήριξη και να κάνετε ερωτήσεις στο φόρουμ Aspose[εδώ](https://forum.aspose.com/c/pdf/10).

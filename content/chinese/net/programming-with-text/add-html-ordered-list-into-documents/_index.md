@@ -2,139 +2,132 @@
 title: 将 HTML 有序列表添加到文档中
 linktitle: 将 HTML 有序列表添加到文档中
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 向文档添加 HTML 有序列表。
+description: 学习使用 Aspose.PDF for .NET 在 PDF 文档中添加 HTML 有序列表。在此详细教程中了解分步说明。
 type: docs
 weight: 30
 url: /zh/net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-在本教程中，您将学习如何使用 Aspose.PDF for .NET 库将 HTML 有序列表添加到文档中。提供的代码演示了完成此任务的必要步骤。
+## 介绍
 
-## 要求
-开始之前，请确保您已准备好以下物品：
+即时创建 PDF 文档可以为开发人员打开一个无限可能的世界。无论您需要生成报告、发票还是任何其他形式的文档，能够操作 HTML 元素并将它们无缝集成到 PDF 中都是非常强大的功能。在本文中，我们将深入探讨如何使用 Aspose.PDF for .NET 将 HTML 有序列表添加到文档中。
 
-- 您的机器上安装的 Visual Studio 或任何其他 C# 编译器。
-- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，也可以使用 NuGet 等包管理器来安装它。
+## 先决条件
 
-## 步骤 1：设置项目
-1. 在您首选的开发环境中创建一个新的 C# 项目。
-2. 添加对 Aspose.PDF for .NET 库的引用。
+在开始 PDF 操作之前，请确保一切准备就绪。以下是您需要准备的物品的简要概述：
 
-## 步骤 2：导入所需的命名空间
-在要添加 HTML 有序列表的代码文件中，在文件顶部添加以下使用指令：
+1. .NET 开发环境：确保您的计算机上安装了 Visual Studio 等 IDE。这将是您编码的游乐场。
+2.  Aspose.PDF for .NET 库：您需要下载并安装 Aspose.PDF 库。您可以找到必要的文件[这里](https://releases.aspose.com/pdf/net/). 
+3. C# 基础知识：熟悉 C# 编程将会很有益，因为我们将使用这种语言进行编码。
+4. 访问文档：为了熟悉 Aspose.PDF 的各种功能，最好拥有[Aspose.PDF for .NET 文档](https://reference.aspose.com/pdf/net/)方便参考。
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+既然我们已经满足了先决条件，那就开始行动吧！
 
-## 步骤3：设置文档目录和输出文件路径
-在代码中，找到以下行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`使用存储文档的目录路径。
+## 导入包
 
-接下来，找到以下行：`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";`并替换`"AddHTMLOrderedListIntoDocuments_out.pdf"`使用您所需的输出 PDF 文件的名称。
+首先，您需要在 C# 应用程序中导入所需的包。这将允许您访问 Aspose.PDF 库提供的类和方法。 
 
-## 步骤 4：创建一个新的 Document 对象
-实例化一个新的`Document`对象，添加以下代码行：
+### 创建新项目
 
-```csharp
-Document doc = new Document();
-```
+打开 Visual Studio 并创建一个新的控制台应用程序项目。给它一个合适的名字，例如“PDFOrderedListDemo”。
 
-## 步骤 5：使用 HTML 内容创建 HtmlFragment 对象
-实例化`HtmlFragment`对象，其中包含要添加到文档的 HTML 内容。在提供的代码中，HTML 内容被分配给变量`t`。您可以根据需要修改HTML内容。
+### 添加 Aspose.PDF 参考
+
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择管理 NuGet 包。
+3. 搜索“Aspose.PDF”并安装最新版本。
+
+### 导入所需的命名空间
+
+在你的`Program.cs`文件，首先在顶部添加以下使用指令：
 
 ```csharp
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 步骤 6：向文档添加页面
-使用`Add`方法`Pages`集合。在提供的代码中，新页面被分配给变量`page`.
+现在我们就可以开始构建 PDF 了！
 
-```csharp
-Page page = doc.Pages.Add();
-```
+准备好创建带有 HTML 有序列表的 PDF 了吗？请按照以下步骤操作。
 
-## 步骤 7：将 HtmlFragment 添加到页面
-添加`HtmlFragment`通过使用`Add`方法`Paragraphs`收藏。
+## 步骤 1：定义文档和 HTML 内容
 
-```csharp
-page.Paragraphs.Add(t);
-```
+我们将首先设置我们的 PDF 文档并定义包含有序列表的 HTML 内容。
 
-## 步骤 8：保存 PDF 文档
-使用`Save`方法`Document`对象。指定您在步骤 3 中设置的输出文件路径。
-
-```csharp
-doc.Save(outFile);
-```
-
-### 使用 Aspose.PDF for .NET 将 HTMLOrdered 列表添加到文档中的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 //输出文档的路径。
 string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
+
 //实例化 Document 对象
 Document doc = new Document();
+```
+
+在此步骤中，我们设置稍后要保存 PDF 文档的文件路径。
+
+## 第 2 步：创建 HTML 片段
+
+接下来，我们将创建一个`HtmlFragment`包含 HTML 的对象。这里我们将包含一个有序列表以及一些文本。
+
+```csharp
 //使用相应的 HTML 片段实例化 HtmlFragment 对象
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
+HtmlFragment htmlFragment = new HtmlFragment("<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>");
+```
+
+这里我们创建了一个包含项目列表的 HTML 片段。HTML 以字符串形式存储，便于操作。
+
+## 步骤 3：向文档添加页面
+
+现在，我们需要为 PDF 文档添加页面。每个 PDF 都需要有页面，我们也不例外！
+
+```csharp
 //在页面集合中添加页面
 Page page = doc.Pages.Add();
+```
+
+这行代码向我们的文档添加了一个新页面。请记住，每个页面可以容纳各种元素，包括文本、图像和我们的 HTML 内容。
+
+## 步骤 4：将 HTML 片段插入页面
+
+这就是奇迹发生的地方！现在我们将之前定义的 HTML 片段添加到我们刚刚创建的页面中。
+
+```csharp
 //在页面内添加 HtmlFragment
-page.Paragraphs.Add(t);
+page.Paragraphs.Add(htmlFragment);
+```
+
+通过将 HTML 片段添加到我们页面的段落中，我们实际上是在告诉 PDF 呈现我们的 HTML，就像它在 Web 浏览器中显示的那样。
+
+## 步骤 5：保存 PDF 文档
+
+在所有内容都准备好之后，最后一步就是将文档保存到磁盘。
+
+```csharp
 //保存生成的 PDF 文件
 doc.Save(outFile);
 ```
 
+在这里我们称之为`Save`方法在我们的文档对象上，指定我们的新 PDF 所在的输出文件路径。
+
 ## 结论
-您已成功使用 Aspose.PDF for .NET 将 HTML 有序列表添加到文档中。现在可以在指定的输出文件路径中找到生成的 PDF 文件。
 
-请记住根据您的具体要求自定义 HTML 内容并调整代码。
+无论您要生成报告、设计文档还是个人项目，将 HTML 内容转换为 PDF 格式的功能都可以极大地丰富您的应用程序。尝试使用其他 HTML 元素，看看您的 PDF 创作能达到怎样的水平！
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：本教程的目的是什么？
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个库，允许开发人员以编程方式创建、操作和转换 PDF 文档。
 
-答：本教程旨在指导您使用 Aspose.PDF for .NET 库将 HTML 有序列表添加到文档中的过程。它提供了分步说明和代码片段来帮助您完成此任务。
+### 我可以将 Aspose.PDF 用于其他类型的 HTML 内容吗？
+是的，Aspose.PDF 支持广泛的 HTML 内容，包括文本、图像和样式元素。
 
-#### 问：本教程需要导入哪些命名空间？
+### 是否可以自定义有序列表的外观？
+当然可以！您可以应用 CSS 样式和类来控制有序列表和其他 HTML 元素的可视化。
 
-答：您需要在代码文件顶部导入以下命名空间：
+### 我需要互联网连接才能使用 Aspose.PDF for .NET 吗？
+不是，一旦安装，图书馆就可以离线运行。
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### 问：如何指定文档目录和输出文件路径？
-
-答：在代码中，找到以下行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`替换为文档目录的实际路径。此外，找到以下行`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";`并替换`"AddHTMLOrderedListIntoDocuments_out.pdf"`使用您想要的输出 PDF 文件名。
-
-#### 问：我可以自定义添加到文档的 HTML 内容吗？
-
-答：当然可以！在第 5 步中，你将创建一个`HtmlFragment`对象命名`t`包含 HTML 内容。您可以修改反引号内的 HTML 内容以满足您的要求。
-
-#### 问：如何将 HTML 有序列表添加到文档的页面中？
-
-答：在第 7 步中，您将添加`HtmlFragment`目的 （`t` ）使用`Add`方法`Paragraphs`集合。这将无缝地将 HTML 有序列表集成到文档中。
-
-#### 问：如何保存生成的 PDF 文档？
-
-答：添加 HTML 内容并将其排列在页面上后，您可以使用`Save`方法`Document`对象。请确保提供您之前设置的正确输出文件路径。
-
-#### Q：能否提供一下示例源码的概要，供参考？
-
-答：当然可以！以下是本教程提供的示例源代码的摘要版本：
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
-Document doc = new Document();
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-Page page = doc.Pages.Add();
-page.Paragraphs.Add(t);
-doc.Save(outFile);
-```
-
-#### 问：本教程的重点是什么？
-
-答：通过本教程，您已成功学会了如何利用 Aspose.PDF for .NET 库将 HTML 有序列表合并到文档中。这些新知识可用于增强文档创建和操作过程。
+### 在哪里可以找到对 Aspose.PDF 的支持？
+您可以在[Aspose 支持论坛](https://forum.aspose.com/c/pdf/10).

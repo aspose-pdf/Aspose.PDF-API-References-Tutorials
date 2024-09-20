@@ -9,7 +9,7 @@ url: /fr/net/programming-with-forms/dynamic-xfa-to-acro-form/
 ---
 ## Introduction
 
-Dans le monde des documents PDF, les formulaires jouent un rôle crucial dans la collecte de données et l'interaction avec l'utilisateur. Cependant, tous les formulaires ne sont pas créés de la même manière. Les formulaires XFA dynamiques, bien que puissants, peuvent être un peu difficiles à utiliser. Si vous avez déjà eu besoin de convertir un formulaire XFA dynamique en un formulaire AcroForm standard, vous êtes au bon endroit ! Dans ce didacticiel, nous vous guiderons tout au long du processus à l'aide d'Aspose.PDF pour .NET, une bibliothèque robuste qui simplifie la manipulation des PDF. Alors, prenez votre casquette de codeur et plongeons dans le monde des formulaires PDF !
+Dans le monde des documents PDF, les formulaires jouent un rôle crucial dans la collecte de données et l'interaction avec l'utilisateur. Cependant, tous les formulaires ne sont pas créés de la même manière. Les formulaires XFA dynamiques, bien que puissants, peuvent être un peu difficiles à utiliser. Si vous avez déjà eu besoin de convertir un formulaire XFA dynamique en un formulaire AcroForm standard, vous êtes au bon endroit ! Dans ce didacticiel, nous vous guiderons tout au long du processus à l'aide d'Aspose.PDF pour .NET, une bibliothèque robuste qui simplifie la manipulation des PDF. Alors, prenez votre chapeau de codeur et plongeons dans le monde des formulaires PDF !
 
 ## Prérequis
 

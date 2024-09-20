@@ -27,12 +27,12 @@ Ismerje meg, hogyan érheti el a struktúraelemek gyermekelemeit PDF-ben Java ha
 ### [Szerkezetelem hozzáadása a PDF elemhez Java használatával](./add-structure-element-into-element-in-pdf-using-java/)
 Ismerje meg, hogyan javíthatja a PDF szerkezetét Java nyelven az Aspose.PDF for Java segítségével. Ez a lépésenkénti útmutató a hozzáférhető és rendezett PDF-fájlok szerkezeti elemeinek hozzáadását ismerteti.
 ### [Jegyzetszerkezeti elem létrehozása PDF-ben Java használatával](./create-note-structure-element-in-pdf-using-java/)
-Ismerje meg, hogyan hozhat létre interaktív jegyzetszerkezet-elemeket PDF-fájlokban Java használatával az Aspose.PDF for Java segítségével. Bővítse dokumentumait tájékoztató megjegyzésekkel.
+Ismerje meg, hogyan hozhat létre interaktív jegyzetszerkezeti elemeket PDF-fájlokban Java használatával az Aspose.PDF for Java segítségével. Bővítse dokumentumait tájékoztató megjegyzésekkel.
 ### [Hozzon létre PDF-et címkézett képpel Java nyelven](./create-pdf-with-tagged-image-in-java/)
 Ismerje meg, hogyan hozhat létre hozzáférhető címkézett PDF-fájlokat Java nyelven az Aspose.PDF for Java segítségével. Kövesse lépésről lépésre útmutatónkat a zökkenőmentes PDF generáláshoz.
 ### [Hozzon létre PDF-et címkézett szöveggel Java nyelven](./create-pdf-with-tagged-text-in-java/)
 Ismerje meg, hogyan hozhat létre címkézett PDF-fájlokat Java nyelven az Aspose.PDF for Java segítségével. Lépésről lépésre szóló útmutatónk biztosítja a hozzáférhetőséget és a megfelelőséget.
-### [Szövegblokk szerkezeti elemek a PDF-ben Java használatával](./text-block-structure-elements-in-pdf-using-java/)
+### [Szövegblokk szerkezeti elemek PDF-ben Java használatával](./text-block-structure-elements-in-pdf-using-java/)
 Mester PDF szövegblokk szerkezeti elemek Java nyelven – Lépésről lépésre útmutató az Aspose.PDF for Java használatához.
 ### [Szövegszerkezeti elemek a PDF-ben Java használatával](./text-structure-elements-in-pdf-using-java/)
 Ismerje meg, hogyan kezelheti a PDF szövegstruktúráit Java nyelven az Aspose.PDF for Java segítségével. Fedezze fel a forráskóddal ellátott, lépésről lépésre szóló útmutatókat a hatékony PDF-szövegkezelés érdekében.

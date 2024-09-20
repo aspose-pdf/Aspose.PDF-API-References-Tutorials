@@ -9,7 +9,7 @@ url: /nl/net/annotations/getallannotationsfrompage/
 ---
 ## Invoering
 
-Welkom in de wereld van Aspose.PDF voor .NET! Als u PDF-documenten programmatisch wilt bewerken, bent u op de juiste plek terechtgekomen. Aspose.PDF is een krachtige bibliotheek waarmee ontwikkelaars eenvoudig PDF-bestanden kunnen maken, bewerken en beheren. In deze tutorial duiken we in een specifieke functie: annotaties uit een PDF-pagina halen. Of u nu een doorgewinterde ontwikkelaar bent of net begint, deze gids leidt u stap voor stap door het proces en zorgt ervoor dat u elk detail begrijpt.
+Welkom in de wereld van Aspose.PDF voor .NET! Als u PDF-documenten programmatisch wilt bewerken, bent u op de juiste plek beland. Aspose.PDF is een krachtige bibliotheek waarmee ontwikkelaars eenvoudig PDF-bestanden kunnen maken, bewerken en beheren. In deze tutorial duiken we in een specifieke functie: annotaties uit een PDF-pagina halen. Of u nu een doorgewinterde ontwikkelaar bent of net begint, deze gids leidt u stap voor stap door het proces, zodat u onderweg elk detail begrijpt.
 
 ## Vereisten
 

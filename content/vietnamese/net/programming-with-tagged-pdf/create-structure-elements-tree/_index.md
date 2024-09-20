@@ -2,126 +2,139 @@
 title: Tạo Cấu trúc Cây Thành phần
 linktitle: Tạo Cấu trúc Cây Thành phần
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tạo cấu trúc các phần tử cây bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tạo tài liệu PDF có cấu trúc.
+description: Tìm hiểu cách tạo cây thành phần cấu trúc trong tài liệu PDF bằng Aspose.PDF cho .NET. Làm theo hướng dẫn từng bước này.
 type: docs
 weight: 70
 url: /vi/net/programming-with-tagged-pdf/create-structure-elements-tree/
 ---
-Trong hướng dẫn từng bước này, chúng tôi sẽ giải thích mã nguồn trong C# để tạo cấu trúc các phần tử cây bằng Aspose.PDF cho .NET. Chúng tôi sẽ chỉ cho bạn cách tạo tài liệu PDF với các phần tử có cấu trúc và cách sắp xếp chúng theo thứ bậc. Sử dụng thư viện Aspose.PDF giúp đơn giản hóa đáng kể việc thao tác các phần tử PDF và cung cấp chức năng nâng cao để làm việc với các tài liệu có cấu trúc.
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
- Trước khi bắt đầu, hãy đảm bảo bạn đã thiết lập môi trường phát triển của mình với Aspose.PDF cho .NET. Ngoài ra, hãy đảm bảo bạn đã thiết lập đường dẫn đến thư mục tài liệu của mình trong`dataDir` biến đổi.
+Khi làm việc với PDF, đặc biệt là đối với những người muốn đảm bảo khả năng truy cập và nội dung có cấu trúc, việc tạo cây thành phần cấu trúc là rất quan trọng. Hãy coi cây này như bộ xương của tài liệu, cung cấp bố cục giúp sắp xếp và quản lý nội dung. Nếu bạn mới sử dụng Aspose.PDF cho .NET, đừng lo lắng! Bài viết này sẽ hướng dẫn bạn từng bước trong quy trình.
 
-## Bước 2: Tạo tài liệu PDF
- Để bắt đầu, chúng ta sẽ tạo một tài liệu PDF mới bằng cách sử dụng`Document` lớp do Aspose.PDF cung cấp. Đây là mã cho bước này:
+## Điều kiện tiên quyết
+
+Trước khi đi sâu vào chi tiết của mã, hãy đảm bảo rằng bạn có mọi thứ cần thiết:
+
+1.  Aspose.PDF cho .NET: Đảm bảo rằng bạn đã cài đặt thư viện này. Bạn có thể tải xuống từ đây:[Tải xuống Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net/).
+2. Môi trường .NET: Cần có môi trường phát triển .NET đang hoạt động (như Visual Studio).
+3. Kiến thức cơ bản về C#: Hiểu biết cơ bản về C# sẽ giúp bạn nắm bắt các khái niệm một cách nhanh chóng.
+
+ Nếu bạn chưa làm như vậy, bạn có thể muốn kiểm tra[tài liệu](https://reference.aspose.com/pdf/net/) để có thêm thông tin chi tiết.
+
+## Nhập gói
+
+Trước khi bắt đầu viết mã, bạn cần nhập các không gian tên cần thiết vào ứng dụng .NET của mình. Sau đây là cách bạn có thể thực hiện:
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Tạo một tài liệu PDF
-Document document = new Document();
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 3: Sử dụng TaggedPdf để đưa nội dung vào hoạt động
- Thư viện Aspose.PDF cho phép làm việc với các tài liệu PDF có cấu trúc bằng cách sử dụng khái niệm PDF được gắn thẻ. Đối với điều này, chúng ta cần có tham chiếu đến mục nội dung được gắn thẻ bằng cách sử dụng`TaggedContent`thuộc tính. Đây là mã cho bước này:
+Điều này cho biết chương trình của bạn sử dụng các tính năng PDF của Aspose, bao gồm các chức năng PDF được gắn thẻ. Bây giờ hãy xắn tay áo lên và bắt tay vào code!
+
+## Bước 1: Xác định Đường dẫn Tài liệu
+
+Để bắt đầu, bạn sẽ cần quyết định nơi lưu trữ tài liệu PDF của mình. Giống như việc chọn giá sách cho cuốn sách của bạn vậy!
 
 ```csharp
-// Nhận nội dung để làm việc với TaggedPdf
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Bước 4: Đặt tiêu đề và ngôn ngữ cho tài liệu
- Trước khi chúng ta bắt đầu tạo cấu trúc của các thành phần, chúng ta cần xác định tiêu đề và ngôn ngữ của tài liệu. Điều này có thể được thực hiện bằng cách sử dụng`SetTitle` Và`SetLanguage` phương pháp của`taggedContent` đối tượng. Sau đây là mã cho bước này:
-
-```csharp
-// Xác định tiêu đề và ngôn ngữ của tài liệu
-taggedContent.SetTitle("Structured PDF Document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Bước 5: Tạo các thành phần cấu trúc logic
-Bây giờ chúng ta đã thiết lập tài liệu và đặt tiêu đề và ngôn ngữ, chúng ta có thể bắt đầu tạo các thành phần cấu trúc logic. Các thành phần này sẽ được sắp xếp theo thứ bậc để tạo thành cây cấu trúc. Sau đây là mã cho bước này:
-
-```csharp
-// Lấy phần tử cấu trúc gốc (Tài liệu)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Tạo cấu trúc logic
-SectElement sect1 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect1);
-
-SectElement sect2 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect2);
-
-DivElement div11 = taggedContent.CreateDivElement();
-sect1.AppendChild(div11);
-
-DivElement div12 = taggedContent.CreateDivElement();
-sect1.AppendChild(div12);
-
-ArtElement art21 = taggedContent.CreateArtElement();
-sect2.AppendChild(art21);
-
-ArtElement art22
-
-  = taggedContent.CreateArtElement();
-sect2.AppendChild(art22);
-
-DivElement div211 = taggedContent.CreateDivElement();
-art21.AppendChild(div211);
-
-DivElement div212 = taggedContent.CreateDivElement();
-art21.AppendChild(div212);
-
-DivElement div221 = taggedContent.CreateDivElement();
-art22.AppendChild(div221);
-
-DivElement div222 = taggedContent.CreateDivElement();
-art22.AppendChild(div222);
-
-SectElement sect3 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect3);
-
-DivElement div31 = taggedContent.CreateDivElement();
-sect3.AppendChild(div31);
-```
-
-## Bước 6: Lưu tài liệu PDF đã gắn thẻ
- Sau khi chúng ta đã tạo cấu trúc phần tử, chúng ta có thể lưu tài liệu PDF. Sử dụng`Save` phương pháp của`document` đối tượng để chỉ định đường dẫn và tên của tệp PDF cần lưu. Sau đây là mã cho bước này:
-
-```csharp
-// Lưu tài liệu PDF đã gắn thẻ
-document.Save(dataDir + "StructureElementsTree.pdf");
-```
-
-### Mã nguồn mẫu để tạo cây thành phần cấu trúc bằng Aspose.PDF cho .NET 
-```csharp
-
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Tạo Tài Liệu PDF
+```
+
+ Hãy chắc chắn thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn tệp thực tế của bạn. Đây là nơi tệp PDF cuối cùng của bạn sẽ được lưu trữ.
+
+## Bước 2: Tạo một tài liệu PDF
+
+Bây giờ là lúc tạo ra chính tài liệu đó. Hãy nghĩ về điều này như việc tạo ra trang đầu tiên của cuốn sách của bạn. 
+
+```csharp
 Document document = new Document();
+```
+
+Dòng này sẽ tạo một tài liệu PDF mới mà bạn sẽ xây dựng dựa trên đó.
+
+## Bước 3: Khởi tạo nội dung được gắn thẻ
+
+Phần này là nơi phép thuật bắt đầu. Bạn cần truy cập vào nội dung được gắn thẻ của tài liệu.
+
+```csharp
 // Nhận nội dung cho công việc với TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Đặt Tiêu đề và Ngôn ngữ cho Documnet
+```
+
+Bằng cách này, bạn đang chuẩn bị tài liệu để chứa dữ liệu có cấu trúc, giống như chuẩn bị một bức tranh trống cho một kiệt tác vậy!
+
+## Bước 4: Đặt Tiêu đề và Ngôn ngữ
+
+Tiêu đề và thông số ngôn ngữ cung cấp ngữ cảnh. Giống như việc đặt tên và giọng nói cho tài liệu của bạn.
+
+```csharp
+// Đặt Tiêu đề và Ngôn ngữ cho Tài liệu
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
+
+Bây giờ, tài liệu của bạn đã có danh tính!
+
+## Bước 5: Lấy phần tử gốc
+
+Mọi cấu trúc đều cần có nền móng, đúng không? Ở đây, bạn đang thiết lập phần tử cấu trúc gốc.
+
+```csharp
 // Lấy phần tử cấu trúc gốc (Tài liệu)
 StructureElement rootElement = taggedContent.RootElement;
-// Tạo cấu trúc logic
+```
+
+Phần tử gốc này sẽ đóng vai trò là cấp cao nhất trong cấu trúc tài liệu của bạn.
+
+## Bước 6: Tạo các phần cấu trúc logic
+
+Các phần giúp sắp xếp nội dung một cách hợp lý. Hãy tạo từng phần một, giống như các chương trong một cuốn sách!
+
+```csharp
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 SectElement sect2 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect2);
+```
+
+Với những dòng này, bạn đã thêm được hai phần! 
+
+## Bước 7: Thêm các phần tử Div vào các phần
+
+Các phần tử div có thể được coi là các đoạn văn hoặc phần trong một chương. Hãy làm cho mọi thứ trở nên hấp dẫn hơn bằng cách thêm nội dung vào các phần đó.
+
+```csharp
 DivElement div11 = taggedContent.CreateDivElement();
 sect1.AppendChild(div11);
 DivElement div12 = taggedContent.CreateDivElement();
 sect1.AppendChild(div12);
+```
+
+Ở đây bạn đã thêm hai phần tử div vào phần đầu tiên. 
+
+## Bước 8: Thêm các yếu tố nghệ thuật vào phần tiếp theo
+
+Bây giờ, chúng ta hãy thêm chút nghệ thuật bằng cách thêm các yếu tố nghệ thuật!
+
+```csharp
 ArtElement art21 = taggedContent.CreateArtElement();
 sect2.AppendChild(art21);
 ArtElement art22 = taggedContent.CreateArtElement();
 sect2.AppendChild(art22);
+```
+
+Bạn đã tạo hai thành phần nghệ thuật trong phần thứ hai có thể chứa hình ảnh hoặc đồ họa.
+
+## Bước 9: Thêm nhiều phần tử Div bên dưới phần tử Art
+
+Hãy thêm nội dung vào các thành phần nghệ thuật đó bằng cách thêm nhiều thành phần div hơn.
+
+```csharp
 DivElement div211 = taggedContent.CreateDivElement();
 art21.AppendChild(div211);
 DivElement div212 = taggedContent.CreateDivElement();
@@ -130,56 +143,60 @@ DivElement div221 = taggedContent.CreateDivElement();
 art22.AppendChild(div221);
 DivElement div222 = taggedContent.CreateDivElement();
 art22.AppendChild(div222);
-SectElement sect3 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect3);
-DivElement div31 = taggedContent.CreateDivElement();
-sect3.AppendChild(div31);
-// Lưu tài liệu PDF có gắn thẻ
-document.Save(dataDir + "StructureElementsTree.pdf");
-
 ```
 
+Ở đây, chúng tôi vừa thêm bốn div nữa! Hãy nghĩ về mỗi div như một ngăn nhỏ chứa đầy màn trình diễn nghệ thuật của bạn.
+
+## Bước 10: Tạo một phần khác
+
+Chúng ta đừng dừng lại ở đây! Chúng ta sẽ thêm phần thứ ba để chứa nhiều nội dung hơn nữa.
+
+```csharp
+SectElement sect3 = taggedContent.CreateSectElement();
+rootElement.AppendChild(sect3);
+```
+
+Đây là một chương trống khác đang chờ được điền vào!
+
+## Bước 11: Thêm phần tử Div vào phần cuối cùng
+
+Cuối cùng, chúng ta cần điền nội dung vào phần cuối cùng.
+
+```csharp
+DivElement div31 = taggedContent.CreateDivElement();
+sect3.AppendChild(div31);
+```
+
+Cứ như vậy, tài liệu của bạn sẽ chứa đầy nội dung có cấu trúc.
+
+## Bước 12: Lưu tài liệu
+
+Sau tất cả những công sức khó khăn, đã đến lúc lưu lại sáng tạo của bạn. Hãy nghĩ về việc đặt cuốn sách của bạn lên kệ sau khi viết xong!
+
+```csharp
+// Lưu tài liệu PDF có gắn thẻ
+document.Save(dataDir + "StructureElementsTree.pdf");
+```
+
+Lệnh này sẽ lưu tài liệu PDF mới có cấu trúc của bạn vào thư mục được chỉ định.
+
 ## Phần kết luận
-Bạn đã học cách tạo cấu trúc các phần tử cây bằng Aspose.PDF cho .NET. Hướng dẫn này đã chỉ cho bạn các bước cần thiết để thiết lập tài liệu PDF, tạo các phần tử cấu trúc logic và lưu tài liệu cuối cùng. Bằng cách sử dụng Aspose.PDF, bạn có thể dễ dàng thao tác các phần tử PDF và tạo tài liệu có cấu trúc.
 
-### Câu hỏi thường gặp
+Tạo cây thành phần cấu trúc với Aspose.PDF cho .NET giống như xây dựng khung của một tòa nhà. Mỗi bước đều dựa trên bước trước, mang đến cho bạn một tài liệu chắc chắn và có tổ chức. Bây giờ bạn có thể quản lý PDF hiệu quả hơn nhiều và thậm chí cải thiện khả năng truy cập. Cho dù bạn đang xử lý báo cáo, hướng dẫn sử dụng hay bất kỳ tài liệu nào khác, việc cấu trúc nội dung của bạn một cách chính xác là một chiến thắng lớn.
 
-#### H: Mục đích của việc tạo cấu trúc các phần tử cây trong tài liệu PDF bằng Aspose.PDF cho .NET là gì?
+## Câu hỏi thường gặp
 
-A: Tạo cấu trúc các thành phần cây trong tài liệu PDF bằng Aspose.PDF cho .NET cho phép bạn sắp xếp nội dung theo thứ bậc. Cách tiếp cận có cấu trúc này cải thiện khả năng truy cập, điều hướng và ngữ nghĩa của tài liệu, giúp người dùng và công nghệ hỗ trợ dễ dàng diễn giải và tương tác với nội dung hơn.
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ được sử dụng để tạo, thao tác và quản lý tài liệu PDF trong các ứng dụng .NET.
 
-#### H: Mã C# được cung cấp tạo cấu trúc các phần tử cây trong tài liệu PDF như thế nào?
+### Làm thế nào để bắt đầu sử dụng Aspose.PDF?
+ Bắt đầu bằng cách tải xuống thư viện từ[Trang web Aspose](https://releases.aspose.com/pdf/net/) và thiết lập nó trong môi trường .NET của bạn.
 
-A: Ví dụ mã chứng minh cách tạo cấu trúc phân cấp các phần tử logic bằng cách sử dụng`SectElement`, `DivElement` , Và`ArtElement` các lớp do Aspose.PDF cung cấp. Các phần tử này được tổ chức thành các nút cha và con, tạo thành cấu trúc dạng cây trong tài liệu.
+### Tôi có thể dùng thử Aspose.PDF trước khi mua không?
+ Có! Bạn có thể dùng thử miễn phí bằng cách sử dụng[dùng thử miễn phí](https://releases.aspose.com/).
 
-#### Q: Làm thế nào để`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+### Tôi có thể tìm trợ giúp về Aspose.PDF ở đâu?
+ Để được hỗ trợ, hãy truy cập[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10) nơi bạn có thể đặt câu hỏi và chia sẻ hiểu biết.
 
- A: Cái`TaggedContent` thuộc tính cung cấp quyền truy cập vào các tính năng nội dung được gắn thẻ của tài liệu PDF. Điều này cho phép bạn tạo và thao tác các thành phần có cấu trúc, xác định mối quan hệ của chúng và sắp xếp chúng theo thứ bậc, nâng cao cấu trúc và khả năng truy cập của tài liệu.
-
-####  Q: Tại sao việc thiết lập tiêu đề và ngôn ngữ của tài liệu bằng cách sử dụng`SetTitle` and `SetLanguage` methods?
-
- A: Thiết lập tiêu đề và ngôn ngữ của tài liệu bằng cách sử dụng`SetTitle` Và`SetLanguage` Phương pháp này tăng cường khả năng tiếp cận và ngữ nghĩa của tài liệu. Nó giúp người dùng và công nghệ hỗ trợ hiểu được mục đích và ngôn ngữ của tài liệu.
-
-####  Q: Thế nào là`SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
-
- A: Các lớp này đại diện cho các loại phần tử cấu trúc khác nhau.`SectElement` được sử dụng để tạo các phần,`DivElement` cho các phân chia trong các phần và`ArtElement` cho tác phẩm nghệ thuật hoặc hình minh họa. Bằng cách thêm các phần tử con vào các phần tử cha, bạn thiết lập một cấu trúc phân cấp.
-
-#### H: Việc sắp xếp các thành phần theo thứ bậc trong tài liệu PDF có lợi ích gì?
-
-A: Việc sắp xếp các thành phần theo thứ bậc cải thiện tổ chức, điều hướng và ngữ nghĩa của tài liệu. Nó cho phép người dùng và các công nghệ hỗ trợ hiểu được cấu trúc và mối quan hệ của nội dung, nâng cao trải nghiệm chung của người dùng.
-
-#### Q: Làm thế nào để`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
-
- A: Cái`Save` phương pháp lưu tài liệu PDF cùng với cấu trúc phân cấp được tạo bằng cách sử dụng`AppendChild` phương pháp. Điều này đảm bảo rằng cấu trúc vẫn còn nguyên vẹn, giúp tài liệu dễ truy cập và được tổ chức tốt.
-
-#### H: Tôi có thể tùy chỉnh cấu trúc cây hơn nữa bằng cách thêm các loại phần tử logic khác không?
-
-A: Có, bạn có thể tùy chỉnh thêm cấu trúc cây bằng cách thêm các loại phần tử logic khác do Aspose.PDF cung cấp, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, v.v. Bạn có thể thử nghiệm với các loại phần tử khác nhau để tạo cấu trúc tùy chỉnh.
-
-#### H: Cây có cấu trúc được tạo ra có thể cải thiện khả năng truy cập và sử dụng tài liệu như thế nào?
-
-A: Cây có cấu trúc tăng cường khả năng truy cập tài liệu bằng cách cung cấp thứ bậc rõ ràng và ý nghĩa ngữ nghĩa cho nội dung. Các công nghệ hỗ trợ và người dùng có thể điều hướng, hiểu và diễn giải cấu trúc và mối quan hệ của tài liệu hiệu quả hơn.
-
-#### H: Tôi có thể áp dụng kiến thức này như thế nào để tạo các tài liệu PDF có cấu trúc phức tạp cho nhiều trường hợp sử dụng khác nhau?
-
-A: Bạn có thể xây dựng dựa trên kiến thức này bằng cách kết hợp các loại thành phần cấu trúc khác nhau và sắp xếp chúng theo thứ bậc để phù hợp với tổ chức nội dung mong muốn. Cách tiếp cận này có giá trị để tạo các tài liệu phức tạp như báo cáo, bài viết, hướng dẫn sử dụng, v.v.
+### Tôi có thể xin cấp giấy phép tạm thời bằng cách nào?
+ Bạn có thể nộp đơn xin giấy phép tạm thời[đây](https://purchase.aspose.com/temporary-license/).

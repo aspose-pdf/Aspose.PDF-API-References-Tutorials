@@ -24,7 +24,7 @@ Sorozatunk utolsó részében a PDF-dokumentumok szerkezetének optimalizálás�
 Legyen szó inkluzív tartalom létrehozására törekvő fejlesztőről, vagy valaki, aki szeretné fejleszteni PDF-kezelési készségeit az Aspose.PDF for Java segítségével, ezek az oktatóanyagok értékes betekintést és gyakorlati tapasztalatokat nyújtanak céljainak eléréséhez. Csatlakozzon hozzánk ezen az úton, hogy elsajátítsa a PDF-címkéket és -struktúrát Java nyelven, és felszabadítsa az univerzálisan hozzáférhető PDF-dokumentumok létrehozásának lehetőségét.
 
 ## PDF címkék és szerkezeti oktatóanyagok
-### [Struktúraelem létrehozása PDF-ben Java segítségével](./create-structure-element-in-pdf-using-java/)
+### [Struktúraelem létrehozása PDF-ben Java használatával](./create-structure-element-in-pdf-using-java/)
 Ismerje meg, hogyan hozhat létre PDF szerkezeti elemeket Java nyelven az Aspose.PDF segítségével. Javítsa a PDF hozzáférhetőségét és a logikai tartalomáramlást.
 ### [Struktúra-elemfa létrehozása PDF-ben Java használatával](./create-structure-element-tree-in-pdf-using-java/)
 Ismerje meg, hogyan hozhat létre hozzáférhető PDF-fájlt Java Struktúraelem-fával az Aspose.PDF használatával, biztosítva minden felhasználó számára az integrációt.

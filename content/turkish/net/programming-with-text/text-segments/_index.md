@@ -7,138 +7,135 @@ type: docs
 weight: 540
 url: /tr/net/programming-with-text/text-segments/
 ---
-Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasında belirli metin segmentlerinin nasıl aranacağını açıklar. Sağlanan C# kaynak kodu, düzenli ifadeler kullanılarak farklı senaryoları gösterir.
+## giriiş
+
+PDF belgeleri günümüzün dijital dünyasında her yerde bulunur ve genellikle resmi raporlardan e-kitaplara kadar her şey için kullanılır. Ancak bunlardan metin çıkarmak bazen samanlıkta iğne aramaya benzeyebilir. Neyse ki, .NET için Aspose.PDF gibi kütüphanelerin yardımıyla bu görev çok daha basit hale geliyor! Bu kılavuzda, Aspose.PDF kullanarak bir PDF'den belirli metin segmentlerinin nasıl çıkarılacağını açık ve uygulanabilir adımlara bölerek ele alacağız. 
 
 ## Ön koşullar
 
-Eğitime başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Metin çıkarma işleminin inceliklerine dalmadan önce, ihtiyacınız olacak birkaç şey var:
 
-- C# programlama dilinin temel bilgisi.
-- .NET kütüphanesi için Aspose.PDF yüklendi. Bunu Aspose web sitesinden edinebilir veya projenize yüklemek için NuGet'i kullanabilirsiniz.
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. Kodumuzu burada yazacağız.
+2. .NET Framework veya .NET Core Ortamı: Uygulamanız için doğru ortama sahip olduğunuzdan emin olun. Aspose hem .NET Framework'ü hem de .NET Core'u destekler.
+3.  Aspose.PDF Kütüphanesi: Aspose.PDF for .NET kütüphanesine ihtiyacınız olacak. Henüz yüklemediyseniz, indirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+4. Temel C# Bilgisi: C# bilgisine sahip olmak faydalı olacaktır, ancak yeni başlayan biri olsanız bile, sizi kodda adım adım yönlendireceğiz.
+5. PDF Belgesi: İçinden metin çıkarmak istediğiniz bir PDF dosyası bulundurun. Bu, bir finansal rapordan bir makaleye kadar her şey olabilir.
 
-## Adım 1: Projeyi kurun
+## Paketleri İçe Aktar
 
-Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve .NET için Aspose.PDF kitaplığına bir başvuru ekleyin.
+Artık her şeyi ayarladığınıza göre, bir sonraki adım gerekli paketleri C# programınıza aktarmaktır. Bu önemlidir çünkü Aspose.PDF kütüphanesinin tüm güçlü özelliklerine erişmenizi sağlar.
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
+### Yeni Bir Proje Oluştur
 
-Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki using yönergelerini ekleyin:
+- Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+-  Sağ tıklayın`References` Çözüm Gezgini'ndeki klasör.
+- "Referans Ekle"yi seçin ve Aspose.PDF.dll dosyasını indirdiğiniz konuma gidin.
+- Bu DLL'yi projenize ekleyin. Bu adım projenizi Aspose.PDF kütüphanesine bağlayarak onun işlevlerinin kilidini açar.
+
+### Ad Alanını İçe Aktar
+
+C# dosyanızın en üstüne Aspose.PDF ad alanını eklemeniz gerekir:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
+Bu, programınıza Aspose.PDF kütüphanesindeki sınıfları ve metotları kullanmasını söyler.
 
-## Adım 3: Metin araması için TextFragmentAbsorber'ı kullanın
+Çeşitli metin segmenti türlerini çıkarmayı pratik örneklerle inceleyelim.`TextFragmentAbsorber` PDF belgelerinden metin bulmanın ve çıkarmanın anahtarı olan sınıf.
 
- Bir tane oluştur`TextFragmentAbsorber` Düzenli ifadeler kullanarak belirli metin parçalarını arama nesnesi:
+## Adım 1: Belgeyi Başlatın
+
+Herhangi bir PDF ile çalışmak için onu uygulamanıza yüklemeniz gerekir. İşte nasıl:
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber;
+// PDF belgesini yükleyin
+Document pdfDocument = new Document("Path/To/Your/PDFFile.pdf");
 ```
+ Yer değiştirmek`"Path/To/Your/PDFFile.pdf"` PDF'nizin gerçek yolu ile.
 
-## Adım 4: Düzenli ifadelerle metin aramaları gerçekleştirin
+## Adım 2: Bir TextFragmentAbsorber Oluşturun
 
-Düzenli ifadeleri kullanarak farklı senaryolara dayalı metin aramaları gerçekleştirin. İşte birkaç örnek:
+ Şimdi, farklı kullanım örneklerini inceleyelim`TextFragmentAbsorber` metni almak için.
 
-- Tam eşleşen bir kelimeyi aramak için: 
+### Örnek 1: Tam Bir Kelimeyi Çıkarma
+
+ Belirli bir kelime için tam eşleşmeyi bulmak için, şunu başlatabilirsiniz:`TextFragmentAbsorber` bunun gibi:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
+// "Word" kelimesinin tam eşleşmesini arayın
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
 ```
+ Bu kod, emiciyi "Word" sözcüğünü tam olarak bulacak şekilde ayarlar ve onu bütün bir sözcük olarak ele alır.`\b` kelime sınırlarını belirtir.
 
-- Bir dizeyi büyük veya küçük harfle aramak için: 
+### Örnek 2: Büyük/Küçük Harfe Duyarlı Olmayan Arama
+
+Eğer büyük/küçük harf ayrımı gözetmeksizin belirli bir dizgeyi (mesela "satır") bulmak istiyorsanız, bunu şu şekilde yapabilirsiniz:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
+// "Line" dizesini büyük/küçük harfe duyarlı olmayan bir şekilde arayın
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
 ```
+ The`(?i)` aramanın büyük/küçük harf ayrımını göz ardı etmesini sağlar. 
 
-- PDF belgesinin içindeki tüm dizeleri aramak için: 
+### Örnek 3: PDF'den Tüm Metni Çıkar
+
+Bir PDF'deki tüm metni ayrıştırmanız gerekti mi hiç? İşte bunu yapmanın basit bir yolu:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+// PDF belgesinin içindeki tüm dizeleri ayrıştır
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
+ Düzenli ifade`[\S]+` tüm boşluk olmayan karakterleri yakalar. 
 
-- Belirli bir dizeden sonraki satır sonuna kadar olan metni bulmak için: 
+## Adım 3: Absorber'ı Belgede Kabul Edin
+
+Şimdi PDF belgesindeki emiciyi kabul etmeniz gerekiyor:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
+// Belgedeki emiciyi kabul et
+pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
+Bu satır PDF belgesine başlattığınız emiciyi işlemesini söyler.
 
-- Bir regex eşleşmesini takip eden metni bulmak için: 
+## Adım 4: Sonuçları Alın ve Görüntüleyin
+
+Son olarak, çıkarılan metni geri alalım ve görüntüleyelim. Bunu nasıl yapabileceğinizi anlatalım:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
+// Çıkarılan metin parçalarını alın
+TextFragmentCollection textFragments = textFragmentAbsorber.TextFragments;
+
+// Her parçayı döngüye alın ve çıktısını alın
+foreach (TextFragment textFragment in textFragments)
+{
+    Console.WriteLine(textFragment.Text);
+}
 ```
-
-- PDF belgesinin içinde Köprü/URL aramak için: 
-
-```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
-Düzenli ifadeleri istediğiniz arama kalıplarıyla değiştirin.
-
-## Adım 5: Aramayı gerçekleştirin ve sonuçları işleyin
-
- Oluşturulan aramayı kullanarak aramayı gerçekleştirin`TextFragmentAbsorber` İhtiyaçlarınıza göre sonuçları nesnelleştirin ve işleyin.
-
-### .NET için Aspose.PDF kullanılarak Metin Segmentleri için örnek kaynak kodu 
-```csharp
-TextFragmentAbsorber textFragmentAbsorber;
-// Bir kelimenin tam eşleşmesini aramak için düzenli ifade kullanmayı düşünebilirsiniz.
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
-// Bir dizgeyi büyük veya küçük harfle aramak için düzenli ifade kullanmayı düşünebilirsiniz.
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
-//PDF dokümanı içerisindeki tüm dizeleri aramak (tüm dizeleri ayrıştırmak) için lütfen aşağıdaki düzenli ifadeyi kullanmayı deneyin.
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-// Arama dizesinin eşleşmesini bul ve dizenin sonundan satır sonuna kadar olan her şeyi al.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
-// Regex eşleşmesini izleyen metni bulmak için lütfen aşağıdaki düzenli ifadeyi kullanın.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// PDF dokümanı içerisinde Hyperlink/URL'leri aramak için lütfen aşağıdaki düzenli ifadeyi kullanmayı deneyin.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
+Bu döngü bulunan her parçayı işler ve konsola yazdırır.
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki belirli metin parçalarını aramayı başarıyla öğrendiniz. Bu eğitimde düzenli ifadeler kullanılarak farklı arama senaryolarına dair örnekler verilmiştir. Artık bu kodu kendi C# projelerinize dahil ederek PDF dosyalarındaki metin parçalarını arayabilir ve işleyebilirsiniz.
+ PDF dosyalarından metin çıkarmak göz korkutucu bir görev olmak zorunda değil. Aspose.PDF for .NET ile ihtiyaç duyduğunuz bilgileri etkili bir şekilde belirleyip çıkarabilirsiniz. İster tek bir kelimeyi yakalamak, ister tüm bir belgeyi incelemek isteyin, düzenli ifadelerin esnekliği`TextFragmentAbsorber`size güçlü arama yetenekleri sağlar. Öyleyse neden bekliyorsunuz? PDF belgelerinize dalın ve bugün değerli içgörüler çıkarmaya başlayın!
 
-### SSS
+## SSS
 
-#### S: "PDF Dosyasındaki Metin Parçaları" eğitiminin amacı nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF, .NET uygulamalarında PDF dosyaları oluşturmak, düzenlemek ve dönüştürmek için güçlü bir kütüphanedir.
 
-A: "PDF Dosyasındaki Metin Segmentleri" öğreticisinin amacı, kullanıcılara .NET için Aspose.PDF kullanarak bir PDF dosyasında belirli metin segmentlerini nasıl arayacakları konusunda rehberlik etmektir. Öğretici, düzenli ifadeler kullanarak farklı senaryolara dayalı metin aramaları gerçekleştirmek için adım adım talimatlar ve C# kod örnekleri sağlar.
+### Aspose.PDF'yi .NET Core uygulamasında kullanabilir miyim?
+Evet, Aspose.PDF for .NET hem .NET Framework hem de .NET Core uygulamalarını destekler.
 
-#### S: Bu eğitim PDF belgesinde metin parçalarını aramada nasıl yardımcı oluyor?
+### Ücretsiz deneme imkanı var mı?
+ Kesinlikle! Ücretsiz deneme sürümünü indirebilirsiniz[Burada](https://releases.aspose.com/).
 
-A: Bu eğitim, kullanıcıların bir PDF belgesindeki belirli metin bölümlerini aramak için Aspose.PDF for .NET kitaplığını nasıl kullanacaklarını anlamalarına yardımcı olur. Çeşitli kod örnekleri ve düzenli ifadeler sağlayarak, kullanıcılar PDF dosyalarında istedikleri içeriği bulmak için metin arama sorgularını özelleştirebilir.
+### Aspose.PDF için desteği nereden alabilirim?
+ Aspose destek topluluğuna ulaşabilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).
 
-#### S: Bu eğitimi takip etmek için hangi ön koşullar gereklidir?
-
-A: Eğitime başlamadan önce, C# programlama dili hakkında temel bir anlayışa sahip olmalısınız. Ek olarak, .NET için Aspose.PDF kütüphanesinin yüklü olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet kullanarak projenize yükleyebilirsiniz.
-
-#### S: Bu eğitimi takip edecek şekilde projemi nasıl kurarım?
-
-A: Başlamak için, tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Bu, PDF belgeleri ve metin parçalarıyla çalışmak için kitaplığın işlevselliğinden yararlanmanızı sağlayacaktır.
-
-#### S: PDF dosyası içindeki belirli metin bölümlerini nasıl arayabilirim?
-
- A: Belirli metin bölümlerini aramak için bir`TextFragmentAbsorber` nesne. Eğitim, farklı arama senaryolarını göstermek için düzenli ifadeler kullanan çeşitli kod örnekleri sağlar. Düzenli ifadeleri değiştirerek istediğiniz arama kalıplarını tanımlayabilirsiniz.
-
-#### S: Eğitimde hangi tür arama senaryoları ele alınıyor?
-
-A: Eğitim, tam kelime eşleşmeleri, büyük/küçük harfe duyarlı olmayan aramalar, bir belgedeki tüm dizeleri arama, belirli dizelerden sonra metin bulma ve köprü metinleri/URL'leri arama gibi düzenli ifadeler kullanan bir dizi arama senaryosunu kapsar. Sağlanan kod örnekleri, belirli arama gereksinimlerinize uyacak şekilde özelleştirilebilir.
-
-#### S: Metin araması yaptıktan sonra arama sonuçlarını nasıl işlerim?
-
- A: Bir tane oluşturduktan sonra`TextFragmentAbsorber`nesne ve aramayı gerçekleştirerek, arama sonuçlarını gereksinimlerinize göre işleyebilirsiniz. Eğitim, arama sürecinin kendisini göstermeye odaklanırken, arama sonuçlarını nasıl işleyip kullanacağınız projenizin ihtiyaçlarına bağlıdır.
-
-#### S: Sağlanan kod örneklerini kendi projelerimde kullanabilir miyim?
-
-C: Evet, sağlanan kod örneklerini kendi C# projelerinizde referans olarak kullanabilirsiniz. Örnekler aramanın nasıl kurulacağını, düzenli ifadelerin nasıl tanımlanacağını ve metin aramalarının nasıl gerçekleştirileceğini gösterir. Bu kodu PDF dosyalarında belirli metin bölümlerini aramak için uygulamalarınıza uyarlayabilir ve entegre edebilirsiniz.
-
-#### S: Örnek kodla birlikte tam eğitimi nerede bulabilirim?
-
- A: Aşağıdaki bağlantıyı ziyaret ederek tam eğitime erişebilir ve verilen örnek C# kodunu görüntüleyebilirsiniz:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)
+### Aspose.PDF için lisans nasıl satın alabilirim?
+ Lisans satın alabilirsiniz[Burada](https://purchase.aspose.com/buy).

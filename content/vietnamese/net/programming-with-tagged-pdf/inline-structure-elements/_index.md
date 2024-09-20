@@ -7,316 +7,175 @@ type: docs
 weight: 110
 url: /vi/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-Trong hướng dẫn từng bước này, chúng tôi sẽ chỉ cho bạn cách sử dụng các thành phần cấu trúc nội tuyến với Aspose.PDF cho .NET. Aspose.PDF là một thư viện mạnh mẽ cho phép bạn thao tác các tài liệu PDF theo chương trình. Các thành phần cấu trúc nội tuyến cho phép bạn tạo cấu trúc phân cấp trong tài liệu PDF của mình bằng cách sử dụng các tiêu đề ở nhiều cấp độ và đoạn văn khác nhau.
+## Giới thiệu
 
-Hãy cùng tìm hiểu mã và cách sử dụng các phần tử cấu trúc nội tuyến với Aspose.PDF cho .NET.
+Tạo các tài liệu có thể truy cập và có cấu trúc tốt là điều tối quan trọng trong bối cảnh kỹ thuật số ngày nay. Nếu bạn đã từng thấy mình cuộn qua một tệp PDF chỉ để lạc vào một biển văn bản, bạn biết tầm quan trọng của việc tổ chức tốt. Việc gắn thẻ các thành phần trong tệp PDF của bạn có thể tăng cường khả năng truy cập, giúp trình đọc màn hình dễ dàng diễn giải nội dung hơn. Trong hướng dẫn này, chúng tôi sẽ đi sâu vào việc sử dụng Aspose.PDF cho .NET để tạo các tài liệu PDF được gắn thẻ, đảm bảo công việc của bạn đáp ứng các tiêu chuẩn hiện đại về cấu trúc tài liệu.
 
 ## Điều kiện tiên quyết
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Trước khi bắt đầu, hãy đảm bảo rằng bạn có mọi thứ cần thiết để thực hiện theo:
 
-1. Thư viện Aspose.PDF cho .NET được cài đặt.
-2. Kiến thức cơ bản về ngôn ngữ lập trình C#.
+1. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# và kiến thức cơ bản về .NET framework là điều cần thiết.
+2. Đã cài đặt Visual Studio: Bạn sẽ cần một IDE như Visual Studio để viết và chạy mã của mình.
+3.  Aspose.PDF cho .NET: Hãy đảm bảo bạn tải xuống và cài đặt Aspose.PDF cho .NET. Bạn có thể lấy nó từ[liên kết tải xuống](https://releases.aspose.com/pdf/net/).
+4. Giấy phép tạm thời: Đây là tùy chọn, nhưng nếu bạn muốn đánh giá tất cả các tính năng mà không có giới hạn, hãy cân nhắc việc xin giấy phép[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
 
-## Bước 1: Thiết lập môi trường
+Khi đã đáp ứng được những điều kiện tiên quyết này, bạn đã sẵn sàng để tạo tài liệu PDF được gắn thẻ đầu tiên của mình!
 
-Để bắt đầu, hãy mở môi trường phát triển C# của bạn và tạo một dự án mới. Đảm bảo bạn đã thêm tham chiếu đến thư viện Aspose.PDF cho .NET vào dự án của bạn.
+## Nhập gói
+
+Để bắt đầu, hãy nhập các gói cần thiết. Điều này cho phép dự án của bạn tận dụng các khả năng của thư viện Aspose.PDF.
+
+1. Mở dự án Visual Studio của bạn.
+2. Thêm tham chiếu đến thư viện Aspose.PDF. Nếu bạn chưa thêm, bạn có thể sử dụng NuGet Package Manager để cài đặt.
+3. Bao gồm các không gian tên sau đây ở đầu tệp C# của bạn:
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 2: Tạo tài liệu
+Với những hoạt động nhập khẩu này, bạn đã sẵn sàng để thành công.
 
- Bước đầu tiên là tạo một tài liệu PDF mới bằng cách sử dụng`Document` lớp học.
+## Phân tích mã: Hướng dẫn từng bước để tạo tệp PDF có gắn thẻ
+
+Bây giờ chúng ta đã thiết lập xong, hãy cùng phân tích mã theo từng bước. Chúng ta sẽ tạo một tệp PDF được gắn thẻ với các thành phần có cấu trúc như tiêu đề và đoạn văn, cho phép truy cập tốt hơn.
+
+### Bước 1: Thiết lập thư mục tài liệu
+
+Đầu tiên, hãy thiết lập đường dẫn nơi tài liệu của bạn sẽ được lưu. Tốt nhất là duy trì cấu trúc tệp có tổ chức.
 
 ```csharp
-// Tạo tài liệu PDF
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Thay thế bằng đường dẫn thực tế của bạn
+```
+
+### Bước 2: Tạo một phiên bản tài liệu PDF
+
+ Tiếp theo, tạo một phiên bản của`Document` lớp sẽ đóng vai trò là nơi chứa nội dung PDF của bạn.
+
+```csharp
 Document document = new Document();
 ```
 
-## Bước 3: Làm việc với nội dung được gắn thẻ
+### Bước 3: Truy cập Nội dung được gắn thẻ
 
-Sau đó, chúng ta sẽ lấy nội dung được gắn thẻ của tài liệu để làm việc.
+Bây giờ, hãy truy cập nội dung được gắn thẻ của tài liệu. Đây là nơi phép thuật xảy ra—bằng cách gắn thẻ nội dung, chúng tôi tăng cường khả năng truy cập của nội dung đó.
 
 ```csharp
-// Nhận nội dung được gắn thẻ của tài liệu
-ITaggedContent taggedContent = document.TaggedContent;
+ITaggedContent taggedContent = document.TaggedContent;    
 ```
 
-## Bước 4: Đặt tiêu đề và ngôn ngữ cho tài liệu
+### Bước 4: Đặt Tiêu đề và Ngôn ngữ
 
-Bây giờ chúng ta có thể đặt tiêu đề và ngôn ngữ cho tài liệu.
-
-```csharp
-// Xác định tiêu đề và ngôn ngữ của tài liệu
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Bước 5: Thêm các thành phần cấu trúc trực tuyến
-
-Bây giờ chúng ta sẽ thêm các thành phần cấu trúc nội tuyến như tiêu đề ở nhiều cấp độ và đoạn văn khác nhau vào tài liệu của mình.
+Thiết lập tiêu đề và ngôn ngữ cho tài liệu PDF của bạn là điều cần thiết cho cả người dùng và trình đọc màn hình. Điều này làm cho tài liệu của bạn có nhiều thông tin hơn và dễ tiếp cận hơn.
 
 ```csharp
-// Lấy phần tử cấu trúc gốc
-StructureElement rootElement = taggedContent.RootElement;
-
-// Thêm tiêu đề ở nhiều cấp độ khác nhau
-HeaderElement h1 = taggedContent.CreateHeaderElement(1);
-HeaderElement h2 = taggedContent.CreateHeaderElement(2);
-HeaderElement h3 = taggedContent.CreateHeaderElement(3);
-HeaderElement h4 = taggedContent.CreateHeaderElement(4);
-HeaderElement h5 = taggedContent.CreateHeaderElement(5);
-HeaderElement h6 = taggedContent.CreateHeaderElement(6);
-rootElement.AppendChild(h1);
-rootElement.AppendChild(h2);
-rootElement.AppendChild(h3);
-rootElement.AppendChild(h4);
-rootElement.AppendChild(h5);
-rootElement.AppendChild(h6);
-
-// Thêm nội dung vào mỗi tiêu đề
-SpanElement spanH11 = taggedContent.CreateSpanElement();
-spanH11.SetText("H1.");
-h1.AppendChild(spanH11);
-SpanElement spanH12 = taggedContent.CreateSpanElement();
-spanH12.SetText("Level 1 header");
-h1.AppendChild(spanH12);
-
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2.");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 header");
-h2.AppendChild(spanH22);
-
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3.");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 header");
-h3.AppendChild(spanH32);
-
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4.");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 header");
-h4.AppendChild(spanH42);
-
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5.");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 header");
-h5.AppendChild(spanH52);
-
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6.");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Heading level 6");
-h6.AppendChild(spanH62);
-
-// Thêm một đoạn văn
-ParagraphElement p = taggedContent.CreateParagraphElement();
-p.SetText("P.");
-rootElement.AppendChild(p);
-
-// Thêm nội dung vào đoạn văn
-SpanElement span1 = taggedContent.CreateSpanElement();
-span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet.");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit.");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo.");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit.");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. So cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit.");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-```
-
-Tại đây, chúng ta tạo các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề ở nhiều cấp độ khác nhau và một đoạn văn, rồi thêm nội dung vào chúng.
-
-## Bước 6: Lưu tài liệu PDF đã gắn thẻ
-
-Cuối cùng, chúng ta lưu tài liệu PDF đã gắn thẻ.
-
-```csharp
-// Lưu tài liệu PDF đã gắn thẻ
-document.Save(dataDir + "InlineStructureElements.pdf");
-```
-
-### Mã nguồn mẫu cho Inline Structure Elements sử dụng Aspose.PDF cho .NET 
-
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Tạo Tài Liệu PDF
-Document document = new Document();
-
-// Nhận nội dung cho công việc với TaggedPdf
-ITaggedContent taggedContent = document.TaggedContent;
-
-// Đặt Tiêu đề và Ngôn ngữ cho Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Lấy phần tử cấu trúc gốc
+### Bước 5: Lấy phần tử cấu trúc gốc
+
+Hãy bắt đầu thêm các thành phần vào tài liệu của bạn. Trước tiên, hãy lấy thành phần cấu trúc gốc của nội dung được gắn thẻ, đóng vai trò là nền tảng để xây dựng cấu trúc tài liệu của bạn.
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+### Bước 6: Tạo các phần tử tiêu đề
+
+Bây giờ là lúc tạo các phần tử tiêu đề. Điều này sẽ giúp sắp xếp nội dung thành một hệ thống phân cấp. Chúng ta sẽ tạo sáu cấp tiêu đề.
+
+```csharp
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
 HeaderElement h4 = taggedContent.CreateHeaderElement(4);
 HeaderElement h5 = taggedContent.CreateHeaderElement(5);
 HeaderElement h6 = taggedContent.CreateHeaderElement(6);
+```
+
+### Bước 7: Thêm Tiêu đề vào Phần tử gốc
+
+Sau khi tạo các phần tử tiêu đề, hãy thêm chúng vào phần tử gốc. Điều này xây dựng hệ thống phân cấp cấu trúc của tài liệu.
+
+```csharp
 rootElement.AppendChild(h1);
 rootElement.AppendChild(h2);
 rootElement.AppendChild(h3);
 rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
+```
+
+### Bước 8: Thêm văn bản vào mỗi tiêu đề
+
+Bây giờ, hãy thêm một số văn bản vào mỗi tiêu đề. Đây là một quá trình đơn giản nhưng rất quan trọng để làm cho tài liệu của bạn hữu ích. 
+
+```csharp
+// H1
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1. ");
 h1.AppendChild(spanH11);
 SpanElement spanH12 = taggedContent.CreateSpanElement();
 spanH12.SetText("Level 1 Header");
 h1.AppendChild(spanH12);
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2. ");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 Header");
-h2.AppendChild(spanH22);
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3. ");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 Header");
-h3.AppendChild(spanH32);
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4. ");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 Header");
-h4.AppendChild(spanH42);
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5. ");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 Header");
-h5.AppendChild(spanH52);
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6. ");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Level 6 Header");
-h6.AppendChild(spanH62);
+
+// Lặp lại cho H2 - H6 như minh họa ở trên
+```
+
+### Bước 9: Tạo một phần tử đoạn văn
+
+Tiếp theo, hãy thêm một phần tử đoạn văn. Phần này sẽ đóng vai trò là vùng nội dung chính của PDF. 
+
+```csharp
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P. ");
 rootElement.AppendChild(p);
+```
+
+### Bước 10: Thêm văn bản vào đoạn văn
+
+Bây giờ chúng ta đã có phần tử đoạn văn, đã đến lúc điền văn bản vào đó. Bạn có thể thêm nhiều khoảng để tạo thành nội dung của mình.
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
 p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet. ");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit. ");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo. ");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. ");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. ");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-
-// Lưu tài liệu PDF có gắn thẻ
-document.Save(dataDir + "InlineStructureElements.pdf");
-
+// Tiếp tục thêm các khoảng bổ sung khi cần thiết
 ```
+
+### Bước 11: Lưu tài liệu PDF đã gắn thẻ
+
+Cuối cùng, sau khi thêm tất cả nội dung, bạn cần lưu tài liệu của mình. Hãy kết thúc nhé!
+
+```csharp
+document.Save(dataDir + "InlineStructureElements.pdf");
+```
+
+Và thế là xong! Bây giờ bạn đã có một tài liệu PDF được gắn thẻ có cấu trúc và dễ truy cập.
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học cách sử dụng các thành phần cấu trúc nội tuyến với Aspose.PDF cho .NET. Bây giờ bạn có thể tạo cấu trúc phân cấp trong tài liệu PDF của mình bằng cách sử dụng các tiêu đề ở nhiều cấp độ và đoạn văn khác nhau. Khám phá thêm các tính năng của Aspose.PDF để khám phá hết tiềm năng của nó.
+Việc tạo các tài liệu PDF được gắn thẻ có vẻ khó khăn, nhưng với Aspose.PDF cho .NET, mọi việc trở nên dễ dàng! Bằng cách làm theo hướng dẫn từng bước này, bạn đã nắm vững những điều cơ bản về cấu trúc tài liệu. Hãy nhớ rằng, gắn thẻ PDF đúng cách sẽ tăng cường khả năng truy cập của tài liệu, đảm bảo rằng nội dung có giá trị của bạn tiếp cận được nhiều đối tượng hơn. Vì vậy, hãy tiếp tục và làm cho PDF của bạn không chỉ đẹp mà còn thân thiện với người dùng!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Các thành phần cấu trúc nội tuyến trong tài liệu PDF là gì và chúng góp phần tạo nên cấu trúc phân cấp như thế nào?
+### PDF có gắn thẻ là gì?
+PDF có gắn thẻ là PDF bao gồm thông tin về cấu trúc của tài liệu, giúp người dùng khuyết tật dễ truy cập hơn.
 
-A: Các thành phần cấu trúc nội tuyến trong tài liệu PDF, chẳng hạn như tiêu đề của các cấp độ và đoạn văn khác nhau, được sử dụng để tạo cấu trúc phân cấp tổ chức và trình bày nội dung theo cách có cấu trúc. Các thành phần này cho phép bạn thiết lập phân cấp rõ ràng và luồng thông tin trong tài liệu.
+### Tại sao việc gắn thẻ lại quan trọng trong tệp PDF?
+Việc gắn thẻ giúp tăng cường khả năng truy cập, cho phép trình đọc màn hình diễn giải tài liệu một cách rõ ràng, do đó mang lại trải nghiệm tốt hơn cho người dùng khuyết tật.
 
-#### H: Các thành phần cấu trúc nội tuyến có thể tăng cường khả năng đọc và sắp xếp của tài liệu PDF như thế nào?
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, bạn có thể đánh giá Aspose.PDF cho .NET thông qua[dùng thử miễn phí](https://releases.aspose.com/).
 
-A: Các thành phần cấu trúc nội tuyến, đặc biệt là tiêu đề và đoạn văn, giúp cải thiện khả năng đọc và tổ chức của tài liệu PDF bằng cách cung cấp cấu trúc logic. Tiêu đề chỉ ra các mức độ quan trọng khác nhau và giúp người đọc điều hướng nội dung, trong khi các đoạn văn nhóm thông tin liên quan lại với nhau.
+### Tôi có thể nhận hỗ trợ cho Aspose.PDF ở đâu?
+ Có thể truy cập hỗ trợ thông qua[Diễn đàn hỗ trợ Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### H: Aspose.PDF cho .NET hỗ trợ việc sử dụng các thành phần cấu trúc nội tuyến như thế nào?
-
-A: Aspose.PDF cho .NET cung cấp các lớp và phương pháp để tạo và thao tác các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề và đoạn văn. Các thành phần này có thể được tùy chỉnh, sắp xếp theo thứ bậc và làm giàu nội dung để cải thiện khả năng trình bày trực quan và khả năng truy cập của tài liệu.
-
-####  Q: Mục đích của việc này là gì?`taggedContent` object in relation to inline structure elements?
-
- A: Cái`taggedContent` đối tượng, thu được từ`TaggedContent` tài sản của một`Document`, cho phép bạn làm việc với các thành phần có cấu trúc, bao gồm các thành phần cấu trúc nội tuyến. Nó cho phép bạn tạo, tùy chỉnh và sắp xếp các tiêu đề và đoạn văn trong tài liệu.
-
-#### H: Các thành phần cấu trúc nội tuyến hỗ trợ tạo ra hệ thống phân cấp tài liệu rõ ràng như thế nào?
-
-A: Các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề ở nhiều cấp độ khác nhau, góp phần thiết lập hệ thống phân cấp rõ ràng và được xác định rõ ràng trong tài liệu. Người đọc có thể nhanh chóng xác định các chủ đề chính, chủ đề phụ và nội dung liên quan, giúp tài liệu dễ điều hướng và dễ hiểu hơn.
-
-#### H: Tôi có thể tùy chỉnh giao diện và định dạng của các thành phần cấu trúc nội tuyến bằng Aspose.PDF cho .NET không?
-
-A: Có, bạn có thể tùy chỉnh giao diện và định dạng của các thành phần cấu trúc nội tuyến. Bạn có thể thiết lập các thuộc tính như kiểu phông chữ, kích thước, màu sắc, căn chỉnh, thụt lề và khoảng cách để đạt được hình ảnh mong muốn cho tiêu đề và đoạn văn.
-
-#### H: Làm thế nào để tạo và thêm tiêu đề ở nhiều cấp độ khác nhau vào tài liệu PDF bằng các thành phần cấu trúc nội tuyến trong Aspose.PDF cho .NET?
-
- A: Bạn có thể tạo các tiêu đề ở nhiều cấp độ khác nhau bằng cách sử dụng`CreateHeaderElement`phương pháp và sau đó thêm chúng vào phần tử cấu trúc gốc. Sau đó, bạn có thể thêm nội dung vào từng phần tử tiêu đề bằng cách sử dụng`CreateSpanElement` phương pháp tạo khoảng văn bản.
-
-#### H: Tôi có thể sử dụng các thành phần cấu trúc nội tuyến để tạo danh sách, dấu đầu dòng hoặc các loại tổ chức nội dung khác trong tài liệu PDF không?
-
-A: Trong khi các thành phần cấu trúc nội tuyến chủ yếu được sử dụng cho tiêu đề và đoạn văn, bạn có thể sử dụng chúng kết hợp với các tính năng khác do Aspose.PDF cung cấp cho .NET để tạo danh sách, dấu đầu dòng, bảng và các loại tổ chức nội dung khác để tạo nên cấu trúc tài liệu toàn diện.
-
-#### H: Các thành phần cấu trúc nội tuyến góp phần như thế nào vào khả năng truy cập tài liệu?
-
-A: Các thành phần cấu trúc nội tuyến đóng vai trò quan trọng trong việc tăng cường khả năng truy cập tài liệu. Các tiêu đề và đoạn văn được cấu trúc hợp lý cung cấp một hệ thống phân cấp tài liệu rõ ràng giúp trình đọc màn hình và các công nghệ hỗ trợ khác diễn giải và truyền tải chính xác nội dung cho người dùng khuyết tật.
-
-#### H: Tôi có thể khám phá những cách sử dụng nâng cao hơn của các thành phần cấu trúc nội tuyến, chẳng hạn như tạo các thành phần tương tác hoặc nhúng đa phương tiện không?
-
-A: Chắc chắn rồi! Trong khi hướng dẫn này tập trung vào việc tạo tiêu đề và đoạn văn, Aspose.PDF cho .NET cung cấp các tính năng nâng cao để tạo các thành phần tương tác, nhúng đa phương tiện, thêm siêu liên kết, v.v. Hãy kiểm tra tài liệu và ví dụ của thư viện để tìm hiểu sâu hơn về các khả năng nâng cao này.
+### Làm thế nào tôi có thể mua giấy phép Aspose.PDF cho .NET?
+ Bạn có thể mua giấy phép trực tiếp từ[trang mua hàng](https://purchase.aspose.com/buy).

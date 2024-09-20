@@ -104,7 +104,7 @@ A tady to máte! Nastavení obrázku jako pozadí stránky v PDF pomocí Aspose.
 
 ## FAQ
 
-### Mohu pro různé stránky použít různé obrázky?
+### Mohu použít různé obrázky pro různé stránky?
 Absolutně! Proces můžete opakovat pro každou stránku načtením různých obrázků a jejich použitím jako pozadí pro konkrétní stránky.
 
 ### Je nějaké omezení velikosti obrázku na pozadí?

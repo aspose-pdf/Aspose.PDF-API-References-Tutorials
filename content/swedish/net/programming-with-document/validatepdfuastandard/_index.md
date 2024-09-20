@@ -59,7 +59,7 @@ Så här laddar du dokumentet:
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 ```
 
- I det här exemplet öppnar vi en PDF-fil med namnet`ValidatePDFUAStandard.pdf` . Se till att den här filen finns i din angivna katalog. Om din fil har ett annat namn, byt ut`"ValidatePDFUAStandard.pdf"` med rätt filnamn.
+ I det här exemplet öppnar vi en PDF-fil med namnet`ValidatePDFUAStandard.pdf` . Se till att den här filen finns i din angivna katalog. Om din fil har ett annat namn, ersätt`"ValidatePDFUAStandard.pdf"` med rätt filnamn.
 
 ## Steg 3: Validera PDF-filen för PDF/UA Standard
 

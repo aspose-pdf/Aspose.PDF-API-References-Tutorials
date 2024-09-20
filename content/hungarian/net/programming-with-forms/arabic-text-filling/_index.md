@@ -116,5 +116,5 @@ Igen, az Aspose.PDF több nyelvet is támogat, beleértve az arabot, angolt, fra
 ### Van ingyenes próbaverzió?
  Igen, ingyenesen kipróbálhatja az Aspose.PDF-et a próbaverzió letöltésével[itt](https://releases.aspose.com/).
 
-### Hogyan kaphatok támogatást az Aspose.PDF-hez?
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
  Támogatást kaphat, ha ellátogat a[Aspose fórum](https://forum.aspose.com/c/pdf/10).

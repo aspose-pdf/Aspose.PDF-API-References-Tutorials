@@ -7,103 +7,88 @@ type: docs
 weight: 430
 url: /hu/net/programming-with-text/search-and-get-text-page/
 ---
-Ez az oktatóanyag elmagyarázza, hogyan használhatja az Aspose.PDF for .NET fájlt a PDF-fájl egy adott oldaláról történő kereséshez és szöveg lekéréséhez. A mellékelt C# forráskód lépésről lépésre mutatja be a folyamatot.
+## Bevezetés
+
+Előfordult már, hogy konkrét szöveget kell keresnie egy PDF-dokumentumban, és ki kell bontania a további felhasználáshoz? Lehet, hogy olyan alkalmazást készít, amely dokumentumokat dolgoz fel, és pontos adatkinyerést igényel, vagy egyszerűen csak hatékonyan kell elemeznie a PDF-fájlokat. Bármi is legyen az eseted, jó helyen jársz! Ebben az oktatóanyagban azt mutatjuk be, hogyan lehet szöveget keresni és lekérni egy oldalról egy PDF-fájlban az Aspose.PDF for .NET használatával. Akár kezdő, akár tapasztalt fejlesztő vagy, ez az útmutató minden lépésen végigvezeti Önt társalgási és vonzó módon. Tekerésre készen állsz? Kezdjük is!
 
 ## Előfeltételek
 
-Mielőtt folytatná az oktatóanyagot, győződjön meg arról, hogy rendelkezik a következőkkel:
+Mielőtt belevágnánk a kódolásba, győződjünk meg arról, hogy mindennel rendelkezik, amire szüksége van:
 
-- C# programozási nyelv alapismerete.
-- Aspose.PDF for .NET könyvtár telepítve. Beszerezheti az Aspose webhelyéről, vagy a NuGet segítségével telepítheti a projektbe.
+1.  Aspose.PDF for .NET Library: Letöltheti innen[itt](https://releases.aspose.com/pdf/net/) vagy szerezzen be egy ingyenes próbaverziót ugyanarról a linkről. A vásárláshoz menjen a[Aspose üzlet](https://purchase.aspose.com/buy).
+2. .NET-keretrendszer: Szüksége lesz egy működő .NET-fejlesztői környezetre, például a Visual Studiora.
+3. PDF-fájl: Szüksége lesz egy minta PDF-fájlra, amelyben kereshetünk és kibonthatjuk a szöveget. Ebben az oktatóanyagban tegyük fel, hogy a fájl neve van`SearchAndGetTextPage.pdf`.
 
-## 1. lépés: Állítsa be a projektet
+## Csomagok importálása
 
-Kezdje azzal, hogy hozzon létre egy új C# projektet a kívánt integrált fejlesztői környezetben (IDE), és adjon hozzá egy hivatkozást az Aspose.PDF for .NET könyvtárhoz.
-
-## 2. lépés: Importálja a szükséges névtereket
-
-Adja hozzá a következőket direktívák használatával a C# fájl elejéhez a szükséges névterek importálásához:
+Először is importálnunk kell a szükséges névtereket az Aspose.PDF for .NET-hez való használatához. Győződjön meg arról, hogy ezek szerepelnek a kód tetején.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System
 ```
 
-## 3. lépés: Töltse be a PDF dokumentumot
+Most, hogy lefedtük az előfeltételeket, bontsuk le a kódot lépésről lépésre. Minden egyes lépést világosan körvonalaztunk, hogy könnyen követhető legyen.
 
- Állítsa be a PDF-dokumentumkönyvtár elérési útját, és töltse be a dokumentumot a segítségével`Document` osztály:
+## 1. lépés: Állítsa be a dokumentumkönyvtár elérési útját
+
+Mielőtt kapcsolatba lépne a PDF-fájllal, meg kell határoznia a PDF-dokumentum tárolási útvonalát. Ez biztosítja, hogy a program hozzáférjen a fájlhoz.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+-  dataDir: Ez annak a mappának az elérési útja, ahol a PDF-fájlokat tárolja. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a tényleges elérési úttal, ahol a PDF található.
+
+## 2. lépés: Töltse be a PDF-dokumentumot
+
+A következő lépés a PDF dokumentum betöltése a memóriába, hogy dolgozhasson vele. Íme, hogyan:
+
+```csharp
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 ```
 
- Ügyeljen arra, hogy cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+- Dokumentum: Ez az Aspose.PDF osztály, amely betölti a PDF fájlt.
+- pdfDocument: Az a változó, ahol a PDF-fájl tárolásra kerül a betöltés után.
 
-## 4. lépés: Szöveg keresése és kibontása egy oldalról
+## 3. lépés: Hozzon létre egy szövegelnyelő objektumot
 
- Hozzon létre a`TextFragmentAbsorber`objektumot, hogy megtalálja a bemeneti keresési kifejezés összes előfordulását egy adott oldalon:
+ A`TextFragmentAbsorber`osztály lehetővé teszi, hogy adott szöveget keressen a PDF-ben. Hozzuk létre ennek az osztálynak egy példányát, hogy megtaláljuk az adott keresési kifejezés összes példányát.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 ```
 
- Cserélje ki`"Figure"` a keresni kívánt szöveggel.
+- TextFragmentAbsorber: Ez az osztály felelős a szöveg megtalálásáért és kinyeréséért a PDF-ből.
+- "Ábra": Cserélje ki ezt a PDF-ben keresni kívánt szöveggel.
 
-## 5. lépés: Keresés egy adott oldalon
+## 4. lépés: Alkalmazza a szövegelnyelőt a teljes PDF-re
 
-Fogadja el az elnyelőt a dokumentum egy adott oldalához:
+Miután beállította a szövegelnyelőt, meg kell mondania a programnak, hogy keressen a PDF összes oldalán.
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## 6. lépés: szerezze be a kivont szövegrészleteket
+- Accept(): Ez a módszer a szövegelnyelőt alkalmazza a PDF-re, minden oldalt beolvasva a megadott szövegért.
 
- Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
+## 5. lépés: Töltse le és ismételje meg a kivont szöveget
+
+Most, hogy beszkenneltük a PDF-fájlt, ideje lekérni és megjeleníteni az eredményeket. Végignézzük a kivont szövegrészleteket.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## 7. lépés: Keresse át a szövegrészleteket és szegmenseket
+- TextFragmentCollection: Ez a gyűjtemény tartalmazza a szövegelnyelő által talált szövegrészletek összes példányát.
 
-Keresse át a kapott szövegrészleteket és szegmenseiket, és érje el tulajdonságaikat:
+## 6. lépés: Végezzen hurkot az egyes töredékeken és vonja ki az adatokat
+
+Most végignézzük a`textFragmentCollection` és kivonja az egyes szövegszegmensek különféle tulajdonságait, például a helyzetét, a betűtípus részleteit és a színét.
 
 ```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text: {0} ", textSegment.Text);
-		Console.WriteLine("Position: {0} ", textSegment.Position);
-		Console.WriteLine("XIndent: {0} ", textSegment.Position.XIndent);
-		Console.WriteLine("YIndent: {0} ", textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name: {0}", textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible: {0} ", textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded: {0} ", textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset: {0} ", textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size: {0} ", textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color: {0} ", textSegment.TextState.ForegroundColor);
-	}
-}
-```
-
-Módosíthatja a kódot a cikluson belül, hogy további műveleteket hajtson végre az egyes szövegszegmenseken.
-
-### Minta forráskód a Search and Get Text oldalhoz az Aspose.PDF for .NET használatával 
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Nyissa meg a dokumentumot
-Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Hozzon létre TextAbsorber objektumot a bemeneti keresési kifejezés összes példányának megtalálásához
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
-// Fogadja el az összes oldal elnyelőjét
-pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Szerezze be a kivont szövegrészleteket
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Hurok át a töredékeken
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -122,40 +107,29 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
+- Szövegtöredék: Minden töredék a talált szöveg egy részét tartalmazza.
+- Szövegszegmens: Minden töredék több szegmensből állhat, amelyek a szöveg különböző részeit képviselik.
+- TextState: Ez részletes információkat nyújt a szöveg betűtípusáról, méretéről és színéről.
+
+Ebben a ciklusban kinyomtatjuk a részleteket, például a tényleges szöveget, annak helyzetét (X és Y koordináták), a betűtípust, azt, hogy a betűtípus be van-e ágyazva a PDF-be, és a szöveg előtér színét.
+
 ## Következtetés
 
-Gratulálok! Sikeresen megtanulta, hogyan lehet szöveget keresni és lekérni egy PDF-dokumentum adott oldaláról az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészek eléréséig. Most beépítheti
+És megvan! Az Aspose.PDF for .NET segítségével sikeresen megkeresett és kibontott szöveget egy PDF-fájlból. Hihetetlen, hogy mekkora rugalmasságot tud használni ezzel a könyvtárral. Akár konkrét szöveget kell keresnie egy nagy dokumentumban, akár ki kell bontania, vagy elemeznie kell tulajdonságait, az Aspose.PDF gyerekjáték. Ráadásul az általunk ismertetett kóddal jól felkészült arra, hogy az igényeihez igazítsa. 
 
-### GYIK
+## GYIK
 
-#### K: Mi a "Szöveg oldal keresése és lekérése" oktatóanyag célja?
+### Kereshetek több kifejezésre egyszerre?  
+ Igen, több kifejezés létrehozásával módosíthatja a kódot, hogy több kifejezést keressen`TextFragmentAbsorber` tárgyakat.
 
-V: A "Szövegoldal keresése és lekérése" című oktatóanyag célja, hogy bemutassa, hogyan használhatja az Aspose.PDF könyvtárat a .NET-hez a PDF-fájl egy adott oldalának szövegének keresésére és lekérésére. Az oktatóanyag részletes utasításokat és minta C# kódot tartalmaz a folyamat bemutatásához.
+### Hogyan tudok szöveget kivonni egy adott oldalról?  
+ Egy adott oldalt célozhat meg a`TextFragmentAbsorber` egyetlen oldalra a teljes dokumentum helyett. Például:`pdfDocument.Pages[1].Accept(textFragmentAbsorber);`.
 
-#### K: Hogyan segít ez az oktatóanyag a szöveg kinyerésében egy PDF-dokumentum adott oldaláról?
+### Ingyenes az Aspose.PDF for .NET?  
+ Az Aspose.PDF kereskedelmi termék, de használhatja a[ingyenes próbaverzió](https://releases.aspose.com/).
 
-V: Ez az oktatóanyag végigvezeti Önt a PDF-dokumentum egy adott oldaláról az Aspose.PDF könyvtár használatával történő szöveg kinyerésének folyamatán. Felvázolja a szükséges lépéseket, és C# kódot biztosít egy megadott szöveges kifejezés kereséséhez a kiválasztott oldalon, és a kapcsolódó szövegszegmensek lekéréséhez.
+### Kivonhatok képeket a PDF-ből az Aspose.PDF segítségével?  
+ Igen, az Aspose.PDF lehetővé teszi a képek kinyerését a szöveg mellett. Ellenőrizze a[dokumentáció](https://reference.aspose.com/pdf/net/) további részletekért.
 
-#### K: Melyek az oktatóanyag követésének előfeltételei?
-
-V: Mielőtt elkezdené ezt az oktatóanyagot, alapvető ismeretekkel kell rendelkeznie a C# programozási nyelvről. Ezenkívül telepítenie kell az Aspose.PDF for .NET könyvtárat. Beszerezheti az Aspose webhelyéről, vagy a NuGet segítségével integrálhatja projektjébe.
-
-#### K: Hogyan állíthatom be a projektemet, hogy kövesse ezt az oktatóanyagot?
-
-V: A kezdéshez hozzon létre egy új C# projektet az előnyben részesített integrált fejlesztői környezetben (IDE), és adjon hozzá egy hivatkozást az Aspose.PDF for .NET könyvtárhoz. Ez lehetővé teszi a könyvtár képességeinek kihasználását a projektben.
-
-#### K: Kereshetek szöveget a PDF-dokumentum egy adott oldalán?
-
-V: Igen, ez az oktatóanyag bemutatja, hogyan kereshet szöveget egy PDF-dokumentum egy adott oldalán. Ez magában foglalja a`TextFragmentAbsorber` osztályt, hogy megkeresse egy adott szöveges kifejezés előfordulását a kiválasztott oldalon.
-
-#### K: Hogyan érhetem el az adott oldalról kivont szövegszegmenseket?
-
- V: Miután megkereste a szöveget a kijelölt oldalon, a kivonatolt szövegszegmenseket a segítségével érheti el`TextSegments` tulajdona a`TextFragment` objektum. Ez az ingatlan hozzáférést biztosít a gyűjteményhez`TextSegment` objektumok, amelyek a kivont szöveget és a kapcsolódó információkat tartalmazzák.
-
-#### K: Milyen információkat kérhetek le a kivont szövegrészekből?
-
-V: A kivont szövegszegmensekből különféle részleteket kérhet le, beleértve a szöveg tartalmát, pozícióját (X és Y koordináták), betűtípus-információkat (név, méret, szín stb.). Az oktatóanyag mintakódja bemutatja, hogyan lehet elérni és kinyomtatni ezeket a részleteket az egyes szövegszegmensekhez.
-
-#### K: Végezhetek egyéni műveleteket a kibontott szövegszegmenseken?
-
-V: Természetesen. Miután megvan a kibontott szövegszegmens, testreszabhatja a kódot a cikluson belül, hogy további műveleteket hajtson végre az egyes szegmenseken. Ez magában foglalhatja a kivonatolt szöveg mentését, a szövegminták elemzését vagy a formázási módosítások alkalmazását.
+### Mi van, ha további segítségre vagy támogatásra van szükségem?  
+ Mindig kaphat segítséget a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10).

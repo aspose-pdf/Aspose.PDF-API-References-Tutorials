@@ -2,150 +2,177 @@
 title: Ustaw obramowanie w pliku PDF na tabelę
 linktitle: Ustaw obramowanie w pliku PDF na tabelę
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak ustawić obramowanie tabeli w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak ustawić obramowania w tabeli PDF za pomocą Aspose.PDF dla .NET dzięki naszemu przewodnikowi krok po kroku. Łatwo ulepsz wygląd swojego dokumentu.
 type: docs
 weight: 200
 url: /pl/net/programming-with-tables/set-border/
 ---
-W tym samouczku krok po kroku przeprowadzimy Cię przez proces ustawiania obramowania w tabeli dokumentu PDF przy użyciu Aspose.PDF dla .NET. Wyjaśnimy dostarczony kod źródłowy C# i pokażemy, jak go zaimplementować.
+## Wstęp
 
-## Krok 1: Tworzenie instancji obiektu dokumentu
-Najpierw utworzymy obiekt Document:
+Tworzenie profesjonalnie wyglądających dokumentów PDF jest łatwiejsze niż kiedykolwiek dzięki Aspose.PDF dla .NET. Niezależnie od tego, czy generujesz raporty, faktury czy jakąkolwiek ustrukturyzowaną dokumentację, jednym z podstawowych aspektów projektowania dokumentów jest włączanie obramowań do tabel. W tym samouczku pokażemy, jak ustawić obramowania w tabeli PDF za pomocą Aspose.PDF dla .NET. Pod koniec tego artykułu będziesz wiedzieć, jak bez wysiłku poprawić atrakcyjność wizualną swoich dokumentów PDF.
+
+## Wymagania wstępne
+
+Zanim zagłębisz się w kod, upewnij się, że masz następujące elementy:
+
+1. Visual Studio: zintegrowane środowisko programistyczne (IDE) umożliwiające pisanie i uruchamianie aplikacji .NET.
+2.  Aspose.PDF dla biblioteki .NET: Upewnij się, że zainstalowałeś tę bibliotekę. Możesz ją pobrać bezpośrednio z[Aspose PDF dla wydań .NET](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć implementację kodu.
+4. .NET Framework: Dowolna wersja zgodna z Aspose.PDF dla platformy .NET.
+
+## Importuj pakiety
+
+Aby rozpocząć, musisz zaimportować niezbędne pakiety z biblioteki Aspose. Wymagana podstawowa przestrzeń nazw to:
 
 ```csharp
-Document doc = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Krok 2: Dodawanie strony do dokumentu PDF
-Następnie dodamy stronę do dokumentu PDF:
+Dzięki temu uzyskasz dostęp do klas i metod potrzebnych do tworzenia i modyfikowania dokumentów PDF.
+
+Teraz podzielimy proces dodawania tabeli z obramowaniami w dokumencie PDF na mniejsze, łatwiejsze do wykonania kroki.
+
+## Krok 1: Zdefiniuj katalog dokumentów
+
+Najpierw najważniejsze! Będziesz chciał określić katalog, w którym zostanie zapisany Twój plik PDF. Upewnij się, że aktualizujesz tę ścieżkę zgodnie ze swoim systemem.
 
 ```csharp
-Page page = doc.Pages.Add();
-```
-
-## Krok 3: Tworzenie obiektu BorderInfo
-Teraz utworzymy obiekt BorderInfo, aby zdefiniować obramowanie tabeli:
-
-```csharp
-Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-```
-
-## Krok 4: Określanie górnej i dolnej krawędzi
-Określimy, że górna i dolna granica będą podwójne:
-
-```csharp
-border.Top.IsDoubled = true;
-border.Bottom.IsDoubled = true;
-```
-
-## Krok 5: Tworzenie instancji obiektu tabeli
-Teraz utwórzmy obiekt Table:
-
-```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-```
-
-## Krok 6: Określanie szerokości kolumn
-Określimy szerokości kolumn tabeli:
-
-```csharp
-table. ColumnWidths = "100";
-```
-
-## Krok 7: Tworzenie obiektu wiersza
-Utworzymy obiekt Row:
-
-```csharp
-Aspose.Pdf.Row row = table.Rows.Add();
-```
-
-## Krok 8: Dodawanie komórki do wiersza
-Następnie dodamy komórkę do wiersza:
-
-```csharp
-Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-```
-
-## Krok 9: Ustawianie obramowania komórki
-Zdefiniujemy obramowanie komórki (podwójne obramowanie):
-
-```csharp
-cell. Border = border;
-```
-
-## Krok 10: Dodawanie tabeli do strony
-Teraz dodajmy tabelę do strony dokumentu:
-
-```csharp
-page.Paragraphs.Add(table);
-```
-
-## Krok 11: Zapisz dokument PDF
-Na koniec zapiszemy dokument PDF:
-
-```csharp
-dataDir = dataDir + "TableBorderTest_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
-```
-
-### Przykładowy kod źródłowy dla polecenia Set Border using Aspose.PDF dla platformy .NET
-
-```csharp
-// Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Utwórz obiekt dokumentu
-Document doc = new Document();
-// Dodaj stronę do dokumentu PDF
-Page page = doc.Pages.Add();
-// Utwórz obiekt BorderInfo
-Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-//Określ, że górna granica będzie podwójna
-border.Top.IsDoubled = true;
-// Określ, że dolna granica będzie podwójna
-border.Bottom.IsDoubled = true;
-// Utwórz obiekt tabeli
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Określ informacje o szerokości kolumn
-table.ColumnWidths = "100";
-// Utwórz obiekt wiersza
-Aspose.Pdf.Row row = table.Rows.Add();
-// Dodaj komórkę tabeli do zbioru komórek wiersza
-Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Ustaw obramowanie obiektu komórki (podwójne obramowanie)
-cell.Border = border;
-// Dodaj tabelę do zbioru akapitów strony
-page.Paragraphs.Add(table);
-dataDir = dataDir + "TableBorderTest_out.pdf";
-// Zapisz dokument PDF
-doc.Save(dataDir);
-
-Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
+
+ Ustawia ścieżkę bazową dla pliku wyjściowego, więc pamiętaj o jej zmianie`"YOUR DOCUMENT DIRECTORY"` do rzeczywistej ścieżki na twoim komputerze.
+
+## Krok 2: Utwórz obiekt dokumentu
+
+ Następnie musisz utworzyć instancję`Document` Klasa. Ta klasa reprezentuje cały dokument PDF, z którym będziesz pracować.
+
+```csharp
+Document doc = new Document();
+```
+
+ Poprzez instancjonowanie`Document` obiekt, przygotowujesz się do dodania stron i treści do swojego pliku PDF.
+
+## Krok 3: Dodaj stronę do dokumentu
+
+Każdy plik PDF składa się z jednej lub więcej stron. W tym kroku dodamy nową stronę do naszego dokumentu PDF.
+
+```csharp
+Page page = doc.Pages.Add();
+```
+
+Tutaj powiększamy nasz dokument, dodając pustą stronę, na której znajdzie się nasza tabela. Pomyśl o tym jak o przygotowaniu pustego płótna na arcydzieło!
+
+## Krok 4: Utwórz obiekt BorderInfo
+
+ Teraz czas na ustawienie obramowań dla naszego stołu.`BorderInfo` Klasa umożliwia określenie właściwości obramowania.
+
+```csharp
+Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
+```
+
+ W tym wierszu tworzymy`BorderInfo` obiekt, który będzie stosowany do wszystkich stron komórek.
+
+## Krok 5: Ustaw style obramowania
+
+Następnie określimy, jak powinny wyglądać obramowania. Tutaj możesz wykazać się kreatywnością!
+
+```csharp
+border.Top.IsDoubled = true;
+border.Bottom.IsDoubled = true;
+```
+
+W tym przykładzie wskazujemy, że górne i dolne obramowanie powinno być podwojone. To świetne, aby dodać nacisku i głębi wizualnej do tabeli.
+
+## Krok 6: Utwórz obiekt tabeli
+
+Po zdefiniowaniu granic czas utworzyć tabelę.
+
+```csharp
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+```
+
+Teraz mamy pustą tabelę gotową do przechowywania danych. To jak tworzenie szkieletowej struktury, na której można budować.
+
+## Krok 7: Zdefiniuj szerokości kolumn
+
+przypadku każdej tabeli ustawienie szerokości kolumn jest kluczowe. Zapewnia to, że treść dobrze pasuje i wygląda na uporządkowaną.
+
+```csharp
+table.ColumnWidths = "100";
+```
+
+Ta linia ustawia jednolitą szerokość 100 punktów dla wszystkich kolumn w naszej tabeli. Możesz dostosować ją w zależności od potrzeb dotyczących treści.
+
+## Krok 8: Utwórz wiersz
+
+Każda tabela potrzebuje co najmniej jednego wiersza, więc dodajmy go jako następny.
+
+```csharp
+Aspose.Pdf.Row row = table.Rows.Add();
+```
+
+Za pomocą tego polecenia dodajemy nowy wiersz do naszej właśnie utworzonej tabeli. Podobnie jak kładzenie fundamentów budynku, wszystko inne opiera się na tym.
+
+## Krok 9: Dodaj komórkę z tekstem
+
+Teraz dodajmy trochę treści do naszej tabeli, tworząc komórkę. Komórki to miejsca, w których znajdują się rzeczywiste dane.
+
+```csharp
+Aspose.Pdf.Cell cell = row.Cells.Add("some text");
+```
+
+ Możesz swobodnie wymienić`"some text"` z dowolnym ciągiem znaków, który chcesz wyświetlić. Może to być etykieta, liczba lub dowolna informacja tekstowa niezbędna dla Twojego dokumentu.
+
+## Krok 10: Ustaw obramowanie komórki
+
+Tutaj dzieje się magia! Teraz przypiszesz wcześniej zdefiniowaną ramkę do komórki w naszej tabeli.
+
+```csharp
+cell.Border = border;
+```
+
+Teraz komórka jest stylizowana podwójną ramką na górze i dole, dokładnie tak, jak określiliśmy. To jak ubieranie treści na specjalną okazję.
+
+## Krok 11: Dodaj tabelę do strony
+
+Gdy wszystko jest już skonfigurowane, czas dodać tabelę do strony, na której będzie wyświetlana.
+
+```csharp
+page.Paragraphs.Add(table);
+```
+
+Ta linia integruje tabelę z treścią strony. Wyobraź sobie, że umieszczasz ukończony obraz na ścianie galerii.
+
+## Krok 12: Zapisz dokument
+
+Na koniec wystarczy już tylko zapisać dokument w wybranym katalogu.
+
+```csharp
+dataDir = dataDir + "TableBorderTest_out.pdf";
+doc.Save(dataDir);
+```
+
+Upewnij się, że w razie potrzeby dostosujesz nazwę pliku! Po uruchomieniu programu plik PDF z obramowaniem tabeli zostanie utworzony i zapisany w zdefiniowanej lokalizacji.
 
 ## Wniosek
-Gratulacje! Nauczyłeś się, jak ustawić obramowanie tabeli dokumentu PDF za pomocą Aspose.PDF dla .NET. Ten przewodnik krok po kroku pokazał Ci, jak utworzyć dokument, dodać stronę, skonfigurować obramowanie tabeli i zapisać dokument PDF. Teraz możesz zastosować tę wiedzę w swoich projektach.
 
-### Najczęściej zadawane pytania
+Utworzenie dokumentu PDF zawierającego tabelę z obramowaniem może znacznie poprawić jej czytelność i profesjonalizm. Dzięki Aspose.PDF dla .NET zadanie to staje się proste i wydajne. Postępując zgodnie z krokami opisanymi w tym samouczku, możesz łatwo ustawić obramowanie tabel, dzięki czemu Twoje dokumenty PDF będą nie tylko funkcjonalne, ale również atrakcyjne wizualnie.
 
-#### P: Czy mogę ustawić różne style obramowania (np. przerywane lub kropkowane) dla górnej i dolnej krawędzi tabeli?
+## Najczęściej zadawane pytania
 
- O: Tak, możesz ustawić różne style obramowania dla górnej i dolnej krawędzi tabeli, modyfikując`border.Top.Style` I`border.Bottom.Style`właściwości w dostarczonym kodzie źródłowym C#. Aspose.PDF dla .NET umożliwia wybór spośród różnych stylów obramowania, w tym Solid, Dashed, Dotted, Double i innych.
+### Czy mogę zmienić styl obramowania na przerywany lub kropkowany?  
+ Tak! Możesz modyfikować właściwości obramowania w`BorderInfo` obiekt umożliwiający utworzenie obramowań przerywanych lub kropkowanych poprzez ustawienie odpowiednich właściwości.
 
-#### P: Jak mogę ustawić kolor obramowania tabeli?
+### Czy Aspose.PDF obsługuje obrazy w tabelach?  
+ Oczywiście! Możesz dodawać obrazy do komórek tabeli tak samo jak do tekstu, używając`Cell` metody klasy.
 
- A: Kolor obramowania tabeli można ustawić, modyfikując`border.Color` właściwość w kodzie źródłowym C#. Po prostu podaj żądany kolor, taki jak`Aspose.Pdf.Color.Red` lub dowolną inną prawidłową reprezentację koloru, aby dostosować kolor obramowania.
+### Jak mogę określić różne szerokości dla różnych kolumn?  
+ Możesz zdefiniować szerokość każdej kolumny osobno, używając ciągu szerokości, takiego jak`"100;150;200"`.
 
-#### P: Czy można zastosować obramowania do poszczególnych komórek w tabeli, stosując różne ustawienia (np. różne kolory lub style obramowań)?
+### Czy mogę utworzyć wiele tabel na tej samej stronie?  
+Tak! Możesz tworzyć i dodawać tyle tabel, ile potrzebujesz na tej samej stronie, powtarzając kroki tworzenia tabeli.
 
- O: Tak, możesz zastosować obramowania do poszczególnych komórek w tabeli, konfigurując różne ustawienia.`cell.Border` właściwość dla każdej komórki z osobna. Pozwala to na posiadanie specyficznych dla komórki stylów obramowania i kolorów w oparciu o Twoje wymagania.
-
-#### P: Czy mogę usunąć obramowanie z wybranych stron tabeli (np. z lewej i prawej strony)?
-
- A: Tak, możesz usunąć obramowanie z określonych stron tabeli, modyfikując`border.Left`, `border.Right`, `border.Top` , I`border.Bottom`właściwości w kodzie źródłowym C#. Ustawienie tych właściwości na`null` usunie obramowanie z odpowiednich boków tabeli.
-
-#### P: Jak mogę dostosować grubość obramowania tabeli?
-
- A: Możesz dostosować grubość obramowania tabeli, modyfikując`border.Width` właściwość w kodzie źródłowym C#. Po prostu ustaw żądaną szerokość obramowania (w punktach), aby uzyskać żądaną grubość.
+### Czy istnieje sposób na zastosowanie stylów do komórek tabeli?  
+ Oczywiście! Możesz ustawić różne właściwości, takie jak kolor tła, styl tekstu i wyrównanie na`Cell` obiekt.

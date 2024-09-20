@@ -86,7 +86,7 @@ Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at 
 Ναι, μπορείτε να κάνετε κύκλο στη συλλογή σχολιασμών και να διαγράψετε πολλούς σχολιασμούς με βάση τα κριτήριά σας.
 
 ### Υπάρχει διαθέσιμη δωρεάν δοκιμή για το Aspose.PDF;
- Ναι, μπορείτε να κάνετε λήψη μιας δωρεάν δοκιμής από το[Aspose ιστότοπο](https://releases.aspose.com/).
+ Ναι, μπορείτε να κάνετε λήψη μιας δωρεάν δοκιμής από το[Aspose website](https://releases.aspose.com/).
 
 ### Τι γίνεται αν χρειάζομαι υποστήριξη κατά τη χρήση του Aspose.PDF;
  Μπορείτε να επισκεφθείτε το[Aspose forum υποστήριξης](https://forum.aspose.com/c/pdf/10) για βοήθεια.

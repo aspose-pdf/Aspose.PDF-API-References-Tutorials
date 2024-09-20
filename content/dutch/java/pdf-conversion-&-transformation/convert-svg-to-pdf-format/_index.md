@@ -57,7 +57,7 @@ SvgLoadOptions svgLoadOptions = new SvgLoadOptions();
 pdfDocument.getPages().add().addFromSvg("input.svg", svgLoadOptions);
 ```
 
-5. PDF-uitvoer aanpassen: u kunt de PDF-uitvoer aanpassen door verschillende opties in te stellen, zoals paginaformaat, marges en meer.
+5. PDF-uitvoer aanpassen: U kunt de PDF-uitvoer aanpassen door verschillende opties in te stellen, zoals paginaformaat, marges en meer.
 
 ```java
 pdfDocument.getPages().get_Item(1).getMediaBox().setWidth(500);

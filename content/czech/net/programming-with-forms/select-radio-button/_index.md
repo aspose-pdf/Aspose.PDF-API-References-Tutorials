@@ -50,7 +50,7 @@ Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
 
 ## Krok 2: Vstupte do pole přepínacího tlačítka
 
- Nyní, když je dokument načten, je dalším krokem přístup k polím formuláře. Konkrétně chceme komunikovat se skupinou přepínačů. Pole přepínače je přístupné pomocí`Form` vlastnictví`pdfDocument` objekt.
+ Nyní, když je dokument načten, je dalším krokem přístup k polím formuláře. Konkrétně chceme komunikovat se skupinou přepínačů. Pole přepínače je přístupné pomocí`Form` vlastnictvím`pdfDocument` objekt.
 
  Zde je kód pro přístup k poli přepínače s názvem`radio`:
 
@@ -105,7 +105,7 @@ Pokud zadané pole přepínacího tlačítka neexistuje, zobrazí se chyba, kter
 Ne, přepínače jsou navrženy tak, aby umožňovaly pouze jeden výběr na skupinu. Pokud potřebujete více výběrů, zvažte použití zaškrtávacích políček.
 
 ### Je možné přečíst aktuálně vybraný přepínač?  
- Ano, můžete zkontrolovat, který přepínač je aktuálně vybrán, přečtením`Selected` vlastnictví`RadioButtonField` objekt.
+ Ano, můžete zkontrolovat, který přepínač je aktuálně vybrán, přečtením`Selected` vlastnictvím`RadioButtonField` objekt.
 
 ### Potřebuji licenci k používání Aspose.PDF pro .NET?  
  Ano, Aspose.PDF vyžaduje licenci pro plnou funkčnost. Můžete získat a[dočasná licence](https://purchase.aspose.com/temporary-license/) nebo použijte a[zkušební verze zdarma](https://releases.aspose.com/) začít.

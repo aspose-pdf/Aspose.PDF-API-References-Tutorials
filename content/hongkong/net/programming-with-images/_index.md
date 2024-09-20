@@ -22,7 +22,7 @@ Aspose.PDF for .NET 的「影像程式設計」教學課程將引導您完成在
 | [將頁面區域轉換為 DOM](./convert-page-region-to-dom/) | 使用 Aspose.PDF for .NET 釋放 PDF 文件的潛力。將 PDF 區域轉換為影像並增強您的工作流程。 |  
 | [轉換為 BMP](./convert-to-bmp/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 將 PDF 輕鬆轉換為 BMP 影像。非常適合 .NET 開發人員。 |  
 | [在 PDF 檔案中建立縮圖](./create-thumbnail-images/) | 使用 Aspose.PDF for .NET 輕鬆產生 PDF 檔案中每個頁面的縮圖。增強您的文件預覽體驗。 |  
-| [從 PDF 檔案中刪除影像](./delete-images/) | 透過簡單的逐步教學，了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中刪除影像。透過輕鬆刪除不需要的圖像來優化 PDF。 |  
+| [從 PDF 檔案中刪除圖像](./delete-images/) | 透過簡單的逐步教學，了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中刪除影像。透過輕鬆刪除不需要的圖像來優化 PDF。 |  
 | [從 PDF 檔案中提取圖像](./extract-images/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中擷取影像。從易於遵循的說明開始。 |  
 | [快速縮小影像](./fast-shrink-images/) | 了解如何有效地使用 Aspose.PDF for .NET 縮小 PDF 文件中的圖像，在保持品質的同時優化尺寸。 |  
 | [平面解碼壓縮](./flate-decode-compression/) | 了解如何在 Aspose.PDF for .NET 中使用 Flate 解碼壓縮。透過此逐步指南有效優化 PDF 檔案大小。 |  

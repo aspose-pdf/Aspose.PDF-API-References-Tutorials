@@ -79,7 +79,7 @@ img.FixWidth = 100;
 img.FixHeight = 100;
 ```
  
- The`FixWidth` a`FixHeight`vlastnosti umožňují nastavit přesné rozměry obrázku v bodech. V tomto příkladu měníme velikost obrázku na 100x100 bodů. Tyto hodnoty můžete upravit tak, aby vyhovovaly vašim potřebám.
+ The`FixWidth` a`FixHeight`vlastnosti umožňují nastavit přesné rozměry obrázku v bodech. V tomto příkladu měníme velikost obrázku na 100x100 bodů. Tyto hodnoty můžete upravit podle svých potřeb.
 
 ## Krok 5: Zadejte typ obrázku
 

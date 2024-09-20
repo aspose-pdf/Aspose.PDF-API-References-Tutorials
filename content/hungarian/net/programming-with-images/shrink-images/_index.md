@@ -118,7 +118,7 @@ Ez a sor feldolgozza a PDF-fájlt, és alkalmazza az optimalizálási beállít�
 
 ## 6. lépés: Mentse el az optimalizált dokumentumot
 
-Végül el kell mentenie az optimalizált PDF-fájlt egy megadott helyre. Létrehozhat egy új fájlt, vagy felülírhatja a meglévőt.
+Végül el kell mentenie az optimalizált PDF-fájlt egy megadott helyre. Létrehozhat új fájlt, vagy felülírhatja a meglévőt.
 
 ```csharp
 dataDir = dataDir + "Shrinkimage_out.pdf"; 

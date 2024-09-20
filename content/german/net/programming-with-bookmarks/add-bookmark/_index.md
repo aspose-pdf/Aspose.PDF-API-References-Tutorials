@@ -47,7 +47,7 @@ using Aspose.Pdf;
 
 Nachdem wir nun alles eingerichtet haben, fahren wir mit dem eigentlichen Code zum Hinzufügen von Lesezeichen fort!
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zuerst müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis angeben. Dort wird Ihre PDF-Datei gespeichert. So können Sie das tun:
 

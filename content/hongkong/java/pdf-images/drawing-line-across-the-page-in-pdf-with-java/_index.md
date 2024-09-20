@@ -10,7 +10,7 @@ url: /zh-hant/java/pdf-images/drawing-line-across-the-page-in-pdf-with-java/
 
 ## 使用 Java 在 PDF 中跨頁面繪製線條簡介
 
-Aspose.PDF for Java 是一個功能強大的 API，可讓開發人員在其 Java 應用程式中處理 PDF 文件。在本逐步指南中，我們將探討如何使用 Aspose.PDF for Java 在 PDF 文件的頁面上繪製一條線。無論您是想添加裝飾線、單獨的部分還是突出顯示內容，本教學都將向您展示如何輕鬆做到這一點。
+Aspose.PDF for Java 是一個功能強大的 API，可讓開發人員在其 Java 應用程式中處理 PDF 文件。在本逐步指南中，我們將探索如何使用 Aspose.PDF for Java 在 PDF 文件的頁面上繪製一條線。無論您是想添加裝飾線、單獨的部分還是突出顯示內容，本教學都將向您展示如何輕鬆做到這一點。
 
 ## Java 版 Aspose.PDF 入門
 

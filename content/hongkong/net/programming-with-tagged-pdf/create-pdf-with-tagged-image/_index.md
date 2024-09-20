@@ -2,128 +2,149 @@
 title: 使用標記圖像建立 PDF
 linktitle: 使用標記圖像建立 PDF
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 建立標記影像的 PDF 的逐步指南。
+description: 了解使用 Aspose.PDF for .NET 建立帶有影像的標記 PDF。遵循我們的逐步指南，輕鬆建立專業的文件。
 type: docs
 weight: 40
 url: /zh-hant/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-在本教學中，我們將為您提供如何使用 Aspose.PDF for .NET 建立帶有標記影像的 PDF 文件的逐步指南。 Aspose.PDF 是一個功能強大的程式庫，可讓您以程式設計方式建立、操作和轉換 PDF 文件。使用Aspose.PDF的標記內容結構功能，您可以將標記影像新增至PDF文件中。
+## 介紹
+
+建立 PDF 可能是一項複雜的任務，但事實並非如此！今天，我們將深入研究如何使用 Aspose.PDF for .NET 建立帶有標記影像的 PDF 文件。如果您對將圖像合併到 PDF 中並確保它們可供訪問感興趣，那麼您來對地方了。讓我們逐步解開這個過程，以便您可以輕鬆建立專業且易於存取的 PDF。
 
 ## 先決條件
 
-在開始之前，請確保您具備以下先決條件：
+在開始使用標記影像建立 PDF 之前，您需要滿足以下條件：
 
-1. 隨 .NET Framework 安裝的 Visual Studio。
-2. 適用於 .NET 的 Aspose.PDF 庫。
+1. Aspose.PDF for .NET：這個強大的程式庫對於在 .NET 應用程式中處理 PDF 文件至關重要。您可以在這裡找到該庫：[Aspose.PDF for .NET 下載](https://releases.aspose.com/pdf/net/).
+2. .NET Framework 或 .NET Core：確保您的電腦上有相容版本的 .NET Framework 或 .NET Core。這個庫支援兩者。
+3. 圖像檔案：您需要一個圖像檔案才能嵌入到 PDF 中。在我們的範例中，我們將使用“aspose-logo.png”。確保在您的文件目錄中準備好它。 
 
-## 第 1 步：項目設置
+確保滿足這些先決條件，您就可以開始了！
 
-首先，在 Visual Studio 中建立一個新專案並新增對 Aspose.PDF for .NET 程式庫的參考。您可以從Aspose官方網站下載該程式庫並將其安裝到您的電腦上。
+## 導入包
 
-## 第 2 步：導入必要的命名空間
+為了開始我們的編碼冒險，我們需要透過匯入必要的 Aspose.PDF 命名空間來設定我們的工作區。您可以按照以下方法執行此操作：
 
-在您的 C# 程式碼檔案中，匯入存取 Aspose.PDF 提供的類別和方法所需的命名空間：
+### 建立一個新項目
+
+- 開啟您喜歡的 IDE（例如 Visual Studio）。
+- 建立一個新的控制台應用程式專案。為什麼是控制台應用程式？它非常簡單，非常適合教程！
+
+### 新增 Aspose.PDF 參考
+
+- 在解決方案資源管理器中以滑鼠右鍵按一下您的項目，然後選擇「管理 NuGet 套件」。
+- 搜尋“Aspose.PDF”並安裝它。 
+- 這會將所有必要的套件添加到您的專案中，使您能夠存取 PDF 操作所需的功能。
+
+### 導入所需的命名空間
+
+在主程式檔案的頂部（例如`Program.cs`），導入以下命名空間：
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 步驟 3：建立帶有標記影像的 PDF 文檔
+透過匯入這些套件，您將告訴您的應用程式引入我們將使用的 Aspose.PDF 功能。
 
-使用以下程式碼建立帶有標記影像的 PDF 文件：
+現在我們已經完成了所有設置，讓我們逐步建立帶有標記圖像的 PDF。
+
+## 步驟1：初始化文檔
+
+首先，我們需要建立一個新的 PDF 文件：
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //設定你的目錄路徑
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-此程式碼建立一個空 PDF 文檔，並使用 Aspose.PDF 提供的方法新增標記影像。此圖像由替代文字、標題和標籤指定。
+- 這是怎麼回事？我們正在實例化一個新的`Document`代表我們的 PDF 的對象。將其視為等待您的傑作的空白畫布！
 
-## 步驟 4：儲存 PDF 文檔
+## 第 2 步：設定標記內容
 
-使用以下程式碼儲存PDF文件：
+接下來，我們將設定標記內容：
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-此程式碼將帶有標記影像的 PDF 文件儲存到指定文件中。
+- 為什麼要使用標記內容？帶有標籤的 PDF 對於可訪問性至關重要，使螢幕閱讀器能夠理解文件的結構。
 
-### 使用 Aspose.PDF for .NET 建立標記影像的 PDF 的範例原始碼 
+## 步驟 3：設定元數據
+
+現在，讓我們加入一些描述 PDF 的元資料：
+
 ```csharp
-
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- 元什麼？添加標題和語言就像在您的創作上貼上名稱標籤 - 它可以幫助其他人了解它的全部內容！
+
+## 第 4 步：建立插圖元素
+
+我們需要建立保存圖像的元素：
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+- 就這樣？是的！這`CreateFigureElement`方法允許我們製作一個新的插圖，並且我們將其附加到標記內容的根元素中。
+
+## 第5步：設定圖像屬性
+
+接下來，讓我們設定圖像的屬性：
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-//新增解析度為 300 DPI 的影像（預設）
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-//儲存 PDF 文件
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- 為什麼有這些屬性？替代文字為看不到圖像的人描述圖像，而標題和標籤對圖像進行分類以便更好地存取。
+
+## 第 6 步：新增圖像
+
+現在，是時候將實際圖像添加到我們的 PDF 中了：
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); //確保你的圖片路徑正確！
+```
+
+- 這就是魔法發生的地方！您正在將圖像直接嵌入到 PDF 中。 
+
+## 第7步：儲存PDF文檔
+
+最後，讓我們將創建的內容儲存到一個文件中：
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- 大結局！執行此行後，您將在指定目錄中找到新的 PDF。
 
 ## 結論
 
-在本教學中，您學習如何使用 Aspose.PDF for .NET 建立帶有標記影像的 PDF 文件。標籤的圖像會為您的 PDF 文件添加附加的結構化資訊。
+當您將其分解為可管理的步驟時，使用 Aspose.PDF for .NET 建立標記影像的 PDF 變得輕而易舉。透過遵循本指南，您不僅學會如何建立 PDF，而且還學會如何使用標記內容來增強其可訪問性。無論您是為更廣泛的受眾準備文件還是只是潤飾您的 PDF 作品，這些知識都將對您大有裨益。
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：使用 Aspose.PDF for .NET 建立標記影像的 PDF 文件的目的是什麼？
+### 什麼是標籤的 PDF？
+帶有標籤的 PDF 旨在易於存取。它包含允許輔助技術正確讀取和導航的元資料。
 
-答：使用 Aspose.PDF for .NET 建立標記影像的 PDF 文件可讓您將標記影像新增至文件的內容。標記圖像提供結構化訊息，例如替代文字和標題，從而增強可訪問性和組織性。
+### 我可以使用 Aspose.PDF 添加多個圖像嗎？
+絕對地！只需重複建立新的步驟即可`IllustrationElement`文檔中的實例。
 
-#### Q：Aspose.PDF 庫如何協助建立標記影像的 PDF 文件？
+### 在哪裡可以找到有關 Aspose.PDF 的更多文件？
+查看文件[這裡](https://reference.aspose.com/pdf/net/).
 
-答：Aspose.PDF for .NET 是一個強大的函式庫，提供以程式設計方式建立、操作和轉換 PDF 文件的功能。在本教學中，庫的標記內容結構功能用於將標記影像新增至 PDF 文件。
+### Aspose.PDF 是否有免費試用版？
+是的！您可以免費試用[這裡](https://releases.aspose.com/).
 
-#### Q：使用 Aspose.PDF for .NET 建立帶有標記影像的 PDF 文件有哪些先決條件？
-
-答：開始之前，請確保您已安裝了具有 .NET 框架的 Visual Studio，並在專案中引用了適用於 .NET 的 Aspose.PDF 程式庫。
-
-#### Q：提供的 C# 程式碼如何建立帶有標記圖像的 PDF 文件？
-
-答：程式碼示範如何建立 PDF 文件、定義標記影像元素並將其新增至文件內容。帶有標籤的圖像包括替代文字、標題和使用 Aspose.PDF 提供的方法的標籤。
-
-#### Q：我可以為標記的圖像使用不同的圖像格式嗎？
-
-答：是的，您可以為標記的圖像使用不同的圖像格式，例如 JPEG、PNG、GIF 等。首選格式。
-
-#### Q：如何在標記圖像中使用替代文字（alt text）？
-
-答：替代文字提供圖像的文字描述，由螢幕閱讀器為視障用戶大聲朗讀。在提供的程式碼中，替代文字是使用`AlternativeText`的財產`IllustrationElement`代表標記圖像。
-
-#### 問：如何`SetTitle` method contribute to the PDF document's tagged image?
-
-答： 的`SetTitle`方法設定 PDF 文件標記內容的標題，為標記影像提供附加上下文。此標題可以幫助識別標記內容的目的或主題。
-
-#### Q：我可以自訂標記圖像的標籤和標題嗎？
-
-答：是的，您可以使用以下命令自訂標記圖像的標籤和標題`SetTag`和`Title`的方法`IllustrationElement`。此程式碼範例示範如何將標籤設為「Fig」並將標題設為「Picture 1」。
-
-#### Q：如何確保標記的圖像可存取並符合可訪問性標準？
-
-答：透過使用 Aspose.PDF 的標記內容結構功能並提供替代文字和其他相關信息，您可以為標記圖像的可訪問性做出貢獻。確保符合輔助功能標準涉及遵循替代文字和文件結構的最佳實踐。
-
-#### Q：是否可以使用類似的技術將多個標記影像新增到同一個 PDF 文件中？
-
-答：是的，您可以使用類似的技術將多個標記影像新增到同一個 PDF 文件中。您將創建額外的`IllustrationElement`每個標記圖像的實例並根據需要自訂其屬性。
+### 我如何獲得 Aspose.PDF 支援？
+您可以透過訪問獲得支持[Aspose 論壇](https://forum.aspose.com/c/pdf/10).

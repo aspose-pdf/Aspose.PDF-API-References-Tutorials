@@ -131,7 +131,7 @@ Tworzenie wielowarstwowego pliku PDF za pomocą Aspose.PDF dla .NET jest zarówn
 
 ## Najczęściej zadawane pytania
 
-### Czy mogę tworzyć pliki PDF zawierające wiele stron przy użyciu Aspose.PDF dla platformy .NET?  
+### Czy mogę tworzyć wielostronicowe pliki PDF przy użyciu Aspose.PDF dla platformy .NET?  
  Tak, możesz dodać dowolną liczbę stron, dzwoniąc pod numer`doc.Pages.Add()` dla każdej strony.
 
 ### Jak mogę dodać do pliku PDF więcej elementów, np. kształtów lub adnotacji?  

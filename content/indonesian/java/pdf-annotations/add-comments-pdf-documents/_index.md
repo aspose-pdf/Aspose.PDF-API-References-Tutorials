@@ -14,7 +14,7 @@ Dokumen PDF telah menjadi standar untuk berbagi informasi secara digital karena 
 
 ## Memulai dengan Aspose.PDF untuk Java
 
- Untuk memulai, Anda perlu menyiapkan lingkungan pengembangan Anda. Pastikan Anda telah menginstal pustaka Aspose.PDF untuk Java. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/).
+Untuk memulai, Anda perlu menyiapkan lingkungan pengembangan Anda. Pastikan Anda telah menginstal pustaka Aspose.PDF untuk Java. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/).
 
 ## Membuat Dokumen PDF
 

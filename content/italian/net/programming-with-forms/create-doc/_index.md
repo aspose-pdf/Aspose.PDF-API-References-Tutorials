@@ -176,7 +176,7 @@ Sì, Aspose offre una prova gratuita per gli utenti per testare la libreria. Puo
 Utilizza blocchi try-catch nel tuo codice per gestire in modo efficiente eventuali errori di runtime che potrebbero verificarsi durante la creazione o la manipolazione del PDF.
 
 ### Dove posso trovare risorse aggiuntive?
- Visita il[forum di supporto](https://forum.aspose.com/c/pdf/10) O[scaricamento](https://releases.aspose.com/pdf/net/) la biblioteca per iniziare.
+ Visitare il[forum di supporto](https://forum.aspose.com/c/pdf/10) O[scaricamento](https://releases.aspose.com/pdf/net/) la biblioteca per iniziare.
 
 ### Come posso acquistare Aspose.PDF?
  Puoi acquistare la biblioteca direttamente dal[pagina di acquisto](https://purchase.aspose.com/buy).

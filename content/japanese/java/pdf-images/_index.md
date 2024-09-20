@@ -22,7 +22,7 @@ PDF 内の画像を最適化することは、品質を損なわずにファイ�
 ### [Java を使用して PDF に線オブジェクトを追加する](./add-line-object-to-pdf-using-java/)
 Aspose.PDF for Java を使用して、Java で PDF ファイルに線オブジェクトを追加する方法を学びます。線をカスタマイズして配置し、動的な PDF を簡単に作成します。
 ### [Java で PDF 内の四角形の Z オーダーを制御する](./controlling-z-order-of-rectangle-in-pdf-with-java/)
-Aspose.PDF for Java を使用して、PDF 内の四角形の Z 順序を Java で制御する方法を学びます。正確な PDF 操作のためのステップバイステップ ガイド。
+Aspose.PDF for Java を使用して、Java で PDF 内の四角形の Z 順序を制御する方法を学びます。正確な PDF 操作のためのステップバイステップ ガイド。
 ### [Java を使用して PDF に塗りつぶされた長方形オブジェクトを作成する](./create-filled-rectangle-object-in-pdf-using-java/)
 Aspose.PDF for Java を使用して、Java で PDF に塗りつぶされた四角形を作成する方法を学習します。コード例を使用したステップバイステップのチュートリアルです。
 ### [Java を使用して PDF ページに線を引く](./drawing-line-across-the-page-in-pdf-with-java/)

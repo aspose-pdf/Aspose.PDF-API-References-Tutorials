@@ -20,10 +20,10 @@ Aspose.PDF 的「使用圖章和浮水印進行程式設計」.NET 教學課程�
 | [計算 PDF 檔案中的工件數量](./counting-artifacts/) | 了解如何使用 Aspose.PDF for .NET 計算 PDF 中的浮水印數量。為無需任何經驗的初學者提供的分步指南。 |  
 | [在 PDF 檔案中定義對齊方式](./define-alignment/) | 本指南說明如何使用 Aspose.PDF for .NET 定義 PDF 檔案中的文字對齊方式，並附有逐步教學。 |  
 | [從圖章註釋中提取文本](./extract-text-from-stamp-annotation/) | 透過此逐步教學（附有詳細的程式碼範例），了解如何使用 Aspose.PDF for .NET 從 PDF 中的圖章註解中擷取文字。 |  
-| [在 PDF 檔案中填入描邊文本](./fill-stroke-text/) | 透過包含實際範例的逐步指南，了解如何使用 Aspose.PDF for .NET 輕鬆填入 PDF 檔案中的筆畫文字。 |  
+| [在 PDF 檔案中填入描邊文本](./fill-stroke-text/) | 透過包含實際範例的逐步指南，了解如何使用 Aspose.PDF for .NET 輕鬆填入 PDF 檔案中的描邊文字。 |  
 | [從PDF檔案中取得浮水印](./get-watermark/) | 透過逐步指南了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中提取浮水印。水印提取詳細教程。 |  
 | [頁眉頁尾部分中的圖像和頁碼](./image-and-page-number-in-header-footer-section/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 將圖像和頁碼新增至 PDF 的頁首和頁尾。 |  
-| [頁眉頁腳部分內嵌的影像和頁碼](./image-and-page-number-in-header-footer-section-inline/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 的頁首部分新增內嵌影像和頁碼。 |  
+| [頁眉頁腳部分內嵌的影像和頁碼](./image-and-page-number-in-header-footer-section-inline/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 的頁首部分內嵌新增影像和頁碼。 |  
 | [頁腳中的影像](./image-in-footer/) | 透過這個詳細的逐步教學，了解如何使用 Aspose.PDF for .NET 在 PDF 頁腳中新增圖像。非常適合增強您的文件。 |  
 | [標題中的圖像](./image-in-header/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 將影像新增至 PDF 的頁首。 |  
 | [頁首頁腳中使用浮動框的頁碼](./page-number-in-header-footer-using-floating-box/) | 在本逐步教學中，使用 Aspose.PDF for .NET 的浮動框輕鬆在 PDF 頁首和頁尾中新增頁碼。 |  

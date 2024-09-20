@@ -113,7 +113,7 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 
 ## Conclusione
 
-Ed ecco fatto! Hai appena imparato come aggiungere un disegno con riempimento sfumato al tuo documento PDF usando Aspose.PDF per .NET. Non è incredibile come poche righe di codice possano trasformare un semplice PDF in qualcosa di visivamente sorprendente? Che tu stia creando report, fatture o qualsiasi altro documento, usare la grafica può migliorare significativamente l'esperienza del lettore.
+Ed ecco fatto! Hai appena imparato come aggiungere un disegno con riempimento sfumato al tuo documento PDF usando Aspose.PDF per .NET. Non è incredibile come poche righe di codice possano trasformare un semplice PDF in qualcosa di visivamente sorprendente? Che tu stia creando report, fatture o qualsiasi altro documento, l'uso della grafica può migliorare notevolmente l'esperienza del lettore.
 
 ## Domande frequenti
 

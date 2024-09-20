@@ -9,7 +9,7 @@ url: /pl/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
 ## Wstęp
 
-W tym samouczku zagłębimy się w coś super przydatnego dla Twoich plików PDF – dodawanie obrazu do nagłówka dokumentu PDF za pomocą Aspose.PDF dla .NET. Niezależnie od tego, czy jest to logo firmy, czy znak wodny, ta funkcja może być niezwykle cenna dla brandingu i personalizacji dokumentów. I nie martw się, przeprowadzę Cię przez cały proces krok po kroku, z dużą ilością szczegółów, dzięki czemu będzie on superłatwy do naśladowania!
+W tym samouczku zagłębimy się w coś superużytecznego dla Twoich plików PDF – dodanie obrazu do nagłówka dokumentu PDF za pomocą Aspose.PDF dla .NET. Niezależnie od tego, czy jest to logo firmy, czy znak wodny, ta funkcja może być niezwykle cenna dla brandingu i personalizacji dokumentów. I nie martw się, przeprowadzę Cię przez cały proces krok po kroku, z dużą ilością szczegółów, dzięki czemu będzie superłatwy do naśladowania!
 
 Pod koniec tego przewodnika będziesz w stanie bez wysiłku wstawiać obrazy do nagłówków PDF jak profesjonalista. Zaczynajmy, dobrze?
 

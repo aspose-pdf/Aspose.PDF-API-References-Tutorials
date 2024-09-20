@@ -2,128 +2,149 @@
 title: Utwórz plik PDF z tagowanym obrazem
 linktitle: Utwórz plik PDF z tagowanym obrazem
 second_title: Aspose.PDF dla .NET API Reference
-description: Instrukcja krok po kroku dotycząca tworzenia pliku PDF z tagowanym obrazem przy użyciu Aspose.PDF dla platformy .NET.
+description: Naucz się tworzyć oznaczony plik PDF z obrazami za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z naszym przewodnikiem krok po kroku, aby tworzyć dostępne i profesjonalne dokumenty.
 type: docs
 weight: 40
 url: /pl/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć dokument PDF z tagowanym obrazem przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji tagowanej struktury treści Aspose.PDF, możesz dodawać tagowane obrazy do swojego dokumentu PDF.
+## Wstęp
+
+Tworzenie plików PDF może być złożonym zadaniem, ale nie musi takie być! Dzisiaj zagłębimy się w to, jak utworzyć dokument PDF z oznaczonym obrazem przy użyciu Aspose.PDF dla .NET. Jeśli jesteś ciekawy, jak włączyć obrazy do swoich plików PDF i zapewnić ich dostępność, trafiłeś we właściwe miejsce. Rozwikłajmy ten proces krok po kroku, abyś mógł z łatwością tworzyć profesjonalne i dostępne pliki PDF.
 
 ## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że spełnione są następujące wymagania wstępne:
+Zanim zaczniesz tworzyć plik PDF z tagowanymi obrazami, potrzebujesz kilku rzeczy:
 
-1. Zainstalowano program Visual Studio z platformą .NET Framework.
-2. Biblioteka Aspose.PDF dla .NET.
+1. Aspose.PDF dla .NET: Ta potężna biblioteka jest niezbędna do obsługi dokumentów PDF w aplikacjach .NET. Bibliotekę można znaleźć tutaj:[Aspose.PDF dla .NET Pobierz](https://releases.aspose.com/pdf/net/).
+2. .NET Framework lub .NET Core: Upewnij się, że masz na swoim komputerze zgodną wersję .NET Framework lub .NET Core. Ta biblioteka obsługuje oba.
+3. Plik obrazu: Będziesz potrzebować pliku obrazu do osadzenia w pliku PDF. W naszym przykładzie użyjemy pliku 'aspose-logo.png'. Upewnij się, że jest on gotowy w katalogu dokumentów. 
 
-## Krok 1: Konfiguracja projektu
+Jeśli spełniłeś te wymagania wstępne, będziesz gotowy do rozpoczęcia!
 
-Aby rozpocząć, utwórz nowy projekt w Visual Studio i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Możesz pobrać bibliotekę z oficjalnej strony internetowej Aspose i zainstalować ją na swoim komputerze.
+## Importuj pakiety
 
-## Krok 2: Zaimportuj niezbędne przestrzenie nazw
+Aby rozpocząć naszą przygodę z kodowaniem, musimy skonfigurować naszą przestrzeń roboczą, importując niezbędne przestrzenie nazw Aspose.PDF. Oto, jak to zrobić:
 
-pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
+### Utwórz nowy projekt
+
+- Otwórz preferowane środowisko IDE (na przykład Visual Studio).
+- Utwórz nowy projekt aplikacji konsolowej. Dlaczego aplikacja konsolowa? Jest prosta i idealna do samouczków!
+
+### Dodaj odniesienie Aspose.PDF
+
+- Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań i wybierz opcję Zarządzaj pakietami NuGet.
+- Wyszukaj „Aspose.PDF” i zainstaluj. 
+- Spowoduje to dodanie do Twojego projektu wszystkich niezbędnych pakietów, co umożliwi dostęp do funkcjonalności niezbędnych do edycji plików PDF.
+
+### Importuj wymagane przestrzenie nazw
+
+ Na górze głównego pliku programu (takiego jak`Program.cs`), zaimportuj następujące przestrzenie nazw:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 3: Tworzenie dokumentu PDF z tagowanym obrazem
+Importując te pakiety, informujesz swoją aplikację, aby wdrożyła funkcjonalności Aspose.PDF, z których będziemy korzystać.
 
-Użyj poniższego kodu, aby utworzyć dokument PDF z oznaczonym obrazem:
+Teraz, gdy wszystko mamy już skonfigurowane, możemy krok po kroku utworzyć nasz plik PDF z oznaczonym obrazem.
+
+## Krok 1: Zainicjuj dokument
+
+Najpierw musimy utworzyć nowy dokument PDF:
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ustaw ścieżkę do swojego katalogu
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-Ten kod tworzy pusty dokument PDF i dodaje oznaczony obraz za pomocą metod dostarczonych przez Aspose.PDF. Obraz jest określony za pomocą tekstu alternatywnego, tytułu i tagu.
+-  Co się tu dzieje? Tworzymy nową instancję`Document` obiekt, który reprezentuje nasz PDF. Pomyśl o nim jak o pustym płótnie czekającym na twoje arcydzieła!
 
-## Krok 4: Zapisywanie dokumentu PDF
+## Krok 2: Skonfiguruj oznaczoną zawartość
 
-Użyj poniższego kodu, aby zapisać dokument PDF:
+Następnie skonfigurujemy oznaczoną treść:
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Ten kod zapisuje dokument PDF z oznaczonym obrazem do określonego pliku.
+- Dlaczego warto używać Tagged Content? Oznaczone pliki PDF są niezbędne dla dostępności, umożliwiając czytnikom ekranu zrozumienie struktury dokumentu.
 
-### Przykładowy kod źródłowy dla funkcji Create PDFwith Tagged Image przy użyciu Aspose.PDF dla .NET 
+## Krok 3: Skonfiguruj metadane
+
+Teraz dodajmy metadane opisujące nasz plik PDF:
+
 ```csharp
-
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- Meta co? Dodanie tytułu i języka jest jak dodanie nazwy do swojego dzieła — pomaga innym zrozumieć, o co w tym wszystkim chodzi!
+
+## Krok 4: Utwórz element ilustracyjny
+
+Musimy utworzyć element, który będzie zawierał nasz obraz:
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+-  Tak po prostu?! Tak!`CreateFigureElement` Metoda ta umożliwia nam utworzenie nowej ilustracji i dodanie jej do głównego elementu naszej oznaczonej treści.
+
+## Krok 5: Ustaw właściwości obrazu
+
+Następnie ustawmy właściwości obrazu:
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Dodaj obraz o rozdzielczości 300 DPI (domyślnie)
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Zapisz dokument PDF
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- Dlaczego wszystkie te właściwości? Tekst alternatywny opisuje obraz dla tych, którzy go nie widzą, podczas gdy tytuł i tag kategoryzują obraz dla lepszej dostępności.
+
+## Krok 6: Dodaj obraz
+
+Teraz czas dodać właściwy obraz do naszego pliku PDF:
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); // Sprawdź, czy ścieżka do obrazu jest prawidłowa!
+```
+
+- Tutaj dzieje się magia! Osadzasz obraz bezpośrednio w pliku PDF. 
+
+## Krok 7: Zapisz dokument PDF
+
+Na koniec zapiszmy nasze dzieło do pliku:
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- Wielki finał! Po wykonaniu tej linijki znajdziesz swój nowy plik PDF w określonym katalogu.
 
 ## Wniosek
 
-tym samouczku dowiedziałeś się, jak utworzyć dokument PDF z oznaczonym obrazem za pomocą Aspose.PDF dla .NET. Oznaczone obrazy dodają dodatkowe, ustrukturyzowane informacje do dokumentu PDF.
+Tworzenie plików PDF z tagowanymi obrazami za pomocą Aspose.PDF dla .NET jest proste, gdy podzielisz je na łatwe do opanowania kroki. Postępując zgodnie z tym przewodnikiem, nauczyłeś się nie tylko tworzyć pliki PDF, ale także zwiększać ich dostępność za pomocą tagowanej zawartości. Niezależnie od tego, czy przygotowujesz dokumenty dla szerszej publiczności, czy po prostu szlifujesz swoje kreacje PDF, ta wiedza będzie dla Ciebie przydatna.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel tworzenia dokumentu PDF z tagowanym obrazem za pomocą Aspose.PDF dla platformy .NET?
+### Czym jest plik PDF z tagami?
+Oznaczony plik PDF jest zaprojektowany tak, aby był dostępny. Zawiera metadane, które umożliwiają technologiom wspomagającym prawidłowe odczytywanie i nawigowanie po nim.
 
-A: Tworzenie dokumentu PDF z tagowanym obrazem przy użyciu Aspose.PDF dla .NET umożliwia dodawanie tagowanych obrazów do zawartości dokumentu. Tagowane obrazy zapewniają ustrukturyzowane informacje, takie jak tekst alternatywny i tytuły, zwiększając dostępność i organizację.
+### Czy mogę dodać wiele obrazów za pomocą Aspose.PDF?
+ Oczywiście! Po prostu powtórz kroki tworzenia nowego`IllustrationElement` wystąpień w dokumencie.
 
-#### P: W jaki sposób biblioteka Aspose.PDF pomaga w tworzeniu dokumentu PDF z tagowanym obrazem?
+### Gdzie mogę znaleźć więcej dokumentacji na temat Aspose.PDF?
+ Sprawdź dokumentację[Tutaj](https://reference.aspose.com/pdf/net/).
 
-A: Aspose.PDF dla .NET to solidna biblioteka, która zapewnia funkcjonalności do tworzenia, manipulowania i konwertowania dokumentów PDF programowo. W tym samouczku funkcje struktury treści tagowanej biblioteki są używane do dodawania tagowanego obrazu do dokumentu PDF.
+### Czy jest dostępna bezpłatna wersja próbna Aspose.PDF?
+ Tak! Możesz uzyskać dostęp do bezpłatnej wersji próbnej[Tutaj](https://releases.aspose.com/).
 
-#### P: Jakie wymagania należy spełnić, aby utworzyć dokument PDF z tagowanym obrazem przy użyciu Aspose.PDF dla platformy .NET?
-
-O: Zanim zaczniesz, upewnij się, że masz zainstalowany program Visual Studio z platformą .NET Framework i że w projekcie znajduje się odwołanie do biblioteki Aspose.PDF dla platformy .NET.
-
-#### P: W jaki sposób dostarczony kod C# tworzy dokument PDF z oznaczonym obrazem?
-
-A: Kod pokazuje, jak utworzyć dokument PDF, zdefiniować oznaczony element obrazu i dodać go do zawartości dokumentu. Oznaczony obraz zawiera tekst alternatywny, tytuł i tag przy użyciu metod dostarczonych przez Aspose.PDF.
-
-#### P: Czy mogę używać różnych formatów obrazu dla oznaczonego obrazu?
-
-O: Tak, możesz użyć różnych formatów obrazu dla oznaczonego obrazu, takich jak JPEG, PNG, GIF itp. Przykład kodu podany w samouczku wykorzystuje obraz JPEG, ale możesz go zastąpić ścieżką do pliku obrazu w preferowanym formacie.
-
-#### P: W jaki sposób tekst alternatywny (alt text) jest używany w oznaczonych obrazach?
-
- A: Tekst alternatywny zapewnia tekstowy opis obrazu, który jest odczytywany na głos przez czytniki ekranowe dla użytkowników z dysfunkcją wzroku. W podanym kodzie tekst alternatywny jest ustawiany za pomocą`AlternativeText` własność`IllustrationElement` reprezentujący oznaczony obraz.
-
-#### P: Jak to działa?`SetTitle` method contribute to the PDF document's tagged image?
-
- A: Ten`SetTitle` Metoda ustawia tytuł oznaczonej zawartości dokumentu PDF, zapewniając dodatkowy kontekst dla oznaczonego obrazu. Ten tytuł może pomóc zidentyfikować cel lub temat oznaczonej zawartości.
-
-#### P: Czy mogę dostosować tag i tytuł tagowanego obrazu?
-
- O: Tak, możesz dostosować tag i tytuł oznaczonego obrazu, korzystając z`SetTag` I`Title` metody`IllustrationElement`Przykład kodu pokazuje, jak ustawić tag na „Fig” i tytuł na „Picture 1”.
-
-#### P: Jak mogę mieć pewność, że oznaczony obraz jest dostępny i zgodny ze standardami dostępności?
-
-A: Korzystając z funkcji struktury treści oznaczonych w Aspose.PDF i podając tekst alternatywny oraz inne istotne informacje, przyczyniasz się do dostępności oznaczonego obrazu. Zapewnienie zgodności ze standardami dostępności obejmuje przestrzeganie najlepszych praktyk dotyczących tekstu alternatywnego i struktury dokumentu.
-
-#### P: Czy można dodać wiele oznaczonych obrazów do tego samego dokumentu PDF, stosując podobne techniki?
-
-A: Tak, możesz dodać wiele oznaczonych obrazów do tego samego dokumentu PDF, używając podobnych technik. Utworzyłbyś dodatkowe`IllustrationElement` wystąpienia dla każdego oznaczonego obrazu i dostosować ich właściwości według potrzeb.
+### Gdzie mogę uzyskać pomoc techniczną dotyczącą Aspose.PDF?
+ Możesz uzyskać pomoc odwiedzając stronę[Fora Aspose](https://forum.aspose.com/c/pdf/10).

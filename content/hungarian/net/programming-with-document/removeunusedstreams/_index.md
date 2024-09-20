@@ -2,7 +2,7 @@
 title: Távolítsa el a nem használt adatfolyamokat a PDF-fájlból
 linktitle: Távolítsa el a nem használt adatfolyamokat a PDF-fájlból
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan távolíthatja el a nem használt adatfolyamokat PDF-fájlból az Aspose.PDF for .NET használatával a fájlméret és -teljesítmény optimalizálása érdekében.
+description: Ismerje meg, hogyan távolíthat el nem használt adatfolyamokat PDF-fájlból az Aspose.PDF for .NET segítségével a fájlméret és -teljesítmény optimalizálása érdekében.
 type: docs
 weight: 270
 url: /hu/net/programming-with-document/removeunusedstreams/

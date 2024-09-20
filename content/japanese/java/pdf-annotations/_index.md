@@ -19,11 +19,11 @@ PDF 注釈は、静的なドキュメントに命を吹き込み、動的でイ�
 注釈は見た目を良くするだけではありません。PDF ドキュメント内での共同作業やコミュニケーションも促進します。チュートリアルでは共同作業の側面を詳しく取り上げ、PDF ページにコメントやメモを追加したり、描画したりする方法を説明します。個人使用、チームでの共同作業、クライアントからのフィードバックなど、どのような目的で注釈を付ける場合でも、Aspose.PDF for Java でプロセスが簡素化され、PDF がよりインタラクティブで情報豊かになることがわかります。
 
 ## PDF注釈チュートリアル
-### [PDF文書にコメントを追加する](./add-comments-pdf-documents/)
+### [PDF ドキュメントにコメントを追加する](./add-comments-pdf-documents/)
 Aspose.PDF for Java を使用して PDF ドキュメントにコメントを追加する方法を学習します - コード例付きのステップバイステップ ガイド。
 ### [PDFページから注釈を削除する](./remove-annotations-pdf-pages/)
 Aspose.PDF for Java を使用して PDF 注釈を簡単に削除する方法を学びます。ステップバイステップのガイドとコードが含まれています。
-### [PDFファイル内の特定の注釈を削除する](./delete-specific-annotations-pdf-files/)
+### [PDF ファイル内の特定の注釈を削除する](./delete-specific-annotations-pdf-files/)
 Aspose.PDF for Java を使用して PDF ファイル内の特定の注釈を簡単に削除する方法を学びます。正確な PDF 注釈管理のためのコード例を含むステップバイステップ ガイド。
 ### [PDFページから注釈を取得する](./retrieve-annotations-pdf-pages/)
 Aspose.PDF for Java を使用して PDF ページから注釈を取得する方法を学びます。この包括的なガイドで、ステップバイステップの手順とコード例を確認してください。

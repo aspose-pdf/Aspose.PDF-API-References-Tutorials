@@ -80,7 +80,7 @@ I den här koden skapar vi en sida, definierar en rektangel, ställer in dess fy
 
 ## Slutsats
 
-I den här handledningen har vi lärt oss hur man lägger till ritningar med transparenta färger till PDF-dokument med hjälp av Java och Aspose.PDF för Java API. Med den här funktionen kan du skapa visuellt tilltalande och dynamiska PDF-filer, vilket gör dina dokument mer engagerande och informativa.
+I den här handledningen har vi lärt oss hur man lägger till ritningar med transparenta färger till PDF-dokument med hjälp av Java och Aspose.PDF för Java API. Den här funktionen låter dig skapa visuellt tilltalande och dynamiska PDF-filer, vilket gör dina dokument mer engagerande och informativa.
 
 ## FAQ's
 

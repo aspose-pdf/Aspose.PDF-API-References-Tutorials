@@ -80,10 +80,10 @@ Denna linje börjar vid koordinater (100, 100) och slutar vid (200, 100). Du kan
 
 ## Steg 5: Anpassa linjestilen
 
-Ställ in linjens färg och streckmönster. Det är här du kan få din linje att sticka ut.
+Ställ in färg och streckmönster för linjen. Det är här du kan få din linje att sticka ut.
 
 ```csharp
-// Ställ in färg för Linjeobjekt
+// Ställ in färg för linjeobjekt
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
 
 // Ange streckmatris för linjeobjekt

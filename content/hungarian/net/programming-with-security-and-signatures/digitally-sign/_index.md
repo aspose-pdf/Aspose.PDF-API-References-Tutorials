@@ -52,7 +52,7 @@ string outFile = dataDir + @"DigitallySign_out.pdf";
 
 ## 2. lépés: Töltse be a PDF-dokumentumot
 
- Ezután be kell töltenünk az aláírni kívánt PDF dokumentumot. A`Document` Az Aspose.PDF osztály itt használatos:
+ Ezután be kell töltenünk az aláírni kívánt PDF dokumentumot. A`Document` Az Aspose.PDF osztályt itt használjuk:
 
 ```csharp
 using (Document document = new Document(inFile))

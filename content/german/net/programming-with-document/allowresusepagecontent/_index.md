@@ -16,7 +16,7 @@ In der heutigen digitalen Welt sind PDFs allgegenwärtig. Egal, ob Sie Berichte,
 Bevor wir uns mit den Einzelheiten der PDF-Optimierung befassen, müssen Sie einige Dinge vorbereitet haben:
 
 1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Hier schreiben und führen Sie Ihren .NET-Code aus.
-2.  Aspose.PDF für .NET: Sie können die Bibliothek herunterladen von der[Aspose-Website](https://releases.aspose.com/pdf/net/) . Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
+2.  Aspose.PDF für .NET: Sie können die Bibliothek herunterladen von der[Aspose-Website](https://releases.aspose.com/pdf/net/) Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
 3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, können Sie die von uns verwendeten Codeausschnitte besser verstehen.
 
 ## Pakete importieren

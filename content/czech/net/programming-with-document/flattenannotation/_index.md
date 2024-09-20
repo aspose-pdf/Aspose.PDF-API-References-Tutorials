@@ -99,7 +99,7 @@ Tato zpráva bude vytištěna na konzole po sloučení anotací a uložení soub
 
 ## Závěr
 
-Sloučení anotací v souboru PDF se může zdát jako složitý úkol, ale s Aspose.PDF pro .NET je to neuvěřitelně přímočaré. Dodržováním těchto jednoduchých kroků můžete snadno převést interaktivní anotace na statický obsah, čímž zajistíte, že vaše soubory PDF budou bezpečnější a nebudou se moci upravovat. To může být užitečné zejména pro finální verze dokumentů, které je třeba distribuovat nebo archivovat.
+Sloučení anotací v souboru PDF se může zdát jako složitý úkol, ale s Aspose.PDF pro .NET je to neuvěřitelně přímočaré. Dodržováním těchto jednoduchých kroků můžete snadno převést interaktivní anotace na statický obsah, čímž zajistíte, že vaše soubory PDF budou bezpečnější a nebudou se moci upravovat. To může být užitečné zejména u finálních verzí dokumentů, které je třeba distribuovat nebo archivovat.
 
 ## FAQ
 

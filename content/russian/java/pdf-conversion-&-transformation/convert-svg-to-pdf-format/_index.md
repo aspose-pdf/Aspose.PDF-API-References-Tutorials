@@ -2,7 +2,7 @@
 title: Конвертировать SVG в формат PDF
 linktitle: Конвертировать SVG в формат PDF
 second_title: API обработки Java PDF Aspose.PDF
-description: Узнайте, как легко конвертировать SVG в PDF с помощью Aspose.PDF для Java в этом пошаговом руководстве. Создавайте высококачественные PDF-документы из ваших SVG-файлов с легкостью.
+description: Узнайте, как легко конвертировать SVG в PDF с помощью Aspose.PDF для Java в этом пошаговом руководстве. Создавайте высококачественные PDF-документы из ваших файлов SVG с легкостью.
 type: docs
 weight: 24
 url: /ru/java/pdf-conversion-transformation/convert-svg-to-pdf-format/

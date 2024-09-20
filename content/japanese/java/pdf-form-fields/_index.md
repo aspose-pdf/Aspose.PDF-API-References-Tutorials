@@ -40,6 +40,6 @@ Aspose.PDF for Java を使用して、Java で PDF ドキュメントにペー�
 ### [Java を使用して PDF に画像スタンプを追加するときに画像の品質を制御する](./control-image-quality-when-adding-image-stamp-in-pdf-using-java/)
 Java を使用して PDF に画像スタンプを追加するときに画像の品質を制御する方法を、ステップバイステップの手順で学習します。
 ### [Java を使用して PDF 内のテキスト スタンプ オブジェクトの配置を定義する](./define-alignment-for-text-stamp-object-in-pdf-using-java/)
-Aspose.PDF for Java を使用して、Java で PDF 内のテキスト スタンプ オブジェクトを正確に配置する方法を学習します。ドキュメントの外観と読みやすさを向上させます。
+Aspose.PDF for Java を使用して、PDF 内のテキスト スタンプ オブジェクトを正確に配置する方法を学習します。ドキュメントの外観と読みやすさを向上させます。
 ### [Java を使用して PDF のスタンプ注釈からテキストを抽出する](./extract-text-from-stamp-annotation-in-pdf-using-java/)
 この包括的なガイドでは、Java を使用して PDF のスタンプ注釈からテキストを抽出する方法を学びます。効率的な PDF ドキュメント処理には Aspose.PDF for Java を使用します。

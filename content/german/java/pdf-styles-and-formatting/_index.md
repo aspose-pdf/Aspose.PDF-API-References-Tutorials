@@ -32,7 +32,7 @@ Entfesseln Sie die Leistungsfähigkeit von PDF-Strukturelementen in Java mit Asp
 ### [Tabellenzelle in PDF mit Java formatieren](./style-table-cell-in-pdf-using-java/)
 Erfahren Sie, wie Sie Tabellenzellen in PDF-Dokumenten mit Aspose.PDF für Java formatieren. Verbessern Sie Ihre Java-Anwendungen mit dieser Schritt-für-Schritt-Anleitung zur PDF-Anpassung.
 ### [Stiltabellenelement in PDF mit Java](./style-table-element-in-pdf-using-java/)
-Erfahren Sie, wie Sie Tabellen in PDF-Dokumenten mit Java und Aspose.PDF formatieren. Erstellen Sie optisch ansprechende Tabellen und passen Sie deren Erscheinungsbild für professionelle PDFs an.
+Lernen Sie, Tabellen in PDF-Dokumenten mit Java und Aspose.PDF zu formatieren. Erstellen Sie optisch ansprechende Tabellen und passen Sie deren Erscheinungsbild für professionelle PDFs an.
 ### [Tabellenzeilen in PDF mit Java formatieren](./style-table-row-in-pdf-using-java/)
 Erfahren Sie, wie Sie PDF-Tabellenzeilen in Java mit Aspose.PDF für Java formatieren. In diesem umfassenden Handbuch können Sie Farben anpassen, Rahmen hinzufügen und mehr.
 ### [Textstruktur in PDF mit Java formatieren](./style-text-structure-in-pdf-using-java/)

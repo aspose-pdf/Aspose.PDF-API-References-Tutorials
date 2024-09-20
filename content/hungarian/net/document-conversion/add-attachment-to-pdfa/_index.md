@@ -84,7 +84,7 @@ doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorActi
 
 ## 5. lépés: Mentse el az eredményül kapott PDF/A dokumentumot
 
-Végül a fájl csatolása és a dokumentum konvertálása után ideje elmenteni az új PDF/A dokumentumot.
+Végül a fájl csatolása és a dokumentum konvertálása után itt az ideje az új PDF/A dokumentum mentésének.
 
 ```csharp
 // Az eredményül kapott fájl mentése

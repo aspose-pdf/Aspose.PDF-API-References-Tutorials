@@ -75,7 +75,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-这行代码通过优化 PDF 文件中的资源（特别是未使用的流）来执行繁重的工作。可以将其视为 PDF 的春季大扫除，删除所有不必要的内容，以保持文档顺利运行。
+这一行代码通过优化 PDF 文件中的资源（特别是未使用的流）来执行繁重的工作。可以将其视为 PDF 的春季大扫除，删除所有不必要的内容，以保持文档顺利运行。
 
 ## 步骤 5：保存优化后的 PDF
 

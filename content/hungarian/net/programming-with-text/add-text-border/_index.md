@@ -2,192 +2,154 @@
 title: Szövegszegély hozzáadása PDF-fájlhoz
 linktitle: Szövegszegély hozzáadása PDF-fájlhoz
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan adhat hozzá szövegszegélyt PDF-fájlhoz az Aspose.PDF for .NET használatával.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan adhat hozzá szövegszegélyt egy PDF-fájlhoz az Aspose.PDF for .NET használatával. Javítsa PDF-dokumentumait.
 type: docs
 weight: 70
 url: /hu/net/programming-with-text/add-text-border/
 ---
-Ez az oktatóanyag végigvezeti Önt a PDF-fájl szövegszegélyének hozzáadásának folyamatán az Aspose.PDF for .NET használatával. A mellékelt C# forráskód bemutatja a szükséges lépéseket.
+## Bevezetés
 
-## Követelmények
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+PDF-dokumentumok létrehozása és kezelése napjaink digitális világában elengedhetetlen készséggé vált. Függetlenül attól, hogy jelentéseket, számlákat vagy bármilyen más típusú dokumentációt készít, a szöveg megjelenésének szabályozása jelentős változást hozhat. Az egyik ilyen fejlesztés, amelyet érdemes lenne megvalósítani, az, hogy szegélyt ad a szöveg köré egy PDF-fájlban. Ebben az útmutatóban végigvezetjük a PDF-fájl szövegszegélyének hozzáadásának lépésein az Aspose.PDF könyvtár segítségével a .NET-hez. Szóval, ugorjunk bele!
 
-- Visual Studio vagy bármely más C# fordító telepítve a gépedre.
-- Aspose.PDF .NET könyvtárhoz. Letöltheti az Aspose hivatalos webhelyéről, vagy használhat csomagkezelőt, például a NuGetet a telepítéséhez.
+## Előfeltételek
 
-## 1. lépés: Állítsa be a projektet
-1. Hozzon létre egy új C# projektet a kívánt fejlesztői környezetben.
-2. Adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+Mielőtt elkezdenénk, van néhány dolog, amit a helyére kell tenni. Ne aggódj, ez nagyon egyszerű!
 
-## 2. lépés: Importálja a szükséges névtereket
-Abban a kódfájlban, amelyhez hozzá szeretné adni a szövegszegélyt, adja hozzá a következőket a fájl tetején található direktíva használatával:
+1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a gépen. Ez lesz a fejlesztői környezet, ahol megírhatja és futtathatja a kódot.
+2.  Aspose.PDF .NET-hez: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Beszerezheti a[Aspose PDF .NET letöltési oldala](https://releases.aspose.com/pdf/net/) . Ha először szeretné kipróbálni, beszerezheti a[ingyenes próbaverzió itt](https://releases.aspose.com/).
+3. Alapvető C# ismerete: A C# programozási nyelv alapvető ismerete segít a példák egyszerű követésében.
+4. .NET-keretrendszer: Győződjön meg arról, hogy a .NET-keretrendszer telepítve van és be van állítva a projektben.
+
+Ha megvannak ezek az előfeltételek, készen áll a kódolás megkezdésére!
+
+## Csomagok importálása
+
+Most, hogy mindent beállítottunk, importáljuk a szükséges csomagokat az Aspose.PDF használatához a projektünkben. Ezt úgy teheti meg, hogy hozzáadja a következőket a C# fájl tetején található direktívák használatával:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## 3. lépés: Állítsa be a dokumentumkönyvtárat
- A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
+Ezek a névterek lehetővé teszik a PDF dokumentumok és szövegtöredékek hatékony kezelését. 
 
-## 4. lépés: Hozzon létre egy új dokumentum objektumot
- Példányosítson egy újat`Document` objektumot a következő kódsor hozzáadásával:
+Most bontsuk le a szövegszegély hozzáadásának folyamatát részletes lépésekre. Minden lépésen végigmegyünk, hogy pontosan megérthesse, mi történik a motorháztető alatt.
 
-```csharp
-Document pdfDocument = new Document();
-```
+## 1. lépés: Állítsa be a dokumentumot
 
-## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`pdfPage`.
+Először is létre kell hoznunk egy új PDF dokumentumot. Itt fog megtörténni minden varázslatunk.
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## 6. lépés: Hozzon létre egy szövegrészletet
- Hozzon létre a`TextFragment`objektumot, és adja meg a kívánt szöveget. Állítsa be a szövegrészlet pozícióját a gombbal`Position` ingatlan. A megadott kódban a szöveg „főszöveg”-re van állítva, és az oldalon (100, 600) található.
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## 7. lépés: Állítsa be a szöveg tulajdonságait
-Testreszabhatja a szövegtulajdonságokat, például a betűméretet, a betűtípust, a háttérszínt, az előtérszínt stb. A megadott kódban olyan tulajdonságok vannak beállítva a szövegrészlethez, mint a betűméret, a betűtípus, a háttérszín, az előtér színe és a körvonalszín.
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## 8. lépés: Engedélyezze a szövegszegélyt
- A szövegszegély engedélyezéséhez állítsa be a`DrawTextRectangleBorder` a szövegrészlet tulajdonsága`TextState` hogy`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## 9. lépés: Adja hozzá a TextFragmentet az oldalhoz
- Használja a`TextBuilder` osztály hozzáadásához a`TextFragment` tiltakozik az oldalra.
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## 10. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### Forráskód minta a Szövegszegély hozzáadása az Aspose.PDF for .NET használatával fájlhoz 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Új dokumentum objektum létrehozása
 Document pdfDocument = new Document();
+```
+
+ Ebben a lépésben megadjuk azt a könyvtárat, ahová a PDF fájlunkat menteni szeretnénk. Ezután létrehozunk egy új példányt a`Document` osztály, amely a PDF dokumentumunkat képviseli.
+
+## 2. lépés: Új oldal hozzáadása
+
+Ezután hozzá kell adnunk egy oldalt a dokumentumunkhoz. Tekintsd ezt úgy, mint egy üres vászon hozzáadását, ahol elhelyezzük a szövegünket.
+
+```csharp
 // Szerezzen be egy adott oldalt
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ Itt hívjuk a`Add()` módszer a`Pages` gyűjteményünk`pdfDocument` objektum. Ez egy új oldalt ad a dokumentumhoz, és egy hivatkozást tárolunk a dokumentumban`pdfPage` változó.
+
+## 3. lépés: Hozzon létre egy szövegrészletet
+
+Most hozzuk létre a PDF-ben megjeleníteni kívánt szöveget. Itt határozzuk meg szövegrészletünk tartalmát.
+
+```csharp
 // Szövegrészlet létrehozása
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+ Ebben a kódban létrehozunk egy újat`TextFragment` objektum a "főszöveg" szöveggel. Az oldalon elfoglalt pozícióját is a segítségével állítottuk be`Position` osztály. A koordináták (100, 600) határozzák meg, hogy a szöveg hova kerüljön az oldalon.
+
+## 4. lépés: Állítsa be a szöveg tulajdonságait
+
+Ezután személyre szabjuk a szövegrészletünket, hogy vizuálisan vonzó legyen. Ez magában foglalja a betűméret, a betűtípus, a háttérszín és az előtér színének beállítását.
+
+```csharp
 // Állítsa be a szöveg tulajdonságait
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+Itt a betűméretet 12-re állítjuk, a "Times New Roman" betűtípust használjuk, és világosszürke háttérszínt alkalmazunk piros szöveggel. Ezek a tulajdonságok javítják a szöveg láthatóságát.
+
+## 5. lépés: Állítsa be a szegély simítási színét
+
+Most elérkeztünk az izgalmas részhez – egy szegéllyel a szöveg köré!
+
+```csharp
 // Állítsa be a StrokingColor tulajdonságot a szöveges téglalap körüli szegély (vonás) rajzolásához
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+Ebben a lépésben adjuk meg a szövegünk köré rajzolni kívánt szegély színét. Itt egy sötétvörös színt választottunk.
+
+## 6. lépés: Engedélyezze a szöveges téglalap szegélyt
+
+ Ahhoz, hogy valóban meghúzzuk a határt a szöveg körül, engedélyeznünk kell a`DrawTextRectangleBorder` ingatlan.
+
+```csharp
 // Állítsa a DrawTextRectangleBorder tulajdonság értékét igazra
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+ Ennek a tulajdonságnak a beállításával`true`, azt mondjuk az Aspose.PDF-nek, hogy rajzolja meg a szegélyt a szöveg téglalapja köré a megadott simítási szín alapján.
+
+## 7. lépés: A szövegrészlet hozzáfűzése az oldalhoz
+
+Most, hogy elkészült a szövegrészletünk az összes tulajdonsággal, ideje hozzáadni az oldalhoz.
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ Itt létrehozunk a`TextBuilder` tárgy, amely a miénkhez kapcsolódik`pdfPage` . Ezután használjuk a`AppendText` módszer hozzáadásához`textFragment` az oldalra. 
+
+## 8. lépés: Mentse el a dokumentumot
+
+Végül el kell mentenünk a PDF dokumentumunkat a megadott könyvtárba. Ez az igazság pillanata!
+
+```csharp
 // Mentse el a dokumentumot
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+Ebben a lépésben a`Save` módszer rajtunk`pdfDocument` objektum, megadva az elérési utat, ahová a fájlt menteni szeretnénk. A kód futtatása után meg kell találnia az újonnan létrehozott PDF-fájlt a szövegszegéllyel a megadott könyvtárban!
+
 ## Következtetés
-Sikeresen hozzáadott egy szövegszegélyt a PDF-dokumentumhoz az Aspose.PDF for .NET használatával. Az eredményül kapott PDF-fájl most már megtalálható a megadott kimeneti fájl elérési útján.
 
-### GYIK
+És megvan! Sikeresen hozzáadott egy szövegszegélyt egy PDF-fájlhoz az Aspose.PDF for .NET használatával. Ez az egyszerű, de hatékony funkció jelentősen javíthatja PDF-dokumentumai olvashatóságát és esztétikáját. Akár jelentéseket, brosúrákat vagy bármilyen más típusú dokumentációt készít, a szövegformázás kezelésének ismerete hasznos lehet.
 
-#### K: Mi a fő hangsúly ebben az oktatóanyagban?
+## GYIK
 
-V: Ez az oktatóanyag végigvezeti Önt a PDF-fájl szövegszegélyének hozzáadásának folyamatán az Aspose.PDF for .NET könyvtár használatával. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára, hogy a .NET keretrendszer segítségével programozottan hozzanak létre, kezeljenek és dolgozzanak fel PDF dokumentumokat.
 
-#### K: Milyen névtereket kell importálnom ehhez az oktatóanyaghoz?
+### Ingyenesen kipróbálhatom az Aspose.PDF fájlt?
+ Igen! Az Aspose kínál a[ingyenes próbaverzió](https://releases.aspose.com/) PDF-könyvtárukból, lehetővé téve annak funkcióinak tesztelését a vásárlás előtt.
 
-V: Abban a kódfájlban, amelyhez a szövegszegélyt hozzá szeretné adni, importálja a következő névtereket a fájl elejére:
+### Hogyan vásárolhatom meg az Aspose.PDF-et .NET-hez?
+ Az Aspose.PDF for .NET közvetlenül tőlük vásárolható meg[vásárlási oldal](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### Van-e támogatás az Aspose.PDF számára?
+ Teljesen! Támogatást kaphat, ha ellátogat a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10).
 
-#### K: Hogyan adhatom meg a dokumentumkönyvtárat?
-
- V: A kódban keresse meg a sort`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
-
-#### K: Hogyan hozhatok létre egy dokumentum objektumot?
-
- V: A 4. lépésben egy új példányt fog létrehozni`Document` objektum a következő kódsor használatával:
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
-
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény:
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### K: Hogyan hozhatok létre szövegtöredéket és állíthatom be a pozícióját?
-
- V: A 6. lépésben létrehoz egy`TextFragment` objektumot, és állítsa be a pozícióját az oldalon a gombbal`Position` ingatlan:
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### K: Hogyan szabhatom testre a szöveg tulajdonságait, beleértve a szövegszegélyt is?
-
-V: A 7. lépésben testreszabhatja a különböző szövegtulajdonságokat, például a betűméretet, a betűtípust, a háttérszínt, az előtér színét és a szövegszegélyt:
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### K: Hogyan adhatom hozzá a szövegtöredéket a PDF dokumentumhoz?
-
- V: A 9. lépésben a`TextBuilder` osztály hozzáadásához a`TextFragment` objektum az oldalra:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### K: Hogyan menthetem el az eredményül kapott PDF-dokumentumot?
-
-V: Miután hozzáadta a szöveget szegéllyel, használja a`Save` módszere a`Document` objektum a PDF dokumentum mentéséhez:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### K: Mi a fő kivonat ebből az oktatóanyagból?
-
-V: Az oktatóanyag követésével sikeresen megtanulta, hogyan javíthatja PDF-dokumentumát szövegszegély hozzáadásával az Aspose.PDF for .NET használatával. Ez különösen hasznos lehet a PDF-fájlok bizonyos szöveges tartalmának kiemeléséhez.
+### Mi van, ha ideiglenes engedélyre van szükségem?
+ Az Aspose biztosít a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) opció azoknak a fejlesztőknek, akiknek korlátozott ideig kell értékelniük a könyvtárat.

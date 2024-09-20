@@ -36,7 +36,7 @@ Otevřete Visual Studio a vytvořte nový projekt C#. Pro jednoduchost si může
 2. Vyberte „Spravovat balíčky NuGet“.
 3. Vyhledejte „Aspose.PDF“ a nainstalujte nejnovější verzi.
 
-### Krok 3: Import jmenného prostoru
+### Krok 3: Importujte jmenný prostor
 
 V horní části souboru C# importujte jmenný prostor Aspose.PDF:
 

@@ -172,7 +172,7 @@ fileStamp.Close();
 
 ## Conclusione
 
-Ed ecco fatto! Seguendo questi semplici passaggi, puoi facilmente riempire il testo di traccia in un file PDF usando Aspose.PDF per .NET. Che si tratti di documenti aziendali o progetti personali, questa tecnica ti consente di aggiungere un tocco unico ai tuoi PDF, facendoli risaltare in qualsiasi pila di fogli.
+Ed ecco fatto! Seguendo questi semplici passaggi, puoi facilmente riempire il testo di traccia in un file PDF usando Aspose.PDF per .NET. Che si tratti di documenti aziendali o progetti personali, questa tecnica ti consente di aggiungere un tocco unico ai tuoi PDF, facendoli risaltare in qualsiasi pila di documenti.
 
 ## Domande frequenti
 

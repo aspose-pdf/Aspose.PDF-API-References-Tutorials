@@ -11,7 +11,7 @@ Aspose.PDF for .NET を使用して PDF ドキュメント内の注釈を操作�
 ## チュートリアル
 | タイトル | 説明 |
 | --- | --- | 
-| [PDF注釈を追加する](./addannotation/) | このステップバイステップ ガイドに従って、Aspose.PDF for .NET を使用して PDF にカスタム注釈を簡単に追加します。特定の詳細とアイコンを使用して注釈をカスタマイズします。 |  
+| [PDF注釈を追加する](./addannotation/) | このステップバイステップ ガイドに従って、Aspose.PDF for .NET を使用して PDF にカスタム注釈を簡単に追加できます。特定の詳細とアイコンを使用して注釈をカスタマイズします。 |  
 | [リンク注釈を追加](./addlnkannotation/) | この魅力的なステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイルにインク注釈を追加する方法を学習します。 |  
 | [SWF ファイルを PDF 注釈として追加](./addswffileasannotation/) | Aspose.PDF for .NET を使用して SWF ファイルを PDF 注釈として追加する方法を学びます。この詳細なチュートリアルを通じて、インタラクティブなマルチメディア コンテンツで PDF を強化します。 |  
 | [ページからすべての注釈を削除](./deleteallannotationsfrompage/) | Aspose.PDF for .NET を使用して PDF ページからすべての注釈を削除する方法を学びます。ステップバイステップのガイドに従って、PDF を効率的にクリーンアップします。 |  

@@ -18,7 +18,7 @@ Zanim przejdziemy do szczegółów, upewnijmy się, że masz wszystko, czego pot
 1. .NET Framework: Upewnij się, że masz zainstalowany .NET Framework na swoim komputerze. Aspose.PDF dla .NET obsługuje kilka wersji frameworka.
 2.  Biblioteka Aspose.PDF: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją pobrać z[link do wydania](https://releases.aspose.com/pdf/net/).
 3.  Certyfikat cyfrowy: Do podpisywania plików PDF potrzebny będzie certyfikat cyfrowy —`.pfx` plik zazwyczaj.
-4. Środowisko programistyczne: Użyj programu Visual Studio lub dowolnego wybranego środowiska IDE obsługującego język C#.
+4. Środowisko programistyczne: Użyj Visual Studio lub dowolnego wybranego środowiska IDE obsługującego język C#.
 
 Gdy już spełnisz te wymagania wstępne, będziesz gotowy rozpocząć podpisywanie dokumentów PDF!
 

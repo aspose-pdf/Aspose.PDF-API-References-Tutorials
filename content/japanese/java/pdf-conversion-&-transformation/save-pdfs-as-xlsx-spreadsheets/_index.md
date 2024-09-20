@@ -17,7 +17,7 @@ Aspose.PDF for Java は、開発者が Java アプリケーションで PDF ド�
 - Java Development Kit (JDK) がシステムにインストールされています。
 -  Aspose.PDF for Javaライブラリ。ここからダウンロードできます。[ここ](https://releases.aspose.com/pdf/java/).
 
-## Java プロジェクトの設定
+## Javaプロジェクトの設定
 
 1. 好みの統合開発環境 (IDE) で新しい Java プロジェクトを作成します。
 2. Aspose.PDF for Java ライブラリをプロジェクトのクラスパスに追加します。

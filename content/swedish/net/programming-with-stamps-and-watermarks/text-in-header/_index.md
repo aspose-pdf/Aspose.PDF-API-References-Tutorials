@@ -140,5 +140,5 @@ Aspose erbjuder en gratis provperiod, men för utökad användning kan en betald
 ### Vad händer om jag bara vill lägga till en rubrik på specifika sidor?
 Du kan rikta in dig på specifika sidor genom att använda villkor i din loop över sidorna.
 
-### Var kan jag hitta fler exempel och handledning?
+### Var kan jag hitta fler exempel och tutorials?
  De[Aspose.PDF-dokumentation](https://reference.aspose.com/pdf/net/) har massor av exempel och tutorials som hjälper dig att dyka djupare!

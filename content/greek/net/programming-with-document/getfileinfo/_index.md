@@ -108,7 +108,7 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 Ναι, το Aspose.PDF παρέχει μεθόδους εξαγωγής εικόνων από έγγραφα PDF.
 
 ### Υπάρχει διαθέσιμη δωρεάν δοκιμή για το Aspose.PDF;
- Ναι, μπορείτε να λάβετε μια δωρεάν δοκιμή από το[Aspose ιστότοπο](https://releases.aspose.com/).
+ Ναι, μπορείτε να λάβετε μια δωρεάν δοκιμή από το[Aspose website](https://releases.aspose.com/).
 
 ### Πού μπορώ να βρω υποστήριξη για το Aspose.PDF;
  Μπορείτε να βρείτε υποστήριξη και να κάνετε ερωτήσεις στο[Aspose φόρουμ](https://forum.aspose.com/c/pdf/10).

@@ -10,7 +10,7 @@ url: /de/java/pdf-styles-and-formatting/style-table-cell-in-pdf-using-java/
 
 ## Einführung
 
-Im Bereich der Softwareentwicklung ist das Erstellen und Bearbeiten von PDF-Dokumenten eine gängige Aufgabe. Aspose.PDF für Java, eine leistungsstarke Java-API, bietet Entwicklern die Tools, die sie zum mühelosen Erstellen und Bearbeiten von PDFs benötigen. In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie Tabellenzellen in einem PDF-Dokument mit Aspose.PDF für Java formatieren.
+Im Bereich der Softwareentwicklung ist das Erstellen und Bearbeiten von PDF-Dokumenten eine gängige Aufgabe. Aspose.PDF für Java, eine leistungsstarke Java-API, bietet Entwicklern die Tools, die sie zum mühelosen Erstellen und Ändern von PDFs benötigen. In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie Tabellenzellen in einem PDF-Dokument mit Aspose.PDF für Java formatieren.
 
 ## Voraussetzungen
 

@@ -2,208 +2,186 @@
 title: PDF ファイル内の画像の周囲にテキストを配置する
 linktitle: PDF ファイル内の画像の周囲にテキストを配置する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内の画像の周囲にテキストを配置する方法を学習します。
+description: Aspose.PDF for .NET を使用して PDF 内の画像の周囲にテキストを配置する方法を学びます。ステップ バイ ステップ ガイドに従って、画像とテキストを並べて配置したプロフェッショナルな PDF を作成します。
 type: docs
 weight: 260
 url: /ja/net/programming-with-text/placing-text-around-image/
 ---
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイル内の画像の周囲にテキストを配置する方法について説明します。提供されている C# ソース コードを使用して、表の作成、画像の追加、画像の周囲にテキストを配置するプロセスを段階的に説明します。
+## 導入
 
-## 要件
+PDF ファイル内の画像の周囲にテキストを配置しようとしたけれど、難しいと感じたことはありませんか? もしそうなら、ここが正解です! Aspose.PDF for .NET を使用すると、このプロセスが簡単になり、数行のコードで画像の周囲にテキストを配置できます。レポート、ドキュメント、プレゼンテーションのいずれを作成する場合でも、この機能はコンテンツのレイアウトを強化し、視覚的に魅力的にするための優れた方法です。今日は、Aspose.PDF for .NET を使用して PDF ドキュメント内の画像の周囲にテキストを配置する方法について説明します。
 
-始める前に、次のものがあることを確認してください。
+## 前提条件
 
-- Aspose.PDF for .NET ライブラリがインストールされました。
-- C# プログラミングの基本的な理解。
+コードに進む前に、すべてがセットアップされていることを確認しましょう。必要なものは次のとおりです。
 
-## ステップ1: ドキュメントディレクトリを設定する
+-  Aspose.PDF for .NET: ダウンロードはこちらから[ここ](https://releases.aspose.com/pdf/net/).
+- Visual Studio: スムーズに進めるために、最新バージョンがインストールされていることを確認してください。
+- .NET Framework: この例では .NET を使用するため、環境が .NET 開発用に設定されていることを確認してください。
+- 一時ライセンス：一時ライセンスを申請することができます[ここ](https://purchase.aspose.com/temporary-license/)製品を評価する場合。
 
-まず、生成されたPDFファイルを保存するディレクトリへのパスを設定する必要があります。`"YOUR DOCUMENT DIRECTORY"`の`dataDir`目的のディレクトリへのパスを含む変数。
+Aspose.PDF for .NETをまだセットアップしていない場合は、[ドキュメント](https://reference.aspose.com/pdf/net/).
+
+## 名前空間のインポート
+
+コーディングを始める前に、必要な名前空間をインポートする必要があります。これを行うためのコード スニペットは次のとおりです。
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+これらの名前空間は、次のようなクラスへのアクセスを提供するため不可欠です。`Document`, `Page`, `Image` 、 そして`HtmlFragment`これを使用して PDF を作成および操作します。
+
+準備ができたので、Aspose.PDF for .NET を使用して PDF ファイル内の画像の周囲にテキストを配置する方法を詳しく説明します。手順を追って説明します。
+
+## ステップ1: ドキュメントオブジェクトのインスタンスを作成する
+
+まず、PDFドキュメントを作成する必要があります。Aspose.PDFでは、`Document`オブジェクト。このオブジェクトは、追加するすべてのコンテンツの基盤として機能します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## ステップ2: ドキュメントとページを作成する
+ここでは、空の PDF ドキュメントを作成しました。まだページはありませんが、心配しないでください。次の手順でページを追加します。
 
-次に、`Document`オブジェクトを作成し、`Pages.Add()`方法。
+## ステップ2: ドキュメントにページを追加する
+
+ドキュメントが完成したら、次はページを追加します。これは、コンテンツを追加する空白の紙を作成するようなものと考えてください。
 
 ```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## ステップ3: テーブルを作成する
+このコードは、ドキュメントに新しいページを追加します。デフォルトではページは空白ですが、これを変更します。
 
-テーブルを作成するには、`Table`クラスを作成し、ページの段落コレクションに追加します。
+## ステップ3: コンテンツを整理するための表を作成する
+
+画像とテキストを適切に配置するには、表を使用します。PDF 内の表は、Word 文書や HTML と同様に、レイアウトの構造化に役立ちます。
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(table1);
 ```
 
-## ステップ4: 表の列幅と余白を設定する
+このスニペットは表を作成し、それをページに追加します。表は、画像とテキストを配置するためのフレームワークと考えてください。
 
-テーブルの列幅を設定し、`MarginInfo`余白を設定するオブジェクト。
+## ステップ4: テーブルの列幅を設定する
 
-```csharp
-table1. ColumnWidths = "120,270";
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 5f;
-margin. Left = 5f;
-margin. Right = 5f;
-margin. Bottom = 5f;
-table1. DefaultCellPadding = margin;
-```
-
-## ステップ5: テーブルに画像を追加する
-
-私たちは`Image`オブジェクトを作成し、画像ファイルのパスを指定して、画像の固定の高さと幅を設定します。次に、画像をテーブル セルの段落コレクションに追加します。
+テーブルを追加したので、列の幅を定義する必要があります。これにより、ページ上の画像とテキストのサイズが適切になります。
 
 ```csharp
-Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-logo.File = dataDir + "aspose-logo.jpg";
-logo.FixHeight = 120;
-logo.FixWidth = 110;
-row1.Cells.Add();
-row1.Cells[0].Paragraphs.Add(logo);
-```
-
-## ステップ6: 画像の周囲にテキストを追加する
-
-HTML形式のテキストを含む文字列変数を作成し、`HtmlFragment`オブジェクト。次に、画像を含むテーブル セルに HTML テキストを追加します。
-
-```csharp
-string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>" ;
-
-Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
-row1.Cells.Add();
-row1.Cells[1].Paragraphs.Add(TitleText);
-```
-
-## ステップ7: 追加テキストを追加する
-
-私たちは別のものを作ります`HtmlFragment`追加の HTML 形式のテキストを含むオブジェクトを作成し、それを別のテーブル セルに追加します。
-
-```csharp
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
-Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-```
-
-## ステップ8: PDFドキュメントを保存する
-
-最後に、PDF ドキュメントを指定された出力ファイルに保存します。
-
-```csharp
-doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
-```
-
-### Aspose.PDF for .NET を使用して画像の周囲にテキストを配置するためのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントオブジェクトをインスタンス化する
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-//PDFにページを作成する
-Aspose.Pdf.Page page = doc.Pages.Add();
-//テーブルオブジェクトをインスタンス化する
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//希望するセクションの段落コレクションに表を追加します
-page.Paragraphs.Add(table1);
-//テーブルの列幅を設定する
 table1.ColumnWidths = "120 270";
-//MarginInfoオブジェクトを作成し、左、下、右、上の余白を設定します。
+```
+
+この行は、画像用とテキスト用の 2 つの列の幅を設定します。画像またはテキストに必要なスペースが増減する場合は、これらの値を調整します。
+
+## ステップ5: 余白とパディングを定義する
+
+すべてがきれいに見えるように、テーブルに余白とパディングを追加しましょう。
+
+```csharp
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-//デフォルトのセルパディングをMarginInfoオブジェクトに設定する
 table1.DefaultCellPadding = margin;
-//表に行を作成し、行にセルを作成します
+```
+
+これらの設定により、テーブルの間隔が一定になり、コンテンツの視覚的な魅力が向上します。
+
+## ステップ6: 表に画像を挿入する
+
+さて、楽しい部分、つまり画像の追加に取り掛かりましょう。今回は Aspose のロゴを追加しますが、好きな画像を自由に使用してください。
+
+```csharp
 Aspose.Pdf.Row row1 = table1.Rows.Add();
-//画像オブジェクトを作成する
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-//画像ファイルのパスを指定する
 logo.File = dataDir + "aspose-logo.jpg";
-//画像の固定高さを指定する
 logo.FixHeight = 120;
-//画像の固定幅を指定する
 logo.FixWidth = 110;
 row1.Cells.Add();
-//表セルの段落コレクションに画像を追加する
 row1.Cells[0].Paragraphs.Add(logo);
-//HTMLタグを含むテキストで文字列変数を作成する
+```
+
+何が起こっているか見てみましょう:
+- 指定されたディレクトリから画像を読み込みます。
+- 画像の高さと幅を設定します。
+- 最後に、テーブルの最初のセルに画像を追加します。
+
+## ステップ7: 画像の横にテキストを追加する
+
+画像を配置したら、その横にテキストを追加しましょう。この例では、HTML 形式のテキストを使用してコンテンツのスタイルを設定します。
+
+```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
-//画像の右側に追加するテキストオブジェクトを作成します
+string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF document reporting component that enables .NET applications to <b>create PDF documents from scratch</b> without utilizing Adobe Acrobat.</font>";
+
 Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
 row1.Cells.Add();
-//HTMLテキストを含むテキスト段落をテーブルセルに追加します
 row1.Cells[1].Paragraphs.Add(TitleText);
-//行の内容の垂直方向の配置を上に設定します
+```
+
+このブロックは、画像の横のセル内にスタイル設定されたタイトルと説明を追加します。HTML タグを使用してテキストをフォーマットし、さらにカスタマイズすることができます。
+
+## ステップ8: 垂直方向の配置を調整する
+
+デフォルトでは、表のセルのコンテンツは希望どおりに配置されない場合があります。この場合、テキストがセルの上部に揃えられるようにする必要があります。
+
+```csharp
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-//表に行を作成し、行にセルを作成します
+```
+
+これにより、テキストがセルの上部に配置され、レイアウトがすっきりとプロフェッショナルに保たれます。
+
+## ステップ9: 画像と説明の下にテキストを追加する
+
+画像とテキストの下にさらにコンテンツを追加したい場合があります。そのために、テーブルに別の行を追加しましょう。
+
+```csharp
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
-//2行目の行スパン値を2に設定します。
 SecondRow.Cells[0].ColSpan = 2;
-// 2行目の垂直方向の配置を上に設定します
 SecondRow.Cells[0].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
+
+string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates.</font>";
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-//HTMLテキストを含むテキスト段落をテーブルセルに追加します
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-// PDFファイルを保存する
+```
+
+ここでは、レイアウトのバランスを保つために、両方の列にまたがる追加のテキストを含む別の行を追加しました。
+
+## ステップ10: PDFドキュメントを保存する
+
+最後に、変更内容を確認できるようにドキュメントを保存する必要があります。
+
+```csharp
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
+これにより、画像とテキストが希望どおりにフォーマットされた PDF が保存されます。
+
 ## 結論
 
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して、PDF ドキュメント内の画像の周囲にテキストを配置する方法を学習しました。ステップ バイ ステップ ガイドに従って、提供されている C# コードを実行すると、PDF ドキュメント内で表を作成し、画像を追加し、画像の周囲にテキストを配置できます。
+PDF 内の画像の周囲にテキストを配置するのは大変な作業のように思えるかもしれませんが、Aspose.PDF for .NET を使用すると、そのプロセスが簡単になります。表、画像、スタイル設定されたテキストを活用することで、最小限の労力でプロフェッショナルな外観の PDF を作成できます。わずか数行のコードで、コンテンツを必要な場所に正確に配置できるため、ドキュメントは洗練された整理された外観になります。
 
-### よくある質問
+## よくある質問
 
-#### Q: 「PDF ファイル内の画像の周囲にテキストを配置する」チュートリアルの目的は何ですか?
+### この方法を使用して、テキスト付きの複数の画像を配置できますか?
+はい、表に行とセルを追加するだけで、追加の画像やテキストを含めることができます。
 
-A: 「PDF ファイル内の画像の周囲にテキストを配置する」チュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメント内の画像の周囲にテキストを配置する方法を説明します。このチュートリアルでは、表の作成、画像の追加、画像の周囲にテキストを配置するためのステップバイステップのガイドと C# ソース コードが提供されます。
+### 画像の配置を変更できますか?
+もちろんです! セルの配置プロパティを調整することで、画像の配置を変更できます。
 
-#### Q: PDF ドキュメント内の画像の周囲にテキストを配置する必要があるのはなぜですか?
+### テキストのスタイルをさらに変更するにはどうすればよいですか?
+ HTMLタグは`HtmlFragment`オブジェクトに太字、斜体、さまざまなフォントなどのさまざまなスタイルを適用します。
 
-A: 画像の周囲にテキストを配置すると、PDF ドキュメントの視覚的な表現が強化され、より魅力的で有益なものになります。この手法は、画像とテキストを美しく組み合わせたいドキュメント、パンフレット、レポート、その他の資料でよく使用されます。
+### テキストと画像の間の間隔を制御できますか?
+はい、`MarginInfo`オブジェクトを使用すると、要素間のパディングとマージンを制御できます。
 
-#### Q: ドキュメント ディレクトリを設定するにはどうすればよいですか?
-
-A: ドキュメントディレクトリを設定するには:
-
-1. 交換する`"YOUR DOCUMENT DIRECTORY"`の`dataDir`生成された PDF ファイルを保存するディレクトリへのパスを持つ変数。
-
-#### Q: テーブルを作成して画像を追加するにはどうすればよいですか?
-
- A: チュートリアルでは、`Table`クラスとテーブルに画像を追加するには、`Image`クラス。テーブル セルに追加する前に、画像ファイルのパス、高さ、幅を指定します。
-
-#### Q: 画像の周囲にテキストを配置するにはどうすればよいですか?
-
- A: 画像の周囲にテキストを配置するには、`HtmlFragment`クラス。このテキストには、タイトルと本文の両方が含まれます。次に、この HTML テキストを画像セルに隣接するテーブル セルに追加します。
-
-#### Q: テキストと画像の外観をカスタマイズできますか?
-
-A: はい、HTML タグとプロパティを使用して、テキストと画像の外観をカスタマイズできます。たとえば、テキストのフォント サイズ、色、スタイル、配置を設定できます。さらに、画像のサイズと寸法を調整することもできます。
-
-#### Q: PDF ドキュメントを保存するにはどうすればよいですか?
-
- A: 表に画像とテキストを追加したら、`Save`方法の`Document`クラス。出力ファイルのパスを引数として指定します。`Save`方法。
-
-#### Q: このチュートリアルで期待される出力は何ですか?
-
-A: チュートリアルに従って、提供されている C# コードを実行すると、画像の周囲にテキストを配置する方法を示す PDF ドキュメントが生成されます。出力ドキュメントには、画像とその周囲に配置されたテキストを含む表が含まれます。
-
-#### Q: JPG 以外の画像形式を使用できますか?
-
- A: はい、PNG、BMP、GIFなど、Aspose.PDFライブラリでサポートされているさまざまな画像形式を使用できます。`Image`オブジェクトの場合は、目的の画像形式のファイル パスを指定します。
-
-#### Q: このチュートリアルには有効な Aspose ライセンスが必要ですか?
-
-A: はい、このチュートリアルを正しく動作させるには、有効な Aspose ライセンスが必要です。Aspose Web サイトからフル ライセンスを購入するか、30 日間の一時ライセンスを取得できます。
+### テキストにリンクを追加することは可能ですか?
+もちろんです！HTML形式のテキストにハイパーリンクを埋め込むには、`<a>`タグ。

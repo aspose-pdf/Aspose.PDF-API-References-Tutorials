@@ -85,7 +85,7 @@ using (FileStream imageStream = new FileStream(dataDir + "\\Thumbanils" + counte
 
  Zde vytvoříme nový soubor JPG pro každou použitou miniaturu`FileStream`Název souboru obsahuje počítadlo, takže každá miniatura dostane jedinečný název.
 
-### Krok 4.2: Definujte Rozlišení
+### Krok 4.2: Definujte rozlišení
 
 Dále musíme definovat rozlišení pro naše miniatury. Vyšší rozlišení přináší jasnější obrázky, ale může také zvětšit velikost souboru.
 

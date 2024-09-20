@@ -9,7 +9,7 @@ url: /de/net/programming-with-images/shrink-images/
 ---
 ## Einführung
 
-Im digitalen Zeitalter ist die Arbeit mit PDF-Dateien in vielen Bereichen – von Geschäftsberichten bis hin zu akademischen Arbeiten – zur gängigen Praxis geworden. Obwohl das PDF-Format hervorragend geeignet ist, um das Layout konsistent zu halten, kann es manchmal zu großen Dateien führen, insbesondere wenn hochauflösende Bilder enthalten sind. Eine sperrige PDF-Datei kann beim Teilen oder Hochladen ein echtes Problem darstellen. Wäre es nicht großartig, wenn Sie diese Bilder problemlos komprimieren könnten, ohne zu viel Qualität einzubüßen? Hier kommt Aspose.PDF für .NET ins Spiel und bietet eine unkomplizierte Möglichkeit, Bilder in Ihren PDF-Dateien zu optimieren und zu verkleinern. 
+Im digitalen Zeitalter ist die Arbeit mit PDF-Dateien in vielen Bereichen – von Geschäftsberichten bis hin zu akademischen Arbeiten – zur gängigen Praxis geworden. Obwohl das PDF-Format hervorragend geeignet ist, um das Layout konsistent zu halten, kann es manchmal zu großen Dateien führen, insbesondere wenn hochauflösende Bilder enthalten sind. Ein umfangreiches PDF kann beim Teilen oder Hochladen ein echtes Problem darstellen. Wäre es nicht großartig, wenn Sie diese Bilder problemlos komprimieren könnten, ohne zu viel Qualität einzubüßen? Hier kommt Aspose.PDF für .NET ins Spiel und bietet eine unkomplizierte Möglichkeit, Bilder in Ihren PDF-Dateien zu optimieren und zu verkleinern. 
 
 ## Voraussetzungen
 

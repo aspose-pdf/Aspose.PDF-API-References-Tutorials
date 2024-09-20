@@ -80,7 +80,7 @@ Vous disposez désormais d’un en-tête que vous pouvez personnaliser !
 
 ## Étape 5 : ajouter une image à l’en-tête
 
-Nous arrivons maintenant à la partie amusante ! Vous devez ajouter l'image à votre en-tête. Tout d'abord, créez un objet image :
+Nous passons maintenant à la partie amusante ! Vous devez ajouter l'image à votre en-tête. Tout d'abord, créez un objet image :
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();

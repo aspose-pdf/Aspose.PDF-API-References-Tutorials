@@ -22,7 +22,7 @@ url: /zh-hant/net/annotations/deleteallannotationsfrompage/
 
 ## 導入包
 
-首先，我們導入必要的命名空間。這些是您使用 Aspose.PDF for .NET 與 PDF 文件互動所需的基本構建塊。
+首先，我們導入必要的命名空間。這些是使用 Aspose.PDF for .NET 與 PDF 文件互動所需的基本構建塊。
 
 ```csharp
 using System.IO;

@@ -2,193 +2,190 @@
 title: PDF ファイル内の隠しテキスト ブロック
 linktitle: PDF ファイル内の隠しテキスト ブロック
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルに隠しテキスト ブロックを作成する方法を学習します。
+description: Aspose.PDF for .NET を使用して、非表示のテキスト ブロックを含むインタラクティブな PDF を作成します。このチュートリアルでは、ドキュメントを強化するための手順を段階的に説明します。
 type: docs
 weight: 230
 url: /ja/net/programming-with-text/hidden-text-block/
 ---
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイルに隠しテキスト ブロックを作成する方法を説明します。隠しテキスト ブロックは、マウス カーソルを特定の領域に置いたときに表示されるフローティング テキストです。提供されている C# ソース コードを使用して、隠しテキスト ブロックを作成する手順を順を追って説明します。
+## 導入
 
-## 要件
+今日のデジタル環境において、PDF は契約書から教育資料まであらゆる用途で使われるフォーマットです。その汎用性と信頼性は他に類を見ません。しかし、PDF にインタラクティブ性をさらに高めることができたらどうでしょうか。Aspose.PDF for .NET は、魅力的でユーザー フレンドリなドキュメントをこれまで以上に簡単に作成できる強力なツールで、隠しテキスト ブロックの世界に飛び込みます。熟練した開発者でも、初心者でも、このチュートリアルはあなたのために設計されており、PDF の可能性を最大限に引き出すためのステップ バイ ステップの手順とヒントが満載です。
 
-始める前に、次のものがあることを確認してください。
+## 前提条件
 
-- Aspose.PDF for .NET ライブラリがインストールされました。
-- C# プログラミングの基本的な理解。
+袖をまくって作業を始める前に、必要なものがすべて揃っていることを確認しましょう。必要なものは次のとおりです。
 
-## ステップ1: ドキュメントディレクトリを設定する
+1. Aspose.PDF for .NET: このライブラリは、.NETアプリケーションでPDFファイルを扱うのに不可欠です。こちらからチェックしたり、ダウンロードしたり、無料トライアルを入手したりすることができます。[Aspose PDF ドキュメント](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: Aspose.PDF ライブラリを実行するには .NET Framework が必要なので、インストールされていることを確認してください。
+3. 開発環境: コード エディターまたは Visual Studio などの統合開発環境 (IDE) を使用すると、コーディングが簡単になります。 
+4. C# の基本知識: C# でプログラミングするため、言語の基本を理解しておくと、概念を理解しやすくなります。
+5. 学習への情熱: 最後になりましたが、熱意を持ってきてください。今日は素晴らしいことを学びます。
 
-まず、生成されたPDFファイルを保存するディレクトリへのパスを設定する必要があります。`"YOUR DOCUMENT DIRECTORY"`の`dataDir`目的のディレクトリへのパスを含む変数。
+これらの前提条件が満たされると、PDF にインタラクティブな隠しテキスト ブロックを作成できるようになります。
+
+## パッケージのインポート
+
+プロジェクトで Aspose.PDF を使い始めるには、必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+### C# プロジェクトを作成する
+
+まず最初に、Visual Studio または任意の C# IDE を開いて、新しいプロジェクトを作成します。簡単にするために、コンソール アプリケーションの種類を選択します。
+
+### Aspose.PDF をプロジェクトに追加する
+
+プロジェクトに Aspose.PDF ライブラリを追加する必要があります。これは NuGet パッケージ マネージャーを使用して実行できます。簡単な 1 行のコードは次のとおりです。
+
+```bash
+Install-Package Aspose.PDF
+```
+
+このコマンドは、PDF ドキュメントを簡単に操作するために必要なファイルを取得します。
+
+### 必要な名前空間をインポートする
+
+パッケージがインストールされたら、次のステップは C# ファイルの先頭に名前空間をインポートすることです。これにより、すべての優れた Aspose 機能にアクセスできるようになります。
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+環境がセットアップされたので、PDF ファイルに隠しテキスト ブロックを作成するプロセスを段階的に説明しましょう。
+
+## ステップ1: ドキュメントディレクトリを定義する
+
+ファイルが保存される場所を定義します。これにより、ドキュメントをスムーズに管理できるようになります。設定するには、次のコードを使用します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+必ず交換してください`"YOUR DOCUMENT DIRECTORY"` PDF を作成するマシン上の実際のパスを入力します。
 
 ## ステップ2: サンプルドキュメントを作成する
 
-この手順では、サンプル PDF ドキュメントを作成し、それにテキスト フラグメントを追加します。テキスト フラグメントは、非表示のテキスト ブロックを表示するためのトリガーとして機能します。
+それでは、基本的な PDF ドキュメントを作成しましょう。この最初のステップでは、PDF ドキュメントを初期化し、隠しテキストの焦点となるテキスト フラグメントを追加します。
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## ステップ3: ドキュメントを開く
+ここでは、ドキュメントに文字列を追加するだけです。これにより、マウスをその上に移動すると、隠しテキスト アクションがトリガーされます。
 
-さて、先ほど作成した文書を`Document`クラス。
+## ステップ3: 作成したドキュメントを開く
+
+最初のドキュメントができたので、さらに編集するために開きましょう。
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## ステップ4: テキストフラグメントを見つける
+この行は、作成したドキュメントをロードして、変更できるようにします。
 
-私たちは`TextFragmentAbsorber`オブジェクトを使用して、非表示のテキスト ブロックの表示をトリガーするテキスト フラグメントを検索します。この場合、「フローティング テキストを表示するには、マウス カーソルをここに移動してください」という正確なテキストを検索します。
+## ステップ4: フレーズを検索するためのTextAbsorberを作成する
+
+次に、作業するテキストの断片を特定します。ここで`TextFragmentAbsorber`登場するのは:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## ステップ5: 隠しテキストフィールドを作成する
-
-私たちは`TextBoxField`隠しテキスト フィールドを表すオブジェクト。このフィールドには、マウス カーソルをトリガー テキストの上に置いたときに表示されるテキストが含まれます。
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## ステップ6: ドキュメントに隠しテキストフィールドを追加する
-
-隠しテキスト フィールドをドキュメントのフォーム コレクションに追加します。
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## ステップ7: 非表示ボタンを作成する
-
-トリガー テキスト フラグメントの上に配置された非表示のボタン フィールドを作成します。このボタン フィールドには、マウスのエンター イベントとエグジット イベントに関連付けられたアクションが設定されます。
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## ステップ8: ドキュメントを保存する
-
-最後に、隠しテキスト ブロックを含む変更されたドキュメントを保存します。
-
-```csharp
-document. Save(outputFile);
-```
-
-### Aspose.PDF for .NET を使用した隠しテキスト ブロックのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-//テキストを含むサンプルドキュメントを作成する
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-//テキストを含む文書を開く
-Document document = new Document(outputFile);
-//正規表現に一致するすべてのフレーズを見つけるためにTextAbsorberオブジェクトを作成します。
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-//文書ページの吸収剤を受け入れる
 document.Pages.Accept(absorber);
-//最初に抽出されたテキストフラグメントを取得する
+```
+
+このステップでは、先ほど指定したテキストを検索するように Aspose に指示します。
+
+## ステップ5: テキストフラグメントを抽出する
+
+テキストフラグメントを取得したら、次のコードを使用してそれを抽出し、さらに操作できるようにします。
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//ページの指定された四角形内にフローティングテキスト用の隠しテキストフィールドを作成します。
+```
+
+ここでは、吸収された最初のフラグメントに焦点を当てます。テキストがさらにある場合は、コレクションを反復処理する必要があります。
+
+## ステップ6: 隠しテキストフィールドを作成する
+
+さあ、魔法の番です! ユーザーが指定されたテキストの上にマウスを置いたときに表示される隠しテキスト フィールドを作成します。次のコード スニペットを使用します。
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-//フィールド値として表示されるテキストを設定する
 floatingField.Value = "This is the \"floating text field\".";
-//このシナリオではフィールドを「読み取り専用」にすることをお勧めします
 floatingField.ReadOnly = true;
-//ドキュメントを開いたときにフィールドを非表示にするには、「非表示」フラグを設定します
 floatingField.Flags |= AnnotationFlags.Hidden;
-//一意のフィールド名を設定する必要はありませんが、設定することは可能です
+```
+
+このコードは、フローティング テキストの位置を定義し、そのプロパティを設定します。これには、フローティング テキストを読み取り専用にしたり、デフォルトで非表示にしたりすることが含まれます。
+
+## ステップ7: フィールドの外観をカスタマイズする
+
+フローティング テキストにちょっとしたセンスを加えましょう。フローティング テキスト フィールドのデフォルトの外観をカスタマイズします。
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-//フィールドの外観の特性を設定することは必須ではないが、より良いものになる。
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-//ドキュメントにテキストフィールドを追加する
+```
+
+フォント サイズから色まで、これらの設定を好みに合わせて微調整できるため、インターフェイスがより使いやすく魅力的になります。
+
+## ステップ8: ドキュメントにテキストフィールドを追加する
+
+テキスト フィールドを設定したら、次はドキュメントにフローティング フィールドを追加します。
+
+```csharp
 document.Form.Add(floatingField);
-//テキストフラグメントの位置に非表示のボタンを作成する
+```
+
+この行は、新しく作成された隠しテキスト フィールドを PDF に統合します。
+
+## ステップ9: 非表示のボタンフィールドを作成する
+
+このボタンは、フローティング テキスト フィールドのホバー アクションを管理します。非表示のボタンを作成するには、次のコードを追加します。
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-//指定されたフィールド (注釈) と非表示フラグの新しい非表示アクションを作成します。
-// (上記で指定した場合は、名前でフローティング フィールドを参照することもできます。)
-//非表示のボタンフィールドでマウスのエンター/エグジットのアクションを追加する
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-//ドキュメントにボタンフィールドを追加する
-document.Form.Add(buttonField);
-//ドキュメントを保存
+```
+
+ここでは、マウスがボタン内に入るとフローティング テキストが表示され、マウスがボタン外に出るとフローティング テキストが非表示になるように設定しました。
+
+## ステップ10: ドキュメントを保存する
+
+最後に、作業内容を保存して結果を確認します。
+
+```csharp
 document.Save(outputFile);
 ```
 
+このアクションにより、PDF はインタラクティブなエクスペリエンスを備え、ユーザーにまったく新しい方法でコンテンツにアクセスできるようになります。
+
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET ライブラリを使用して隠しテキスト ブロックを作成する方法を学習しました。ステップ バイ ステップ ガイドに従うことで、マウス カーソルを特定の領域に置いたときに表示される隠しテキスト フィールドを含む PDF ドキュメントを生成できます。隠しテキスト ブロックの外観と動作は、必要に応じてカスタマイズできます。
+これで完了です。これらの手順に従うことで、Aspose.PDF for .NET を使用して PDF ファイルに非表示のテキスト ブロックを作成することができました。このシンプルですが強力な機能により、ドキュメント内でのユーザー インタラクションが大幅に強化されます。教育用資料やクライアント リソースを作成する場合でも、マウスをホバーしたときに情報を非表示にしたり表示したりする機能により、洗練されたモダンなタッチが実現します。 
 
-### よくある質問
+## よくある質問
 
-#### Q: 「PDF ファイル内の隠しテキスト ブロック」チュートリアルの目的は何ですか?
+### Aspose.PDF for .NET とは何ですか?  
+Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
-A: 「PDF ファイル内の隠しテキスト ブロック」チュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイルに隠しテキスト ブロックを作成する方法について説明します。隠しテキスト ブロックは、マウス カーソルを特定の領域に置いたときに表示されるフローティング テキストです。このチュートリアルでは、C# ソース コードを使用してステップ バイ ステップ ガイドを提供します。
+### Aspose.PDF をインストールするにはどうすればよいですか?  
+Visual Studio の NuGet パッケージ マネージャーを使用してインストールできます。次のコマンドを使用します。`Install-Package Aspose.PDF`.
 
-#### Q: PDF ファイルに隠しテキスト ブロックを作成するのはなぜですか?
+### PDF 内に他のインタラクティブ要素を作成できますか?  
+はい、Aspose.PDF を使用して、非表示のテキスト ブロック以外にも、ボタン、ハイパーリンク、注釈などを追加できます。
 
-A: 隠しテキスト ブロックを作成すると、ユーザーがマウス カーソルを指定された領域に置いたときにのみ表示される追加情報やコンテキストを提供したいインタラクティブな PDF ドキュメントに役立ちます。
+### 無料トライアルはありますか？  
+もちろんです！無料トライアルは[Aspose リリース ページ](https://releases.aspose.com/).
 
-#### Q: ドキュメント ディレクトリを設定するにはどうすればよいですか?
-
-A: ドキュメントディレクトリを設定するには:
-
-1. 交換する`"YOUR DOCUMENT DIRECTORY"`の`dataDir`生成された PDF ファイルを保存するディレクトリへのパスを持つ変数。
-
-#### Q: サンプル ドキュメントを作成し、それにテキスト フラグメントを追加するにはどうすればよいですか?
-
- A: チュートリアルでは、`Document`クラスを使用してサンプル PDF ドキュメントを作成し、テキスト フラグメントを追加します。このテキスト フラグメントは、非表示のテキスト ブロックを表示するためのトリガーとして機能します。
-
-#### Q: 隠しテキスト ブロックをトリガーするテキスト フラグメントを見つけるにはどうすればよいですか?
-
- A: チュートリアルでは、`TextFragmentAbsorber`隠しテキスト ブロックの表示をトリガーするテキスト フラグメントを検索するオブジェクト。PDF ドキュメント内の特定のテキスト文字列を検索します。
-
-#### Q: 隠しテキスト フィールドを作成してカスタマイズするにはどうすればよいですか?
-
- A: 作成する`TextBoxField`隠しテキスト フィールドを表すオブジェクト。チュートリアルでは、隠しテキスト フィールドの位置、値、外観、動作などのさまざまなプロパティを設定するコードを提供します。
-
-#### Q: 隠しテキスト ブロックに関連付けられた非表示のボタンを作成するにはどうすればよいですか?
-
- A: 目に見えないボタンフィールドは、`ButtonField`クラス。このボタン フィールドはトリガー テキスト フラグメントの上に配置され、マウスの Enter イベントと Exit イベントに関連付けられたアクションがあります。これらのアクションは、非表示のテキスト ブロックの表示を制御します。
-
-#### Q: 隠しテキスト ブロックとトリガー領域の外観をカスタマイズできますか?
-
-A: はい、フォント、色、サイズ、位置など、隠しテキスト フィールドと非表示ボタンの両方のさまざまなプロパティをカスタマイズできます。
-
-#### Q: 隠しテキスト ブロックを含む変更されたドキュメントを保存するにはどうすればよいですか?
-
- A: チュートリアルでは、変更した文書を`Save`方法の`Document`クラス。
+### Aspose.PDF に関してサポートが必要な場合はどうすればよいですか?  
+お気軽にサポートをお求めください[Aspose フォーラム](https://forum.aspose.com/c/pdf/10)ご質問や問題が発生した場合には、お気軽にお問い合わせください。

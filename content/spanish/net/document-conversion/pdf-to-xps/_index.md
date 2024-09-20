@@ -51,7 +51,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Paso 2: Cargue el documento PDF
 
-Ahora que tiene configurado su directorio de documentos, el siguiente paso es cargar el documento PDF que desea convertir.
+Ahora que ya tiene configurado su directorio de documentos, el siguiente paso es cargar el documento PDF que desea convertir.
 
  Crearás una instancia de la`Document` Clase de la biblioteca Aspose.PDF y pasa la ruta de tu archivo PDF a su constructor. Esto cargará el documento PDF en la memoria.
 

@@ -122,7 +122,7 @@ Nach der Verarbeitung jeder Seite muss der Stream unbedingt geschlossen werden, 
 imageStream.Close();
 ```
 
-Dieser Aufruf stellt sicher, dass alle Daten in die Datei geschrieben wurden und die Datei ordnungsgemäß fertiggestellt ist.
+Dieser Aufruf stellt sicher, dass alle Daten in die Datei geschrieben wurden und die Datei ordnungsgemäß fertiggestellt wurde.
 
 ## Schritt 8: Abschlussmeldung
 

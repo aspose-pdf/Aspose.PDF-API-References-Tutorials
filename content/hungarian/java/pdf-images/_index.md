@@ -19,7 +19,7 @@ Oktatóanyagaink végigvezetik a PDF-dokumentumokba történő képek egyszerű 
 A PDF-fájlokban lévő képek optimalizálása elengedhetetlen a fájlméret csökkentéséhez a minőség romlása nélkül. Belemerülünk a képoptimalizálási technikák bonyolultságába, így biztosítva, hogy PDF-ei hatékonyak és gyorsan betölthetők maradjanak. Az Aspose.PDF for Java eszközöket biztosít a képtömörítési és felbontási beállítások finomhangolásához, lehetővé téve, hogy megtalálja a megfelelő egyensúlyt az Ön egyedi igényeinek megfelelően. Csatlakozzon hozzánk ezen a képközpontú utazáson, és használja fel az Aspose.PDF for Java-ban rejlő lehetőségeket lenyűgöző és hatékony PDF-dokumentumok létrehozásában.
 
 ## PDF Képek oktatóanyagok
-### [Vonalobjektum hozzáadása a PDF-hez Java használatával](./add-line-object-to-pdf-using-java/)
+### [Adjon hozzá vonalobjektumot a PDF-hez Java használatával](./add-line-object-to-pdf-using-java/)
 Ismerje meg, hogyan adhat hozzá vonalobjektumokat PDF-fájlokhoz Java használatával az Aspose.PDF for Java segítségével. Szabja testre a vonalakat, helyezze el őket, és hozzon létre dinamikus PDF-eket könnyedén.
 ### [A téglalap Z-rendjének vezérlése PDF-ben Java segítségével](./controlling-z-order-of-rectangle-in-pdf-with-java/)
 Ismerje meg, hogyan szabályozhatja a téglalapok Z-rendjét a PDF-fájlokban Java segítségével az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató a precíz PDF-kezeléshez.

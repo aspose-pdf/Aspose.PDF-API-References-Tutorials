@@ -94,7 +94,7 @@ line.GraphInfo.DashPhase = 1;
 ```
 
 - `line.GraphInfo.Color`: Legt die Farbe der Linie fest. In diesem Fall ist sie rot.
-- `line.GraphInfo.DashArray` : Definiert das Strichmuster. Hier`{ 0, 1, 0 }` stellt ein gestricheltes Muster dar.
+- `line.GraphInfo.DashArray` : Definiert das Strichmuster. Dabei`{ 0, 1, 0 }` stellt ein gestricheltes Muster dar.
 - `line.GraphInfo.DashPhase`: Passt den Startpunkt des Strichmusters an.
 
 ## Schritt 6: Fügen Sie der Zeichnung die Linie hinzu

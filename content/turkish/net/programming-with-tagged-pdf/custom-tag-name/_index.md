@@ -7,126 +7,103 @@ type: docs
 weight: 90
 url: /tr/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-Bu adım adım kılavuzda, .NET için Aspose.PDF ile özel bir etiket adının nasıl kullanılacağını göstereceğiz. Aspose.PDF, PDF belgelerini programatik olarak düzenlemenize olanak tanıyan güçlü bir kütüphanedir. Özel etiketler kullanmak, PDF belgenize belirli yapısal bilgiler eklemenize olanak tanır ve bu da kullanımını ve erişimini kolaylaştırır.
+## giriiş
 
-Gelin kodlara bir göz atalım ve Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağını öğrenelim.
+Günümüzün dijital çağında, PDF'ler her yerdedir. Raporlardan kılavuzlara kadar, çeşitli sektörlerde çok sayıda amaca hizmet ederler. Ancak, bu belgelerin engelli bireyler de dahil olmak üzere herkes tarafından erişilebilir olmasını sağlamak çok önemlidir. Etiketli PDF'ler tam da burada devreye girer. Ekran okuyucuların ve diğer yardımcı teknolojilerin belge içeriğini etkili bir şekilde yorumlamasını kolaylaştırırlar.
 
 ## Ön koşullar
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Kodlamaya geçmeden önce, her şeyin hazır olduğundan emin olmanız önemlidir. İhtiyacınız olanlar şunlardır:
 
-1. .NET için Aspose.PDF kütüphanesi kuruldu.
-2. C# programlama dilinin temel bilgisi.
+1. Visual Studio - Herhangi bir güncel sürüm işinizi görecektir, ancak optimum işlevsellik için en son sürüme sahip olmak en iyisidir.
+2.  Aspose.PDF for .NET - En son sürümü şu adresten kolayca indirebilirsiniz:[indirme bağlantısı](https://releases.aspose.com/pdf/net/).
+3. C# Temel Bilgisi - Kodu uygularken C# programlama temellerine aşina olmanız faydalı olacaktır.
 
-## Adım 1: Ortamı kurma
+## Paketleri İçe Aktar
 
-Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir başvuru eklediğinizden emin olun.
+Ortamınızı kurduğunuzda, bir sonraki adım Aspose.PDF'yi kullanmak için gerekli paketleri içe aktarmaktır. Bunu Aspose.PDF kütüphanesini projenize ekleyerek yapabilirsiniz.
+
+### Aspose.PDF'yi NuGet aracılığıyla yükleyin
+
+1. Visual Studio Projenizi açın: Henüz bir proje oluşturmadıysanız, devam edip yeni bir proje oluşturun.
+2. NuGet Paket Yöneticisine erişin: Çözüm Gezgini'nde projenize sağ tıklayın ve "NuGet Paketlerini Yönet" seçeneğini belirleyin.
+3. Aspose.PDF'yi arayın: Arama çubuğuna “Aspose.PDF” girin.
+4. Paketi Yükle: Paketi projenize eklemek için "Yükle"ye tıklayın. Yüklendikten sonra, hazırsınız!
+
+### Yönergeyi Kullanarak Ekle
+
+Kodunuzda Aspose işlevselliğinden faydalanabilmek için dosyanızın en üstüne gerekli using yönergesini eklemeniz gerekir:
 
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Adım 2: Belgenin oluşturulması
+Bu adımları tamamladığınızda, etiketli PDF'nizi oluşturmaya hazırsınız!
 
- İlk adım, yeni bir PDF belgesi oluşturmaktır`Document` sınıf.
+Artık her şeyi ayarladığınıza göre, asıl göreve geçelim: etiketli bir PDF belgesi oluşturma. İşte .NET için Aspose.PDF kullanarak bunu nasıl yapacağınıza dair adım adım bir kılavuz.
 
-```csharp
-// PDF belgesini oluşturun
-Document document = new Document();
-```
+## Adım 1: Belge Dizinini Tanımlayın
 
-## Adım 3: Etiketli içerikle çalışın
-
-Daha sonra belgenin etiketli içeriğini alıp çalışmaya başlıyoruz.
+Öncelikle, PDF'nizin kaydedileceği yolu belirtmeniz gerekecek. Veri dizininizi burada tanımlayacaksınız.
 
 ```csharp
-// Belgenin etiketli içeriğini alın
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Adım 4: Belge başlığını ve dilini ayarlayın
-
-Artık belge başlığını ve dilini ayarlayabiliriz.
-
-```csharp
-// Belge başlığını ve dilini tanımlayın
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Adım 5: Mantıksal Yapı Öğeleri Oluşturun
-
-Şimdi içeriğimizi organize etmek için bazı mantıksal yapı öğeleri oluşturalım.
-
-```csharp
-// Mantıksal yapı öğeleri oluşturun
-SectElement sect = taggedContent.CreateSectElement();
-taggedContent.RootElement.AppendChild(sect);
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-p1.SetText("P1.");
-p2.SetText("P2.");
-p3.SetText("P3.");
-p4.SetText("P4.");
-p1.SetTag("P1");
-p2.SetTag("Para");
-p3.SetTag("Para");
-p4.SetTag("Paragraph");
-sect.AppendChild(p1);
-sect.AppendChild(p2);
-sect.AppendChild(p3);
-sect.AppendChild(p4);
-SpanElement span1 = taggedContent.CreateSpanElement();
-SpanElement span2 = taggedContent.CreateSpanElement();
-SpanElement span3 = taggedContent.CreateSpanElement();
-SpanElement span4 = taggedContent.CreateSpanElement();
-span1.SetText("Span 1.");
-span2.SetText("Span 2.");
-span3.SetText("Span 3.");
-span4.SetText("Span 4.");
-span1.SetTag("SPAN");
-span2.SetTag("Sp");
-span3.SetTag("Sp");
-span4.SetTag("TheSpan");
-p1.AppendChild(span1);
-p2.AppendChild(span2);
-p3.AppendChild(span3);
-p4.AppendChild(span4);
-```
-
-Burada içeriğimiz için paragraf öğeleri ve span öğeleri oluşturuyoruz ve bunlara özel etiketler atıyoruz.
-
-## Adım 6: Etiketli PDF belgesini kaydedin
-
-Son olarak etiketli PDF dokümanını kaydediyoruz.
-
-```csharp
-// Etiketli PDF belgesini kaydedin
-document.Save(dataDir + "CustomTag.pdf");
-```
-
-### .NET için Aspose.PDF'yi kullanarak Özel Etiket Adı için örnek kaynak kodu 
-```csharp
-
-// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// PDF Belgesi Oluştur
+Açıklama: "YOUR DOCUMENT DIRECTORY" ifadesini PDF dosyasını kaydetmek istediğiniz gerçek yolla değiştirin. Herhangi bir çalışma zamanı istisnasından kaçınmak için bu dizinde yazma iznine sahip olmak çok önemlidir.
+
+## Adım 2: Yeni bir PDF Belgesi Oluşturun
+
+ Daha sonra, bir örnek oluşturacağız`Document` sınıf.
+
+```csharp
 Document document = new Document();
+```
 
-// TaggedPdf ile çalışmak için İçerik Alın
+Açıklama: Bu satır yeni bir PDF belgesi başlatır. Bunu, PDF'nizin içeriğini boyayacağınız boş bir tuval oluşturmak olarak düşünün.
+
+## Adım 3: Etiketli İçerik Oluşturun
+
+Şimdi etiketlemenin özüne inme zamanı. Belgenin etiketli içeriğini alacağız.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
+```
 
-// Belge için Başlık ve Dil Ayarla
+ Açıklama:`TaggedContent` nesnesi, içeriği hiyerarşik olarak düzenleyerek PDF'in mantıksal yapısını ve erişilebilirliğini değiştirmemize olanak tanır.
+
+## Adım 4: Başlığı ve Dili Ayarlayın
+
+Sonra, belgenin başlığını ve dil özniteliğini ayarlayabilirsiniz. Bu, ekran okuyucuların belgeyi doğru şekilde işlemesine yardımcı olur.
+
+```csharp
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Mantıksal Yapı Elemanları Oluştur
+Açıklama: Burada, bu PDF'i okuyan herkesi, özellikle erişilebilirlik araçları için kavramaya yardımcı olan başlığı ve dili hakkında bilgilendiriyoruz.
+
+## Adım 5: Mantıksal Yapı Öğelerini Oluşturun
+
+Şimdi PDF'nizin içinde yapılandırılmış öğeler oluşturmanın zamanı geldi.
+
+```csharp
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
+```
+
+ Açıklama: Bu adım, içerik eklemeye başlayabileceğiniz bir bölüm öğesini tanıtır.`RootElement` sizin ana üssünüzdür.
+
+## Adım 6: Paragraf Öğeleri Oluşturun
+
+Şimdi çeşitli paragraf öğeleri oluşturalım ve bunların metin içeriklerini ayarlayalım.
+
+```csharp
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 ParagraphElement p3 = taggedContent.CreateParagraphElement();
@@ -135,14 +112,41 @@ p1.SetText("P1. ");
 p2.SetText("P2. ");
 p3.SetText("P3. ");
 p4.SetText("P4. ");
+```
+
+Açıklama: Her paragraf bir hikâyedeki bir cümleye benzer, sahneyi hazırlar ve belgenize anlam katar.
+
+## Adım 7: Paragraflara Etiketler Atamak
+
+PDF'inizin erişilebilirliği için her paragrafı uygun şekilde etiketlemek çok önemlidir.
+
+```csharp
 p1.SetTag("P1");
 p2.SetTag("Para");
 p3.SetTag("Para");
 p4.SetTag("Paragraph");
+```
+
+Açıklama: Etiketlerle etiketleme yaparak, yardımcı teknolojilerin içeriğin yapısını anlamasını sağlıyoruz; bu, onlara alanda gezinmeleri için bir yol haritası vermek gibi bir şey.
+
+## Adım 8: Bölüme Paragraflar Ekleyin
+
+Şimdi bu paragrafları daha önce oluşturduğumuz bölüme ekleyeceğiz.
+
+```csharp
 sect.AppendChild(p1);
 sect.AppendChild(p2);
 sect.AppendChild(p3);
 sect.AppendChild(p4);
+```
+
+Açıklama: Bu eylem, bölümdeki paragrafları düzenleyerek akışı mantıklı ve takip edilmesi kolay hale getirir.
+
+## Adım 9: Span Elemanlarını Oluşturun
+
+Paragraflar gibi, aralıklar da metin içeriğimize ayrıntılı bilgi ekler.
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 SpanElement span2 = taggedContent.CreateSpanElement();
 SpanElement span3 = taggedContent.CreateSpanElement();
@@ -151,62 +155,63 @@ span1.SetText("Span 1.");
 span2.SetText("Span 2.");
 span3.SetText("Span 3.");
 span4.SetText("Span 4.");
+```
+
+Açıklama: Aralıklar, ayrıntıların ince ayarı gibidir; her paragrafta ilettiğiniz şeye özgüllük katarlar.
+
+## Adım 10: Span Elemanlarına Etiketler Atamak
+
+Paragraflarda yaptığımız gibi, anlaşılmasını kolaylaştırmak için span öğelerimizi etiketlememiz gerekir.
+
+```csharp
 span1.SetTag("SPAN");
 span2.SetTag("Sp");
 span3.SetTag("Sp");
 span4.SetTag("TheSpan");
+```
+
+Açıklama: Aralıkları doğru şekilde etiketlemek, tüm nüansların doğru bir şekilde temsil edilmesini sağlayarak, bununla karşılaşan herkes için zengin bir belge oluşturur.
+
+## Adım 11: Paragraflara Aralıklar Ekleyin
+
+Şimdi span elemanlarımızı ilgili paragraflara ekleyelim.
+
+```csharp
 p1.AppendChild(span1);
 p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
-
-// Etiketli PDF Belgesini Kaydet
-document.Save(dataDir + "CustomTag.pdf");
-
 ```
+
+Açıklama: Bu entegrasyon, daha derin bir anlayış için bir kitaba dipnot eklemek gibi, ek bilgiler ekleyerek paragraflarınızı geliştirir.
+
+## Adım 12: Etiketli PDF Belgesini Kaydedin
+
+Sonunda şaheserinizi kurtarmanın zamanı geldi!
+
+```csharp
+document.Save(dataDir + "CustomTag.pdf");
+```
+
+Açıklama: Bu satır etiketli PDF'nizi belirtilen dizine kaydeder. Bununla, etiketli PDF belgenizin oluşturulmasını tamamlamış olursunuz!
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile özel bir etiket adının nasıl kullanılacağını öğrendiniz. Artık özel etiketler kullanarak PDF belgenize belirli yapısal bilgiler ekleyebilirsiniz. Tam potansiyelini keşfetmek için Aspose.PDF'nin diğer özelliklerini keşfedin.
+Aspose.PDF for .NET kullanarak etiketli PDF belgeleri oluşturmak yalnızca içerik eklemekle ilgili değildir; tüm kullanıcılar için erişilebilir bir deneyim oluşturmakla ilgilidir. Sadece birkaç adımla belgelerinizin herkesle iletişim kurmasını, engelleri kaldırmasını ve anlayışı geliştirmesini sağlayabilirsiniz. 
 
-### SSS
+## SSS
 
-#### S: PDF belgeleri bağlamında özel etiket adı nedir ve bunu neden Aspose.PDF for .NET ile kullanmalıyım?
+### Etiketli PDF nedir?  
+Etiketli PDF, belgenin içeriğinin yapısını ve erişilebilirliğini tanımlayan ek meta veriler içerir ve bu sayede yardımcı teknolojilerin yorumlaması kolaylaşır.
 
-A: PDF belgesindeki özel etiket adı, belgenin içeriğine belirli yapısal bilgiler sağlayan kullanıcı tanımlı bir etikettir. .NET için Aspose.PDF ile özel etiket adları kullanmak, PDF belgesinin erişilebilirliğini ve organizasyonunu geliştirmenize olanak tanır, gezinmeyi, anlamayı ve etkileşim kurmayı kolaylaştırır.
+### .NET için Aspose.PDF'e neden ihtiyacım var?  
+Aspose.PDF for .NET, geliştiricilerin kapsamlı özelliklerle PDF belgelerini programlı bir şekilde oluşturmalarına, değiştirmelerine ve düzenlemelerine olanak tanıyan güçlü bir kütüphanedir.
 
-#### S: Aspose.PDF for .NET, PDF belgelerinde özel etiket adlarının kullanımını nasıl kolaylaştırır?
+### Aspose.PDF'in deneme sürümünü nasıl edinebilirim?  
+ Aspose.PDF'nin ücretsiz deneme sürümünü edinmek için şu adresi ziyaret edebilirsiniz:[bu bağlantı](https://releases.aspose.com/).
 
-A: .NET için Aspose.PDF, bir PDF belgesindeki farklı yapısal öğelere özel etiket adları oluşturmanıza, düzenlemenize ve atamanıza olanak tanıyan bir dizi sınıf ve yöntem sağlar. Bu, belgenin içeriğine anlamsal anlam ve bağlam eklemenize yardımcı olur.
+### Aspose.PDF için destek alabilir miyim?  
+ Evet, destek için bize ulaşabilirsiniz[Aspose forumu](https://forum.aspose.com/c/pdf/10).
 
-####  S: Rolü nedir?`taggedContent` object play in using custom tag names?
-
- A:`taggedContent` nesne, belgenin kendisinden elde edilen`TaggedContent` özelliği, PDF belgesinde yapılandırılmış öğelerle çalışmanıza olanak tanır. Bu öğelere özel etiket adları oluşturabilir, düzenleyebilir ve atayabilir, belgenin anlamsal yapısını geliştirebilirsiniz.
-
-#### S: Özel etiket adları belge erişilebilirliğini ve kullanılabilirliğini nasıl iyileştirir?
-
-A: Özel etiket adları, belgenin içeriğine ek bağlam ve anlam bilgisi sağlar; bu da yardımcı teknolojiler için erişilebilirliğini artırır ve genel kullanıcı deneyimini geliştirir. Ekran okuyucular ve diğer yardımcı cihazlar, kullanıcılara anlamlı bilgiler iletmek için özel etiket adları kullanabilir.
-
-#### S: PDF belgesinde çeşitli yapısal eleman tipleri için özel etiket adları kullanabilir miyim?
-
-A: Evet, paragraflar, aralıklar, bölümler ve daha fazlası dahil olmak üzere çok çeşitli yapısal öğelere özel etiket adları atayabilirsiniz. Bu, belgenin içeriğinin farklı bölümlerini kategorilere ayırmanıza ve etiketlemenize olanak tanır, böylece daha düzenli ve anlaşılır bir düzen oluşturursunuz.
-
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki öğelere özel etiket adlarını nasıl tanımlar ve atarım?
-
- A: Paragraflar ve aralıklar gibi mantıksal yapı öğeleri oluşturarak ve ardından`SetTag` Bu öğelere istenen özel etiket adını atama yöntemi. Sağlanan kod örneği bu işlemi göstermektedir.
-
-#### S: Kullandığım özel etiket adlarının erişilebilirlik standartları ve en iyi uygulamalarla uyumlu olduğundan nasıl emin olabilirim?
-
-A: Özel etiket adları seçerken erişilebilirlik yönergelerini takip etmeniz ve içeriği doğru şekilde temsil eden açıklayıcı ve anlamlı etiketler kullanmanız önerilir. İlgili erişilebilirlik standartlarına ve belgelere başvurmak, uygun özel etiket adlarını seçmenize yardımcı olabilir.
-
-#### S: Aspose.PDF for .NET tarafından sunulan diğer PDF düzenleme özellikleriyle özel etiket adlarının kullanımını birleştirebilir miyim?
-
-A: Kesinlikle! Özel etiket adlarının kullanımını, tablolar oluşturma, resim ekleme, köprü metinleri ekleme ve daha fazlası gibi Aspose.PDF for .NET'in diğer özellikleriyle birleştirebilirsiniz. Bu, yapılandırılmış içerikle zengin ve erişilebilir PDF belgeleri oluşturmanıza olanak tanır.
-
-#### S: PDF belgelerimde erişilebilirlik ve kullanılabilirlik açısından özel etiket adlarının kullanımının etkinliğini nasıl doğrulayabilirim?
-
-A: PDF belgesinde gezinmek ve etkileşim kurmak için ekran okuyucular gibi yardımcı teknolojileri kullanarak özel etiket adlarının etkinliğini doğrulayabilirsiniz. Ayrıca, araçlar ve doğrulayıcılar kullanarak belgenin erişilebilirlik standartları ve yönergeleriyle uyumluluğunu test edebilirsiniz.
-
-#### S: Bu bilgiyi daha karmaşık belge yapıları oluşturmak ve gelişmiş senaryolar için özel etiket adlarını kullanmak üzere nasıl genişletebilirim?
-
-A: Bu bilgiyi, Aspose.PDF for .NET'in iç içe geçmiş yapı öğeleri oluşturma, form alanları için özel etiketler kullanma, multimedya öğelerini dahil etme ve daha fazlası gibi ek özelliklerini keşfederek genişletebilirsiniz. Kütüphanenin belgeleri ve örnekleri, bu gelişmiş senaryolar için rehberlik sağlar.
+### Ayrıntılı Aspose.PDF dokümantasyonunu nerede bulabilirim?  
+ Tam dokümantasyona buradan ulaşabilirsiniz[Burada](https://reference.aspose.com/pdf/net/).

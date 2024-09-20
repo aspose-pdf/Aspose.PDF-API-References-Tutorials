@@ -181,7 +181,7 @@ Nu ska vi slänga in en logotyp för att få vårt bord att se snyggt ut!
 ```csharp
 // Lägg till cellen som innehåller bilden
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-img.File = dataDir + "aspose-logo.jpg"; // Se till att placera bilden i din katalog
+img.File = dataDir + "aspose-logo.jpg"; // Se till att du placerar bilden i din katalog
 ```
 
  Glöm inte att byta ut`"aspose-logo.jpg"` med det faktiska namnet på din bild!

@@ -80,7 +80,7 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 
 ## 結論
 
-現在你就得到它了！使用 Aspose.PDF for .NET 將 PDF 轉換為 HTML 輕而易舉。只需幾行程式碼，您就可以將文件轉換為網路友善的格式。這對於需要在其網站上顯示 PDF 內容的 Web 開發人員和內容管理員特別有用。所以，繼續嘗試吧！
+現在你就擁有了！使用 Aspose.PDF for .NET 將 PDF 轉換為 HTML 輕而易舉。只需幾行程式碼，您就可以將文件轉換為網路友善的格式。這對於需要在其網站上顯示 PDF 內容的 Web 開發人員和內容管理員特別有用。所以，繼續嘗試吧！
 
 ## 常見問題解答
 

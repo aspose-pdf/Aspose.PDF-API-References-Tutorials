@@ -2,182 +2,143 @@
 title: Aggiungi rientro righe successive nel file PDF
 linktitle: Aggiungi rientro righe successive nel file PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come aggiungere rientri alle righe successive del testo in un file PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come aggiungere indentazioni alle righe successive nei file PDF usando Aspose.PDF per .NET. Segui questa guida dettagliata passo dopo passo per una formattazione professionale del testo.
 type: docs
 weight: 60
 url: /it/net/programming-with-text/add-subsequent-lines-indent/
 ---
-Questo tutorial ti guiderà attraverso il processo di aggiunta di indentazioni di righe successive al testo nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
+## Introduzione
 
-## Requisiti
-Prima di iniziare, assicurati di avere quanto segue:
+Creare PDF visivamente accattivanti spesso comporta più del semplice posizionamento del testo su una pagina. Ti sei mai chiesto come puoi aggiungere un rientro alle righe successive all'interno di un documento PDF, rendendolo più professionale? Che tu stia creando un report, un e-book o qualsiasi documento in cui il layout è importante, essere in grado di controllare il flusso del testo è fondamentale. Oggi esploreremo come aggiungere un rientro alle righe successive a un file PDF utilizzando Aspose.PDF per .NET. Questa funzionalità può essere particolarmente utile per i paragrafi che necessitano di un rientro sporgente, il che migliora la leggibilità e l'estetica. Quindi, iniziamo subito!
 
-- Visual Studio o qualsiasi altro compilatore C# installato sul computer.
-- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito web ufficiale di Aspose o usare un gestore di pacchetti come NuGet per installarlo.
+## Prerequisiti
 
-## Passaggio 1: impostare il progetto
-1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
-2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
+Prima di iniziare, ecco alcune cose che devi sapere:
 
-## Passaggio 2: importare gli spazi dei nomi richiesti
-Nel file di codice in cui vuoi aggiungere il rientro alle righe successive, aggiungi la seguente direttiva using all'inizio del file:
+-  Aspose.PDF per .NET: dovrai avere questa libreria installata. Se non l'hai già fatto, puoi[scaricalo qui](https://releases.aspose.com/pdf/net/).
+- Ambiente di sviluppo: sarebbe utile una conoscenza di base di C# e di un IDE come Visual Studio.
+- .NET Framework: questo tutorial presuppone che tu stia lavorando in un ambiente .NET.
+-  Licenza temporanea: se non si dispone di una licenza completa per Aspose.PDF, è possibile richiederne una[licenza temporanea](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+Ora che sei pronto, passiamo alla sezione di codifica!
 
-## Passaggio 3: impostare la directory del documento
- Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
+## Importazione di namespace
 
-## Passaggio 4: creare un nuovo oggetto Documento
- Crea un'istanza di un nuovo`Document` oggetto aggiungendo la seguente riga di codice:
+Per prima cosa, dovrai importare i namespace necessari per rendere disponibile la libreria Aspose.PDF nel tuo progetto. È un passaggio semplice, ma essenziale per far partire le cose.
 
 ```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Passaggio 5: aggiungere una pagina al documento
- Aggiungere una nuova pagina al documento utilizzando il`Add` metodo del`Pages` raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
+Una volta importati, sarai pronto a lavorare con i potenti strumenti forniti da Aspose.PDF.
 
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
+## Passaggio 1: imposta il documento e la pagina
 
-## Passaggio 6: creare un TextFragment con rientro delle righe successive
- Crea un'istanza`TextFragment` oggetto e fornire il testo desiderato. Nel codice fornito, il testo è assegnato alla variabile`text` Quindi, inizializzare`TextFormattingOptions` per il`TextFragment` e specificare il`SubsequentLinesIndent` valore.
+Prima di poter aggiungere qualsiasi rientro, dobbiamo creare un nuovo documento PDF e aggiungervi una pagina. Questa sarà la tela in cui applicheremo la formattazione del testo.
 
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-     SubsequentLinesIndent = 20
-};
-```
-
-## Passaggio 7: aggiungere TextFragment alla pagina
- Aggiungere il`TextFragment` oggetto alla raccolta di paragrafi della pagina.
-
-```csharp
-page.Paragraphs.Add(text);
-```
-
-## Passaggio 8: ripetere i passaggi 6 e 7 per le linee aggiuntive
-Per aggiungere righe successive con lo stesso rientro, ripetere i passaggi 6 e 7 per ogni riga. Aggiornare il contenuto del testo come necessario.
-
-```csharp
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-```
-
-## Passaggio 9: Salvare il documento PDF
- Salvare il documento PDF utilizzando`Save` metodo del`Document` oggetto. Specificare il percorso del file di output.
-
-```csharp
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-### Esempio di codice sorgente per Aggiungi rientro righe successive utilizzando Aspose.PDF per .NET 
 ```csharp
 // Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // Crea un nuovo oggetto documento
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-Aspose.Pdf.Page page = document.Pages.Add();
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-//Inizializza TextFormattingOptions per il frammento di testo e specifica il valore FollowingLinesIndent
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-	SubsequentLinesIndent = 20
-};
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
 
-## Conclusione
-Hai aggiunto con successo le righe successive indentate al testo usando Aspose.PDF per .NET. Il file PDF risultante può ora essere trovato nel percorso del file di output specificato.
-
-### Domande frequenti
-
-#### D: Qual è l'obiettivo di questo tutorial?
-
-R: Questo tutorial fornisce una guida completa su come aggiungere il rientro delle righe successive al testo in un file PDF utilizzando la libreria Aspose.PDF per .NET. Include esempi di codice sorgente C# per illustrare i passaggi richiesti per ottenere questo risultato.
-
-#### D: Quali namespace devo importare per questo tutorial?
-
-A: Nel file di codice in cui intendi aggiungere il rientro delle righe successive, importa i seguenti namespace all'inizio del file:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### D: Come faccio a specificare la directory dei documenti?
-
- A: Nel codice, individua la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
-
-#### D: Come si crea un oggetto Documento?
-
- A: Nel passaggio 4, creerai un nuovo`Document` oggetto utilizzando la seguente riga di codice:
-
-```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-```
-
-#### D: Come posso aggiungere una pagina al documento?
-
- A: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando`Add` metodo del`Pages` collezione:
-
-```csharp
+//Aggiungere una nuova pagina al documento
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### D: Come posso aggiungere un rientro alle righe successive del testo?
+Qui, inizializziamo il documento PDF e aggiungiamo una pagina vuota. Fin qui abbastanza semplice, vero? Pensa a questo come a un'impostazione del terreno prima di aggiungere il tuo contenuto.
 
- A: Nel passaggio 6, creerai un`TextFragment` oggetto e assegnargli il testo desiderato. Quindi, inizializzerai`TextFormattingOptions` per il`TextFragment` e specificare il`SubsequentLinesIndent` valore:
+## Passaggio 2: creare il frammento di testo
+
+ Successivamente, è necessario creare un`TextFragment` oggetto, che conterrà il testo che visualizzerai sul tuo PDF. Questo testo verrà in seguito formattato con le indentazioni richieste.
 
 ```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
+Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment(
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog."
+);
+```
+
+Questo è solo un semplice testo di esempio ripetuto più volte per riempire lo spazio sulla pagina. Puoi sostituirlo con qualsiasi testo pertinente al tuo progetto.
+
+## Passaggio 3: inizializzare le opzioni di formattazione del testo
+
+ È qui che avviene la magia! Ora che hai il tuo`TextFragment` , dovrai inizializzare le opzioni di formattazione del testo per specificare`SubsequentLinesIndent`Questa impostazione applicherà un rientro a tutte le righe tranne la prima.
+
+```csharp
+// Inizializza TextFormattingOptions per il frammento di testo e specifica il valore FollowingLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
     SubsequentLinesIndent = 20
 };
 ```
 
-#### D: Come posso aggiungere TextFragment al documento PDF?
+In questo esempio, abbiamo impostato l'indentazione a 20 unità. Ciò significa che ogni riga dopo la prima sarà rientrata di 20 unità, creando un rientro sporgente visivamente distinto.
 
- A: Nel passaggio 7, aggiungerai il`TextFragment` oggetto (`text`) alla raccolta di paragrafi della pagina:
+## Passaggio 4: aggiungere testo alla pagina
+
+ Ora che hai applicato la formattazione necessaria, è il momento di aggiungere il testo alla pagina. Questo si fa aggiungendo il`TextFragment` alla raccolta di paragrafi della pagina.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### D: Posso ripetere la procedura per altre linee?
+A questo punto, la pagina ha il testo con le righe successive rientrate. Ma perché fermarsi qui? Aggiungiamo altre righe per rendere il documento più completo.
 
-A: Sì, nel passaggio 8, puoi ripetere il processo per altre righe con lo stesso rientro creandone di nuove`TextFragment` oggetti e aggiungendoli alla raccolta di paragrafi della pagina.
+## Passaggio 5: aggiungere ulteriori frammenti di testo
 
-#### D: Come posso salvare il documento PDF risultante?
+Per dimostrare come più frammenti di testo possono apparire nello stesso documento, puoi aggiungere qualche riga in più. Ognuna di queste righe può essere formattata in modo indipendente o usare la stessa formattazione del passaggio precedente.
 
- A: Dopo aver aggiunto il testo con le righe successive rientrate, utilizzare il`Save` metodo del`Document` oggetto per salvare il documento PDF:
+```csharp
+text = new Aspose.Pdf.Text.TextFragment("Line2");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line3");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line4");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line5");
+page.Paragraphs.Add(text);
+```
+
+Con ogni nuovo frammento di testo aggiunto alla pagina, il tuo documento inizia a prendere forma. Puoi facilmente immaginare come puoi usarlo in vari scenari, sia che tu stia creando documenti lunghi o contenuti in formato breve.
+
+## Passaggio 6: Salvare il documento
+
+Una volta aggiunto tutto il testo e applicata la formattazione desiderata, è il momento di salvare il documento. La seguente riga di codice fa proprio questo, salvando il file nella directory specificata.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### D: Qual è il messaggio più importante da trarre da questo tutorial?
+Ecco fatto! Il tuo file PDF ora contiene testo con le righe successive rientrate.
 
-R: Seguendo questo tutorial, hai imparato con successo come migliorare la leggibilità del testo in un documento PDF aggiungendo rientri alle righe successive tramite Aspose.PDF per .NET. Questa tecnica può essere utile per vari tipi di documenti e report.
+## Conclusione
+
+Ed ecco fatto! Hai appena imparato come aggiungere rientri di riga successivi al tuo PDF usando Aspose.PDF per .NET. Questo metodo è perfetto per aggiungere un tocco professionale ai tuoi documenti, dandoti la flessibilità di controllare come viene visualizzato il testo. Che tu stia preparando report aziendali, documenti legali o qualsiasi tipo di file PDF, il rientro è uno strumento piccolo ma potente per migliorare la leggibilità. Se ti è piaciuto questo tutorial, perché non esplori altre funzionalità che Aspose.PDF ha da offrire?
+
+## Domande frequenti
+
+### Posso applicare rientri diversi a paragrafi diversi?  
+ Sì, puoi applicare diverse impostazioni di rientro a ciascuna`TextFragment` modificando i loro singoli`TextState.FormattingOptions`.
+
+###  Quali unità vengono utilizzate per`SubsequentLinesIndent` property?  
+Il rientro viene misurato in punti, che è l'unità di misura standard nei documenti PDF.
+
+### Posso applicarlo ai PDF già esistenti?  
+Assolutamente! Puoi caricare un PDF esistente e applicare queste modifiche allo stesso modo in cui faresti per un nuovo documento.
+
+### C'è un limite a quanto posso rientrare le righe successive?  
+Non esiste un limite massimo, ma per motivi di leggibilità si consiglia di mantenere il rientro entro limiti ragionevoli.
+
+### Posso combinarlo con altre opzioni di formattazione del testo?  
+ Sì! Puoi combinare il`SubsequentLinesIndent` proprietà con altre opzioni di formattazione del testo, come dimensione del carattere, colore e allineamento, per personalizzare ulteriormente il testo.

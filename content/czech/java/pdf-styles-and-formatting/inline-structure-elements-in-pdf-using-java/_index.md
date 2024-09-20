@@ -132,7 +132,7 @@ Hypertextové odkazy jsou nezbytné pro vytváření interaktivních PDF. Podív
 
 ### Přidání hypertextových odkazů do vloženého textu
 
-Chcete-li k textu přidat hypertextový odkaz:
+Přidání hypertextového odkazu do textu:
 
 ```java
 // Vytvořte anotaci odkazu
@@ -189,7 +189,7 @@ Přístupné soubory PDF nabízejí několik výhod:
 
 ## Závěr
 
-V tomto článku jsme prozkoumali koncept prvků Inline Structure Elements v dokumentech PDF pomocí Java a Aspose.PDF for Java. Probrali jsme důležitost těchto prvků, jak vytvořit PDF, přidat text a obrázky, formátovat obsah, přidat hypertextové odkazy, strukturovat obsah pomocí Inline Structure Elements a zajistit dostupnost PDF.
+V tomto článku jsme prozkoumali koncept prvků Inline Structure Elements v dokumentech PDF pomocí Java a Aspose.PDF for Java. Pokryli jsme důležitost těchto prvků, jak vytvořit PDF, přidat text a obrázky, formátovat obsah, přidat hypertextové odkazy, strukturovat obsah pomocí Inline Structure Elements a zajistit dostupnost PDF.
 
 ## FAQ
 

@@ -58,7 +58,7 @@ Document pdfDocument = new Document(dataDir + "ImageInFooter.pdf");
 
 ## 第 3 步：建立圖像圖章
 
-接下來，您將建立一個圖像圖章來表示要新增到頁腳的圖像。將其視為您想要貼在每頁底部的便利貼。
+接下來，您將建立一個圖像圖章來表示要新增到頁腳的圖像。把它想像成一張便條紙，你想把它貼在每一頁的底部。
 
 ```csharp
 //創建頁腳
@@ -114,7 +114,7 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功地在 PDF 頁腳中新增了影像。令人驚訝的是，文件底部的簡單圖像可以提升您的專業形象，對嗎？只需幾行程式碼，您就可以輕鬆增強您的 PDF 文檔，使其具有視覺吸引力和品牌效應。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功地在 PDF 頁腳中新增了影像。令人驚訝的是，文件底部的簡單圖像可以提升您的專業形象，對吧？只需幾行程式碼，您就可以輕鬆增強您的 PDF 文檔，使其具有視覺吸引力和品牌效應。
 
 ## 常見問題解答
 
@@ -122,7 +122,7 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 您可以使用 JPEG、PNG 和 GIF 等流行格式作為圖像印章。
 
 ### 除了頁腳中的圖像之外，我還可以添加文字嗎？
-絕對地！您可以類似地建立文字圖章並將其新增至頁腳。
+絕對地！您可以類似地建立文字圖章並將其新增至頁尾。
 
 ### 有試用版嗎？
 是的！您可以嘗試使用 Aspose.PDF[免費試用](https://releases.aspose.com/).

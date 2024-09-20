@@ -10,7 +10,7 @@ url: /pl/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/
 
 ## Wprowadzenie do tworzenia plików PDF z tagowanymi obrazami w Javie przy użyciu Aspose.PDF dla Javy
 
-erze cyfrowej tworzenie plików PDF z tagowanymi obrazami jest powszechnym wymogiem dla różnych aplikacji. Oznaczone obrazy są niezbędne dla dostępności, zapewniając, że użytkownicy z dysfunkcją wzroku mogą uzyskać dostęp i zrozumieć treść. W tym przewodniku krok po kroku zbadamy, jak tworzyć pliki PDF z tagowanymi obrazami w Javie przy użyciu Aspose.PDF dla Javy. Ta potężna biblioteka zapewnia szerokie wsparcie dla pracy z plikami PDF, w tym możliwość łatwego dodawania tagowanych obrazów.
+erze cyfrowej tworzenie plików PDF z tagowanymi obrazami jest powszechnym wymogiem dla różnych aplikacji. Oznaczone obrazy są niezbędne dla dostępności, zapewniając, że użytkownicy z dysfunkcją wzroku mogą uzyskać dostęp i zrozumieć treść. W tym przewodniku krok po kroku przyjrzymy się, jak tworzyć pliki PDF z tagowanymi obrazami w Javie przy użyciu Aspose.PDF dla Javy. Ta potężna biblioteka zapewnia szerokie wsparcie dla pracy z plikami PDF, w tym możliwość łatwego dodawania tagowanych obrazów.
 
 ## Wymagania wstępne
 

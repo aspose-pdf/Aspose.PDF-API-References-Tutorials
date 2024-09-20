@@ -24,7 +24,7 @@ url: /el/java/pdf-images/
 ### [Έλεγχος Z-Order of Rectangle σε PDF με Java](./controlling-z-order-of-rectangle-in-pdf-with-java/)
 Μάθετε πώς να ελέγχετε τη σειρά Z των ορθογωνίων σε PDF με Java χρησιμοποιώντας το Aspose.PDF για Java. Οδηγός βήμα προς βήμα για ακριβή χειρισμό PDF.
 ### [Δημιουργήστε Γεμισμένο Ορθογώνιο Αντικείμενο σε PDF χρησιμοποιώντας Java](./create-filled-rectangle-object-in-pdf-using-java/)
-Μάθετε πώς να δημιουργείτε γεμάτα ορθογώνια σε αρχεία PDF χρησιμοποιώντας Java με το Aspose.PDF για Java. Βήμα προς βήμα σεμινάριο με παραδείγματα κώδικα.
+Μάθετε πώς να δημιουργείτε γεμάτα ορθογώνια σε αρχεία PDF χρησιμοποιώντας Java με το Aspose.PDF για Java. Βήμα-βήμα σεμινάριο με παραδείγματα κώδικα.
 ### [Σχεδίαση γραμμής σε όλη τη σελίδα σε PDF με Java](./drawing-line-across-the-page-in-pdf-with-java/)
 Μάθετε πώς να σχεδιάζετε γραμμές σε αρχεία PDF με Java χρησιμοποιώντας το Aspose.PDF για Java. Οδηγός βήμα προς βήμα με πηγαίο κώδικα για γραμμικό σχέδιο PDF.
 ### [Εφαρμογή στυλ αρίθμησης στην επικεφαλίδα του PDF χρησιμοποιώντας Java](./apply-numbering-style-in-heading-of-pdf-using-java/)

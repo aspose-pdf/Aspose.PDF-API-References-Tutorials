@@ -81,7 +81,7 @@ Itt elérjük az első oldalt (ne feledje, az index egyalapú), és megkapjuk a 
 
 ## 4. lépés: Példányosítsa a PdfPageEditort
 
- Szükségünk van egy módra a PDF-oldalak manipulálására, és`PdfPageEditor` a mi gyakori eszközünk:
+ Szükségünk van egy módra a PDF-oldalak manipulálására, és`PdfPageEditor` a mi go-to eszközünk:
 
 ```csharp
 PdfPageEditor ppe = new PdfPageEditor();

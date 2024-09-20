@@ -33,7 +33,7 @@ Sobald Sie das Paket installiert haben, können Sie mit dem Schreiben Ihres Code
 
 Nachdem wir nun alles eingerichtet haben, unterteilen wir den Vorgang des Hinzufügens eines Anhangs zu einer PDF-Datei in überschaubare Schritte.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Im ersten Schritt legen Sie den Pfad zu Ihrem Dokumentenverzeichnis fest. Dort liegen Ihre PDF-Datei und die anzuhängende Datei.
 
@@ -109,7 +109,7 @@ Das Hinzufügen von Anhängen zu PDF-Dateien mit Aspose.PDF für .NET ist ein un
 Sie können verschiedene Dateitypen anhängen, darunter Textdateien, Bilder und Dokumente.
 
 ### Ist die Nutzung von Aspose.PDF für .NET kostenlos?
-Aspose.PDF bietet eine kostenlose Testversion an, für die volle Funktionalität müssen Sie jedoch eine Lizenz erwerben.
+Aspose.PDF bietet eine kostenlose Testversion, für die volle Funktionalität müssen Sie jedoch eine Lizenz erwerben.
 
 ### Kann ich einer einzelnen PDF-Datei mehrere Anhänge hinzufügen?
 Ja, Sie können der Anhangssammlung des PDF mehrere Dateien hinzufügen.

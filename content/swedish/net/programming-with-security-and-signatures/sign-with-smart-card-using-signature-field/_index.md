@@ -1,6 +1,6 @@
 ---
-title: Med Smart Card Använda Signaturfältet
-linktitle: Med Smart Card Använda Signaturfältet
+title: Sign Med Smart Card Använder Signaturfältet
+linktitle: Sign Med Smart Card Använder Signaturfältet
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du säkert signerar PDF-filer med ett smartkort med Aspose.PDF för .NET. Följ vår steg-för-steg-guide för enkel implementering.
 type: docs

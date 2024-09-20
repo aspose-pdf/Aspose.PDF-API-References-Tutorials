@@ -97,7 +97,7 @@ cell.setAlignment(HorizontalAlignment.Center);
 
 ## Fejlécek és láblécek hozzáadása
 
-A fejlécek és láblécek elengedhetetlenek a PDF dokumentumokhoz. Szükség szerint hozzáadhatja őket az asztalhoz.
+A fejlécek és láblécek elengedhetetlenek a PDF dokumentumokhoz. Szükség szerint hozzáadhatja őket a táblázathoz.
 
 ```java
 // Java kód fejlécek és láblécek hozzáadásához

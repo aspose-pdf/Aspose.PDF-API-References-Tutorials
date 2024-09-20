@@ -134,7 +134,7 @@ A Z-sorrend a vizuális elemek veremsorrendjét jelenti. A magasabb Z-rendű ele
 ### Van ingyenes próbaverzió az Aspose számára?
  Igen, ingyenes próbaverziót kaphat[itt](https://releases.aspose.com/).
 
-### Hogyan kaphatok támogatást az Aspose.PDF-hez?
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
  Meglátogathatja a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10) segítségért.
 
 ### Kaphatok ideiglenes licencet az Aspose.PDF fájlhoz?

@@ -124,7 +124,7 @@ Cette ligne nous donne un retour dans la console une fois l'en-tête ajouté ave
 
 ## Conclusion
 
-Félicitations ! Vous savez maintenant comment ajouter du texte à l'en-tête d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Que vous souhaitiez améliorer des documents d'entreprise ou simplement personnaliser des PDF personnels, l'ajout d'en-têtes peut certainement améliorer l'apparence et le professionnalisme de vos fichiers. Les techniques que nous avons explorées peuvent être modifiées et étendues pour des tâches plus complexes à mesure que vous vous familiariserez avec la bibliothèque Aspose.PDF.
+Félicitations ! Vous savez maintenant comment ajouter du texte à l'en-tête d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Que vous souhaitiez améliorer des documents d'entreprise ou simplement personnaliser des PDF personnels, l'ajout d'en-têtes peut certainement améliorer l'apparence et le professionnalisme de vos fichiers. Les techniques que nous avons explorées peuvent être modifiées et développées pour des tâches plus complexes à mesure que vous vous familiariserez avec la bibliothèque Aspose.PDF.
 
 ## FAQ
 

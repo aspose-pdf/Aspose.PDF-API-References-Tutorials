@@ -16,7 +16,7 @@ In der heutigen digitalen Welt sind PDFs allgegenwärtig. Egal, ob Sie Berichte,
 Bevor wir beginnen, müssen Sie einige Dinge vorbereitet haben:
 
 1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Hier schreiben und führen wir unseren Code aus.
-2.  Aspose.PDF für .NET: Sie können die Bibliothek herunterladen von der[Aspose-Website](https://releases.aspose.com/pdf/net/) . Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
+2.  Aspose.PDF für .NET: Sie können die Bibliothek herunterladen von der[Aspose-Website](https://releases.aspose.com/pdf/net/) Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
 3. Grundkenntnisse in C#: Grundlegende Kenntnisse der C#-Programmierung helfen Ihnen, den Beispielen zu folgen.
 
 ## Pakete importieren

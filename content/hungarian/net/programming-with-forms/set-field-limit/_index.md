@@ -92,7 +92,7 @@ dataDir = dataDir + "SetFieldLimit_out.pdf";
 form.Save(dataDir);
 ```
 
- Itt adja meg a kimeneti fájl nevét:`SetFieldLimit_out.pdf` . A`Save`módszer menti a PDF-dokumentumban végzett módosításokat.
+ Itt a kimeneti fájl nevét a következőképpen adja meg`SetFieldLimit_out.pdf` . A`Save`módszer menti a PDF-dokumentumban végzett módosításokat.
 
 ## 6. lépés: Erősítse meg a változtatásokat
 
@@ -122,5 +122,5 @@ Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejles
 ### Hol találok további dokumentációt?
  A részletes dokumentációt az Aspose.PDF for .NET webhelyen találja[itt](https://reference.aspose.com/pdf/net/).
 
-### Hogyan kaphatok támogatást az Aspose.PDF-hez?
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
  Támogatást kaphat, ha ellátogat a[Aspose fórum](https://forum.aspose.com/c/pdf/10).

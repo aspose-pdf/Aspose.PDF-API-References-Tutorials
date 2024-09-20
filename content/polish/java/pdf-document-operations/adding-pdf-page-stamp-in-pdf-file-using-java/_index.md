@@ -10,7 +10,7 @@ url: /pl/java/pdf-document-operations/adding-pdf-page-stamp-in-pdf-file-using-ja
 
 ## Wprowadzenie do dodawania znacznika strony PDF w pliku PDF za pomocą języka Java
 
-Pliki PDF są powszechnie używanym formatem do udostępniania i archiwizowania dokumentów. Często zachodzi potrzeba dodania dodatkowych informacji lub brandingu do istniejących dokumentów PDF. W tym samouczku pokażemy, jak dodać stempel strony PDF za pomocą Javy z pomocą Aspose.PDF dla Javy.
+Pliki PDF są powszechnie używanym formatem do udostępniania i archiwizowania dokumentów. Często zachodzi potrzeba dodania dodatkowych informacji lub brandingu do istniejących dokumentów PDF. W tym samouczku zbadamy, jak dodać stempel strony PDF za pomocą Javy z pomocą Aspose.PDF dla Javy.
 
 ## Zrozumienie znaczników stron PDF
 

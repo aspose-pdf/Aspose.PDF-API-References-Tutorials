@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /id/net/programming-with-text/extract-text-using-text-device/
 ---
-Tutorial ini akan memandu Anda melalui proses mengekstraksi teks dari dokumen PDF menggunakan Text Device di Aspose.PDF for .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan.
+## Perkenalan
 
-## Persyaratan
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Mengekstrak teks dari PDF bisa jadi sulit, terutama saat menangani dokumen yang memiliki berbagai format, font tertanam, atau tata letak yang rumit. Namun dengan Aspose.PDF untuk .NET, proses ini menjadi mudah! Baik Anda ingin mengonversi halaman PDF menjadi teks biasa untuk analisis lebih lanjut atau sekadar perlu mengekstrak bagian tertentu, Aspose.PDF siap membantu Anda. Dalam tutorial ini, kami akan menguraikan langkah demi langkah cara mengekstrak teks dari PDF menggunakan kelas TextDevice di Aspose.PDF. Kami juga akan memberikan penjelasan yang jelas, sehingga Anda dapat menerapkan metode yang sama ke proyek Anda sendiri dengan mudah.
 
-- Visual Studio atau kompiler C# lainnya terinstal di komputer Anda.
-- Aspose.PDF untuk pustaka .NET. Anda dapat mengunduhnya dari situs web resmi Aspose atau menggunakan pengelola paket seperti NuGet untuk menginstalnya.
+## Prasyarat
 
-## Langkah 1: Siapkan proyek
-1. Buat proyek C# baru di lingkungan pengembangan pilihan Anda.
-2. Tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Sebelum kita mulai membuat kode, pastikan Anda telah menyiapkan semua yang diperlukan untuk mengikuti langkah-langkah ini. Berikut ini yang Anda perlukan:
 
-## Langkah 2: Impor namespace yang diperlukan
-Pada berkas kode tempat Anda ingin mengekstrak teks, tambahkan perintah penggunaan berikut di bagian atas berkas:
+1.  Aspose.PDF untuk .NET: Unduh versi terbaru dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/).
+2. Lingkungan Pengembangan: Visual Studio atau lingkungan pengembangan C# lainnya.
+3. .NET Framework: Pastikan proyek Anda menargetkan .NET Framework 4.x atau yang lebih tinggi.
+4. Input File PDF: File PDF yang akan Anda gunakan untuk mengekstrak teks. Tempatkan ini di direktori di komputer Anda (kami akan menyebutnya sebagai`YOUR DOCUMENT DIRECTORY`).
+
+## Paket Impor
+
+Di bagian atas kode Anda, Anda perlu mengimpor namespace yang diperlukan untuk bekerja dengan Aspose.PDF:
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## Langkah 3: Mengatur direktori dokumen
- Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
+## Langkah 1: Muat Dokumen PDF Anda
 
-## Langkah 4: Buka dokumen PDF
- Buka dokumen PDF yang ada menggunakan`Document`konstruktor dan meneruskan jalur ke berkas PDF masukan.
+ Sebelum mengekstrak teks, kita perlu memuat dokumen PDF ke dalam memori. Pada langkah ini, Anda akan membuka PDF Anda menggunakan Aspose.PDF.`Document` kelas. Ini akan memungkinkan Anda mengakses semua halaman dan konten dalam berkas tersebut.
 
 ```csharp
+// Tentukan jalur ke dokumen PDF Anda
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Muat dokumen PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Langkah 5: Ekstrak teks menggunakan Perangkat Teks
- Membuat sebuah`StringBuilder` objek untuk menampung teks yang diekstrak. Ulangi setiap halaman dokumen dan gunakan`TextDevice` untuk mengekstrak teks dari setiap halaman.
+ Di sini, kami menggunakan`Document pdfDocument = new Document(dataDir + "input.pdf");` untuk memuat PDF.`dataDir` variabel menyimpan jalur direktori berkas PDF Anda. Ini akan memberi kita akses ke seluruh dokumen, yang memungkinkan kita untuk mengulang halaman dan mengekstrak konten.
+
+## Langkah 2: Siapkan Pembuat String untuk Penyimpanan Teks
+
+ Sekarang dokumen sudah dimuat, kita perlu cara untuk menyimpan teks yang diekstrak. Untuk ini, kita akan menggunakan`StringBuilder` yang memungkinkan penggabungan string secara efisien.
 
 ```csharp
+// StringBuilder untuk menampung teks yang diekstraksi
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## Langkah 6: Simpan teks yang diekstrak
- Tentukan jalur file keluaran dan simpan teks yang diekstrak ke file teks menggunakan`File.WriteAllText` metode.
+ Kami menginisialisasikan`StringBuilder`contoh, yang akan mengumpulkan teks yang diekstrak dari setiap halaman. Ini adalah cara yang lebih efisien untuk menangani string besar dibandingkan dengan penggabungan string biasa dalam satu loop.
+
+## Langkah 3: Ulangi Melalui Halaman PDF
+
+ Selanjutnya, kami mengulang setiap halaman dokumen PDF untuk mengekstrak teks. Kami akan memproses setiap halaman secara individual menggunakan`TextDevice` kelas, yang bertanggung jawab untuk mengubah konten PDF ke format teks.
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### Contoh kode sumber untuk Ekstrak Teks Menggunakan Perangkat Teks menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//String untuk menampung teks yang diekstraksi
-string extractedText = "";
+// Ulangi semua halaman dalam PDF
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		// Buat perangkat teks
-		TextDevice textDevice = new TextDevice();
-		// Mengatur opsi ekstraksi teks - mengatur mode ekstraksi teks (Mentah atau Murni)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		// Konversi halaman tertentu dan simpan teks ke aliran
-		textDevice.Process(pdfPage, textStream);
-		// Konversi halaman tertentu dan simpan teks ke aliran
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Tutup aliran memori
-		textStream.Close();
-		// Dapatkan teks dari aliran memori
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    // Memproses setiap halaman untuk ekstraksi teks
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Simpan teks yang diekstrak dalam file teks
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Kesimpulan
-Anda telah berhasil mengekstrak teks dari dokumen PDF menggunakan Text Device di Aspose.PDF for .NET. Teks yang diekstrak telah disimpan ke berkas keluaran yang ditentukan.
+Loop ini melewati setiap halaman PDF (`pdfDocument.Pages` ). Untuk setiap halaman, kami akan mengekstrak teks dan menambahkannya ke`StringBuilder`.
 
-### Pertanyaan yang Sering Diajukan
+## Langkah 4: Ekstrak Teks dari Setiap Halaman
 
-#### T: Apa tujuan dari tutorial ini?
-
-J: Tutorial ini menyediakan panduan tentang cara mengekstrak teks dari dokumen PDF menggunakan fitur Text Device di Aspose.PDF untuk .NET. Kode sumber C# yang disertakan menunjukkan langkah-langkah yang diperlukan untuk mencapai tugas ini.
-
-#### T: Namespace apa yang harus saya impor?
-
-A: Pada berkas kode tempat Anda berencana mengekstrak teks, sertakan perintah penggunaan berikut di awal berkas:
+ Sekarang, kita akan mengatur proses ekstraksi teks untuk setiap halaman. Di sini, kita akan membuat`TextDevice` objek dan menggunakannya untuk memproses halaman PDF.`TextDevice` mengekstrak teks mentah atau yang diformat berdasarkan opsi ekstraksi yang kami tetapkan.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    // Buat perangkat teks untuk ekstraksi teks
+    TextDevice textDevice = new TextDevice();
+    
+    // Atur opsi ekstraksi teks ke mode 'Murni'
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //Ekstrak teks dari halaman saat ini dan simpan ke aliran memori
+    textDevice.Process(pdfPage, textStream);
+
+    // Ubah aliran memori menjadi teks
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    // Tambahkan teks yang diekstrak ke StringBuilder
+    builder.Append(extractedText);
+}
 ```
 
-#### T: Bagaimana cara menentukan direktori dokumen?
+- `TextDevice textDevice = new TextDevice();` : : Itu`TextDevice` kelas digunakan untuk mengekstrak teks dari PDF.
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` : Opsi ini mengekstrak teks mentah tanpa mempertahankan format apa pun seperti font atau posisi. Anda juga dapat menggunakan`TextFormattingMode.Raw` jika Anda memerlukan kontrol lebih lanjut atas pemformatan.
+- `textDevice.Process(pdfPage, textStream);` : Ini memproses setiap halaman PDF dan menyimpan teks yang diekstraksi dalam`MemoryStream`.
+-  Terakhir, kita mengkonversi teks dari`MemoryStream` ke string dan menambahkannya ke`StringBuilder`.
 
- A: Dalam kode tersebut, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
+## Langkah 5: Simpan Teks yang Diekstrak ke File
 
-#### T: Bagaimana cara membuka dokumen PDF yang sudah ada?
+ Setelah memproses semua halaman, teks disimpan di`StringBuilder`Langkah terakhir adalah menyimpan teks yang diekstrak ini ke dalam sebuah berkas.
 
- A: Pada Langkah 4, Anda akan membuka dokumen PDF yang ada menggunakan`Document` konstruktor dan menyediakan jalur ke berkas PDF masukan.
+```csharp
+// Tentukan jalur keluaran untuk file teks
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### T: Bagaimana cara mengekstrak teks menggunakan Perangkat Teks?
+// Simpan teks yang diekstrak ke dalam file
+File.WriteAllText(dataDir, builder.ToString());
 
- A: Langkah 5 melibatkan pembuatan`StringBuilder` objek untuk menampung teks yang diekstrak. Anda kemudian akan mengulangi setiap halaman dokumen dan menggunakan`TextDevice` bersama dengan`TextExtractionOptions` untuk mengekstrak teks dari setiap halaman.
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### T: Bagaimana cara menyimpan teks yang diekstrak ke dalam berkas?
+- `File.WriteAllText(dataDir, builder.ToString());` : Ini menulis seluruh konten`StringBuilder` ke dalam berkas teks.
+- Jalur untuk file keluaran diatur dengan menambahkan nama file (`"input_Text_Extracted_out.txt"` ) ke`dataDir` jalur.
 
- A: Pada Langkah 6, Anda akan menentukan jalur file keluaran dan menggunakan`File.WriteAllText`metode untuk menyimpan teks yang diekstrak ke dalam berkas teks.
+## Kesimpulan
 
-#### T: Apa inti sari dari tutorial ini?
+Mengekstrak teks dari PDF menggunakan Aspose.PDF untuk .NET merupakan proses yang sederhana dan efisien. Dengan mengikuti langkah-langkah yang diuraikan dalam panduan ini, Anda dapat dengan mudah membuka dokumen PDF, menelusuri halaman, dan mengekstrak teks ke dalam berkas teks. Hal ini sangat berguna untuk memproses data PDF dalam jumlah besar, melakukan analisis teks, atau mengonversi dokumen untuk manipulasi lebih lanjut.
 
-J: Dengan mengikuti tutorial ini, Anda telah mempelajari cara memanfaatkan fitur Text Device di Aspose.PDF for .NET untuk mengekstrak teks dari dokumen PDF. Teks yang diekstrak telah disimpan ke file keluaran tertentu, sehingga Anda dapat memanipulasi dan memanfaatkan konten yang diekstrak sesuai kebutuhan.
+Dengan Aspose.PDF, Anda tidak terbatas pada ekstraksi teks—Anda dapat menangani anotasi, memanipulasi gambar, atau bahkan mengonversi PDF ke format lain seperti HTML atau Word. Fleksibilitas dan kekuatan pustaka ini menjadikannya alat yang sangat berharga untuk manajemen PDF dalam aplikasi .NET.
+
+## Pertanyaan yang Sering Diajukan
+
+### Bisakah Aspose.PDF mengekstrak teks dari PDF berbasis gambar?
+Tidak, Aspose.PDF dirancang untuk mengekstrak teks dari PDF berbasis konten. Untuk PDF berbasis gambar, diperlukan teknologi OCR.
+
+### Apakah Aspose.PDF mempertahankan format saat mengekstrak teks?
+Secara default, teks diekstraksi tanpa pemformatan, tetapi Anda dapat menyesuaikan opsi ekstraksi jika Anda ingin mempertahankan beberapa pemformatan.
+
+### Bisakah saya mengekstrak teks dari rentang halaman tertentu?
+Ya, Anda dapat mengubah kode agar mengulang rentang halaman tertentu, bukan semua halaman.
+
+### Apa saja mode ekstraksi teks di Aspose.PDF?
+Aspose.PDF menyediakan dua mode: Raw dan Pure. Mode Raw mencoba mempertahankan tata letak asli, sedangkan mode Pure hanya mengekstrak teks tanpa pemformatan.
+
+### Apakah Aspose.PDF untuk .NET kompatibel dengan .NET Core?
+Ya, Aspose.PDF untuk .NET sepenuhnya kompatibel dengan .NET Core dan .NET Framework.

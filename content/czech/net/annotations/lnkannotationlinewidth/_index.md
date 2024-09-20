@@ -138,10 +138,10 @@ Gratuluji! Úspěšně jste vytvořili a upravili inkoustovou anotaci v dokument
  Ano, můžete vytvořit více`InkAnnotation` objekty s různými barvami a přidejte je na stejné nebo různé stránky vašeho PDF.
 
 ### Jak dynamicky změním šířku čáry?  
- Můžete upravit`LineWidth` vlastnictví`LineInfo` objekt před převodem souřadnic na body.
+ Můžete upravit`LineWidth` vlastnictvím`LineInfo` objekt před převodem souřadnic na body.
 
 ### Je možné zprůhlednit poznámku inkoustem?  
- Ano, můžete upravit`Opacity` vlastnictví`InkAnnotation` objekt, aby byl průhledný.
+ Ano, můžete upravit`Opacity` vlastnictvím`InkAnnotation` objekt, aby byl průhledný.
 
 ### Mohu přidat více inkoustových poznámek na stejnou stránku?  
 Absolutně! Opakováním postupu můžete na jednu stránku přidat libovolný počet inkoustových anotací.

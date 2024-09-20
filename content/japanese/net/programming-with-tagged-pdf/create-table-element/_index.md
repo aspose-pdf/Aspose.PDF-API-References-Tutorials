@@ -7,281 +7,180 @@ type: docs
 weight: 80
 url: /ja/net/programming-with-tagged-pdf/create-table-element/
 ---
-このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して配列要素を作成する手順を説明します。Aspose.PDF は、PDF ドキュメントをプログラムで操作できる強力なライブラリです。配列要素の作成は、動的な PDF を生成するときによく必要となる要件であり、Aspose.PDF は、これを簡単かつ効率的に実現する方法を提供します。
+## 導入
 
-コードを調べて、Aspose.PDF for .NET を使用して配列要素を作成する方法を学びましょう。
+.NET を使用して PDF 内のテーブル要素を簡単に作成およびカスタマイズする方法を考えたことはありませんか? Aspose.PDF for .NET は、頼りになるソリューションです。レポート生成を自動化する場合でも、さまざまなドキュメントのテーブルを動的に作成する場合でも、Aspose.PDF はテーブル要素を操作するための豊富な API を提供します。このガイドでは、テーブルの作成方法、スタイル設定方法、さらには PDF/UA 準拠標準への準拠を確認する方法をステップごとに説明します。面白そうですよね? 早速始めましょう!
 
 ## 前提条件
 
-始める前に、次のものがあることを確認してください。
+始める前に、いくつかの準備が必要です:
+1.  Aspose.PDF for .NET: 最新バージョンをダウンロードするには、[Aspose.PDF for .NET のダウンロード](https://releases.aspose.com/pdf/net/).
+2. 開発環境: .NET をサポートする任意の IDE (Visual Studio など)。
+3. C# の基礎知識: C# プログラミングに精通していることが推奨されます。
 
-1. .NET 用の Aspose.PDF ライブラリがインストールされています。
-2. C# プログラミング言語に関する基本的な知識。
+最後に、Aspose.PDFのライセンスを忘れないでください。ライセンスをお持ちでない場合は、[無料トライアル](https://releases.aspose.com/)またはリクエスト[一時ライセンス](https://purchase.aspose.com/temporary-license/)すべてをテストします。
 
-## ステップ1: 環境の設定
+## パッケージのインポート
 
-まず、C# 開発環境を開いて新しいプロジェクトを作成します。プロジェクトに .NET 用の Aspose.PDF ライブラリへの参照を追加したことを確認します。
-
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## ステップ2: ドキュメントの作成
-
-最初のステップは、`Document`クラス。
+まず最初に、必要なパッケージをインポートしましょう。これにより、PDF ドキュメントにテーブルを作成するためのすべての関連クラスを操作できるようになります。
 
 ```csharp
-//ドキュメントを作成する
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Array");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-ここでは、タグ付けされたコンテンツのタイトルと言語も設定します。
+このセクションでは、テーブルを作成するプロセスを複数のステップに分けます。各ステップでは、テーブルの作成とカスタマイズのプロセスのさまざまな部分に焦点を当てます。
 
-## ステップ3: 配列要素の作成
+## ステップ1: 新しいPDFドキュメントを作成する
 
-次に、配列要素を作成し、それをドキュメントに追加する必要があります。まずルート構造要素を取得し、次に新しいテーブル要素を作成します。`CreateTableElement`方法。
+最初に行う必要があるのは、新しい PDF ドキュメントを作成することです。これは、テーブルのコンテナーとして機能します。
 
-```csharp
-//ルート構造要素を取得する
-StructureElement rootElement = taggedContent.RootElement;
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTHElement theElement = headTrElement.CreateTH();
-thElement.SetText(String.Format("Header {0}", colIndex));
-theElement.BackgroundColor = Color.GreenYellow;
-theElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-theElement. IsNoBorder = true;
-theElement.Margin = new MarginInfo(16.0, 2
-
-.0, 8.0, 2.0);
-theElement.Alignment = HorizontalAlignment.Right;
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-TableTRElement trElement = tableTBodyElement.CreateTR();
-trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-int colSpan = 1;
-int rowSpan = 1;
-if (colIndex == 1 && rowIndex == 1)
-{
-colSpan = 2;
-rowSpan = 2;
-}
-else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-{
-keep on going;
-}
-else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-{
-keep on going;
-}
-TableTDElement tdelement = trElement.CreateTD();
-tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-tdElement.BackgroundColor = Color.Yellow;
-tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-tdElement.IsNoBorder = false;
-tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-tdElement.Alignment = HorizontalAlignment.Center;
-TextState cellTextState = new TextState();
-cellTextState.ForegroundColor = Color.DarkBlue;
-cellTextState.FontSize = 7.5F;
-cellTextState.FontStyle = FontStyles.Bold;
-cellTextState.Font = FontRepository.FindFont("Arial");
-tdElement. DefaultCellTextState = cellTextState;
-tdElement.IsWordWrapped = true;
-tdElement.VerticalAlignment = VerticalAlignment.Center;
-tdElement.ColSpan = colSpan;
-tdElement. RowSpan = rowSpan;
-}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTDElement tdElement = footTrElement.CreateTD();
-tdElement.SetText(String.Format("Foot {0}", colIndex));
-tdElement.Alignment = HorizontalAlignment.Center;
-tdElement.StructureTextState.FontSize = 7F;
-tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for the table");
-tableAttributes.SetAttribute(summaryAttribute);
-
-//タグ付けされたPDF文書を保存する
-document.Save(dataDir + "CreateTableElement.pdf");
-
-//PDF/UA 準拠チェック
-document = new Document(dataDir + "CreateTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-### Aspose.PDF for .NET を使用してテーブル要素を作成するためのサンプル ソース コード 
 ```csharp
 //ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//ドキュメントを作成
+//新しいPDF文書を作成する
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table");
-taggedContent.SetLanguage("en-US");
+```
 
+ここでは、新しいインスタンスを初期化しています。`Document`クラスは、空の PDF ファイルになります。ファイル パスを定義することを忘れないでください。
+
+## ステップ2: タグ付けされたコンテンツを設定する
+
+次に、タグ付きコンテンツを有効にして、テーブルのアクセシビリティを確保する必要があります。PDF/UA (ユニバーサル アクセシビリティ) に準拠するには、タグ付き PDF が必要です。
+
+```csharp
+//タグ付きコンテンツを有効にする
+ITaggedContent taggedContent = document.TaggedContent;
+taggedContent.SetTitle("Example Table");
+taggedContent.SetLanguage("en-US");
+```
+
+このステップでは、ドキュメントのタイトルと言語を設定し、テーブルがアクセシビリティ標準に準拠していることを確認します。アクセシビリティの高いドキュメントは、一部の業界ではユーザー エクスペリエンスと法的要件にとって非常に重要です。
+
+## ステップ3: テーブル要素を作成する
+
+次は楽しい部分、つまりテーブル自体の作成です。
+
+```csharp
 //ルート構造要素を取得する
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
+```
+
+ここでは、`RootElement`タグ付けされたコンテンツを使用してテーブルを追加します。これは基本的に、ドキュメントの構造に子ノードとしてテーブルを追加することです。
+
+## ステップ4: 表の境界線とヘッダーをカスタマイズする
+
+テーブルを味気ないものにしたくないですよね? スタイルを加えてみましょう!
+
+```csharp
 tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
+```
+
+境界線を定義し、表にヘッダー、本文、フッターを追加します。`BorderInfo`テーブルの境界線を濃い青色でスタイル設定します。
+
+## ステップ5: 表に行とセルを追加する
+
+次に、テーブルに行とセルを入力しましょう。このプロセスの部分では、テーブルのレイアウトを定義します。
+
+### ステップ5.1: ヘッダー行を作成する
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
 headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
+
+for (int colIndex = 0; colIndex < 4; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-	thElement.BackgroundColor = Color.GreenYellow;
-	thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-	thElement.IsNoBorder = true;
-	thElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	thElement.Alignment = HorizontalAlignment.Right;
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
+    thElement.BackgroundColor = Color.GreenYellow;
+    thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
+    thElement.Alignment = HorizontalAlignment.Right;
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+4列のヘッダー行を作成し、各ヘッダーセルの背景色を次のように設定します。`GreenYellow`ヘッダーの境界線と配置も設定します。
+
+### ステップ5.2: 本文行を追加する
+
+```csharp
+for (int rowIndex = 0; rowIndex < 50; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		int colSpan = 1;
-		int rowSpan = 1;
-		if (colIndex == 1 && rowIndex == 1)
-		{
-			colSpan = 2;
-			rowSpan = 2;
-		}
-		else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-		{
-			continue;
-		}
-		else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-		{
-			continue;
-		}
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-		tdElement.BackgroundColor = Color.Yellow;
-		tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-		tdElement.IsNoBorder = false;
-		tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-		tdElement.Alignment = HorizontalAlignment.Center;
-		TextState cellTextState = new TextState();
-		cellTextState.ForegroundColor = Color.DarkBlue;
-		cellTextState.FontSize = 7.5F;
-		cellTextState.FontStyle = FontStyles.Bold;
-		cellTextState.Font = FontRepository.FindFont("Arial");
-		tdElement.DefaultCellTextState = cellTextState;
-		tdElement.IsWordWrapped = true;
-		tdElement.VerticalAlignment = VerticalAlignment.Center;
-		tdElement.ColSpan = colSpan;
-		tdElement.RowSpan = rowSpan;
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = $"Row {rowIndex}";
+
+    for (int colIndex = 0; colIndex < 4; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+        tdElement.BackgroundColor = Color.Yellow;
+        tdElement.Alignment = HorizontalAlignment.Center;
+    }
 }
+```
+
+ここでは、50 行と 4 列を動的に作成し、テキストを入力してセルにスタイルを設定します。背景色は黄色に設定され、テキストは中央に配置されます。
+
+### ステップ5.3: フッター行を追加する
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
 footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-	tdElement.Alignment = HorizontalAlignment.Center;
-	tdElement.StructureTextState.FontSize = 7F;
-	tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for table");
-tableAttributes.SetAttribute(summaryAttribute);
 
-//タグ付き PDF ドキュメントを保存
+for (int colIndex = 0; colIndex < 4; colIndex++)
+{
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText($"Foot {colIndex}");
+    tdElement.Alignment = HorizontalAlignment.Center;
+}
+```
+
+表を完成させるために、中央揃えのテキストと`LightSeaGreen`背景。
+
+## ステップ6: PDF/UA準拠を検証する
+
+テーブルが作成されたら、PDF が PDF/UA に準拠していることを確認することが重要です。
+
+```csharp
 document.Save(dataDir + "CreateTableElement.pdf");
 
-//PDF/UA準拠の確認
+// PDF/UA準拠を検証する
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+このスニペットは PDF ファイルを保存し、PDF/UA 準拠標準に準拠しているかどうかを確認します。ドキュメントが準拠している場合は、障害のあるユーザーがアクセスできます。
 
 ## 結論
 
-Aspose.PDF for .NET を使用して配列要素を作成する方法を学習しました。この方法を使用して、動的なテーブルを含む PDF ドキュメントを生成できるようになりました。Aspose.PDF のその他の機能を自由に探索して、その可能性を最大限に引き出してください。
+おめでとうございます! Aspose.PDF for .NET を使用して、PDF に完全にカスタマイズされたテーブルを作成することができました。テーブルのスタイル設定から PDF/UA 準拠の確保まで、PDF ドキュメントに動的なテーブルを生成するための堅牢な基盤ができました。ドキュメントをさらに強化するために、Aspose.PDF の豊富な機能もぜひお試しください。
 
-### よくある質問
+## よくある質問
 
-#### Q: PDF ドキュメントの配列要素とは何ですか? また、Aspose.PDF for .NET を使用して配列要素を作成する必要があるのはなぜですか?
+### テーブルのフォントとテキスト スタイルをカスタマイズできますか?
+はい、Aspose.PDFでは、フォント、テキストスタイル、配置を完全にカスタマイズできます。`TextState`クラス。
 
-A: PDF ドキュメント内の配列要素は構造化されたデータのコレクションを表し、テーブルやグリッドの作成によく使用されます。表形式の情報やグリッドなどの構造化されたデータの表示を必要とする動的な PDF を生成する場合は、Aspose.PDF for .NET を使用して配列要素を作成する必要があります。
+### 列や行を動的に追加するにはどうすればよいですか?
+列数や行数を調整するには、`rowIndex`そして`colIndex`ループ内。
 
-#### Q: Aspose.PDF for .NET では配列要素の作成プロセスがどのように簡素化されますか?
+### 表内のセルを結合することは可能ですか?
+はい、`ColSpan`そして`RowSpan`列または行をまたいでセルを結合するプロパティ。
 
-A: Aspose.PDF for .NET は、PDF ドキュメント内の配列要素 (テーブル) をプログラムで作成、カスタマイズ、管理できる包括的なクラスとメソッドのセットを提供します。これにより、手動での PDF 操作が不要になり、構造化データ表現の作成が効率化されます。
+### PDF/UA 準拠とは何ですか?
+PDF/UA 準拠により、国際的なアクセシビリティ標準に準拠し、障害を持つユーザーがドキュメントにアクセスできるようになります。
 
-#### Q: Aspose.PDF for .NET を使用して配列要素を作成する際の主な手順は何ですか?
-
-A: 主な手順としては、環境の設定、ドキュメントの作成、ルート構造要素の取得、テーブル要素の作成、テーブル内の行とセルの定義、要素の書式設定とプロパティの指定などがあります。提供されているコード例は、これらの手順を示しています。
-
-####  Q:`taggedContent` object play in creating an array element?
-
- A:`taggedContent`オブジェクトは、ドキュメントの`TaggedContent`プロパティを使用すると、PDF ドキュメント内のタグ付けされたコンテンツの構造を定義できます。これには、配列要素とその子要素を階層的に作成および整理することが含まれます。
-
-#### Q: コードは、作成された配列要素のアクセシビリティとセマンティクスをどのように保証しますか?
-
- A: コードは次のような属性を設定します。`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` 、 そして`ColSpan`配列要素のアクセシビリティとセマンティクスを強化します。これらの属性は、適切に構造化され、情報に富み、視覚的に魅力的なデータの表現に貢献します。
-
-#### Q: 配列要素を作成する場合の PDF/UA 準拠の重要性は何ですか?
-
- A: PDF/UA (ユニバーサルアクセシビリティ) 準拠は、生成されたPDF文書が障害を持つユーザーにアクセス可能であり、特定のアクセシビリティ標準を満たしていることを保証します。コード例では、`Validate`メソッドは、包括的かつアクセスしやすいドキュメントの作成に役立ちます。
-
-#### Q: 配列要素の書式と外観をさらにカスタマイズできますか?
-
-A: はい、背景色、境界線のスタイル、フォント サイズ、配置などの属性を調整することで、配列要素の書式設定と外観をカスタマイズできます。Aspose.PDF for .NET には、視覚的なプレゼンテーションを要件に合わせてカスタマイズするためのさまざまなプロパティが用意されています。
-
-#### Q: この知識を拡張して、より複雑な表構造を作成したり、配列要素を大きな PDF ドキュメントに組み込んだりするにはどうすればよいでしょうか?
-
-A: 複数の配列要素の結合、ネストされたテーブルの作成、ヘッダーとフッターの追加、配列要素のより大きな PDF レイアウトへの統合など、Aspose.PDF for .NET の追加機能を調べることで、この知識を拡張できます。ライブラリのドキュメントと例は、これらの高度なシナリオのガイダンスを提供します。
-
-#### Q: データベースやスプレッドシートなどの外部ソースからデータをインポートして配列要素に入力することは可能ですか?
-
-A: はい、外部ソースからデータをインポートして配列要素を設定できます。C# のデータ取得および変換技術を使用して、データベース、スプレッドシート、またはその他のソースからデータを取得し、それに応じて配列要素を設定できます。
-
-#### Q: このチュートリアルで得た知識を活用して、プログラムで作成する PDF ドキュメントの品質と使いやすさを向上させるにはどうすればよいですか?
-
-A: このチュートリアルで得た知識により、PDF ドキュメント内に構造化された視覚的に魅力的な配列要素 (テーブル) を作成できます。これらのテクニックを組み込むことで、動的に生成された PDF の読みやすさ、アクセシビリティ、ユーザー エクスペリエンスが向上し、より情報量が多くユーザー フレンドリな PDF になります。
+### Aspose.PDF で PDF/UA 準拠をテストするにはどうすればよいですか?
+あなたは`Validate`ドキュメントが PDF/UA 標準に準拠しているかどうかを確認する方法。

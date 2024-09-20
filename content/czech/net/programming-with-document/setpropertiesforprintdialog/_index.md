@@ -9,7 +9,7 @@ url: /cs/net/programming-with-document/setpropertiesforprintdialog/
 ---
 ## Zavedení
 
-Chcete ve svých aplikacích využít sílu generování PDF? S Aspose.PDF for .NET můžete bez námahy manipulovat se soubory PDF, což vám umožní snadno vytvářet, spravovat a zpracovávat soubory PDF. Ať už vyvíjíte jednoduchý osobní projekt nebo komplexní podnikovou aplikaci, tento nástroj změní hru. V této příručce prozkoumáme, jak nastavit vlastnosti pro dialogové okno tisku a zajistit, aby byly vaše dokumenty PDF připraveny k tisku pomocí pouhých několika řádků kódu.
+Chcete ve svých aplikacích využít sílu generování PDF? S Aspose.PDF for .NET můžete bez námahy manipulovat se soubory PDF, což vám umožní snadno vytvářet, spravovat a zpracovávat soubory PDF. Ať už vyvíjíte jednoduchý osobní projekt nebo komplexní podnikovou aplikaci, tento nástroj změní hru. V této příručce prozkoumáme, jak nastavit vlastnosti pro dialogové okno tisku a zajistit, aby vaše dokumenty PDF byly připraveny k tisku pomocí pouhých několika řádků kódu.
 
 ## Předpoklady
 

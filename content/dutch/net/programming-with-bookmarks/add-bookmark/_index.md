@@ -9,7 +9,7 @@ url: /nl/net/programming-with-bookmarks/add-bookmark/
 ---
 ## Invoering
 
-Heb je jezelf ooit betrapt op het scrollen door een lang PDF-document, wanhopig op zoek naar die ene sectie die je nodig had? Zo ja, dan ben je niet de enige! Het navigeren door uitgebreide documenten kan een echte opgave zijn. Maar wat als ik je vertelde dat er een manier is om je PDF's gebruiksvriendelijker te maken? Maak kennis met bladwijzers! In deze tutorial onderzoeken we hoe je bladwijzers toevoegt aan een PDF-bestand met Aspose.PDF voor .NET. Met deze krachtige bibliotheek kun je PDF-documenten eenvoudig bewerken, waardoor je leven een stuk eenvoudiger wordt. Dus, laten we erin duiken!
+Heb je jezelf ooit betrapt op het scrollen door een lang PDF-document, wanhopig op zoek naar die ene sectie die je nodig hebt? Zo ja, dan ben je niet de enige! Het navigeren door uitgebreide documenten kan een echte opgave zijn. Maar wat als ik je vertelde dat er een manier is om je PDF's gebruiksvriendelijker te maken? Maak kennis met bladwijzers! In deze tutorial onderzoeken we hoe je bladwijzers toevoegt aan een PDF-bestand met Aspose.PDF voor .NET. Met deze krachtige bibliotheek kun je PDF-documenten eenvoudig bewerken, waardoor je leven een stuk eenvoudiger wordt. Dus, laten we erin duiken!
 
 ## Vereisten
 

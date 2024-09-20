@@ -2,193 +2,190 @@
 title: Blok Teks Tersembunyi Dalam File PDF
 linktitle: Blok Teks Tersembunyi Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara membuat blok teks tersembunyi dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Buat PDF interaktif dengan blok teks tersembunyi menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah untuk menyempurnakan dokumen Anda.
 type: docs
 weight: 230
 url: /id/net/programming-with-text/hidden-text-block/
 ---
-Dalam tutorial ini, kami akan menjelaskan cara membuat blok teks tersembunyi dalam file PDF menggunakan pustaka Aspose.PDF untuk .NET. Blok teks tersembunyi adalah teks mengambang yang akan terlihat saat kursor mouse diarahkan ke area tertentu. Kami akan membahas proses pembuatan blok teks tersembunyi langkah demi langkah menggunakan kode sumber C# yang disediakan.
+## Perkenalan
 
-## Persyaratan
+Dalam lanskap digital saat ini, PDF tetap menjadi format pilihan untuk segala hal mulai dari kontrak hingga materi pendidikan. Fleksibilitas dan keandalannya tak tertandingi. Namun, bagaimana jika Anda dapat menambahkan lapisan interaktivitas ekstra ke PDF Anda? Kami menyelami dunia blok teks tersembunyi dengan Aspose.PDF untuk .NET, alat canggih yang memudahkan pembuatan dokumen yang menarik dan ramah pengguna. Baik Anda pengembang berpengalaman atau baru memulai, tutorial ini dirancang untuk Anda, dilengkapi dengan petunjuk dan kiat langkah demi langkah untuk membuka potensi penuh PDF Anda!
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+## Prasyarat
 
-- Pustaka Aspose.PDF untuk .NET terinstal.
-- Pemahaman dasar tentang pemrograman C#.
+Sebelum kita mulai, mari kita pastikan Anda memiliki semua yang Anda butuhkan. Berikut ini yang Anda perlukan:
 
-## Langkah 1: Siapkan Direktori Dokumen
+1. Aspose.PDF untuk .NET: Pustaka ini penting untuk bekerja dengan file PDF di aplikasi .NET. Anda dapat memeriksanya, mengunduhnya, atau bahkan mendapatkan uji coba gratis dari[Dokumentasi PDF Aspose](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: Pastikan Anda telah menginstal .NET Framework, karena diperlukan untuk menjalankan pustaka Aspose.PDF.
+3. Lingkungan Pengembangan: Editor kode atau Lingkungan Pengembangan Terpadu (IDE) seperti Visual Studio akan membuat pengkodean menjadi mudah. 
+4. Pengetahuan Dasar C#: Karena kita akan memprogram dalam C#, memiliki pemahaman dasar tentang bahasa tersebut akan membantu Anda memahami konsepnya dengan lebih mudah.
+5. Semangat Belajar: Terakhir, jangan lupa untuk menunjukkan antusiasme Anda! Kita akan mempelajari sesuatu yang menakjubkan hari ini.
 
- Pertama, Anda perlu mengatur jalur ke direktori tempat Anda ingin menyimpan file PDF yang dihasilkan. Ganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke direktori yang Anda inginkan.
+Setelah Anda memiliki prasyarat ini, Anda siap membuat blok teks tersembunyi interaktif di PDF Anda!
+
+## Paket Impor
+
+Untuk memulai Aspose.PDF di proyek Anda, Anda perlu mengimpor paket-paket yang diperlukan. Berikut caranya:
+
+### Membuat Proyek C#
+
+Pertama-tama, buka Visual Studio atau IDE C# apa pun dan buat proyek baru. Pilih jenis Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Aspose.PDF ke Proyek Anda
+
+Anda perlu menambahkan pustaka Aspose.PDF ke proyek Anda. Anda dapat melakukannya melalui NuGet Package Manager. Berikut ini adalah satu kalimat singkat:
+
+```bash
+Install-Package Aspose.PDF
+```
+
+Perintah ini akan menarik berkas-berkas yang diperlukan agar Anda dapat bekerja dengan dokumen PDF dengan mudah.
+
+### Impor Namespace yang Diperlukan
+
+Setelah paket terinstal, langkah selanjutnya adalah mengimpor namespace di bagian atas file C# Anda. Ini membuat semua fungsi Aspose yang keren dapat diakses:
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Sekarang lingkungan Anda sudah disiapkan, mari kita uraikan proses pembuatan blok teks tersembunyi dalam berkas PDF langkah demi langkah.
+
+## Langkah 1: Tentukan Direktori Dokumen Anda
+
+Tentukan di mana file Anda akan berada. Ini membantu mengelola dokumen Anda dengan lancar. Gunakan kode berikut untuk mengaturnya:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya pada komputer Anda di mana Anda ingin PDF dibuat.
 
 ## Langkah 2: Buat Dokumen Contoh
 
-Pada langkah ini, kita membuat contoh dokumen PDF dan menambahkan fragmen teks ke dalamnya. Fragmen teks akan berfungsi sebagai pemicu untuk menampilkan blok teks tersembunyi.
+Sekarang, mari kita buat dokumen PDF dasar. Langkah awal ini melibatkan inisialisasi dokumen PDF dan penambahan fragmen teks yang akan menjadi titik fokus untuk teks tersembunyi kita.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## Langkah 3: Buka Dokumen
+Di sini, kita hanya menambahkan string ke dokumen. Ini akan memicu tindakan teks tersembunyi saat kursor diarahkan ke sana.
 
- Sekarang, kita buka dokumen yang telah dibuat sebelumnya menggunakan`Document` kelas.
+## Langkah 3: Buka Dokumen yang Dibuat
+
+Sekarang setelah kita memiliki dokumen awal, mari kita buka untuk pengeditan lebih lanjut:
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Langkah 4: Temukan Fragmen Teks
+Baris ini memuat dokumen yang baru kita buat sehingga kita dapat membuat perubahan padanya.
 
- Kami menggunakan`TextFragmentAbsorber`objek untuk menemukan fragmen teks yang akan memicu tampilan blok teks tersembunyi. Dalam kasus ini, kami mencari teks persis "Pindahkan kursor tetikus ke sini untuk menampilkan teks mengambang".
+## Langkah 4: Buat TextAbsorber untuk Menemukan Frasa
+
+ Selanjutnya, kita ingin mengidentifikasi fragmen teks yang akan kita kerjakan. Di sinilah`TextFragmentAbsorber` ikut berperan:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## Langkah 5: Buat Bidang Teks Tersembunyi
-
- Kami menciptakan sebuah`TextBoxField` objek untuk mewakili bidang teks tersembunyi. Bidang ini akan berisi teks yang akan terlihat saat kursor mouse diarahkan ke teks pemicu.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## Langkah 6: Tambahkan Bidang Teks Tersembunyi ke Dokumen
-
-Kami menambahkan bidang teks tersembunyi ke koleksi formulir dokumen.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## Langkah 7: Buat Tombol Tak Terlihat
-
-Kami membuat bidang tombol tak terlihat yang akan diposisikan di atas fragmen teks pemicu. Bidang tombol ini akan memiliki tindakan yang terkait dengan peristiwa masuk dan keluar tetikus.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## Langkah 8: Simpan Dokumen
-
-Terakhir, kami menyimpan dokumen yang dimodifikasi dengan blok teks tersembunyi.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Contoh kode sumber untuk Blok Teks Tersembunyi menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Buat contoh dokumen dengan teks
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Buka dokumen dengan teks
-Document document = new Document(outputFile);
-//Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Terima penyerap untuk halaman dokumen
 document.Pages.Accept(absorber);
-// Dapatkan fragmen teks yang diekstraksi pertama
+```
+
+Pada langkah ini, kami memberi tahu Aspose untuk menemukan teks yang kami tentukan sebelumnya.
+
+## Langkah 5: Ekstrak Fragmen Teks
+
+Setelah kita memiliki fragmen teks, kita akan mengekstraknya menggunakan kode berikut, yang memungkinkan kita untuk memanipulasinya lebih lanjut:
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Buat bidang teks tersembunyi untuk teks mengambang di persegi panjang halaman yang ditentukan
+```
+
+Di sini, kami fokus pada fragmen pertama yang diserap. Jika Anda memiliki lebih banyak teks, Anda mungkin ingin mengulang koleksi tersebut.
+
+## Langkah 6: Buat Bidang Teks Tersembunyi
+
+Sekarang, untuk keajaibannya! Buat kolom teks tersembunyi yang akan ditampilkan saat pengguna mengarahkan kursor ke teks yang ditentukan. Gunakan cuplikan kode ini:
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Atur teks yang akan ditampilkan sebagai nilai bidang
 floatingField.Value = "This is the \"floating text field\".";
-// Kami merekomendasikan untuk membuat bidang 'hanya baca' untuk skenario ini
 floatingField.ReadOnly = true;
-// Tetapkan tanda 'tersembunyi' untuk membuat bidang tidak terlihat saat dokumen dibuka
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Menetapkan nama bidang yang unik tidak diperlukan tetapi diperbolehkan
+```
+
+Kode ini menentukan posisi teks mengambang dan menetapkan propertinya, termasuk menjadikannya hanya-baca dan tersembunyi secara default.
+
+## Langkah 7: Sesuaikan Tampilan Bidang
+
+Berikan sedikit sentuhan pada teks mengambang Anda! Sesuaikan tampilan default bidang teks mengambang:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// Pengaturan karakteristik tampilan lapangan tidak diperlukan tetapi membuatnya lebih baik
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Tambahkan bidang teks ke dokumen
+```
+
+Dari ukuran font hingga warna, Anda dapat mengubah pengaturan ini sesuai keinginan, membuat antarmuka lebih ramah pengguna dan menarik.
+
+## Langkah 8: Tambahkan Bidang Teks ke Dokumen
+
+Setelah bidang teks disiapkan, saatnya menambahkan bidang mengambang ke dokumen:
+
+```csharp
 document.Form.Add(floatingField);
-// Buat tombol tak terlihat pada posisi fragmen teks
+```
+
+Baris ini mengintegrasikan bidang teks tersembunyi yang baru dibuat ke dalam PDF Anda.
+
+## Langkah 9: Buat Bidang Tombol Tak Terlihat
+
+Tombol ini akan mengelola tindakan hover pada bidang teks mengambang. Tambahkan kode berikut untuk membuat tombol tak terlihat:
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Buat tindakan sembunyikan baru untuk bidang yang ditentukan (anotasi) dan tanda tembus pandang.
-// (Anda juga dapat merujuk bidang mengambang dengan namanya jika Anda menentukannya di atas.)
-// Tambahkan tindakan pada tombol enter/keluar mouse di bidang tombol tak terlihat
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Tambahkan bidang tombol ke dokumen
-document.Form.Add(buttonField);
-// Simpan dokumen
+```
+
+Di sini, kami mengonfigurasi tombol untuk menampilkan teks mengambang saat mouse masuk dan menyembunyikannya saat mouse keluar.
+
+## Langkah 10: Simpan Dokumen
+
+Akhirnya, saatnya untuk menyimpan pekerjaan Anda dan melihat hasilnya:
+
+```csharp
 document.Save(outputFile);
 ```
 
+Dengan tindakan ini, PDF Anda sekarang siap dengan pengalaman interaktif, memberikan pengguna cara baru untuk berinteraksi dengan konten Anda!
+
 ## Kesimpulan
 
-Dalam tutorial ini, Anda telah mempelajari cara membuat blok teks tersembunyi menggunakan pustaka Aspose.PDF for .NET. Dengan mengikuti panduan langkah demi langkah, Anda dapat membuat dokumen PDF dengan kolom teks tersembunyi yang akan terlihat saat kursor mouse diarahkan ke area tertentu. Anda dapat menyesuaikan tampilan dan perilaku blok teks tersembunyi sesuai dengan kebutuhan Anda.
+Nah, itu dia! Dengan mengikuti langkah-langkah ini, Anda telah berhasil membuat blok teks tersembunyi dalam file PDF menggunakan Aspose.PDF for .NET. Fitur sederhana namun hebat ini dapat meningkatkan interaksi pengguna dalam dokumen Anda secara signifikan. Baik Anda sedang menyusun materi pendidikan atau sumber daya klien, kemampuan untuk menyembunyikan dan menampilkan informasi saat mengarahkan kursor memberikan sentuhan modern yang apik. 
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan dari tutorial "Blok Teks Tersembunyi dalam Berkas PDF"?
+### Apa itu Aspose.PDF untuk .NET?  
+Aspose.PDF untuk .NET adalah pustaka tangguh yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF dalam aplikasi .NET.
 
-A: Tutorial "Blok Teks Tersembunyi dalam Berkas PDF" menjelaskan cara membuat blok teks tersembunyi dalam berkas PDF menggunakan pustaka Aspose.PDF untuk .NET. Blok teks tersembunyi adalah teks mengambang yang akan terlihat saat kursor mouse diarahkan ke area tertentu. Tutorial ini menyediakan panduan langkah demi langkah menggunakan kode sumber C#.
+### Bagaimana cara menginstal Aspose.PDF?  
+Anda dapat menginstalnya melalui NuGet Package Manager di Visual Studio. Cukup gunakan perintah:`Install-Package Aspose.PDF`.
 
-#### T: Mengapa saya ingin membuat blok teks tersembunyi dalam berkas PDF?
+### Bisakah saya membuat elemen interaktif lainnya dalam PDF?  
+Ya, selain blok teks tersembunyi, Anda dapat menambahkan tombol, hyperlink, anotasi, dan banyak lagi menggunakan Aspose.PDF.
 
-A: Membuat blok teks tersembunyi dapat berguna untuk dokumen PDF interaktif di mana Anda ingin memberikan informasi tambahan atau konteks yang hanya akan terlihat saat pengguna mengarahkan kursor tetikus ke area yang ditentukan.
+### Apakah ada uji coba gratis yang tersedia?  
+ Tentu saja! Anda bisa mendapatkan uji coba gratis dari[Aspose merilis halaman](https://releases.aspose.com/).
 
-#### T: Bagaimana cara mengatur direktori dokumen?
-
-A: Untuk mengatur direktori dokumen:
-
-1.  Mengganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke direktori tempat Anda ingin menyimpan berkas PDF yang dihasilkan.
-
-#### T: Bagaimana cara membuat dokumen contoh dan menambahkan fragmen teks ke dalamnya?
-
- A: Dalam tutorial ini, Anda menggunakan`Document` kelas untuk membuat contoh dokumen PDF dan menambahkan fragmen teks. Fragmen teks ini berfungsi sebagai pemicu untuk menampilkan blok teks tersembunyi.
-
-#### T: Bagaimana cara menemukan fragmen teks yang memicu blok teks tersembunyi?
-
- A: Tutorial ini menunjukkan cara menggunakan`TextFragmentAbsorber` objek untuk menemukan fragmen teks yang memicu tampilan blok teks tersembunyi. Objek ini mencari string teks tertentu dalam dokumen PDF.
-
-#### T: Bagaimana cara membuat dan menyesuaikan kolom teks tersembunyi?
-
- A: Anda membuat sebuah`TextBoxField`objek untuk mewakili bidang teks tersembunyi. Tutorial ini menyediakan kode untuk mengatur berbagai properti seperti posisi, nilai, tampilan, dan perilaku bidang teks tersembunyi.
-
-#### T: Bagaimana cara membuat tombol tak terlihat yang dikaitkan dengan blok teks tersembunyi?
-
- A: Bidang tombol tak terlihat dibuat menggunakan`ButtonField` kelas. Bidang tombol ini diposisikan di atas fragmen teks pemicu dan memiliki tindakan yang terkait dengan peristiwa masuk dan keluar tetikus. Tindakan ini mengontrol visibilitas blok teks tersembunyi.
-
-#### T: Dapatkah saya menyesuaikan tampilan blok teks tersembunyi dan area pemicu?
-
-A: Ya, Anda dapat menyesuaikan berbagai properti bidang teks tersembunyi dan tombol tak terlihat, termasuk font, warna, ukuran, dan posisi.
-
-#### T: Bagaimana cara menyimpan dokumen yang dimodifikasi dengan blok teks tersembunyi?
-
- A: Tutorial ini menunjukkan cara menyimpan dokumen yang dimodifikasi menggunakan`Save` metode dari`Document` kelas.
+### Bagaimana jika saya butuh bantuan dengan Aspose.PDF?  
+ Jangan ragu untuk mencari dukungan di[Forum Aspose](https://forum.aspose.com/c/pdf/10) untuk pertanyaan atau masalah apa pun yang mungkin Anda hadapi.

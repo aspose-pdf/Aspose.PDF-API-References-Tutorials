@@ -15,7 +15,7 @@ A vizuálisan lenyűgöző PDF-dokumentumok létrehozása számos alkalmazásban
 
 Mielőtt elkezdené beállítani a képet oldal háttereként, elő kell készítenie néhány dolgot:
 
-1.  Aspose.PDF for .NET telepítve van a projektben. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET telepítve van a projektben. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 2.  Az Aspose.PDF érvényes licence. Ha nincs, akkor kaphat a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) vagy[vásároljon itt egyet](https://purchase.aspose.com/buy).
 3. Visual Studio vagy bármely más C# IDE telepítve.
 4. A C# programozás alapvető ismerete.

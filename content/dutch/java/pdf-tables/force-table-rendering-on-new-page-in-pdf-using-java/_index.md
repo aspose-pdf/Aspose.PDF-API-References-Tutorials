@@ -10,7 +10,7 @@ url: /nl/java/pdf-tables/force-table-rendering-on-new-page-in-pdf-using-java/
 
 ## Inleiding tot Force Table Rendering op een nieuwe pagina in PDF met behulp van Java
 
-PDF-generatie in Java-applicaties is een veelvoorkomende taak en vaak kom je scenario's tegen waarin je ervoor moet zorgen dat een tabel op een nieuwe pagina wordt weergegeven, vooral bij het werken met grote datasets. In dit artikel gaan we onderzoeken hoe je tabelweergave op een nieuwe pagina in een PDF kunt forceren met Java met behulp van Aspose.PDF voor Java.
+PDF-generatie in Java-applicaties is een veelvoorkomende taak en vaak kom je scenario's tegen waarin je ervoor moet zorgen dat een tabel op een nieuwe pagina wordt weergegeven, vooral bij het werken met grote datasets. In dit artikel onderzoeken we hoe je tabelweergave op een nieuwe pagina in een PDF kunt forceren met Java met behulp van Aspose.PDF voor Java.
 
 ## PDF-rendering in Java begrijpen
 

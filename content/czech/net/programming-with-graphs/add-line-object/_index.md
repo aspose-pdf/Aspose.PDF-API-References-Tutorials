@@ -88,7 +88,7 @@ Nyní, když máte svůj graf, je čas jej přidat na stránku, kterou jste vytv
 page.Paragraphs.Add(graph);
 ```
 
-Tento krok je jako umístění vašeho plátna na stránku. Nyní můžete začít kreslit!
+Tento krok je jako umístění vašeho plátna na stránku. Nyní na něj můžete začít kreslit!
 
 ## Krok 6: Vytvořte čárový objekt
 

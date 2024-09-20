@@ -2,107 +2,160 @@
 title: Tambahkan dan Cari Teks Tersembunyi Dalam File PDF
 linktitle: Tambahkan dan Cari Teks Tersembunyi Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk menambahkan dan mencari teks tersembunyi dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara menambahkan dan mencari teks tersembunyi dalam dokumen PDF menggunakan Aspose.PDF for .NET. Panduan langkah demi langkah dengan contoh kode disertakan.
 type: docs
 weight: 20
 url: /id/net/programming-with-text/add-and-search-hidden-text/
 ---
-Dalam tutorial ini, kami akan memandu Anda untuk menambahkan dan mencari teks tersembunyi dalam file PDF menggunakan Aspose.PDF for .NET. Ikuti langkah-langkah berikut untuk melakukan operasi ini dengan mudah.
+## Perkenalan
 
-## 1. Prasyarat
+Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan dan mencari teks tersembunyi dalam file PDF menggunakan Aspose.PDF untuk .NET. Baik Anda pengembang berpengalaman atau pemula yang ingin meningkatkan keterampilan pemrograman, artikel ini akan memberi Anda wawasan yang Anda butuhkan untuk memasukkan fungsionalitas teks tersembunyi ke dalam aplikasi Anda.
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+## Prasyarat
 
-- Visual Studio atau lingkungan pengembangan lainnya terinstal dan dikonfigurasi.
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat mengunduhnya dari situs web resmi Aspose.
+Sebelum menyelami bagian pengkodean, ada beberapa prasyarat yang perlu Anda perhatikan:
 
-## 2. Membuat dokumen PDF dengan teks tersembunyi
+### Daftar Periksa Persyaratan
+- Visual Studio: Pastikan Anda telah menginstal Visual Studio. Tutorial ini mengasumsikan Anda menggunakan .NET Framework.
+-  Aspose.PDF untuk .NET: Anda perlu memiliki pustaka Aspose.PDF untuk .NET. Anda dapat mengunduhnya[Di Sini](https://releases.aspose.com/pdf/net/).
+- Pengetahuan dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
 
-Untuk memulai, gunakan kode berikut untuk membuat dokumen PDF baru yang berisi teks tersembunyi:
+## Paket Impor
+
+Sebelum Anda dapat mulai menggunakan kode, Anda perlu memastikan bahwa Anda mengimpor namespace Aspose.PDF yang diperlukan. Berikut cara melakukannya:
+
+### Siapkan Proyek Anda
+1. Buka Visual Studio dan buat proyek C# baru atau gunakan yang sudah ada.
+2.  Instal Aspose.PDF dengan menambahkan paket NuGet. Anda dapat melakukannya dengan membuka Pengelola Paket NuGet dan mencari`Aspose.PDF`. 
+3.  Atau, Anda dapat langsung mengunduh perpustakaan dari[Di Sini](https://releases.aspose.com/pdf/net/) dan menambahkannya sebagai referensi dalam proyek Anda.
+
+### Mengimpor Ruang Nama yang Diperlukan
+Di bagian atas file C# Anda, impor namespace berikut:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Membuat dokumen
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Langkah ini penting karena namespace ini berisi kelas dan metode yang diperlukan untuk memanipulasi dokumen PDF.
+
+## Membuat Dokumen PDF dengan Teks Tersembunyi
+
+Sekarang setelah Anda menyiapkannya, mari kita lihat langkah-langkah untuk membuat dokumen PDF yang berisi teks tampak dan tak tampak.
+
+### Langkah 1: Tentukan Direktori Dokumen
+Pertama, Anda perlu mengatur jalur penyimpanan PDF. Di sinilah keajaiban dimulai!
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ubah ini ke direktori Anda
+```
+
+ Baris ini menentukan di mana PDF yang Anda hasilkan akan disimpan. Jangan lupa untuk mengganti`YOUR DOCUMENT DIRECTORY` dengan jalur Anda yang sebenarnya.
+
+### Langkah 2: Buat Dokumen PDF
+Selanjutnya, mari buat dokumen PDF baru dan tambahkan halaman ke dalamnya.
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
+```
+
+Di sini, kita menginisialisasi dokumen baru dan menambahkan halaman tempat kita akan meletakkan fragmen teks kita.
+
+### Langkah 3: Tambahkan Teks Terlihat dan Tersembunyi
+Sekarang kita akan menambahkan teks yang terlihat dan tidak terlihat ke PDF kita.
+
+```csharp
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-// Atur properti teks - tidak terlihat
+```
+
+ Dalam cuplikan ini,`frag1` akan terlihat, sedangkan`frag2` Akan diatur menjadi tidak terlihat selanjutnya.
+
+### Langkah 4: Atur Teks menjadi Tidak Terlihat
+ Untuk membuat teks`frag2` tidak terlihat, Anda cukup memodifikasinya`TextState`.
+
+```csharp
 frag2.TextState.Invisible = true;
+```
+
+ Dengan mengatur properti ini, teks apa pun yang terkait dengan`frag2` tidak akan ditampilkan saat PDF dilihat.
+
+### Langkah 5: Tambahkan Fragmen Teks ke Halaman
+Terakhir, kami menambahkan fragmen teks ini ke halaman dan menyimpan PDF.
+
+```csharp
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
 doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
 ```
 
-Pastikan untuk memberikan jalur dan nama file yang diinginkan untuk dokumen PDF.
+Bagian kode ini menambahkan fragmen teks ke halaman. Setelah itu, kita menyimpan dan membuang dokumen dengan benar.
 
-## 3. Mencari teks dalam dokumen
+## Mencari Teks Tersembunyi di PDF
 
-Selanjutnya, kita akan mencari teks tersembunyi dalam dokumen PDF. Gunakan kode berikut:
+Sekarang setelah kita membuat PDF dengan teks yang terlihat dan tersembunyi, bagaimana cara mencari teks tersembunyi tersebut? Mari kita uraikan.
+
+### Langkah 1: Muat Dokumen PDF
+Untuk mencari teks dalam PDF, pertama-tama kita perlu memuat dokumen yang baru kita buat.
 
 ```csharp
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
-TextFragmentAbsorber absorb = new TextFragmentAbsorber();
-absorb.Visit(doc.Pages[1]);
-foreach(TextFragment fragment in absorber.TextFragments)
-{
-// Lakukan sesuatu dengan pecahan-pecahan tersebut
-Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
-fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
-}
-doc.Dispose();
 ```
 
-Ini akan mencari teks tersembunyi di halaman kedua dokumen PDF dan menampilkan informasi relevan.
+### Langkah 2: Buat Penyerap Fragmen Teks
+ Kami akan menggunakan`TextFragmentAbsorber` untuk menangkap semua fragmen teks dalam PDF.
 
-### Contoh kode sumber untuk Menambahkan dan Mencari Teks Tersembunyi menggunakan Aspose.PDF untuk .NET 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Buat dokumen dengan teks tersembunyi
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-Page page = doc.Pages.Add();
-TextFragment frag1 = new TextFragment("This is common text.");
-TextFragment frag2 = new TextFragment("This is invisible text.");
-//Atur properti teks - tidak terlihat
-frag2.TextState.Invisible = true;
-page.Paragraphs.Add(frag1);
-page.Paragraphs.Add(frag2);
-doc.Save(dataDir + "39400_out.pdf");
-doc.Dispose();
-//Mencari teks dalam dokumen
-doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
 TextFragmentAbsorber absorber = new TextFragmentAbsorber();
 absorber.Visit(doc.Pages[1]);
+```
+
+Di sini, kami tentukan bahwa kami ingin menyerap semua fragmen teks dari halaman pertama.
+
+### Langkah 3: Ulangi Melalui Fragmen
+Sekarang, kita dapat menelusuri fragmen teks yang dikumpulkan untuk mengetahui mana yang terlihat dan mana yang tersembunyi.
+
+```csharp
 foreach (TextFragment fragment in absorber.TextFragments)
 {
-	//Lakukan sesuatu dengan fragmen
-	Console.WriteLine("Text '{0}' on pos {1} invisibility: {2} ",
-	fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
+    Console.WriteLine("Text '{0}' on pos {1} invisibility: {2}",
+        fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
+```
+
+ Loop ini memeriksa setiap fragmen teks dan mencetak isinya beserta posisi dan status visibilitasnya. Jika`fragment.TextState.Invisible` disetel ke true, artinya teks disembunyikan!
+
+### Langkah 4: Buang Dokumen
+Terakhir, ingatlah untuk membuang dokumen tersebut lagi setelah Anda selesai.
+
+```csharp
 doc.Dispose();
 ```
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil menambahkan dan menemukan teks tersembunyi dalam dokumen PDF menggunakan Aspose.PDF for .NET. Kini Anda dapat menerapkan metode ini ke proyek Anda sendiri untuk memanipulasi dan mencari teks tersembunyi dalam file PDF.
+Dalam tutorial ini, kami membahas proses menarik dalam menambahkan dan mencari teks tersembunyi dalam file PDF menggunakan Aspose.PDF for .NET. Kami mempelajari cara membuat dokumen PDF dengan teks yang terlihat dan tersembunyi, serta cara mencari teks tersembunyi tersebut secara terprogram. Kemampuan ini dapat sangat berguna dalam berbagai aplikasi, baik Anda perlu menyimpan informasi rahasia atau memberikan pengalaman pengguna yang unik dalam dokumen Anda.
 
-### Pertanyaan yang Sering Diajukan
+Saat Anda semakin terbiasa dengan ASPose.PDF, kemungkinannya menjadi tak terbatas. Teruslah bereksperimen dan dorong batasan apa yang dapat Anda capai dengan dokumen PDF Anda!
 
-#### T: Apa itu Aspose.PDF untuk .NET?
+## Pertanyaan yang Sering Diajukan
 
-J: Aspose.PDF untuk .NET adalah pustaka tangguh yang memberdayakan pengembang untuk membuat, memanipulasi, dan mengubah dokumen PDF dalam aplikasi .NET.
+### Bisakah Aspose.PDF menangani berkas PDF yang terenkripsi?  
+Ya, Aspose.PDF mendukung enkripsi dan dekripsi dokumen PDF. Anda dapat dengan mudah mengamankan PDF Anda dengan kata sandi.
 
-#### T: Bisakah teks tersembunyi digunakan untuk tujuan pemberian tanda air?
+### Apakah ada versi uji coba yang tersedia untuk Aspose.PDF?  
+ Tentu saja! Anda dapat mengunduh uji coba gratis dari[Di Sini](https://releases.aspose.com/).
 
-A: Tentu saja! Teks tersembunyi dapat berfungsi sebagai cara yang efektif untuk memberi tanda air pada dokumen PDF, dengan menambahkan lapisan keamanan ekstra.
+### Bahasa pemrograman apa yang didukung Aspose.PDF?  
+Aspose.PDF menyediakan dukungan untuk berbagai bahasa, termasuk C#, Java, dan Python.
 
-#### T: Apakah mungkin untuk mengungkap teks tersembunyi dalam dokumen PDF?
+### Di mana saya dapat menemukan dokumentasi untuk Aspose.PDF?  
+ Anda dapat mengakses dokumentasi[Di Sini](https://reference.aspose.com/pdf/net/).
 
-A: Ya, proses pencarian dan pengungkapan teks tersembunyi dalam dokumen PDF dapat dicapai menggunakan teknik yang diuraikan dalam tutorial ini.
-
-#### T: Fungsionalitas apa lagi yang ditawarkan Aspose.PDF untuk .NET?
-
-A: Selain manipulasi teks tersembunyi, Aspose.PDF untuk .NET menyediakan beragam fitur, termasuk pembuatan PDF, konversi, enkripsi, dan banyak lagi.
+### Bagaimana saya bisa mendapatkan dukungan jika saya mengalami masalah?  
+ Untuk dukungan, Anda dapat mengunjungi forum Aspose[Di Sini](https://forum.aspose.com/c/pdf/10).

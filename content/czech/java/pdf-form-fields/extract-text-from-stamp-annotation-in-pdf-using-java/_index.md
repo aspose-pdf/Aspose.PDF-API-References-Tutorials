@@ -84,7 +84,7 @@ for (StampAnnotation stampAnnotation : pdfDocument.getPages().get_Item(1).getAnn
 
 ## Závěr
 
-V této příručce jsme prozkoumali, jak extrahovat text z anotací razítek v dokumentu PDF pomocí knihovny Aspose.PDF for Java. Se správnými nástroji a několika řádky kódu můžete efektivně extrahovat cenné informace ze souborů PDF a zlepšit tak pracovní postupy zpracování dokumentů.
+V této příručce jsme prozkoumali, jak extrahovat text z anotací razítek v dokumentu PDF pomocí knihovny Aspose.PDF for Java. Se správnými nástroji a několika řádky kódu můžete efektivně extrahovat cenné informace z PDF a zlepšit tak pracovní postupy zpracování dokumentů.
 
 ## FAQ
 

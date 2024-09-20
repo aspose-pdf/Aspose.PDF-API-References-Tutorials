@@ -1,6 +1,6 @@
 ---
-title: Ottieni tutti gli allegati nel file PDF
-linktitle: Ottieni tutti gli allegati nel file PDF
+title: Ottieni tutti gli allegati in file PDF
+linktitle: Ottieni tutti gli allegati in file PDF
 second_title: Riferimento API Aspose.PDF per .NET
 description: Scopri come estrarre tutti gli allegati da un file PDF utilizzando Aspose.PDF per .NET in questo tutorial passo dopo passo.
 type: docs

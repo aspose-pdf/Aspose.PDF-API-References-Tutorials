@@ -2,146 +2,132 @@
 title: Ekstrak Teks Kolom Dalam File PDF
 linktitle: Ekstrak Teks Kolom Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara mengekstrak teks kolom dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak kolom teks dari file PDF menggunakan Aspose.PDF untuk .NET. Panduan ini menguraikan setiap langkah dengan contoh kode dan penjelasan.
 type: docs
 weight: 150
 url: /id/net/programming-with-text/extract-columns-text/
 ---
-Tutorial ini akan memandu Anda melalui proses mengekstrak teks kolom dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan.
+## Perkenalan
 
-## Persyaratan
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Apakah Anda bekerja dengan file PDF dan perlu mengekstrak teks dalam format kolom tertentu? Baik Anda sedang memproses faktur, laporan, atau dokumen terstruktur lainnya, mengekstrak teks secara akurat dari PDF bisa jadi pekerjaan yang sulit. Di sinilah Aspose.PDF for .NET hadir untuk menyederhanakan proses tersebut. Dalam tutorial ini, kami akan memandu Anda untuk mengekstrak kolom teks dari file PDF dengan mudah. 
 
-- Visual Studio atau kompiler C# lainnya terinstal di komputer Anda.
-- Aspose.PDF untuk pustaka .NET. Anda dapat mengunduhnya dari situs web resmi Aspose atau menggunakan pengelola paket seperti NuGet untuk menginstalnya.
+## Prasyarat
 
-## Langkah 1: Siapkan proyek
-1. Buat proyek C# baru di lingkungan pengembangan pilihan Anda.
-2. Tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Sebelum menyelami kodenya, mari kita bahas hal-hal penting yang Anda perlukan:
 
-## Langkah 2: Impor namespace yang diperlukan
-Pada berkas kode tempat Anda ingin mengekstrak teks kolom, tambahkan perintah penggunaan berikut di bagian atas berkas:
+-  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal versi terbaru Aspose.PDF untuk .NET. Jika tidak, Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/).
+- Lingkungan Pengembangan: Anda memerlukan Visual Studio atau lingkungan pengembangan .NET lainnya untuk bekerja dengan kode tersebut.
+- Dokumen PDF: Siapkan contoh dokumen PDF, sebaiknya yang berisi kolom teks, karena kita akan mengekstrak teks dari dokumen tersebut.
+
+ Jika Anda belum menginstal Aspose.PDF untuk .NET, Anda dapat mengunduhnya[uji coba gratis](https://releases.aspose.com/) atau[beli lisensi](https://purchase.aspose.com/buy) untuk fitur lengkap. Anda juga dapat mengajukan permohonan[lisensi sementara](https://purchase.aspose.com/temporary-license) jika diperlukan.
+
+## Mengimpor Ruang Nama
+
+Untuk menggunakan Aspose.PDF untuk .NET di proyek Anda, Anda perlu mengimpor namespace berikut:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using System.IO;
+using System;
 ```
 
-## Langkah 3: Mengatur direktori dokumen
- Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
+## Panduan Langkah demi Langkah: Ekstrak Kolom Teks dari PDF
 
-## Langkah 4: Buka dokumen PDF
- Buka dokumen PDF yang ada menggunakan`Document`konstruktor dan meneruskan jalur ke berkas PDF masukan.
+Sekarang, mari kita uraikan setiap bagian kode untuk lebih memahami cara kerjanya. Ikuti langkah demi langkah, sambil menjelaskan setiap segmen proses.
+
+## Langkah 1: Muat Dokumen PDF
+
+ Hal pertama yang perlu Anda lakukan adalah memuat file PDF Anda ke dalam`Document`objek. Beginilah cara Aspose.PDF berinteraksi dengan dokumen Anda.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Langkah 5: Sesuaikan ukuran font
-Kurangi ukuran font fragmen teks dengan faktor 0,7 untuk meningkatkan keterbacaan dan merepresentasikan teks kolom dengan lebih baik.
+ Pada langkah ini, kita hanya mendefinisikan direktori tempat dokumen PDF Anda disimpan. Ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke file PDF lokal Anda.`Document` objek memuat PDF ke dalam memori, membuatnya dapat diakses untuk pemrosesan lebih lanjut.
+
+## Langkah 2: Siapkan Penyerap Fragmen Teks
+
+ Selanjutnya, kita akan menggunakan`TextFragmentAbsorber` untuk menyerap atau menangkap semua teks dari berkas PDF. Kelas penyerap ini dirancang untuk mengekstrak fragmen teks dari area tertentu di PDF Anda, yang membuatnya ideal untuk mengekstrak kolom teks.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
-foreach(TextFragment tf in tfc)
-{
-     tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
-}
 ```
 
-## Langkah 6: Ekstrak teks dari kolom
- Simpan dokumen PDF yang dimodifikasi ke aliran memori dan muat ulang sebagai dokumen baru. Kemudian, gunakan`TextAbsorber` kelas untuk mengekstrak teks dari kolom.
+Di sini, kita membuat sebuah instance dari`TextFragmentAbsorber` dan menerapkannya ke semua halaman PDF menggunakan`Accept()` . Itu`TextFragmentCollection` menyimpan teks yang diekstraksi, dan dari koleksi ini, kita dapat memanipulasi atau mengekstrak teks sesuai kebutuhan.
+
+## Langkah 3: Sesuaikan Ukuran Font Teks yang Diekstrak
+
+Setelah Anda menangkap fragmen teks, Anda mungkin ingin mengurangi ukuran fonta, terutama jika teks asli terlalu besar. Dalam contoh ini, kami mengurangi ukuran fonta sebesar 70%.
 
 ```csharp
-Stream st = new MemoryStream();
-pdfDocument.Save(st);
-pdfDocument = new Document(st);
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument);
-```
-
-## Langkah 7: Simpan teks yang diekstrak
-Simpan teks yang diekstrak ke dalam berkas teks di jalur berkas keluaran yang ditentukan.
-
-```csharp
-dataDir = dataDir + "ExtractColumnsText_out.txt";
-File.WriteAllText(dataDir, extractedText);
-Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
-```
-
-### Contoh kode sumber untuk Ekstrak Teks Kolom menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
-TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-pdfDocument.Pages.Accept(tfa);
-TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Perlu mengurangi ukuran font setidaknya 70%
-	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
+    // Kurangi ukuran font hingga 70%
+    tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
+```
+
+Kode ini berulang melalui setiap`TextFragment` dalam koleksi dan mengurangi ukuran font hingga 70%. Menyesuaikan ukuran font dapat membuat teks yang diekstrak lebih mudah dikelola, terutama jika Anda memformatnya untuk tujuan yang berbeda.
+
+## Langkah 4: Simpan Dokumen ke Aliran Memori
+
+ Setelah mengubah teks, kami menyimpan PDF ke dalam`MemoryStream`Hal ini memungkinkan kita menyimpan dokumen dalam memori untuk diproses lebih lanjut tanpa perlu menuliskannya kembali ke disk.
+
+```csharp
 Stream st = new MemoryStream();
 pdfDocument.Save(st);
 pdfDocument = new Document(st);
+```
+
+Di sini, kami menyimpan PDF ke dalam aliran memori lalu memuat ulang dokumen tersebut. Metode ini berguna saat Anda bekerja dengan file besar dan ingin menghindari operasi disk yang tidak perlu.
+
+## Langkah 5: Ekstrak Semua Teks Menggunakan Text Absorber
+
+ Sekarang setelah kita menyiapkan PDF, saatnya mengekstrak teks. Kita akan menggunakan`TextAbsorber` untuk mengambil semua teks dari dokumen.
+
+```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument); 
+```
+
+ Pada langkah ini,`TextAbsorber` menyerap semua teks dari PDF, dan teks yang diekstraksi disimpan di`extractedText` string. Di sinilah keajaiban terjadi—kolom teks Anda sekarang dalam format teks biasa!
+
+## Langkah 6: Simpan Teks yang Diekstrak ke File
+
+ Terakhir, kita simpan teks yang diekstrak ke dalam`.txt` berkas untuk memudahkan akses dan penggunaan lebih lanjut.
+
+```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
-System.IO.File.WriteAllText(dataDir, extractedText);           
+System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
+ Kode ini menulis teks yang diekstraksi ke dalam`.txt` file dan menyimpannya di direktori yang Anda tentukan. Sebuah pesan akan ditampilkan di konsol untuk mengonfirmasi bahwa proses tersebut berhasil.
+
 ## Kesimpulan
-Anda telah berhasil mengekstrak teks kolom dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Teks yang diekstrak telah disimpan ke berkas keluaran yang ditentukan.
 
-### Pertanyaan yang Sering Diajukan
+Nah, itu dia! Mengekstrak kolom teks dari file PDF menggunakan Aspose.PDF untuk .NET lebih mudah dari yang Anda kira. Hanya dengan beberapa baris kode, Anda dapat memuat PDF, mengekstrak teks tertentu, menyesuaikan format, dan menyimpan hasilnya ke dalam file teks.
 
-#### T: Apa tujuan dari tutorial ini?
+Teknik ini sangat berguna untuk memproses dokumen terstruktur seperti tabel, laporan, atau konten apa pun yang disusun dalam kolom. Baik Anda perlu mengotomatiskan ekstraksi data atau memproses dokumen massal, Aspose.PDF menyediakan alat untuk mewujudkannya secara efisien.
 
-J: Tutorial ini menawarkan panduan langkah demi langkah tentang cara mengekstrak kolom teks dari file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disertakan memberikan demonstrasi praktis tentang prosedur yang diperlukan.
+## Pertanyaan yang Sering Diajukan
 
-#### T: Namespace apa yang harus saya impor?
+### Bisakah saya mengekstrak teks dari halaman tertentu di PDF?  
+ Ya! Anda dapat mengubah`TextFragmentAbsorber` untuk menargetkan halaman tertentu menggunakan`pdfDocument.Pages[pageIndex].Accept(tfa);` metode.
 
-A: Pada berkas kode tempat Anda bermaksud mengekstrak kolom teks, sertakan perintah penggunaan berikut di awal berkas:
+### Apakah mungkin untuk mengekstrak teks hanya dari satu kolom dalam PDF multi-kolom?  
+ Ya, tetapi Anda harus bekerja dengan koordinat fragmen teks menggunakan`TextFragment.Rectangle` untuk menargetkan area tertentu pada dokumen.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-using System.IO;
-```
+### Bagaimana saya dapat meningkatkan akurasi ekstraksi teks?  
+ Untuk akurasi yang lebih baik, pastikan struktur PDF terdefinisi dengan baik dan hindari dokumen dengan tata letak yang rumit. Anda juga dapat menyempurnakan`TextFragmentAbsorber` untuk mengekstrak teks berdasarkan gaya font, ukuran, atau wilayah.
 
-#### T: Bagaimana cara menentukan direktori dokumen?
+### Apakah Aspose.PDF mendukung ekstraksi teks dari dokumen yang dipindai?  
+Ya, tetapi Anda perlu menggunakan teknologi OCR (Optical Character Recognition). Aspose juga menyediakan alat untuk ini.
 
- A: Temukan garisnya`string dataDir = "YOUR DOCUMENT DIRECTORY";` dalam kode dan ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
-
-#### T: Bagaimana cara membuka dokumen PDF yang sudah ada?
-
- A: Pada Langkah 4, Anda akan membuka dokumen PDF yang ada menggunakan`Document` konstruktor dan menyediakan jalur ke berkas PDF masukan.
-
-#### T: Mengapa ukuran font disesuaikan?
-
-A: Langkah 5 melibatkan pengurangan ukuran font pada fragmen teks sebanyak 0,7 kali. Penyesuaian ini meningkatkan keterbacaan dan merepresentasikan teks kolom dengan lebih akurat.
-
-#### T: Bagaimana cara mengekstrak teks dari kolom?
-
- A: Langkah 6 terdiri dari menyimpan dokumen PDF yang dimodifikasi ke aliran memori, memuatnya kembali sebagai dokumen baru, dan kemudian menggunakan`TextAbsorber` kelas untuk mengekstrak teks dari kolom.
-
-#### T: Apa tujuan menyimpan teks yang diekstrak?
-
-A: Pada Langkah 7, Anda akan menyimpan teks yang diekstrak ke dalam berkas teks di jalur berkas keluaran yang ditentukan.
-
-#### T: Mengapa mengurangi ukuran font sebelum ekstraksi?
-
-A: Mengurangi ukuran font membantu memastikan bahwa teks yang diekstraksi selaras dengan benar dalam kolom, memberikan representasi yang lebih akurat dari tata letak asli.
-
-#### T: Apa inti sari dari tutorial ini?
-
-A: Dengan mengikuti tutorial ini, Anda telah memperoleh pengetahuan dan keterampilan yang dibutuhkan untuk mengekstrak kolom teks dari dokumen PDF menggunakan Aspose.PDF for .NET. Teks yang dihasilkan telah disimpan ke file keluaran yang ditentukan.
+### Bagaimana cara menangani berkas PDF besar dengan ribuan halaman?  
+Untuk PDF berukuran besar, proses dokumen dalam potongan-potongan dengan mengekstrak teks dari beberapa halaman sekaligus untuk menghindari penggunaan memori yang tinggi.

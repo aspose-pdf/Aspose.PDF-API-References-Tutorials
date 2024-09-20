@@ -161,4 +161,4 @@ catch (Exception ex)
  Μπορείτε να λάβετε υποστήριξη από την κοινότητα Aspose στο δικό τους[φόρουμ υποστήριξης](https://forum.aspose.com/c/pdf/10).
 
 ### Πώς μπορώ να αποκτήσω προσωρινή άδεια;
- Μπορείτε να υποβάλετε αίτηση για προσωρινή άδεια στο[Aspose ιστότοπο](https://purchase.aspose.com/temporary-license/).
+ Μπορείτε να υποβάλετε αίτηση για προσωρινή άδεια στο[Aspose website](https://purchase.aspose.com/temporary-license/).

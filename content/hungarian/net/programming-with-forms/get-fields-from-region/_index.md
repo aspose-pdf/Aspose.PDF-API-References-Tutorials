@@ -19,7 +19,7 @@ Mielőtt belevágnánk ebbe a PDF-kibontási kalandba, néhány dolgot meg kell 
 
 1. Visual Studio telepítve: Győződjön meg arról, hogy a Visual Studio vagy bármilyen kompatibilis IDE be van állítva a gépen, mivel ez lesz a kódolás játszótere.
    
-2.  Aspose.PDF for .NET: Önnek hozzáféréssel kell rendelkeznie az Aspose.PDF könyvtárhoz. Ne aggódj; egyszerű megszerezni! Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+2.  Aspose.PDF for .NET: Önnek hozzáféréssel kell rendelkeznie az Aspose.PDF könyvtárhoz. Ne aggódj; egyszerű megszerezni! Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 
 3. Alapvető C# ismerete: A C# és a .NET keretrendszer ismerete segít a fogalmak és a kód hatékonyabb megértésében.
 

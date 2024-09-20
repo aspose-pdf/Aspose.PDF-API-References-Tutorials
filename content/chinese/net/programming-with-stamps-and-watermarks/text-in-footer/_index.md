@@ -9,7 +9,7 @@ url: /zh/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
 ## 介绍
 
-您是否希望使用 Aspose.PDF for .NET 在 PDF 文件的页脚中添加自定义文本？您来对地方了！无论您想包含页码、日期还是任何其他自定义文本，本教程都会引导您完成整个过程。使用强大的 PDF 操作库 Aspose.PDF，添加页脚非常容易。在本文中，我们将探索在 PDF 文件中每页的页脚中添加文本的分步过程。它快速、简单，非常适合那些想要在 .NET 应用程序中自动执行 PDF 自定义的人。
+您是否希望使用 Aspose.PDF for .NET 在 PDF 文件的页脚中添加自定义文本？您来对地方了！无论您想添加页码、日期还是任何其他自定义文本，本教程都会引导您完成整个过程。使用强大的 PDF 操作库 Aspose.PDF，添加页脚非常简单。在本文中，我们将探索在 PDF 文件中每页的页脚中添加文本的分步过程。它快速、简单，非常适合那些想要在 .NET 应用程序中自动执行 PDF 自定义的人。
 
 
 ## 先决条件
@@ -122,7 +122,7 @@ Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataD
 ## 常见问题解答
 
 ### 我可以为 PDF 中的每一页添加不同的页脚吗？  
-是的，您可以通过指定不同的页脚来为每个页面添加唯一的页脚`TextStamp`每个页面的对象。
+是的，您可以通过指定不同的页脚为每个页面添加唯一的页脚`TextStamp`每个页面的对象。
 
 ### 如何更改页脚文本的字体样式？  
 您可以使用`TextStamp.TextState`属性来设置字体、大小和颜色。

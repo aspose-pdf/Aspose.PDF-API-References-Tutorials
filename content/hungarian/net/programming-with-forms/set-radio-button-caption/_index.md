@@ -95,13 +95,13 @@ Itt:
         updatedFragment.TextState.FontSize = 10;
         updatedFragment.TextState.LineSpacing = 6.32f;
 
-        // Hozzon létre TextParagraph objektumot
+        // TextParagraph objektum létrehozása
         TextParagraph par = new TextParagraph();
         // Állítsa be a bekezdés pozícióját
         par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
         // Adja meg a tördelési módot
         par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-        // Új szövegtöredék hozzáadása a bekezdéshez
+        // Új szövegrészlet hozzáadása a bekezdéshez
         par.AppendLine(updatedFragment);
         // Adja hozzá a TextParagraph-ot a TextBuilder segítségével
         TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);

@@ -53,7 +53,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ### 4. lépés: Hozzon létre téglalapokat
 
 ```java
-// Hozzon létre téglalapokat különböző Z-rendű értékekkel
+// Hozzon létre téglalapokat különböző Z-sorrendű értékekkel
 com.aspose.pdf.Page page = pdfDocument.getPages().get_Item(1);
 com.aspose.pdf.Rectangle rect1 = new com.aspose.pdf.Rectangle(100, 100, 200, 200);
 com.aspose.pdf.Rectangle rect2 = new com.aspose.pdf.Rectangle(150, 150, 250, 250);
@@ -80,7 +80,7 @@ Hajtsa végre a Java-kódot, és az létrehoz egy PDF-fájlt a Z-sorrendjük ala
 
 ## Következtetés
 
-Ebben a cikkben megvizsgáltuk a PDF-dokumentumok téglalapjainak Z-rendjének szabályozásának fontosságát, és lépésről lépésre bemutattuk az Aspose.PDF for Java használatát. Most már magabiztosan kezelheti a grafikus elemek láthatóságát és elhelyezését PDF-fájljaiban.
+Ebben a cikkben megvizsgáltuk a PDF-dokumentumok téglalapjainak Z-rendjének szabályozásának fontosságát, és lépésről lépésre ismertettük az Aspose.PDF for Java használatát. Most már magabiztosan kezelheti a grafikus elemek láthatóságát és elhelyezését PDF-fájljaiban.
 
 ## GYIK
 

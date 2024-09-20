@@ -122,7 +122,7 @@ Ano, podobné metody můžete použít k přidání dalších tvarů, jako jsou 
 
 ### Co když chci upravit velikost grafu?
 
- Můžete změnit rozměry`Graph` tak, aby se vešla do požadované oblasti na stránce. Podle toho upravte parametry šířky a výšky.
+ Můžete změnit rozměry`Graph` aby se vešla do požadované oblasti na stránce. Podle toho upravte parametry šířky a výšky.
 
 ### Je Aspose.PDF for .NET zdarma k použití?
 

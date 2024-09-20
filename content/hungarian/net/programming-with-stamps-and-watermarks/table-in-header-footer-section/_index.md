@@ -210,7 +210,7 @@ row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
 ## 17. lépés: Igazítsa a szöveget függőlegesen és vízszintesen
 
-Győződjön meg róla, hogy minden rendezettnek tűnik. Igazítsd a szöveget!
+Győződjön meg róla, hogy minden rendben van. Igazítsd a szöveget!
 
 ```csharp
 // Állítsa be a szöveg függőleges igazítását középre igazítottnak

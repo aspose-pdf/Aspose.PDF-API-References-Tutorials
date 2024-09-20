@@ -90,7 +90,7 @@ Entdecken Sie erweiterte Funktionen und passen Sie Ihre PDFs mit Aspose.PDF für
 ## FAQs
 
 ### 1. Warum sollte ich in PDFs benutzerdefinierte Tag-Namen verwenden?
-Benutzerdefinierte Tag-Namen verbessern die Zugänglichkeit von PDF-Dokumenten und erleichtern Benutzern mit Behinderungen die Navigation.
+Benutzerdefinierte Tag-Namen verbessern die Zugänglichkeit von PDF-Dokumenten und erleichtern die Navigation für Benutzer mit Behinderungen.
 
 ### 2. Kann ich benutzerdefinierte Tag-Namen nach dem Erstellen einer PDF-Datei ändern?
 Ja, Sie können benutzerdefinierte Tag-Namen jederzeit ändern, indem Sie auf die Strukturelemente zugreifen und die Tag-Eigenschaften aktualisieren.

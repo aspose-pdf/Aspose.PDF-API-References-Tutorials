@@ -14,7 +14,7 @@ Dokumenty PDF se staly standardem pro digitální sdílení informací díky sv�
 
 ## Začínáme s Aspose.PDF pro Javu
 
- Chcete-li začít, budete muset nastavit vývojové prostředí. Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
+Chcete-li začít, budete muset nastavit vývojové prostředí. Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Vytvoření dokumentu PDF
 

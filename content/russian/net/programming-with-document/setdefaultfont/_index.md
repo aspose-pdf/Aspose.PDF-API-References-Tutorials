@@ -41,7 +41,7 @@ url: /ru/net/programming-with-document/setdefaultfont/
 
 ### Добавить директивы использования
 
- Теперь давайте добавим необходимые директивы using в начало вашего файла`Program.cs` файл:
+ Теперь давайте добавим необходимые директивы using в начало вашего`Program.cs` файл:
 
 ```csharp
 using Aspose.Pdf;

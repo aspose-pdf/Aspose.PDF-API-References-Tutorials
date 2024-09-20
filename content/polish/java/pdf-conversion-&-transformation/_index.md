@@ -28,13 +28,13 @@ Dowiedz się, jak bez wysiłku konwertować pliki HTML do PDF za pomocą Aspose.
 ### [Przekształć PCL do PDF-ów](./transform-pcl-to-pdfs/)
 Dowiedz się, jak łatwo konwertować pliki PCL do PDF za pomocą Aspose.PDF dla Java. Postępuj zgodnie z tym przewodnikiem krok po kroku z przykładami kodu, aby uzyskać efektywną transformację dokumentu.
 ### [Konwertuj pliki PDF do formatu XPS](./convert-pdfs-to-xps-format/)
-Bezproblemowa konwersja plików PDF do formatu XPS z Aspose.PDF dla Java. Odblokuj ulepszone drukowanie, bezpieczeństwo i zgodność.
+Bezproblemowa konwersja plików PDF do formatu XPS dzięki Aspose.PDF dla Java. Odblokuj ulepszone drukowanie, bezpieczeństwo i zgodność.
 ### [Zmień pliki PDF na format DOC lub DOCX](./change-pdfs-to-doc-or-docx-format/)
 Dowiedz się, jak bez wysiłku konwertować pliki PDF do formatu DOC lub DOCX za pomocą Aspose.PDF dla Java. Przewodnik krok po kroku z kodem źródłowym i często zadawanymi pytaniami dotyczącymi bezproblemowej transformacji dokumentów.
 ### [Konwertuj pliki PDF na e-booki EPUB](./convert-pdfs-to-epub-ebooks/)
 Konwertuj pliki PDF do e-booków EPUB bez wysiłku dzięki Aspose.PDF dla Java. Poznaj krok po kroku konwersję PDF do EPUB i FAQ.
 ### [Eksportuj pliki PDF do skoroszytów programu Excel](./export-pdfs-to-excel-workbooks/)
-Dowiedz się, jak bez wysiłku eksportować pliki PDF do skoroszytów programu Excel za pomocą Aspose.PDF dla Java. Przewodnik krok po kroku dotyczący bezproblemowej ekstrakcji danych.
+Dowiedz się, jak bez wysiłku eksportować pliki PDF do skoroszytów programu Excel za pomocą Aspose.PDF dla Java. Przewodnik krok po kroku do bezproblemowej ekstrakcji danych.
 ### [Generuj MobiXML z plików PDF](./generate-mobixml-from-pdfs/)
 Dowiedz się, jak generować MobiXML z plików PDF za pomocą Aspose.PDF dla Java. Przewodnik krok po kroku z przykładami kodu. Bezproblemowa konwersja plików PDF do formatu MobiXML.
 ### [Utwórz pliki zgodne ze standardem PDF/A](./create-pdfa-compliant-files/)

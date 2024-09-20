@@ -9,7 +9,7 @@ url: /fr/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
 ## Introduction
 
-Lorsqu'il s'agit de gérer des fichiers PDF, l'extraction des destinations des hyperliens peut être une tâche étonnamment délicate. Que vous travailliez sur un rapport d'entreprise, un document de recherche ou tout autre document rempli de liens, vous pourriez avoir besoin d'accéder rapidement à ces hyperliens. Et si je vous disais qu'il existe un moyen simple de le faire en utilisant Aspose.PDF pour .NET ? Restez dans notre univers pour découvrir comment extraire les destinations des hyperliens avec style, sans perdre la tête dans la complexité du code !
+Lorsqu'il s'agit de gérer des fichiers PDF, l'extraction des destinations des hyperliens peut être une tâche étonnamment délicate. Que vous travailliez sur un rapport d'entreprise, un document de recherche ou tout autre document contenant des liens, vous pourriez avoir besoin d'accéder rapidement à ces hyperliens. Et si je vous disais qu'il existe un moyen simple de le faire en utilisant Aspose.PDF pour .NET ? Restez dans notre univers pour découvrir comment extraire les destinations des hyperliens avec style, sans perdre la tête dans la complexité du code !
 
 ## Prérequis
 

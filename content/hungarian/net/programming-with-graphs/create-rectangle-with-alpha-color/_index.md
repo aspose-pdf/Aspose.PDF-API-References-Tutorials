@@ -88,7 +88,7 @@ canvas.Shapes.Add(rect1);
 
 ## 6. lépés: Adja hozzá a grafikont az oldalhoz
 
- Miután meghatározta az alakzatokat, adja hozzá a`Graph` objektum az oldal bekezdésgyűjteményével szemben. Ez integrálja a rajzát a PDF-oldalba.
+ Miután meghatározta az alakzatokat, adja hozzá a`Graph` tiltakozik az oldal bekezdésgyűjteményével szemben. Ez integrálja a rajzát a PDF-oldalba.
 
 ```csharp
 // Grafikonpéldány hozzáadása az oldalobjektum bekezdésgyűjteményéhez

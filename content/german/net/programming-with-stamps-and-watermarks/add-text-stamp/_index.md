@@ -100,7 +100,7 @@ Erläuterung:
 Lassen Sie uns als Nächstes Ihrer Kreativität freien Lauf und passen Sie das Erscheinungsbild des Textes in unserem Stempel an:
 
 ```csharp
-// Texteigenschaften festlegen
+// Festlegen von Texteigenschaften
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;

@@ -9,7 +9,7 @@ url: /pl/net/programming-with-stamps-and-watermarks/image-and-page-number-in-hea
 ---
 ## Wstęp
 
-Aspose.PDF dla .NET to potężne narzędzie, które zapewnia szerokie możliwości manipulowania plikami PDF i generowania ich. Niezależnie od tego, czy chcesz dodać obrazy, dostosować nagłówki i stopki, czy zarządzać tekstem, Aspose.PDF ma wszystko, czego potrzebujesz. W tym samouczku pokażemy, jak dodać obraz i numer strony w nagłówku lub stopce dokumentu PDF. Przyjrzyjmy się temu od razu i omówmy ten proces krok po kroku.
+Aspose.PDF dla .NET to potężne narzędzie, które zapewnia szerokie możliwości manipulowania plikami PDF i generowania ich. Niezależnie od tego, czy chcesz dodać obrazy, dostosować nagłówki i stopki, czy zarządzać tekstem, Aspose.PDF ma wszystko, czego potrzebujesz. W tym samouczku pokażemy, jak dodać obraz i numer strony w nagłówku lub stopce dokumentu PDF. Przyjrzyjmy się temu procesowi krok po kroku.
 
 ## Wymagania wstępne
 

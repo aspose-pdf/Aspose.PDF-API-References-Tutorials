@@ -49,7 +49,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Passaggio 2: aprire il documento PDF
 
- Ora che abbiamo impostato la nostra directory, è il momento di aprire il documento PDF che vogliamo ottimizzare. Questo viene fatto usando`Document` classe fornita da Aspose.PDF.
+ Ora che abbiamo impostato la nostra directory, è il momento di aprire il documento PDF che vogliamo ottimizzare. Questo si fa usando`Document` classe fornita da Aspose.PDF.
 
 ```csharp
 // Apri documento
@@ -91,7 +91,7 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 Con le nostre opzioni di ottimizzazione configurate, è il momento di applicarle al nostro documento PDF. È qui che avviene la magia!
 
 ```csharp
-// Ottimizza la dimensione del file rimuovendo gli oggetti inutilizzati
+// Ottimizza le dimensioni del file rimuovendo gli oggetti inutilizzati
 pdfDocument.OptimizeResources(optimizationOptions);
 ```
 

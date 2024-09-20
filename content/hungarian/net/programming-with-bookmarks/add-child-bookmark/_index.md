@@ -67,7 +67,7 @@ Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 
  Itt egy újat hozunk létre`Document` objektum, amely betölti a PDF-fájlt. Tekintsd ezt úgy, mintha kinyitnál egy könyvet, hogy elkezdhess olvasni.
 
-## 3. lépés: Hozzon létre egy szülői könyvjelzőt
+## 3. lépés: Hozzon létre egy szülő könyvjelzőt
 
 Ezután létrehozunk egy szülő könyvjelzőt. Ez a könyvjelző lesz a fő címsor, amely alá gyermekkönyvjelzőket adunk.
 

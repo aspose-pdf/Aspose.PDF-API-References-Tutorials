@@ -2,186 +2,147 @@
 title: Specificare la spaziatura delle righe nel file PDF
 linktitle: Specificare la spaziatura delle righe nel file PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come specificare la spaziatura delle righe in un file PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come specificare la spaziatura delle linee in un PDF usando Aspose.PDF per .NET con questa guida passo-passo. Perfetta per gli sviluppatori che cercano una formattazione precisa del testo.
 type: docs
 weight: 510
 url: /it/net/programming-with-text/specify-line-spacing/
 ---
-Questo tutorial spiega come specificare la spaziatura delle linee in un file PDF usando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra il processo passo dopo passo.
+## Introduzione
+
+Hai mai avuto difficoltà a controllare la spaziatura delle linee in un file PDF? Forse hai avuto del testo che sembrava troppo ammassato o semplicemente non sembrava così rifinito come vorresti. In questo tutorial, ti mostreremo come puoi specificare facilmente la spaziatura delle linee in un PDF usando Aspose.PDF per .NET. Utilizzeremo una semplice guida passo dopo passo per portarti da un PDF vuoto a uno che include la spaziatura delle linee personalizzata. Questo è perfetto se hai bisogno di precisione nel layout del testo per documenti come report, fatture o certificati.
 
 ## Prerequisiti
 
-Prima di procedere con il tutorial, assicurati di avere quanto segue:
+Prima di passare al codice, assicuriamoci di avere tutto ciò di cui hai bisogno:
 
-- Conoscenza di base del linguaggio di programmazione C#.
-- Aspose.PDF per la libreria .NET installata. Puoi ottenerla dal sito web di Aspose o usare NuGet per installarla nel tuo progetto.
+1.  Aspose.PDF per .NET installato. Se non lo hai, scaricalo da[Pagina di download di Aspose.PDF](https://releases.aspose.com/pdf/net/).
+2. Un ambiente di sviluppo .NET (come Visual Studio).
+3. Un file di font TrueType (`.ttf` ) che useremo nell'esempio. Puoi usare qualsiasi font, ma per questa guida useremo il`HPSimplified.TTF` font.
+4. Conoscenza di base di C# e manipolazione PDF.
 
-## Passaggio 1: impostare il progetto
+Se sei pronto, passiamo all'importazione dei pacchetti necessari.
 
-Inizia creando un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET.
+## Importa pacchetti
 
-## Passaggio 2: importare gli spazi dei nomi necessari
-
-Aggiungere le seguenti direttive using all'inizio del file C# per importare gli spazi dei nomi richiesti:
+Nel tuo progetto C#, dovrai importare gli spazi dei nomi Aspose.PDF per lavorare con le funzionalità PDF. Ecco come fare:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Passaggio 3: impostare il percorso della directory del documento
+Questi namespace consentono di creare e manipolare documenti PDF, nonché di lavorare con la formattazione del testo e le opzioni dei caratteri.
 
- Imposta il percorso della directory del documento utilizzando`dataDir` variabile:
+Suddivideremo il tutto in piccoli passaggi, così potrai seguirli facilmente. Ogni passaggio si concentrerà su una parte fondamentale del processo, dall'impostazione del PDF alla specificazione della spaziatura delle righe.
+
+## Passaggio 1: imposta il tuo progetto e definisci la directory dei documenti
+
+La prima cosa che dobbiamo fare è definire dove si trovano i nostri file. Questo aiuta il programma a sapere dove trovare il font e dove salvare il PDF risultante.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
- Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
+ In questo passaggio sostituirai`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo in cui memorizzi i tuoi file. Questo sarà il posto in cui posizionerai il tuo file font (`HPSimplified.TTF`) e dove verrà salvato il PDF.
 
-## Passaggio 4: caricare il file PDF di input
+## Passaggio 2: carica un documento PDF
 
- Caricare il file PDF di input utilizzando`Document` classe:
+Ora, dobbiamo creare un nuovo documento PDF. Per questa guida, inizieremo con un documento vuoto, ma puoi anche caricare un PDF esistente se necessario.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Passaggio 5: creare TextFormattingOptions
+Questo crea un nuovo documento PDF vuoto. Facile, vero?
 
- Crea un`TextFormattingOptions` oggetto e imposta la modalità di spaziatura delle linee su`FullSize`:
+## Passaggio 3: imposta le opzioni di formattazione del testo
+
+ Ecco dove avviene la magia. Specifichiamo la modalità di spaziatura delle linee per il testo che vogliamo aggiungere al PDF. Aspose.PDF ci offre diverse opzioni, ma in questa guida useremo`LineSpacingMode.FullSize`, che garantisce il pieno rispetto della spaziatura delle righe.
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Passaggio 6: creare un TextFragment
+ Questo codice imposta la modalità di spaziatura delle linee su`FullSize` , assicurando che il testo venga visualizzato con la spaziatura corretta. Ci sono altre opzioni come`Proportional` se vuoi comportamenti di spaziatura diversi, ma per ora, atteniamoci a`FullSize`.
 
- Crea un`TextFragment` oggetto e specificare il contenuto del testo:
+## Passaggio 4: creare un frammento di testo
+
+Ora creeremo il testo effettivo che verrà inserito nel PDF. Questo testo rispetterà la spaziatura delle righe che abbiamo definito.
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Passaggio 7: Carica il file del font (facoltativo)
+ Abbiamo creato un frammento di testo con la stringa`"Hello world"`Naturalmente puoi personalizzare questo testo come preferisci.
 
- Se si desidera utilizzare un font specifico per il testo, caricare il file del font TrueType in un`FileStream` oggetto:
+## Passaggio 5: Carica e applica un font personalizzato
+
+Per far risaltare il testo, caricheremo un font TrueType personalizzato da un file. Questo passaggio è facoltativo, ma può aggiungere un tocco professionale ai tuoi PDF.
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
- Sostituire`"HPSimplified.TTF"` con il nome effettivo del file del font.
+Qui, carichiamo il file font e lo applichiamo al frammento di testo. Se il percorso del file è valido, il font viene utilizzato. Altrimenti, viene applicato il font predefinito.
 
-## Passaggio 8: specificare la posizione del testo e la spaziatura delle righe
+## Passaggio 6: imposta la posizione e la formattazione del testo
 
- Imposta la posizione per il frammento di testo e assegna il`TextFormattingOptions` al`TextState.FormattingOptions` proprietà:
+Poi, dobbiamo posizionare il testo sul PDF. Applicheremo anche le opzioni di formattazione che abbiamo creato in precedenza.
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Passaggio 9: aggiungere il testo al documento
+ IL`Position` imposta le coordinate in cui il testo apparirà sulla pagina (in questo caso, 100 unità da sinistra e 600 unità dal basso). Le opzioni di formattazione, inclusa la modalità di spaziatura delle linee, vengono applicate qui.
 
- Aggiungere il frammento di testo al documento, sia aggiungendolo a un`TextBuilder` o direttamente a una pagina`Paragraphs` collezione:
+## Passaggio 7: aggiungere testo alla pagina PDF
+
+Ora che il testo è formattato e posizionato, è il momento di aggiungerlo al documento PDF.
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Passaggio 10: salvare il documento PDF risultante
+Questo codice crea una nuova pagina nel documento PDF e vi aggiunge il frammento di testo.
 
-Salvare il documento PDF modificato:
+## Passaggio 8: Salva il PDF
+
+Siamo arrivati al passaggio finale! Ora che tutto è impostato, salviamo il PDF.
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
- Assicurati di sostituire`"SpecifyLineSpacing_out.pdf"` con il nome del file di output desiderato.
-
-### Esempio di codice sorgente per specificare la spaziatura delle linee utilizzando Aspose.PDF per .NET 
-```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-// Carica il file PDF di input
-Document doc = new Document();
-//Crea TextFormattingOptions con LineSpacingMode.FullSize
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Crea un oggetto generatore di testo per la prima pagina del documento
-//TextBuilder textBuilder = nuovo TextBuilder(doc.Pages[1]);
-// Crea frammento di testo con stringa di esempio
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//Carica il font TrueType nell'oggetto stream
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		// Imposta il nome del font per la stringa di testo
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specificare la posizione per il frammento di testo
-		textFragment.Position = new Position(100, 600);
-		//Imposta TextFormattingOptions del frammento corrente su predefinito (che punta a LineSpacingMode.FullSize)
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Aggiungi il testo a TextBuilder in modo che possa essere posizionato sopra il file PDF
-		//textBuilder.AppendText(textFragment);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Salva il documento PDF risultante
-	doc.Save(dataDir);
-}
-```
+In questo modo il PDF verrà salvato con la spaziatura specificata e il file sarà pronto!
 
 ## Conclusione
 
-Congratulazioni! Hai imparato con successo come specificare la spaziatura delle linee in un documento PDF usando Aspose.PDF per .NET. Questo tutorial ha fornito una guida passo passo, dall'impostazione del progetto al salvataggio del documento modificato. Ora puoi incorporare questo codice nei tuoi progetti C# per personalizzare la spaziatura delle linee del testo nei file PDF.
+Ed ecco fatto! Hai appena creato un documento PDF con spaziatura personalizzata usando Aspose.PDF per .NET. È uno strumento potente che ti consente di controllare ogni aspetto dei tuoi file PDF, e questo è solo un esempio di ciò che puoi ottenere. Dal posizionamento del testo alla formattazione, le possibilità sono infinite.
 
-### Domande frequenti
+Se stai cercando di approfondire la manipolazione dei PDF, Aspose.PDF offre una vasta gamma di funzionalità da esplorare. Non esitare a sperimentare e a spingere i limiti di ciò che puoi fare con i tuoi documenti!
 
-#### D: Qual è lo scopo del tutorial "Specifica l'interlinea nel file PDF"?
+## Domande frequenti
 
-R: Il tutorial "Specify Line Spacing In PDF File" ha lo scopo di guidare gli utenti su come utilizzare la libreria Aspose.PDF per .NET per personalizzare la spaziatura delle linee del testo all'interno di un documento PDF. Il tutorial fornisce istruzioni dettagliate ed esempi di codice C# per dimostrare il processo.
+### Posso adattare la spaziatura delle linee ad altre modalità?  
+ Sì, puoi usare altre modalità come`Proportional` O`Fixed` a seconda delle vostre esigenze.
 
-#### D: In che modo questo tutorial aiuta a specificare la spaziatura delle linee in un documento PDF?
+### È possibile caricare i font dal sistema invece che da un file?  
+ Sì, puoi caricare i font installati nel sistema utilizzando`FontRepository`.
 
-A: Questo tutorial aiuta gli utenti a capire come utilizzare le capacità di Aspose.PDF per .NET per specificare la spaziatura delle linee per il testo in un documento PDF. Seguendo i passaggi e gli esempi di codice forniti, gli utenti possono regolare la spaziatura delle linee in base alle proprie preferenze.
+### Posso usare Aspose.PDF per .NET con altri formati di file?  
+Assolutamente! Aspose.PDF per .NET supporta una varietà di formati come XML, HTML e altro ancora.
 
-#### D: Quali prerequisiti sono richiesti per seguire questo tutorial?
+### Ho bisogno di una licenza per utilizzare Aspose.PDF per .NET?  
+Sì, per la piena funzionalità, avrai bisogno di una licenza, che puoi ottenere[Qui](https://purchase.aspose.com/buy).
 
-R: Prima di iniziare il tutorial, dovresti avere una conoscenza di base del linguaggio di programmazione C#. Inoltre, devi avere installata la libreria Aspose.PDF per .NET. Puoi ottenerla dal sito web di Aspose o installarla nel tuo progetto usando NuGet.
-
-#### D: Come posso impostare il mio progetto in modo che segua questo tutorial?
-
-R: Per iniziare, crea un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET. Ciò ti consente di sfruttare le funzionalità della libreria per lavorare con documenti PDF e personalizzare la spaziatura delle linee.
-
-#### D: Posso usare questo tutorial per specificare la spaziatura delle righe per qualsiasi tipo di testo?
-
-R: Sì, questo tutorial fornisce istruzioni su come specificare la spaziatura delle linee per qualsiasi contenuto di testo all'interno di un documento PDF utilizzando Aspose.PDF per .NET. Puoi utilizzare gli esempi di codice forniti per regolare la spaziatura delle linee del testo in base alle tue esigenze.
-
-#### D: Come faccio a specificare la modalità di spaziatura delle linee nel tutorial?
-
- A: Il tutorial mostra come creare un`TextFormattingOptions` oggetto e imposta il suo`LineSpacing` proprietà a`TextFormattingOptions.LineSpacingMode.FullSize`Questa modalità specifica la spaziatura completa delle righe per il contenuto del testo.
-
-#### D: Come posso caricare un font specifico per il testo?
-
- A: Se desideri utilizzare un font specifico per il contenuto del testo, il tutorial fornisce indicazioni su come caricare un file di font TrueType in un`FileStream` oggetto e impostarlo come font per il`TextFragment`Ciò consente di personalizzare il carattere del testo e la spaziatura delle righe.
-
-#### D: Come posso personalizzare la posizione del testo all'interno del documento PDF?
-
- A: Per personalizzare la posizione del testo, crea un`TextFragment` oggetto e imposta il suo`Position`proprietà alle coordinate desiderate (X e Y). Ciò consente di controllare dove il testo viene posizionato all'interno del documento PDF.
-
-#### D: Posso applicare queste modifiche alla spaziatura delle linee ai documenti PDF esistenti?
-
- R: Sì, puoi modificare la spaziatura delle righe per il testo nei documenti PDF esistenti. Il tutorial mostra come creare un`TextFragment` con la spaziatura e la posizione specificate, quindi aggiungerlo a una pagina`Paragraphs` collezione.
+### Come faccio a impostare la spaziatura delle righe per più paragrafi?  
+ Puoi applicare`TextFormattingOptions` a ciascuno`TextFragment` O`TextParagraph` per controllare la spaziatura tra più righe o paragrafi.

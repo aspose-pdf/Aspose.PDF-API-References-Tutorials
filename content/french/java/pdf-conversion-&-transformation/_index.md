@@ -24,7 +24,7 @@ Au-delà de la simple conversion, Aspose.PDF pour Java vous permet de transforme
 ### [Convertir le format EPUB en PDF](./convert-epub-to-pdf-format/)
 Apprenez à convertir des fichiers EPUB en PDF sans effort à l'aide d'Aspose.PDF pour Java. Notre guide étape par étape simplifie la conversion des fichiers EPUB en PDF.
 ### [Convertir des fichiers HTML en fichiers PDF](./convert-html-to-pdf-files/)
-Découvrez comment convertir sans effort des fichiers HTML en fichiers PDF à l'aide d'Aspose.PDF pour Java. Guide étape par étape avec des exemples de code pour une génération efficace de documents.
+Découvrez comment convertir sans effort des fichiers HTML en fichiers PDF à l'aide d'Aspose.PDF pour Java. Guide étape par étape avec exemples de code pour une génération efficace de documents.
 ### [Transformer PCL en PDF](./transform-pcl-to-pdfs/)
 Découvrez comment convertir facilement des fichiers PCL en PDF à l'aide d'Aspose.PDF pour Java. Suivez ce guide étape par étape avec des exemples de code pour une transformation efficace des documents.
 ### [Convertir des fichiers PDF au format XPS](./convert-pdfs-to-xps-format/)

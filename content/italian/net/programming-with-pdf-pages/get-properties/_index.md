@@ -9,7 +9,7 @@ url: /it/net/programming-with-pdf-pages/get-properties/
 ---
 ## Introduzione
 
-Quando si tratta di manipolare i PDF a livello di programmazione, Aspose.PDF per .NET è uno di quegli strumenti affidabili che si distinguono. Che tu voglia estrarre informazioni, modificare documenti o semplicemente leggere proprietà PDF, questa libreria fornisce una serie di funzionalità per semplificare il tuo compito. In questa guida, approfondiremo come ottenere proprietà PDF, un compito che può sembrare scoraggiante all'inizio, ma diventa un gioco da ragazzi con gli strumenti giusti. Quindi, allacciate le cinture! Esploreremo gli aspetti tecnici o le possibilità che derivano dal lavorare con file PDF.
+Quando si tratta di manipolare i PDF a livello di programmazione, Aspose.PDF per .NET è uno di quegli strumenti affidabili che si distinguono. Che tu voglia estrarre informazioni, modificare documenti o semplicemente leggere le proprietà PDF, questa libreria fornisce una serie di funzionalità per semplificare il tuo compito. In questa guida, approfondiremo come ottenere le proprietà PDF, un compito che può sembrare scoraggiante all'inizio, ma che diventa un gioco da ragazzi con gli strumenti giusti. Quindi, allacciate le cinture! Esploreremo gli aspetti tecnici o le possibilità che derivano dal lavorare con i file PDF.
 
 ## Prerequisiti
 

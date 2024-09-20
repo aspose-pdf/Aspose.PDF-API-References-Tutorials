@@ -22,7 +22,7 @@ Sebelum kita masuk ke proses konversi, pastikan Anda memiliki prasyarat berikut:
 
 ## Menyiapkan Proyek Anda
 
-1. Buat Proyek Java Baru: Mulailah dengan membuat proyek Java baru di Lingkungan Pengembangan Terpadu (IDE) favorit Anda. Anda dapat menggunakan IntelliJ IDEA, Eclipse, atau IDE lain pilihan Anda.
+1. Buat Proyek Java Baru: Mulailah dengan membuat proyek Java baru di Integrated Development Environment (IDE) favorit Anda. Anda dapat menggunakan IntelliJ IDEA, Eclipse, atau IDE lain pilihan Anda.
 
 2. Tambahkan Aspose.PDF untuk Pustaka Java: Setelah proyek Anda disiapkan, tambahkan pustaka Aspose.PDF untuk Java ke classpath proyek Anda. Ini biasanya dapat dilakukan dengan menyertakan file JAR dalam dependensi proyek Anda.
 

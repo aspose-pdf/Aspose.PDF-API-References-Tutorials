@@ -2,214 +2,179 @@
 title: Maak een PDF met meerdere kolommen
 linktitle: Maak een PDF met meerdere kolommen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een PDF met meerdere kolommen maakt met Aspose.PDF voor .NET.
+description: Leer hoe u PDF's met meerdere kolommen maakt met Aspose.PDF voor .NET. Een stapsgewijze handleiding met codevoorbeelden en gedetailleerde uitleg. Perfect voor professionals.
 type: docs
 weight: 110
 url: /nl/net/programming-with-text/create-multi-column-pdf/
 ---
-Deze tutorial begeleidt u door het proces van het maken van een PDF met meerdere kolommen met behulp van Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de benodigde stappen.
+## Invoering
+
+Het maken van PDF's met meerdere kolommen is een geweldige manier om tekst in een meer georganiseerde, leesbare vorm te presenteren. Of u nu een rapport, artikel of lay-out voor een publicatie maakt, structuren met meerdere kolommen kunnen uw content aantrekkelijker maken. In deze tutorial laten we u zien hoe u een PDF met meerdere kolommen maakt met Aspose.PDF voor .NET. Maak u geen zorgen, we splitsen alles op in eenvoudige stappen die het gemakkelijk te volgen maken, zelfs als u nieuw bent op het platform.
 
 ## Vereisten
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
-- Visual Studio of een andere C#-compiler die op uw computer is geïnstalleerd.
-- Aspose.PDF voor .NET-bibliotheek. U kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
+Voordat we met de code beginnen, zijn er een paar dingen die je nodig hebt om het proces soepel te kunnen volgen:
 
-## Stap 1: Het project opzetten
-1. Maak een nieuw C#-project in uw favoriete ontwikkelomgeving.
-2. Voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+1.  Aspose.PDF voor .NET: Deze bibliotheek moet geïnstalleerd zijn. U kunt deze downloaden van[hier](https://releases.aspose.com/pdf/net/).
+2. Ontwikkelomgeving: Stel uw favoriete IDE in, zoals Visual Studio, voor het schrijven en uitvoeren van C#-code.
+3. .NET Framework: Zorg ervoor dat u een compatibele versie van .NET hebt geïnstalleerd.
+4. Basiskennis van C#: Kennis van de C#-syntaxis is nuttig, maar we leggen elke stap gedetailleerd uit.
+5.  Tijdelijke licentie: Aspose.PDF vereist een licentie om watermerken of beperkingen te vermijden. U kunt een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) indien nodig.
 
-## Stap 2: Importeer de vereiste naamruimten
-Voeg in het codebestand waarin u een PDF met meerdere kolommen wilt maken, het volgende toe met behulp van richtlijnen boven aan het bestand:
+## Pakketten importeren
+
+Voordat u begint met coderen, moet u de benodigde naamruimten importeren die u in staat stellen om te interacteren met Aspose.PDF. Dit is wat u moet importeren:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Stap 3: Stel de documentdirectory in
- Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
+Deze naamruimten bieden toegang tot klassen die nodig zijn voor het maken van PDF's, het tekenen van vormen en het verwerken van tekstopmaak.
 
-## Stap 4: Maak een nieuw Document-exemplaar
- Een nieuwe instantiëren`Document` object door de volgende regel code toe te voegen:
+Laten we het proces voor het maken van een PDF met meerdere kolommen opsplitsen in eenvoudige, beheersbare stappen.
 
-```csharp
-Document doc = new Document();
-```
+## Stap 1: Het document instellen
 
-## Stap 5: Stel de paginamarges in
- Geef de linker- en rechtermarge-informatie voor het PDF-bestand op met behulp van de`PageInfo.Margin` eigendom van de`Document`.
+Om te beginnen moet u een nieuw PDF-document maken. Dit houdt in dat u de marges definieert en een pagina toevoegt waar uw content komt.
 
-```csharp
-doc.PageInfo.Margin.Left = 40;
-doc.PageInfo.Margin.Right = 40;
-```
-
-## Stap 6: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
-
-```csharp
-Page page = doc.Pages.Add();
-```
-
-## Stap 7: Maak een grafiekobject en voeg een lijn toe
- Maak een nieuwe`Graph` object met specifieke afmetingen en voeg er een lijn aan toe. Voeg vervolgens de`Graph` bezwaar maken tegen de`Paragraphs` verzameling van de pagina.
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-float[] backPos = new float[] { 1, 2, 500, 2 };
-Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
-graph1.Shapes.Add(l1);
-page.Paragraphs.Add(graph1);
-```
-
-## Stap 8: Voeg koptekst toe met HTML-opmaak
- Maak een`HtmlFragment` object en stel de inhoud in op de gewenste HTML-tekst. Voeg vervolgens het fragment toe aan de`Paragraphs` verzameling van de pagina.
-
-```csharp
-string s = "<font face=\"Times New Roman\" size=4>" +
-     "<strong>How to Steer Clear of money scams</<strong>" +
-     "</font>";
-HtmlFragment heading_text = new HtmlFragment(s);
-page.Paragraphs.Add(heading_text);
-```
-
-## Stap 9: Maak een FloatingBox met meerdere kolommen
- Maak een`FloatingBox` object en stel het aantal kolommen en de kolomafstand in. Voeg vervolgens tekstfragmenten en een regel toe aan de`Paragraphs` verzameling van de`FloatingBox`.
-
-```csharp
-Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-box. ColumnInfo. ColumnCount = 2;
-box.ColumnInfo.ColumnSpacing = "5";
-box.ColumnInfo.ColumnWidths = "105 105";
-
-TextFragment text1 = new TextFragment("By A Googling (The Official Google Blog)");
-text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-
-TextFragment text2 = new TextFragment("Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam...");
-box.Paragraphs.Add(text2);
-
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-float[] posArr2 = new float[] { 1, 10, 100, 10 };
-Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
-graph2.Shapes.Add(l2);
-box.Paragraphs.Add(graph2);
-
-page.Paragraphs.Add(box);
-```
-
-## Stap 10: Sla het PDF-document op
- Sla het PDF-document op met behulp van de`Save` methode van de`Document` voorwerp.
-
-```csharp
-doc.Save(dataDir);
-```
-
-### Voorbeeldbroncode voor het maken van een PDF met meerdere kolommen met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Een nieuw PDF-document maken
 Document doc = new Document();
-// Geef de linkermarge-informatie voor het PDF-bestand op
+
+// Stel de marges voor het PDF-bestand in
 doc.PageInfo.Margin.Left = 40;
-// Geef de rechtermarge-info op voor het PDF-bestand
 doc.PageInfo.Margin.Right = 40;
+
+// Een pagina toevoegen aan het document
 Page page = doc.Pages.Add();
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// Voeg de regel toe aan de parafrasenverzameling van het sectieobject
+```
+
+ Hier hebben we een gemaakt`Document`object en stel de linker- en rechtermarges in op 40 eenheden. Vervolgens hebben we een nieuwe pagina aan dit document toegevoegd, die onze multi-kolom lay-out zal bevatten.
+
+## Stap 2: Een regel toevoegen om secties te scheiden
+
+Voeg vervolgens een horizontale lijn toe aan de pagina voor visuele scheiding. Dit helpt om een schone en professionele look te creëren.
+
+```csharp
+// Maak een grafiekobject om de lijn vast te houden
+Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
+
+// Voeg de regel toe aan de alineaverzameling van de pagina
 page.Paragraphs.Add(graph1);
-// Geef de coördinaten voor de lijn op
+
+// Definieer de coördinaten voor de lijn
 float[] posArr = new float[] { 1, 2, 500, 2 };
+
+// Maak een lijn en voeg deze toe aan de grafiek
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// Maak stringvariabelen met tekst die html-tags bevat
+```
+
+ Hier maken we een horizontale lijn met behulp van de`Graph` En`Line` klassen. Deze regel wordt toegevoegd aan de pagina's`Paragraphs` collectie, die alle visuele elementen bevat.
+
+## Stap 3: HTML-tekst met opmaak toevoegen
+
+Laten we nu wat tekst invoegen die HTML-tags bevat om te laten zien hoe u tekst dynamisch kunt opmaken in de PDF.
+
+```csharp
+// Maak een string met HTML-inhoud
 string s = "<font face=\"Times New Roman\" size=4>" +
-"<strong> How to Steer Clear of money scams</<strong> "
-+ "</font>";
-// Maak tekstparagrafen met HTML-tekst
+           "<strong> How to Steer Clear of Money Scams </strong>" +
+           "</font>";
+
+// Maak een nieuw HtmlFragment met de opgemaakte tekst
 HtmlFragment heading_text = new HtmlFragment(s);
+
+// Voeg de HTML-tekst toe aan de pagina
 page.Paragraphs.Add(heading_text);
+```
+
+ Met behulp van de`HtmlFragment`klasse, kunnen we geformatteerde tekst toevoegen die HTML-tags bevat, zoals lettergrootte, stijl en vetgedrukte tekst. Dit is handig om het uiterlijk van uw PDF-inhoud te verbeteren.
+
+## Stap 4: Een lay-out met meerdere kolommen maken
+
+Nu gaan we een multi-kolom lay-out maken. Dit is waar de magie gebeurt — u kunt specificeren hoeveel kolommen u wilt en hoe breed ze moeten zijn.
+
+```csharp
+// Maak een zwevende doos om de kolommen vast te houden
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// Voeg vier kolommen toe in de sectie
+
+// Stel het aantal kolommen en de afstand ertussen in
 box.ColumnInfo.ColumnCount = 2;
-// Stel de afstand tussen de kolommen in
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
+
+// Voeg het vak toe aan de pagina
+page.Paragraphs.Add(box);
+```
+
+Hier maken we een zwevende box die twee kolommen zal bevatten. We stellen de afstand tussen de kolommen in en specificeren dat elke kolom 105 eenheden breed moet zijn. Dit stelt ons in staat om de gewenste kolomindeling binnen de PDF te maken.
+
+## Stap 5: Tekst toevoegen aan de kolommen
+
+ Laten we nu de kolommen vullen met wat tekstinhoud. U kunt verschillende`TextFragment` objecten aan elke kolom toe.
+
+```csharp
+// Maak en formatteer het eerste tekstfragment
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
 text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Maak een grafiekobject om een lijn te tekenen
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// Geef de coördinaten voor de lijn op
+box.Paragraphs.Add(text1);
+
+// Voeg een extra regel toe voor scheiding
+Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-//Voeg de regel toe aan de paragrafenverzameling van het sectieobject
 box.Paragraphs.Add(graph2);
-TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
+
+//Maak en voeg een tweede tekstfragment toe
+TextFragment text2 = new TextFragment("Lorem ipsum dolor sit amet, consectetur adipiscing elit...");
 box.Paragraphs.Add(text2);
-page.Paragraphs.Add(box);
-dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// PDF-bestand opslaan
-doc.Save(dataDir);
-Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusie
-U hebt met succes een PDF met meerdere kolommen gemaakt met Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
+ Wij voegen een toe`TextFragment` naar de zwevende doos, gevolgd door een andere horizontale lijn. De tweede`TextFragment` bevat meer tekst om de tweede kolom te vullen. Deze fragmenten stellen ons in staat om verschillende tekstelementen aan de PDF toe te voegen met verschillende opmaakopties.
 
-### Veelgestelde vragen
+## Stap 6: De PDF opslaan
 
-#### V: Waarop richt deze tutorial zich?
-
-Deze tutorial is gericht op het begeleiden van u door het proces van het maken van een multi-kolom PDF met behulp van de Aspose.PDF voor .NET-bibliotheek. De meegeleverde C#-broncode demonstreert de benodigde stappen om dit te bereiken.
-
-#### V: Welke naamruimten moet ik importeren voor deze tutorial?
-
-A: Importeer de volgende naamruimten aan het begin van het bestand in het codebestand waarin u een PDF met meerdere kolommen wilt maken:
+Nadat u alle inhoud hebt toegevoegd, slaat u het document als PDF-bestand op.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+// Definieer het uitvoerpad voor de PDF
+dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
+
+// Sla het PDF-document op
+doc.Save(dataDir);
+
+// Bericht over succes bij uitvoer
+Console.WriteLine("\nMulti-column PDF file created successfully.\nFile saved at " + dataDir);
 ```
 
-#### V: Hoe geef ik de documentenmap op?
+Dit blok slaat het PDF-bestand op in de opgegeven directory en geeft een succesbericht in de console. De PDF is nu klaar om te bekijken!
 
- A: Zoek in de code de regel`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
+## Conclusie
 
-#### V: Hoe maak ik een nieuw Document-exemplaar?
+Door deze eenvoudige stappen te volgen, kunt u eenvoudig een professioneel ogende PDF met meerdere kolommen maken met Aspose.PDF voor .NET. Of het nu voor een rapport, artikel of nieuwsbrief is, deze techniek helpt u inhoud te organiseren in een visueel aantrekkelijk formaat. Aspose.PDF biedt krachtige tools voor het aanpassen van uw PDF's, van marges en lay-out tot tekstopmaak en het tekenen van vormen. Nu is het uw beurt om het uit te proberen en uw vaardigheden in het maken van PDF's naar een hoger niveau te tillen!
 
- A: In stap 4 maakt u een nieuwe`Document` object met behulp van de verstrekte code.
+## Veelgestelde vragen
 
-#### V: Hoe stel ik de paginamarges in?
+### Kan ik meer dan twee kolommen in een PDF maken?
+ Ja, u kunt zoveel kolommen maken als u nodig hebt. Pas gewoon de`ColumnCount` eigenschap om het aantal kolommen te matchen dat u wilt.
 
- A: In stap 5 gebruikt u de`PageInfo.Margin` eigendom van de`Document` om de linker- en rechtermarge-informatie voor het PDF-bestand op te geven.
+### Hoe wijzig ik de breedte van elke kolom?
+ U kunt de`ColumnWidths` eigenschap om verschillende breedtes voor elke kolom te specificeren. Deze eigenschap accepteert een string met waarden gescheiden door spaties.
 
-#### V: Hoe voeg ik een pagina toe aan het document?
+### Is het mogelijk om afbeeldingen aan de kolommen toe te voegen?
+ Absoluut! U kunt afbeeldingen toevoegen met behulp van de`Image` klasse en neem ze op in het zwevende vak of een ander lay-outelement in uw PDF.
 
- A: In stap 6 voegt u een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling.
+### Kan ik tekst opmaken met HTML-tags in de kolommen?
+ Ja, u kunt HTML-tags gebruiken binnen`HtmlFragment` objecten om uw tekst te stylen. Dit omvat het toevoegen van lettertypen, groottes, kleuren en meer.
 
-#### V: Hoe maak ik een grafiekobject en voeg ik een lijn toe?
-
- A: In stap 7 maakt u een nieuwe`Graph` object, voeg er een regel aan toe en voeg vervolgens de`Graph` bezwaar maken tegen de`Paragraphs` verzameling van de pagina.
-
-#### V: Hoe voeg ik een koptekst met HTML-opmaak toe?
-
-A: In stap 8 maakt u een`HtmlFragment` object en stel de inhoud in op de gewenste HTML-tekst, en voeg vervolgens het fragment toe aan de`Paragraphs` verzameling van de pagina.
-
-#### V: Hoe maak ik een FloatingBox met meerdere kolommen?
-
- A: In stap 9 maak je een`FloatingBox` object met meerdere kolommen en kolomafstand, voeg vervolgens tekstfragmenten en een regel toe aan de`Paragraphs` verzameling van de`FloatingBox`.
-
-#### V: Hoe kan ik het PDF-document opslaan?
-
- A: In stap 10 slaat u het PDF-document op met behulp van de`Save` methode van de`Document` voorwerp.
-
-#### V: Wat is de belangrijkste les die je uit deze tutorial hebt geleerd?
-
-A: Door deze tutorial te volgen, hebt u geleerd hoe u een PDF-document met meerdere kolommen kunt maken met Aspose.PDF voor .NET. Dit kan handig zijn om inhoud in een gestructureerde en georganiseerde lay-out weer te geven.
+### Hoe kan ik meer pagina's toevoegen met dezelfde kolomindeling?
+ U kunt extra pagina's toevoegen met behulp van`doc.Pages.Add()` en herhaal het proces van het toevoegen van kolommen en inhoud voor elke pagina.

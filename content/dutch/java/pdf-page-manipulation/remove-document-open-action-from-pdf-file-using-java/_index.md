@@ -1,6 +1,6 @@
 ---
-title: Verwijder de document-openactie uit een PDF-bestand met behulp van Java
-linktitle: Verwijder de document-openactie uit een PDF-bestand met behulp van Java
+title: Verwijder de actie Document openen uit een PDF-bestand met behulp van Java
+linktitle: Verwijder de actie Document openen uit een PDF-bestand met behulp van Java
 second_title: Aspose.PDF Java PDF-verwerkings-API
 description: Leer hoe u Document Open Action verwijdert uit PDF-bestanden met Java en Aspose.PDF voor Java. Verbeter de beveiliging en personalisatie.
 type: docs

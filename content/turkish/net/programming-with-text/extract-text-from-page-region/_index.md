@@ -2,127 +2,124 @@
 title: PDF Dosyasındaki Sayfa Bölgesinden Metni Çıkar
 linktitle: PDF Dosyasındaki Sayfa Bölgesinden Metni Çıkar
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki bir sayfanın belirli bir bölgesinden metnin nasıl çıkarılacağını öğrenin.
+description: Bu adım adım kılavuzla .NET için Aspose.PDF kullanarak PDF'deki belirli bir bölgeden metni nasıl çıkaracağınızı öğrenin. Belgelerinizden metni verimli bir şekilde toplayın ve kaydedin.
 type: docs
 weight: 190
 url: /tr/net/programming-with-text/extract-text-from-page-region/
 ---
-Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasındaki bir sayfadaki belirli bir bölgeden metin çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
+## giriiş
 
-## Gereksinimler
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+PDF'lerle çalışmak, ister formlardan, tablolardan veya bir belgenin belirli bölümlerinden veri çekmek olsun, genellikle belirli içerikleri çıkarmayı gerektirir. Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF'nin belirli bir bölgesinden metnin nasıl çıkarılacağını ele alacağız. Tüm bir belgeyi elemek yerine, metnin tam olarak nerede bulunduğunu belirleyip verimli bir şekilde çıkaracağız.
 
-- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
-- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
+## Ön koşullar
 
-## Adım 1: Projeyi kurun
-1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
+Koda geçmeden önce aşağıdaki öğelerin yerinde olduğundan emin olun:
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-Metni çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
+1.  Aspose.PDF for .NET: Eğer henüz yapmadıysanız, Aspose.PDF for .NET kütüphanesini indirip kurun.[.NET için Aspose.PDF'yi indirin](https://releases.aspose.com/pdf/net/).
+2. IDE: Visual Studio gibi herhangi bir .NET geliştirme ortamı.
+3. .NET Framework: Projenizin uygun .NET Framework ile kurulduğundan emin olun.
+4. PDF Belgesi: Metni çıkaracağımız örnek PDF.
+
+ Bunu yapabileceğini unutma[ücretsiz deneme alın](https://releases.aspose.com/) Aspose.PDF'yi kullanın veya[geçici lisans](https://purchase.aspose.com/temporary-license/) tam işlevsellik için.
+
+## Gerekli Paketleri İçe Aktarma
+
+Aspose.PDF for .NET ile çalışmaya başlamak için, gerekli ad alanlarını projenize aktarmanız gerekir. Bu paketler, PDF belgelerini işlemek için gerekli sınıfları ve yöntemleri sağlar.
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Adım 3: Belge dizinini ayarlayın
- Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
+## Adım 1: Belge Dizinini Ayarlama ve PDF'yi Yükleme
 
-## Adım 4: PDF belgesini açın
- Mevcut bir PDF belgesini şu şekilde açın:`Document`yapıcı ve giriş PDF dosyasına giden yolu geçirme.
+İlk adım PDF dosyanızın nerede bulunduğunu belirtmek ve onu projenize yüklemektir. Çalışmak istediğiniz PDF dosyasına yerel bir dizin yolu kullanabilirsiniz.
 
-```csharp
-Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-```
-
-## Adım 5: Bir sayfa bölgesinden metni çıkarın
- Bir tane oluştur`TextAbsorber` belgeden metin çıkarmak için nesne. Yapılandır`TextSearchOptions` Aramayı bir dikdörtgenle tanımlanan belirli bir sayfa bölgesiyle sınırlamak için.
-
-```csharp
-TextAbsorber absorb = new TextAbsorber();
-absorb.TextSearchOptions.LimitToPageBounds = true;
-absorb.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
-pdfDocument.Pages[1].Accept(absorb);
-```
-
-## Adım 6: Çıkarılan metni alın
- Çıkarılan metne şuradan erişin:`TextAbsorber` nesne.
-
-```csharp
-string extractedText = absorb.Text;
-```
-
-## Adım 7: Çıkarılan metni kaydedin
- Bir tane oluştur`TextWriter` ve çıkarılan metni kaydetmek istediğiniz dosyayı açın. Çıkarılan metni dosyaya yazın ve akışı kapatın.
-
-```csharp
-TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-tw.WriteLine(extractedText);
-tw. Close();
-```
-
-### .NET için Aspose.PDF kullanarak Sayfa Bölgesinden Metin Çıkarma için örnek kaynak kodu 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belgeyi aç
+
+// PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-// Metni çıkarmak için TextAbsorber nesnesi oluşturun
+```
+
+ Bu adım, PDF dosyasının düzgün bir şekilde yüklendiğinden ve üzerinde çalışılmaya hazır olduğundan emin olmanızı sağlar.`Document` Aspose.PDF kütüphanesinden gelen sınıf, PDF dosyasını düzenlemenize olanak tanır.
+
+## Adım 2: Çıkarım için Metin Emiciyi Başlatın
+
+ Bu adımda bir tane oluşturuyoruz`TextAbsorber` PDF belgesinden metin çıkarmak için tasarlanmış nesne.`TextAbsorber` esnektir ve belirli bölgelere veya sayfalara odaklanacak şekilde özelleştirilebilir.
+
+```csharp
+// Metni çıkarmak için bir TextAbsorber nesnesi oluşturun
 TextAbsorber absorber = new TextAbsorber();
+```
+
+ The`TextAbsorber`class, belirttiğiniz sınırlar içerisindeki tüm metni yakalayan güçlü bir araçtır.
+
+## Adım 3: Metnin Çıkarılacağı Bölgeyi Tanımlayın
+
+İşte sihir burada gerçekleşir. Metni tüm sayfadan çekmek yerine, çıkarmayı sayfanın belirli bir dikdörtgen bölgesiyle sınırlayabiliriz. İçeriğinizin tam olarak nerede bulunduğunu bildiğinizde bu mükemmeldir.
+
+```csharp
+// Metin çıkarmayı belirli bir bölgeyle sınırla
 absorber.TextSearchOptions.LimitToPageBounds = true;
 absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
-// İlk sayfa için emiciyi kabul et
+```
+
+ The`Rectangle` nesne, metnin çıkarılacağı alanın koordinatlarını (nokta cinsinden) tanımlamanıza olanak tanır.`TextSearchOptions.LimitToPageBounds` yalnızca belirtilen dikdörtgenin içindeki metnin çıkarılmasını sağlar.
+
+## Adım 4: İstenilen Sayfada Absorber'ı Kabul Edin
+
+ Bölgeyi kurduktan sonraki adım, kabul etmektir.`TextAbsorber` Metni çıkarmak istediğiniz belirli sayfa için. Burada, PDF'nin ilk sayfasına odaklanacağız.
+
+```csharp
+// İlk sayfa için emiciyi kabul edin
 pdfDocument.Pages[1].Accept(absorber);
+```
+
+ Arayarak`Accept` Sayfadaki yöntemi kullanarak, Aspose.PDF'e emiciyi çalıştırmasını ve tanımlanan bölgeden metni toplamasını talimat veriyoruz.
+
+## Adım 5: Çıkarılan Metni Alın ve Saklayın
+
+ Emici işini yaptıktan sonra, çıkarılan metni toplama ve kaydetme zamanı gelir. Bu adım, metni alıp bir`.txt` dosya.
+
+```csharp
 // Çıkarılan metni alın
 string extractedText = absorber.Text;
-// Bir yazar oluşturun ve dosyayı açın
+
+// Çıkarılan metni kaydetmek için bir yazar oluşturun
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-// Dosyaya bir satır metin yaz
+
+// Metni dosyaya yaz
 tw.WriteLine(extractedText);
+
 // Akışı kapat
 tw.Close();
 ```
 
+ Burada,`TextWriter` sınıf, çıkarılan metni bir metin dosyasına yazmak için kullanılır. Bu, çıkarılan içeriğinizin daha sonraki kullanım için güvenli bir şekilde saklanmasını sağlar.
+
 ## Çözüm
-Aspose.PDF for .NET kullanarak bir PDF belgesinin bir sayfasındaki belirli bir bölgeden metni başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
 
-### SSS
+ PDF belgesindeki belirli bir bölgeden metin çıkarmak, özellikle formlar veya tablolar gibi yapılandırılmış içeriklerle uğraşırken inanılmaz derecede yararlı olabilir. .NET için Aspose.PDF'yi kullanarak, bu görevi yalnızca birkaç satır kodla gerçekleştirebilirsiniz. Bir bölge tanımlayarak, bir`TextAbsorber`ve çıkarılan metni kaydederek, PDF'inizden neyin çıkarılacağı konusunda tam kontrole sahip olursunuz.
 
-#### S: Bu eğitimin amacı nedir?
+İster küçük bir proje üzerinde çalışın ister büyük belgeleri yönetin, bu yöntem tüm belgeyi taramadan PDF'lerinizden ilgili verileri çıkarmanın etkili bir yolunu sunar.
 
-A: Bu eğitim, .NET için Aspose.PDF kullanarak bir PDF dosyasındaki bir sayfadaki belirli bir bölgeden metin çıkarma sürecinde size rehberlik etmeyi amaçlamaktadır. Eşlik eden C# kaynak kodu, bu görevi gerçekleştirmek için adım adım talimatlar sağlar.
+## SSS
 
-#### S: Hangi ad alanlarını içe aktarmalıyım?
+### Birden fazla sayfadan aynı anda metin çıkarabilir miyim?
+ Evet, yineleme yoluyla`Pages` koleksiyonu`pdfDocument` , uygulayabilirsiniz`TextAbsorber` birden fazla sayfaya.
 
-A: Metni çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki using yönergelerini ekleyin:
+### Peki ya metin PDF'in farklı bir bölgesindeyse?
+ Kolayca ayarlayabilirsiniz`Rectangle` Metninizin bulunduğu bölgeye uyacak şekilde koordinatlar.
 
-```csharp
-using Aspose.Pdf;
-using System.IO;
-```
+### Bu taranmış PDF'lerde de işe yarıyor mu?
+Hayır, taranmış PDF'lerin görüntüleri metne dönüştürmek için OCR'ye (Optik Karakter Tanıma) ihtiyacı vardır. Aspose.PDF ayrıca OCR özellikleri de sunar.
 
-#### S: Belge dizinini nasıl belirlerim?
+### Belirli anahtar kelimelere dayalı metin çıkarmanın bir yolu var mı?
+ Evet, kullanabilirsiniz`TextFragmentAbsorber` Anahtar kelime tabanlı metin çıkarımı için.
 
- A: Satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
-
-#### S: Mevcut bir PDF belgesini nasıl açabilirim?
-
- A: 4. Adımda, mevcut bir PDF belgesini kullanarak açacaksınız.`Document` yapıcı ve giriş PDF dosyasına giden yolu sağlama.
-
-#### S: Belirli bir sayfa bölgesinden metni nasıl çıkarabilirim?
-
- A: 5. Adım, bir`TextAbsorber`PDF belgesinden metin çıkarmak için nesne. Daha sonra yapılandıracaksınız`TextSearchOptions` Sayfada koordinatları kullanarak belirli bir dikdörtgen bölge tanımlamak.
-
-#### S: Çıkarılan metne nasıl ulaşabilirim?
-
- A: 6. Adım, çıkarılan metne erişmenizde size rehberlik eder`TextAbsorber` nesne.
-
-#### S: Çıkarılan metni bir dosyaya nasıl kaydederim?
-
- A: 7. Adımda bir tane oluşturacaksınız`TextWriter`, çıkarılan metni kaydetmek istediğiniz dosyayı açın, çıkarılan metni dosyaya yazın ve ardından akışı kapatın.
-
-#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
-
-A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF kullanarak bir PDF belgesinin bir sayfasındaki belirli bir bölgeden metni nasıl çıkaracağınızı öğrendiniz. Çıkarılan metin, belirtilen bir çıktı dosyasına kaydedildi ve bu da istenen metin içeriğini hassas bir şekilde hedeflemenize ve analiz etmenize olanak tanır.
+### Şifrelenmiş bir PDF'den metni nasıl çıkarabilirim?
+Öncelikle doğru şifreyi girerek PDF'i şifresini çözmeniz, ardından metin çıkarma işlemine geçmeniz gerekecektir.

@@ -10,7 +10,7 @@ url: /fr/java/pdf-structure-elements/create-pdf-with-tagged-text-in-java/
 
 ## Introduction à la création de PDF avec du texte balisé en Java
 
-Dans le monde de la gestion de documents, les PDF se distinguent par leur format universel qui assure la cohérence sur différentes plateformes. Ils constituent non seulement un moyen pratique de visualiser des documents, mais également un outil puissant pour l'accessibilité du contenu. Les PDF balisés, en particulier, jouent un rôle crucial pour garantir l'accessibilité des documents aux personnes handicapées. Dans ce guide, nous verrons comment créer un PDF avec du texte balisé en Java à l'aide d'Aspose.PDF pour Java.
+Dans le monde de la gestion de documents, les PDF se distinguent par leur format universel qui assure la cohérence sur différentes plateformes. Ils constituent non seulement un moyen pratique de visualiser des documents, mais également un outil puissant pour l'accessibilité du contenu. Les PDF balisés, en particulier, jouent un rôle crucial pour garantir l'accessibilité des documents aux personnes handicapées. Dans ce guide, nous découvrirons comment créer un PDF avec du texte balisé en Java à l'aide d'Aspose.PDF pour Java.
 
 ## Prérequis
 

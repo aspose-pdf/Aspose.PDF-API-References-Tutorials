@@ -9,7 +9,7 @@ url: /zh-hant/net/programming-with-document/createpdfa1withasposepdf/
 ---
 ## 介紹
 
-您是否希望使用 Aspose.PDF for .NET 建立 PDF/A-1 檔案？您來對地方了！ PDF/A 是一種廣泛認可的格式，用於長期保存文檔，確保您的文件在未來幾十年內仍可存取和可讀。但是要如何使用 Aspose.PDF 來建立這種標準化格式呢？在本逐步教學中，我們將向您展示如何使用 Aspose.PDF for .NET 提供的強大功能建立 PDF/A-1 檔案。
+您是否希望使用 Aspose.PDF for .NET 建立 PDF/A-1 檔案？您來對地方了！ PDF/A 是一種廣泛認可的格式，用於長期保存文檔，確保您的文件在未來幾十年內均可存取和可讀。但是要如何使用 Aspose.PDF 來建立這種標準化格式呢？在本逐步教學中，我們將向您展示如何使用 Aspose.PDF for .NET 提供的強大功能建立 PDF/A-1 檔案。
 
 ## 先決條件
 

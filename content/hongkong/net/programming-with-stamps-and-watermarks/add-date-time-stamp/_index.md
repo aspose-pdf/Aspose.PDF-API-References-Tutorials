@@ -39,7 +39,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 
 1. 右鍵點選引用：在解決方案資源管理器中，右鍵點選專案的「引用」資料夾。
 2. 選擇“新增引用”：從上下文選單中選擇“新增引用”。
-3. 瀏覽 Aspose.PDF：導航到下載 Aspose.PDF 的位置並選擇它。按一下「確定」將其新增至您的專案。
+3. 瀏覽 Aspose.PDF：導航到下載 Aspose.PDF 的位置並選擇它。按一下「確定」將其新增至您的專案中。
 
 ### 導入所需的命名空間
 

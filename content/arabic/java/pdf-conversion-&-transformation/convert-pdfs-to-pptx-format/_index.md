@@ -80,7 +80,7 @@ pdfDocument.save("output.pptx", pptxSaveOptions);
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
+### كيف أقوم بتثبيت Aspose.PDF لـJava؟
 
 يمكنك تنزيل Aspose.PDF لـ Java من موقع الويب واتباع تعليمات التثبيت المقدمة في الوثائق.
 

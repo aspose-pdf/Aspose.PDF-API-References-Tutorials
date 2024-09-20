@@ -2,236 +2,194 @@
 title: Exportálja az Excel munkalap adatait táblázatba
 linktitle: Exportálja az Excel munkalap adatait táblázatba
 second_title: Aspose.PDF for .NET API Reference
-description: Exportáljon adatokat egy Excel-lapról PDF-táblázatba az Aspose.PDF for .NET használatával.
+description: Ismerje meg, hogyan exportálhatja az Excel-munkalap adatait PDF-táblázatba az Aspose.PDF for .NET segítségével. Lépésről lépésre bemutató oktatóprogram kódpéldákkal, előfeltételekkel és hasznos tippekkel.
 type: docs
 weight: 70
 url: /hu/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-Ebben az oktatóanyagban megtanuljuk, hogyan exportálhatunk adatokat Excel-munkalapról, és hogyan hozhatunk létre táblázatot PDF-dokumentumban az Aspose.PDF for .NET könyvtár használatával. Lépésről lépésre végigjárjuk a forráskódot, és részletesen elmagyarázzuk az egyes részeket. Ennek az oktatóanyagnak a végére képes lesz PDF-fájlok létrehozására Excel-munkalapok adatait tartalmazó táblázatokkal. Kezdjük is!
+## Bevezetés
 
-## Követelmények
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+Szüksége volt már arra, hogy adatokat exportáljon Excel-munkalapról PDF-fájlba, szépen táblázatformátumba rendezve? Képzelje el, hogy egy csomó adat van az Excelben, de professzionális megjelenésű PDF-fájlként kell megosztania. Ez bonyolultan hangozhat, igaz? Az Aspose.PDF for .NET segítségével azonban ezt a feladatot gyerekjátékká változtathatja. Ebben az oktatóanyagban végigvezetjük az Excel-munkalapok adatainak PDF-dokumentumban lévő táblázatba való exportálásán az Aspose.PDF for .NET használatával. Lépésről lépésre végigvezetjük, mindent lebontva, hogy még ha még új vagy ebben, a végére profinak érezd magad.
 
-- C# programozási nyelv alapismerete
-- A Visual Studio telepítve van a gépedre
-- Aspose.PDF for .NET könyvtár hozzáadva a projekthez
+## Előfeltételek
 
-## 1. lépés: A környezet beállítása
-Kezdésként hozzon létre egy új C#-projektet a Visual Studióban. Adja hozzá a hivatkozást az Aspose.PDF for .NET könyvtárhoz. Ehhez kattintson a jobb gombbal a projektjére a Solution Explorerben, válassza ki a „NuGet-csomagok kezelése” lehetőséget, és keressen az „Aspose.PDF” kifejezésre. Telepítse a csomagot, és már indulhat is.
+Mielőtt belemerülnénk a kódolásba, állítsunk be néhány dolgot:
 
-## 2. lépés: Az Excel munkalap betöltése
-Kódunk első lépésében meghatározzuk az Excel dokumentumot tartalmazó könyvtár elérési útját. Cserélje le a „DOKUMENTUMKÖNYVTÁR” elemet a tényleges könyvtár elérési útjával, ahol az Excel-fájl található.
+1.  Aspose.PDF for .NET Library – Győződjön meg arról, hogy a legújabb verzió van telepítve. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
+2.  Aspose.Cells for .NET Library – Erre az Excel műveletek kezeléséhez lesz szüksége. Töltse le innen[itt](https://releases.aspose.com/cells/net/).
+3. .NET fejlesztői környezet – Egy olyan eszköz, mint a Visual Studio, tökéletesen működik a kódoláshoz.
+4. Excel-fájl – Készítsen Excel-fájlt az exportálni kívánt adatokkal.
+
+ Ha nem rendelkezik Aspose.PDF és Aspose.Cells könyvtárral, kezdheti egy[ingyenes próbaverzió](https://releases.aspose.com/).
+
+## Csomagok importálása
+
+Először is győződjön meg arról, hogy az Aspose.PDF és az Aspose.Cells könyvtárakat is telepítette a projektben. Telepítheti őket a Visual Studio NuGet Package Manager használatával.
+
+Így importálhatja a szükséges csomagokat a C# kódba:
+
+```csharp
+using System.Data;
+using System.IO;
+using System.Linq;
+```
+
+Most, hogy az előfeltételek be vannak állítva, menjünk végig az adatok exportálásán egy Excel-lapból egy PDF-dokumentum táblázatába.
+
+## 1. lépés: Töltse be az Excel-munkafüzetet
+
+A kezdéshez be kell töltenie az Excel-munkafüzetet a programba. Ebben a lépésben az Aspose.Cells fájlt használjuk az Excel fájl megnyitásához.
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
+// Töltse be az Excel munkafüzetet
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
 ```
 
-Itt az Aspose.Cells könyvtárat használjuk az Excel-munkafüzet betöltésére. Ügyeljen arra, hogy a „newBook1.xlsx” szöveget az Excel-fájl nevére cserélje.
+ Magyarázat: Itt megadjuk az Excel fájl elérési útját, és ezzel töltjük be a munkafüzetet`Aspose.Cells.Workbook` . Ügyeljen a beállításra`"YOUR DOCUMENT DIRECTORY"` hogy a fájl helyére mutasson.
 
-## 3. lépés: A munkalap elérése
- Ezután el kell érnünk az Excel fájl első munkalapját. Ezt a`Worksheets` gyűjteménye a`Workbook` objektum.
+## 2. lépés: Nyissa meg az első munkalapot
+
+munkafüzet betöltése után el kell érnünk az első munkalapot, ahol az adataink tárolódnak.
 
 ```csharp
 // Az Excel fájl első munkalapjának elérése
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
 ```
 
- Ha az Excel-fájl több munkalapot is tartalmaz, módosíthatja az indexértéket`[0]` egy másik munkalap eléréséhez.
+Magyarázat: Ez a lépés egyszerű – megragadjuk a munkafüzet első munkalapját, amely az exportálandó adatokat tartalmazza.
 
-## 4. lépés: Adatok exportálása a DataTable-ba
- Most exportáljuk az Excel munkalap tartalmát a`DataTable` objektum. A segítségével megadjuk az exportálandó cellák tartományát`ExportDataTable` módszer.
+## 3. lépés: Exportálja az adatokat a DataTable-ba
+
+Most exportáljuk az adatokat az Excel-lapról egy DataTable objektumba, amely közvetítőként fog működni az adatok PDF-be történő átvitelében.
 
 ```csharp
 // 7 sor és 2 oszlop tartalmának exportálása az 1. cellától kezdve a DataTable-ba
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 ```
 
-Ebben a példában minden sort és oszlopot exportálunk az első cellától (0, 0) a munkalap utolsó cellájáig. Állítsa be a megfelelő tartományt igényei szerint.
+ Magyarázat: A`ExportDataTable` metódus kivonja az adatokat a munkalap első cellájától kezdve, és átfogja az összes sort és oszlopot. Ezek az adatok ezután a`DataTable` további felhasználásra.
 
-## 5. lépés: PDF-dokumentum létrehozása
-Most létrehozunk egy új PDF dokumentumot az Aspose.PDF könyvtár használatával.
+## 4. lépés: Hozzon létre egy új PDF-dokumentumot
+
+Ezután létre kell hoznunk egy új PDF dokumentumot az Aspose.PDF használatával.
 
 ```csharp
 // Példányosítson egy dokumentumpéldányt
-Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
+Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
+
+// Hozzon létre egy oldalt a dokumentumpéldányban
+Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Ez létrehoz egy üres PDF dokumentumot, amelyhez tartalmat adhatunk hozzá.
+ Magyarázat: Itt inicializálunk egy újat`Aspose.Pdf.Document`és adjunk hozzá egy oldalt. Ez az oldal később azt a táblázatot fogja tartalmazni, amelyet az Excel-adatokból készítünk.
 
-## 6. lépés: Oldal és táblázat hozzáadása
-Az adatok táblázatos formátumban történő megjelenítéséhez egy oldalt és egy táblázatot kell hozzáadnunk a PDF dokumentumhoz.
+## 5. lépés: Hozzon létre egy táblázatobjektumot PDF-ben
+
+Térjünk át egy táblázat létrehozására a PDF dokumentumon belül.
 
 ```csharp
-// Hozzon létre egy oldalt a dokumentumpéldányban
-Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
-
 // Hozzon létre egy táblázat objektumot
-Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 
-// Adja hozzá a Table objektumot a szakasz bekezdésgyűjteményéhez
-sec1.Paragraphs.Add(tab1);
+// Adja hozzá a Table objektumot az oldal bekezdésgyűjteményéhez
+page.Paragraphs.Add(table);
 ```
 
-Itt létrehozunk egy új oldalt és egy táblázatobjektumot. Ezután hozzáadjuk a táblázatot az oldal bekezdésgyűjteményéhez.
+ Magyarázat: Létrehozunk egy`Aspose.Pdf.Table` objektumot, és adja hozzá az oldal bekezdésgyűjteményéhez, ami biztosítja, hogy a táblázat megjelenjen az oldalon.
 
-## 7. lépés: A táblázat tulajdonságainak beállítása
-Az adatok importálása előtt be kell állítanunk a táblázat néhány tulajdonságát, például az oszlopszélességeket és az alapértelmezett cellaszegélyeket.
+## 6. lépés: Állítsa be az oszlopszélességeket és a szegélyeket
+
+A PDF-ben lévő táblázatoknak meghatározott oszlopszélességre van szükségük. Szegélyeket is hozzáadunk a táblázat olvashatóbbá tételéhez.
 
 ```csharp
 // Állítsa be a táblázat oszlopszélességét
-tab1.ColumnWidths = "40 100 100";
+table.ColumnWidths = "40 100 100";
 
-// Állítsa be a táblázat alapértelmezett cellaszegélyét a BorderInfo objektum segítségével
-tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
+// Állítsa be az alapértelmezett cellaszegélyt
+table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-Ebben a példában az oszlopszélességeket 40, 100 és 100 egységre állítjuk be. Állítsa be az értékeket az adatok alapján. Az alapértelmezett cellaszegélyt úgy is beállítottuk, hogy az egyes cellák minden oldalán szegélyek jelenjenek meg.
+ Magyarázat: Beállítjuk a három oszlop szélességét, és minden cellának alapértelmezett szegélyt adunk, amelynek vastagsága:`0.1F`.
 
-## 8. lépés: Adatok importálása a táblázatba
- Most importáljuk az adatokat a`DataTable` objektumot a táblázatba a`ImportDataTable` módszer.
+## 7. lépés: Importáljon adatokat a DataTable-ből PDF-táblázatba
+
+Most itt az ideje importálni az adatokat a DataTable-ból a PDF-táblázatunkba.
 
 ```csharp
-// Importáljon adatokat a Table objektumba a fent létrehozott DataTable-ból
-tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
+// Importáljon adatokat a Table objektumba a DataTable-ból
+table.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
 ```
 
- Itt megadjuk az importálandó sorok és oszlopok tartományát. Ebben a példában az összes sort és oszlopot importáljuk a`dataTable` objektum.
+ Magyarázat: A`ImportDataTable`módszer az összes adatot átviszi a`DataTable` a PDF táblázathoz. Ez feltölti a táblázatot az Excel-lap adataival.
 
-## 9. lépés: A táblázat formázása
-táblázat megjelenésének javítása érdekében formázást alkalmazhatunk adott cellákon vagy sorokon. Ebben a lépésben megformázzuk a táblázat első és alternatív sorait.
+## 8. lépés: alakítsa ki a fejlécesor stílusát
+
+A háttérszín, a betűtípus és az igazítás módosításával alakítsuk ki a táblázat fejlécsorának stílusát.
 
 ```csharp
-// Vegye ki az 1. sort a táblázatból
-Aspose.Pdf.Row row1 = tab1.Rows[0];
+// Vegye ki az első sort a táblázatból
+Aspose.Pdf.Row headerRow = table.Rows[0];
 
-// Formázza az első sort
-foreach(Aspose.Pdf.Cell curCell in row1.Cells)
+// Állítsa be a fejlécsor stílusát
+foreach (Aspose.Pdf.Cell cell in headerRow.Cells)
 {
-     // Állítsa be az első sor celláinak háttérszínét
-     curCell.BackgroundColor = Color.Blue;// Állítsa be az első sor celláinak arcát
-     curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-    
-     // Állítsa be az első sor celláinak betűszínét
-     curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-    
-     // Állítsa be az első sor celláinak szövegigazítását
-     curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-}
-
-// Alternatív sorformátum
-for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
-{
-     foreach(Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
-     {
-         // Állítsa be a cellák háttérszínét az alternatív sorokban
-         curCell.BackgroundColor = Color.Gray;
-        
-         // Állítsa be a cellák szövegszínét az alternatív sorokban
-         curCell.DefaultCellTextState.ForegroundColor = Color.White;
-     }
+    cell.BackgroundColor = Color.Blue;
+    cell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
+    cell.DefaultCellTextState.ForegroundColor = Color.Yellow;
+    cell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 ```
 
-Itt végigmegyünk az első sor celláin, és beállítjuk a háttérszínt, a betűtípust, a betűszínt és a szöveg igazítását. Ezután végigfutjuk az alternatív sorok összes celláját, és beállítjuk a háttér és a szöveg színét.
+Magyarázat: Az első sor (fejléc) összes celláját végigpörgetjük, háttérszínüket kékre, a szöveg színét sárgára állítjuk, és a szöveget középre igazítjuk.
+
+## 9. lépés: alakítsa ki a fennmaradó sorok stílusát
+
+A fejléc és a többi sor közötti különbségtétel érdekében adjunk hozzá más stílust a fennmaradó sorokhoz.
+
+```csharp
+for (int i = 1; i <= dataTable.Rows.Count; i++)
+{
+    foreach (Aspose.Pdf.Cell cell in table.Rows[i].Cells)
+    {
+        cell.BackgroundColor = Color.Gray;
+        cell.DefaultCellTextState.ForegroundColor = Color.White;
+    }
+}
+```
+
+Magyarázat: A fejléc kivételével minden sorhoz szürke hátteret és fehér szövegszínt állítottunk be.
 
 ## 10. lépés: Mentse el a PDF-dokumentumot
-Végül elmentjük a PDF dokumentumot a megadott helyre.
+
+Végül mentse el a PDF dokumentumot a táblázattal együtt.
 
 ```csharp
 // Mentse el a PDF-et
-pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
+pdfDocument.Save(dataDir + "Exceldata_toPdf_table.pdf");
 ```
 
-Ügyeljen arra, hogy a „DOKUMENTUMKÖNYVTÁR” szöveget a kívánt könyvtár elérési útjával és fájlnevével cserélje ki a kimeneti PDF-fájlhoz.
-
-### Példa forráskódra az Excel-munkalapadatok táblába exportálásához az Aspose.PDF for .NET használatával
-
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
-// Az Excel fájl első munkalapjának elérése
-Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
-// 7 sor és 2 oszlop tartalmának exportálása az 1. cellától kezdve a DataTable-ba
-DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
-
-// Példányosítson egy dokumentum példányt
-Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Hozzon létre egy oldalt a dokumentumpéldányban
-Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
-
-// Hozzon létre egy táblázat objektumot
-Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-
-// Adja hozzá a Table objektumot a szakasz bekezdésgyűjteményéhez
-sec1.Paragraphs.Add(tab1);
-
-// Állítsa be a táblázat oszlopszélességét. A ColumnCount-ot manuálisan kell megadnunk.
-// Mivel a jelenlegi excel munkalapnak három oszlopa van, ezért ugyanazt a számot adjuk meg
-tab1.ColumnWidths = "40 100 100";
-
-// Állítsa be a táblázat alapértelmezett cellaszegélyét a BorderInfo objektum segítségével
-tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-
-// Importáljon adatokat a Table objektumba a fent létrehozott DataTable-ból
-tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-// Vegye ki az 1. sort a táblázatból
-Aspose.Pdf.Row row1 = tab1.Rows[0];
-
-// Ismételje meg az 1. sor összes celláját, és állítsa a háttérszínüket kékre
-foreach (Aspose.Pdf.Cell curCell in row1.Cells)
-{
-	// Állítsa be a táblázat 1. sorában található összes cella hátterét.
-	curCell.BackgroundColor = Color.Blue;
-	// Állítsa be a betűtípust a táblázat 1. sorának celláihoz.
-	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	// Állítsa be a táblázat 1. sorában található összes cella betűtípusának színét.
-	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-	// Állítsa be az 1. sor celláinak szövegigazítását Középre.
-	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-}
-
-for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
-{
-	// Ismételje meg az 1. sor összes celláját, és állítsa a háttérszínüket kékre
-	foreach (Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
-	{
-		// Állítsa be az összes cella háttérszínét, kivéve az 1. sort.
-		curCell.BackgroundColor = Color.Gray;
-		// Állítsa be az összes cella szöveg színét, kivéve az 1. sort.
-		curCell.DefaultCellTextState.ForegroundColor = Color.White;
-	}
-}
-
-// Mentse el a PDF-et
-pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
-```
+Magyarázat: A PDF-fájlt a megadott könyvtárba mentjük. Voilà! Az Excel-adatok most egy gyönyörűen formázott PDF-táblázatban vannak.
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan exportálhatunk adatokat Excel-munkalapról PDF-táblázatba az Aspose.PDF for .NET könyvtár használatával. Lépésről lépésre bemutattuk az Excel munkalap betöltésének, a PDF dokumentum létrehozásának, a táblázat hozzáadásának, az adatok importálásának és a táblázat formázásának lépéseit. Most már programozottan is létrehozhat PDF-fájlokat Excel-adatokat tartalmazó táblázatokkal.
 
-### GYIK
+És megvan! Néhány lépésben exportálta az adatokat egy Excel-munkalapról egy PDF-ben található táblázatba az Aspose.PDF for .NET használatával. A folyamat lebontásával és menet közbeni stílusával testreszabhatja a kimenetet, és gondoskodhat arról, hogy az adatok tisztán és professzionálisan nézzenek ki. Így amikor legközelebb valaki átad Önnek egy Excel-fájlt, és PDF-jelentést kér, pontosan tudja, mit kell tennie.
 
-#### K: Mi a célja az Excel-munkalapadatok PDF-táblába történő exportálásának?
+## GYIK
 
-V: Az Excel munkalap adatainak PDF-táblázatba történő exportálása lehetővé teszi az adatok strukturált és szervezett formátumban történő megjelenítését. Lehetővé teszi PDF-fájlok létrehozását Excel-munkalapok adatait tartalmazó táblázatokkal, megkönnyítve ezzel az információk hordozható dokumentumformátumban történő megosztását és megőrzését.
+### Testreszabhatom a táblázatot jobban?
+Teljesen! Módosíthatja a színeket, a betűtípusokat, az igazítást, sőt szegélyeket is hozzáadhat bizonyos cellákhoz.
 
-#### K: Testreszabhatom a PDF-tábla megjelenését?
+### Ingyenes az Aspose.PDF for .NET?
+ Ingyenes próbaverziót kínál, de hosszabb használathoz licencre lesz szüksége. Megteheti[vásárold meg itt](https://purchase.aspose.com/buy).
 
-V: Igen, testreszabhatja a PDF-tábla megjelenését az Aspose.PDF for .NET által biztosított különféle tulajdonságaival. A mellékelt C# forráskódban módosíthatja az oszlopszélességeket, a cellaszegélyeket, a szövegigazítást, a betűstílust és egyebeket, hogy megfeleljen az Ön egyedi igényeinek.
+### Csak meghatározott sorokat és oszlopokat exportálhatok?
+ Igen, módosíthatja a paramétereket a`ExportDataTable` módszer adott tartományok exportálására.
 
-#### K: Hogyan kezelhetem a több munkalappal rendelkező Excel-fájlokat?
+### Ez működik nagy Excel fájlokkal?
+Igen, az Aspose.Cells a nagy Excel-fájlok hatékony kezelésére készült.
 
- V: A megadott C# kódban az index segítségével elértük az Excel fájl első munkalapját`[0]` . Ha az Excel-fájl több munkalapot is tartalmaz, akkor az index értékének megfelelő módosításával érheti el őket, például`[1]` a második munkalaphoz ill`[2]` a harmadik munkalaphoz.
-
-#### K: Alkalmazhatok eltérő formázást a PDF-tábla adott soraihoz vagy celláihoz?
-
-V: Igen, eltérő formázást alkalmazhat a PDF-tábla adott soraihoz vagy celláihoz. A mellékelt C# forráskódban bemutattuk, hogyan lehet az első sort és az alternatív sorokat eltérő módon formázni a háttérszínük, a betűstílusuk és a betűszínük megváltoztatásával. Szükség szerint alkalmazhat hasonló formázási technikákat bármely konkrét sorra vagy cellára.
-
-#### K: Az Aspose.PDF for .NET az egyetlen olyan könyvtár, amely lehetővé teszi az Excel adatok PDF táblába történő exportálását?
-
-V: Az Aspose.PDF for .NET egy hatékony könyvtár a PDF-dokumentumokkal való munkavégzéshez .NET-alkalmazásokban. Bár más könyvtárak is elérhetők, az Aspose.PDF for .NET a szolgáltatások és lehetőségek széles skáláját kínálja az Excel-adatokból származó táblázatokat tartalmazó PDF-fájlok előállításához, kezeléséhez és exportálásához, így népszerű választás az ilyen feladatokhoz.
+### Hogyan tudok több oldalt hozzáadni a PDF-hez?
+ Használhatod`pdfDocument.Pages.Add()` hogy annyi oldalt adjon hozzá, amennyire szüksége van.

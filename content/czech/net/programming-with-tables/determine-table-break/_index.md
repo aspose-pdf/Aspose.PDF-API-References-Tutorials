@@ -2,175 +2,193 @@
 title: Určete zalomení tabulky v souboru PDF
 linktitle: Určete zalomení tabulky v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak určit konce tabulek v souboru PDF pomocí Aspose.PDF for .NET.
+description: Zjistěte, jak určit zalomení tabulky v souborech PDF pomocí Aspose.PDF for .NET s naším podrobným průvodcem, včetně příkladů kódu a tipů pro odstraňování problémů.
 type: docs
 weight: 60
 url: /cs/net/programming-with-tables/determine-table-break/
 ---
-V tomto tutoriálu se naučíme, jak určit konce tabulek v souboru PDF pomocí Aspose.PDF pro .NET. Vysvětlíme si zdrojový kód v C# krok za krokem. Na konci tohoto tutoriálu budete vědět, jak určit, zda tabulka přesahuje okraje stránky. Začněme!
+## Zavedení
 
-## Krok 1: Nastavení prostředí
-Nejprve se ujistěte, že jste nastavili vývojové prostředí C# pomocí Aspose.PDF pro .NET. Přidejte odkaz do knihovny a importujte potřebné jmenné prostory.
+Vytváření a manipulace se soubory PDF vám může připadat jako krocení divoké šelmy. V jednu chvíli si myslíte, že jste na to přišli, a v další chvíli se dokument chová nepředvídatelně. Přemýšleli jste někdy o tom, jak efektivně spravovat tabulky v PDF – konkrétně jak určit, kdy se tabulka rozbije? V tomto článku se ponoříme do toho, jak použít Aspose.PDF pro .NET k identifikaci, kdy se tabulka rozšíří nad velikost stránky. Tak se připoutejte a pojďme prozkoumat svět manipulace s PDF!
 
-## Krok 2: Vytvoření dokumentu PDF
- V tomto kroku vytvoříme nový`Document` objekt reprezentující dokument PDF.
+## Předpoklady
+
+Než se pustíme do samotného kódování, ujistěte se, že máte vše na svém místě:
+
+1. Vývojové prostředí .NET: Ujistěte se, že máte nainstalované Visual Studio nebo jakékoli kompatibilní IDE.
+2.  Knihovna Aspose.PDF: Do projektu musíte přidat knihovnu Aspose.PDF. Můžete si jej stáhnout z[Aspose ke stažení ve formátu PDF](https://releases.aspose.com/pdf/net/) stránku, nebo jej můžete nainstalovat pomocí NuGet Package Manager:
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. Základní znalost C#: Tato příručka předpokládá, že rozumně rozumíte C# a objektově orientovanému programování.
+
+Nyní, když máme naše předpoklady, pojďme se rozjet importem potřebných balíčků.
+
+## Importujte balíčky
+
+Chcete-li začít používat Aspose.PDF ve svém projektu, musíte zahrnout příslušné jmenné prostory. Můžete to udělat takto:
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Tento dokument bude použit k přidání oddílů a tabulek.
+Tyto jmenné prostory vám umožní přístup k základním funkcím potřebným pro manipulaci se soubory PDF.
 
-## Krok 3: Přidání sekce a tabulky
-Nyní přidáme sekci do našeho dokumentu PDF a vytvoříme tabulku uvnitř této sekce.
+Pojďme si tento proces rozdělit na zvládnutelné kroky. Vytvoříme dokument PDF, přidáme tabulku a určíme, zda se při přidávání dalších řádků rozbije na novou stránku.
+
+## Krok 1: Nastavte adresář dokumentů
+
+Než začnete kódovat, určete umístění, kam se uloží vaše výstupní PDF. To je zásadní, protože zde později najdete vygenerovaný dokument.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Nahraďte svým adresářem.
 ```
 
-Pro tabulku také určujeme horní okraj 300 bodů. Tuto hodnotu můžete upravit podle svých potřeb.
+## Krok 2: Vytvořte instanci dokumentu PDF
 
-## Krok 4: Nastavení tabulky
-V tomto kroku nakonfigurujeme vlastnosti tabulky, jako jsou šířky a okraje sloupců.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-Zde definujeme šířku sloupců tabulky a ohraničení buněk. Tyto hodnoty můžete upravit podle svých preferencí.
-
-## Krok 5: Přidejte do tabulky řádky a buňky
-Nyní vytvoříme řádky a buňky v tabulce pomocí smyčky.
+ Dále vytvoříte novou instanci souboru`Document` třídy z knihovny Aspose.PDF. Zde se stane všechna vaše kouzla PDF!
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-Zde vytvoříme v tabulce 17 řádků a do každého řádku přidáme tři buňky. Sponu si můžete upravit podle svých potřeb.
-
-## Krok 6: Určení zlomů tabulky
-Nyní zjistíme, zda tabulka přesahuje okraje stránky, porovnáním výšky stránky s celkovou výškou objektů v tabulce.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-Vypočítáme výšku stránky a celkovou výšku objektů s přihlédnutím k okrajům. Pokud je rozdíl 10 nebo méně, tabulka přesahuje okraje stránky.
-
-## Krok 7: Uložení dokumentu PDF
-Nakonec uložíme PDF dokument s výsledky.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-Ujistěte se, že jste zadali správný adresář dokumentů. Výsledný soubor PDF bude uložen s určenými zalomeními tabulek.
-
-### Příklad zdrojového kódu pro Determine Table Break pomocí Aspose.PDF pro .NET
-
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Vytvořte instanci objektové třídy PDF
 Document pdf = new Document();
-// Přidejte sekci do kolekce oddílů dokumentu PDF
+```
+
+## Krok 3: Vytvořte stránku
+
+Každý PDF potřebuje stránku. Zde je návod, jak můžete do dokumentu přidat novou stránku.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Vytvořte instanci objektu tabulky
+```
+
+## Krok 4: Vytvořte instanci tabulky
+
+Nyní vytvořte skutečnou tabulku, u které chcete sledovat přestávky.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// Přidejte tabulku do kolekce odstavců požadované sekce
+table1.Margin.Top = 300; // Poskytuje trochu místa na stole.
+```
+
+## Krok 5: Přidejte tabulku na stránku
+
+Po vytvoření tabulky je dalším krokem její přidání na stránku, kterou jsme dříve vytvořili.
+
+```csharp
 page.Paragraphs.Add(table1);
-// Nastavte šířku sloupců tabulky
-table1.ColumnWidths = "100 100 100";
-// Nastavte výchozí ohraničení buňky pomocí objektu BorderInfo
+```
+
+## Krok 6: Definujte vlastnosti tabulky
+
+Pojďme definovat některé důležité vlastnosti pro naši tabulku, jako jsou šířky a okraje sloupců.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // Každý sloupec je široký 100 jednotek.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Nastavte ohraničení tabulky pomocí jiného přizpůsobeného objektu BorderInfo
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Vytvořte objekt MarginInfo a nastavte jeho levý, spodní, pravý a horní okraj
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// Nastavte výchozí odsazení buněk na objekt MarginInfo
+```
+
+## Krok 7: Nastavte okraje buněk
+
+Musíme zajistit, aby naše buňky měly nějaké vycpávky pro lepší prezentaci. Zde je návod, jak to nastavit.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // Nahoře, vlevo, vpravo, dole
 table1.DefaultCellPadding = margin;
-// Pokud zvýšíte počítadlo na 17, stůl se rozbije
-// Protože už to přes tuto stránku nelze umístit
+```
+
+## Krok 8: Přidejte řádky do tabulky
+
+Nyní jsme připraveni přidat řádky! Propleteme a vytvoříme 17 řad. (Proč 17? No, to je místo, kde se rozbije stůl!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//Vytvořte řádky v tabulce a poté buňky v řádcích
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// Získejte informace o výšce stránky
+```
+
+## Krok 9: Získejte výšku stránky
+
+Abychom zkontrolovali, zda se náš stůl vejde, potřebujeme znát výšku naší stránky. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// Získejte informace o celkové výšce horního a dolního okraje stránky,
-// Okraj desky stolu a výška stolu.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// Zobrazte výšku stránky, výšku tabulky, horní okraj tabulky a horní okraj stránky
-// A informace o spodním okraji
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## Krok 10: Vypočítejte celkovou výšku objektů
 
-// Zkontrolujte, zda odečteme součet Horní okraj stránky + Spodní okraj stránky
-// + Okraj desky a výška tabulky z výšky stránky a její menší
-// Než 10 (průměrný řádek může být větší než 10)
+Nyní spočítejme celkovou výšku všech objektů (okraje stránky, okraje tabulky a výška tabulky) na stránce.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## Krok 11: Zobrazení informací o výšce
+
+Je užitečné vidět nějaké informace o ladění, ne? Vytiskneme všechny relevantní informace o výšce do konzole.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## Krok 12: Zkontrolujte stav přerušení tabulky
+
+Nakonec chceme zjistit, zda by přidání dalších řádků způsobilo rozbití tabulky na jinou stránku.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Pokud je hodnota menší než 10, zobrazte zprávu.
-	//Což ukazuje, že další řádek nelze umístit a pokud přidáme nový
-	// Řádek, stůl se rozbije. Záleží na hodnotě výšky řádku.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## Krok 13: Uložte dokument PDF
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Uložte dokument pdf
+Po vší té tvrdé práci uložme dokument PDF do vámi určeného adresáře.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## Krok 14: Potvrzující zpráva
+
+Abyste věděli, že vše proběhlo hladce, pošleme potvrzovací zprávu.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## Závěr
-V tomto tutoriálu jsme se naučili, jak určit konce tabulek v dokumentu PDF pomocí Aspose.PDF pro .NET. Pomocí tohoto podrobného průvodce můžete zkontrolovat, zda tabulka nepřesahuje okraje stránky ve vašich vlastních projektech C#.
 
-### Časté dotazy pro určení zlomu tabulky v souboru PDF
+V této příručce jsme se podrobně podívali na to, jak určit, kdy se tabulka v dokumentu PDF rozbije při použití Aspose.PDF pro .NET. Pomocí těchto kroků můžete snadno identifikovat omezení prostoru a lépe spravovat rozvržení PDF. S praxí získáte dovednosti pro efektivní manipulaci s tabulkami a vytváření vyleštěných PDF jako profesionál. Tak proč to nezkusit a nezjistit, jak to může fungovat i vám?
 
-#### Otázka: Jaký je účel určování zalomení tabulek v dokumentu PDF?
+## FAQ
 
-Odpověď: Účelem určení zalomení tabulek v dokumentu PDF je zkontrolovat, zda tabulka nepřesahuje okraje stránky. Tím je zajištěno, že obsah tabulky je správně zobrazen v dostupném prostoru stránky. Detekcí zlomů tabulek můžete zvládnout přetečení obsahu a podle toho upravit rozvržení tabulky.
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je robustní knihovna, která umožňuje vývojářům vytvářet, převádět a manipulovat s dokumenty PDF přímo v jejich aplikacích .NET.
 
-#### Otázka: Jak mohu upravit horní okraj tabulky?
+### Mohu získat bezplatnou zkušební verzi Aspose.PDF?
+ Ano! Můžete si stáhnout a[zkušební verze zdarma](https://releases.aspose.com/) k prozkoumání jeho funkcí před nákupem.
 
- Odpověď: V poskytnutém zdrojovém kódu C# můžete upravit horní okraj tabulky úpravou hodnoty`table1.Margin.Top`vlastnictví. Zvyšte nebo snižte hodnotu podle potřeby pro nastavení požadovaného horního okraje pro tabulku.
+### Jak najdu podporu pro Aspose.PDF?
+ Na jejich stránkách můžete najít užitečné informace a získat podporu od komunity Aspose[fórum podpory](https://forum.aspose.com/c/pdf/10).
 
-#### Otázka: Mohu upravit vzhled tabulky, jako jsou barvy buněk a velikost písma?
+### Co se stane, když potřebuji v tabulce více než 17 řádků?
+Pokud překročíte dostupný prostor, vaše tabulka se na stránku nevejde a měli byste podniknout příslušné kroky, abyste ji správně naformátovali.
 
-Odpověď: Ano, vzhled tabulky a jejích buněk můžete přizpůsobit pomocí různých vlastností a metod poskytovaných Aspose.PDF pro .NET. Můžete například změnit barvy pozadí buňky, velikost písma, rodinu písem, zarovnání textu a další. Další informace o přizpůsobení vzhledu stolu naleznete v oficiální dokumentaci.
-
-#### Otázka: Co se stane, pokud tabulka přesahuje okraje stránky?
-
-Odpověď: Pokud tabulka přesahuje okraje stránky, může to mít za následek zkrácení obsahu nebo překrývání, takže dokument PDF bude méně čitelný a organizovaný. Detekcí zalomení tabulky a zpracováním přetečení můžete zajistit, že obsah zůstane správně zobrazen v dostupné oblasti stránky.
-
-#### Otázka: Mohu určit konce tabulek pro více tabulek ve stejném dokumentu PDF?
-
-Odpověď: Ano, můžete určit konce tabulek pro více tabulek ve stejném dokumentu PDF. Jednoduše opakujte kroky pro každou tabulku, kterou chcete analyzovat, a upravte rozložení tabulky podle potřeby, abyste zabránili přetečení obsahu.
+### Kde si mohu koupit knihovnu Aspose.PDF?
+ Knihovnu si můžete zakoupit od[nákupní stránku](https://purchase.aspose.com/buy).

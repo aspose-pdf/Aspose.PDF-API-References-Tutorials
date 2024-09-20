@@ -2,146 +2,132 @@
 title: Oszlopok szövegének kibontása PDF-fájlban
 linktitle: Oszlopok szövegének kibontása PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan bonthatja ki az oszlopok szövegét PDF-fájlból az Aspose.PDF for .NET segítségével.
+description: Ismerje meg, hogyan bonthat ki szövegoszlopokat PDF-fájlokból az Aspose.PDF for .NET segítségével. Ez az útmutató az egyes lépéseket kódpéldákkal és magyarázatokkal részletezi.
 type: docs
 weight: 150
 url: /hu/net/programming-with-text/extract-columns-text/
 ---
-Ez az oktatóanyag végigvezeti Önt az oszlopok szövegének PDF-fájlba történő kibontásán az Aspose.PDF for .NET használatával. A mellékelt C# forráskód bemutatja a szükséges lépéseket.
+## Bevezetés
 
-## Követelmények
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+PDF fájlokkal dolgozik, és szöveget kell kivonnia egy adott oszlopformátumban? Függetlenül attól, hogy számlákat, jelentéseket vagy bármilyen strukturált dokumentumot dolgoz fel, a szöveg pontos kinyerése a PDF-ből bonyolult feladat lehet. Itt lép be az Aspose.PDF for .NET a folyamat egyszerűsítésére. Ebben az oktatóanyagban végigvezetjük, hogyan bonthat ki könnyedén szövegoszlopokat egy PDF-fájlból. 
 
-- Visual Studio vagy bármely más C# fordító telepítve a gépedre.
-- Aspose.PDF .NET könyvtárhoz. Letöltheti az Aspose hivatalos webhelyéről, vagy használhat csomagkezelőt, például a NuGetet a telepítéséhez.
+## Előfeltételek
 
-## 1. lépés: Állítsa be a projektet
-1. Hozzon létre egy új C# projektet a kívánt fejlesztői környezetben.
-2. Adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+Mielőtt belemerülnénk a kódba, fedjük le azokat a lényeges dolgokat, amelyekre szüksége lesz:
 
-## 2. lépés: Importálja a szükséges névtereket
-Abban a kódfájlban, amelybe az oszlopok szövegét ki szeretné bontani, adja hozzá a következőket a fájl tetején található direktívák használatával:
+-  Aspose.PDF for .NET: Győződjön meg arról, hogy az Aspose.PDF for .NET legújabb verziója telepítve van. Ha nem, akkor megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
+- Fejlesztői környezet: A kóddal való együttműködéshez Visual Studio vagy más .NET fejlesztői környezet szükséges.
+- PDF-dokumentum: Legyen kéznél egy minta PDF-dokumentum, lehetőleg egy szövegoszlopokkal, mivel abból fogunk szöveget kivonni.
+
+ Ha még nem telepítette az Aspose.PDF for .NET fájlt, megragadhatja a[ingyenes próbaverzió](https://releases.aspose.com/) vagy[vásároljon licencet](https://purchase.aspose.com/buy) a teljes funkciókért. Jelentkezni is lehet a[ideiglenes engedély](https://purchase.aspose.com/temporary-license) ha szükséges.
+
+## Névterek importálása
+
+Az Aspose.PDF for .NET projektben való használatához a következő névtereket kell importálnia:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using System.IO;
+using System;
 ```
 
-## 3. lépés: Állítsa be a dokumentumkönyvtárat
- A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
+## Útmutató lépésről lépésre: Szövegoszlopok kibontása PDF-ből
 
-## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+Most bontsuk fel a kód minden részét, hogy jobban megértsük, hogyan működik. Kövesse lépésről lépésre, és magyarázza el a folyamat egyes szakaszait.
+
+## 1. lépés: Töltse be a PDF-dokumentumot
+
+ Az első dolog, amit meg kell tennie, hogy betöltse a PDF fájlt a`Document`objektum. Az Aspose.PDF így működik együtt a dokumentummal.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## 5. lépés: Állítsa be a betűméretet
-Csökkentse a szövegrészletek betűméretét 0,7-szeresére az olvashatóság javítása és az oszlopos szöveg jobb megjelenítése érdekében.
+ Ebben a lépésben egyszerűen meghatározzuk azt a könyvtárat, ahol a PDF-dokumentumot tároljuk. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a helyi PDF-fájl elérési útjával. A`Document` objektum betölti a PDF-fájlt a memóriába, így elérhetővé teszi a további feldolgozáshoz.
+
+## 2. lépés: Állítsa be a szövegtöredék-elnyelőt
+
+ Ezután használjuk a`TextFragmentAbsorber` a PDF-fájl teljes szövegének befogadásához vagy rögzítéséhez. Ezt az elnyelő osztályt arra tervezték, hogy szövegtöredékeket vonjon ki a PDF-ben meghatározott területekről, ami ideálissá teszi szövegoszlopok kinyerésére.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
-foreach(TextFragment tf in tfc)
-{
-     tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
-}
 ```
 
-## 6. lépés: Szöveg kibontása az oszlopokból
- Mentse el a módosított PDF dokumentumot egy memóriafolyamba, és töltse be újra új dokumentumként. Ezután használja a`TextAbsorber` osztályt, hogy kivonja a szöveget az oszlopokból.
+Itt létrehozunk egy példányt`TextFragmentAbsorber` és alkalmazza a PDF összes oldalára a használatával`Accept()` . A`TextFragmentCollection` tárolja a kivont szöveget, és ebből a gyűjteményből szükség szerint módosíthatjuk vagy kivonhatjuk a szöveget.
+
+## 3. lépés: Állítsa be a kivont szöveg betűméretét
+
+A szövegrészletek rögzítése után érdemes lehet csökkenteni a betűméretüket, különösen akkor, ha az eredeti szöveg túl nagy. Ebben a példában a betűméretet 70%-kal csökkentjük.
 
 ```csharp
-Stream st = new MemoryStream();
-pdfDocument.Save(st);
-pdfDocument = new Document(st);
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument);
-```
-
-## 7. lépés: Mentse el a kicsomagolt szöveget
-Mentse a kibontott szöveget egy szövegfájlba a megadott kimeneti fájl elérési útján.
-
-```csharp
-dataDir = dataDir + "ExtractColumnsText_out.txt";
-File.WriteAllText(dataDir, extractedText);
-Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
-```
-
-### Minta forráskód az Oszlopok szövegének kibontásához az Aspose.PDF for .NET használatával 
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Nyissa meg a dokumentumot
-Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
-TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-pdfDocument.Pages.Accept(tfa);
-TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// A betűméretet legalább 70%-kal csökkenteni kell
-	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
+    // Csökkentse a betűméretet 70%-kal
+    tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
+```
+
+Ez a kód mindegyiken áthalad`TextFragment` a gyűjteményben, és 70%-kal csökkenti a betűméretet. A betűméret módosítása megkönnyítheti a kivonatolt szöveg kezelését, különösen, ha különböző célokra formázza.
+
+## 4. lépés: Mentse el a dokumentumot memóriafolyamba
+
+ A szöveg módosítása után a PDF-et elmentjük a`MemoryStream`. Ez lehetővé teszi számunkra, hogy a dokumentumot a memóriában tartsuk további feldolgozáshoz anélkül, hogy vissza kellene írnia a lemezre.
+
+```csharp
 Stream st = new MemoryStream();
 pdfDocument.Save(st);
 pdfDocument = new Document(st);
+```
+
+Itt elmentjük a PDF-fájlt egy memóriafolyamba, majd újratöltjük a dokumentumot. Ez a módszer akkor hasznos, ha nagy fájlokkal dolgozik, és szeretné elkerülni a szükségtelen lemezműveleteket.
+
+## 5. lépés: Az összes szöveg kibontása a szövegabszorber segítségével
+
+ Most, hogy elkészítettük a PDF-fájlt, ideje kivonatolni a szöveget. Használjuk`TextAbsorber` hogy az összes szöveget megkapja a dokumentumból.
+
+```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument); 
+```
+
+ Ebben a lépésben a`TextAbsorber` elnyeli az összes szöveget a PDF-ből, és a kivont szöveget a rendszer tárolja`extractedText` húr. Itt történik a varázslat – a szövegoszlopai mostantól egyszerű szöveges formátumban vannak!
+
+## 6. lépés: Mentse el a kicsomagolt szöveget egy fájlba
+
+ Végül a kinyert szöveget elmentjük a`.txt` fájl a könnyű hozzáférés és a további használat érdekében.
+
+```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
-System.IO.File.WriteAllText(dataDir, extractedText);           
+System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
+ Ez a kód a kibontott szöveget egy újba írja`.txt` fájlt, és elmenti a megadott könyvtárba. Egy üzenet jelenik meg a konzolon, amely megerősíti, hogy a folyamat sikeres volt.
+
 ## Következtetés
-Sikeresen kinyerte az oszlopok szövegét egy PDF-dokumentumból az Aspose.PDF for .NET használatával. A kivont szöveget a rendszer a megadott kimeneti fájlba mentette.
 
-### GYIK
+Megvan! A szövegoszlopok kinyerése egy PDF-fájlból az Aspose.PDF for .NET segítségével egyszerűbb, mint gondolná. Mindössze néhány sornyi kóddal betölthet egy PDF-fájlt, kivonhat adott szöveget, módosíthatja a formázást, és az eredményeket szövegfájlba mentheti.
 
-#### K: Mi a célja ennek az oktatóanyagnak?
+Ez a technika hihetetlenül hasznos strukturált dokumentumok, például táblázatok, jelentések vagy bármilyen oszlopokba rendezett tartalom feldolgozásához. Függetlenül attól, hogy automatizálnia kell az adatkinyerést vagy a tömeges dokumentumok feldolgozását, az Aspose.PDF biztosítja az eszközöket a hatékony megvalósításhoz.
 
-V: Ez az oktatóanyag lépésről lépésre nyújt útmutatót a szövegoszlopok PDF-fájlból való kibontásához az Aspose.PDF for .NET használatával. A mellékelt C# forráskód gyakorlati bemutatót nyújt a szükséges eljárásokról.
+## GYIK
 
-#### K: Milyen névtereket kell importálnom?
+### Kivonhatok szöveget a PDF adott oldalairól?  
+ Igen! Módosíthatja a`TextFragmentAbsorber` adott oldalak megcélzásához a`pdfDocument.Pages[pageIndex].Accept(tfa);` módszer.
 
-V: Abba a kódfájlba, amelybe szövegoszlopokat kíván kivonni, a fájl elejére írja be a következőket direktívák használatával:
+### Lehetséges-e csak egy oszlopból szöveget kivonni egy többoszlopos PDF-fájlból?  
+ Igen, de a szövegrészletek koordinátáival kell dolgozni`TextFragment.Rectangle` a dokumentum meghatározott területeinek megcélzásához.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-using System.IO;
-```
+### Hogyan javíthatom a szövegkivonás pontosságát?  
+ A nagyobb pontosság érdekében ügyeljen arra, hogy a PDF szerkezete jól meghatározott legyen, és kerülje az összetett elrendezésű dokumentumokat. Finomhangolhatja is a`TextFragmentAbsorber` szöveg kinyeréséhez betűstílusok, -méretek vagy régiók alapján.
 
-#### K: Hogyan adhatom meg a dokumentumkönyvtárat?
+### Támogatja az Aspose.PDF a beolvasott dokumentumokból a szöveg kinyerését?  
+Igen, de OCR (optikai karakterfelismerő) technológiát kell használnia. Az Aspose ehhez is biztosít eszközöket.
 
- V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
-
-#### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot?
-
- V: A 4. lépésben megnyit egy meglévő PDF-dokumentumot a`Document` konstruktort, és megadja a bemeneti PDF-fájl elérési útját.
-
-#### K: Miért van módosítva a betűméret?
-
-V: Az 5. lépésben a szövegrészletek betűméretét 0,7-szeresére csökkentjük. Ez a beállítás javítja az olvashatóságot, és pontosabban jeleníti meg az oszlopos szöveget.
-
-#### K: Hogyan vonhatok ki szöveget az oszlopokból?
-
- V: A 6. lépésben a módosított PDF-dokumentumot elmenti egy memóriafolyamba, új dokumentumként betölti, majd a`TextAbsorber` osztályt, hogy kivonja a szöveget az oszlopokból.
-
-#### K: Mi a célja a kivont szöveg mentésének?
-
-V: A 7. lépésben a kibontott szöveget a megadott kimeneti fájl elérési útvonalán lévő szövegfájlba menti.
-
-#### K: Miért kell csökkenteni a betűméretet a kibontás előtt?
-
-V: A betűméret csökkentése segít abban, hogy a kivonatolt szöveg megfelelően igazodjon az oszlopokon belülre, így az eredeti elrendezés pontosabb megjelenítése.
-
-#### K: Mi a legfontosabb kivonat ebből az oktatóanyagból?
-
-V: Az oktatóanyag követésével megszerezte azokat az ismereteket és készségeket, amelyek szükségesek ahhoz, hogy szövegoszlopokat bontsanak ki egy PDF-dokumentumból az Aspose.PDF for .NET használatával. Az eredményül kapott szöveget elmentette a megadott kimeneti fájlba.
+### Hogyan kezelhetek nagy, több ezer oldalas PDF fájlokat?  
+Nagyméretű PDF-fájlok esetén a nagy memóriahasználat elkerülése érdekében a dokumentumot darabokban dolgozza fel úgy, hogy egyszerre néhány oldalról bontja ki a szöveget.

@@ -13,7 +13,7 @@ En el panorama digital actual, la transformación de documentos LaTeX en formato
 
 ## Prerrequisitos
 
-Antes de sumergirnos en el código, asegurémonos de que tienes todo configurado para convertir archivos TeX a PDF con éxito usando Aspose.PDF para .NET. Esto es lo que necesitarás:
+Antes de sumergirnos en el código, asegurémonos de que tienes todo configurado para convertir archivos TeX a PDF con Aspose.PDF para .NET. Esto es lo que necesitarás:
 
 1. Entorno de desarrollo: asegúrese de tener un entorno de desarrollo como Visual Studio instalado en su sistema.
 2. .NET Framework: Aspose.PDF para .NET es compatible con varias versiones de .NET Framework. Asegúrese de tener instalada la versión adecuada (normalmente .NET Framework 4.0 o posterior).

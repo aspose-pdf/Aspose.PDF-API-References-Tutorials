@@ -62,7 +62,7 @@ Aspose.Pdf.TextStamp stamp2 = new Aspose.Pdf.TextStamp("Header 2");
 Aspose.Pdf.TextStamp stamp3 = new Aspose.Pdf.TextStamp("Header 3");
 ```
 
-## 第 4 步：自訂第一個標題
+## 第 4 步：自訂第一個標頭
 
 現在，是時候個性化我們的第一個標題了。我們將設定其對齊方式、樣式、顏色和大小以使其脫穎而出。
 

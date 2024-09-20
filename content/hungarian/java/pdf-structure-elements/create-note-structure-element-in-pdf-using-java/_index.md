@@ -2,7 +2,7 @@
 title: Jegyzetszerkezeti elem létrehozása PDF-ben Java használatával
 linktitle: Jegyzetszerkezeti elem létrehozása PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan hozhat létre interaktív jegyzetszerkezet-elemeket PDF-fájlokban Java használatával az Aspose.PDF for Java segítségével. Bővítse dokumentumait tájékoztató megjegyzésekkel.
+description: Ismerje meg, hogyan hozhat létre interaktív jegyzetszerkezeti elemeket PDF-fájlokban Java használatával az Aspose.PDF for Java segítségével. Bővítse dokumentumait tájékoztató megjegyzésekkel.
 type: docs
 weight: 12
 url: /hu/java/pdf-structure-elements/create-note-structure-element-in-pdf-using-java/
@@ -25,7 +25,7 @@ Mielőtt belemerülnénk a kódba, győződjön meg arról, hogy mindent beáll�
 
 PDF-dokumentumok sokoldalúak, de néha további kontextust vagy megjegyzéseket kell biztosítania olvasói számára. A PDF-hez megjegyzések hozzáadása segíthet ennek elérésében. Ebben az oktatóanyagban bemutatjuk, hogyan hozhat létre megjegyzés szerkezeti elemet PDF-ben Java és Aspose.PDF for Java használatával.
 
-### 2. A projekt beállítása
+### 2. A Projekt beállítása
 
 A kódolás megkezdése előtt győződjön meg arról, hogy a rendszeren be van állítva Java fejlesztői környezet. Bármilyen Java IDE-t használhat.
 

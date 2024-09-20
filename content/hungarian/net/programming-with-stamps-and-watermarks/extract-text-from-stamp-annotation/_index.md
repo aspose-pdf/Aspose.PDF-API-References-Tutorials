@@ -15,7 +15,7 @@ Ha PDF fájlokkal dolgozik, nagyon hasznos lehet bizonyos adatok, például szö
 
 Mielőtt belevágnánk az oktatóanyagba, van néhány dolog, amire szüksége lesz:
 
--  Aspose.PDF for .NET: telepítenie kell az Aspose.PDF for .NET fájlt. Tudod[töltse le a legújabb verziót innen](https://releases.aspose.com/pdf/net/).
+-  Aspose.PDF for .NET: telepítenie kell az Aspose.PDF for .NET fájlt. Megteheti[töltse le a legújabb verziót innen](https://releases.aspose.com/pdf/net/).
 - Visual Studio: Ez az útmutató feltételezi, hogy a Visual Studiot használja integrált fejlesztői környezetként (IDE).
 - Alapvető C# ismerete: Alapvető ismeretekkel kell rendelkeznie a C# programozásról.
 

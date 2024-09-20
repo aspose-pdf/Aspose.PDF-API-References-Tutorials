@@ -1,6 +1,6 @@
 ---
-title: Προσθήκη παιδικών σελιδοδεικτών σε αρχεία PDF
-linktitle: Προσθήκη παιδικών σελιδοδεικτών σε αρχεία PDF
+title: Προσθήκη θυγατρικών σελιδοδεικτών σε αρχεία PDF
+linktitle: Προσθήκη θυγατρικών σελιδοδεικτών σε αρχεία PDF
 second_title: Aspose.PDF Java PDF Processing API
 description: Μάθετε πώς να βελτιώνετε έγγραφα PDF με θυγατρικούς σελιδοδείκτες χρησιμοποιώντας το Aspose.PDF για Java. Οδηγός βήμα προς βήμα με παραδείγματα κώδικα για βελτιωμένη πλοήγηση και οργάνωση.
 type: docs
@@ -34,7 +34,7 @@ url: /el/java/pdf-bookmarks/add-child-bookmarks-pdfs/
 // Αρχικοποιήστε ένα έγγραφο PDF
 Document pdfDocument = new Document();
 
-// Προσθέστε σελίδες στο PDF
+// Προσθήκη σελίδων στο PDF
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 ```
@@ -64,7 +64,7 @@ outline.add(parentBookmark);
 Τώρα, ήρθε η ώρα να προσθέσουμε θυγατρικούς σελιδοδείκτες στους γονικούς σελιδοδείκτες που δημιουργήσαμε νωρίτερα. Οι θυγατρικοί σελιδοδείκτες αντιπροσωπεύουν συγκεκριμένα θέματα ή υποενότητες σε κάθε γονικό σελιδοδείκτη. Δείτε πώς μπορείτε να το κάνετε:
 
 ```java
-// Προσθήκη θυγατρικών σελιδοδεικτών στον Γονικό σελιδοδείκτη 1
+// Προσθήκη θυγατρικών σελιδοδεικτών στον σελιδοδείκτη γονέα 1
 OutlineItemCollection childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.1");
 parentBookmark.add(childBookmark);
@@ -125,7 +125,7 @@ pdfDocument.save("output.pdf");
 // Αρχικοποιήστε ένα έγγραφο PDF
 Document pdfDocument = new Document();
 
-// Προσθέστε σελίδες στο PDF
+// Προσθήκη σελίδων στο PDF
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 
@@ -139,7 +139,7 @@ parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 2");
 outline.add(parentBookmark);
 
-// Προσθήκη θυγατρικών σελιδοδεικτών στον Γονικό σελιδοδείκτη 1
+// Προσθήκη θυγατρικών σελιδοδεικτών στον σελιδοδείκτη γονέα 1
 OutlineItemCollection childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.1");
 parentBookmark.add(childBookmark);

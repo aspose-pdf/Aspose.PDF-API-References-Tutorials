@@ -2,183 +2,154 @@
 title: PDF 파일에서 텍스트 세그먼트 페이지 검색
 linktitle: PDF 파일에서 텍스트 세그먼트 페이지 검색
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일의 페이지에서 텍스트 세그먼트를 검색하고 해당 속성을 가져오는 방법을 알아보세요.
+description: 이 자세한 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에서 텍스트 세그먼트를 검색하는 방법을 알아보세요. 텍스트 추출, 세그먼트 분석 등을 수행하세요.
 type: docs
 weight: 470
 url: /ko/net/programming-with-text/search-text-segments-page/
 ---
-이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일 페이지에서 특정 텍스트 세그먼트를 검색하고 해당 속성을 검색하는 방법을 설명합니다. 제공된 C# 소스 코드는 프로세스를 단계별로 보여줍니다.
+## 소개
+
+Aspose.PDF for .NET을 사용하여 PDF 문서 내에서 특정 텍스트 세그먼트를 찾는 방법을 궁금해하신 적이 있나요? 글쎄요, 운이 좋으시네요! 이 가이드에서는 간단한 단계별 형식으로 프로세스를 안내해 드리겠습니다. 정보를 추출하거나, 텍스트를 분석하거나, PDF 조작의 복잡한 부분을 탐색하든, Aspose.PDF for .NET이 도와드리겠습니다. 시작해 볼까요!
 
 ## 필수 조건
 
-튜토리얼을 진행하기 전에 다음 사항이 있는지 확인하세요.
+시작하기에 앞서, 필요한 모든 것이 있는지 확인해 보겠습니다.
 
-- C# 프로그래밍 언어에 대한 기본 지식.
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다. Aspose 웹사이트에서 얻을 수 있거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
+-  .NET용 Aspose.PDF: 라이브러리가 설치되어 있는지 확인하세요. 다음에서 가져올 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+- .NET Framework: 컴퓨터에 .NET이 설치되어 있는지 확인하세요.
+- 개발 환경: Visual Studio 또는 .NET을 지원하는 IDE를 권장합니다.
+- PDF 문서: 텍스트 세그먼트를 검색할 PDF 파일입니다.
 
-## 1단계: 프로젝트 설정
+ 아직 .NET용 Aspose.PDF가 없다면 걱정하지 마세요! 다음에서 무료 평가판을 받을 수 있습니다.[여기](https://releases.aspose.com/) 또는 구매하세요[여기](https://purchase.aspose.com/buy).
 
-선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다.
+## 패키지 가져오기
 
-## 2단계: 필요한 네임스페이스 가져오기
-
-필요한 네임스페이스를 가져오려면 C# 파일의 시작 부분에 다음 using 지시문을 추가합니다.
+코딩을 시작하기 전에 프로젝트에 필요한 패키지를 가져오는 것이 중요합니다. 이렇게 하면 PDF 조작 작업에 필요한 모든 클래스와 메서드를 사용할 수 있습니다.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
 
-## 3단계: 문서 디렉토리 경로 설정
+기본적인 사항을 파악했으니, 바로 단계별 가이드로 들어가보겠습니다.
 
- 다음을 사용하여 문서 디렉토리 경로를 설정하세요.`dataDir` 변하기 쉬운:
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+## 1단계: PDF 문서 로드
 
- 바꾸다`"YOUR DOCUMENT DIRECTORY"` 문서 디렉토리의 실제 경로를 포함합니다.
+프로세스의 첫 번째 단계는 PDF 파일을 프로그램에 로드하는 것입니다. 로드된 문서가 없으면 검색할 것이 없지 않나요? 방법은 다음과 같습니다.
 
-## 4단계: PDF 문서 로드
-
- PDF 문서를 로드하려면 다음을 사용합니다.`Document` 수업:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-```
-
- 바꾸다`"SearchTextSegmentsPage.pdf"` PDF 파일의 실제 이름을 입력하세요.
-
-## 5단계: TextFragmentAbsorber 만들기
-
- 생성하다`TextFragmentAbsorber` 입력 검색어의 모든 인스턴스를 찾는 객체:
-
-```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-```
-
- 바꾸다`"text"` 원하는 검색어를 입력하세요.
-
-## 6단계: 특정 페이지에 대한 흡수체 수락
-
-원하는 문서 페이지에 대한 흡수체를 수락하세요.
-
-```csharp
-pdfDocument.Pages[2].Accept(textFragmentAbsorber);
-```
-
- 바꾸다`2` 원하는 페이지 번호(1부터 시작하는 인덱스)
-
-## 7단계: 추출된 텍스트 세그먼트 검색
-
- 다음을 사용하여 추출된 텍스트 세그먼트를 가져옵니다.`TextFragments` 의 속성`TextFragmentAbsorber` 물체:
-
-```csharp
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-```
-
-## 8단계: 텍스트 세그먼트 반복
-
-검색된 텍스트 세그먼트를 반복하고 해당 속성에 액세스합니다.
-
-```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text: {0} ", textSegment.Text);
-		Console.WriteLine("Position: {0} ", textSegment.Position);
-		Console.WriteLine("XIndent: {0} ", textSegment.Position.XIndent);
-		Console.WriteLine("YIndent: {0} ", textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name: {0}", textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible: {0} ", textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded: {0} ", textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset: {0} ", textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size: {0} ", textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color: {0} ", textSegment.TextState.ForegroundColor);
-	}
-}
-```
-
-필요한 경우 각 텍스트 세그먼트에서 추가 작업을 수행하도록 루프 내의 코드를 수정합니다.
-
-### .NET용 Aspose.PDF를 사용한 Search Text Segments Page의 샘플 소스 코드 
 ```csharp
 // 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // 문서 열기
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
+```
+
+- `dataDir` : 이 변수는 PDF 파일의 경로를 보관합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 파일이 저장된 실제 디렉토리와 동일합니다.
+- `pdfDocument` : 사용`Document` 클래스에서 PDF를 메모리에 로드합니다.
+
+## 2단계: 텍스트 검색 설정
+
+ 이제 문서가 로드되었으므로 다음 단계는 다음을 만드는 것입니다.`TextFragmentAbsorber` 문서 내에서 특정 텍스트를 검색할 수 있는 객체입니다.
+
+```csharp
 // 입력 검색어의 모든 인스턴스를 찾기 위해 TextAbsorber 객체를 생성합니다.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
+```
+
+- `TextFragmentAbsorber` : 이 객체는 검색하는 텍스트의 모든 발생을 캡처하는 데 사용됩니다. 바꾸기`"text"` 검색하려는 실제 텍스트와 함께 사용합니다.
+
+## 3단계: 특정 페이지에 대한 흡수 장치 수락
+
+항상 PDF 문서 전체를 검색하고 싶지는 않을 수도 있습니다. 이 예에서 우리는 특정 페이지로 범위를 좁힙니다.
+
+```csharp
 // 모든 페이지에 대한 흡수체를 수용합니다.
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
+```
+
+- `pdfDocument.Pages[2]`: 이는 문서의 두 번째 페이지만 검색한다는 것을 나타냅니다. 인덱스를 수정하여 다른 페이지를 타겟으로 삼을 수 있습니다.
+- `Accept()` : 이 방법을 사용하면`TextFragmentAbsorber` 지정된 페이지 내의 텍스트를 처리합니다.
+
+## 4단계: 텍스트 조각 추출
+
+페이지를 검색한 후, 발견된 텍스트 조각을 컬렉션으로 추출합니다.
+
+```csharp
 // 추출된 텍스트 조각을 가져옵니다
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+- `TextFragmentCollection`: 이 컬렉션은 검색 과정에서 발견된 모든 텍스트 조각 인스턴스를 보관합니다.
+
+## 5단계: 텍스트 조각을 반복하고 데이터 추출
+
+이제 각 텍스트 조각을 반복해서 살펴보고 위치, 글꼴, 색상 등의 세부 정보를 추출해 보겠습니다.
+
+```csharp
 // 조각을 반복합니다
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text : {0} ", textSegment.Text);
-		Console.WriteLine("Position : {0} ", textSegment.Position);
-		Console.WriteLine("XIndent : {0} ",
-		textSegment.Position.XIndent);
-		Console.WriteLine("YIndent : {0} ",
-		textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name : {0}",
-		textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible : {0} ",
-		textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded : {0} ",
-		textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset : {0} ",
-		textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size : {0} ",
-		textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color : {0} ",
-		textSegment.TextState.ForegroundColor);
-	}
+    foreach (TextSegment textSegment in textFragment.Segments)
+    {
+        Console.WriteLine("Text : {0} ", textSegment.Text);
+        Console.WriteLine("Position : {0} ", textSegment.Position);
+        Console.WriteLine("XIndent : {0} ", textSegment.Position.XIndent);
+        Console.WriteLine("YIndent : {0} ", textSegment.Position.YIndent);
+        Console.WriteLine("Font - Name : {0}", textSegment.TextState.Font.FontName);
+        Console.WriteLine("Font - IsAccessible : {0} ", textSegment.TextState.Font.IsAccessible);
+        Console.WriteLine("Font - IsEmbedded : {0} ", textSegment.TextState.Font.IsEmbedded);
+        Console.WriteLine("Font - IsSubset : {0} ", textSegment.TextState.Font.IsSubset);
+        Console.WriteLine("Font Size : {0} ", textSegment.TextState.FontSize);
+        Console.WriteLine("Foreground Color : {0} ", textSegment.TextState.ForegroundColor);
+    }
 }
 ```
 
+- `foreach (TextFragment textFragment in textFragmentCollection)` : 각각을 반복합니다`TextFragment` 컬렉션에서.
+- `foreach (TextSegment textSegment in textFragment.Segments)`: 각 조각 안에는 여러 개의 세그먼트가 있습니다. 우리는 그것들을 반복하여 모든 관련 정보를 수집합니다.
+-  다양한 속성`textSegment`이는 텍스트의 위치(X 및 Y), 글꼴 정보, 크기 및 색상 등 텍스트에 대한 자세한 정보를 제공합니다.
+
+## 6단계: 결과 출력
+
+마지막으로 모든 정보를 추출한 후, 결과가 콘솔에 인쇄됩니다. 이를 통해 텍스트의 정확한 위치와 서식 세부 정보를 확인하는 데 도움이 됩니다.
+
+명확성을 위해 샘플 출력을 보여드리겠습니다.
+
+```
+Text : text
+Position : X: 45.0, Y: 75.0
+XIndent : 45.0
+YIndent : 75.0
+Font - Name : Arial
+Font - IsAccessible : True
+Font - IsEmbedded : False
+Font - IsSubset : False
+Font Size : 12.0
+Foreground Color : System.Drawing.Color [Black]
+```
+
+- 이 출력은 지정된 페이지에 있는 "text" 텍스트의 정확한 위치와 서식 정보를 제공합니다.
+
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서의 페이지에서 특정 텍스트 세그먼트를 검색하는 방법을 성공적으로 배웠습니다. 이 튜토리얼은 문서 로드부터 추출된 텍스트 세그먼트에 액세스하는 것까지 단계별 가이드를 제공했습니다. 이제 이 코드를 자신의 C# 프로젝트에 통합하여 PDF 파일에서 고급 텍스트 세그먼트 검색을 수행할 수 있습니다.
+이제 다 봤습니다! 방금 Aspose.PDF for .NET을 사용하여 PDF 문서 내에서 특정 텍스트 세그먼트를 검색하는 방법을 배웠습니다. 이 프로세스는 대용량 PDF를 처리할 때 매우 편리하여 핵심 텍스트를 효율적으로 정확하게 지정하고 추출할 수 있습니다. 데이터 분석, 정보 추출 또는 단순히 문서 탐색이든 Aspose.PDF는 작업을 완료하는 데 필요한 강력한 도구를 제공합니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "PDF 파일에서 텍스트 세그먼트 페이지 검색" 튜토리얼의 목적은 무엇인가요?
+### 여러 단어나 구문을 검색할 수 있나요?
+ 네, 수정할 수 있습니다.`TextFragmentAbsorber`입력 문자열을 변경하여 다른 텍스트를 검색합니다.
 
-A: "PDF 파일에서 텍스트 세그먼트 페이지 검색" 튜토리얼은 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서의 특정 페이지에서 특정 텍스트 세그먼트를 검색하는 방법에 대한 포괄적인 가이드를 제공합니다. 프로젝트 설정, PDF 문서 로드, 텍스트 세그먼트 검색 및 C# 코드를 사용하여 해당 속성을 검색하는 프로세스를 다룹니다.
+### 여러 페이지에서 검색이 가능합니까?
+ 물론입니다! PDF의 모든 페이지를 반복하여 순환할 수 있습니다.`pdfDocument.Pages`.
 
-#### 질문: 이 튜토리얼은 PDF 문서에서 특정 텍스트 세그먼트를 검색하는 데 어떻게 도움이 되나요?
+### 대소문자를 구분하지 않는 텍스트를 검색하려면 어떻게 해야 하나요?
+ 사용할 수 있습니다`TextSearchOptions` 대소문자를 구분하지 않고 검색을 수행할 수 있습니다.
 
-A: 이 튜토리얼은 PDF 문서의 특정 페이지에서 특정 텍스트 세그먼트를 찾아 추출하는 과정을 보여줍니다. 제공된 단계와 코드 샘플을 따르면 사용자는 원하는 텍스트 세그먼트를 효과적으로 검색하고 해당 속성에 대한 정보를 검색할 수 있습니다.
+### 텍스트를 찾은 후에 수정할 수 있나요?
+ 네, 당신이 찾은 후`TextFragment`, 텍스트 속성을 수정할 수 있습니다.
 
-#### 질문: 이 튜토리얼을 따르려면 어떤 전제 조건이 필요합니까?
-
-A: 튜토리얼을 시작하기 전에 C# 프로그래밍 언어에 대한 기본적인 이해가 있어야 합니다. 또한 Aspose.PDF for .NET 라이브러리를 설치해야 합니다. Aspose 웹사이트에서 얻거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
-
-#### 질문: 이 튜토리얼을 따르려면 프로젝트를 어떻게 설정해야 하나요?
-
-A: 시작하려면 선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 Aspose.PDF for .NET 라이브러리에 대한 참조를 추가합니다. 이렇게 하면 라이브러리의 기능을 활용하여 PDF 문서를 검색하고 작업할 수 있습니다.
-
-#### 질문: 이 튜토리얼을 사용하면 PDF의 모든 페이지에서 특정 텍스트 세그먼트를 검색할 수 있나요?
-
-A: 네, 이 튜토리얼은 PDF 문서의 선택한 페이지에서 특정 텍스트 세그먼트를 검색하는 방법에 대한 지침을 제공합니다. 이 튜토리얼은 사용자에게 프로젝트 설정, PDF 로드, Aspose.PDF 라이브러리를 사용하여 원하는 텍스트 세그먼트의 속성을 찾고 검색하는 방법을 안내합니다.
-
-#### 질문: 이 튜토리얼에서 검색하려는 텍스트를 어떻게 지정합니까?
-
- A: 검색하려는 텍스트를 지정하려면 다음을 만드십시오.`TextFragmentAbsorber` 객체를 만들고 검색 매개변수를 설정합니다.`Text` 속성. 기본값을 대체합니다.`"text"` 튜토리얼의 코드에 원하는 검색어를 넣으세요.
-
-#### 질문: 추출된 텍스트 세그먼트의 속성을 어떻게 검색합니까?
-
-수락 후`TextFragmentAbsorber` PDF의 특정 페이지에 대해 추출된 텍스트 세그먼트를 다음을 사용하여 검색할 수 있습니다.`TextFragments` 흡수체 객체의 속성입니다. 이는 각각 여러 텍스트 세그먼트를 포함하는 텍스트 조각 모음에 대한 액세스를 제공합니다.
-
-#### 질문: 각 텍스트 세그먼트에서 추가 작업을 수행하도록 코드를 사용자 정의할 수 있나요?
-
-A: 물론입니다. 튜토리얼의 샘플 코드는 검색된 텍스트 세그먼트를 반복하는 루프를 제공합니다. 프로젝트 요구 사항에 따라 이 루프 내의 코드를 사용자 지정하여 각 텍스트 세그먼트에서 추가 작업을 수행할 수 있습니다.
-
-#### 질문: 텍스트 세그먼트를 추출한 후 수정된 PDF 문서를 저장하려면 어떻게 해야 합니까?
-
-A: 이 튜토리얼은 주로 텍스트 세그먼트를 검색하고 해당 속성을 검색하는 데 중점을 둡니다. PDF를 수정하려는 경우 다른 Aspose.PDF 문서를 참조하여 특정 요구 사항에 따라 문서를 조작하고 저장하는 방법을 알아볼 수 있습니다.
+### 이 방법을 암호화된 PDF에도 적용할 수 있나요?
+네, 올바른 비밀번호를 사용하여 PDF 잠금을 해제하면 됩니다.

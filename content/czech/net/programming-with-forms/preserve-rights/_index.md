@@ -13,7 +13,7 @@ Vítejte ve světě Aspose.PDF pro .NET! Pokud chcete programově manipulovat s 
 
 ## Předpoklady
 
-Než začneme, je potřeba mít připraveno několik věcí:
+Než začneme, je třeba mít připraveno několik věcí:
 
 1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Je to IDE, které budeme používat pro náš vývoj .NET.
 2.  .NET Framework: Ujistěte se, že máte nainstalované rozhraní .NET Framework. Aspose.PDF podporuje různé verze, takže zkontrolujte[dokumentace](https://reference.aspose.com/pdf/net/) kvůli kompatibilitě.

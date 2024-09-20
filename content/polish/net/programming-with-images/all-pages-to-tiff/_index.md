@@ -19,7 +19,7 @@ Zanim rozpoczniesz proces konwersji, musisz spełnić kilka warunków wstępnych
 2.  Aspose.PDF dla .NET: Musisz mieć bibliotekę Aspose.PDF dostępną w swoim projekcie. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/net/).
 3. Podstawowa znajomość języka C#: Chociaż nasz samouczek został zaprojektowany tak, aby był przyjazny dla początkujących, podstawowa znajomość języka C# pomoże Ci łatwiej zrozumieć omawiane koncepcje.
 4. Dostęp do plików PDF: Będziesz potrzebować przykładowego pliku PDF, aby nad nim pracować. Jeśli go nie masz, możesz utworzyć prosty plik PDF dla tego samouczka.
-5. Środowisko .NET: Upewnij się, że masz skonfigurowane odpowiednie środowisko programistyczne .NET, najlepiej .NET Framework lub .NET Core.
+5. Środowisko .NET: Upewnij się, że masz odpowiednie środowisko programistyczne .NET, najlepiej .NET Framework lub .NET Core.
 
 Teraz, gdy wszystko jest już gotowe, możemy zagłębić się w kod!
 

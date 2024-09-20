@@ -56,7 +56,7 @@ Selezionare i valori DPI/PPI appropriati per le immagini PDF è fondamentale. Fa
 
 ## Test e verifica
 
-Dopo aver impostato DPI/PPI per le immagini PDF, è essenziale verificare che le modifiche siano state applicate correttamente. I test assicurano che i documenti PDF soddisfino gli standard qualitativi desiderati, sia per la visualizzazione su schermo che per la stampa.
+Dopo aver impostato i DPI/PPI per le immagini PDF, è essenziale verificare che le modifiche siano state applicate correttamente. I test assicurano che i documenti PDF soddisfino gli standard qualitativi desiderati, sia per la visualizzazione sullo schermo che per la stampa.
 
 ## Conclusione
 

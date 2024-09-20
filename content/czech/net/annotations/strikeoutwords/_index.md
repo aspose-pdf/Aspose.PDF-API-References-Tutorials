@@ -165,7 +165,7 @@ Gratuluji! Úspěšně jste vyškrtli konkrétní slova v dokumentu PDF pomocí 
 
 ### Jak mohu upravit tloušťku přeškrtnuté čáry?
 
- Tloušťku přeškrtnuté čáry můžete upravit úpravou`Border` vlastnictví`StrikeOutAnnotation`. To umožňuje přizpůsobení vzhledu přeškrtnutí.
+ Tloušťku přeškrtnuté čáry můžete upravit úpravou`Border` vlastnictvím`StrikeOutAnnotation`. To umožňuje přizpůsobení vzhledu přeškrtnutí.
 
 ### Existuje způsob, jak zrušit přeškrtnutí po uložení dokumentu?
 

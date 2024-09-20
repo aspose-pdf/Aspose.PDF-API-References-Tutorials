@@ -158,7 +158,7 @@ Console.WriteLine("Ticks: {0}", DateTime.Now.Ticks - time);
 Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDir);
 ```
 
-Vous recevrez un résultat indiquant le nombre de ticks (en fait, des unités de temps) nécessaires pour optimiser les images. De plus, vous recevrez une confirmation amicale que tout s'est bien déroulé.
+Vous recevrez un résultat indiquant le nombre de ticks (en fait, des unités de temps) nécessaires à l'optimisation des images. De plus, vous recevrez une confirmation amicale que tout s'est bien déroulé.
 
 ## Conclusion
 

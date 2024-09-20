@@ -15,7 +15,7 @@ url: /el/net/programming-with-pdf-pages/get-particular-page/
 
 Προτού σηκώσουμε τα μανίκια και μεταβούμε στον κωδικό, ας βεβαιωθούμε ότι τα έχετε όλα στη θέση τους:
 
-1.  Aspose.PDF για .NET Library: Θα χρειαστεί να κάνετε λήψη και εγκατάσταση[Aspose.PDF για .NET](https://releases.aspose.com/pdf/net/) . Μπορείτε είτε να αγοράσετε άδεια χρήσης είτε να χρησιμοποιήσετε ένα[προσωρινή άδεια](https://purchase.aspose.com/temporary-license/) για δοκιμαστικούς σκοπούς.
+1.  Aspose.PDF για .NET Library: Θα χρειαστεί να κάνετε λήψη και εγκατάσταση[Aspose.PDF για .NET](https://releases.aspose.com/pdf/net/) . Μπορείτε είτε να αγοράσετε μια άδεια είτε να χρησιμοποιήσετε ένα[προσωρινή άδεια](https://purchase.aspose.com/temporary-license/) για δοκιμαστικούς σκοπούς.
    
 2. Περιβάλλον ανάπτυξης: Το Visual Studio συνιστάται ιδιαίτερα για ανάπτυξη C#. Οποιαδήποτε έκδοση του Visual Studio θα πρέπει να λειτουργεί καλά.
 

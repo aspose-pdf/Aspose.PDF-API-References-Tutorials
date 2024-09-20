@@ -2,208 +2,186 @@
 title: وضع نص حول الصورة في ملف PDF
 linktitle: وضع نص حول الصورة في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية وضع النص حول الصورة في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية وضع نص حول الصور في ملفات PDF باستخدام Aspose.PDF for .NET. اتبع دليلنا خطوة بخطوة لإنشاء ملفات PDF احترافية تحتوي على صور ونصوص جنبًا إلى جنب.
 type: docs
 weight: 260
 url: /ar/net/programming-with-text/placing-text-around-image/
 ---
-في هذا البرنامج التعليمي، سنشرح كيفية وضع نص حول صورة في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتناول العملية خطوة بخطوة لإنشاء جدول وإضافة صورة ووضع نص حول الصورة باستخدام كود المصدر C# المقدم.
+## مقدمة
 
-## متطلبات
+هل سبق لك أن حاولت وضع نص حول صورة في ملف PDF ولكنك وجدت الأمر صعبًا؟ إذا كان الأمر كذلك، فأنت في المكان الصحيح! يجعل Aspose.PDF for .NET هذه العملية بسيطة، حيث يسمح لك بوضع نص بجوار الصور باستخدام بضعة أسطر فقط من التعليمات البرمجية. سواء كنت تقوم بإنشاء تقارير أو مستندات أو عروض تقديمية، فإن هذه الميزة هي طريقة رائعة لتحسين تخطيط المحتوى الخاص بك وجعله أكثر جاذبية بصريًا. اليوم، سنشرح كيفية استخدام Aspose.PDF for .NET لوضع نص حول الصور في مستند PDF.
 
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+## المتطلبات الأساسية
 
-- تم تثبيت مكتبة Aspose.PDF لـ .NET.
-- فهم أساسي لبرمجة C#.
+قبل أن ننتقل إلى الكود، دعنا نتأكد من إعداد كل شيء. إليك ما ستحتاج إليه:
 
-## الخطوة 1: إعداد دليل المستندات
+-  Aspose.PDF لـ .NET: يمكنك تنزيله من[هنا](https://releases.aspose.com/pdf/net/).
+- Visual Studio: تأكد من تثبيت الإصدار الأحدث لمتابعة العمل بسلاسة.
+- .NET Framework: يستخدم هذا المثال .NET، لذا تأكد من إعداد البيئة لديك لتطوير .NET.
+-  رخصة مؤقتة: يمكنك طلب رخصة مؤقتة[هنا](https://purchase.aspose.com/temporary-license/) إذا كنت تقوم بتقييم المنتج.
 
- أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه. استبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل المطلوب.
+إذا لم تقم بإعداد Aspose.PDF لـ .NET بعد، فاتبع تعليمات التثبيت الموجودة في[التوثيق](https://reference.aspose.com/pdf/net/).
+
+## استيراد مساحات الأسماء
+
+قبل أن نبدأ في كتابة التعليمات البرمجية، نحتاج إلى استيراد مساحات الأسماء الضرورية. إليك مقتطف التعليمات البرمجية للقيام بذلك:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+ هذه المساحات الأساسية ضرورية لأنها توفر الوصول إلى فئات مثل`Document`, `Page`, `Image` ، و`HtmlFragment`، والذي سنستخدمه لإنشاء ملف PDF ومعالجته.
+
+الآن بعد أن قمنا بإعداد المسرح، دعنا نوضح كيفية وضع نص حول صورة في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك هذه العملية خطوة بخطوة.
+
+## الخطوة 1: إنشاء كائن المستند
+
+ أولاً، تحتاج إلى إنشاء مستند PDF. في Aspose.PDF، يتم ذلك عن طريق إنشاء مثيل لـ`Document` هذا الكائن سيكون بمثابة الأساس لكل المحتوى الذي سنضيفه.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## الخطوة 2: إنشاء مستند وصفحة
+هنا، قمنا بإنشاء مستند PDF فارغ. لا يحتوي هذا المستند على أي صفحات حتى الآن، ولكن لا تقلق، فسنضيف صفحة في الخطوة التالية.
 
- بعد ذلك، نقوم بإنشاء`Document` الكائن وإضافة صفحة إليه باستخدام`Pages.Add()` طريقة.
+## الخطوة 2: إضافة صفحة إلى المستند
+
+الآن بعد أن حصلنا على المستند، حان الوقت لإضافة صفحة. فكر في هذا الأمر باعتباره إنشاء ورقة فارغة حيث ستضيف المحتوى الخاص بك.
 
 ```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## الخطوة 3: إنشاء جدول
+يضيف هذا الكود صفحة جديدة إلى المستند. بشكل افتراضي، تكون الصفحة فارغة، لكننا على وشك تغيير ذلك.
 
- نقوم بإنشاء جدول باستخدام`Table` الصف وإضافته إلى مجموعة الفقرات الخاصة بالصفحة.
+## الخطوة 3: إنشاء جدول لتنظيم المحتوى
+
+للحفاظ على محاذاة الصورة والنص بشكل صحيح، سنستخدم جدولًا. يمكن أن تساعد الجداول الموجودة في ملفات PDF في تنظيم تخطيطك، تمامًا كما هو الحال في مستندات Word أو HTML.
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(table1);
 ```
 
-## الخطوة 4: تعيين عرض أعمدة الجدول وحوافها
+يؤدي هذا المقطع إلى إنشاء جدول وإضافته إلى الصفحة. اعتبر الجدول بمثابة الإطار لمحاذاة صورتك ونصك.
 
- نقوم بتعيين عرض الأعمدة في الجدول وإنشاء`MarginInfo` كائن لتعيين الهوامش.
+## الخطوة 4: تعيين عرض الأعمدة للجدول
 
-```csharp
-table1. ColumnWidths = "120,270";
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 5f;
-margin. Left = 5f;
-margin. Right = 5f;
-margin. Bottom = 5f;
-table1. DefaultCellPadding = margin;
-```
-
-## الخطوة 5: إضافة صورة إلى الجدول
-
- نحن ننشئ`Image` الكائن، حدد مسار ملف الصورة، وقم بتعيين الارتفاع والعرض الثابتين للصورة. ثم نضيف الصورة إلى مجموعة الفقرات في خلية الجدول.
+الآن بعد أن أضفنا جدولاً، نحتاج إلى تحديد عرض الأعمدة. وهذا يضمن أن حجم الصورة والنص مناسبان على الصفحة.
 
 ```csharp
-Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-logo.File = dataDir + "aspose-logo.jpg";
-logo.FixHeight = 120;
-logo.FixWidth = 110;
-row1.Cells.Add();
-row1.Cells[0].Paragraphs.Add(logo);
-```
-
-## الخطوة 6: إضافة نص حول الصورة
-
- نقوم بإنشاء متغيرات سلسلة تحتوي على نص بتنسيق HTML وننشئ`HtmlFragment`الكائن. ثم نضيف نص HTML إلى خلية الجدول التي تحتوي على الصورة.
-
-```csharp
-string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>" ;
-
-Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
-row1.Cells.Add();
-row1.Cells[1].Paragraphs.Add(TitleText);
-```
-
-## الخطوة 7: إضافة نص إضافي
-
- نحن نخلق آخر`HtmlFragment` الكائن الذي يحتوي على نص إضافي بتنسيق HTML وإضافته إلى خلية جدول منفصلة.
-
-```csharp
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
-Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-```
-
-## الخطوة 8: احفظ مستند PDF
-
-وأخيرًا، نقوم بحفظ مستند PDF في ملف الإخراج المحدد.
-
-```csharp
-doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
-```
-
-### نموذج لمصدر الكود لوضع النص حول الصورة باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// إنشاء كائن مستند
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// إنشاء صفحة في ملف Pdf
-Aspose.Pdf.Page page = doc.Pages.Add();
-// إنشاء كائن جدول
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-// أضف الجدول في مجموعة فقرات القسم المطلوب
-page.Paragraphs.Add(table1);
-// مجموعة مع عرض أعمدة الجدول
 table1.ColumnWidths = "120 270";
-// إنشاء كائن MarginInfo وتعيين هوامشه اليسرى والسفلى واليمنى والعلوية
+```
+
+يحدد هذا السطر عرض عمودين — أحدهما للصورة والآخر للنص. اضبط هذه القيم إذا كانت الصورة أو النص يحتاجان إلى مساحة أكبر أو أقل.
+
+## الخطوة 5: تحديد الهوامش والحشو
+
+للتأكد من أن كل شيء يبدو أنيقًا، دعنا نضيف بعض الهوامش والحشو إلى الجدول.
+
+```csharp
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// تعيين الحشو الافتراضي للخلية إلى كائن MarginInfo
 table1.DefaultCellPadding = margin;
-// إنشاء صفوف في الجدول ثم خلايا في الصفوف
+```
+
+تضمن هذه الإعدادات أن يكون الجدول الخاص بك متباعدًا بشكل متسق، مما يجعل المحتوى جذابًا بصريًا.
+
+## الخطوة 6: إدراج صورة في الجدول
+
+الآن، لننتقل إلى الجزء الممتع، وهو إضافة صورة. في هذه الحالة، سنضيف شعار Aspose، ولكن لا تتردد في استخدام أي صورة تريدها.
+
+```csharp
 Aspose.Pdf.Row row1 = table1.Rows.Add();
-// إنشاء كائن صورة
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-// حدد مسار ملف الصورة
 logo.File = dataDir + "aspose-logo.jpg";
-// حدد ارتفاع الصورة الثابت
 logo.FixHeight = 120;
-// حدد عرض الصورة الثابت
 logo.FixWidth = 110;
 row1.Cells.Add();
-// إضافة الصورة إلى مجموعة فقرات خلية الجدول
 row1.Cells[0].Paragraphs.Add(logo);
-// إنشاء متغيرات سلسلة تحتوي على نص يحتوي على علامات HTML
+```
+
+وهذا ما يحدث:
+- نقوم بتحميل الصورة من الدليل المحدد.
+- قمنا بتحديد ارتفاع وعرض الصورة.
+- وأخيرًا نضيف الصورة إلى الخلية الأولى في الجدول.
+
+## الخطوة 7: إضافة نص بجوار الصورة
+
+الآن بعد أن أصبحت الصورة جاهزة، فلنضف بعض النص بجوارها. في هذا المثال، سنستخدم نصًا بتنسيق HTML لتنسيق المحتوى.
+
+```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
-//إنشاء كائن نصي لإضافته إلى يمين الصورة
+string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF document reporting component that enables .NET applications to <b>create PDF documents from scratch</b> without utilizing Adobe Acrobat.</font>";
+
 Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
 row1.Cells.Add();
-// أضف فقرات النص التي تحتوي على نص HTML إلى خلية الجدول
 row1.Cells[1].Paragraphs.Add(TitleText);
-// تعيين المحاذاة الرأسية لمحتويات الصف على أعلى
+```
+
+تضيف هذه الكتلة عنوانًا ووصفًا منسقين في الخلية المجاورة للصورة. يمكنك تنسيق النص باستخدام علامات HTML لمزيد من التخصيص.
+
+## الخطوة 8: ضبط المحاذاة الرأسية
+
+افتراضيًا، قد لا يتم محاذاة المحتوى في خلايا الجدول بالطريقة التي تريدها. في هذه الحالة، نريد التأكد من محاذاة النص إلى أعلى الخلية.
+
+```csharp
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-//إنشاء صفوف في الجدول ثم خلايا في الصفوف
+```
+
+ويضمن هذا أن يكون النص في أعلى الخلية، مما يحافظ على التصميم نظيفًا واحترافيًا.
+
+## الخطوة 9: أضف المزيد من النص أسفل الصورة والوصف
+
+قد ترغب في تضمين المزيد من المحتوى أسفل الصورة والنص. دعنا نضيف صفًا آخر إلى الجدول لهذا الغرض.
+
+```csharp
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
-// تعيين قيمة امتداد الصف للصف الثاني على 2
 SecondRow.Cells[0].ColSpan = 2;
-// اضبط المحاذاة الرأسية للصف الثاني على أعلى
 SecondRow.Cells[0].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
+
+string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates.</font>";
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-// أضف فقرات النص التي تحتوي على نص HTML إلى خلية الجدول
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-// حفظ ملف PDF
+```
+
+هنا، أضفنا صفًا آخر بنص إضافي، يمتد على كلا العمودين للحفاظ على التوازن في التخطيط.
+
+## الخطوة 10: احفظ مستند PDF
+
+وأخيرًا، نحتاج إلى حفظ المستند حتى تتمكن من عرض التغييرات.
+
+```csharp
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
+يؤدي هذا إلى حفظ ملف PDF مع الصورة والنص بتنسيق كما نريد.
+
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية وضع نص حول صورة في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ التعليمات البرمجية C# المقدمة، يمكنك إنشاء جدول وإضافة صورة ووضع نص حول الصورة في مستند PDF.
+قد يبدو وضع النص حول الصور في ملف PDF مهمة شاقة، ولكن Aspose.PDF for .NET يبسط العملية. من خلال الاستفادة من الجداول والصور والنصوص المصممة، يمكنك إنشاء ملفات PDF ذات مظهر احترافي بأقل جهد. باستخدام بضعة أسطر فقط من التعليمات البرمجية، يمكنك وضع المحتوى بالضبط حيث تريد، مما يمنح مستنداتك مظهرًا مصقولًا ومنظمًا جيدًا.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "وضع النص حول الصورة في ملف PDF"؟
+### هل يمكنني استخدام هذه الطريقة لوضع صور متعددة مع النص؟
+نعم، قم ببساطة بإضافة المزيد من الصفوف والخلايا إلى جدولك لتضمين صور ونصوص إضافية.
 
-ج: يوضح البرنامج التعليمي "وضع نص حول صورة في ملف PDF" كيفية استخدام مكتبة Aspose.PDF لـ .NET لوضع نص حول صورة في مستند PDF. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لمساعدتك في إنشاء جدول وإضافة صورة ووضع نص حول الصورة.
+### هل يمكنني تغيير محاذاة الصورة؟
+بالتأكيد! يمكنك تعديل محاذاة الصورة عن طريق ضبط خصائص محاذاة الخلية.
 
-#### س: لماذا أرغب في وضع نص حول صورة في مستند PDF؟
+### كيف أقوم بتنسيق النص بشكل أكبر؟
+ يمكنك استخدام علامات HTML داخل`HtmlFragment` كائن لتطبيق أنماط مختلفة مثل الخط العريض أو المائل أو الخطوط المختلفة.
 
-ج: إن وضع نص حول صورة يعزز العرض المرئي لمستندات PDF الخاصة بك، مما يجعلها أكثر جاذبية وإفادة. تُستخدم هذه التقنية غالبًا في المستندات والكتيبات والتقارير والمواد الأخرى حيث تريد الجمع بين الصور والنص بطريقة جمالية ممتعة.
+### هل يمكنني التحكم بالمسافة بين النص والصورة؟
+ نعم، باستخدام`MarginInfo` يسمح لك الكائن بالتحكم في الحشو والهوامش بين العناصر.
 
-#### س: كيف أقوم بإعداد دليل المستندات؟
-
-أ: لإعداد دليل المستندات:
-
-1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
-
-#### س: كيف أقوم بإنشاء جدول وإضافة صورة إليه؟
-
- أ: يرشدك البرنامج التعليمي خلال عملية إنشاء جدول باستخدام`Table` الصف وإضافة صورة إلى الجدول باستخدام`Image` ستقوم بتحديد مسار ملف الصورة والارتفاع والعرض قبل إضافتها إلى خلية الجدول.
-
-#### س: كيف أقوم بوضع النص حول الصورة؟
-
- أ: لوضع النص حول الصورة، ستقوم بإنشاء نص بتنسيق HTML باستخدام`HtmlFragment` سيحتوي هذا النص على عنوان ونص أساسي. ثم ستضيف نص HTML هذا إلى خلية جدول مجاورة لخلية الصورة.
-
-#### س: هل يمكنني تخصيص مظهر النص والصورة؟
-
-ج: نعم، يمكنك تخصيص مظهر النص والصورة باستخدام علامات وخصائص HTML. على سبيل المثال، يمكنك تعيين أحجام الخطوط والألوان والأنماط ومحاذاة النص. بالإضافة إلى ذلك، يمكنك ضبط حجم وأبعاد الصورة.
-
-#### س: كيف أحفظ مستند PDF؟
-
- ج: بعد إضافة الصورة والنص إلى الجدول، يمكنك حفظ مستند PDF باستخدام`Save` طريقة`Document` الفئة. قم بتوفير مسار ملف الإخراج المطلوب كحجة لـ`Save` طريقة.
-
-#### س: ما هي النتيجة المتوقعة من هذا البرنامج التعليمي؟
-
-ج: باتباع البرنامج التعليمي وتنفيذ الكود C# المقدم، ستتمكن من إنشاء مستند PDF يوضح كيفية وضع نص حول صورة. سيحتوي المستند الناتج على جدول يحتوي على صورة ونص حوله.
-
-#### س: هل يمكنني استخدام تنسيقات صور مختلفة غير JPG؟
-
- ج: نعم، يمكنك استخدام تنسيقات الصور المختلفة التي تدعمها مكتبة Aspose.PDF، مثل PNG وBMP وGIF والمزيد. عند إنشاء`Image` الكائن، حدد مسار الملف لتنسيق الصورة المطلوب.
-
-#### س: هل يلزم الحصول على ترخيص Aspose صالح لهذا البرنامج التعليمي؟
-
-ج: نعم، يلزم الحصول على ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose على الويب.
+### هل من الممكن إضافة روابط للنص؟
+ بالتأكيد! يمكنك تضمين ارتباطات تشعبية في النص بتنسيق HTML باستخدام`<a>` العلامة.

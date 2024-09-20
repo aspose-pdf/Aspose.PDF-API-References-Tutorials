@@ -2,214 +2,179 @@
 title: Создать многоколоночный PDF
 linktitle: Создать многоколоночный PDF
 second_title: Справочник по API Aspose.PDF для .NET
-description: Узнайте, как создать многоколоночный PDF-файл с помощью Aspose.PDF для .NET.
+description: Узнайте, как создавать многоколоночные PDF-файлы с помощью Aspose.PDF для .NET. Пошаговое руководство с примерами кода и подробными объяснениями. Идеально подходит для профессионалов.
 type: docs
 weight: 110
 url: /ru/net/programming-with-text/create-multi-column-pdf/
 ---
-Этот урок проведет вас через процесс создания многоколоночного PDF с использованием Aspose.PDF для .NET. Предоставленный исходный код C# демонстрирует необходимые шаги.
+## Введение
 
-## Требования
-Прежде чем начать, убедитесь, что у вас есть следующее:
+Создание многоколоночных PDF-файлов — отличный способ представить текст в более организованном, читабельном формате. Независимо от того, создаете ли вы отчет, статью или макет для публикации, многоколоночные структуры могут сделать ваш контент более интересным. В этом руководстве мы рассмотрим, как создать многоколоночный PDF-файл с помощью Aspose.PDF для .NET. Не волнуйтесь, мы разобьем все на простые шаги, которые сделают его простым для понимания, даже если вы новичок в этой платформе.
 
-- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
-- Библиотека Aspose.PDF для .NET. Вы можете загрузить ее с официального сайта Aspose или использовать менеджер пакетов, например NuGet, для ее установки.
+## Предпосылки
 
-## Шаг 1: Настройте проект
-1. Создайте новый проект C# в предпочитаемой вами среде разработки.
-2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
+Прежде чем мы перейдем к коду, вам необходимо выполнить несколько действий, чтобы все было гладко:
 
-## Шаг 2: Импортируйте необходимые пространства имен
-В файле кода, где вы хотите создать многоколоночный PDF-файл, добавьте следующие директивы using в верхней части файла:
+1.  Aspose.PDF для .NET: Вам необходимо установить эту библиотеку. Вы можете загрузить ее с[здесь](https://releases.aspose.com/pdf/net/).
+2. Среда разработки: настройте предпочитаемую вами среду IDE, например Visual Studio, для написания и запуска кода C#.
+3. .NET Framework: убедитесь, что у вас установлена совместимая версия .NET.
+4. Базовые знания C#: знакомство с синтаксисом C# будет полезным, но мы подробно объясним каждый шаг.
+5.  Временная лицензия: Aspose.PDF требует лицензию, чтобы избежать водяных знаков или ограничений. Вы можете получить[временная лицензия](https://purchase.aspose.com/temporary-license/) если необходимо.
+
+## Импортные пакеты
+
+Прежде чем начать кодирование, вам нужно импортировать необходимые пространства имен, которые позволят вам взаимодействовать с Aspose.PDF. Вот что вам нужно импортировать:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Шаг 3: Укажите каталог документа
- В коде найдите строку, которая гласит:`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, где хранятся ваши документы.
+Эти пространства имен предоставляют доступ к классам, необходимым для создания PDF-файлов, рисования фигур и обработки форматирования текста.
 
-## Шаг 4: Создайте новый экземпляр документа
- Создать новый экземпляр`Document` объект, добавив следующую строку кода:
+Давайте разберем процесс создания многоколоночного PDF-файла на простые и выполнимые шаги.
 
-```csharp
-Document doc = new Document();
-```
+## Шаг 1: Настройка документа
 
-## Шаг 5: Установите поля страницы
- Укажите информацию о левом и правом полях для файла PDF с помощью`PageInfo.Margin` собственность`Document`.
+Для начала вам нужно создать новый PDF-документ. Это включает определение полей и добавление страницы, на которой будет размещен ваш контент.
 
-```csharp
-doc.PageInfo.Margin.Left = 40;
-doc.PageInfo.Margin.Right = 40;
-```
-
-## Шаг 6: Добавьте страницу в документ
- Добавьте новую страницу в документ с помощью`Add` Метод`Pages` Коллекция. В представленном коде новая страница присваивается переменной`page`.
-
-```csharp
-Page page = doc.Pages.Add();
-```
-
-## Шаг 7: Создайте объект «График» и добавьте линию.
- Создать новый`Graph` объект с определенными размерами и добавьте к нему линию. Затем добавьте`Graph` возражать против`Paragraphs` коллекция страницы.
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-float[] backPos = new float[] { 1, 2, 500, 2 };
-Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
-graph1.Shapes.Add(l1);
-page.Paragraphs.Add(graph1);
-```
-
-## Шаг 8: Добавьте текст заголовка с форматированием HTML.
- Создайте`HtmlFragment` объект и установите его содержимое в нужный HTML-текст. Затем добавьте фрагмент в`Paragraphs` коллекция страницы.
-
-```csharp
-string s = "<font face=\"Times New Roman\" size=4>" +
-     "<strong>How to Steer Clear of money scams</<strong>" +
-     "</font>";
-HtmlFragment heading_text = new HtmlFragment(s);
-page.Paragraphs.Add(heading_text);
-```
-
-## Шаг 9: Создайте FloatingBox с несколькими столбцами
- Создать`FloatingBox` объект и задайте количество столбцов и интервал между столбцами. Затем добавьте фрагменты текста и строку в`Paragraphs` коллекция`FloatingBox`.
-
-```csharp
-Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-box. ColumnInfo. ColumnCount = 2;
-box.ColumnInfo.ColumnSpacing = "5";
-box.ColumnInfo.ColumnWidths = "105 105";
-
-TextFragment text1 = new TextFragment("By A Googling (The Official Google Blog)");
-text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-
-TextFragment text2 = new TextFragment("Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam...");
-box.Paragraphs.Add(text2);
-
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-float[] posArr2 = new float[] { 1, 10, 100, 10 };
-Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
-graph2.Shapes.Add(l2);
-box.Paragraphs.Add(graph2);
-
-page.Paragraphs.Add(box);
-```
-
-## Шаг 10: Сохраните PDF-документ.
- Сохраните PDF-документ с помощью`Save` Метод`Document` объект.
-
-```csharp
-doc.Save(dataDir);
-```
-
-### Пример исходного кода для создания многоколоночного PDF-файла с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Создать новый PDF-документ
 Document doc = new Document();
-// Укажите информацию о левом поле для файла PDF.
+
+// Установите поля для PDF-файла
 doc.PageInfo.Margin.Left = 40;
-// Укажите информацию о правом поле для файла PDF.
 doc.PageInfo.Margin.Right = 40;
+
+// Добавить страницу в документ
 Page page = doc.Pages.Add();
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// Добавить строку в коллекцию параграфов объекта раздела
+```
+
+ Здесь мы создали`Document`объект и устанавливаем левое и правое поля на 40 единиц. Затем мы добавили новую страницу в этот документ, которая будет содержать наш многоколоночный макет.
+
+## Шаг 2: Добавление линии для разделения секций
+
+Далее добавим на страницу горизонтальную линию для визуального разделения. Это поможет создать чистый и профессиональный вид.
+
+```csharp
+// Создайте графический объект для хранения линии.
+Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
+
+// Добавить строку в коллекцию абзацев страницы
 page.Paragraphs.Add(graph1);
-// Укажите координаты для линии
+
+// Определите координаты для линии
 float[] posArr = new float[] { 1, 2, 500, 2 };
+
+// Создайте линию и добавьте ее на график.
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// Создание строковых переменных с текстом, содержащим HTML-теги
+```
+
+ Здесь мы создаем горизонтальную линию с помощью`Graph` и`Line` классы. Эта строка добавляется к странице`Paragraphs` коллекция, которая содержит все визуальные элементы.
+
+## Шаг 3: Добавление HTML-текста с форматированием
+
+Далее давайте вставим текст, включающий HTML-теги, чтобы показать, как можно динамически форматировать текст в PDF-файле.
+
+```csharp
+// Создать строку с HTML-контентом
 string s = "<font face=\"Times New Roman\" size=4>" +
-"<strong> How to Steer Clear of money scams</<strong> "
-+ "</font>";
-// Создать текстовые абзацы, содержащие HTML-текст
+           "<strong> How to Steer Clear of Money Scams </strong>" +
+           "</font>";
+
+// Создайте новый HtmlFragment с форматированным текстом
 HtmlFragment heading_text = new HtmlFragment(s);
+
+// Добавьте HTML-текст на страницу
 page.Paragraphs.Add(heading_text);
+```
+
+ Используя`HtmlFragment`class, мы можем добавить форматированный текст, включающий HTML-теги, такие как размер шрифта, стиль и жирный текст. Это полезно для улучшения внешнего вида вашего PDF-контента.
+
+## Шаг 4: Создание многоколоночного макета
+
+Теперь мы создадим многоколоночный макет. Вот тут-то и происходит волшебство — вы можете указать, сколько колонок вам нужно и какой ширины они должны быть.
+
+```csharp
+// Создайте плавающую область для размещения столбцов.
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// Добавьте четыре столбца в раздел
+
+// Установите количество столбцов и расстояние между ними.
 box.ColumnInfo.ColumnCount = 2;
-// Установите интервал между столбцами
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
+
+// Добавить поле на страницу
+page.Paragraphs.Add(box);
+```
+
+Здесь мы создаем плавающее поле, которое будет содержать два столбца. Мы задаем интервал между столбцами и указываем, что каждый столбец должен быть шириной 105 единиц. Это позволяет нам создать желаемую компоновку столбцов в PDF.
+
+## Шаг 5: Добавление текста в столбцы
+
+ Давайте теперь заполним столбцы текстовым содержимым. Вы можете добавить разные`TextFragment` объекты для каждого столбца.
+
+```csharp
+// Создайте и отформатируйте первый фрагмент текста.
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
 text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Создайте графический объект для рисования линии.
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// Укажите координаты для линии
+box.Paragraphs.Add(text1);
+
+// Добавьте еще одну линию для разделения
+Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-//Добавить строку в коллекцию абзацев объекта раздела
 box.Paragraphs.Add(graph2);
-TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
+
+//Создайте и добавьте второй фрагмент текста
+TextFragment text2 = new TextFragment("Lorem ipsum dolor sit amet, consectetur adipiscing elit...");
 box.Paragraphs.Add(text2);
-page.Paragraphs.Add(box);
-dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// Сохранить PDF-файл
-doc.Save(dataDir);
-Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## Заключение
-Вы успешно создали многоколоночный PDF с помощью Aspose.PDF для .NET. Полученный PDF-файл теперь можно найти по указанному пути выходного файла.
+ Мы добавляем`TextFragment` к плавающему полю, за которым следует еще одна горизонтальная линия. Вторая`TextFragment` содержит больше текста для заполнения второго столбца. Эти фрагменты позволяют нам добавлять различные текстовые элементы в PDF с различными вариантами форматирования.
 
-### Часто задаваемые вопросы
+## Шаг 6: Сохранение PDF-файла
 
-#### В: На чем сосредоточено внимание в этом уроке?
-
-Этот урок посвящен проведению вас через процесс создания многоколоночного PDF с использованием библиотеки Aspose.PDF для .NET. Предоставленный исходный код C# демонстрирует необходимые шаги для достижения этого.
-
-#### В: Какие пространства имен мне следует импортировать для этого руководства?
-
-A: В файле кода, где вы хотите создать многоколоночный PDF-файл, импортируйте следующие пространства имен в начало файла:
+После добавления всего содержимого последним шагом будет сохранение документа в виде файла PDF.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+// Определите выходной путь для PDF-файла
+dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
+
+// Сохраните PDF-документ
+doc.Save(dataDir);
+
+// Вывод сообщения об успешном завершении
+Console.WriteLine("\nMulti-column PDF file created successfully.\nFile saved at " + dataDir);
 ```
 
-#### В: Как указать каталог документа?
+Этот блок сохраняет файл PDF в указанном каталоге и выводит сообщение об успешном завершении в консоль. Теперь PDF готов к просмотру!
 
- A: В коде найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу ваших документов.
+## Заключение
 
-#### В: Как создать новый экземпляр документа?
+Выполнив эти простые шаги, вы сможете легко создать профессионально выглядящий многоколоночный PDF с помощью Aspose.PDF для .NET. Будь то отчет, статья или информационный бюллетень, этот метод помогает организовать контент в визуально привлекательный формат. Aspose.PDF предлагает мощные инструменты для настройки ваших PDF-файлов, от полей и макета до форматирования текста и рисования фигур. Теперь ваша очередь попробовать и вывести свои навыки создания PDF-файлов на новый уровень!
 
- A: На шаге 4 вы создадите новый экземпляр`Document` объект, используя предоставленный код.
+## Часто задаваемые вопросы
 
-#### В: Как установить поля страницы?
+### Можно ли создать более двух столбцов в PDF-файле?
+ Да, вы можете создать столько столбцов, сколько вам нужно. Просто отрегулируйте`ColumnCount` свойство, соответствующее нужному вам количеству столбцов.
 
- A: На шаге 5 вы будете использовать`PageInfo.Margin` собственность`Document` для указания информации о левом и правом полях для PDF-файла.
+### Как изменить ширину каждого столбца?
+ Вы можете изменить`ColumnWidths` свойство для указания разной ширины для каждого столбца. Это свойство принимает строку значений, разделенных пробелами.
 
-#### В: Как добавить страницу в документ?
+### Можно ли добавлять изображения в столбцы?
+ Конечно! Вы можете добавлять изображения с помощью`Image` класс и включите их в плавающее поле или любой другой элемент макета в вашем PDF-файле.
 
- A: На шаге 6 вы добавите новую страницу в документ с помощью`Add` Метод`Pages` коллекция.
+### Можно ли оформить текст в столбцах с помощью HTML-тегов?
+ Да, вы можете использовать HTML-теги внутри`HtmlFragment` объекты для стилизации текста. Это включает добавление шрифтов, размеров, цветов и т. д.
 
-#### В: Как создать объект «График» и добавить линию?
-
- A: На шаге 7 вы создадите новый`Graph` объект, добавьте к нему линию, а затем добавьте`Graph` возражать против`Paragraphs` коллекция страницы.
-
-#### В: Как добавить текст заголовка с форматированием HTML?
-
-A: На шаге 8 вы создадите`HtmlFragment` объект и задайте его содержимое в виде нужного HTML-текста, затем добавьте фрагмент в`Paragraphs` коллекция страницы.
-
-#### В: Как создать FloatingBox с несколькими столбцами?
-
- A: На шаге 9 вы создадите`FloatingBox` объект с несколькими столбцами и интервалом между столбцами, затем добавьте фрагменты текста и строку в`Paragraphs` коллекция`FloatingBox`.
-
-#### В: Как сохранить PDF-документ?
-
- A: На шаге 10 вы сохраните PDF-документ с помощью`Save` Метод`Document` объект.
-
-#### В: Какой главный вывод можно сделать из этого урока?
-
-A: Следуя этому руководству, вы узнали, как создать многоколоночный PDF-документ с помощью Aspose.PDF для .NET. Это может быть полезно для отображения контента в структурированном и организованном макете.
+### Как добавить больше страниц с таким же расположением колонок?
+ Вы можете добавить дополнительные страницы, используя`doc.Pages.Add()` и повторите процесс добавления столбцов и контента для каждой страницы.

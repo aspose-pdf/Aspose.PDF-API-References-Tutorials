@@ -42,7 +42,7 @@ Commencez par lancer un nouveau projet C# dans l'IDE de votre choix. Cela servir
 
 ## Étape 2 : Ajouter une référence Aspose.PDF
 
-Ensuite, vous devez ajouter la bibliothèque Aspose.PDF. Si vous avez téléchargé la bibliothèque sous forme de fichier DLL, faites un clic droit sur votre projet et sélectionnez « Ajouter une référence ». Accédez à l'emplacement où vous avez enregistré la DLL Aspose.PDF et ajoutez-la.
+Ensuite, vous devrez ajouter la bibliothèque Aspose.PDF. Si vous avez téléchargé la bibliothèque sous forme de fichier DLL, faites un clic droit sur votre projet et sélectionnez « Ajouter une référence ». Accédez à l'emplacement où vous avez enregistré la DLL Aspose.PDF et ajoutez-la.
 
 Vous pouvez également utiliser le gestionnaire de packages NuGet dans Visual Studio. Ouvrez la console du gestionnaire de packages et saisissez :
 

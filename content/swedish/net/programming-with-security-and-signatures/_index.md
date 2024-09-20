@@ -24,4 +24,4 @@ Handledningen ger dig en detaljerad översikt över metoder och tekniker för at
 | [Är lösenordsskyddad](./is-password-protected/) | Lär dig hur du kontrollerar om en PDF-fil är lösenordsskyddad med Aspose.PDF för .NET i den här omfattande steg-för-steg-guiden. |  
 | [Ställ in privilegier i PDF-fil](./set-privileges/) | Lär dig hur du ställer in PDF-privilegier med Aspose.PDF för .NET med denna steg-för-steg-guide. Säkra dina dokument effektivt. |  
 | [Signera med smartkort med pdf-filsignatur](./sign-with-smart-card-using-pdf-file-signature/) | Lär dig hur du signerar PDF-filer med ett smartkort med Aspose.PDF för .NET. Följ denna steg-för-steg-guide för säkra digitala signaturer. |  
-| [Med Smart Card Använda Signaturfältet](./sign-with-smart-card-using-signature-field/) | Lär dig hur du säkert signerar PDF-filer med ett smartkort med Aspose.PDF för .NET. Följ vår steg-för-steg-guide för enkel implementering. |  
+| [Sign Med Smart Card Använder Signaturfältet](./sign-with-smart-card-using-signature-field/) | Lär dig hur du säkert signerar PDF-filer med ett smartkort med Aspose.PDF för .NET. Följ vår steg-för-steg-guide för enkel implementering. |  

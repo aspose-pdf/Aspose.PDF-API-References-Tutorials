@@ -53,7 +53,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ### Steg 4: Skapa rektanglar
 
 ```java
-// Skapa rektanglar med olika Z-ordningsvärden
+// Skapa rektanglar med olika Z-värden
 com.aspose.pdf.Page page = pdfDocument.getPages().get_Item(1);
 com.aspose.pdf.Rectangle rect1 = new com.aspose.pdf.Rectangle(100, 100, 200, 200);
 com.aspose.pdf.Rectangle rect2 = new com.aspose.pdf.Rectangle(150, 150, 250, 250);

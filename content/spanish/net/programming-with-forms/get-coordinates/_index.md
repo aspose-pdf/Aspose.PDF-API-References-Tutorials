@@ -32,7 +32,7 @@ Abra su IDE de C# favorito (Visual Studio, por ejemplo) y cree un nuevo proyecto
 
 ### Instalar Aspose.PDF a través de NuGet
 
-En el Explorador de soluciones, haga clic con el botón derecho en su proyecto, seleccione “Administrar paquetes NuGet” y busque Aspose.PDF. Haga clic en “Instalar” para agregarlo a su proyecto.
+En el Explorador de soluciones, haga clic con el botón derecho en el proyecto, seleccione “Administrar paquetes NuGet” y busque Aspose.PDF. Haga clic en “Instalar” para agregarlo al proyecto.
 
 ### Importar la biblioteca
 

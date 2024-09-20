@@ -75,7 +75,7 @@ PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 ```
 
- Ez a lépés a PDF-fájlt a`info` objektumot, lehetővé téve számunkra, hogy hozzáférjünk a tulajdonságaihoz.
+ Ez a lépés a PDF-fájlt a`info` objektumot, lehetővé téve számunkra, hogy hozzáférjünk annak tulajdonságaihoz.
 
 ## 3. lépés: Ellenőrizze, hogy a PDF titkosított-e
 
@@ -132,7 +132,7 @@ Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztő
 ### Mi a teendő, ha elfelejtettem a PDF jelszavamat?
 Ha több lehetséges jelszava is van, a fent leírt módszerrel próbálja meg feloldani. Ügyeljen azonban arra, hogy megfeleljen a jogi irányelveknek.
 
-### Jogos-e feloldani a védett PDF zárolását?
+### Jogszerű feloldani a védett PDF-eket?
 A PDF feloldása csak akkor legális, ha rendelkezik a tartalomhoz való hozzáférés jogával. Mindig győződjön meg arról, hogy rendelkezik engedéllyel, mielőtt megpróbálja megkerülni a biztonságot.
 
 ### Hol kaphatok támogatást az Aspose.PDF-hez?

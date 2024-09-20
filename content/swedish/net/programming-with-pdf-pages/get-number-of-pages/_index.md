@@ -37,7 +37,7 @@ Om du inte har installerat Aspose.PDF-biblioteket än kan du göra det via NuGet
 
 ### Skriv importutlåtandet
 
- Överst i din huvudfil (t.ex.`Program.cs`), lägg till följande med direktiv:
+ Överst i din huvudfil (t.ex.`Program.cs`), lägg till följande med hjälp av direktiv:
 
 ```csharp
 using System.IO;

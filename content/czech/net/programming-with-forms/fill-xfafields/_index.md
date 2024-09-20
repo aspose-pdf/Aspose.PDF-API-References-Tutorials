@@ -24,7 +24,7 @@ Než se ponoříme do kódu, pojďme si udělat pořádek ve vašem nastavení. 
 - PDF s poli XFA: Pro tento výukový program použijeme PDF s podporou XFA. Pokud jej nemáte, můžete si jej vytvořit nebo stáhnout online.
 -  Aspose Temporary License (Volitelné): Pokud testujete všechny funkce, vezměte si a[dočasná licence](https://purchase.aspose.com/temporary-license/).
 
-Jakmile jsou všechny na svém místě, můžete začít rock and roll!
+Jakmile jsou všechny na svém místě, jste připraveni na rock and roll!
 
 ## Importujte balíčky
 

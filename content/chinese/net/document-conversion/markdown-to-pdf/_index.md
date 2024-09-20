@@ -64,7 +64,7 @@ Document doc = new Document(dataDir + "sample.md", new MdLoadOptions());
 doc.Save(dataDir + "MarkdownToPDF.pdf");
 ```
 
-在这里，我们称之为`Save`我们的方法`Document`对象并指定我们要创建的 PDF 文件的名称。在本例中，它是`MarkdownToPDF.pdf`.
+在这里，我们称之为`Save`方法`Document`对象并指定我们要创建的 PDF 文件的名称。在本例中，它是`MarkdownToPDF.pdf`.
 
 ## 结论
 

@@ -60,7 +60,7 @@ textField.setTooltip("Enter your name here");
 Po dodaniu pól formularza i podpowiedzi nie zapomnij zapisać dokumentu PDF.
 
 ```java
-// Kod Java do zapisania dokumentu PDF
+// Kod Java do zapisywania dokumentu PDF
 pdfDocument.save("sample.pdf");
 ```
 

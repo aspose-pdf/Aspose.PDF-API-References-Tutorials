@@ -9,7 +9,7 @@ url: /de/net/programming-with-graphs/drawing-line/
 ---
 ## Einführung
 
-Das Zeichnen von Linien in einem PDF-Dokument mag wie eine einfache Aufgabe erscheinen, kann aber ein leistungsstarkes Werkzeug zum Erstellen visueller Hilfsmittel, Diagramme und Hervorheben wichtiger Bereiche sein. In dieser Anleitung führen wir Sie durch den Prozess des Zeichnens von Linien in einem PDF-Dokument mit Aspose.PDF für .NET. Dieses Tutorial behandelt alles, vom Einrichten Ihrer Umgebung bis zum Ausführen des Codes zum Erstellen eines PDFs mit darüber gezeichneten Linien.
+Das Zeichnen von Linien in einem PDF-Dokument mag wie eine einfache Aufgabe erscheinen, kann aber ein leistungsstarkes Werkzeug zum Erstellen von visuellen Hilfsmitteln, Diagrammen und zum Hervorheben wichtiger Bereiche sein. In dieser Anleitung führen wir Sie durch den Prozess des Zeichnens von Linien in einem PDF-Dokument mit Aspose.PDF für .NET. Dieses Tutorial behandelt alles, vom Einrichten Ihrer Umgebung bis zum Ausführen des Codes zum Erstellen eines PDFs mit darüber gezeichneten Linien.
 
 ## Voraussetzungen
 
@@ -77,14 +77,14 @@ Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(pg.PageInfo.Width,
 Jetzt ist es Zeit, Ihre erste Linie zu zeichnen. In diesem Beispiel wird eine Linie von der unteren linken Ecke zur oberen rechten Ecke der Seite gezeichnet:
 
 ```csharp
-// Erstellen Sie das erste Zeilenobjekt, beginnend von der unteren linken bis zur oberen rechten Ecke der Seite
+// Erstellen Sie das erste Zeilenobjekt von der unteren linken bis zur oberen rechten Ecke der Seite
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
 
 // Linie zur Formensammlung des Graph-Objekts hinzufügen
 graph.Shapes.Add(line);
 ```
 
- Der`Line` Klasse nimmt die Koordinaten für den Start- und Endpunkt der Linie. Hier`pg.Rect.LLX` Und`pg.Rect.URY` stellen jeweils die untere linke und obere rechte Ecke der Seite dar.
+ Der`Line` Klasse nimmt die Koordinaten für den Start- und Endpunkt der Linie. Hier,`pg.Rect.LLX` Und`pg.Rect.URY` stellen jeweils die untere linke und obere rechte Ecke der Seite dar.
 
 ## Schritt 5: Zeichnen Sie die zweite Linie
 

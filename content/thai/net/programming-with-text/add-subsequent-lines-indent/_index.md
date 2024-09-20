@@ -2,182 +2,143 @@
 title: เพิ่มบรรทัดถัดไปในไฟล์ PDF
 linktitle: เพิ่มบรรทัดถัดไปในไฟล์ PDF
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: เรียนรู้วิธีเพิ่มบรรทัดถัดไปในการเยื้องข้อความในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET
+description: เรียนรู้วิธีเพิ่มบรรทัดถัดไปในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET ปฏิบัติตามคำแนะนำทีละขั้นตอนโดยละเอียดนี้เพื่อการจัดรูปแบบข้อความอย่างมืออาชีพ
 type: docs
 weight: 60
 url: /th/net/programming-with-text/add-subsequent-lines-indent/
 ---
-บทช่วยสอนนี้จะแนะนำคุณเกี่ยวกับขั้นตอนการเพิ่มบรรทัดย่อหน้าในข้อความในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET โค้ดต้นฉบับ C# ที่ให้มาจะสาธิตขั้นตอนที่จำเป็น
+## การแนะนำ
 
-## ความต้องการ
-ก่อนที่คุณจะเริ่มต้น ให้แน่ใจว่าคุณมีสิ่งต่อไปนี้:
+การสร้าง PDF ที่น่าสนใจมักเกี่ยวข้องกับมากกว่าการวางข้อความบนหน้า คุณเคยสงสัยหรือไม่ว่าคุณสามารถเพิ่มการเยื้องบรรทัดถัดไปในเอกสาร PDF ได้อย่างไรเพื่อให้ดูเป็นมืออาชีพมากขึ้น ไม่ว่าคุณจะกำลังสร้างรายงาน อีบุ๊ก หรือเอกสารใดๆ ที่เค้าโครงมีความสำคัญ การควบคุมการไหลของข้อความถือเป็นสิ่งสำคัญ วันนี้เราจะมาสำรวจวิธีการเพิ่มการเยื้องบรรทัดถัดไปในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET ฟีเจอร์นี้อาจมีประโยชน์โดยเฉพาะสำหรับย่อหน้าที่ต้องการการเยื้องแบบห้อย ซึ่งจะช่วยให้อ่านง่ายขึ้นและสวยงามขึ้น ดังนั้น มาเริ่มกันเลย!
 
-- Visual Studio หรือคอมไพเลอร์ C# อื่น ๆ ติดตั้งอยู่บนเครื่องของคุณ
-- Aspose.PDF สำหรับไลบรารี .NET คุณสามารถดาวน์โหลดได้จากเว็บไซต์ Aspose อย่างเป็นทางการหรือใช้ตัวจัดการแพ็คเกจเช่น NuGet เพื่อติดตั้ง
+## ข้อกำหนดเบื้องต้น
 
-## ขั้นตอนที่ 1: ตั้งค่าโครงการ
-1. สร้างโครงการ C# ใหม่ในสภาพแวดล้อมการพัฒนาที่คุณต้องการ
-2. เพิ่มการอ้างอิงถึงไลบรารี Aspose.PDF สำหรับ .NET
+ก่อนที่เราจะเริ่มต้น มีบางสิ่งที่คุณต้องมี:
 
-## ขั้นตอนที่ 2: นำเข้าเนมสเปซที่จำเป็น
-ในไฟล์โค้ดที่คุณต้องการเพิ่มบรรทัดต่อๆ ไป ให้เพิ่มคำสั่ง using ต่อไปนี้ที่ด้านบนของไฟล์:
+-  Aspose.PDF สำหรับ .NET: คุณจะต้องติดตั้งไลบรารีนี้ก่อน หากคุณยังไม่ได้ติดตั้ง คุณสามารถทำได้[ดาวน์โหลดได้ที่นี่](https://releases.aspose.com/pdf/net/).
+- สภาพแวดล้อมการพัฒนา: ความรู้พื้นฐานเกี่ยวกับ C# และ IDE เช่น Visual Studio จะเป็นประโยชน์
+- .NET Framework: บทช่วยสอนนี้ถือว่าคุณกำลังทำงานในสภาพแวดล้อม .NET
+-  ใบอนุญาตชั่วคราว: หากคุณไม่มีใบอนุญาตเต็มรูปแบบสำหรับ Aspose.PDF คุณสามารถร้องขอได้[ใบอนุญาตชั่วคราว](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+ตอนนี้คุณพร้อมแล้ว มาต่อในส่วนของการเขียนโค้ดกันเลย!
 
-## ขั้นตอนที่ 3: ตั้งค่าไดเรกทอรีเอกสาร
- ในโค้ด ให้ค้นหาบรรทัดที่ระบุว่า`string dataDir = "YOUR DOCUMENT DIRECTORY";` และแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางไปยังไดเร็กทอรีที่คุณเก็บเอกสารไว้
+## การนำเข้าเนมสเปซ
 
-## ขั้นตอนที่ 4: สร้างวัตถุเอกสารใหม่
- สร้างอินสแตนซ์ใหม่`Document` วัตถุโดยการเพิ่มบรรทัดโค้ดดังต่อไปนี้:
+สิ่งแรกที่ต้องทำคือนำเข้าเนมสเปซที่จำเป็นเพื่อให้ไลบรารี Aspose.PDF พร้อมใช้งานในโปรเจ็กต์ของคุณ ขั้นตอนนี้ง่าย ๆ แต่จำเป็นมากในการเริ่มต้นทุกอย่าง
 
 ```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## ขั้นตอนที่ 5: เพิ่มหน้าลงในเอกสาร
- เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`page`.
+เมื่อนำเข้าสิ่งเหล่านี้แล้ว คุณก็พร้อมที่จะทำงานกับเครื่องมืออันทรงพลังที่ Aspose.PDF จัดทำไว้ให้แล้ว
 
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
+## ขั้นตอนที่ 1: ตั้งค่าเอกสารและหน้าของคุณ
 
-## ขั้นตอนที่ 6: สร้าง TextFragment พร้อมย่อบรรทัดถัดไป
- สร้างตัวอย่าง`TextFragment` วัตถุและระบุข้อความที่ต้องการ ในโค้ดที่ให้มา ข้อความจะถูกกำหนดให้กับตัวแปร`text` . จากนั้นทำการเริ่มระบบ`TextFormattingOptions` สำหรับ`TextFragment` และระบุ`SubsequentLinesIndent` ค่า.
+ก่อนที่เราจะเพิ่มการย่อหน้า เราต้องสร้างเอกสาร PDF ใหม่และเพิ่มหน้าเข้าไป ซึ่งจะเป็นพื้นที่สำหรับใช้จัดรูปแบบข้อความ
 
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-     SubsequentLinesIndent = 20
-};
-```
-
-## ขั้นตอนที่ 7: เพิ่ม TextFragment ลงในหน้า
- เพิ่ม`TextFragment` คัดค้านการรวบรวมย่อหน้าของหน้า
-
-```csharp
-page.Paragraphs.Add(text);
-```
-
-## ขั้นตอนที่ 8: ทำซ้ำขั้นตอนที่ 6 และ 7 สำหรับบรรทัดเพิ่มเติม
-หากต้องการเพิ่มบรรทัดถัดไปด้วยการเยื้องย่อหน้าเท่ากัน ให้ทำซ้ำขั้นตอน 6 และ 7 สำหรับแต่ละบรรทัด อัปเดตเนื้อหาข้อความตามต้องการ
-
-```csharp
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-```
-
-## ขั้นตอนที่ 9: บันทึกเอกสาร PDF
- บันทึกเอกสาร PDF โดยใช้`Save` วิธีการของ`Document` วัตถุ ระบุเส้นทางไฟล์เอาท์พุต
-
-```csharp
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-### ตัวอย่างโค้ดต้นฉบับสำหรับการเพิ่มบรรทัดถัดไปด้วยการย่อหน้าโดยใช้ Aspose.PDF สำหรับ .NET 
 ```csharp
 // เส้นทางไปยังไดเร็กทอรีเอกสาร
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // สร้างวัตถุเอกสารใหม่
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-Aspose.Pdf.Page page = document.Pages.Add();
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-//เริ่มต้น TextFormattingOptions สำหรับส่วนข้อความและระบุค่า SubsequentLinesIndent
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-	SubsequentLinesIndent = 20
-};
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
 
-## บทสรุป
-คุณได้เพิ่มบรรทัดถัดไปในข้อความโดยใช้ Aspose.PDF สำหรับ .NET สำเร็จแล้ว ตอนนี้สามารถพบไฟล์ PDF ที่ได้ในเส้นทางไฟล์เอาต์พุตที่ระบุ
-
-### คำถามที่พบบ่อย
-
-#### ถาม: บทช่วยสอนนี้เน้นอะไร?
-
-A: บทช่วยสอนนี้ให้คำแนะนำที่ครอบคลุมเกี่ยวกับวิธีการเพิ่มบรรทัดถัดไปในข้อความในไฟล์ PDF โดยใช้ไลบรารี Aspose.PDF สำหรับ .NET บทช่วยสอนนี้มีตัวอย่างโค้ดต้นฉบับของ C# เพื่ออธิบายขั้นตอนที่จำเป็นในการบรรลุผลดังกล่าว
-
-#### ถาม: ฉันต้องนำเข้าเนมสเปซใดสำหรับบทช่วยสอนนี้
-
-ก: ในไฟล์โค้ดที่คุณต้องการเพิ่มบรรทัดต่อๆ ไป ให้แทรกเนมสเปซต่อไปนี้ที่จุดเริ่มต้นของไฟล์:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### ถาม: ฉันจะระบุไดเรกทอรีเอกสารได้อย่างไร?
-
- ก: ในโค้ด ให้ระบุตำแหน่งบรรทัด`string dataDir = "YOUR DOCUMENT DIRECTORY";` และแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางจริงไปยังไดเร็กทอรีเอกสารของคุณ
-
-#### ถาม: ฉันจะสร้างวัตถุเอกสารได้อย่างไร
-
- ก: ในขั้นตอนที่ 4 คุณจะสร้างอินสแตนซ์ใหม่`Document` วัตถุที่ใช้บรรทัดโค้ดต่อไปนี้:
-
-```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-```
-
-#### ถาม: ฉันจะเพิ่มหน้าลงในเอกสารได้อย่างไร
-
- ก: ในขั้นตอนที่ 5 คุณจะเพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` ของสะสม:
-
-```csharp
+//เพิ่มหน้าใหม่ลงในเอกสาร
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### ถาม: ฉันจะเพิ่มบรรทัดถัดไปในการเยื้องข้อความได้อย่างไร
+ที่นี่ เราจะเริ่มต้นเอกสาร PDF และเพิ่มหน้าว่างเข้าไป ง่ายมากใช่ไหม ลองนึกถึงการเตรียมการก่อนเพิ่มเนื้อหาดู
 
- A: ในขั้นตอนที่ 6 คุณจะสร้าง`TextFragment` วัตถุและกำหนดข้อความที่ต้องการให้กับวัตถุนั้น จากนั้นคุณจะเริ่มต้น`TextFormattingOptions` สำหรับ`TextFragment` และระบุ`SubsequentLinesIndent` ค่า:
+## ขั้นตอนที่ 2: สร้างส่วนข้อความ
+
+ ต่อไปคุณจะต้องสร้าง`TextFragment` วัตถุที่จะเก็บข้อความที่คุณจะแสดงใน PDF ของคุณ ข้อความนี้จะถูกจัดรูปแบบในภายหลังด้วยการเยื้องตามต้องการ
 
 ```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
+Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment(
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog."
+);
+```
+
+นี่เป็นเพียงตัวอย่างข้อความธรรมดาที่ทำซ้ำหลายครั้งเพื่อเติมพื้นที่ว่างบนหน้า คุณสามารถแทนที่ข้อความนี้ด้วยข้อความใดๆ ที่เกี่ยวข้องกับโครงการของคุณได้
+
+## ขั้นตอนที่ 3: เริ่มต้นตัวเลือกการจัดรูปแบบข้อความ
+
+ นี่คือจุดที่เวทมนตร์เกิดขึ้น! ตอนนี้คุณมี`TextFragment` คุณจะต้องเริ่มต้นตัวเลือกการจัดรูปแบบข้อความเพื่อระบุ`SubsequentLinesIndent`การตั้งค่านี้จะใช้การเยื้องกับทุกบรรทัด ยกเว้นบรรทัดแรก
+
+```csharp
+// เริ่มต้น TextFormattingOptions สำหรับส่วนข้อความและระบุค่า SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
     SubsequentLinesIndent = 20
 };
 ```
 
-#### ถาม: ฉันจะเพิ่ม TextFragment ลงในเอกสาร PDF ได้อย่างไร
+ในตัวอย่างนี้ เราตั้งค่าการเยื้องบรรทัดเป็น 20 หน่วย ซึ่งหมายความว่าบรรทัดต่อจากบรรทัดแรกจะถูกเยื้องทีละ 20 หน่วย ทำให้เกิดการเยื้องบรรทัดแบบห้อยที่โดดเด่น
 
- A: ในขั้นตอนที่ 7 คุณจะเพิ่ม`TextFragment` วัตถุ (`text`) ไปยังคอลเลกชันย่อหน้าของหน้า:
+## ขั้นตอนที่ 4: เพิ่มข้อความลงในหน้า
+
+ ตอนนี้คุณได้ใช้การจัดรูปแบบที่จำเป็นแล้ว ถึงเวลาที่จะเพิ่มข้อความลงในหน้า ซึ่งทำได้โดยการเพิ่ม`TextFragment` สู่คอลเลกชันย่อหน้าของหน้า
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### ถาม: ฉันสามารถทำซ้ำขั้นตอนกับบรรทัดเพิ่มเติมได้ไหม
+เมื่อถึงจุดนี้ หน้าจะมีข้อความพร้อมบรรทัดถัดไปที่ย่อหน้าไว้ แต่ทำไมต้องหยุดอยู่แค่นั้นล่ะ มาเพิ่มบรรทัดอีกสักหน่อยเพื่อให้เอกสารดูสมบูรณ์ยิ่งขึ้น
 
-A: ใช่ ในขั้นตอนที่ 8 คุณสามารถทำซ้ำขั้นตอนสำหรับบรรทัดเพิ่มเติมที่มีการเยื้องเท่ากันโดยสร้างบรรทัดใหม่`TextFragment` วัตถุและเพิ่มเข้าในคอลเล็กชั่นย่อหน้าของหน้า
+## ขั้นตอนที่ 5: เพิ่มข้อความเพิ่มเติม
 
-#### ถาม: ฉันจะบันทึกเอกสาร PDF ผลลัพธ์ได้อย่างไร
+หากต้องการสาธิตว่าข้อความหลายส่วนสามารถปรากฏในเอกสารเดียวกันได้อย่างไร คุณสามารถเพิ่มบรรทัดอีกสองสามบรรทัดได้ โดยสามารถจัดรูปแบบบรรทัดแต่ละบรรทัดได้อย่างอิสระ หรือใช้การจัดรูปแบบแบบเดียวกับขั้นตอนก่อนหน้า
 
- ก: หลังจากเพิ่มข้อความด้วยการย่อบรรทัดถัดไป ให้ใช้`Save` วิธีการของ`Document` วัตถุที่จะบันทึกเอกสาร PDF:
+```csharp
+text = new Aspose.Pdf.Text.TextFragment("Line2");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line3");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line4");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line5");
+page.Paragraphs.Add(text);
+```
+
+เมื่อเพิ่มข้อความใหม่ลงในหน้าเอกสารของคุณแต่ละส่วนแล้ว เอกสารของคุณจะเริ่มมีรูปร่างชัดเจนขึ้น คุณสามารถจินตนาการได้อย่างง่ายดายว่าคุณสามารถใช้สิ่งนี้ในสถานการณ์ต่างๆ ได้อย่างไร ไม่ว่าคุณจะกำลังสร้างเอกสารยาวๆ หรือเนื้อหาในรูปแบบสั้น
+
+## ขั้นตอนที่ 6: บันทึกเอกสาร
+
+เมื่อคุณเพิ่มข้อความทั้งหมดและใช้การจัดรูปแบบตามต้องการแล้ว ก็ถึงเวลาบันทึกเอกสาร บรรทัดโค้ดต่อไปนี้จะดำเนินการตามนั้น โดยบันทึกไฟล์ลงในไดเร็กทอรีที่คุณระบุ
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### ถาม: สิ่งสำคัญที่ได้จากบทช่วยสอนนี้คืออะไร?
+เท่านี้ก็เรียบร้อยแล้ว ไฟล์ PDF ของคุณมีข้อความพร้อมบรรทัดย่อหน้าแล้ว
 
-A: เมื่อทำตามบทช่วยสอนนี้แล้ว คุณจะเรียนรู้วิธีการปรับปรุงการอ่านข้อความในเอกสาร PDF ให้ดีขึ้นได้สำเร็จโดยเพิ่มบรรทัดย่อหน้าถัดไปโดยใช้ Aspose.PDF สำหรับ .NET เทคนิคนี้สามารถใช้กับเอกสารและรายงานประเภทต่างๆ ได้
+## บทสรุป
+
+และแล้วคุณก็รู้แล้ว! คุณเพิ่งเรียนรู้วิธีการเพิ่มการย่อหน้าบรรทัดถัดไปใน PDF โดยใช้ Aspose.PDF สำหรับ .NET วิธีนี้เหมาะอย่างยิ่งสำหรับการเพิ่มความเป็นมืออาชีพให้กับเอกสารของคุณ ทำให้คุณมีความยืดหยุ่นในการควบคุมวิธีการแสดงข้อความ ไม่ว่าคุณจะกำลังเตรียมรายงานธุรกิจ เอกสารทางกฎหมาย หรือไฟล์ PDF ประเภทใดก็ตาม การย่อหน้าเป็นเครื่องมือขนาดเล็กแต่ทรงพลังในการปรับปรุงการอ่าน ถ้าคุณชอบบทช่วยสอนนี้ ทำไมไม่ลองดูคุณสมบัติอื่นๆ ที่ Aspose.PDF นำเสนอล่ะ
+
+## คำถามที่พบบ่อย
+
+### ฉันสามารถใช้การเยื้องย่อหน้าที่แตกต่างกันในแต่ละย่อหน้าได้หรือไม่  
+ ใช่ คุณสามารถใช้การตั้งค่าการเยื้องที่แตกต่างกันกับแต่ละรายการได้`TextFragment` โดยการปรับเปลี่ยนลักษณะเฉพาะตัวของตนเอง`TextState.FormattingOptions`.
+
+###  หน่วยที่ใช้สำหรับ`SubsequentLinesIndent` property?  
+การเยื้องจะวัดเป็นจุด ซึ่งเป็นหน่วยวัดมาตรฐานในเอกสาร PDF
+
+### ฉันสามารถนำสิ่งนี้ไปใช้กับ PDF ที่มีอยู่แล้วได้หรือไม่  
+แน่นอน! คุณสามารถโหลด PDF ที่มีอยู่แล้วและนำการเปลี่ยนแปลงไปใช้กับเอกสารนั้นได้ในลักษณะเดียวกับที่คุณทำกับเอกสารใหม่
+
+### มีขีดจำกัดในการเยื้องบรรทัดถัดไปหรือไม่  
+ไม่มีขีดจำกัดที่แน่นอน แต่เพื่อจุดประสงค์ในการอ่าน ขอแนะนำให้รักษาการเยื้องให้อยู่ในขีดจำกัดที่เหมาะสม
+
+### ฉันสามารถรวมสิ่งนี้กับตัวเลือกการจัดรูปแบบข้อความอื่นได้หรือไม่  
+ ใช่! คุณสามารถรวม`SubsequentLinesIndent` คุณสมบัติพร้อมตัวเลือกการจัดรูปแบบข้อความอื่น ๆ เช่น ขนาดแบบอักษร สี และการจัดตำแหน่ง เพื่อปรับแต่งข้อความของคุณเพิ่มเติม

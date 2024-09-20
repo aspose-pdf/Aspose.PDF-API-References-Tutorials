@@ -2,193 +2,190 @@
 title: Ukryty blok tekstowy w pliku PDF
 linktitle: Ukryty blok tekstowy w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak tworzyć ukryte bloki tekstu w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Twórz interaktywne pliki PDF z ukrytymi blokami tekstu za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, jak ulepszyć swoje dokumenty.
 type: docs
 weight: 230
 url: /pl/net/programming-with-text/hidden-text-block/
 ---
-tym samouczku wyjaśnimy, jak utworzyć ukryty blok tekstowy w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Ukryty blok tekstowy to pływający tekst, który staje się widoczny, gdy kursor myszy znajdzie się nad określonym obszarem. Przejdziemy przez proces tworzenia ukrytego bloku tekstowego krok po kroku przy użyciu dostarczonego kodu źródłowego C#.
+## Wstęp
 
-## Wymagania
+W dzisiejszym cyfrowym krajobrazie pliki PDF pozostają formatem docelowym dla wszystkiego, od umów po materiały edukacyjne. Ich wszechstronność i niezawodność są niezrównane. Ale co, jeśli możesz dodać dodatkową warstwę interaktywności do swoich plików PDF? Zanurzamy się w świecie ukrytych bloków tekstowych z Aspose.PDF dla .NET, potężnym narzędziem, które ułatwia tworzenie angażujących i przyjaznych dla użytkownika dokumentów. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz, ten samouczek jest przeznaczony dla Ciebie, pełen instrukcji krok po kroku i wskazówek, aby odblokować pełny potencjał Twoich plików PDF!
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+## Wymagania wstępne
 
-- Zainstalowano bibliotekę Aspose.PDF dla .NET.
-- Podstawowa znajomość programowania w języku C#.
+Zanim zakasamy rękawy i zaczniemy, upewnijmy się, że masz wszystko, czego potrzebujesz. Oto, czego będziesz potrzebować:
 
-## Krok 1: Skonfiguruj katalog dokumentów
+1. Aspose.PDF dla .NET: Ta biblioteka jest niezbędna do pracy z plikami PDF w aplikacjach .NET. Możesz ją sprawdzić, pobrać lub nawet uzyskać bezpłatną wersję próbną z[Dokumentacja PDF Aspose](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: Upewnij się, że masz zainstalowany pakiet .NET Framework, ponieważ jest on niezbędny do uruchomienia biblioteki Aspose.PDF.
+3. Środowisko programistyczne: Edytor kodu lub zintegrowane środowisko programistyczne (IDE), np. Visual Studio, sprawi, że kodowanie stanie się dziecinnie proste. 
+4. Podstawowa wiedza o języku C#: Ponieważ będziemy programować w języku C#, podstawowa znajomość tego języka pomoże Ci łatwiej zrozumieć omawiane koncepcje.
+5. Pasja do nauki: Na koniec, ale nie mniej ważne, przynieś swój entuzjazm! Dzisiaj nauczymy się czegoś niesamowitego.
 
- Najpierw musisz ustawić ścieżkę do katalogu, w którym chcesz zapisać wygenerowany plik PDF. Zastąp`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną zawierającą ścieżkę do żądanego katalogu.
+Gdy już spełnisz te wymagania, będziesz gotowy do tworzenia interaktywnych ukrytych bloków tekstowych w plikach PDF!
+
+## Importuj pakiety
+
+Aby rozpocząć pracę z Aspose.PDF w swoim projekcie, musisz zaimportować niezbędne pakiety. Oto jak to zrobić:
+
+### Utwórz projekt C#
+
+Po pierwsze, otwórz Visual Studio lub dowolne środowisko IDE C# i utwórz nowy projekt. Wybierz typ aplikacji konsoli dla uproszczenia.
+
+### Dodaj Aspose.PDF do swojego projektu
+
+Musisz dodać bibliotekę Aspose.PDF do swojego projektu. Możesz to zrobić za pomocą NuGet Package Manager. Oto krótki one-liner:
+
+```bash
+Install-Package Aspose.PDF
+```
+
+To polecenie ściągnie pliki niezbędne do łatwej pracy z dokumentami PDF.
+
+### Importuj wymagane przestrzenie nazw
+
+Po zainstalowaniu pakietu następnym krokiem jest zaimportowanie przestrzeni nazw na górze pliku C#. Dzięki temu wszystkie fajne funkcjonalności Aspose staną się dostępne:
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Teraz, gdy Twoje środowisko jest już skonfigurowane, przeanalizujmy krok po kroku proces tworzenia ukrytego bloku tekstu w pliku PDF.
+
+## Krok 1: Zdefiniuj katalog dokumentów
+
+Określ, gdzie będą znajdować się Twoje pliki. Pomaga to w płynnym zarządzaniu dokumentami. Użyj następującego kodu, aby skonfigurować:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Pamiętaj o wymianie`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką na Twoim komputerze, gdzie chcesz utworzyć plik PDF.
 
 ## Krok 2: Utwórz przykładowy dokument
 
-W tym kroku tworzymy przykładowy dokument PDF i dodajemy do niego fragment tekstu. Fragment tekstu będzie służył jako wyzwalacz do wyświetlania ukrytego bloku tekstu.
+Teraz utwórzmy podstawowy dokument PDF. Ten początkowy krok obejmuje zainicjowanie dokumentu PDF i dodanie fragmentu tekstu, który będzie punktem centralnym dla naszego ukrytego tekstu.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## Krok 3: Otwórz dokument
+Tutaj po prostu dodajemy ciąg do dokumentu. Spowoduje to uruchomienie ukrytej akcji tekstowej, gdy najedziemy na nią myszą.
 
- Teraz otwieramy wcześniej utworzony dokument za pomocą`Document` klasa.
+## Krok 3: Otwórz utworzony dokument
+
+Teraz, gdy mamy już nasz początkowy dokument, otwórzmy go w celu dalszej edycji:
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Krok 4: Znajdź fragment tekstu
+Ten wiersz ładuje właśnie utworzony dokument, dzięki czemu możemy wprowadzić w nim zmiany.
 
- Używamy`TextFragmentAbsorber`obiekt, aby znaleźć fragment tekstu, który uruchomi wyświetlanie ukrytego bloku tekstu. W tym przypadku szukamy dokładnego tekstu „Przesuń kursor myszy tutaj, aby wyświetlić tekst pływający”.
+## Krok 4: Utwórz TextAbsorber, aby znaleźć frazy
+
+ Następnie chcemy zidentyfikować fragment tekstu, z którym będziemy pracować. To tutaj`TextFragmentAbsorber` wchodzi do gry:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## Krok 5: Utwórz ukryte pole tekstowe
-
- Tworzymy`TextBoxField` obiekt reprezentujący ukryte pole tekstowe. To pole będzie zawierać tekst, który stanie się widoczny, gdy kursor myszy znajdzie się nad tekstem wyzwalacza.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## Krok 6: Dodaj ukryte pole tekstowe do dokumentu
-
-Dodajemy ukryte pole tekstowe do zbioru formularzy dokumentu.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## Krok 7: Utwórz niewidoczny przycisk
-
-Tworzymy niewidoczne pole przycisku, które zostanie umieszczone na górze fragmentu tekstu wyzwalacza. To pole przycisku będzie miało akcje powiązane ze zdarzeniami wejścia i wyjścia myszy.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## Krok 8: Zapisz dokument
-
-Na koniec zapisujemy zmodyfikowany dokument z ukrytym blokiem tekstu.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Przykładowy kod źródłowy dla ukrytego bloku tekstowego przy użyciu Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Utwórz przykładowy dokument z tekstem
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Otwórz dokument z tekstem
-Document document = new Document(outputFile);
-//Utwórz obiekt TextAbsorber, aby znaleźć wszystkie frazy pasujące do wyrażenia regularnego
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Zaakceptuj absorber dla stron dokumentu
 document.Pages.Accept(absorber);
-// Pobierz pierwszy wyodrębniony fragment tekstu
+```
+
+W tym kroku prosimy Aspose o znalezienie tekstu, który określiliśmy wcześniej.
+
+## Krok 5: Wyodrębnij fragment tekstu
+
+Gdy już mamy fragment tekstu, wyodrębnimy go za pomocą następującego kodu, który umożliwi nam dalszą manipulację:
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Utwórz ukryte pole tekstowe dla tekstu pływającego w określonym prostokącie strony
+```
+
+Tutaj skupiamy się na pierwszym fragmencie, który został wchłonięty. Jeśli masz więcej tekstu, możesz chcieć iterować kolekcję.
+
+## Krok 6: Utwórz ukryte pole tekstowe
+
+A teraz magia! Utwórz ukryte pole tekstowe, które wyświetla się, gdy użytkownik najedzie kursorem na określony tekst. Użyj tego fragmentu kodu:
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Ustaw tekst, który będzie wyświetlany jako wartość pola
 floatingField.Value = "This is the \"floating text field\".";
-// Zalecamy ustawienie pola jako „tylko do odczytu” w tym scenariuszu
 floatingField.ReadOnly = true;
-// Ustaw flagę „ukryte”, aby pole było niewidoczne po otwarciu dokumentu
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Ustawienie unikalnej nazwy pola nie jest konieczne, ale dozwolone
+```
+
+Ten kod definiuje położenie tekstu swobodnego i ustawia jego właściwości, w tym ustawienie go jako tylko do odczytu i domyślnie ukrytego.
+
+## Krok 7: Dostosuj wygląd pola
+
+Nadaj swojemu pływającemu tekstowi odrobinę finezji! Dostosuj domyślny wygląd pola pływającego tekstu:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// Ustawianie cech wyglądu pola nie jest konieczne, ale je poprawia
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Dodaj pole tekstowe do dokumentu
+```
+
+Możesz dostosować ustawienia, takie jak rozmiar czcionki czy kolory, według własnego uznania, dzięki czemu interfejs stanie się bardziej przyjazny dla użytkownika i atrakcyjny.
+
+## Krok 8: Dodaj pole tekstowe do dokumentu
+
+Po skonfigurowaniu pola tekstowego czas dodać do dokumentu pole pływające:
+
+```csharp
 document.Form.Add(floatingField);
-// Utwórz niewidoczny przycisk w pozycji fragmentu tekstu
+```
+
+Ten wiersz integruje nowo utworzone ukryte pole tekstowe z Twoim plikiem PDF.
+
+## Krok 9: Utwórz pole przycisku niewidocznego
+
+Ten przycisk będzie zarządzał akcjami najechania kursorem na pole tekstowe pływające. Dodaj następujący kod, aby utworzyć niewidoczny przycisk:
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Utwórz nową akcję ukrywania dla określonego pola (adnotacji) i flagę niewidoczności.
-// (Możesz również odwoływać się do pola zmiennoprzecinkowego po nazwie, jeśli określiłeś ją powyżej.)
-// Dodaj akcje przy wejściu/wyjściu myszy w polu niewidocznego przycisku
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Dodaj pole przycisku do dokumentu
-document.Form.Add(buttonField);
-// Zapisz dokument
+```
+
+Tutaj skonfigurowaliśmy przycisk tak, aby po najechaniu myszką na przycisk wyświetlał on tekst pływający i ukrywał go, gdy mysz się na nim znajduje.
+
+## Krok 10: Zapisz dokument
+
+Na koniec pora zapisać swoją pracę i zobaczyć efekt końcowy:
+
+```csharp
 document.Save(outputFile);
 ```
 
+Dzięki tej akcji Twój plik PDF będzie teraz gotowy i interaktywny, dając użytkownikom zupełnie nowy sposób interakcji z Twoją treścią!
+
 ## Wniosek
 
-tym samouczku nauczyłeś się, jak utworzyć ukryty blok tekstowy za pomocą biblioteki Aspose.PDF dla .NET. Postępując zgodnie z przewodnikiem krok po kroku, możesz wygenerować dokument PDF z ukrytym polem tekstowym, które staje się widoczne, gdy kursor myszy znajdzie się nad określonym obszarem. Możesz dostosować wygląd i zachowanie ukrytego bloku tekstowego zgodnie ze swoimi wymaganiami.
+I masz to! Postępując zgodnie z tymi krokami, udało Ci się utworzyć ukryty blok tekstowy w pliku PDF przy użyciu Aspose.PDF dla .NET. Ta prosta, ale potężna funkcja może znacznie poprawić interakcję użytkownika w Twoich dokumentach. Niezależnie od tego, czy tworzysz materiały edukacyjne, czy zasoby dla klientów, możliwość ukrywania i wyświetlania informacji po najechaniu kursorem zapewnia dopracowany, nowoczesny akcent. 
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel poradnika „Ukryty blok tekstowy w pliku PDF”?
+### Czym jest Aspose.PDF dla .NET?  
+Aspose.PDF dla platformy .NET to rozbudowana biblioteka umożliwiająca programistom tworzenie, edytowanie i konwertowanie dokumentów PDF w aplikacjach .NET.
 
-A: Samouczek „Ukryty blok tekstowy w pliku PDF” wyjaśnia, jak utworzyć ukryty blok tekstowy w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Ukryty blok tekstowy to pływający tekst, który staje się widoczny, gdy kursor myszy znajdzie się nad określonym obszarem. Ten samouczek zawiera przewodnik krok po kroku przy użyciu kodu źródłowego C#.
+### Jak zainstalować Aspose.PDF?  
+Możesz zainstalować go za pomocą NuGet Package Manager w Visual Studio. Wystarczy użyć polecenia:`Install-Package Aspose.PDF`.
 
-#### P: Dlaczego miałbym chcieć utworzyć ukryty blok tekstowy w pliku PDF?
+### Czy mogę tworzyć inne elementy interaktywne w plikach PDF?  
+Tak, poza ukrytymi blokami tekstu możesz dodawać przyciski, hiperłącza, adnotacje i wiele więcej, korzystając z Aspose.PDF.
 
-A: Utworzenie ukrytego bloku tekstu może być przydatne w przypadku interaktywnych dokumentów PDF, w których chcesz umieścić dodatkowe informacje lub kontekst, które staną się widoczne dopiero po najechaniu kursorem myszy na wyznaczony obszar.
+### Czy jest dostępna bezpłatna wersja próbna?  
+ Oczywiście! Możesz otrzymać bezpłatną wersję próbną od[Strona wydań Aspose](https://releases.aspose.com/).
 
-#### P: Jak skonfigurować katalog dokumentów?
-
-A: Aby skonfigurować katalog dokumentów:
-
-1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienna zawierająca ścieżkę do katalogu, w którym chcesz zapisać wygenerowany plik PDF.
-
-#### P: Jak utworzyć przykładowy dokument i dodać do niego fragment tekstu?
-
- A: W samouczku używasz`Document` klasa do tworzenia przykładowego dokumentu PDF i dodawania fragmentu tekstu. Ten fragment tekstu służy jako wyzwalacz do wyświetlania ukrytego bloku tekstu.
-
-#### P: Jak znaleźć fragment tekstu, który uruchamia ukryty blok tekstu?
-
- A: W tym samouczku pokazano, jak używać`TextFragmentAbsorber` obiekt, aby znaleźć fragment tekstu, który uruchamia wyświetlanie ukrytego bloku tekstu. Wyszukuje określony ciąg tekstowy w dokumencie PDF.
-
-#### P: Jak utworzyć i dostosować ukryte pole tekstowe?
-
- A: Tworzysz`TextBoxField`obiekt do reprezentowania ukrytego pola tekstowego. Samouczek zawiera kod do ustawiania różnych właściwości, takich jak pozycja, wartość, wygląd i zachowanie ukrytego pola tekstowego.
-
-#### P: Jak utworzyć niewidoczny przycisk powiązany z ukrytym blokiem tekstu?
-
- A: Niewidoczne pole przycisku jest tworzone za pomocą`ButtonField` Klasa. To pole przycisku jest umieszczone na górze fragmentu tekstu wyzwalacza i ma akcje powiązane ze zdarzeniami wejścia i wyjścia myszy. Te akcje kontrolują widoczność ukrytego bloku tekstu.
-
-#### P: Czy mogę dostosować wygląd ukrytego bloku tekstowego i obszaru wyzwalacza?
-
-O: Tak, możesz dostosować różne właściwości zarówno ukrytego pola tekstowego, jak i niewidocznego przycisku, w tym czcionkę, kolor, rozmiar i położenie.
-
-#### P: Jak zapisać zmodyfikowany dokument z ukrytym blokiem tekstu?
-
- A: W tym samouczku pokazano, jak zapisać zmodyfikowany dokument za pomocą`Save` metoda`Document` klasa.
+### A co jeśli będę potrzebował pomocy z plikiem Aspose.PDF?  
+ Możesz swobodnie szukać wsparcia na[Forum Aspose](https://forum.aspose.com/c/pdf/10) w przypadku jakichkolwiek pytań lub problemów, które możesz napotkać.

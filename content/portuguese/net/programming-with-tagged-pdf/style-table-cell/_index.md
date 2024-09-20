@@ -2,323 +2,183 @@
 title: Estilo Tabela Célula
 linktitle: Estilo Tabela Célula
 second_title: Referência da API do Aspose.PDF para .NET
-description: Aprenda a estilizar células de tabela com o Aspose.PDF para .NET. Guia passo a passo para criar e personalizar tabelas.
+description: Aprenda como estilizar células de tabela em um PDF usando Aspose.PDF para .NET com este tutorial detalhado. Siga as instruções para criar e formatar lindas tabelas em PDF.
 type: docs
 weight: 160
 url: /pt/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Bem-vindo a este tutorial detalhado sobre formatação de células de tabela usando Aspose.PDF para .NET. Neste guia, explicaremos em detalhes cada etapa do código-fonte C# fornecido para ajudar você a entender como estilizar células de tabela. Certifique-se de ter instalado o Aspose.PDF para .NET e configurado seu ambiente de desenvolvimento antes de começar.
+## Introdução
 
-## Etapa 1: Configurando o ambiente
+Criar tabelas PDF com aparência profissional pode ser complicado, mas com o Aspose.PDF para .NET, é surpreendentemente simples! Não importa se você está estilizando cabeçalhos, rodapés ou células de tabela específicas, esta poderosa biblioteca fornece todas as ferramentas necessárias para criar documentos PDF lindamente formatados. Neste tutorial, mostraremos como estilizar células de tabela em um documento PDF usando o Aspose.PDF para .NET. Não se preocupe — dividiremos tudo em etapas fáceis de seguir.
 
-Antes de começar, certifique-se de ter configurado seu ambiente de desenvolvimento para usar o Aspose.PDF para .NET. Isso inclui instalar a biblioteca Aspose.PDF e configurar seu projeto para referenciá-la.
+## Pré-requisitos
 
-## Etapa 2: Criando um documento
+Antes de mergulhar no código, certifique-se de ter os seguintes pré-requisitos:
 
-Nesta etapa, criaremos um novo objeto de documento Aspose.PDF.
+1. Aspose.PDF para .NET: Baixe e instale a versão mais recente do Aspose.PDF em[aqui](https://releases.aspose.com/pdf/net/).
+2. IDE (como o Visual Studio): configure um ambiente de desenvolvimento .NET.
+3. Conhecimento básico de programação em C#: É necessário um pouco de familiaridade com C#.
+4.  Licença Aspose.PDF: Obtenha uma licença temporária ou completa para desbloquear todos os recursos da biblioteca. Você pode obter uma avaliação gratuita[aqui](https://purchase.aspose.com/temporary-license/).
+
+## Pacotes de importação
+
+Antes de começar, certifique-se de importar os namespaces necessários. Você precisará do seguinte em seu projeto:
 
 ```csharp
-// O caminho para o diretório de documentos.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Criação de documentos
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table cell formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Criamos um novo documento e definimos o título e o idioma do documento.
+Agora que tudo está configurado, vamos para o guia passo a passo!
 
-## Etapa 3: Obtendo o elemento de estrutura raiz
+Vamos criar uma tabela em um documento PDF e estilizar suas células. Cada etapa explicará o processo em detalhes.
 
-Nesta etapa, obteremos o elemento de estrutura raiz do nosso documento.
+## Etapa 1: Crie um novo documento PDF
 
-```csharp
-// Obter o elemento de estrutura raiz
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Obtivemos o elemento de estrutura raiz que servirá como um contêiner para os elementos do array.
-
-## Etapa 4: Criando o elemento de estrutura da matriz
-
-Agora vamos criar um novo elemento de estrutura de tabela para nosso documento.
+ O primeiro passo é criar um novo documento PDF. No Aspose.PDF, você pode inicializar um novo`Document` objeto, que representa seu arquivo PDF.
 
 ```csharp
-// Crie o elemento de estrutura da matriz
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-```
-
-Criamos um novo elemento de estrutura de array e o adicionamos ao elemento de estrutura raiz. Também criamos os elementos de cabeçalho, corpo e rodapé da tabela.
-
-## Etapa 5: Adicionar cabeçalhos de tabela
-
-Nesta etapa, adicionaremos os cabeçalhos da tabela à nossa tabela.
-
-```csharp
-// Número de linhas e colunas na tabela
-int rowCount = 4;
-int colCount = 4;
-
-int rowIndex;
-int colIndex;
-
-// Crie a linha de cabeçalho da tabela
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-     theElement.BackgroundColor = Color.GreenYellow;
-     theElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-     theElement. IsNoBorder = true;
-     theElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-     theElement.Alignment = HorizontalAlignment.Right;
-}
-```
-
-Criamos uma linha de cabeçalho para nossa tabela e adicionamos células de cabeçalho com propriedades de formatação, como cor de fundo, bordas, margens e alinhamento.
-
-## Etapa 6: Adicionando as linhas do corpo da tabela
-
-Agora vamos adicionar as linhas do corpo da tabela à nossa tabela.
-```csharp
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         int colSpan = 1;
-         int rowSpan = 1;
-
-         if (colIndex == 1 && rowIndex == 1)
-         {
-             colSpan = 2;
-             rowSpan = 2;
-         }
-         else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-         {
-             keep on going;
-         }
-         else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-         {
-             keep on going;
-         }
-
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-         tdElement.BackgroundColor = Color.Yellow;
-         tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-         tdElement.IsNoBorder = false;
-         tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-         tdElement.Alignment = HorizontalAlignment.Center;
-
-         TextState cellTextState = new TextState();
-         cellTextState.ForegroundColor = Color.DarkBlue;
-         cellTextState.FontSize = 7.5F;
-         cellTextState.FontStyle = FontStyles.Bold;
-         cellTextState.Font = FontRepository.FindFont("Arial");
-
-         tdElement. DefaultCellTextState = cellTextState;
-         tdElement.IsWordWrapped = true;
-         tdElement.VerticalAlignment = VerticalAlignment.Center;
-         tdElement.ColSpan = colSpan;
-         tdElement. RowSpan = rowSpan;
-     }
-}
-```
-
-Adicionamos linhas ao corpo da tabela usando loops para iterar sobre cada célula da tabela. Definimos propriedades de formatação para cada célula, como cor de fundo, bordas, margens, alinhamento de texto, etc.
-
-## Etapa 7: Adicionando o rodapé
-
-Por fim, adicionaremos o rodapé da tabela à nossa tabela.
-
-```csharp
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-Criamos um rodapé para nossa tabela e adicionamos células de rodapé com texto.
-
-
-
-## Etapa 8: Salvando o documento PDF marcado
-
-Agora que criamos nosso documento com a tabela estilizada, vamos salvá-lo como um documento PDF marcado.
-
-```csharp
-// Salvar o documento PDF marcado
-document.Save(dataDir + "StyleTableCell.pdf");
-```
-
-Salvamos o documento PDF marcado no diretório especificado.
-
-## Etapa 9: Validação de conformidade com PDF/UA
-
-Em seguida, validaremos a conformidade PDF/UA do nosso documento.
-
-```csharp
-// Verificação de conformidade PDF/UA
-document = new Document(dataDir + "StyleTableCell.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Carregamos o documento PDF marcado e validamos sua conformidade com PDF/UA gerando um relatório XML.
-
-### Exemplo de código-fonte para Style Table Cell usando Aspose.PDF para .NET 
-```csharp
-
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Criar documento
+// Criar um novo documento PDF
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table cell style");
 taggedContent.SetLanguage("en-US");
+```
 
-// Obter elemento de estrutura raiz
+Aqui, inicializamos um documento PDF e definimos seu título e idioma. Isso dá ao seu documento uma estrutura adequada, o que é essencial para a conformidade com PDF/UA.
+
+## Etapa 2: Configurar a estrutura da tabela
+
+Tabelas em PDFs são definidas dentro de elementos de estrutura. Vamos criar a tabela e definir as linhas e colunas da tabela.
+
+```csharp
+// Obter o elemento de estrutura raiz
 StructureElement rootElement = taggedContent.RootElement;
 
-// Criar elemento de estrutura de tabela
+// Criar um elemento de estrutura de tabela
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 4;
+```
+
+Agora definimos o cabeçalho da tabela (`TableTHeadElement`), corpo (`TableTBodyElement`), e pé (`TableTFootElement`) seções. Você pode pensar nelas como o esqueleto da sua tabela.
+
+## Etapa 3: estilize as células do cabeçalho
+
+Estilizar as células do cabeçalho faz com que elas se destaquem. Aqui, aplicamos cores de fundo, bordas e alinhamento de texto.
+
+```csharp
 int colCount = 4;
-int rowIndex;
-int colIndex;
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+
+for (int colIndex = 0; colIndex < colCount; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-	thElement.BackgroundColor = Color.GreenYellow;
-	thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-	thElement.IsNoBorder = true;
-	thElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	thElement.Alignment = HorizontalAlignment.Right;
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
+    thElement.BackgroundColor = Color.GreenYellow;
+    thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
+    thElement.IsNoBorder = true;
+    thElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+    thElement.Alignment = HorizontalAlignment.Right;
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+Nesta etapa, fazemos um loop por cada célula de cabeçalho, dando a ela um fundo verde-amarelo, uma borda cinza e um texto alinhado à direita. Você pode ajustar essas propriedades para corresponder ao seu design desejado.
+
+## Etapa 4: preencher e estilizar o corpo da tabela
+
+O corpo da tabela contém os dados reais. Veja como você pode estilizar cada célula com margens, bordas e configurações de texto específicas.
+
+```csharp
+int rowCount = 4;
+
+for (int rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		int colSpan = 1;
-		int rowSpan = 1;
-		if (colIndex == 1 && rowIndex == 1)
-		{
-			colSpan = 2;
-			rowSpan = 2;
-		}
-		else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-		{
-			continue;
-		}
-		else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-		{
-			continue;
-		}
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-		tdElement.BackgroundColor = Color.Yellow;
-		tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-		tdElement.IsNoBorder = false;
-		tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-		tdElement.Alignment = HorizontalAlignment.Center;
-		TextState cellTextState = new TextState();
-		cellTextState.ForegroundColor = Color.DarkBlue;
-		cellTextState.FontSize = 7.5F;
-		cellTextState.FontStyle = FontStyles.Bold;
-		cellTextState.Font = FontRepository.FindFont("Arial");
-		tdElement.DefaultCellTextState = cellTextState;
-		tdElement.IsWordWrapped = true;
-		tdElement.VerticalAlignment = VerticalAlignment.Center;
-		tdElement.ColSpan = colSpan;
-		tdElement.RowSpan = rowSpan;
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = $"Row {rowIndex}";
+
+    for (int colIndex = 0; colIndex < colCount; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+        tdElement.BackgroundColor = Color.Yellow;
+        tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
+        tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
+        tdElement.Alignment = HorizontalAlignment.Center;
+        
+        TextState cellTextState = new TextState();
+        cellTextState.ForegroundColor = Color.DarkBlue;
+        cellTextState.FontSize = 7.5F;
+        cellTextState.FontStyle = FontStyles.Bold;
+        cellTextState.Font = FontRepository.FindFont("Arial");
+        tdElement.DefaultCellTextState = cellTextState;
+    }
 }
+```
+
+ Nesta etapa, preenchemos o corpo da tabela com quatro linhas e estilizamos cada célula com fundos amarelos e texto centralizado em negrito azul. Também usamos o`MarginInfo`classe para definir o preenchimento ao redor do texto.
+
+## Etapa 5: estilize o rodapé
+
+Para dar à tabela uma estrutura completa, adicionamos e estilizamos as células do rodapé, assim como fizemos com o cabeçalho.
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
 
-// Salvar documento PDF marcado
+for (int colIndex = 0; colIndex < colCount; colIndex++)
+{
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText($"Foot {colIndex}");
+}
+```
+
+A seção de rodapé tem um estilo semelhante ao do cabeçalho, facilitando o acompanhamento da estrutura da tabela pelos leitores.
+
+## Etapa 6: Salvar e validar o documento PDF
+
+Por fim, salvamos o documento PDF e verificamos se ele é compatível com PDF/UA.
+
+```csharp
+// Salvar o documento PDF marcado
 document.Save(dataDir + "StyleTableCell.pdf");
 
 // Verificando a conformidade com PDF/UA
 document = new Document(dataDir + "StyleTableCell.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+ Salvamos o PDF e usamos o`Validate` método para garantir que atenda aos padrões de acessibilidade (conformidade com PDF/UA).
 
 ## Conclusão
 
-Neste tutorial, aprendemos como estilizar células de tabela usando o Aspose.PDF para .NET. Vimos como criar um documento, adicionar uma tabela com cabeçalhos, linhas de corpo e um rodapé, e personalizar estilos de célula. Por fim, salvamos o documento PDF marcado e validamos sua conformidade com PDF/UA. Agora você pode usar o Aspose.PDF para .NET para criar e estilizar tabelas em seus aplicativos .NET.
+Estilizar tabelas em um PDF usando o Aspose.PDF para .NET é poderoso e flexível. Com algumas linhas de código, você pode criar designs de tabela personalizados que farão seus documentos PDF se destacarem. Desde personalizar bordas e fundos de células até garantir a conformidade com a acessibilidade, o Aspose.PDF facilita a criação de arquivos PDF refinados.
 
-### Perguntas frequentes
+## Perguntas frequentes
 
-#### P: Qual é o objetivo deste tutorial sobre formatação de células de tabela usando Aspose.PDF para .NET?
+### Posso aplicar estilos diferentes a células de tabela individuais?  
+Sim, você pode estilizar células individuais personalizando o`TableTDElement` propriedades.
 
-R: Este tutorial tem como objetivo fornecer um guia abrangente sobre como estilizar células de tabela em um documento PDF usando a biblioteca Aspose.PDF para .NET. Ele abrange instruções passo a passo e exemplos de código-fonte C# para ajudar você a entender e implementar a formatação de células de tabela.
+### Como posso mesclar células de tabela?  
+ Você pode usar o`ColSpan` e`RowSpan` propriedades para mesclar células em uma tabela.
 
-#### P: Quais são os pré-requisitos para seguir este tutorial?
+### É possível criar uma tabela compatível com PDF/UA?  
+ Sim, conforme demonstrado neste guia, você pode garantir a conformidade com PDF/UA validando seu documento usando o`Validate` método.
 
-R: Antes de começar, certifique-se de ter instalado o Aspose.PDF para .NET e configurado seu ambiente de desenvolvimento. Isso inclui configurar seu projeto para referenciar a biblioteca Aspose.PDF.
+### Posso usar fontes diferentes nas células da tabela?  
+ Absolutamente! Você pode especificar fontes diferentes usando o`TextState` objeto para cada célula.
 
-#### P: Como posso criar um novo documento PDF usando o Aspose.PDF para .NET?
-
- R: Para criar um novo documento PDF, você precisa instanciar um`Document` objeto da biblioteca Aspose.PDF. O código-fonte C# fornecido demonstra como criar um documento e definir seu título e idioma.
-
-#### P: Qual é o significado do elemento de estrutura raiz em um documento PDF?
-
-R: O elemento de estrutura raiz serve como um contêiner para outros elementos de estrutura, ajudando a organizar e categorizar o conteúdo do documento PDF. Ele desempenha um papel crucial no estabelecimento da estrutura lógica do documento.
-
-#### P: Como posso criar um elemento de estrutura de tabela e personalizar sua aparência usando o Aspose.PDF para .NET?
-
- R: Você pode criar um elemento de estrutura de tabela usando o`CreateTableElement()` método. O código-fonte fornecido demonstra como personalizar a aparência da tabela, incluindo seu cabeçalho, corpo e rodapé, definindo propriedades como cor de fundo, bordas, margens e alinhamento.
-
-#### P: Posso adicionar várias linhas e colunas ao corpo da tabela e personalizar sua formatação?
-
-R: Sim, o tutorial demonstra como adicionar várias linhas e colunas ao corpo da tabela usando loops. Ele também fornece exemplos de personalização de formatação de células, como cor de fundo, bordas, alinhamento de texto, estilo de fonte e muito mais.
-
-#### P: Qual é o propósito de validar a conformidade com PDF/UA e como posso realizar essa validação?
-
- A: Validar a conformidade com PDF/UA garante que o documento PDF esteja de acordo com os padrões de acessibilidade, tornando-o mais acessível a usuários com deficiências. O tutorial mostra como validar a conformidade com PDF/UA usando o`Validate()` método e gerar um relatório XML.
-
-#### P: Como posso aplicar esses conceitos aos meus próprios aplicativos .NET?
-
-R: Você pode usar os exemplos de código-fonte C# fornecidos como um guia para implementar a formatação de células de tabela em seus próprios aplicativos .NET. Personalize o código conforme necessário para atender às suas necessidades e integrá-lo aos seus projetos.
-
-#### P: Há alguma prática recomendada para estilizar células de tabela em documentos PDF?
-
-R: Ao estilizar células de tabela, considere as necessidades do seu público, incluindo requisitos de acessibilidade. Use cores contrastantes, fontes apropriadas e alinhamento de células claro para melhorar a legibilidade. Além disso, valide a conformidade com PDF/UA para garantir que os padrões de acessibilidade sejam atendidos.
-
-#### P: Quais outros recursos do Aspose.PDF para .NET posso explorar para manipulação de documentos PDF?
-
-A: O Aspose.PDF para .NET oferece uma ampla gama de recursos para manipulação de documentos PDF, incluindo extração de texto, inserção de imagem, gerenciamento de campos de formulário, assinaturas digitais e muito mais. Explore a documentação oficial e os recursos para aprender sobre funcionalidades adicionais.
+### Como faço para baixar o Aspose.PDF para .NET?  
+ Você pode baixá-lo do[página de lançamentos](https://releases.aspose.com/pdf/net/).

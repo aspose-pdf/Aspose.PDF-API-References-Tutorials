@@ -2,96 +2,40 @@
 title: Pencereye Otomatik Uyum
 linktitle: Pencereye Otomatik Uyum
 second_title: Aspose.PDF for .NET API Referansı
-description: .NET için Aspose.PDF'i kullanma ve PDF oluşturmada pencereye otomatik sığdırma özelliğini elde etme konusunda adım adım kılavuz.
+description: Bu ayrıntılı, adım adım kılavuzda .NET için Aspose.PDF'yi kullanarak bir tablonun pencereye otomatik olarak nasıl sığdırılacağını öğrenin. PDF'lerde cilalı ve iyi sığdırılmış tablolar oluşturmak için mükemmeldir.
 type: docs
 weight: 50
 url: /tr/net/programming-with-tables/auto-fit-to-window/
 ---
-Aşağıdaki makale, .NET için Aspose.PDF kütüphanesini kullanarak Auto Fit To Window işlevselliğini elde etmek için sağlanan C# kaynak kodunun nasıl kullanılacağına dair adım adım bir kılavuzdur. Auto Fit To Window işlevi, görüntüleme penceresine uyarlanmış bir düzene sahip PDF dosyaları oluşturmanıza olanak tanır. Bu özellik, PDF belgenizin kullanıcı tarafından kullanılan PDF okuyucu penceresinin boyutuna otomatik olarak ayarlanmasını istediğinizde özellikle yararlıdır.
+## giriiş
 
-## Adım 1: Ortamı Kurma
+PDF'lerle çalışırken tablolarla uğraşmak yaygındır ve bu tabloların bir sayfanın genişliğine mükemmel şekilde uyması gereken zamanlar vardır. Bu eğitimde, .NET için Aspose.PDF kullanarak bir tablonun bir pencereye otomatik olarak nasıl sığdırılacağını inceleyeceğiz. Bu, tablolarınızın cilalı ve düzenli görünmesini sağlayarak taşma veya düzensiz sütunlar gibi sorunları önleyebilir. Öğrenmeye hazır mısınız? Hadi başlayalım!
 
-Başlamadan önce, makinenize .NET için Aspose.PDF kütüphanesini yüklemeniz gerekir. Ayrıca projenize gerekli ad alanlarını içe aktardığınızdan emin olun.
+## Ön koşullar
 
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Adım adım kılavuza geçmeden önce ihtiyacınız olacak birkaç şey var:
 
-## Adım 2: PDF Belgesi Oluşturma
+1. Projenizde .NET için Aspose.PDF yüklü. Eğer henüz yoksa,[buradan indirin](https://releases.aspose.com/pdf/net/) veya keşfetmek[ücretsiz deneme sürümü](https://releases.aspose.com/).
+2. .NET programlamanın temelleri hakkında bilgi.
+3. Sisteminizde Visual Studio veya .NET destekli herhangi bir IDE yüklü olmalıdır.
 
- Başlamak için bir tane oluşturmanız gerekir`Document` nesneyi varsayılan kurucusunu çağırarak çağırır.
+>  PS Aspose.PDF'yi sınırlama olmaksızın kullanmak için bir lisansa ihtiyacınız olacağını unutmayın. Bir tane satın alabilirsiniz[Burada](https://purchase.aspose.com/buy) veya bir tane al[geçici lisans](https://purchase.aspose.com/temporary-license/) Tüm özelliklerini denemek için.
 
-```csharp
-Document doc = new Document();
-```
+## Paketleri İçe Aktar
 
- Daha sonra, bir bölüm oluşturun`Pdf` nesne.
+Koda dalmadan önce gerekli ad alanlarını içe aktarmanız gerekir:
 
 ```csharp
-Page sec1 = doc.Pages.Add();
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Adım 3: Belgeye Tablo Ekleme
+Artık her şey tamam olduğuna göre, Aspose.PDF for .NET kullanarak bir tabloyu pencereye otomatik olarak nasıl sığdırabileceğinizi anlamak için bunu basit ve anlaşılır adımlara bölelim.
 
- Bu adımda PDF belgemize bir tablo ekleyeceğiz. İlk önce bir`Table` nesne.
+## Adım 1: Belge Nesnesini Başlatın
 
-```csharp
-Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-```
-
-Daha sonra tabloyu bölümün paragraf koleksiyonuna ekleyin.
-
-```csharp
-sec1.Paragraphs.Add(tab1);
-```
-
-##  Adım 4: Tablo Görünümünü Özelleştirme
-
-Hücre kenarlıkları ve kenar boşluğu gibi özellikleri ayarlayarak tablonun görünümünü özelleştirebilirsiniz.
-
-```csharp
-tab1. ColumnWidths = "50 50 50";
-tab1.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-
-tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 5f;
-margin. Left = 5f;
-margin.Right = 5f;
-margin. Bottom = 5f;
-
-tab1. DefaultCellPadding = margin;
-```
-
-##  Adım 4: Tabloya Satır ve Hücre Ekleme
-
-Şimdi tablomuza satırlar ve hücreler ekleyelim. Bir satır oluşturarak ve bu satıra hücreler ekleyerek başlayalım.
-
-```csharp
-Aspose.Pdf.Row row1 = tab1.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-
-Aspose.Pdf.Row row2 = tab1.Rows.Add();
-row2.Cells.Add("item1");
-row2.Cells.Add("item2");
-row2.Cells.Add("item3");
-```
-
-## Adım 5: Belgeyi Kaydetme
-
-Son olarak çıktı dosya yolunu belirtin ve belgeyi kaydedin.
-
-```csharp
-dataDir = dataDir + "AutoFitToWindow_out.pdf";
-doc.Save(dataDir);
-```
-
-### .NET için Aspose.PDF kullanarak Pencereye Otomatik Sığdırma için örnek kaynak kodu
+Öncelikle bir PDF belgesi oluşturmanız gerekir. Bu belgeyi, sayfalar ve tablolar ekleyeceğiniz boş bir sayfa olarak düşünün.
 
 ```csharp
 // Belgeler dizinine giden yol.
@@ -99,23 +43,57 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Boş oluşturucusunu çağırarak Pdf nesnesini örneklendirin
 Document doc = new Document();
-// Pdf nesnesinde bölümü oluşturun
-Page sec1 = doc.Pages.Add();
+```
+  
+ Burada, şunu kullanarak yeni bir belge oluşturuyoruz:`Document` Aspose.PDF'den sınıf.`dataDir` işiniz bittikten sonra PDF'nizin kaydedileceği konumdur.
 
+## Adım 2: Belgeye Bir Sayfa Ekleyin
+
+Bir PDF belgesinin sayfalara ihtiyacı var, değil mi? Hadi bir tane ekleyelim.
+
+```csharp
+// Pdf nesnesinde bir bölüm (sayfa) oluşturun
+Page sec1 = doc.Pages.Add();
+```
+  
+ Belgeye yeni bir sayfa ekledik`Pages.Add()` yöntem. Bunu, tabloyu yerleştireceğiniz belgenize yeni bir sayfa eklemek olarak düşünebilirsiniz.
+
+## Adım 3: Bir Tablo Oluşturun ve Yapılandırın
+
+Şimdi bir tablo oluşturup pencerenin içine sığacak şekilde ayarlamanın zamanı geldi.
+
+```csharp
 // Bir tablo nesnesi örneği oluşturun
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 // İstenilen bölümün paragraf koleksiyonuna tabloyu ekleyin
 sec1.Paragraphs.Add(tab1);
+```
+  
+ Yeni bir tane başlattık`Table` nesneyi ekledi ve sayfanın paragraf koleksiyonuna ekledi. Her PDF sayfası farklı paragraflara sahip olabilir ve burada tabloyu bir paragraf olarak ele alıyoruz.
 
-// Tablonun sütun genişlikleriyle ayarlayın
+## Adım 4: Sütun Genişliklerini Tanımlayın ve Pencereye Otomatik Olarak Sığdırın
+
+Daha sonra sütun genişliklerini ayarlayıp tablonun pencereye uyacak şekilde kendini ayarlamasını sağlıyoruz.
+
+```csharp
+// Tablo için sütun genişliklerini ayarlayın
 tab1.ColumnWidths = "50 50 50";
 tab1.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
+```
+  
+ Tablo için sabit sütun genişlikleri belirledik ancak ayrıca şunları da ekledik:`ColumnAdjustment.AutoFitToWindow`, tablonun mevcut pencereye uyacak şekilde boyutunu ayarlamasını sağlar.
 
+## Adım 5: Tablo ve Hücreler için Kenarlıkları ve Kenar Boşluklarını Ayarlayın
+
+Kenarlıkları olmayan tablolar genellikle okunaksızdır. Düzenli görünmesi için kenarlıklar ve kenar boşlukları tanımlayalım.
+
+```csharp
 // BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlayın
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
 // Başka bir özelleştirilmiş BorderInfo nesnesini kullanarak tablo kenarlığını ayarlayın
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
+
 // MarginInfo nesnesini oluşturun ve sol, alt, sağ ve üst kenar boşluklarını ayarlayın
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
@@ -125,44 +103,58 @@ margin.Bottom = 5f;
 
 // Varsayılan hücre dolgusunu MarginInfo nesnesine ayarlayın
 tab1.DefaultCellPadding = margin;
+```
+  
+ Tabloya ve hücrelere kenarlıklar, şunu kullanarak eklenir:`BorderInfo` kalınlığı tanımladığınız sınıf. Kenar boşlukları hücrelere biraz dolgu alanı sağlamak için ayarlanır.
 
+## Adım 6: Tabloya Satır ve Hücreler Ekleyin
+
+İçeriği olmayan bir tablo? Bu iyi değil! Hadi birkaç satır ve hücre ekleyelim.
+
+```csharp
 //Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add("col3");
+
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 row2.Cells.Add("item1");
 row2.Cells.Add("item2");
 row2.Cells.Add("item3");
+```
+  
+İki satır oluşturuyoruz ve her satıra üç hücre ekliyoruz. Gerçek verilerinizi (dizelerden daha karmaşık öğelere kadar her şey olabilir) buraya gireceksiniz.
 
+## Adım 7: Belgeyi Kaydedin
+
+Her şey ayarlandıktan sonra yeni oluşturduğunuz PDF belgenizi kaydetmek isteyeceksiniz.
+
+```csharp
 dataDir = dataDir + "AutoFitToWindow_out.pdf";
 // Tablo nesnesini içeren güncellenmiş belgeyi kaydet
 doc.Save(dataDir);
 ```
+  
+ The`doc.Save()` yöntem PDF'yi belirtilen dizine kaydeder. Bu durumda, belge şu şekilde kaydedilir:`AutoFitToWindow_out.pdf` tanımladığınız dizinde.
 
 ## Çözüm
 
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak Auto Fit To Window özelliğiyle bir PDF dosyası oluşturmayı öğrendik. Bu özellik, PDF belgenizin görüntüleme penceresinin boyutuna otomatik olarak ayarlanmasını istediğinizde son derece kullanışlıdır. Aspose.PDF for .NET, PDF dosyaları oluşturmak ve düzenlemek için birçok başka güçlü özellik sunar. Tüm yeteneklerini keşfetmek için bu kütüphaneyi daha fazla incelemenizi öneririm.
+İşte oldu! Aspose.PDF for .NET kullanarak pencereye otomatik olarak uyan bir tablo oluşturdunuz. Bu, tablonuzun yalnızca profesyonel ve iyi yerleştirilmiş görünmesini sağlamakla kalmaz, aynı zamanda farklı veri boyutlarıyla çalışırken size esneklik de sağlar. İster raporlar, ister faturalar veya tablo gerektiren herhangi bir belge oluşturuyor olun, bu yöntem temiz ve okunabilir düzenleri korumak için harika bir yoldur.
 
-### SSS
+## SSS
 
-#### S: PDF oluşturmada Pencereye Otomatik Sığdır özelliğinin amacı nedir?
+### Dinamik olarak daha fazla satır ekleyebilir miyim?  
+ Evet, satır eklemeye devam edebilirsiniz`tab1.Rows.Add()` içeriğe göre dinamik olarak uygulanan bir yöntemdir.
 
-A: PDF oluşturmadaki Pencereye Otomatik Sığdır özelliği, PDF belgesinin düzeninin kullanıcı tarafından kullanılan PDF okuyucu penceresinin boyutuna otomatik olarak ayarlanmasını sağlar. Bu, daha iyi görüntüleme sağlar ve içeriğin mevcut görüntüleme alanına mükemmel şekilde uymasını sağlar.
+### Tablonun otomatik olarak sığmasını istemiyorsam nasıl ayarlarım?  
+ Manuel olarak ayarlayabilirsiniz`ColumnWidths` kullanmadan`ColumnAdjustment.AutoFitToWindow` sabit bir masa genişliğini korumak için.
 
-#### S: Tablonun görünümünü, yazı tipi boyutunu ve renkleri gibi şeyleri özelleştirebilir miyim?
+### Hücrelerin içine resim veya başka içerikler ekleyebilir miyim?  
+Evet, Aspose.PDF hücrelerin içine resim, metin ve hatta diğer tabloları eklemenize olanak tanır!
 
-A: Evet, .NET için Aspose.PDF kullanarak PDF belgesindeki tablonun görünümünü özelleştirebilirsiniz. Sağlanan kod parçacığı, hücre sınırları, kenar boşlukları ve sütun genişlikleri gibi özelliklerin nasıl ayarlanacağını gösterir. Tablonun ve içeriğinin yazı tipi boyutunu, renklerini ve diğer stil özelliklerini daha da özelleştirebilirsiniz.
+### Daha karmaşık tablo stillerine ihtiyacım olursa ne olur?  
+Arka plan rengi, metin hizalaması ve yazı tipi ayarları gibi özellikleri kullanarak tablo ve hücre stillerini daha da özelleştirebilirsiniz.
 
-#### S: Aspose.PDF for .NET'i C# projeme nasıl entegre edebilirim?
-
-A: Aspose.PDF for .NET'i C# projenizde kullanmak için öncelikle makinenize Aspose.PDF for .NET kütüphanesini yüklemeniz gerekir. Daha sonra, C# projenize kütüphaneye bir referans ekleyebilirsiniz. Son olarak, Aspose.PDF for .NET tarafından sağlanan sınıflara ve yöntemlere erişmek için gerekli ad alanlarını içe aktarın.
-
-#### S: Aspose.PDF for .NET, .NET Core uygulamalarıyla uyumlu mudur?
-
-A: Evet, Aspose.PDF for .NET, .NET Core uygulamalarıyla uyumludur. .NET Framework, .NET Core ve .NET 5.0+ dahil olmak üzere çeşitli .NET platformlarını destekler.
-
-#### S: PDF belgesine daha fazla tablo ekleyebilir miyim?
-
-A: Evet, kod parçacığında gösterildiği gibi benzer adımları izleyerek bir PDF belgesine birden fazla tablo ekleyebilirsiniz. Basitçe yeni örnekler oluşturun`Aspose.Pdf.Table` sınıfına ekleyin ve bunları PDF belgesinin farklı bölümlerine veya sayfalarına ekleyin.
+### Bu tabloyu PDF dışındaki formatlara aktarmak mümkün müdür?  
+Kesinlikle! Aspose.PDF, HTML, DOCX ve daha fazlası gibi çeşitli formatlara aktarımı destekler.

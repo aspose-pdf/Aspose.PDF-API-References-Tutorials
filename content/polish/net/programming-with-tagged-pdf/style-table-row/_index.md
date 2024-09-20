@@ -2,156 +2,75 @@
 title: Styl wiersza tabeli
 linktitle: Styl wiersza tabeli
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak dostosować wiersze tabeli za pomocą Aspose.PDF for .NET — przewodnik krok po kroku dotyczący stylizowania i formatowania wierszy.
+description: Dowiedz się, jak stylizować wiersze tabeli w pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z przewodnika krok po kroku, który pomoże Ci z łatwością ulepszyć formatowanie dokumentu.
 type: docs
 weight: 180
 url: /pl/net/programming-with-tagged-pdf/style-table-row/
 ---
-tym szczegółowym samouczku przeprowadzimy Cię krok po kroku przez podany kod źródłowy C#, aby sformatować wiersz tabeli za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z poniższymi instrukcjami, aby dowiedzieć się, jak dostosować style i właściwości wiersza tabeli.
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
+Jeśli chodzi o tworzenie dobrze ustrukturyzowanych i pięknie sformatowanych dokumentów PDF, Aspose.PDF dla .NET jest rozwiązaniem, do którego należy się udać. Niezależnie od tego, czy automatyzujesz raporty, faktury, czy tworzysz dynamiczne tabele, formatowanie tabel za pomocą różnych stylów jest kluczem do uzyskania dopracowanego dokumentu. W tym samouczku zagłębimy się w stylizowanie wiersza tabeli za pomocą Aspose.PDF dla .NET. I nie martw się, poprowadzę Cię krok po kroku, tak jak dobrą rozmowę przy kawie!
 
-Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu, aby się do niej odwoływał.
+## Wymagania wstępne
 
-## Krok 2: Tworzenie dokumentu
+Zanim przejdziemy do konkretów, upewnijmy się, że masz wszystko pod kontrolą. Będziesz potrzebować:
 
-W tym kroku utworzymy nowy obiekt dokumentu Aspose.PDF.
+1. Aspose.PDF dla biblioteki .NET  
+    Jeśli jeszcze go nie masz, możesz go pobrać z[Tutaj](https://releases.aspose.com/pdf/net/) . Możesz również otrzymać[bezpłatny okres próbny](https://releases.aspose.com/) aby zacząć.
+2. Środowisko programistyczne  
+   Skonfiguruj Visual Studio lub dowolne wybrane przez siebie środowisko IDE C#. Będziesz również potrzebować zainstalowanego .NET, ale zakładam, że już jesteś z nim zaznajomiony.
+3. Podstawowa wiedza z zakresu C# i .NET  
+   Dobra znajomość języka C# sprawi, że ten samouczek będzie dziecinnie prosty. Ale nie martw się, wyjaśnię każdy krok szczegółowo!
+
+## Importuj pakiety
+
+Zanim zaczniemy pracę z Aspose.PDF, musimy zaimportować niezbędne przestrzenie nazw. W swoim projekcie C# upewnij się, że uwzględniłeś następujące elementy:
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Tworzenie dokumentów
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of Table Row Formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Utworzyliśmy nowy dokument i ustawiliśmy jego tytuł oraz język.
+Są one niezbędne do utworzenia i nadania stylu tabeli, a także oczywiście do zapewnienia zgodności z przepisami pracy z oznaczoną treścią.
 
-## Krok 3: Uzyskanie elementu struktury korzenia
+Teraz omówimy zadanie krok po kroku, dzięki czemu będziesz mógł stylizować wiersze tabeli jak profesjonalista!
 
-W tym kroku otrzymamy element struktury głównej naszego dokumentu.
+## Krok 1: Utwórz nowy dokument PDF
 
-```csharp
-// Uzyskaj element struktury korzenia
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Otrzymaliśmy element struktury głównej, który będzie służył jako pojemnik dla elementów tablicy.
-
-## Krok 4: Tworzenie elementu struktury tablicy
-
-Teraz utwórzmy nowy element struktury tabeli dla naszego dokumentu.
+Po pierwsze: utwórzmy zupełnie nowy dokument PDF. Ten dokument będzie zawierał wszystkie wiersze tabeli ze stylami.
 
 ```csharp
-// Utwórz element struktury tablicy
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-```
-
-Utworzyliśmy nowy element struktury tablicy i dodaliśmy go do elementu struktury głównej.
-
-## Krok 5: Dostosuj style i właściwości wierszy tabeli
-
-W tym kroku dostosujemy style i właściwości wierszy tabeli.
-
-```csharp
-// Dostosuj style i właściwości wierszy tabeli
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
-
-// Utwórz wiersz nagłówka tabeli
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-}
-
-// Dostosuj wiersze treści tabeli
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-     trElement.BackgroundColor = Color.LightGoldenrodYellow;
-     trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-     trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-     trElement.MinRowHeight = 100.0;
-     trElement.FixedRowHeight = 120.0;
-     trElement. IsInNewPage = (rowIndex % 3 == 1);
-     trElement.IsRowBroken = true;
-     TextState cellTextState = new TextState();
-     cellTextState.ForegroundColor = Color.Red;
-     trElement. DefaultCellTextState = cellTextState;
-     trElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-     trElement.VerticalAlignment = VerticalAlignment.Bottom;
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Utwórz linię stopki tabeli
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-Dostosowaliśmy różne aspekty wiersza tabeli, takie jak kolor tła, obramowanie, wysokość wiersza, paginację, domyślny styl komórek i inne.
-
-## Krok 6: Zapisywanie oznaczonego dokumentu PDF
-
-Teraz, gdy utworzyliśmy dokument ze stylizowanym wierszem tabeli, zapiszemy go jako oznaczony dokument PDF.
-```csharp
-// Zapisz oznaczony dokument PDF
-document.Save(dataDir + "StyleTableRow.pdf");
-```
-
-Zapisaliśmy oznaczony dokument PDF w podanym katalogu.
-
-## Krok 7: Walidacja zgodności z PDF/UA
-
-Następnie zweryfikujemy zgodność naszego dokumentu z formatem PDF/UA.
-
-```csharp
-// Sprawdzenie zgodności PDF/UA
-document = new Document(dataDir + "StyleTableRow.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Przesłaliśmy oznaczony dokument PDF i sprawdziliśmy jego zgodność ze standardem PDF/UA, generując raport XML.
-
-
-### Przykładowy kod źródłowy dla wiersza tabeli stylów przy użyciu Aspose.PDF dla .NET 
-```csharp
-
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Utwórz dokument
 Document document = new Document();
+```
+
+ Tutaj po prostu inicjujemy nowy`Document` obiekt, który będzie reprezentował nasz plik PDF. Upewnij się, że ustawiłeś ścieżkę katalogu, w którym będziesz zapisywać pliki wyjściowe.
+
+## Krok 2: Praca z oznaczoną treścią
+
+Aby ustrukturyzować plik PDF pod kątem dostępności, będziemy pracować z oznaczoną treścią. Pomaga to w tworzeniu ustrukturyzowanych elementów, takich jak tabele, zapewniając ich zgodność ze standardami dostępności, takimi jak PDF/UA.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
+```
 
+Tutaj ustawiamy tytuł i język dla oznaczonej zawartości pliku PDF. To tak, jakbyśmy dali plikowi PDF nazwę i powiedzieli mu, w jakim języku powinien mówić!
+
+## Krok 3: Zdefiniuj strukturę tabeli
+
+Następnie zdefiniujmy strukturę tabeli, którą zamierzamy utworzyć. Każda tabela potrzebuje nagłówka, treści i stopki – zupełnie jak dobrze zorganizowany wpis na blogu!
+
+```csharp
 // Pobierz element struktury korzenia
 StructureElement rootElement = taggedContent.RootElement;
 
@@ -161,103 +80,111 @@ rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
+```
+
+Tworzymy tutaj tabelę z nagłówkiem (`THead`), ciało (`TBody`) i stopka (`TFoot`). Te elementy będą trzymać nasze wiersze.
+
+## Krok 4: Dodaj wiersz nagłówka tabeli
+
+Tabele bez nagłówków są jak książki bez tytułów. Najpierw utwórzmy wiersz nagłówka, aby zapewnić kontekst dla danych.
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText(String.Format("Head {0}", colIndex));
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+Tutaj przechodzimy przez pętlę i dodajemy trzy komórki nagłówka (`TableTHElement`), nadając każdemu opisowy tekst. Proste, prawda?
+
+## Krok 5: Dodaj rzędy stylizowanego korpusu
+
+Teraz nadchodzi zabawna część – stylizowanie wierszy! Stwórzmy siedem wierszy z niestandardowymi stylami. Ustawimy kolory tła, obramowania, wypełnienie i wyrównanie tekstu.
+
+```csharp
+for (int rowIndex = 0; rowIndex < 7; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	trElement.BackgroundColor = Color.LightGoldenrodYellow;
-	trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-	trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-	trElement.MinRowHeight = 100.0;
-	trElement.FixedRowHeight = 120.0;
-	trElement.IsInNewPage = (rowIndex % 3 == 1);
-	trElement.IsRowBroken = true;
-	TextState cellTextState = new TextState();
-	cellTextState.ForegroundColor = Color.Red;
-	trElement.DefaultCellTextState = cellTextState;
-	trElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	trElement.VerticalAlignment = VerticalAlignment.Bottom;
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = String.Format("Row {0}", rowIndex);
+    trElement.BackgroundColor = Color.LightGoldenrodYellow;
+    trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
+    trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
+    trElement.MinRowHeight = 100.0;
+    trElement.FixedRowHeight = 120.0;
+    trElement.IsInNewPage = (rowIndex % 3 == 1);
+    trElement.IsRowBroken = true;
+
+    for (int colIndex = 0; colIndex < 3; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+    }
 }
+```
+
+- Kolor tła: Użyliśmy jasnego, złocistożółtego odcienia, aby uzyskać profesjonalny, a jednocześnie ciepły efekt.
+- Obramowanie: Każdy wiersz ma ciemnoszarą zewnętrzną obwódkę i niebieskie obramowanie komórek, co zapewnia ostry wygląd.
+- Wysokość i wypełnienie: Wysokość wierszy jest ustawiona, a wypełnienie jest dodawane w celu uzyskania schludnego wyglądu.
+- Podziały stron: Aby tabela była bardziej czytelna, co drugi wiersz zaczyna się na nowej stronie.
+
+## Krok 6: Dodaj wiersz stopki
+
+Podobnie jak nagłówek, stopka kotwiczy tabelę. Utwórzmy ją.
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
+```
 
-// Zapisz oznaczony dokument PDF
+Po prostu przechodzimy przez trzy komórki stopki i dodajemy trochę tekstu. Alternatywny tekst dla stopki to „Foot Row”, aby uczynić ją dostępną.
+
+## Krok 7: Zapisz dokument PDF
+
+Teraz, gdy stół jest już gotowy, czas zapisać swoje dzieło!
+
+```csharp
 document.Save(dataDir + "StyleTableRow.pdf");
+```
 
-// Sprawdzanie zgodności PDF/UA
+tak oto Twój plik PDF zostanie zapisany ze wszystkimi pięknymi wierszami tabeli, które przed chwilą wystylizowaliśmy.
+
+## Krok 8: Sprawdź zgodność z PDF/UA
+
+Aby mieć pewność, że nasz plik PDF jest zgodny ze standardami dostępności, zweryfikujemy go pod kątem zgodności z PDF/UA.
+
+```csharp
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Dzięki temu Twój plik PDF spełnia standard PDF/UA, dzięki czemu jest dostępny dla każdego. Dostępność to nazwa gry!
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się formatowania wiersza tabeli za pomocą Aspose.PDF dla .NET. Dostosowaliśmy style i właściwości wiersza tabeli, dodaliśmy nagłówki, wiersze treści i stopkę, zapisaliśmy oznaczony dokument PDF i sprawdziliśmy jego zgodność z PDF/UA.
+I masz to! Za pomocą zaledwie kilku linijek kodu utworzyłeś w pełni wystylizowaną tabelę w pliku PDF przy użyciu Aspose.PDF dla .NET. Od nagłówków do stopek, wystylizowaliśmy każdy wiersz, dodaliśmy elementy ułatwień dostępu, a nawet sprawdziliśmy zgodność dokumentu. Niezależnie od tego, czy pracujesz nad raportami korporacyjnymi, prezentacjami, czy po prostu bawisz się plikami PDF, ten przewodnik obejmuje wszystko. Teraz idź dalej i zacznij stylizować swoje tabele jak profesjonalista!
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel tego samouczka dotyczącego formatowania wierszy tabeli za pomocą Aspose.PDF dla platformy .NET?
+### Czy mogę również zmienić styl czcionki tabeli?  
+ Tak! Możesz modyfikować styl czcionki za pomocą`TextState` obiekt dla każdej komórki, co pozwala na pełną personalizację.
 
-A: Celem tego samouczka jest przeprowadzenie Cię przez proces formatowania wierszy tabeli w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Zawiera instrukcje krok po kroku i przykłady kodu źródłowego C#, które pomogą Ci dostosować style i właściwości wierszy tabeli.
+### Jak dodać więcej kolumn do tabeli?  
+ Wystarczy dostosować`colCount`zmienną i dodaj więcej komórek w pętlach dla nagłówków, treści i stopek.
 
-#### P: Jakie wymagania muszę spełnić, aby móc skorzystać z tego samouczka?
+### Co się stanie, jeśli nie ustawię wysokości wiersza?  
+Jeśli nie ustawisz wysokości wiersza, tabela automatycznie dostosuje się do jej zawartości.
 
-A: Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Wiąże się to z zainstalowaniem biblioteki Aspose.PDF i skonfigurowaniem projektu tak, aby się do niej odwoływał.
+### Czy mogę użyć tego do dynamicznej liczby wierszy?  
+Oczywiście! Możesz pobrać dane z bazy danych lub dowolnego innego źródła i dynamicznie dostosować liczbę wierszy i kolumn.
 
-#### P: W jaki sposób mogę utworzyć nowy dokument PDF i ustawić jego tytuł oraz język za pomocą Aspose.PDF dla platformy .NET?
-
- A: Aby utworzyć nowy dokument PDF, należy utworzyć`Document` obiekt z biblioteki Aspose.PDF. Dostarczony w samouczku kod źródłowy C# pokazuje, jak utworzyć dokument i ustawić jego tytuł oraz właściwości języka.
-
-#### P: Jakie znaczenie ma element struktury głównej w dokumencie PDF?
-
-A: Element struktury głównej działa jako pojemnik dla innych elementów struktury, pomagając w organizacji i kategoryzowaniu zawartości dokumentu PDF. Odgrywa kluczową rolę w ustalaniu logicznej struktury dokumentu.
-
-#### P: W jaki sposób utworzyć i dostosować element struktury tabeli, aby sformatować wiersze tabeli za pomocą Aspose.PDF dla platformy .NET?
-
-A: W tym samouczku wyjaśniono, jak utworzyć element struktury tabeli i dostosować jego właściwości, aby sformatować wiersze tabeli. Obejmuje on takie aspekty, jak kolor tła, obramowania, wysokość wiersza, paginacja, domyślny styl komórki i inne.
-
-#### P: Czy mogę dostosować style i właściwości poszczególnych komórek w wierszu tabeli?
-
-A: Tak, możesz dostosować style i właściwości poszczególnych komórek w wierszu tabeli. Samouczek pokazuje, jak ustawić właściwości, takie jak kolor tła, obramowania, kolor tekstu, wypełnienie i inne dla komórek tabeli w sformatowanym wierszu tabeli.
-
-#### P: Jak mogę dodać nagłówki, wiersze treści i stopkę do sformatowanego wiersza tabeli?
-
-A: W samouczku przedstawiono przykłady tworzenia i dodawania nagłówków, wierszy treści i stopki do elementu struktury tabeli. Elementy te można dalej dostosowywać, korzystając z właściwości opisanych w samouczku.
-
-#### P: Na czym polega zgodność PDF/UA i jak mogę ją sprawdzić w przypadku mojego oznaczonego dokumentu PDF?
-
- A: Zgodność z PDF/UA zapewnia zgodność dokumentu PDF ze standardami dostępności, dzięki czemu jest on bardziej dostępny dla użytkowników niepełnosprawnych. Samouczek pokazuje, jak sprawdzić zgodność PDF/UA za pomocą`Validate()` metodę i wygeneruj raport zgodności XML.
-
-#### P: W jaki sposób mogę włączyć te koncepcje do moich własnych aplikacji .NET?
-
-A: Możesz użyć podanych przykładów kodu źródłowego C# jako przewodnika do implementacji formatowania wierszy tabeli w swoich własnych aplikacjach .NET. Modyfikuj i dostosuj kod, aby odpowiadał Twoim wymaganiom i zintegruj go ze swoimi projektami.
-
-#### P: Czy istnieją jakieś zalecane najlepsze praktyki formatowania wierszy tabeli w dokumentach PDF?
-
-A: Podczas formatowania wierszy tabeli należy wziąć pod uwagę czytelność i dostępność treści. Upewnij się, że kolory mają wystarczający kontrast, używaj wyraźnych i czytelnych czcionek oraz zachowaj spójny układ. Sprawdź zgodność z PDF/UA, aby zapewnić spełnienie standardów dostępności.
-
-#### P: Jakie inne funkcje Aspose.PDF dla .NET mogę wykorzystać do personalizacji dokumentów PDF?
-
-A: Aspose.PDF dla .NET oferuje szeroki zakres funkcji do dostosowywania dokumentów PDF, w tym manipulację tekstem, wstawianie obrazów, zarządzanie polami formularzy, podpisy cyfrowe, adnotacje i wiele innych. Zapoznaj się z oficjalną dokumentacją i zasobami, aby poznać dodatkowe funkcjonalności.
+### Czy korzystanie z Aspose.PDF dla platformy .NET jest bezpłatne?  
+ Aspose.PDF dla .NET jest produktem licencjonowanym, ale możesz go wypróbować za pomocą[bezpłatny okres próbny](https://releases.aspose.com/) lub zdobądź[licencja tymczasowa](https://purchase.aspose.com/temporary-license/).

@@ -36,7 +36,7 @@ Te resultará útil tener conocimientos básicos de C#. Si te sientes cómodo es
 
 ## Importar paquetes
 
-Ahora que tenemos todo configurado, comencemos por importar los paquetes necesarios. Comenzarás por incluir el espacio de nombres Aspose.PDF en la parte superior de tu archivo C#. A continuación, te indicamos cómo hacerlo:
+Ahora que tenemos todo configurado, comencemos por importar los paquetes necesarios. Comenzaremos por incluir el espacio de nombres Aspose.PDF en la parte superior del archivo C#. A continuación, le indicamos cómo hacerlo:
 
 ```csharp
 using System;

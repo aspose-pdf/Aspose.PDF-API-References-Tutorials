@@ -9,7 +9,7 @@ url: /pl/net/programming-with-operators/draw-xform-on-page/
 ---
 ## Wstęp
 
-Tworzenie dynamicznych i wizualnie atrakcyjnych dokumentów PDF stało się kluczową umiejętnością w dzisiejszym cyfrowym świecie. Niezależnie od tego, czy jesteś programistą pracującym nad generowaniem dokumentów, czy projektantem skupionym na estetyce, zrozumienie, jak manipulować plikami PDF, jest bezcenne. W tym samouczku pokażemy, jak narysować formularz XForm na stronie przy użyciu biblioteki Aspose.PDF dla .NET. Ten przewodnik krok po kroku przeprowadzi Cię przez proces tworzenia formularzy XForm i skutecznego umieszczania ich na stronach PDF.
+Tworzenie dynamicznych i atrakcyjnych wizualnie dokumentów PDF stało się kluczową umiejętnością w dzisiejszym cyfrowym świecie. Niezależnie od tego, czy jesteś programistą pracującym nad generowaniem dokumentów, czy projektantem skupionym na estetyce, zrozumienie, jak manipulować plikami PDF, jest bezcenne. W tym samouczku pokażemy, jak narysować formularz XForm na stronie, korzystając z biblioteki Aspose.PDF dla .NET. Ten przewodnik krok po kroku przeprowadzi Cię przez proces tworzenia formularzy XForm i skutecznego umieszczania ich na stronach PDF.
 
 ## Wymagania wstępne
 

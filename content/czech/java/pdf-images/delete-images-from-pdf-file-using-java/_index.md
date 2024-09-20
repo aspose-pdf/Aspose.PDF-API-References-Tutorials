@@ -64,7 +64,7 @@ public class PdfImageDeletion {
         for (Page page : pdfDocument.getPages()) {
             // Iterujte obsah stránky
             for (XObject xObject : page.getResources().getImages()) {
-                // Zkontrolujte, zda je objekt obrazem
+                // Zkontrolujte, zda je objekt obrázkem
                 if (xObject instanceof XImage) {
                     // Smazat obrázek
                     xObject.delete();
@@ -94,7 +94,7 @@ public class PdfImageDeletion {
         for (Page page : pdfDocument.getPages()) {
             // Iterujte obsah stránky
             for (XObject xObject : page.getResources().getImages()) {
-                // Zkontrolujte, zda je objekt obrazem
+                // Zkontrolujte, zda je objekt obrázkem
                 if (xObject instanceof XImage) {
                     // Smazat obrázek
                     xObject.delete();

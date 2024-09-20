@@ -20,7 +20,7 @@ Mielőtt elkezdenénk, meg kell felelnie néhány előfeltételnek:
 1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a gépen. Itt kell írni és végrehajtani a kódot.
 2. Aspose.PDF for .NET: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Megtalálhatja a legújabb verziót[itt](https://releases.aspose.com/pdf/net/).
 3. Alapvető C# ismeretek: A C# programozás ismerete segít jobban megérteni a példákat, de ne aggódjon, ha még csak most kezdi; mindent elmagyarázunk lépésről lépésre.
-4.  PDF-fájl: Készítsen egy minta PDF-fájlt. Példánkban egy nevű fájlt fogunk használni`AddTextStamp.pdf`.
+4.  PDF-fájl: Készítsen PDF-mintafájlt. Példánkban egy nevű fájlt fogunk használni`AddTextStamp.pdf`.
 
 Ha ezekkel az előfeltételekkel rendelkezik, készen áll arra, hogy dátum- és időbélyegzőket adjon PDF-fájljaihoz!
 

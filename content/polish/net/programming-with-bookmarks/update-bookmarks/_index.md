@@ -17,7 +17,7 @@ Zanim zagłębimy się w kod, upewnijmy się, że masz wszystko gotowe. Oto, cze
 
 1.  Aspose.PDF dla .NET: Możesz go pobrać[Tutaj](https://releases.aspose.com/pdf/net/).
 2. .NET Framework: Upewnij się, że w systemie zainstalowano platformę .NET.
-3. IDE: Najlepiej Visual Studio lub inne środowisko IDE obsługujące platformę .NET.
+3. IDE: Najlepiej Visual Studio lub inne IDE obsługujące platformę .NET.
 4. Plik PDF z istniejącymi zakładkami: Będzie to plik testowy służący do aktualizacji zakładek.
 
  Jeśli jeszcze nie masz pliku Aspose.PDF dla platformy .NET, pobierz go[bezpłatny okres próbny](https://releases.aspose.com/) Lub[kup to](https://purchase.aspose.com/buy)jeśli jesteś gotowy odblokować wszystkie jego funkcje. Ponadto, jeśli chcesz używać go bez ograniczeń podczas rozwoju,[licencja tymczasowa](https://purchase.aspose.com/temporary-license/) przyda się.

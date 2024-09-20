@@ -61,7 +61,7 @@ Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 
 Most, hogy a PDF-dokumentum betöltődött, folytassuk a kép hozzáadásával az egyes oldalak fejlécéhez.
 
-### 2.1. lépés: Hozzon létre egy képbélyeget
+### 2.1. lépés: Képbélyegző létrehozása
  Ha képet szeretnénk beszúrni a fejlécbe, az úgynevezett an`ImageStamp`. Lehetővé teszi, hogy a képet a PDF bármely részében elhelyezzük, és ebben az esetben a fejléc részben helyezzük el.
 
 Íme a kód a bélyegző létrehozásához:

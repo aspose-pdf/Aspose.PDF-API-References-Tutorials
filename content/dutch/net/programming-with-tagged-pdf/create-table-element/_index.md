@@ -7,281 +7,180 @@ type: docs
 weight: 80
 url: /nl/net/programming-with-tagged-pdf/create-table-element/
 ---
-In deze stapsgewijze handleiding leiden we u door het proces van het maken van een array-element met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt manipuleren. Het maken van een array-element is een veelvoorkomende vereiste bij het genereren van dynamische PDF's, en Aspose.PDF biedt een eenvoudige en efficiënte manier om dit te bereiken.
+## Invoering
 
-Laten we de code eens bekijken en leren hoe u een array-element kunt maken met Aspose.PDF voor .NET.
+Heb je je ooit afgevraagd hoe je moeiteloos tabelelementen in een PDF kunt maken en aanpassen met behulp van .NET? Nou, Aspose.PDF voor .NET is jouw go-to-oplossing! Of je nu automatisch rapporten genereert of dynamisch tabellen maakt voor verschillende documenten, Aspose.PDF biedt een uitgebreide API om met tabelelementen te werken. Deze gids leidt je stap voor stap door het maken van een tabel, het stylen ervan en zelfs het garanderen dat deze voldoet aan de PDF/UA-nalevingsnormen. Klinkt spannend, toch? Laten we er meteen induiken!
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
+Voordat we beginnen, moet u een aantal dingen regelen:
+1.  Aspose.PDF voor .NET: Download de nieuwste versie van[Aspose.PDF voor .NET Downloaden](https://releases.aspose.com/pdf/net/).
+2. Ontwikkelomgeving: elke .NET-ondersteunde IDE (bijv. Visual Studio).
+3. Basiskennis van C#: Kennis van C#-programmering wordt aanbevolen.
 
-1. Aspose.PDF-bibliotheek voor .NET geïnstalleerd.
-2. Basiskennis van de programmeertaal C#.
+ Vergeet ten slotte uw Aspose.PDF-licentie niet. Als u die niet hebt, kunt u de[gratis proefperiode](https://releases.aspose.com/) of vraag een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) om alles uit te testen.
 
-## Stap 1: De omgeving instellen
+## Pakketten importeren
 
-Om te beginnen opent u uw C#-ontwikkelomgeving en maakt u een nieuw project. Zorg ervoor dat u een verwijzing naar de Aspose.PDF-bibliotheek voor .NET in uw project hebt toegevoegd.
+Eerst het belangrijkste: laten we de benodigde pakketten importeren. Dit stelt ons in staat om met alle relevante klassen te werken voor het maken van tabellen in PDF-documenten.
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+In deze sectie splitsen we het proces van het maken van een tabel op in meerdere stappen. Elke stap richt zich op verschillende onderdelen van het proces van het maken en aanpassen van de tabel.
+
+## Stap 1: Maak een nieuw PDF-document
+
+Het eerste wat we moeten doen is een nieuw PDF-document maken. Dit zal dienen als de container voor onze tabel.
 
 ```csharp
 // Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Een nieuw PDF-document maken
+Document document = new Document();
 ```
 
-## Stap 2: Het document maken
+ Hier initialiseren we een nieuw exemplaar van de`Document` klasse, wat ons lege PDF-bestand zal zijn. Vergeet niet om uw bestandspad te definiëren!
 
- De eerste stap is het maken van een nieuw PDF-document met behulp van de`Document` klas.
+## Stap 2: Gelabelde inhoud instellen
+
+Vervolgens moeten we getagde content inschakelen, wat zorgt voor toegankelijkheid voor de tabel. Getagde PDF's zijn vereist voor naleving van PDF/UA (Universal Accessibility).
 
 ```csharp
-// Maak het document
-Document document = new Document();
+// Gelabelde inhoud inschakelen
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Array");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example Table");
+taggedContent.SetLanguage("en-US");
 ```
 
-Hier stellen we ook de titel en taal in voor de getagde inhoud.
+Deze stap stelt de documenttitel en taal in, zodat de tabel voldoet aan de toegankelijkheidsnormen. Toegankelijke documenten zijn cruciaal voor de gebruikerservaring en wettelijke vereisten in sommige branches.
 
-## Stap 3: Het array-element maken
+## Stap 3: Het tabelelement maken
 
-Vervolgens moeten we het array-element maken en toevoegen aan het document. We beginnen met het ophalen van het root-structuurelement, daarna maken we een nieuw tabelelement met behulp van de`CreateTableElement` methode.
+Nu komt het leukste gedeelte: het maken van de tafel zelf!
 
 ```csharp
 // Krijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTHElement theElement = headTrElement.CreateTH();
-thElement.SetText(String.Format("Header {0}", colIndex));
-theElement.BackgroundColor = Color.GreenYellow;
-theElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-theElement. IsNoBorder = true;
-theElement.Margin = new MarginInfo(16.0, 2
-
-.0, 8.0, 2.0);
-theElement.Alignment = HorizontalAlignment.Right;
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-TableTRElement trElement = tableTBodyElement.CreateTR();
-trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-int colSpan = 1;
-int rowSpan = 1;
-if (colIndex == 1 && rowIndex == 1)
-{
-colSpan = 2;
-rowSpan = 2;
-}
-else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-{
-keep on going;
-}
-else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-{
-keep on going;
-}
-TableTDElement tdelement = trElement.CreateTD();
-tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-tdElement.BackgroundColor = Color.Yellow;
-tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-tdElement.IsNoBorder = false;
-tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-tdElement.Alignment = HorizontalAlignment.Center;
-TextState cellTextState = new TextState();
-cellTextState.ForegroundColor = Color.DarkBlue;
-cellTextState.FontSize = 7.5F;
-cellTextState.FontStyle = FontStyles.Bold;
-cellTextState.Font = FontRepository.FindFont("Arial");
-tdElement. DefaultCellTextState = cellTextState;
-tdElement.IsWordWrapped = true;
-tdElement.VerticalAlignment = VerticalAlignment.Center;
-tdElement.ColSpan = colSpan;
-tdElement. RowSpan = rowSpan;
-}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTDElement tdElement = footTrElement.CreateTD();
-tdElement.SetText(String.Format("Foot {0}", colIndex));
-tdElement.Alignment = HorizontalAlignment.Center;
-tdElement.StructureTextState.FontSize = 7F;
-tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for the table");
-tableAttributes.SetAttribute(summaryAttribute);
-
-// Sla het getagde PDF-document op
-document.Save(dataDir + "CreateTableElement.pdf");
-
-// PDF/UA-nalevingscontrole
-document = new Document(dataDir + "CreateTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-### Voorbeeldbroncode voor Create Table Element met behulp van Aspose.PDF voor .NET 
+ Hier gebruiken we de`RootElement` van de getagde content om onze tabel toe te voegen. Dit is in feite het toevoegen van een tabel als een onderliggend knooppunt aan de structuur van het document.
+
+## Stap 4: Pas tabelranden en kopteksten aan
+
+Je wilt toch niet dat je tafel er saai uitziet? Laten we er wat stijl aan toevoegen!
+
 ```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Document maken
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table");
-taggedContent.SetLanguage("en-US");
-
-// Krijg wortelstructuur element
-StructureElement rootElement = taggedContent.RootElement;
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
 tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
+```
+
+ We definiëren randen en voegen headers, body en footers toe aan de tabel. Let op het gebruik van`BorderInfo` om de tabelranden donkerblauw te maken.
+
+## Stap 5: Rijen en cellen toevoegen aan de tabel
+
+Laten we nu onze tabel vullen met rijen en cellen. Dit deel van het proces is waar we de lay-out van onze tabel definiëren.
+
+### Stap 5.1: Koptekstrij maken
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
 headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
+
+for (int colIndex = 0; colIndex < 4; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-	thElement.BackgroundColor = Color.GreenYellow;
-	thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-	thElement.IsNoBorder = true;
-	thElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	thElement.Alignment = HorizontalAlignment.Right;
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
+    thElement.BackgroundColor = Color.GreenYellow;
+    thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
+    thElement.Alignment = HorizontalAlignment.Right;
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+ We maken een koptekstrij met 4 kolommen en elke koptekstcel is gestyled met een achtergrondkleur van`GreenYellow`We stellen ook een rand en uitlijning in voor de headers.
+
+### Stap 5.2: Bodyrijen toevoegen
+
+```csharp
+for (int rowIndex = 0; rowIndex < 50; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		int colSpan = 1;
-		int rowSpan = 1;
-		if (colIndex == 1 && rowIndex == 1)
-		{
-			colSpan = 2;
-			rowSpan = 2;
-		}
-		else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-		{
-			continue;
-		}
-		else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-		{
-			continue;
-		}
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-		tdElement.BackgroundColor = Color.Yellow;
-		tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-		tdElement.IsNoBorder = false;
-		tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-		tdElement.Alignment = HorizontalAlignment.Center;
-		TextState cellTextState = new TextState();
-		cellTextState.ForegroundColor = Color.DarkBlue;
-		cellTextState.FontSize = 7.5F;
-		cellTextState.FontStyle = FontStyles.Bold;
-		cellTextState.Font = FontRepository.FindFont("Arial");
-		tdElement.DefaultCellTextState = cellTextState;
-		tdElement.IsWordWrapped = true;
-		tdElement.VerticalAlignment = VerticalAlignment.Center;
-		tdElement.ColSpan = colSpan;
-		tdElement.RowSpan = rowSpan;
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = $"Row {rowIndex}";
+
+    for (int colIndex = 0; colIndex < 4; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+        tdElement.BackgroundColor = Color.Yellow;
+        tdElement.Alignment = HorizontalAlignment.Center;
+    }
 }
+```
+
+Hier maken we dynamisch 50 rijen en 4 kolommen, vullen ze met tekst en stylen de cellen. De achtergrondkleur is ingesteld op geel, met de tekst gecentreerd.
+
+### Stap 5.3: Voettekstrij toevoegen
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
 footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-	tdElement.Alignment = HorizontalAlignment.Center;
-	tdElement.StructureTextState.FontSize = 7F;
-	tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for table");
-tableAttributes.SetAttribute(summaryAttribute);
 
-// Gelabeld PDF-document opslaan
+for (int colIndex = 0; colIndex < 4; colIndex++)
+{
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText($"Foot {colIndex}");
+    tdElement.Alignment = HorizontalAlignment.Center;
+}
+```
+
+ Om de tabel compleet te maken, voegen we een voettekst toe met gecentreerde tekst en een`LightSeaGreen` achtergrond.
+
+## Stap 6: Valideer PDF/UA-naleving
+
+Zodra de tabel is gemaakt, is het belangrijk om te controleren of de PDF PDF/UA-compatibel is.
+
+```csharp
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// Controleren van PDF/UA-compatibiliteit
+// Valideer PDF/UA-naleving
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Dit fragment slaat het PDF-bestand op en controleert of het voldoet aan de PDF/UA-nalevingsnormen. Als het document voldoet, is het toegankelijk voor gebruikers met een beperking.
 
 ## Conclusie
 
-U hebt geleerd hoe u een array-element kunt maken met Aspose.PDF voor .NET. U kunt nu PDF-documenten met dynamische tabellen genereren met behulp van deze methode. Voel u vrij om meer functies van Aspose.PDF te verkennen om het volledige potentieel ervan te ontdekken.
+Gefeliciteerd! U hebt met succes een volledig aangepaste tabel in een PDF gemaakt met Aspose.PDF voor .NET. Van het stylen van de tabel tot het verzekeren van PDF/UA-compliance, u hebt nu een robuuste basis voor het genereren van dynamische tabellen in uw PDF-documenten. Vergeet niet de uitgebreide functies van Aspose.PDF te verkennen om uw documenten verder te verbeteren!
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is een array-element in een PDF-document en waarom zou ik er een moeten maken met Aspose.PDF voor .NET?
+### Kan ik het lettertype en de tekststijl van de tabel aanpassen?
+Ja, met Aspose.PDF kunt u lettertypen, tekststijlen en uitlijning volledig aanpassen met behulp van de`TextState` klas.
 
-A: Een array-element in een PDF-document vertegenwoordigt een gestructureerde verzameling gegevens, vaak gebruikt voor het maken van tabellen of rasters. U moet mogelijk een array-element maken met Aspose.PDF voor .NET bij het genereren van dynamische PDF's die een gestructureerde gegevenspresentatie vereisen, zoals tabelinformatie of rasters.
+### Hoe kan ik dynamisch meer kolommen of rijen toevoegen?
+ U kunt het aantal kolommen of rijen aanpassen door de`rowIndex` En`colIndex` in de lussen.
 
-#### V: Hoe vereenvoudigt Aspose.PDF voor .NET het proces van het maken van een array-element?
+### Is het mogelijk om cellen in de tabel samen te voegen?
+ Ja, u kunt de`ColSpan` En`RowSpan` Eigenschappen om cellen over kolommen of rijen samen te voegen.
 
-A: Aspose.PDF voor .NET biedt een uitgebreide set klassen en methoden waarmee u array-elementen (tabellen) in een PDF-document programmatisch kunt maken, aanpassen en beheren. Dit elimineert de noodzaak voor handmatige PDF-manipulatie en stroomlijnt de creatie van gestructureerde datarepresentaties.
+### Wat is PDF/UA-compatibel?
+PDF/UA-compliance garandeert dat het document toegankelijk is voor gebruikers met een beperking en voldoet aan de internationale toegankelijkheidsnormen.
 
-#### V: Wat zijn de belangrijkste stappen bij het maken van een array-element met Aspose.PDF voor .NET?
-
-A: De belangrijkste stappen zijn het instellen van de omgeving, het maken van het document, het verkrijgen van het root structure element, het maken van een tabelelement, het definiëren van rijen en cellen binnen de tabel en het specificeren van opmaak en eigenschappen voor de elementen. Het meegeleverde codevoorbeeld demonstreert deze stappen.
-
-####  V: Welke rol speelt de`taggedContent` object play in creating an array element?
-
- A: De`taggedContent` object, verkregen uit het document`TaggedContent`property, waarmee u de structuur van de getagde inhoud in het PDF-document kunt definiëren. Dit omvat het maken en organiseren van array-elementen en hun onderliggende elementen op een hiërarchische manier.
-
-#### V: Hoe zorgt de code voor de toegankelijkheid en semantiek van het gemaakte array-element?
-
- A: De code stelt attributen in zoals`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , En`ColSpan` om de toegankelijkheid en semantiek van het array-element te verbeteren. Deze kenmerken dragen bij aan een goed gestructureerde, informatieve en visueel aantrekkelijke weergave van gegevens.
-
-#### V: Wat is de betekenis van PDF/UA-compatibiliteit in de context van het maken van array-elementen?
-
- A: PDF/UA (Universal Accessibility)-compliance zorgt ervoor dat de gegenereerde PDF-documenten toegankelijk zijn voor gebruikers met een beperking en voldoen aan bepaalde toegankelijkheidsnormen. Het codevoorbeeld controleert PDF/UA-compliance met behulp van de`Validate` methode, waarmee u documenten kunt maken die inclusief en toegankelijk zijn.
-
-#### V: Kan ik de opmaak en het uiterlijk van de elementen in de matrix verder aanpassen?
-
-A: Ja, u kunt de opmaak en het uiterlijk van de array-elementen aanpassen door kenmerken aan te passen, zoals achtergrondkleur, randstijl, lettergrootte en uitlijning. Aspose.PDF voor .NET biedt een breed scala aan eigenschappen om de visuele presentatie aan te passen aan uw vereisten.
-
-#### V: Hoe kan ik deze kennis uitbreiden om complexere tabelstructuren te maken of matrixelementen op te nemen in grotere PDF-documenten?
-
-A: U kunt deze kennis uitbreiden door aanvullende functies van Aspose.PDF voor .NET te verkennen, zoals het samenvoegen van meerdere array-elementen, het maken van geneste tabellen, het toevoegen van headers en footers en het integreren van array-elementen in grotere PDF-lay-outs. De documentatie en voorbeelden van de bibliotheek bieden begeleiding voor deze geavanceerde scenario's.
-
-#### V: Is het mogelijk om gegevens uit externe bronnen, zoals databases of spreadsheets, te importeren om de elementen in de matrix te vullen?
-
-A: Ja, u kunt gegevens importeren uit externe bronnen om array-elementen te vullen. U kunt data retrieval- en transformatietechnieken in C# gebruiken om gegevens op te halen uit databases, spreadsheets of andere bronnen en vervolgens de array-elementen dienovereenkomstig te vullen.
-
-#### V: Hoe kan ik de kennis die ik in deze tutorial heb opgedaan, gebruiken om de kwaliteit en bruikbaarheid van de PDF-documenten die ik programmatisch maak, te verbeteren?
-
-A: De kennis die u uit deze tutorial hebt opgedaan, stelt u in staat om gestructureerde en visueel aantrekkelijke array-elementen (tabellen) in PDF-documenten te maken. Door deze technieken te integreren, kunt u de leesbaarheid, toegankelijkheid en gebruikerservaring van dynamisch gegenereerde PDF's verbeteren, waardoor ze informatiever en gebruiksvriendelijker worden.
+### Hoe test ik PDF/UA-compatibiliteit in Aspose.PDF?
+ U kunt de`Validate` Methode om te controleren of het document voldoet aan de PDF/UA-normen.

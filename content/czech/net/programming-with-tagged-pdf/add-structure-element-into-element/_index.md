@@ -2,135 +2,129 @@
 title: Přidat prvek struktury do prvku
 linktitle: Přidat prvek struktury do prvku
 second_title: Aspose.PDF pro .NET API Reference
-description: Podrobný průvodce přidáním prvku struktury k prvku v dokumentu PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se, jak přidat prvky struktury usnadnění do souborů PDF pomocí Aspose.PDF for .NET v tomto komplexním podrobném tutoriálu.
 type: docs
 weight: 20
 url: /cs/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-tomto tutoriálu vám poskytneme podrobný návod, jak přidat prvek struktury do prvku v dokumentu PDF pomocí Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury označeného obsahu Aspose.PDF můžete vytvořit hierarchickou strukturu v dokumentu PDF.
+## Zavedení
+
+V dnešním digitálním světě je dostupnost klíčová. Každý by měl mít rovný přístup k informacím a zásadní je poskytovat je ve formátu, ve kterém se všichni jednotlivci mohou snadno orientovat. V tomto tutoriálu se ponoříme do toho, jak zlepšit dostupnost PDF přidáním prvků struktury pomocí Aspose.PDF pro .NET. Tato výkonná knihovna umožňuje vývojářům bezproblémově pracovat s dokumenty PDF a umožňuje jim vytvářet tagované soubory PDF, které jsou v souladu se standardy přístupnosti.
 
 ## Předpoklady
 
-Než začnete, ujistěte se, že máte splněny následující předpoklady:
+Než se pustíme do světa prvků struktury PDF, ujistěte se, že máte vše, co potřebujete:
 
-1. Visual Studio nainstalované s .NET frameworkem.
-2. Knihovna Aspose.PDF pro .NET.
+1.  Visual Studio: Toto je vaše IDE, kde budete psát a spouštět svůj kód C#. Můžete si jej stáhnout z[Visual Studio](https://visualstudio.microsoft.com/) pokud jste to ještě neudělali.
+2.  Aspose.PDF for .NET Library: K manipulaci s PDF budete potřebovat knihovnu. Stáhněte si nejnovější verzi z[Aspose webové stránky](https://releases.aspose.com/pdf/net/). Tato knihovna je pro náš projekt klíčová.
+3. Základní znalost C#: Výhodou bude znalost syntaxe C# a objektově orientovaného programování. Pokud dokážete s radostí napsat pár řádků C#, můžete začít!
+4. Adresář dokumentů PDF: Vytvořte ve svém systému adresář, kde budete uchovávat vstupní a výstupní soubory PDF pro tento výukový program.
 
-## Krok 1: Nastavení projektu
+Nyní, když máme naše nástroje a znalosti seřazené, pojďme přinést potřebné balíčky, abychom to mohli začít!
 
-Chcete-li začít, vytvořte nový projekt v sadě Visual Studio a přidejte odkaz na knihovnu Aspose.PDF for .NET. Knihovnu si můžete stáhnout z oficiálních stránek Aspose a nainstalovat ji do svého počítače.
+## Importujte balíčky
 
-## Krok 2: Importujte potřebné jmenné prostory
-
-Do souboru s kódem C# importujte jmenné prostory potřebné pro přístup ke třídám a metodám poskytovaným Aspose.PDF:
+Nejprve importujme potřebné jmenné prostory. Ujistěte se, že máte v horní části souboru C# následující:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
 ```
 
-## Krok 3: Vytvoření dokumentu PDF a definování strukturovaných prvků
+Tyto jmenné prostory vám poskytují přístup ke třídám a metodám potřebným pro práci s dokumenty PDF a vytváření tagovaného obsahu. Nyní pojďme k jádru věci a začněme kódovat!
 
-Pomocí následujícího kódu vytvořte dokument PDF a definujte strukturované prvky:
+## Krok 1: Nastavte adresář dokumentů
+
+Než dojde k jakémukoli kódování, musíme určit, kam budeme naše soubory ukládat. To je klíčové pro hladký běh našeho skriptu.
 
 ```csharp
+// Definujte cestu k adresáři dokumentů.
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+```
 
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kam chcete soubory PDF uložit. Tohle by mohlo být něco jako`C:\\PDFs\\`.
 
+## Krok 2: Vytvořte nový dokument PDF
+
+Nyní, když máme sadu adresářů, vytvoříme dokument PDF, do kterého přidáme prvky naší struktury.
+
+```csharp
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Text Items");
-taggedContent.SetLanguage("fr-FR");
-
-StructureElement rootElement = taggedContent.RootElement;
-
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-SpanElement span11 = taggedContent.CreateSpanElement();
-span11.SetText("Span_11");
-SpanElement span12 = taggedContent.CreateSpanElement();
-span12.SetText(" and Span_12.");
-p1.SetText("Paragraph with ");
-p1.AppendChild(span11);
-p1.AppendChild(span12);
-
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-SpanElement span21 = taggedContent.CreateSpanElement();
-span21.SetText("Span_21");
-SpanElement span22 = taggedContent.CreateSpanElement();
-span22.SetText("Span_22.");
-p2.AppendChild(span21);
-p2.SetText(" and ");
-p2.AppendChild(span22);
-
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-root
-
-Element.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
 ```
 
-Tento kód vytvoří prázdný dokument PDF a přidá strukturované prvky, jako jsou odstavce a rozpětí. Každý prvek struktury je vytvořen pomocí metod poskytovaných Aspose.PDF.
+ Tento řádek inicializuje novou instanci souboru`Document` třídy, což nám umožňuje začít pracovat s naším obsahem PDF.
 
-## Krok 4: Uložení dokumentu PDF
+## Krok 3: Přístup a nastavení označeného obsahu
 
-K uložení dokumentu PDF použijte následující kód:
+Jakmile je váš dokument připraven, je čas nastavit označený obsah, který je nezbytný pro usnadnění přístupu.
+
+### Inicializujte označený obsah
 
 ```csharp
-document. Save(outFile);
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Tento kód uloží dokument PDF se strukturovanými prvky do určeného souboru.
+Tento řádek poskytuje přístup k označenému obsahu vašeho PDF. Tagovaný obsah je nezbytný pro to, aby čtečky obrazovky interpretovaly váš dokument přesně.
 
-### Ukázkový zdrojový kód pro Add Structure Element Into Element pomocí Aspose.PDF for .NET 
+### Nastavit metadata dokumentu
+
+Budete chtít dát dokumentu správný název a definovat jazyk.
+
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
-//Vytvoření dokumentu a získání tagovaného obsahu PDF
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-// Nastavení názvu a přirozeného jazyka pro dokument
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Získání prvku kořenové struktury (prvku struktury dokumentu)
+```
+
+To zlepšuje metadata dokumentu a zlepšuje jeho dostupnost.
+
+## Krok 4: Vytvořte a připojte prvky struktury
+
+Pojďme přidat nějakou strukturu! To zahrnuje vytváření odstavců a prvků rozpětí, aby se vytvořil správně formátovaný a označený dokument.
+
+### Vytvořit prvek kořenové struktury
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+Nyní vytvoříme naši první sadu odstavců a prvků span.
+
+### Vytvořte první prvek odstavce
+
+```csharp
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+
+Zde inicializujeme nový prvek odstavce a připojíme jej ke kořenovému prvku struktury. Toto je výchozí bod vašeho obsahu!
+
+### Přidejte do odstavce Span Elements
+
+```csharp
 SpanElement span11 = taggedContent.CreateSpanElement();
 span11.SetText("Span_11");
 SpanElement span12 = taggedContent.CreateSpanElement();
 span12.SetText(" and Span_12.");
+```
+
+ The`span` prvky jsou jako miniodstavce v našem větším odstavci. Umožňují jemnější kontrolu nad formátováním textu.
+
+### Zkombinujte to všechno
+
+Nyní vytvoříme celý odstavec se všemi prvky dohromady:
+
+```csharp
 p1.SetText("Paragraph with ");
 p1.AppendChild(span11);
 p1.AppendChild(span12);
+```
+
+### Opakujte pro další odstavce
+
+Tento postup zopakujete pro další odstavce:
+
+```csharp
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 SpanElement span21 = taggedContent.CreateSpanElement();
@@ -140,77 +134,60 @@ span22.SetText("Span_22.");
 p2.AppendChild(span21);
 p2.SetText(" and ");
 p2.AppendChild(span22);
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
-// Uložit označený dokument PDF
+```
+
+ Tvořte dál`ParagraphElement` s a`SpanElement` s, jejich připojením k`rootElement` stejným způsobem, jak je uvedeno výše pro`p1`.
+
+## Krok 5: Uložte dokument
+
+Když jsou všechny prvky struktury na svém místě, je čas uložit dokument PDF.
+
+### Zadejte cestu k výstupnímu souboru
+
+```csharp
+string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
+```
+
+### Uložte dokument
+
+```csharp
 document.Save(outFile);
-// Kontrola shody s PDF/UA
+```
+
+Tady se děje kouzlo! Váš dokument se uloží do zadané cesty k výstupnímu souboru.
+
+## Krok 6: Ověřte soulad s PDF/UA
+
+Poslední krok zahrnuje kontrolu, zda váš dokument vyhovuje standardům PDF/UA pro usnadnění.
+
+Chcete-li zkontrolovat soulad, použijte následující kód:
+
+```csharp
 document = new Document(outFile);
+string logFile = dataDir + "46144_log.xml";
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Tím se zobrazí, zda je váš dokument v souladu se standardy PDF/UA, což je nezbytné pro usnadnění přístupu.
 
 ## Závěr
 
-V tomto tutoriálu jste se naučili, jak přidat prvek struktury k prvku v dokumentu PDF pomocí Aspose.PDF for .NET. Pomocí funkcí struktury označeného obsahu souboru Aspose.PDF můžete ve svém dokumentu PDF vytvořit hierarchickou strukturu, která usnadňuje správu a procházení obsahu.
+A tady to máte! Právě jste se naučili, jak přidat prvky struktury do dokumentu PDF pomocí Aspose.PDF pro .NET. Pomocí těchto kroků můžete převést jakýkoli soubor PDF do přístupného formátu, který splňuje standardy, a zajistí tak všem rovný přístup k informacím. 
 
-### FAQ
+## FAQ
 
-#### Otázka: Jaký je účel přidání prvku struktury k prvku v dokumentu PDF pomocí Aspose.PDF pro .NET?
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF programově.
 
-Odpověď: Přidání prvku struktury k prvku v dokumentu PDF pomocí Aspose.PDF for .NET vám umožní vytvořit hierarchickou strukturu v obsahu dokumentu. Tato hierarchická struktura zlepšuje organizaci a navigaci obsahu a usnadňuje správu a přístup ke konkrétním prvkům.
+### Jak zjistím, zda je můj PDF přístupný?
+Své PDF můžete ověřit podle standardů PDF/UA pomocí knihovny Aspose.PDF, abyste se ujistili, že splňuje pokyny pro usnadnění.
 
-#### Otázka: Jak pomáhá knihovna Aspose.PDF při přidávání prvků struktury do dokumentu PDF?
+### Mohu používat Aspose.PDF zdarma?
+ Ano, Aspose nabízí bezplatnou zkušební verzi, která vám umožní prozkoumat její funkce bez jakýchkoli nákladů. Můžete si jej stáhnout[zde](https://releases.aspose.com/).
 
-A: Aspose.PDF for .NET je výkonná knihovna, která poskytuje možnosti pro vytváření, manipulaci a převod dokumentů PDF programově. V tomto kurzu jsou funkce struktury označeného obsahu knihovny využity k vytvoření a připojení prvků struktury k obsahu dokumentu PDF.
+### Kde najdu dokumentaci k Aspose.PDF?
+Můžete najít komplexní dokumentaci k Aspose.PDF[zde](https://reference.aspose.com/pdf/net/).
 
-#### Otázka: Jaké jsou předpoklady pro přidání prvků struktury do dokumentu PDF pomocí Aspose.PDF pro .NET?
-
-Odpověď: Než začnete, ujistěte se, že máte nainstalované Visual Studio s rozhraním .NET a že máte ve svém projektu odkaz na knihovnu Aspose.PDF pro .NET.
-
-#### Otázka: Jak poskytnutý kód C# vytváří a připojuje prvky struktury k obsahu dokumentu PDF?
-
-Odpověď: Kód ukazuje, jak vytvořit dokument PDF, definovat prvek kořenové struktury a připojit k němu různé strukturované prvky, jako jsou odstavce a úseky. Každý strukturovaný prvek je vytvořen pomocí metod poskytovaných Aspose.PDF, což vám umožňuje vytvořit hierarchickou strukturu.
-
-#### Otázka: Mohu přizpůsobit typy prvků struktury, které připojím k dokumentu PDF?
-
-Odpověď: Ano, typy prvků struktury můžete přizpůsobit prozkoumáním různých metod poskytovaných knihovnou Aspose.PDF. Kód uvádí odstavce a rozsahy jako příklady, ale podle potřeby můžete vytvářet a přidávat další typy strukturovaných prvků.
-
-#### Otázka: Jak mohu definovat hierarchický vztah mezi přidanými prvky struktury?
-
- Odpověď: Hierarchický vztah mezi prvky struktury je definován pořadím, ve kterém je připojujete k jejich nadřazeným prvkům. V kódu jsou vztahy rodič-dítě vytvořeny pomocí`AppendChild` metoda.
-
-#### Otázka: Jaké jsou výhody vytvoření hierarchické struktury v dokumentu PDF?
-
-Odpověď: Vytvoření hierarchické struktury v dokumentu PDF zlepšuje jeho dostupnost, navigaci a organizaci. Umožňuje asistenčním technologiím lépe interpretovat a zprostředkovat obsah dokumentu, díky čemuž je uživatelsky přívětivější pro osoby se zdravotním postižením.
-
-#### Otázka: Jak mohu po přidání prvků struktury ověřit shodu s PDF/UA?
-
-Odpověď: Kód poskytnutý v tutoriálu ukazuje, jak ověřit shodu s PDF/UA pomocí`Validate` metoda. Ověřením dokumentu podle standardu PDF/UA můžete zajistit, že přidané prvky struktury odpovídají pokynům pro usnadnění.
-
-#### Otázka: Mohu tento přístup použít k přidání prvků struktury do existujícího dokumentu PDF?
-
-Odpověď: Ano, poskytnutý přístup můžete upravit a přidat prvky struktury do existujícího dokumentu PDF. Namísto vytvoření nového dokumentu byste načetli existující dokument pomocí Aspose.PDF a poté byste podle podobných kroků přidali prvky struktury.
+### Jak si koupím licenci pro Aspose.PDF?
+ Licenci si můžete zakoupit přímo z webu Aspose[zde](https://purchase.aspose.com/buy).

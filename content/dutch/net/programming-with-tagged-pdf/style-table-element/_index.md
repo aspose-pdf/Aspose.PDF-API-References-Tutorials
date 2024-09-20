@@ -2,291 +2,191 @@
 title: Stijl Tabel Element
 linktitle: Stijl Tabel Element
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tabelelementen kunt opmaken met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het aanpassen van stijlen en eigenschappen.
+description: Leer hoe u een tabelelement in Aspose.PDF voor .NET maakt en opmaakt met stapsgewijze instructies, aangepaste opmaak en PDF/UA-compatibiliteit.
 type: docs
 weight: 170
 url: /nl/net/programming-with-tagged-pdf/style-table-element/
 ---
-In deze gedetailleerde tutorial leiden we u stap voor stap door de meegeleverde C#-broncode om het array-element te formatteren met Aspose.PDF voor .NET. Volg de onderstaande instructies om te begrijpen hoe u de stijlen en eigenschappen van het array-element kunt aanpassen.
+## Invoering
 
-## Stap 1: De omgeving instellen
+In dit artikel duiken we in hoe je een tabelelement maakt en stylet met Aspose.PDF voor .NET. Je leert hoe je een tabel structureert, aangepaste stijlen toepast en de PDF/UA-compliance van je document valideert. Aan het einde van deze tutorial kun je eenvoudig professioneel ogende tabellen in je PDF's maken!
 
-Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt geconfigureerd om Aspose.PDF voor .NET te gebruiken. Dit omvat het installeren van de Aspose.PDF-bibliotheek en het configureren van uw project om ernaar te verwijzen.
+## Vereisten
 
-## Stap 2: Een document maken
+Voordat u met de tutorial begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
-In deze stap maken we een nieuw documentobject Aspose.PDF.
+1. Visual Studio of een vergelijkbare IDE op uw computer geïnstalleerd.
+2. .NET Framework of .NET Core SDK voor het uitvoeren van de toepassing.
+3.  Aspose.PDF voor .NET-bibliotheek gedownload en gerefereerd in uw project. U kunt de nieuwste versie ophalen van[hier](https://releases.aspose.com/pdf/net/).
+4.  Een geldige Aspose-licentie of een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) om de volledige functionaliteit van de bibliotheek te ontgrendelen.
+
+## Pakketten importeren
+
+Om te beginnen importeert u de benodigde naamruimten in uw project:
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Deze naamruimten omvatten de belangrijkste PDF-bewerkingen, getagde inhoud, tabellen en tekstopmaak.
+
+Laten we nu het proces van het maken en stylen van een tabel in Aspose.PDF eens doornemen. We zullen elke sectie in detail doornemen, zodat u het kunt volgen.
+
+## Stap 1: Maak een nieuw PDF-document en stel getagde inhoud in
+
+In deze eerste stap maken we een leeg PDF-document en stellen we de getagde inhoud ervan in.
 
 ```csharp
 // Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Documentcreatie
+// Een nieuw PDF-document maken
 Document document = new Document();
+
+// Getagde inhoud instellen
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
 ```
 
-We hebben een nieuw document gemaakt en de documenttitel en taal ingesteld.
+ We beginnen met het maken van een nieuwe`Document` object, dat onze PDF vertegenwoordigt. De`TaggedContent`object wordt gebruikt om de structuur van het document te beheren, en zo te zorgen voor naleving van toegankelijkheidsnormen. We stellen de titel en taal van het document in voor correcte tagging.
 
-## Stap 3: Het verkrijgen van het wortelstructuurelement
+## Stap 2: Definieer het rootelement
 
-In deze stap verkrijgen we het rootstructuurelement voor ons document.
+Vervolgens maken we het rootstructuurelement, dat fungeert als container voor alle inhoud in onze PDF.
 
 ```csharp
-// Verkrijg het wortelstructuurelement
+// Krijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We hebben het rootstructuurelement dat als container voor het arrayelement zal dienen.
+ De`RootElement` fungeert als de basiscontainer voor alle gestructureerde elementen, inclusief onze tabel. Het helpt de structurele hiërarchie van het document te behouden, wat belangrijk is voor zowel de organisatie als de toegankelijkheid.
 
-## Stap 4: Het array-structuurelement maken
+## Stap 3: Het tabelelement maken en stylen
 
-Laten we nu een nieuw tabelstructuurelement voor ons document maken.
+ Nu het rootelement is ingesteld, gaan we een`TableElement` en stijlen zoals achtergrondkleur, randen en uitlijning toepassen.
 
 ```csharp
-// Maak het array-structuurelement
+// Maak een tabelstructuurelement
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-```
 
-We hebben een nieuw array-structuurelement gemaakt en toegevoegd aan het root-structuurelement.
-
-## Stap 5: Array-elementstijlen en -eigenschappen aanpassen
-
-In deze stap passen we de stijlen en eigenschappen van het array-element aan.
-
-```csharp
-// Pas de stijlen en eigenschappen van het array-element aan
+// Stijl de tafel
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
+```
+
+ Wij creëren een`TableElement` , die onze tabelstructuur definieert. De`BackgroundColor`, `Border` , En`Alignment` eigenschappen stellen ons in staat om het uiterlijk van de tabel aan te passen.`Broken` Deze eigenschap zorgt ervoor dat als de tabel over meerdere pagina's wordt verdeeld, de tabel verticaal wordt verdeeld.
+
+## Stap 4: Tabelafmetingen en celstijlen instellen
+
+In deze stap definiëren we het aantal kolommen, de celopvulling en andere belangrijke tabeleigenschappen.
+
+```csharp
+tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
+```
 
-// Pas de stijl van herhaalde regels aan
+ We specificeren de kolombreedtes om ervoor te zorgen dat elke kolom in de tabel gelijkmatig verdeeld is.`DefaultCellBorder`, `DefaultCellPadding` , En`DefaultCellTextState` Definieer de standaardstijlen voor de cellen, inclusief randen, opvulling, tekstkleur en lettergrootte.
+
+## Stap 5: Herhaalde rijen en aangepaste stijlen toevoegen
+
+We kunnen ook stijlen definiëren voor herhalende rijen en andere specifieke tabelelementen, zoals kopteksten en voetteksten.
+
+```csharp
+tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We hebben verschillende eigenschappen gebruikt om het tabelelement aan te passen, zoals achtergrondkleur, randen, uitlijning, standaardcelstijl, marges, kolombreedte, enzovoort.
+ De`RepeatingRowsCount` zorgt ervoor dat de eerste drie rijen worden herhaald als de tabel meerdere pagina's beslaat. We stellen de`RepeatingRowsStyle` om een aangepaste achtergrondkleur op deze rijen toe te passen.
 
-## Stap 6: Voeg tabelkopteksten, hoofdtekst en voettekst toe
+## Stap 6: Voeg tafelhoofd-, body- en voetelementen toe
 
-Nu gaan we de tabelkopteksten, de hoofdtekst en de voettekst aan het tabelelement toevoegen.
+Laten we nu de secties voor de koptekst, hoofdtekst en voettekst van de tabel maken en deze vullen met inhoud.
+
 ```csharp
-// Tabelkoppen toevoegen
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Aantal rijen en kolommen in de tabel
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// Maak de tabelkoprij
+// Koptekstrij maken
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
+headTrElement.AlternativeText = "Head Row";
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-//Voeg de rijen van de tabelbody toe
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+// Vul de tabelbody
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
 {
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Voeg de voetregel van de tabel toe
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
 }
 ```
 
-We hebben de kopteksten, hoofdtekstrijen en voettekstrijen aan de tabel toegevoegd met behulp van de bijbehorende elementen.
+ De tabel is verdeeld in drie delen: het hoofd, het lichaam en de voet. We maken eerst de koprij met behulp van`TableTHElement`en voeg kolomkoppen toe. Vervolgens vullen we de body van de tabel met`TableTDElement`, waarbij elke cel wordt gevuld met een label dat de positie ervan aangeeft.
 
-## Stap 7: Het getagde PDF-document opslaan
+## Stap 7: Sla het document op
 
-Nu we ons document met het gestileerde tabelelement hebben gemaakt, slaan we het op als een getagd PDF-document.
+Ten slotte slaan we het PDF-document op in de opgegeven map.
 
 ```csharp
 // Sla het getagde PDF-document op
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We hebben het getagde PDF-document opgeslagen in de opgegeven directory.
+Met deze stap rondt u het documentcreatieproces af door het PDF-bestand met de opgemaakte tabel op te slaan.
 
-## Stap 8: PDF/UA-nalevingsvalidatie
+## Stap 8: Valideer PDF/UA-naleving
 
-Vervolgens valideren we de PDF/UA-conformiteit van ons document.
-
-```csharp
-// PDF/UA-nalevingscontrole
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-We hebben het getagde PDF-document geüpload en de PDF/UA-conformiteit ervan gevalideerd door een XML-rapport te genereren.
-
-### Voorbeeldbroncode voor Style Table Element met behulp van Aspose.PDF voor .NET 
+Nadat u het document hebt opgeslagen, is het belangrijk om te controleren of het voldoet aan de PDF/UA-standaarden (Universal Accessibility).
 
 ```csharp
-
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Document maken
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table style");
-taggedContent.SetLanguage("en-US");
-
-// Krijg wortelstructuur element
-StructureElement rootElement = taggedContent.RootElement;
-
-// Maak een tabelstructuurelement
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement.Alignment = HorizontalAlignment.Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement.ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
-
-// Gelabeld PDF-document opslaan
-document.Save(dataDir + "StyleTableElement.pdf");
-
-// Controleren van PDF/UA-compatibiliteit
+// Controleer PDF/UA-compatibiliteit
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Hier laden we het document opnieuw en valideren het tegen PDF/UA-standaarden. Compliance zorgt ervoor dat uw PDF voldoet aan de toegankelijkheidsvereisten, waardoor het geschikt is voor een breed scala aan gebruikers.
 
 ## Conclusie
 
-In deze tutorial hebben we geleerd hoe we het array-element kunnen formatteren met Aspose.PDF voor .NET. We hebben de stijlen en eigenschappen van het tabelelement aangepast, headers, body-rijen en een voettekst toegevoegd, het getagde PDF-document opgeslagen en de PDF/UA-compliance gevalideerd.
+Met Aspose.PDF voor .NET is het maken en stylen van tabellen in uw PDF-documenten eenvoudig en intuïtief. Door de stappen in deze tutorial te volgen, kunt u tabellen maken met aangepaste stijlen en ervoor zorgen dat uw PDF's voldoen aan toegankelijkheidsnormen. Of u nu rapporten genereert of gestructureerde documenten maakt, tabellen zijn een krachtig hulpmiddel om gegevens duidelijk te presenteren.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het doel van deze tutorial over het opmaken van het array-element met Aspose.PDF voor .NET?
+### Kan ik afbeeldingen toevoegen in tabelcellen?
+ Ja, u kunt afbeeldingen in tabelcellen invoegen met behulp van de`Image` element.
 
-A: Het doel van deze tutorial is om u te begeleiden door het proces van het formatteren van het array-element in een PDF-document met behulp van Aspose.PDF voor .NET. Het biedt stapsgewijze instructies en C#-broncodevoorbeelden om u te helpen de stijlen en eigenschappen van het array-element aan te passen.
+### Hoe pas ik de kolombreedtes dynamisch aan?
+ U kunt de`ColumnAdjustment` eigendom van`AutoFitToWindow` om de kolombreedte automatisch aan te passen op basis van de inhoud.
 
-#### V: Wat zijn de vereisten om deze tutorial te kunnen volgen?
+### Is PDF/UA-compliance verplicht voor alle documenten?
+Hoewel het niet verplicht is, wordt het aanbevolen voor documenten die hoge toegankelijkheidsnormen vereisen.
 
-A: Voordat u begint, moet u ervoor zorgen dat u uw ontwikkelomgeving hebt ingesteld om Aspose.PDF voor .NET te gebruiken. Dit houdt in dat u de Aspose.PDF-bibliotheek installeert en uw project configureert om ernaar te verwijzen.
+### Kan ik verschillende stijlen op specifieke rijen toepassen?
+ Ja, u kunt individuele rijen of cellen aanpassen door hun`TextState` of`BackgroundColor`.
 
-#### V: Hoe kan ik een nieuw PDF-document maken en de titel en taal instellen met Aspose.PDF voor .NET?
-
- A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De C#-broncode van de tutorial laat zien hoe u een document maakt en de titel en taaleigenschappen instelt.
-
-#### V: Wat is de betekenis van het rootstructuurelement in een PDF-document?
-
-A: Het root-structuurelement fungeert als een container voor andere structuurelementen en helpt de inhoud van het PDF-document te organiseren en categoriseren. Het speelt een cruciale rol bij het vaststellen van de logische structuur van het document.
-
-#### V: Hoe kan ik een arraystructuurelement maken en aanpassen met Aspose.PDF voor .NET?
-
- A: U kunt een arraystructuurelement maken met behulp van de`CreateTableElement()` methode. De broncode van de tutorial biedt voorbeelden van het aanpassen van verschillende eigenschappen van het tabelelement, zoals achtergrondkleur, randen, uitlijning, kolombreedte en meer.
-
-#### V: Kan ik de stijlen en eigenschappen van tabelcellen binnen het array-element aanpassen?
-
-A: Ja, de tutorial behandelt hoe u de stijlen en eigenschappen van het gehele tabelelement kunt aanpassen, inclusief headers, body-rijen en footer. Het behandelt echter niet specifiek het aanpassen van individuele tabelcellen.
-
-#### V: Hoe kan ik kopteksten, hoofdtekstrijen en een voettekst toevoegen aan het tabelelement?
-
-A: In de tutorial wordt uitgelegd hoe u headers, body-rijen en een voettekst aan het tabelelement kunt toevoegen met behulp van de juiste methoden die Aspose.PDF voor .NET biedt.
-
-#### V: Wat is PDF/UA-compliance en hoe kan ik dit valideren voor mijn getagde PDF-document?
-
- A: PDF/UA-compliance zorgt ervoor dat het PDF-document voldoet aan de toegankelijkheidsnormen, waardoor het toegankelijker wordt voor gebruikers met een beperking. De tutorial laat zien hoe u PDF/UA-conformiteit kunt valideren met behulp van de`Validate()` methode en genereer een XML-nalevingsrapport.
-
-#### V: Hoe kan ik deze concepten integreren in mijn eigen .NET-toepassingen?
-
-A: U kunt de meegeleverde C# broncodevoorbeelden gebruiken als leidraad voor het implementeren van array-elementopmaak in uw eigen .NET-toepassingen. Wijzig en pas de code aan om aan uw vereisten te voldoen en integreer deze in uw projecten.
-
-#### V: Zijn er aanbevolen best practices voor het opmaken van array-elementen in PDF-documenten?
-
-A: Houd bij het formatteren van array-elementen (tabellen) rekening met de leesbaarheid en toegankelijkheid van de inhoud. Gebruik duidelijke en leesbare lettertypen, geschikte kleuren en zorg voor een consistente lay-out. Valideer PDF/UA-naleving om te garanderen dat aan de toegankelijkheidsnormen wordt voldaan.
-
-#### V: Welke andere functies van Aspose.PDF voor .NET kan ik gebruiken om PDF-documenten aan te passen?
-
-A: Aspose.PDF voor .NET biedt een scala aan functies voor het aanpassen van PDF-documenten, waaronder tekstmanipulatie, het invoegen van afbeeldingen, beheer van formuliervelden, digitale handtekeningen, annotaties en meer. Raadpleeg de officiële documentatie en bronnen om extra functionaliteiten te verkennen.
+### Wat is het voordeel van het gebruik van getagde inhoud?
+Gelabelde inhoud verbetert de toegankelijkheid van documenten en draagt bij aan de naleving van standaarden zoals PDF/UA.

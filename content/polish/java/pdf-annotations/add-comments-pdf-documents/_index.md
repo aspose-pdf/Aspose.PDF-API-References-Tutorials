@@ -14,7 +14,7 @@ Dokumenty PDF stały się standardem udostępniania informacji cyfrowo ze wzglę
 
 ## Pierwsze kroki z Aspose.PDF dla Java
 
- Na początek musisz skonfigurować środowisko programistyczne. Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF for Java. Możesz ją pobrać ze strony[Tutaj](https://releases.aspose.com/pdf/java/).
+Na początek musisz skonfigurować środowisko programistyczne. Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF for Java. Możesz ją pobrać ze strony[Tutaj](https://releases.aspose.com/pdf/java/).
 
 ## Tworzenie dokumentu PDF
 

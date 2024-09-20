@@ -79,7 +79,7 @@ Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page 
 
 ## Schritt 4: Lokalen Hyperlink erstellen
 
-Und hier geschieht die Magie! Sie müssen einen lokalen Hyperlink erstellen, der dem Textfragment sagt, wohin es zeigen soll.
+Und hier geschieht die Magie! Sie müssen einen lokalen Hyperlink erstellen, der dem Textfragment mitteilt, wohin es zeigen soll.
 
 ```csharp
 Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink(); // Lokalen Hyperlink erstellen

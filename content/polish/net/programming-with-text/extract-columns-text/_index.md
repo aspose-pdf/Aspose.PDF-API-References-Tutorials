@@ -2,146 +2,132 @@
 title: Wyodrębnij tekst kolumn w pliku PDF
 linktitle: Wyodrębnij tekst kolumn w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak wyodrębnić tekst z kolumn w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak wyodrębnić kolumny tekstu z plików PDF za pomocą Aspose.PDF dla .NET. Ten przewodnik rozbija każdy krok na przykłady kodu i wyjaśnienia.
 type: docs
 weight: 150
 url: /pl/net/programming-with-text/extract-columns-text/
 ---
-Ten samouczek przeprowadzi Cię przez proces wyodrębniania tekstu kolumn w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
+## Wstęp
 
-## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Czy pracujesz z plikami PDF i potrzebujesz wyodrębnić tekst w określonym formacie kolumn? Niezależnie od tego, czy przetwarzasz faktury, raporty czy jakiekolwiek dokumenty strukturalne, dokładne wyodrębnienie tekstu z pliku PDF może być trudnym zadaniem. W tym miejscu Aspose.PDF for .NET wkracza, aby uprościć proces. W tym samouczku przeprowadzimy Cię przez proces łatwego wyodrębniania kolumn tekstu z pliku PDF. 
 
-- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
+## Wymagania wstępne
 
-## Krok 1: Skonfiguruj projekt
-1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+Zanim zagłębimy się w kod, omówmy podstawowe rzeczy, których będziesz potrzebować:
 
-## Krok 2: Importuj wymagane przestrzenie nazw
-W pliku kodu, z którego chcesz wyodrębnić tekst kolumn, dodaj na początku pliku następujące dyrektywy using:
+-  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną najnowszą wersję Aspose.PDF dla .NET. Jeśli nie, możesz[pobierz tutaj](https://releases.aspose.com/pdf/net/).
+- Środowisko programistyczne: Do pracy z kodem potrzebne będzie środowisko Visual Studio lub inne środowisko programistyczne .NET.
+- Dokument PDF: Przygotuj przykładowy dokument PDF, najlepiej taki, który zawiera kolumny tekstu, ponieważ będziemy wyodrębniać z niego tekst.
+
+ Jeśli jeszcze nie zainstalowałeś Aspose.PDF dla .NET, możesz pobrać[bezpłatny okres próbny](https://releases.aspose.com/) Lub[kup licencję](https://purchase.aspose.com/buy) aby uzyskać pełne funkcje. Możesz również ubiegać się o[licencja tymczasowa](https://purchase.aspose.com/temporary-license) jeśli to konieczne.
+
+## Importuj przestrzenie nazw
+
+Aby użyć Aspose.PDF dla .NET w swoim projekcie, musisz zaimportować następujące przestrzenie nazw:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using System.IO;
+using System;
 ```
 
-## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+## Przewodnik krok po kroku: Wyodrębnij kolumny tekstu z pliku PDF
 
-## Krok 4: Otwórz dokument PDF
- Otwórz istniejący dokument PDF za pomocą`Document`konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
+Teraz rozbijmy każdą część kodu, aby lepiej zrozumieć, jak on działa. Podążaj za nami krok po kroku, wyjaśniając każdy segment procesu.
+
+## Krok 1: Załaduj dokument PDF
+
+ Pierwszą rzeczą, którą musisz zrobić, jest załadowanie pliku PDF do`Document`obiekt. W ten sposób Aspose.PDF wchodzi w interakcję z Twoim dokumentem.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Krok 5: Dostosuj rozmiar czcionki
-Zmniejsz rozmiar czcionki fragmentów tekstu o współczynnik 0,7, aby zwiększyć czytelność i lepiej odzwierciedlić tekst kolumnowy.
+ W tym kroku po prostu definiujemy katalog, w którym przechowywany jest dokument PDF. Zastąp`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do lokalnego pliku PDF.`Document` Obiekt ładuje plik PDF do pamięci, umożliwiając jego dalsze przetwarzanie.
+
+## Krok 2: Skonfiguruj absorber fragmentów tekstu
+
+ Następnie użyjemy`TextFragmentAbsorber` aby wchłonąć lub przechwycić cały tekst z pliku PDF. Ta klasa absorbera została zaprojektowana w celu wyodrębnienia fragmentów tekstu z określonych obszarów w pliku PDF, co czyni ją idealną do wyodrębniania kolumn tekstu.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
-foreach(TextFragment tf in tfc)
-{
-     tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
-}
 ```
 
-## Krok 6: Wyodrębnij tekst z kolumn
- Zapisz zmodyfikowany dokument PDF w strumieniu pamięci i załaduj go ponownie jako nowy dokument. Następnie użyj`TextAbsorber` Klasa służąca do wyodrębniania tekstu z kolumn.
+Tutaj tworzymy instancję`TextFragmentAbsorber` i zastosuj go do wszystkich stron pliku PDF za pomocą`Accept()` . Ten`TextFragmentCollection` przechowuje wyodrębniony tekst, z którego możemy modyfikować lub wyodrębniać tekst według potrzeb.
+
+## Krok 3: Dostosuj rozmiar czcionki wyodrębnionego tekstu
+
+Po przechwyceniu fragmentów tekstu możesz chcieć zmniejszyć ich rozmiar czcionki, zwłaszcza gdy oryginalny tekst jest zbyt duży. W tym przykładzie zmniejszamy rozmiar czcionki o 70%.
 
 ```csharp
-Stream st = new MemoryStream();
-pdfDocument.Save(st);
-pdfDocument = new Document(st);
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument);
-```
-
-## Krok 7: Zapisz wyodrębniony tekst
-Zapisz wyodrębniony tekst w pliku tekstowym pod określoną ścieżką do pliku wyjściowego.
-
-```csharp
-dataDir = dataDir + "ExtractColumnsText_out.txt";
-File.WriteAllText(dataDir, extractedText);
-Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
-```
-
-### Przykładowy kod źródłowy dla Extract Columns Text przy użyciu Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
-TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-pdfDocument.Pages.Accept(tfa);
-TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Należy zmniejszyć rozmiar czcionki co najmniej o 70%
-	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
+    // Zmniejsz rozmiar czcionki o 70%
+    tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
+```
+
+Ten kod przechodzi przez każdy`TextFragment` w kolekcji i zmniejsza rozmiar czcionki o 70%. Dostosowanie rozmiaru czcionki może sprawić, że wyodrębniony tekst będzie łatwiejszy w zarządzaniu, zwłaszcza jeśli formatujesz go do różnych celów.
+
+## Krok 4: Zapisz dokument w strumieniu pamięci
+
+ Po zmodyfikowaniu tekstu zapisujemy plik PDF do pliku`MemoryStream`. Pozwala nam to zachować dokument w pamięci do dalszego przetwarzania bez konieczności zapisywania go z powrotem na dysku.
+
+```csharp
 Stream st = new MemoryStream();
 pdfDocument.Save(st);
 pdfDocument = new Document(st);
+```
+
+Tutaj zapisujemy plik PDF do strumienia pamięci, a następnie ponownie ładujemy dokument. Ta metoda jest przydatna, gdy pracujesz z dużymi plikami i chcesz uniknąć niepotrzebnych operacji dyskowych.
+
+## Krok 5: Wyodrębnij cały tekst za pomocą Text Absorber
+
+ Teraz, gdy przygotowaliśmy plik PDF, czas wyodrębnić tekst. Użyjemy`TextAbsorber` aby pobrać cały tekst z dokumentu.
+
+```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument); 
+```
+
+ Na tym etapie`TextAbsorber` pochłania cały tekst z pliku PDF, a wyodrębniony tekst jest przechowywany w`extractedText` string. To tutaj dzieje się magia — Twoje kolumny tekstu są teraz w formacie zwykłego tekstu!
+
+## Krok 6: Zapisz wyodrębniony tekst do pliku
+
+ Na koniec zapisujemy wyodrębniony tekst w pliku`.txt` plik w celu łatwego dostępu i dalszego wykorzystania.
+
+```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
-System.IO.File.WriteAllText(dataDir, extractedText);           
+System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
+ Ten kod zapisuje wyodrębniony tekst do nowego`.txt` plik i zapisuje go w podanym katalogu. Na konsoli wyświetla się komunikat potwierdzający, że proces zakończył się powodzeniem.
+
 ## Wniosek
-Pomyślnie wyodrębniono tekst kolumn z dokumentu PDF przy użyciu Aspose.PDF dla .NET. Wyodrębniony tekst został zapisany w określonym pliku wyjściowym.
 
-### Najczęściej zadawane pytania
+I masz! Wyodrębnianie kolumn tekstu z pliku PDF za pomocą Aspose.PDF dla .NET jest łatwiejsze niż myślisz. Za pomocą zaledwie kilku linijek kodu możesz załadować plik PDF, wyodrębnić określony tekst, dostosować formatowanie i zapisać wyniki w pliku tekstowym.
 
-#### P: Jaki jest cel tego poradnika?
+Ta technika jest niezwykle przydatna do przetwarzania ustrukturyzowanych dokumentów, takich jak tabele, raporty lub dowolna treść zorganizowana w kolumnach. Niezależnie od tego, czy potrzebujesz zautomatyzować ekstrakcję danych, czy przetworzyć dokumenty zbiorcze, Aspose.PDF zapewnia narzędzia, aby to się udało wydajnie.
 
-A: Ten samouczek oferuje przewodnik krok po kroku dotyczący wyodrębniania kolumn tekstu z pliku PDF przy użyciu Aspose.PDF dla .NET. Towarzyszący kod źródłowy C# zapewnia praktyczną demonstrację wymaganych procedur.
+## Najczęściej zadawane pytania
 
-#### P: Jakie przestrzenie nazw powinienem zaimportować?
+### Czy mogę wyodrębnić tekst z wybranych stron pliku PDF?  
+ Tak! Możesz modyfikować`TextFragmentAbsorber` aby kierować określone strony za pomocą`pdfDocument.Pages[pageIndex].Accept(tfa);` metoda.
 
-A: W pliku kodu, z którego zamierzasz wyodrębnić kolumny tekstu, umieść na początku pliku następujące dyrektywy using:
+### Czy można wyodrębnić tekst tylko z jednej kolumny w pliku PDF zawierającym wiele kolumn?  
+ Tak, ale będziesz musiał pracować ze współrzędnymi fragmentów tekstu, używając`TextFragment.Rectangle` aby wskazać konkretne obszary dokumentu.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-using System.IO;
-```
+### Jak mogę poprawić dokładność wyodrębniania tekstu?  
+ Aby uzyskać większą dokładność, upewnij się, że struktura pliku PDF jest dobrze zdefiniowana i unikaj dokumentów o skomplikowanych układach. Możesz także dostroić`TextFragmentAbsorber` aby wyodrębnić tekst w oparciu o styl, rozmiar lub region czcionki.
 
-#### P: Jak określić katalog dokumentów?
+### Czy Aspose.PDF obsługuje wyodrębnianie tekstu z zeskanowanych dokumentów?  
+Tak, ale będziesz musiał użyć technologii OCR (Optical Character Recognition). Aspose udostępnia również narzędzia do tego celu.
 
- A: Zlokalizuj linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` w kodzie i zamień`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
-
-#### P: Jak otworzyć istniejący dokument PDF?
-
- A: W kroku 4 otworzysz istniejący dokument PDF za pomocą`Document` konstruktora i podając ścieżkę do pliku wejściowego PDF.
-
-#### P: Dlaczego rozmiar czcionki jest dostosowywany?
-
-A: Krok 5 obejmuje zmniejszenie rozmiaru czcionki fragmentów tekstu o współczynnik 0,7. Ta regulacja poprawia czytelność i dokładniej przedstawia tekst kolumnowy.
-
-#### P: Jak wyodrębnić tekst z kolumn?
-
- A: Krok 6 polega na zapisaniu zmodyfikowanego dokumentu PDF w strumieniu pamięci, ponownym załadowaniu go jako nowego dokumentu, a następnie użyciu`TextAbsorber` Klasa służąca do wyodrębniania tekstu z kolumn.
-
-#### P: Jaki jest cel zapisywania wyodrębnionego tekstu?
-
-A: W kroku 7 zapiszesz wyodrębniony tekst do pliku tekstowego w określonej ścieżce pliku wyjściowego.
-
-#### P: Dlaczego zmniejsza się rozmiar czcionki przed ekstrakcją?
-
-A: Zmniejszenie rozmiaru czcionki pomaga zapewnić prawidłowe wyrównanie wyodrębnionego tekstu w kolumnach, zapewniając dokładniejsze odwzorowanie oryginalnego układu.
-
-#### P: Jakie są najważniejsze wnioski z tego samouczka?
-
-A: Postępując zgodnie z tym samouczkiem, zdobyłeś wiedzę i umiejętności potrzebne do wyodrębniania kolumn tekstu z dokumentu PDF za pomocą Aspose.PDF dla .NET. Wynikowy tekst został zapisany w określonym pliku wyjściowym.
+### Jak radzić sobie z dużymi plikami PDF zawierającymi tysiące stron?  
+W przypadku dużych plików PDF przetwarzaj dokument fragmentami, wyodrębniając tekst z kilku stron naraz, aby uniknąć dużego wykorzystania pamięci.

@@ -62,14 +62,14 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 第 2 步：打开 PDF 文档
 
-接下来，您需要打开要注释的 PDF 文档。使用`Document`Aspose.PDF 库中的类：
+接下来，您需要打开要注释的 PDF 文档。这可以通过使用`Document`Aspose.PDF 库中的类：
 
 ```csharp
 //打开文档
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 ```
 
-这行代码初始化了一个新的`Document`对象并加载您指定的 PDF 文件。确保文件名与您目录中的文件名相匹配。
+这行代码初始化了一个新的`Document`对象并加载您指定的 PDF 文件。确保文件名与您目录中的文件名匹配。
 
 ## 步骤 3：实例化 DefaultAppearance 对象
 

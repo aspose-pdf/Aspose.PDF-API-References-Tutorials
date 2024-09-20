@@ -39,7 +39,7 @@ url: /zh-hant/net/programming-with-links-and-actions/specify-page-when-viewing/
 
 1. 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
 2. 選擇“管理 NuGet 套件”。
-3. 搜尋`Aspose.PDF`並安裝該套件。
+3. 搜尋`Aspose.PDF`並安裝該軟體包。
 
 ### 導入命名空間
 

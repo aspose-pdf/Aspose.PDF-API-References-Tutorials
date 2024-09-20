@@ -16,7 +16,7 @@ url: /zh-hant/net/programming-with-document/embedfontsusingsubsetstrategy/
 在我們深入了解嵌入字體的細節之前，您需要準備好一些東西：
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
-2. Visual Studio：您可以在其中編寫和測試 .NET 程式碼的開發環境。
+2. Visual Studio：一個開發環境，您可以在其中編寫和測試 .NET 程式碼。
 3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
 
 ## 導入包
@@ -97,7 +97,7 @@ doc.Save(dataDir + "Output_out.pdf");
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將字體嵌入到 PDF 檔案中。透過執行這些步驟，您可以確保文件保持其預期外觀，無論在何處查看。無論您是共享報告、簡報或任何其他類型的文檔，嵌入字體都是保持專業和清晰度的關鍵步驟。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將字體嵌入到 PDF 檔案中。透過執行這些步驟，您可以確保文件保持其預期外觀，無論在何處查看。無論您是共享報告、簡報或任何其他類型的文檔，嵌入字體都是保持專業和清晰度的關鍵步驟。
 
 ## 常見問題解答
 

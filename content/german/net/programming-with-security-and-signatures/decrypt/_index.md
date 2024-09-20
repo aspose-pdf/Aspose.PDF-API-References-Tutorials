@@ -112,7 +112,7 @@ Und so ist Ihr PDF-Entschlüsselungsabenteuer zu Ende!
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie eine kennwortgeschützte PDF-Datei mit Aspose.PDF für .NET entschlüsseln. Jetzt verfügen Sie über ein leistungsstarkes Tool in Ihrem digitalen Werkzeugkasten, mit dem Sie diese gesperrten Dokumente problemlos bearbeiten können.
+Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie eine kennwortgeschützte PDF-Datei mit Aspose.PDF für .NET entschlüsseln. Jetzt verfügen Sie über ein leistungsstarkes Tool in Ihrem digitalen Werkzeugkasten und können diese gesperrten Dokumente problemlos bearbeiten.
 
 Durch das Durcharbeiten dieses Tutorials haben Sie nicht nur praktische Erfahrung mit der Bibliothek gesammelt, sondern sich auch die wesentlichen Schritte zur Entschlüsselung eingeprägt. Da sich die digitale Dokumentation ständig weiterentwickelt, können Sie sich mit der Beherrschung dieser Fähigkeiten wie ein Profi darin zurechtfinden.
 

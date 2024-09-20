@@ -2,271 +2,201 @@
 title: عناصر بنية الرابط
 linktitle: عناصر بنية الرابط
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: دليل خطوة بخطوة لاستخدام عناصر بنية الارتباط مع Aspose.PDF لـ .NET. قم بإنشاء ارتباطات تشعبية في مستندات PDF الخاصة بك.
+description: تعرف على كيفية إنشاء عناصر بنية ارتباط في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لإضافة روابط وصور يمكن الوصول إليها والتحقق من التوافق.
 type: docs
 weight: 120
 url: /ar/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-في هذا الدليل التفصيلي، سنوضح لك كيفية استخدام عناصر بنية الارتباط مع Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها برمجيًا. تتيح لك عناصر بنية الارتباط إضافة ارتباطات تشعبية إلى مستند PDF الخاص بك، مما يسمح للمستخدمين بالنقر فوق الارتباطات والانتقال إلى الموارد عبر الإنترنت.
+## مقدمة
 
-دعنا نتعمق في الكود ونتعلم كيفية استخدام عناصر بنية الارتباط مع Aspose.PDF لـ .NET.
+إن إنشاء وإدارة عناصر بنية الارتباط داخل ملف PDF أمر بالغ الأهمية بالنسبة للمستندات التي تتطلب إمكانية الوصول والتنقل السلس. في هذا البرنامج التعليمي، سنوضح لك كيفية القيام بذلك باستخدام Aspose.PDF لـ .NET. إذا كنت جديدًا على Aspose.PDF أو التعامل مع PDF بشكل عام، فلا تقلق. سأشرح كل خطوة بالتفصيل حتى تتمكن من متابعتها بسهولة!
 
-## المتطلبات الأساسية
+## المتطلبات الأساسية  
 
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+قبل أن نتعمق في البرمجة، دعونا نوضح بعض الأمور أولاً. هذه هي المتطلبات الأساسية لضمان تجربة تطوير سلسة.
 
-1. تم تثبيت مكتبة Aspose.PDF لـ .NET.
-2. المعرفة الأساسية للغة البرمجة C#.
+1.  Aspose.PDF for .NET: يمكنك تنزيل الإصدار الأحدث[هنا](https://releases.aspose.com/pdf/net/).
+2. بيئة تطوير .NET: سواء كان Visual Studio أو أي IDE متوافق مع .NET، تأكد من تثبيته وتجهيزه.
+3.  ترخيص Aspose: يمكنك استخدام النسخة التجريبية المجانية من Aspose.PDF[هنا](https://releases.aspose.com/) أو الحصول على[رخصة مؤقتة](https://purchase.aspose.com/temporary-license/).
+4. المعرفة الأساسية بلغة C#: سنعمل مع بعض أكواد C#، لذا فإن فهم الأساسيات سيجعل الأمور أسهل كثيرًا.
 
-## الخطوة 1: إعداد البيئة
+## استيراد الحزم
 
-للبدء، افتح بيئة تطوير C# وقم بإنشاء مشروع جديد. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET في مشروعك.
+ستحتاج إلى استيراد بعض الحزم قبل كتابة التعليمات البرمجية لعناصر بنية الرابط. ابدأ بالإشارة إلى مكتبات Aspose.PDF الضرورية في مشروعك:
 
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 2: إنشاء المستند
+تتيح لنا هذه الاستيرادات العمل مع مستندات PDF وإضافة العلامات وإدارة عناصر الهيكل.
 
- الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام`Document` فصل.
+سنقوم الآن بإنشاء مستند PDF يحتوي على أنواع مختلفة من هياكل الروابط، وسيتم تقسيم كل خطوة لمساعدتك على فهم العملية بدقة.
 
-```csharp
-// إنشاء مستند PDF
-Document document = new Document();
-```
+## الخطوة 1: تهيئة المستند  
 
-## الخطوة 3: العمل مع المحتوى المُوسوم
-
-وبعد ذلك نحصل على المحتوى المميز للمستند للعمل عليه.
+لنبدأ بإنشاء مستند PDF جديد وإعداد محتوى مميز لسهولة الوصول إليه.
 
 ```csharp
-// احصل على المحتوى المميز للوثيقة
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## الخطوة 4: تعيين عنوان المستند واللغة
-
-يمكننا الآن تعيين عنوان المستند واللغة.
-
-```csharp
-// تحديد عنوان المستند واللغة
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## الخطوة 5: إضافة عناصر بنية الرابط
-
-الآن دعنا نضيف عناصر بنية الارتباط إلى مستندنا. سننشئ أنواعًا مختلفة من الروابط، بما في ذلك روابط نصية بسيطة وروابط صور وروابط متعددة الأسطر.
-```csharp
-// الحصول على عنصر البنية الجذرية (عنصر بنية المستند)
-StructureElement rootElement = taggedContent.RootElement;
-
-// أضف فقرة تحتوي على رابط تشعبي
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://"google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// أضف فقرة تحتوي على رابط تشعبي يحتوي على نص غني
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// أضف فقرة تحتوي على رابط تشعبي يحتوي على نص منسق جزئيًا
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// أضف فقرة تحتوي على ارتباط تشعبي متعدد الأسطر
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://"google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// أضف فقرة تحتوي على رابط تشعبي يحتوي على صورة
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://"google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## الخطوة 6: احفظ مستند PDF المُوسوم
-
-وأخيرًا، نحفظ مستند PDF المُوسوم.
-
-```csharp
-// احفظ مستند PDF المُوسوم
-document. Save(outFile);
-```
-
-## الخطوة 7: التحقق من توافق PDF/UA
-
- يمكننا أيضًا التحقق من المستند للتأكد من توافقه مع PDF/UA باستخدام`Validate` طريقة`Document` فصل.
-
-```csharp
-// التحقق من توافق PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### نموذج لمصدر التعليمات البرمجية لعناصر بنية الارتباط باستخدام Aspose.PDF لـ .NET 
-```csharp
-
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//إنشاء مستند والحصول على محتوى Pdf المميز
+// إنشاء مستند PDF جديد
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// تعيين لغة العنوان والطبيعة للمستند
+// استرداد واجهة TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ هنا، نقوم بتهيئة`Document` الكائن الذي يمثل ملف PDF الخاص بنا. كما نسترد أيضًا`TaggedContent` الواجهة، التي تسمح لنا بإضافة عناصر هيكلية مثل الفقرات والروابط والصور.
+
+## الخطوة 2: تعيين العنوان واللغة  
+
+يجب أن يحتوي كل ملف PDF على عنوان وإعداد لغة، خاصة إذا كنت تهدف إلى التوافق مع معايير PDF/UA.
+
+```csharp
+// تعيين عنوان المستند واللغة
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+تضمن هذه الخطوة أن يكون لملف PDF الخاص بك عنوان ذو معنى وتضبط اللغة على الإنجليزية (`en-US`يعد هذا أمرًا بالغ الأهمية لإمكانية الوصول ويضمن أن تتمكن برامج قراءة الشاشة أو التقنيات المساعدة الأخرى من تفسير مستندك بشكل صحيح.
 
-// الحصول على عنصر بنية الجذر (عنصر بنية المستند)
+## الخطوة 3: إنشاء الفقرات وإضافتها  
+
+في هذه الخطوة، سنضيف فقرات لاحتواء عناصر الرابط الخاصة بنا.
+
+```csharp
+// إنشاء العنصر الجذري
 StructureElement rootElement = taggedContent.RootElement;
+
+// إنشاء فقرة وإضافتها إلى العنصر الجذر
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+نقوم بإنشاء عنصر بنية الجذر، والذي يعد في الأساس الحاوية ذات المستوى الأعلى لجميع العناصر الأخرى. ثم نقوم بإنشاء فقرة (`p1`) وإضافته إلى عنصر الجذر.
+
+## الخطوة 4: إضافة رابط بسيط  
+
+الآن دعونا نضيف رابطًا تشعبيًا أساسيًا يشير إلى Google.
+
+```csharp
+// إنشاء عنصر رابط وإضافته إلى الفقرة
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// تعيين ارتباط تشعبي ونص للرابط
 link1.Hyperlink = new WebHyperlink("http://"google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+في هذه الخطوة، قمنا بإنشاء عنصر ارتباط، وضبطنا الارتباط التشعبي الخاص به على "http://google.com"، وقمنا بتوفير نص ("Google") للرابط. كما أضفنا وصفًا بديلًا لضمان إمكانية الوصول.
+
+## الخطوة 5: إضافة رابط مع Spans  
+
+يمكننا أيضًا إنشاء روابط بامتدادات نصية مختلفة.
+
+```csharp
+// إنشاء فقرة أخرى
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// إنشاء رابط باستخدام عنصر span
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://"google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+هنا، استخدمنا عنصر span لتضمين جزء من النص داخل الرابط، مما يسمح لنا بتخصيص كيفية ظهور أجزاء معينة من الرابط.
+
+## الخطوة 6: رابط متعدد الأسطر  
+
+ماذا لو كان نص الرابط الخاص بك طويلاً للغاية؟ لا تقلق، يمكنك تقسيمه إلى عدة أسطر.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://"google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+في هذه الحالة، قمنا بإنشاء رابط متعدد الأسطر ببساطة عن طريق تعيين قيمة نصية طويلة، وسيتم التفاف النص تلقائيًا عبر أسطر متعددة.
+
+## الخطوة 7: إضافة صورة إلى الرابط  
+
+وأخيرًا، يمكنك أيضًا إضافة صور داخل الرابط.
+
+```csharp
+// إنشاء فقرة جديدة وعنصر رابط
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://"google.com");
+
+// أضف صورة إلى الرابط
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// حفظ مستند PDF المُوسوم
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+توضح هذه الخطوة كيفية تعزيز الروابط الخاصة بك باستخدام صورة. في هذه الحالة، أضفنا أيقونة Google داخل الرابط. كما عملنا على ضمان إمكانية الوصول من خلال تعيين نص بديل للصورة.
+
+## الخطوة 8: التحقق من صحة ملف PDF للتأكد من توافقه  
+
+إذا كنت تهدف إلى التوافق مع معيار إمكانية الوصول PDF/UA، فمن الأفضل التحقق من صحة مستندك.
+
+```csharp
+// حفظ مستند PDF
 document.Save(outFile);
 
-// التحقق من توافق PDF/UA
-document = new Document(outFile);
+// التحقق من صحة المستند للتأكد من توافقه مع PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## خاتمة
+  
+لقد قمنا بحفظ المستند وتحققنا من صحته وفقًا لمعيار PDF/UA، والذي يضمن أن ملف PDF يلبي متطلبات إمكانية الوصول.
 
-تهانينا! لقد تعلمت كيفية استخدام عناصر بنية الارتباط مع Aspose.PDF لـ .NET. يمكنك الآن إنشاء ارتباطات تشعبية في مستندات PDF الخاصة بك، مما يسمح للمستخدمين بالانتقال إلى الموارد عبر الإنترنت. جرّب واستكشف المزيد من ميزات Aspose.PDF لإنشاء مستندات PDF تفاعلية ومثرية.
+## خاتمة  
 
-### الأسئلة الشائعة
+في هذا البرنامج التعليمي، قمنا بتغطية كيفية إنشاء مستندات PDF منظمة باستخدام Aspose.PDF لـ .NET. بدءًا من إضافة ارتباطات تشعبية أساسية إلى هياكل أكثر تعقيدًا مثل الامتدادات والارتباطات متعددة الأسطر وحتى الصور، يوفر هذا الدليل أساسًا قويًا للتعامل مع عناصر الارتباط في ملفات PDF الخاصة بك. مع الاستفادة الإضافية من توافق PDF/UA، أصبحت الآن مجهزًا لإنشاء ملفات PDF يمكن الوصول إليها والتنقل فيها.
 
-#### س: ما هي عناصر بنية الارتباط في مستند PDF، وكيف تعمل على تعزيز تفاعل المستند؟
+## الأسئلة الشائعة
 
-أ: تُستخدم عناصر بنية الارتباط في مستند PDF لإنشاء ارتباطات تشعبية تسمح للمستخدمين بالانتقال إلى الموارد عبر الإنترنت أو مواقع محددة داخل المستند. تعمل هذه العناصر على تعزيز التفاعل من خلال توفير روابط قابلة للنقر تمكن المستخدمين من الوصول إلى المحتوى ذي الصلة أو مواقع الويب الخارجية.
+### هل يمكنني إضافة هياكل أكثر تعقيدًا مثل الجداول داخل الروابط؟  
+لا، الروابط مخصصة في المقام الأول للنصوص والصور، ولكن يمكنك تضمين عناصر معقدة بالقرب منها.
 
-#### س: كيف يمكن لعناصر بنية الرابط أن تكون مفيدة في مستند PDF؟
+### هل التحقق من صحة PDF/UA إلزامي؟  
+ليس دائمًا، ولكن يوصى به بشدة إذا كنت مهتمًا بإمكانية الوصول.
 
-أ: تعمل عناصر بنية الرابط على تحسين تجربة المستخدم من خلال جعل مستند PDF تفاعليًا. فهي توفر وصولاً سريعًا إلى معلومات إضافية أو محتوى ذي صلة أو مواقع ويب خارجية أو أقسام محددة داخل المستند، مما يحسن التنقل ويسهل استرجاع المعلومات.
+### ماذا يحدث إذا كان مسار ملف الصورة غير صحيح؟  
+لن يعرض المستند الصورة، وقد يتسبب في حدوث خطأ أثناء العرض.
 
-#### س: هل يمكنني إنشاء أنواع مختلفة من الارتباطات التشعبية باستخدام عناصر بنية الارتباط في Aspose.PDF لـ .NET؟
+### هل يمكنني تنسيق النص الموجود داخل الرابط؟  
+نعم، يمكنك تطبيق أنماط النص باستخدام عناصر span.
 
-ج: نعم، يمكنك إنشاء أنواع مختلفة من الارتباطات التشعبية باستخدام عناصر بنية الارتباطات. يتيح لك Aspose.PDF for .NET إنشاء ارتباطات تشعبية بنص عادي ونص غني وصور وأوصاف متعددة الأسطر، مما يوفر تنوعًا في كيفية الارتباط بالمحتوى الخارجي أو المواقع داخل المستند.
-
-#### س: كيف أقوم بإعداد وتكوين عناصر بنية الارتباط في مستند PDF باستخدام Aspose.PDF لـ .NET؟
-
- أ: لاستخدام عناصر بنية الرابط، تحتاج أولاً إلى إنشاء مستند PDF جديد باستخدام`Document` الصف. ثم، احصل على المحتوى المُوسوم باستخدام`TaggedContent`خاصية المستند. ومن هناك، يمكنك إنشاء عناصر بنية الارتباط وتخصيصها وإضافتها إلى عنصر البنية الجذرية.
-
-#### س: كيف يمكنني إنشاء ارتباط نصي بسيط باستخدام عناصر بنية الارتباط؟
- أ: يمكنك إنشاء ارتباط نصي بسيط عن طريق إنشاء`LinkElement` ووضعها`Hyperlink` الممتلكات إلى`WebHyperlink` باستخدام عنوان URL الذي تريد الارتباط به. يمكنك أيضًا تعيين نص العرض للرابط باستخدام`SetText` طريقة.
-
-#### س: هل من الممكن إنشاء ارتباطات تشعبية مع الصور باستخدام عناصر بنية الارتباط؟
-
- ج: نعم، يمكنك إنشاء ارتباطات تشعبية بالصور باستخدام عناصر بنية الارتباط. يمكنك إنشاء`LinkElement` ثم قم بإضافة`FigureElement` مع صورة لها. يتيح لك هذا إنشاء ارتباط تشعبي قائم على صورة.
-
-#### س: كيف يمكنني التأكد من أن مستند PDF الخاص بي الذي يحتوي على روابط تشعبية يتوافق مع معيار PDF/UA لإمكانية الوصول؟
-
- أ: يوفر Aspose.PDF لـ .NET القدرة على التحقق من امتثال مستند PDF الخاص بك لمعيار PDF/UA باستخدام`Validate` طريقة`Document`يضمن هذا إمكانية وصول المستخدمين ذوي الإعاقة إلى الروابط التشعبية الموجودة في المستند.
-
-#### س: ما هي الأوصاف البديلة لعناصر بنية الرابط، ولماذا هي مهمة؟
-
-أ: توفر الأوصاف البديلة (النص البديل) لعناصر بنية الرابط أوصافًا نصية للروابط التشعبية. تعد هذه الأوصاف ضرورية لسهولة الوصول، حيث تسمح للمستخدمين الذين يعانون من إعاقات بصرية بفهم غرض الرابط ووجهته.
-
-#### س: هل يمكنني تخصيص مظهر وسلوك الارتباطات التشعبية التي تم إنشاؤها باستخدام عناصر بنية الارتباط؟
-
-ج: بينما تركز عناصر بنية الارتباط بشكل أساسي على إنشاء ارتباطات تشعبية، يمكنك تخصيص مظهر وسلوك الارتباطات التشعبية بشكل أكبر باستخدام ميزات أخرى يوفرها Aspose.PDF لـ .NET. ويتضمن ذلك تحديد الألوان والأنماط وإجراءات الارتباط.
-
-#### س: كيف تساهم عناصر بنية الرابط في جعل مستندات PDF أكثر تفاعلية وسهولة في الاستخدام؟
-
-أ: تعمل عناصر بنية الارتباط على تحويل مستندات PDF الثابتة إلى تجارب تفاعلية من خلال إضافة ارتباطات تشعبية قابلة للنقر. تعمل هذه التفاعلية على تحسين مشاركة المستخدم، وتمكين التنقل السلس بين المحتوى ذي الصلة، وتعزيز قابلية استخدام المستند بشكل عام.
+### هل من الممكن إنشاء روابط داخلية للمستندات؟  
+بالتأكيد! يمكنك الارتباط بأقسام محددة داخل نفس المستند.

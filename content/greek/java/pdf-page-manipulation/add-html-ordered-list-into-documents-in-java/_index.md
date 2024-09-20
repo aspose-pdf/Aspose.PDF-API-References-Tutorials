@@ -31,7 +31,7 @@ url: /el/java/pdf-page-manipulation/add-html-ordered-list-into-documents-in-java
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ```
 
-## Προσθήκη ταξινομημένης λίστας HTML στο PDF
+## Προσθήκη HTML Ordered List στο PDF
 
  Στη συνέχεια, θα χρειαστεί να αναλύσετε τη λίστα με σειρά HTML και να την προσθέσετε στο έγγραφο PDF. Το Aspose.PDF για Java παρέχει έναν βολικό τρόπο για να το κάνετε αυτό χρησιμοποιώντας το`HtmlFragment` τάξη.
 

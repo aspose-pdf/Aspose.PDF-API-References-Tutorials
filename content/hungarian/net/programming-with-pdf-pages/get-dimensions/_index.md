@@ -101,7 +101,7 @@ Most az oldal méretei az új tájolás alapján frissülnek. Ez olyan, mintha e
 
 Gratulálok! Sikeresen megtanulta, hogyan lehet lekérni és módosítani egy PDF-oldal méreteit az Aspose.PDF for .NET használatával. Mostanra már képesnek kell lennie PDF-fájl betöltésére, oldalméreteinek ellenőrzésére, és szükség esetén az oldal elforgatására is.
 
-A PDF-fájlok kezelésének nem kell bonyolultnak lennie. Az Aspose.PDF használatával ez olyan egyszerű, mint néhány lépés követése és intuitív módszerek használata. Így ha legközelebb PDF-oldalméretekkel kell foglalkoznia, pontosan tudni fogja, mit kell tennie!
+A PDF-fájlok kezelésének nem kell bonyolultnak lennie. Az Aspose.PDF használatával ez olyan egyszerű, mint néhány lépés követése és intuitív módszerek használata. Így ha legközelebb PDF oldalméretekkel kell foglalkoznia, pontosan tudni fogja, mit kell tennie!
 
 ## GYIK
 

@@ -2,7 +2,7 @@
 title: Nagy CGM-kép PDF-be
 linktitle: Nagy CGMI-kép PDF-be
 second_title: Aspose.PDF for .NET API Reference
-description: A nagyméretű CGM-képeket könnyedén PDF formátumba alakíthatja át az Aspose.PDF for .NET segítségével. Kövesse ezt az egyszerű útmutatót a gyors és hatékony konverziós folyamathoz.
+description: A nagyméretű CGM-képeket könnyedén PDF formátumba alakíthatja át az Aspose.PDF for .NET segítségével. Kövesse ezt az egyszerű útmutatót a gyors és hatékony átalakítási folyamathoz.
 type: docs
 weight: 190
 url: /hu/net/programming-with-images/large-cgm-image-to-pdf/

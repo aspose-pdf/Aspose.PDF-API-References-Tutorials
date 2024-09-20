@@ -1,6 +1,6 @@
 ---
-title: Jelentkezzen intelligens kártyával aláírási mező használatával
-linktitle: Jelentkezzen intelligens kártyával aláírási mező használatával
+title: Jelentkezzen intelligens kártyával aláírási mező segítségével
+linktitle: Jelentkezzen intelligens kártyával aláírási mező segítségével
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan írhat biztonságosan PDF-eket intelligens kártya használatával az Aspose.PDF for .NET segítségével. Kövesse lépésről lépésre útmutatónkat az egyszerű megvalósítás érdekében.
 type: docs

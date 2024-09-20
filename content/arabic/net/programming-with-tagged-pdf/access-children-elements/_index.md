@@ -2,161 +2,171 @@
 title: عناصر الوصول للأطفال
 linktitle: عناصر الوصول للأطفال
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: دليل خطوة بخطوة للوصول إلى العناصر الفرعية وتحريرها في مستند PDF باستخدام Aspose.PDF لـ .NET. قم بتخصيص محتوى PDF الخاص بك.
+description: تعرف على كيفية الوصول إلى العناصر الفرعية وتعديلها في ملفات PDF المميزة باستخدام Aspose.PDF لـ .NET في هذا البرنامج التعليمي خطوة بخطوة.
 type: docs
 weight: 10
 url: /ar/net/programming-with-tagged-pdf/access-children-elements/
 ---
-في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول الوصول إلى العناصر الفرعية لمستند PDF باستخدام Aspose.PDF for .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. باستخدام ميزات بنية المحتوى المميزة في Aspose.PDF، يمكنك الوصول إلى خصائص العناصر المنظمة في مستند PDF وتعديلها.
+## مقدمة
+
+عندما يتعلق الأمر بمعالجة مستندات PDF برمجيًا، فإن Aspose.PDF for .NET يتميز بواجهة برمجة التطبيقات الشاملة، مما يسمح للمطورين بأداء مهام مختلفة بدقة. إحدى الميزات الأساسية للعمل مع ملفات PDF ذات العلامات هي الوصول إلى العناصر الفرعية وتعديلها داخل بنية المستند. في هذه المقالة، سنتعمق في كيفية الاستفادة من هذه الوظيفة للوصول إلى العناصر الفرعية وتعيين خصائصها في ملف PDF ذي العلامات.
 
 ## المتطلبات الأساسية
 
-قبل أن تبدأ، تأكد من توفر المتطلبات الأساسية التالية:
+قبل أن ننتقل إلى الكود، هناك بعض الأشياء التي ستحتاجها للبدء:
 
-1. تم تثبيت Visual Studio مع إطار عمل .NET.
-2. مكتبة Aspose.PDF لـ .NET.
+1. .NET Framework: تأكد من تثبيت إصدار من .NET Framework على جهازك. يدعم Aspose.PDF .NET Core أيضًا.
+2.  Aspose.PDF لـ .NET: ستحتاج إلى تثبيت مكتبة Aspose.PDF. يمكنك تنزيل أحدث إصدار من[صفحة تنزيلات Aspose](https://releases.aspose.com/pdf/net/).
+3. بيئة التطوير: قم بإعداد IDE مثل Visual Studio حيث يمكنك كتابة وتشغيل كود C# الخاص بك.
+4. ملف PDF نموذجي: ستحتاج إلى مستند PDF نموذجي للعمل معه. في هذا البرنامج التعليمي، سنستخدم "StructureElementsTree.pdf"، والذي يجب وضعه في دليل المستندات الخاص بمشروعك.
 
-## الخطوة 1: إعداد المشروع
+بمجرد إعداد كل شيء، ستكون جاهزًا لبدء الترميز!
 
-للبدء، قم بإنشاء مشروع جديد في Visual Studio وأضف مرجعًا إلى مكتبة Aspose.PDF for .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
+## استيراد الحزم المطلوبة
 
-## الخطوة 2: استيراد المساحات الاسمية الضرورية
-
-في ملف الكود C# الخاص بك، قم باستيراد المساحات الأساسية المطلوبة للوصول إلى الفئات والطرق التي يوفرها Aspose.PDF:
+قبل البدء في كتابة التعليمات البرمجية، تأكد من استيراد المساحات الأساسية اللازمة في مشروع C# الخاص بك. سيسمح لك هذا بالوصول إلى الفئات والطرق من مكتبة Aspose.PDF بسلاسة.
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 3: تحميل مستند PDF والوصول إلى العناصر الفرعية
+دعونا نقسم هذه المهمة إلى خطوات قابلة للإدارة.
 
-استخدم الكود التالي لتحميل مستند PDF والوصول إلى العناصر الفرعية:
+## الخطوة 1: إعداد دليل المستندات الخاص بك
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-Document document = new Document(dataDir + "StructureElementsTree.pdf");
-ITaggedContent taggedContent = document.TaggedContent;
-ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+لنبدأ بتحديد الدليل الذي ستخزن فيه مستندات PDF. هذه الخطوة بالغة الأهمية لأنها تخبر البرنامج بالمكان الذي يبحث فيه عن الملف. 
 
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// الوصول إلى خصائص العنصر
-string title = structureElement.Title;
-string language = structureElement.Language;
-string actualText = structureElement.ActualText;
-string expansionText = structureElement.ExpansionText;
-string alternativeText = structureElement.AlternativeText;
-}
-}
-```
-
-يسمح لك هذا الكود بالوصول إلى العناصر الفرعية لجذر بنية مستند PDF والحصول على خصائص كل عنصر.
-
-## الخطوة 4: الوصول إلى عناصر الجذر وتغيير الخصائص
-
-استخدم الكود التالي للوصول إلى أبناء العنصر الجذر وتعديل الخصائص:
-
-```csharp
-elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
-
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// تعديل خصائص العنصر
-structureElement.Title = "title";
-structureElement.Language = "fr-FR";
-structureElement.ActualText = "actual text";
-structureElement.ExpansionText = "exp";
-structureElement.AlternativeText = "alt";
-}
-}
-```
-
-يسمح لك هذا الكود بالوصول إلى أبناء العنصر الأول للعنصر الجذر وتعديل خصائص كل عنصر.
-
-
-### عينة من كود المصدر لعناصر Access Children باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ ببساطة استبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي على جهازك. 
+
+## الخطوة 2: افتح مستند PDF
+
+تتضمن الخطوة التالية تحميل مستند PDF المُوسوم إلى تطبيقك. وهنا تبدأ السحر!
+
+```csharp
 // فتح مستند PDF
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// احصل على محتوى للعمل باستخدام TaggedPdf
+```
+
+تأكد من أن المسار الذي تقدمه يشير إلى ملف PDF الذي تريد معالجته.
+
+## الخطوة 3: الحصول على المحتوى المميز
+
+الآن، سنقوم بالوصول إلى المحتوى المُوسوم من المستند الذي يسمح لك بالتفاعل مع عناصر بنيته بسهولة.
+
+```csharp
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
+```
+
+يجهزك هذا السطر للتعمق في بنية ملف PDF.
+
+## الخطوة 4: الوصول إلى عناصر الجذر
+
+قبل الوصول إلى العناصر الفرعية، دعنا نبدأ بالعناصر الجذرية. سيساعدك هذا على فهم التسلسل الهرمي للبنية بشكل أفضل.
+
+```csharp
 // الوصول إلى العناصر الجذرية
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+```
+
+هنا، ستحصل على قائمة بالعناصر الفرعية للجذر.
+
+## الخطوة 5: استرداد خصائص العناصر الفرعية
+
+الآن، دعنا ننتقل عبر عناصر الجذر لاسترجاع الخصائص من كل عنصر من عناصر البنية. تساعد هذه الخطوة في التحقق من المحتوى الموجود.
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// الحصول على الخصائص
-		string title = structureElement.Title;
-		string language = structureElement.Language;
-		string actualText = structureElement.ActualText;
-		string expansionText = structureElement.ExpansionText;
-		string alternativeText = structureElement.AlternativeText;
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // الحصول على الخصائص
+        string title = structureElement.Title;
+        string language = structureElement.Language;
+        string actualText = structureElement.ActualText;
+        string expansionText = structureElement.ExpansionText;
+        string alternativeText = structureElement.AlternativeText;
+        
+        // عرض الخصائص المسترجعة (هذا اختياري)
+        Console.WriteLine($"Title: {title}, Language: {language}, ActualText: {actualText}");
+    }
 }
-//الوصول إلى عناصر الأطفال للعنصر الأول في العنصر الجذر
+```
+
+تتحقق هذه الحلقة مما إذا كان العنصر الحالي عنصرًا هيكليًا، وتستعيد خصائصه وتطبعها. ما مدى فائدة ذلك؟
+
+## الخطوة 6: الوصول إلى عناصر فرعية للعنصر الجذري الأول
+
+الآن بعد أن وصلنا إلى عناصر الجذر، دعنا نتعمق أكثر في عنصر الجذر الأول للوصول إلى عناصره الأبناء.
+
+```csharp
+// الوصول إلى عناصر الأطفال للعنصر الأول في العنصر الجذر
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
+```
+
+ عن طريق التغيير`ChildElements[1]` إلى فهرس آخر، يمكنك استكشاف عناصر الجذر المختلفة، إذا كانت موجودة.
+
+## الخطوة 7: تعديل خصائص العناصر الفرعية
+
+بمجرد الوصول إلى العناصر الفرعية، قد ترغب في تحديث خصائصها. الأمر بسيط للغاية!
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// تعيين الخصائص
-		structureElement.Title = "title";
-		structureElement.Language = "fr-FR";
-		structureElement.ActualText = "actual text";
-		structureElement.ExpansionText = "exp";
-		structureElement.AlternativeText = "alt";
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // تعيين الخصائص. تخصيص هذه القيم حسب الحاجة!
+        structureElement.Title = "New Title";
+        structureElement.Language = "fr-FR";
+        structureElement.ActualText = "Updated actual text";
+        structureElement.ExpansionText = "Updated exp";
+        structureElement.AlternativeText = "Updated alt";
+    }
 }
+```
+
+إنه مثل إعطاء مظهر جديد لكل عنصر هيكل محدد!
+
+## الخطوة 8: احفظ مستند PDF المُوسوم
+
+أخيرًا، بعد إجراء التغييرات، ستحتاج إلى حفظ ملف PDF المحدث. 
+
+```csharp
 // حفظ مستند PDF المُوسوم
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
+قم بإعطاء مستندك المعدّل اسمًا فريدًا حتى تتمكن من التعرف عليه بسهولة لاحقًا.
+
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية الوصول إلى العناصر الفرعية لمستند PDF وكيفية تعديل خصائص العناصر باستخدام Aspose.PDF لـ .NET. يتيح لك هذا تخصيص العناصر المنظمة في مستند PDF ومعالجتها وفقًا لاحتياجاتك.
+إن الوصول إلى العناصر الفرعية في مستند PDF مُوسَم باستخدام Aspose.PDF for .NET أمر سهل للغاية، مما يسمح لك بمعالجة المحتوى بفعالية. باتباع هذا الدليل التفصيلي، يمكنك قراءة مستندات PDF وتعديلها وحفظها بسهولة. سواء كنت تقوم بتحديث البيانات الوصفية أو تغيير البنية، توفر مكتبة Aspose.PDF الأدوات اللازمة لإنجاز المهمة بكفاءة.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من الوصول إلى العناصر الفرعية في مستند PDF باستخدام Aspose.PDF لـ .NET؟
+### ما هو ملف PDF المُوسوم؟
+ملف PDF المُوسوم هو مستند يحتوي على بيانات وصفية، مما يسمح بإمكانية الوصول إليه والتنقل فيه بشكل أفضل.
 
-أ: يتيح لك الوصول إلى العناصر الفرعية في مستند PDF باستخدام Aspose.PDF for .NET إمكانية التعامل مع العناصر المنظمة وتخصيصها برمجيًا داخل المستند. ويمكن أن يتضمن ذلك تعديل الخصائص، مثل العناوين واللغات والنص الفعلي ونص التوسيع والنص البديل، لتحسين إمكانية الوصول إلى المستند وعرضه.
+### هل يمكنني الوصول إلى العناصر غير الهيكلية في Aspose.PDF؟
+نعم، في حين يركز هذا البرنامج التعليمي على عناصر البنية، فمن الممكن أيضًا الوصول إلى أنواع أخرى من العناصر.
 
-#### س: ما هو دور مكتبة Aspose.PDF في هذه العملية؟
+### هل أحتاج إلى شراء Aspose.PDF لاستخدامه؟
+يمكنك تجربته مجانًا في البداية، ولكن قد يكون من الضروري شراءه للحصول على الميزات الكاملة والدعم.
 
-ج: Aspose.PDF for .NET هي مكتبة قوية توفر ميزات متنوعة لإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، تُستخدم المكتبة لتحميل مستند PDF والوصول إلى المحتوى المميز والعناصر المنظمة وتعديل خصائصها.
+### هل Aspose.PDF متوافق مع .NET Core؟
+نعم، يدعم Aspose.PDF .NET Core إلى جانب الإصدارات الأخرى من .NET Framework.
 
-#### س: ما هي المتطلبات الأساسية للعمل مع العناصر الفرعية في مستند PDF باستخدام Aspose.PDF لـ .NET؟
-
-ج: قبل أن تبدأ، تأكد من تثبيت Visual Studio مع إطار عمل .NET ومن وجود مكتبة Aspose.PDF لـ .NET مذكورة في مشروعك.
-
-#### س: كيف يسمح كود C# المقدم بالوصول إلى العناصر الفرعية وتعديلها في مستند PDF؟
-
-ج: يوضح الكود كيفية تحميل مستند PDF، والوصول إلى المحتوى المُوسوم، والانتقال عبر العناصر الفرعية للجذر والعناصر المحددة. كما يوضح كيفية استرداد خصائص العناصر المنظمة وكيفية تعديل تلك الخصائص لتخصيص المستند.
-
-#### س: هل يمكنني الوصول إلى خصائص أخرى للعناصر الفرعية وتعديلها بخلاف تلك الموضحة في الكود؟
-
-ج: نعم، يمكنك الوصول إلى خصائص أخرى متنوعة لعناصر الطفل وتعديلها باستخدام تقنيات مماثلة. الخصائص الموضحة في الكود (العنوان واللغة والنص الفعلي وما إلى ذلك) هي مجرد أمثلة، ويمكنك استكشاف وثائق Aspose.PDF لاكتشاف المزيد من الخصائص والطرق المتاحة للتلاعب.
-
-#### س: كيف يمكنني تحديد العناصر الفرعية التي أريد الوصول إليها داخل مستند PDF؟
-ج: يوفر الكود مثالاً للوصول إلى العناصر الفرعية للعنصر الجذري وعنصر محدد داخله. يمكنك تحديد العناصر التي تريد الوصول إليها بناءً على التسلسل الهرمي والبنية داخل المحتوى المميز لمستند PDF.
-
-#### س: هل من الممكن إضافة عناصر فرعية جديدة أو حذف العناصر الموجودة باستخدام هذا النهج؟
-
-ج: في حين يركز الكود المقدم على الوصول إلى عناصر فرعية موجودة وتعديلها، يمكنك توسيع النهج لإضافة عناصر فرعية جديدة أو حذف العناصر الموجودة باستخدام الطرق المناسبة التي توفرها مكتبة Aspose.PDF.
-
-#### س: هل يمكنني استخدام هذا النهج للعمل مع عناصر فرعية متداخلة داخل مستند PDF؟
-
-ج: نعم، يمكنك تطبيق تقنيات مماثلة للوصول إلى عناصر فرعية متداخلة وتعديلها داخل بنية مستند PDF. من خلال التنقل عبر التسلسل الهرمي للعناصر، يمكنك الوصول إلى العناصر والتلاعب بها على مستويات مختلفة.
+### أين يمكنني العثور على مزيد من الوثائق حول Aspose.PDF؟
+ يمكنك العثور على وثائق إضافية على[صفحة توثيق Aspose](https://reference.aspose.com/pdf/net/).

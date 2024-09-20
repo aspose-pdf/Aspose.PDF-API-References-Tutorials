@@ -72,7 +72,7 @@ ImageElement imageElement = new ImageElement();
 imageElement.setFile("image.png");
 ```
 
-### Πίνακες Δομής
+### Δομή Πίνακες
 
 Οι πίνακες είναι ένα άλλο σημαντικό μέρος των δομημένων PDF. Χρησιμοποιήστε το TableElement για τη δομή πινάκων:
 

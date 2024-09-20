@@ -101,7 +101,7 @@ Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y
 
 ## 結論
 
-現在你就得到它了！透過執行這些步驟，您可以使用 Aspose.PDF for .NET 有效率地搜尋和檢索 PDF 檔案中的影像。只需幾行程式碼，您就可以提取有價值的圖像及其屬性，為應用程式中的許多可能性打開大門。
+現在你就擁有了！透過執行這些步驟，您可以使用 Aspose.PDF for .NET 有效率地搜尋和檢索 PDF 檔案中的影像。只需幾行程式碼，您就可以提取有價值的圖像及其屬性，為應用程式中的許多可能性打開大門。
 
 ## 常見問題解答
 

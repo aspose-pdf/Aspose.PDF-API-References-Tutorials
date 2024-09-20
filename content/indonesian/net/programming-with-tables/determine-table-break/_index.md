@@ -2,175 +2,193 @@
 title: Tentukan Pemisahan Tabel dalam File PDF
 linktitle: Tentukan Pemisahan Tabel dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menentukan pemisah tabel dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Temukan cara menentukan jeda tabel dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah kami, termasuk contoh kode dan kiat pemecahan masalah.
 type: docs
 weight: 60
 url: /id/net/programming-with-tables/determine-table-break/
 ---
-Dalam tutorial ini, kita akan mempelajari cara menentukan pemisah tabel dalam file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber dalam C# langkah demi langkah. Di akhir tutorial ini, Anda akan mengetahui cara menentukan apakah tabel melebihi margin halaman. Mari kita mulai!
+## Perkenalan
 
-## Langkah 1: Menyiapkan lingkungan
-Pertama, pastikan Anda telah menyiapkan lingkungan pengembangan C# dengan Aspose.PDF untuk .NET. Tambahkan referensi ke pustaka dan impor namespace yang diperlukan.
+Membuat dan memanipulasi file PDF bisa terasa seperti menjinakkan binatang buas. Pada suatu saat, Anda pikir Anda sudah tahu caranya, dan di saat berikutnya, dokumen tersebut berperilaku tidak terduga. Pernahkah Anda bertanya-tanya bagaimana cara mengelola tabel secara efektif dalam PDF — khususnya, bagaimana cara menentukan kapan tabel akan rusak? Dalam artikel ini, kita akan membahas cara menggunakan Aspose.PDF untuk .NET guna mengidentifikasi kapan tabel meluas melebihi ukuran halaman. Jadi, bersiaplah dan mari kita jelajahi dunia manipulasi PDF!
 
-## Langkah 2: Membuat dokumen PDF
- Pada langkah ini, kita membuat yang baru`Document` objek untuk mewakili dokumen PDF.
+## Prasyarat
+
+Sebelum kita masuk ke pengkodean sebenarnya, mari pastikan Anda telah menyiapkan semuanya:
+
+1. Lingkungan Pengembangan .NET: Pastikan Anda telah menginstal Visual Studio atau IDE yang kompatibel.
+2.  Pustaka Aspose.PDF: Anda perlu menambahkan pustaka Aspose.PDF ke proyek Anda. Anda dapat mengunduhnya dari[Unduhan PDF Aspose](https://releases.aspose.com/pdf/net/) halaman, atau Anda dapat menginstalnya melalui NuGet Package Manager:
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. Pengetahuan Dasar C#: Panduan ini mengasumsikan Anda memiliki pemahaman yang wajar tentang C# dan pemrograman berorientasi objek.
+
+Sekarang setelah kita memiliki prasyaratnya, mari kita mulai dengan mengimpor paket-paket yang diperlukan.
+
+## Paket Impor
+
+Untuk mulai menggunakan Aspose.PDF dalam proyek Anda, Anda perlu menyertakan namespace yang relevan. Berikut cara melakukannya:
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Dokumen ini akan digunakan untuk menambahkan bagian dan tabel.
+Ruang nama ini akan memberi Anda akses ke fungsionalitas inti yang diperlukan untuk memanipulasi berkas PDF.
 
-## Langkah 3: Menambahkan bagian dan tabel
-Sekarang kita akan menambahkan bagian ke dokumen PDF kita dan membuat tabel di dalam bagian ini.
+Mari kita uraikan proses ini menjadi beberapa langkah yang dapat dikelola. Kita akan membuat dokumen PDF, menambahkan tabel, dan menentukan apakah tabel akan dipecah ke halaman baru saat menambahkan lebih banyak baris.
+
+## Langkah 1: Siapkan Direktori Dokumen Anda
+
+Sebelum Anda mulai membuat kode, tentukan lokasi penyimpanan hasil PDF Anda. Ini penting karena di sinilah Anda akan menemukan dokumen yang dihasilkan nanti.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ganti dengan direktori Anda.
 ```
 
-Kami juga menentukan margin atas 300 poin untuk tabel. Anda dapat menyesuaikan nilai ini sesuai dengan kebutuhan Anda.
+## Langkah 2: Buat Instansiasi Dokumen PDF
 
-## Langkah 4: Pengaturan Tabel
-Pada langkah ini, kami mengonfigurasi properti tabel, seperti lebar dan batas kolom.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-Di sini kita tentukan lebar kolom tabel dan batas sel. Anda dapat menyesuaikan nilai-nilai ini sesuai dengan keinginan Anda.
-
-## Langkah 5: Tambahkan baris dan sel ke tabel
-Sekarang kita akan membuat baris dan sel dalam tabel menggunakan loop.
+ Berikutnya, Anda akan membuat instance baru dari`Document` kelas dari pustaka Aspose.PDF. Di sinilah semua keajaiban PDF Anda akan terjadi!
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-Di sini kita membuat 17 baris dalam tabel dan menambahkan tiga sel ke setiap baris. Anda dapat menyesuaikan gesper sesuai dengan kebutuhan Anda.
-
-## Langkah 6: Menentukan Pemutusan Tabel
-Sekarang kita akan menentukan apakah tabel melebihi margin halaman dengan membandingkan tinggi halaman dengan tinggi total objek dalam tabel.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-Kami menghitung tinggi halaman dan tinggi total objek dengan memperhitungkan margin. Jika selisihnya 10 atau kurang, tabel melebihi margin halaman.
-
-## Langkah 7: Menyimpan dokumen PDF
-Terakhir, kami menyimpan dokumen PDF dengan hasilnya.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-Pastikan untuk menentukan direktori dokumen yang benar. File PDF yang dihasilkan akan disimpan dengan pemisah tabel yang ditentukan.
-
-### Contoh kode sumber untuk Menentukan Pemisahan Tabel menggunakan Aspose.PDF untuk .NET
-
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Membuat instance kelas PDF objek
 Document pdf = new Document();
-// Tambahkan bagian ke koleksi bagian dokumen PDF
+```
+
+## Langkah 3: Buat Halaman
+
+Setiap PDF memerlukan satu halaman. Berikut cara menambahkan halaman baru ke dokumen Anda.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Membuat instance objek tabel
+```
+
+## Langkah 4: Buat Instansiasi Tabel
+
+Sekarang, mari buat tabel sesungguhnya yang ingin Anda pantau untuk jeda.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// Tambahkan tabel dalam kumpulan paragraf bagian yang diinginkan
+table1.Margin.Top = 300; // Memberikan sedikit ruang di atas meja Anda.
+```
+
+## Langkah 5: Tambahkan Tabel ke Halaman
+
+Setelah tabel dibuat, langkah berikutnya adalah menambahkannya ke halaman yang sebelumnya kita buat.
+
+```csharp
 page.Paragraphs.Add(table1);
-// Diatur dengan lebar kolom tabel
-table1.ColumnWidths = "100 100 100";
-// Mengatur batas sel default menggunakan objek BorderInfo
+```
+
+## Langkah 6: Tentukan Properti Tabel
+
+Mari tentukan beberapa properti penting untuk tabel kita, seperti lebar dan batas kolom.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // Tiap kolom lebarnya 100 satuan.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Tetapkan batas tabel menggunakan objek BorderInfo lain yang disesuaikan
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Buat objek MarginInfo dan atur margin kiri, bawah, kanan dan atasnya
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// Tetapkan bantalan sel default ke objek MarginInfo
+```
+
+## Langkah 7: Mengatur Margin Sel
+
+Kita perlu memastikan bahwa sel-sel kita memiliki bantalan untuk penyajian yang lebih baik. Berikut cara mengaturnya.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // Atas, Kiri, Kanan, Bawah
 table1.DefaultCellPadding = margin;
-// Jika Anda meningkatkan penghitung menjadi 17, meja akan rusak
-// Karena tidak dapat ditampung lagi di halaman ini
+```
+
+## Langkah 8: Tambahkan Baris ke Tabel
+
+Sekarang kita siap untuk menambahkan baris! Kita akan mengulang dan membuat 17 baris. (Mengapa 17? Nah, di situlah kita akan melihat tabelnya!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//Buat baris dalam tabel dan kemudian sel dalam baris
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// Dapatkan informasi Tinggi Halaman
+```
+
+## Langkah 9: Dapatkan Tinggi Halaman
+
+Untuk memeriksa apakah tabel kita akan pas, kita perlu mengetahui tinggi halaman kita. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// Dapatkan informasi tinggi total margin Atas & Bawah Halaman,
-// Margin atas tabel dan tinggi tabel.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// Menampilkan Tinggi Halaman, Tinggi Tabel, Margin Atas Tabel dan Atas Halaman
-// Dan Informasi margin bawah
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## Langkah 10: Hitung Tinggi Total Objek
 
-// Periksa apakah kita mengurangi jumlah Margin atas halaman + Margin bawah halaman
-// + Margin atas tabel dan tinggi tabel dari Tinggi halaman dan kurang
-// Dari 10 (rata-rata baris bisa lebih besar dari 10)
+Sekarang, mari hitung tinggi total semua objek (margin halaman, margin tabel, dan tinggi tabel) pada halaman.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## Langkah 11: Menampilkan Informasi Ketinggian
+
+Sangat membantu untuk melihat beberapa informasi debug, bukan? Mari kita cetak semua informasi ketinggian yang relevan ke konsol.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## Langkah 12: Periksa Kondisi Pecahnya Tabel
+
+Terakhir, kami ingin melihat apakah menambahkan baris lagi akan menyebabkan tabel terbagi ke halaman lain.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Jika nilainya kurang dari 10, maka tampilkan pesan.
-	//Yang menunjukkan bahwa baris lain tidak dapat ditempatkan dan jika kita menambahkan yang baru
-	// Baris, tabel akan rusak. Tergantung pada nilai tinggi baris.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## Langkah 13: Simpan Dokumen PDF
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Simpan dokumen pdf
+Setelah semua kerja keras itu, mari simpan dokumen PDF ke direktori yang Anda tentukan.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## Langkah 14: Pesan Konfirmasi
+
+Untuk memberi tahu Anda bahwa semuanya berjalan lancar, mari berikan pesan konfirmasi.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## Kesimpulan
-Dalam tutorial ini, kita mempelajari cara menentukan pemisah tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan panduan langkah demi langkah ini untuk memeriksa apakah tabel melebihi margin halaman dalam proyek C# Anda sendiri.
 
-### FAQ untuk menentukan jeda tabel dalam file PDF
+Dalam panduan ini, kami telah mencermati cara menentukan kapan tabel dalam dokumen PDF akan rusak saat menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah mengidentifikasi keterbatasan ruang dan mengelola tata letak PDF Anda dengan lebih baik. Dengan latihan, Anda akan memperoleh keterampilan untuk memanipulasi tabel secara efektif dan membuat PDF yang bagus seperti seorang profesional. Jadi, mengapa tidak mencobanya dan melihat bagaimana cara kerjanya untuk Anda?
 
-#### T: Apa tujuan menentukan jeda tabel dalam dokumen PDF?
+## Pertanyaan yang Sering Diajukan
 
-A: Tujuan menentukan pemisah tabel dalam dokumen PDF adalah untuk memeriksa apakah tabel melebihi margin halaman. Ini memastikan bahwa konten tabel ditampilkan dengan benar dalam ruang halaman yang tersedia. Dengan mendeteksi pemisah tabel, Anda dapat menangani luapan konten dan menyesuaikan tata letak tabel sebagaimana mestinya.
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka tangguh yang memungkinkan pengembang untuk membuat, mengonversi, dan memanipulasi dokumen PDF langsung di aplikasi .NET mereka.
 
-#### T: Bagaimana cara menyesuaikan margin atas tabel?
+### Bisakah saya mendapatkan uji coba Aspose.PDF gratis?
+ Ya! Anda dapat mengunduh[uji coba gratis](https://releases.aspose.com/) untuk menjelajahi fitur-fiturnya sebelum melakukan pembelian.
 
- A: Dalam kode sumber C# yang disediakan, Anda dapat menyesuaikan margin atas tabel dengan mengubah nilai`table1.Margin.Top`properti. Tambah atau kurangi nilai sesuai kebutuhan untuk mengatur margin atas yang diinginkan untuk tabel.
+### Bagaimana saya dapat menemukan dukungan untuk Aspose.PDF?
+ Anda dapat menemukan informasi bermanfaat dan mendapatkan dukungan dari komunitas Aspose di[forum dukungan](https://forum.aspose.com/c/pdf/10).
 
-#### T: Dapatkah saya menyesuaikan tampilan tabel, seperti warna sel dan ukuran font?
+### Apa yang terjadi jika saya membutuhkan lebih dari 17 baris dalam tabel saya?
+Jika Anda melampaui ruang yang tersedia, tabel Anda tidak akan muat di halaman, dan Anda harus mengambil tindakan yang tepat untuk memformatnya dengan benar.
 
-A: Ya, Anda dapat menyesuaikan tampilan tabel dan sel-selnya menggunakan berbagai properti dan metode yang disediakan oleh Aspose.PDF untuk .NET. Misalnya, Anda dapat mengubah warna latar belakang sel, ukuran font, jenis font, perataan teks, dan banyak lagi. Lihat dokumentasi resmi untuk informasi lebih lanjut tentang cara menyesuaikan tampilan tabel.
-
-#### T: Apa yang terjadi jika tabel melampaui margin halaman?
-
-J: Jika tabel melebihi margin halaman, hal itu dapat mengakibatkan konten terpotong atau tumpang tindih, sehingga dokumen PDF menjadi kurang mudah dibaca dan terorganisasi. Dengan mendeteksi jeda tabel dan menangani luapan, Anda dapat memastikan bahwa konten tetap ditampilkan dengan benar dalam area halaman yang tersedia.
-
-#### T: Dapatkah saya menentukan pemisah tabel untuk beberapa tabel dalam dokumen PDF yang sama?
-
-A: Ya, Anda dapat menentukan pemisah tabel untuk beberapa tabel dalam dokumen PDF yang sama. Cukup ulangi langkah-langkah untuk setiap tabel yang ingin Anda analisis dan sesuaikan tata letak tabel seperlunya untuk mencegah konten meluap.
+### Di mana saya dapat membeli pustaka Aspose.PDF?
+ Anda dapat membeli perpustakaan dari[halaman pembelian](https://purchase.aspose.com/buy).

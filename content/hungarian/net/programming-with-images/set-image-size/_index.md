@@ -16,7 +16,7 @@ PDF-ekkel való munka sok alkalmazásban általános követelmény, és a PDF-f�
 
 Mielőtt belemerülnénk a kódba, néhány dolgot meg kell határoznia, hogy kövesse ezt az oktatóanyagot.
 
-1.  Aspose.PDF for .NET: Győződjön meg arról, hogy az Aspose.PDF könyvtár legújabb verziója telepítve van. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET: Győződjön meg arról, hogy az Aspose.PDF könyvtár legújabb verziója telepítve van. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 2. .NET-keretrendszer vagy .NET Core: Győződjön meg arról, hogy a .NET-keretrendszer vagy a .NET Core beállított munkakörnyezete van.
 3. Alapvető C# ismerete: A C#-t fogjuk használni programozási nyelvként, ezért ennek ismerete elengedhetetlen.
 4. Mintakép: Szüksége lesz egy mintaképre a PDF-be ágyazáshoz. Bármilyen képet használhat, de győződjön meg arról, hogy az elérhető a projektkönyvtárban.

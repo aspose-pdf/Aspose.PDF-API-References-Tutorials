@@ -24,7 +24,7 @@ Több oka is lehet annak, ha el akarja távolítani a könyvjelzőket egy PDF-f�
 
 Mielőtt elkezdené, be kell állítania az Aspose.PDF for Java fájlt a Java projektben. A kezdéshez kövesse az alábbi lépéseket:
 
-1.  Az Aspose.PDF letöltése Java-hoz: A könyvtár letölthető az Aspose webhelyéről. Használja az alábbi linket:[Aspose.PDF Java letöltéshez](https://releases.aspose.com/pdf/java/).
+1.  Az Aspose.PDF letöltése Java-hoz: A könyvtár letölthető az Aspose webhelyéről. Használja a következő linket:[Aspose.PDF Java letöltéshez](https://releases.aspose.com/pdf/java/).
 
 2. Adja hozzá a JAR-t a projekthez: A letöltött JAR-fájlt vegye fel a Java-projekt osztályútvonalába.
 

@@ -2,271 +2,201 @@
 title: Các thành phần cấu trúc liên kết
 linktitle: Các thành phần cấu trúc liên kết
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Hướng dẫn từng bước sử dụng các thành phần cấu trúc liên kết với Aspose.PDF cho .NET. Tạo siêu liên kết trong tài liệu PDF của bạn.
+description: Tìm hiểu cách tạo các thành phần cấu trúc liên kết trong PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để thêm liên kết có thể truy cập, hình ảnh và xác thực tuân thủ.
 type: docs
 weight: 120
 url: /vi/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-Trong hướng dẫn từng bước này, chúng tôi sẽ chỉ cho bạn cách sử dụng các thành phần cấu trúc liên kết với Aspose.PDF cho .NET. Aspose.PDF là một thư viện mạnh mẽ cho phép bạn tạo và thao tác các tài liệu PDF theo chương trình. Các thành phần cấu trúc liên kết cho phép bạn thêm siêu liên kết vào tài liệu PDF của mình, cho phép người dùng nhấp vào các liên kết và điều hướng đến các tài nguyên trực tuyến.
+## Giới thiệu
 
-Hãy cùng tìm hiểu mã và cách sử dụng các thành phần cấu trúc liên kết với Aspose.PDF cho .NET.
+Việc tạo và quản lý các thành phần cấu trúc liên kết trong PDF có thể rất quan trọng đối với các tài liệu yêu cầu khả năng truy cập và điều hướng mượt mà. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn cách thực hiện việc này bằng Aspose.PDF cho .NET. Nếu bạn mới làm quen với Aspose.PDF hoặc thao tác PDF nói chung, đừng lo lắng. Tôi sẽ giải thích chi tiết từng bước để bạn có thể dễ dàng theo dõi!
 
-## Điều kiện tiên quyết
+## Điều kiện tiên quyết  
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Trước khi đi sâu vào mã hóa, chúng ta hãy giải quyết một số vấn đề trước. Đây là những yêu cầu cơ bản để đảm bảo trải nghiệm phát triển suôn sẻ.
 
-1. Thư viện Aspose.PDF cho .NET được cài đặt.
-2. Kiến thức cơ bản về ngôn ngữ lập trình C#.
+1.  Aspose.PDF cho .NET: Bạn có thể tải xuống phiên bản mới nhất[đây](https://releases.aspose.com/pdf/net/).
+2. Môi trường phát triển .NET: Cho dù là Visual Studio hay bất kỳ IDE nào tương thích với .NET, hãy cài đặt và sử dụng ngay.
+3.  Giấy phép Aspose: Bạn có thể sử dụng phiên bản dùng thử miễn phí của Aspose.PDF[đây](https://releases.aspose.com/) hoặc có được một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
+4. Kiến thức cơ bản về C#: Chúng ta sẽ làm việc với một số mã C#, vì vậy hiểu được những kiến thức cơ bản sẽ giúp mọi việc dễ dàng hơn nhiều.
 
-## Bước 1: Thiết lập môi trường
+## Nhập gói
 
-Để bắt đầu, hãy mở môi trường phát triển C# của bạn và tạo một dự án mới. Đảm bảo bạn đã thêm tham chiếu đến thư viện Aspose.PDF cho .NET vào dự án của bạn.
+Bạn sẽ cần nhập một số gói trước khi viết mã cho các thành phần cấu trúc liên kết. Bắt đầu bằng cách tham chiếu các thư viện Aspose.PDF cần thiết trong dự án của bạn:
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 2: Tạo tài liệu
+Những lệnh nhập này cho phép chúng ta làm việc với tài liệu PDF, thêm thẻ và quản lý các thành phần cấu trúc.
 
- Bước đầu tiên là tạo một tài liệu PDF mới bằng cách sử dụng`Document` lớp học.
+Bây giờ chúng ta sẽ tạo một tài liệu PDF với nhiều loại cấu trúc liên kết khác nhau và từng bước sẽ được chia nhỏ để giúp bạn hiểu rõ hơn về quy trình.
 
-```csharp
-// Tạo tài liệu PDF
-Document document = new Document();
-```
+## Bước 1: Khởi tạo Tài liệu  
 
-## Bước 3: Làm việc với nội dung được gắn thẻ
-
-Sau đó, chúng ta sẽ lấy nội dung được gắn thẻ của tài liệu để làm việc.
+Hãy bắt đầu bằng cách tạo một tài liệu PDF mới và thiết lập nội dung được gắn thẻ để dễ truy cập.
 
 ```csharp
-// Nhận nội dung được gắn thẻ của tài liệu
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Bước 4: Đặt tiêu đề và ngôn ngữ cho tài liệu
-
-Bây giờ chúng ta có thể đặt tiêu đề và ngôn ngữ cho tài liệu.
-
-```csharp
-// Xác định tiêu đề và ngôn ngữ của tài liệu
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Bước 5: Thêm các thành phần cấu trúc liên kết
-
-Bây giờ chúng ta hãy thêm các thành phần cấu trúc liên kết vào tài liệu của mình. Chúng ta sẽ tạo các loại liên kết khác nhau, bao gồm liên kết văn bản đơn giản, liên kết hình ảnh và liên kết nhiều dòng.
-```csharp
-// Lấy phần tử cấu trúc gốc (phần tử cấu trúc tài liệu)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Thêm một đoạn văn có siêu liên kết
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// Thêm một đoạn văn có siêu liên kết chứa văn bản phong phú
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// Thêm một đoạn văn có siêu liên kết chứa văn bản được định dạng một phần
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// Thêm một đoạn văn có siêu liên kết nhiều dòng
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// Thêm một đoạn văn có siêu liên kết chứa hình ảnh
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## Bước 6: Lưu tài liệu PDF đã gắn thẻ
-
-Cuối cùng, chúng ta lưu tài liệu PDF đã gắn thẻ.
-
-```csharp
-// Lưu tài liệu PDF đã gắn thẻ
-document. Save(outFile);
-```
-
-## Bước 7: Kiểm tra sự tuân thủ PDF/UA
-
- Chúng tôi cũng có thể kiểm tra tài liệu để tuân thủ PDF/UA bằng cách sử dụng`Validate` phương pháp của`Document` lớp học.
-
-```csharp
-// Kiểm tra sự tuân thủ PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### Mã nguồn mẫu cho các thành phần cấu trúc liên kết sử dụng Aspose.PDF cho .NET 
-```csharp
-
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//Tạo tài liệu và nhận nội dung PDF được gắn thẻ
+// Tạo một tài liệu PDF mới
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// Thiết lập Tiêu đề và Ngôn ngữ Bản chất cho tài liệu
+// Lấy lại giao diện TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ Ở đây, chúng tôi đang khởi tạo`Document` đối tượng, đại diện cho tệp PDF của chúng tôi. Chúng tôi cũng lấy lại`TaggedContent` giao diện, cho phép chúng ta thêm các thành phần cấu trúc như đoạn văn, liên kết và hình ảnh.
+
+## Bước 2: Đặt Tiêu đề và Ngôn ngữ  
+
+Mỗi tệp PDF phải có tiêu đề và cài đặt ngôn ngữ, đặc biệt nếu bạn muốn tuân thủ các tiêu chuẩn PDF/UA.
+
+```csharp
+// Đặt tiêu đề và ngôn ngữ cho tài liệu
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+Bước này đảm bảo rằng tệp PDF của bạn có tiêu đề có ý nghĩa và đặt ngôn ngữ thành tiếng Anh (`en-US`). Điều này rất quan trọng đối với khả năng truy cập và đảm bảo trình đọc màn hình hoặc các công nghệ hỗ trợ khác có thể hiểu chính xác tài liệu của bạn.
 
-// Lấy phần tử cấu trúc gốc (Phần tử cấu trúc tài liệu)
+## Bước 3: Tạo và Thêm Đoạn văn  
+
+Ở bước này, chúng ta sẽ thêm các đoạn văn để chứa các thành phần liên kết.
+
+```csharp
+// Tạo phần tử gốc
 StructureElement rootElement = taggedContent.RootElement;
+
+// Tạo một đoạn văn và thêm nó vào phần tử gốc
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+Chúng tôi tạo một phần tử cấu trúc gốc, về cơ bản là vùng chứa cấp cao nhất cho tất cả các phần tử khác. Sau đó, chúng tôi tạo một đoạn văn (`p1`) và thêm nó vào phần tử gốc.
+
+## Bước 4: Thêm một liên kết đơn giản  
+
+Bây giờ chúng ta hãy thêm một siêu liên kết cơ bản trỏ tới Google.
+
+```csharp
+// Tạo một phần tử liên kết và thêm nó vào đoạn văn
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// Đặt siêu liên kết và văn bản cho liên kết
 link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+Trong bước này, chúng tôi đã tạo một phần tử liên kết, đặt siêu liên kết của nó thành "http://google.com" và cung cấp văn bản ("Google") cho liên kết. Chúng tôi cũng đã thêm một mô tả thay thế để đảm bảo khả năng truy cập.
+
+## Bước 5: Thêm liên kết với Spans  
+
+Chúng ta cũng có thể tạo liên kết với nhiều khoảng văn bản khác nhau.
+
+```csharp
+// Tạo một đoạn văn khác
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// Tạo liên kết với phần tử span
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+Ở đây, chúng tôi sử dụng phần tử span để bao quanh một phần văn bản trong liên kết, cho phép chúng tôi tùy chỉnh cách hiển thị một số phần nhất định của liên kết.
+
+## Bước 6: Liên kết đa dòng  
+
+Nếu văn bản liên kết của bạn quá dài thì sao? Đừng lo, bạn có thể chia thành nhiều dòng.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+Trong trường hợp này, chúng tôi đã tạo liên kết nhiều dòng bằng cách chỉ cần thiết lập giá trị văn bản dài và văn bản sẽ tự động ngắt dòng thành nhiều dòng.
+
+## Bước 7: Thêm hình ảnh vào liên kết  
+
+Cuối cùng, bạn cũng có thể thêm hình ảnh vào bên trong liên kết.
+
+```csharp
+// Tạo một đoạn văn mới và phần tử liên kết
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://google.com");
+
+// Thêm hình ảnh vào liên kết
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// Lưu tài liệu PDF có gắn thẻ
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+Bước này minh họa cách bạn có thể tăng cường liên kết của mình bằng hình ảnh. Trong trường hợp này, chúng tôi đã thêm biểu tượng Google bên trong liên kết. Chúng tôi cũng đảm bảo khả năng truy cập bằng cách đặt văn bản thay thế cho hình ảnh.
+
+## Bước 8: Xác thực PDF để tuân thủ  
+
+Nếu bạn muốn tuân thủ PDF/UA (một tiêu chuẩn về khả năng truy cập), bạn nên xác thực tài liệu của mình.
+
+```csharp
+// Lưu tài liệu PDF
 document.Save(outFile);
 
-// Kiểm tra sự tuân thủ PDF/UA
-document = new Document(outFile);
+// Xác thực tài liệu để tuân thủ PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## Phần kết luận
+  
+Chúng tôi đã lưu tài liệu và xác thực theo tiêu chuẩn PDF/UA, đảm bảo PDF đáp ứng các yêu cầu về khả năng truy cập.
 
-Xin chúc mừng! Bạn đã học cách sử dụng các thành phần cấu trúc liên kết với Aspose.PDF cho .NET. Bây giờ bạn có thể tạo siêu liên kết trong tài liệu PDF của mình, cho phép người dùng điều hướng đến các tài nguyên trực tuyến. Thử nghiệm và khám phá thêm các tính năng của Aspose.PDF để tạo tài liệu PDF tương tác và phong phú.
+## Phần kết luận  
 
-### Câu hỏi thường gặp
+Trong hướng dẫn này, chúng tôi đã đề cập đến cách tạo tài liệu PDF có cấu trúc bằng Aspose.PDF cho .NET. Từ việc thêm siêu liên kết cơ bản đến các cấu trúc phức tạp hơn như khoảng cách, liên kết nhiều dòng và thậm chí là hình ảnh, hướng dẫn này cung cấp nền tảng vững chắc để thao tác các thành phần liên kết trong PDF của bạn. Với lợi ích bổ sung là tuân thủ PDF/UA, giờ đây bạn đã có thể tạo PDF có thể truy cập và điều hướng.
 
-#### H: Các thành phần cấu trúc liên kết trong tài liệu PDF là gì và chúng tăng cường tính tương tác của tài liệu như thế nào?
+## Câu hỏi thường gặp
 
-A: Các thành phần cấu trúc liên kết trong tài liệu PDF được sử dụng để tạo siêu liên kết cho phép người dùng điều hướng đến các tài nguyên trực tuyến hoặc các vị trí cụ thể trong tài liệu. Các thành phần này tăng cường tính tương tác bằng cách cung cấp các liên kết có thể nhấp cho phép người dùng truy cập nội dung liên quan hoặc các trang web bên ngoài.
+### Tôi có thể thêm các cấu trúc phức tạp hơn như bảng vào bên trong liên kết không?  
+Không, liên kết chủ yếu dành cho văn bản và hình ảnh, nhưng bạn có thể nhúng các thành phần phức tạp ở gần đó.
 
-#### H: Các thành phần cấu trúc liên kết có thể mang lại lợi ích gì trong tài liệu PDF?
+### Xác thực PDF/UA có bắt buộc không?  
+Không phải lúc nào cũng vậy, nhưng điều này rất được khuyến khích nếu bạn quan tâm đến khả năng truy cập.
 
-A: Các thành phần cấu trúc liên kết nâng cao trải nghiệm của người dùng bằng cách làm cho tài liệu PDF mang tính tương tác. Chúng cung cấp quyền truy cập nhanh vào thông tin bổ sung, nội dung liên quan, trang web bên ngoài hoặc các phần cụ thể trong tài liệu, cải thiện khả năng điều hướng và tạo điều kiện thuận lợi cho việc truy xuất thông tin.
+### Điều gì xảy ra nếu đường dẫn tệp hình ảnh không đúng?  
+Tài liệu sẽ không hiển thị hình ảnh và có thể báo lỗi trong quá trình kết xuất.
 
-#### H: Tôi có thể tạo các loại siêu liên kết khác nhau bằng cách sử dụng các thành phần cấu trúc liên kết trong Aspose.PDF cho .NET không?
+### Tôi có thể định dạng văn bản trong liên kết không?  
+Có, bạn có thể áp dụng kiểu văn bản bằng cách sử dụng các phần tử span.
 
-A: Có, bạn có thể tạo nhiều loại siêu liên kết khác nhau bằng các thành phần cấu trúc liên kết. Aspose.PDF cho .NET cho phép bạn tạo siêu liên kết với văn bản thuần túy, văn bản phong phú, hình ảnh và mô tả nhiều dòng, mang lại tính linh hoạt trong cách bạn liên kết đến nội dung bên ngoài hoặc các vị trí trong tài liệu.
-
-#### H: Làm thế nào để thiết lập và khởi tạo các thành phần cấu trúc liên kết trong tài liệu PDF bằng Aspose.PDF cho .NET?
-
- A: Để sử dụng các thành phần cấu trúc liên kết, trước tiên bạn cần tạo một tài liệu PDF mới bằng cách sử dụng`Document` lớp. Sau đó, lấy nội dung được gắn thẻ bằng cách sử dụng`TaggedContent`thuộc tính của tài liệu. Từ đó, bạn có thể tạo và tùy chỉnh các thành phần cấu trúc liên kết và thêm chúng vào thành phần cấu trúc gốc.
-
-#### H: Làm thế nào tôi có thể tạo siêu liên kết văn bản đơn giản bằng cách sử dụng các thành phần cấu trúc liên kết?
- A: Bạn có thể tạo một siêu liên kết văn bản đơn giản bằng cách tạo một`LinkElement` và thiết lập của nó`Hyperlink` tài sản cho một`WebHyperlink` với URL bạn muốn liên kết đến. Bạn cũng có thể thiết lập văn bản hiển thị của liên kết bằng cách sử dụng`SetText` phương pháp.
-
-#### H: Có thể tạo siêu liên kết bằng hình ảnh bằng cách sử dụng các thành phần cấu trúc liên kết không?
-
- A: Có, bạn có thể tạo siêu liên kết với hình ảnh bằng cách sử dụng các thành phần cấu trúc liên kết. Bạn sẽ tạo một`LinkElement` và sau đó thêm một`FigureElement` có hình ảnh kèm theo. Điều này cho phép bạn tạo siêu liên kết dựa trên hình ảnh.
-
-#### H: Làm sao tôi có thể đảm bảo rằng tài liệu PDF có siêu liên kết của tôi tuân thủ tiêu chuẩn PDF/UA về khả năng truy cập?
-
- A: Aspose.PDF cho .NET cung cấp khả năng xác thực sự tuân thủ của tài liệu PDF của bạn với tiêu chuẩn PDF/UA bằng cách sử dụng`Validate` phương pháp của`Document`lớp. Điều này đảm bảo rằng các siêu liên kết của tài liệu có thể truy cập được đối với người dùng khuyết tật.
-
-#### H: Mô tả thay thế cho các thành phần cấu trúc liên kết là gì và tại sao chúng lại quan trọng?
-
-A: Mô tả thay thế (văn bản thay thế) cho các thành phần cấu trúc liên kết cung cấp mô tả văn bản của siêu liên kết. Những mô tả này rất cần thiết cho khả năng truy cập, cho phép người dùng khiếm thị hiểu mục đích của liên kết và đích đến của liên kết.
-
-#### H: Tôi có thể tùy chỉnh giao diện và hành vi của siêu liên kết được tạo bằng các thành phần cấu trúc liên kết không?
-
-A: Trong khi các thành phần cấu trúc liên kết chủ yếu tập trung vào việc tạo siêu liên kết, bạn có thể tùy chỉnh giao diện và hành vi của siêu liên kết hơn nữa bằng các tính năng khác do Aspose.PDF cung cấp cho .NET. Điều này bao gồm chỉ định màu sắc, kiểu dáng và hành động liên kết.
-
-#### H: Các thành phần cấu trúc liên kết góp phần làm cho tài liệu PDF trở nên tương tác và thân thiện hơn với người dùng như thế nào?
-
-A: Các thành phần cấu trúc liên kết chuyển đổi các tài liệu PDF tĩnh thành các trải nghiệm tương tác bằng cách thêm các siêu liên kết có thể nhấp. Tính tương tác này cải thiện sự tham gia của người dùng, cho phép điều hướng liền mạch giữa các nội dung liên quan và nâng cao khả năng sử dụng chung của tài liệu.
+### Có thể tạo liên kết tài liệu nội bộ không?  
+Hoàn toàn được! Bạn có thể liên kết đến các phần cụ thể trong cùng một tài liệu.

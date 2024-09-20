@@ -9,7 +9,7 @@ url: /fr/net/programming-with-bookmarks/get-bookmarks/
 ---
 ## Introduction
 
-Vous êtes-vous déjà retrouvé à parcourir un long document PDF, essayant désespérément de localiser une section spécifique ? Si c'est le cas, vous n'êtes pas seul ! Naviguer dans des fichiers PDF peut être un véritable casse-tête, surtout lorsqu'ils ne comportent pas de signets. Heureusement, avec Aspose.PDF pour .NET, vous pouvez facilement extraire des signets de vos fichiers PDF, ce qui rend vos documents plus conviviaux et accessibles. Dans ce tutoriel, nous vous expliquerons étape par étape le processus d'obtention de signets à partir d'un fichier PDF. Alors, prenez votre boisson préférée et plongeons-nous dans le vif du sujet !
+Vous êtes-vous déjà retrouvé à parcourir un long document PDF, essayant désespérément de localiser une section spécifique ? Si c'est le cas, vous n'êtes pas seul ! Naviguer dans des fichiers PDF peut être un véritable casse-tête, surtout lorsqu'ils ne comportent pas de signets. Heureusement, avec Aspose.PDF pour .NET, vous pouvez facilement extraire des signets de vos fichiers PDF, ce qui rend vos documents plus conviviaux et accessibles. Dans ce tutoriel, nous vous guiderons étape par étape dans le processus d'obtention de signets à partir d'un fichier PDF. Alors, prenez votre boisson préférée et plongeons-nous dans le vif du sujet !
 
 ## Prérequis
 

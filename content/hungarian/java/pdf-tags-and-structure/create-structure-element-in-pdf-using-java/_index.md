@@ -1,6 +1,6 @@
 ---
-title: Struktúraelem létrehozása PDF-ben Java segítségével
-linktitle: Struktúraelem létrehozása PDF-ben Java segítségével
+title: Struktúraelem létrehozása PDF-ben Java használatával
+linktitle: Struktúraelem létrehozása PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Ismerje meg, hogyan hozhat létre PDF szerkezeti elemeket Java nyelven az Aspose.PDF segítségével. Javítsa a PDF hozzáférhetőségét és a logikai tartalomáramlást.
 type: docs

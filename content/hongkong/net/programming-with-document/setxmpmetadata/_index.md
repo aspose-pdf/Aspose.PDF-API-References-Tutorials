@@ -31,7 +31,7 @@ using Aspose.Pdf;
 using System;
 ```
 
-現在，讓我們進入教學的核心部分：使用 Aspose.PDF for .NET 在 PDF 檔案中設定 XMP 元資料。我們會將其分解為多個步驟，以便於遵循。
+現在，讓我們進入本教學的核心部分：使用 Aspose.PDF for .NET 在 PDF 檔案中設定 XMP 元資料。我們會將其分解為多個步驟，以便於遵循。
 
 ## 第1步：設定目錄路徑
 
@@ -99,7 +99,7 @@ Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved 
 
 ## 結論
 
-現在你就得到它了！只要幾個簡單的步驟，我們就學會如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定 XMP 元資料。這是為 PDF 文件添加額外資訊的好方法，無論是建立日期、自訂屬性還是對文件重要的任何其他元資料。
+現在你就擁有了！只要幾個簡單的步驟，我們就學會如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定 XMP 元資料。這是為 PDF 文件添加額外資訊的好方法，無論是建立日期、自訂屬性還是對文件重要的任何其他元資料。
 
 
 ## 常見問題解答

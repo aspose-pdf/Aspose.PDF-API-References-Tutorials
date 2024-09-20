@@ -7,37 +7,57 @@ type: docs
 weight: 320
 url: /id/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-Dalam tutorial ini, kami akan menjelaskan cara menggunakan simbol yang dapat diganti di header dan footer dokumen PDF menggunakan pustaka Aspose.PDF untuk .NET. Kami akan membahas proses langkah demi langkah untuk membuat PDF, mengatur margin, menambahkan header dan footer dengan simbol yang dapat diganti, dan menyimpan PDF menggunakan kode sumber C# yang disediakan.
+## Perkenalan
+
+Saat bekerja dengan file PDF, ada kalanya Anda perlu menyesuaikan header dan footer dengan konten dinamis seperti nomor halaman, nama laporan, atau tanggal yang dibuat. Untungnya, Aspose.PDF for .NET menyederhanakan proses ini, memungkinkan Anda membuat PDF dengan simbol yang diperbarui secara otomatis di header dan footer, seperti nomor halaman atau detail pembuatan laporan. Artikel ini akan memandu Anda melalui proses langkah demi langkah untuk mengganti simbol di header dan footer menggunakan Aspose.PDF for .NET, dengan cara yang tidak hanya sederhana tetapi juga sangat efisien.
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Sebelum menyelami panduan langkah demi langkah, pastikan Anda memiliki hal berikut:
 
-- Pustaka Aspose.PDF untuk .NET terinstal.
-- Pemahaman dasar tentang pemrograman C#.
+-  Aspose.PDF untuk Pustaka .NET –[Unduh](https://releases.aspose.com/pdf/net/) atau dapatkan[uji coba gratis](https://releases.aspose.com/).
+- Visual Studio atau IDE C# apa pun yang terinstal di sistem Anda.
+- Pengetahuan dasar tentang pengembangan C# dan .NET.
+-  Sebuah sah[lisensi](https://purchase.aspose.com/temporary-license/) untuk Aspose.PDF, atau Anda dapat menggunakan versi uji coba.
 
-## Langkah 1: Siapkan Direktori Dokumen
+## Paket Impor
 
- Pertama, Anda perlu mengatur jalur ke direktori tempat Anda ingin menyimpan file PDF yang dihasilkan. Ganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke direktori yang Anda inginkan.
+Untuk memulai, Anda perlu mengimpor namespace yang diperlukan yang akan mengaktifkan fungsi Aspose.PDF untuk .NET. Berikut ini adalah impor yang diperlukan:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Langkah 2: Buat Dokumen dan Halaman PDF
+Ini penting untuk menangani pembuatan PDF, manipulasi teks, dan manajemen header/footer.
 
- Selanjutnya, kita membuat dokumen PDF baru dan menambahkan halaman ke dalamnya menggunakan`Document` kelas dan`Page` kelas dari pustaka Aspose.PDF.
+Mari kita uraikan contoh kode menjadi langkah-langkah yang mudah dipahami.
+
+## Langkah 1: Siapkan Dokumen dan Halaman
+
+Pertama, kita perlu menginisialisasi dokumen dan menambahkan halaman ke dalamnya. Ini menjadi dasar untuk menambahkan header dan footer.
 
 ```csharp
+// Siapkan direktori dokumen
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Inisialisasi objek dokumen
 Document doc = new Document();
+
+// Tambahkan halaman ke dokumen
 Page page = doc.Pages.Add();
 ```
 
-## Langkah 3: Tetapkan Margin
+ Di sini, kami menyiapkan dokumen PDF menggunakan`Document` kelas dan menambahkan halaman dengan`doc.Pages.Add()`Halaman ini akan memuat header, footer, dan konten lainnya.
 
- Kami mengatur margin untuk halaman menggunakan`MarginInfo` kelas. Sesuaikan nilai margin sesuai dengan kebutuhan Anda.
+## Langkah 2: Konfigurasikan Margin Halaman
+
+Berikutnya, kita akan menentukan margin untuk halaman guna memastikan konten kita tidak mencapai tepi halaman.
 
 ```csharp
+// Konfigurasikan margin
 MarginInfo marginInfo = new MarginInfo();
 marginInfo.Top = 90;
 marginInfo.Bottom = 50;
@@ -46,209 +66,142 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Langkah 4: Tambahkan Header dengan Simbol yang Dapat Diganti
+ Di sini, kami telah menentukan margin atas, bawah, kiri, dan kanan menggunakan`MarginInfo` kelas dan menerapkannya ke halaman menggunakan`page.PageInfo.Margin`.
 
- Kami menciptakan sebuah`HeaderFooter` objek untuk halaman dan tambahkan`TextFragment` dengan simbol-simbol yang dapat diganti.
+## Langkah 3: Membuat dan Mengonfigurasi Header
+
+Sekarang, mari buat header dan tambahkan ke halaman. Header akan menyertakan judul dan nama laporan.
 
 ```csharp
+// Buat tajuk
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
+
+// Mengatur margin header
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
-TextFragment t1 = new TextFragment("report title");
-// Tetapkan properti teks jika diinginkan
-t1.TextState.Font = FontRepository.FindFont("Arial");
-t1.TextState.FontSize = 16;
-t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t1.TextState.FontStyle = FontStyles.Bold;
-t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
-
-hfFirst.Paragraphs.Add(t1);
-
-// Tambahkan lebih banyak TextFragments atau sesuaikan sesuai kebutuhan
-```
-
-## Langkah 5: Tambahkan Footer dengan Simbol yang Dapat Diganti
-
- Demikian pula, kita membuat`HeaderFooter` objek untuk footer halaman dan tambahkan`TextFragment` objek dengan simbol yang dapat diganti.
-
-```csharp
-HeaderFooter hfFoot = new HeaderFooter();
-page.Footer = hfFoot;
-hfFoot.Margin.Left = 50;
-hfFoot.Margin.Right = 50;
-
-TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
-TextFragment t5 = new TextFragment("Page $p of $P");
-
-// Tambahkan lebih banyak TextFragments atau sesuaikan sesuai kebutuhan
-
-hfFoot.Paragraphs.Add(tab2);
-```
-
-## Langkah 6: Simpan Dokumen PDF
-
-Terakhir, kami menyimpan dokumen PDF ke berkas keluaran yang ditentukan.
-
-```csharp
-dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
-doc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
-```
-
-### Contoh kode sumber untuk Simbol yang Dapat Diganti di Header dan Footer menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-Page page = doc.Pages.Add();
-MarginInfo marginInfo = new MarginInfo();
-marginInfo.Top = 90;
-marginInfo.Bottom = 50;
-marginInfo.Left = 50;
-marginInfo.Right = 50;
-//Tetapkan instance marginInfo ke properti Margin dari sec1.PageInfo
-page.PageInfo.Margin = marginInfo;
-HeaderFooter hfFirst = new HeaderFooter();
-page.Header = hfFirst;
-hfFirst.Margin.Left = 50;
-hfFirst.Margin.Right = 50;
-// Buat paragraf Teks yang akan menyimpan konten untuk ditampilkan sebagai header
+// Tambahkan judul ke header
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
 t1.TextState.FontStyle = FontStyles.Bold;
 t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
 hfFirst.Paragraphs.Add(t1);
+
+// Tambahkan nama laporan ke header
 TextFragment t2 = new TextFragment("Report_Name");
 t2.TextState.Font = FontRepository.FindFont("Arial");
-t2.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
+t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 hfFirst.Paragraphs.Add(t2);
-// Buat objek HeaderFooter untuk bagian tersebut
+```
+
+ Kami telah menambahkan dua`TextFragment` objek ke header: satu untuk judul laporan dan satu lagi untuk nama laporan. Teks diberi gaya menggunakan`TextState` properti seperti font, ukuran, dan perataan.
+
+## Langkah 4: Membuat dan Mengonfigurasi Footer
+
+Sekarang saatnya menyiapkan footer, yang akan memuat konten dinamis seperti nomor halaman dan tanggal pembuatan.
+
+```csharp
+// Buat footer
 HeaderFooter hfFoot = new HeaderFooter();
-// Mengatur objek HeaderFooter ke footer ganjil & genap
 page.Footer = hfFoot;
+
+// Mengatur margin footer
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Tambahkan paragraf teks yang berisi nomor halaman saat ini dari total jumlah halaman
+
+// Tambahkan konten footer
 TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
+TextFragment t4 = new TextFragment("Report Name");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Membuat instance objek tabel
+```
+
+Di footer, kami menyertakan fragmen untuk tanggal pembuatan, nama laporan, dan nomor halaman dinamis (`$p` Dan`$P` mewakili nomor halaman saat ini dan jumlah total halaman, masing-masing).
+
+## Langkah 5: Buat Tabel di Footer
+
+Anda juga dapat menambahkan elemen yang lebih kompleks seperti tabel di footer untuk mengatur data Anda dengan lebih baik.
+
+```csharp
+// Buat tabel untuk footer
 Table tab2 = new Table();
-// Tambahkan tabel dalam kumpulan paragraf bagian yang diinginkan
 hfFoot.Paragraphs.Add(tab2);
-// Diatur dengan lebar kolom tabel
 tab2.ColumnWidths = "165 172 165";
-//Buat baris dalam tabel dan kemudian sel dalam baris
+
+// Buat baris dan sel untuk tabel
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Mengatur perataan vertikal teks menjadi rata tengah
+
+// Mengatur perataan untuk setiap sel
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
+
+// Tambahkan konten ke sel tabel
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total untuk Java adalah kompilasi dari setiap komponen Java yang ditawarkan oleh Aspose. Dikompilasi setiap hari untuk memastikannya berisi versi terbaru dari setiap komponen Java kami. #$NL " + "Dengan menggunakan Aspose.Total untuk pengembang Java, Anda dapat membuat berbagai aplikasi. #$NL #$NL #$NP" + "Aspose.Total untuk Java adalah kompilasi dari setiap komponen Java yang ditawarkan oleh Aspose. Dikompilasi setiap hari untuk memastikannya berisi versi terbaru dari setiap komponen Java kami. #$NL " + "Dengan menggunakan Aspose.Total untuk pengembang Java, Anda dapat membuat berbagai aplikasi. #$NL #$NL #$NP" + "Aspose.Total untuk Java adalah kompilasi dari setiap komponen Java yang ditawarkan oleh Aspose. Dikompilasi setiap hari untuk memastikannya berisi versi terbaru dari setiap komponen Java kami. #$NL " + "Penggunaan Aspose.Total bagi pengembang Java dapat membuat berbagai macam aplikasi. #$NL #$NL"))
+```
+
+Blok kode ini membuat tabel 3 kolom di footer, dengan setiap kolom berisi informasi berbeda, seperti tanggal pembuatan, nama laporan, dan nomor halaman.
+
+## Langkah 6: Tambahkan Konten ke Halaman
+
+Selain header dan footer, Anda dapat menambahkan konten ke badan halaman PDF. Di sini, kami menambahkan tabel dengan beberapa teks pengganti.
+
+```csharp
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
-table.DefaultCellPadding = new MarginInfo();
-table.DefaultCellPadding.Top = 10;
-table.DefaultCellPadding.Bottom = 10;
-// Tambahkan tabel dalam kumpulan paragraf bagian yang diinginkan
 page.Paragraphs.Add(table);
-// Mengatur batas sel default menggunakan objek BorderInfo
-table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Tetapkan batas tabel menggunakan objek BorderInfo lain yang disesuaikan
-table.Border = new BorderInfo(BorderSide.All, 1f);
-table.RepeatingRowsCount = 1;
-//Buat baris dalam tabel dan kemudian sel dalam baris
-Row row1 = table.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-const string CRLF = "\r\n";
+
+// Tambahkan konten tabel
 for (int i = 0; i <= 10; i++)
 {
-	Row row = table.Rows.Add();
-	row.IsRowBroken = true;
-	for (int c = 0; c <= 2; c++)
-	{
-		Cell c1;
-		if (c == 2)
-			c1 = row.Cells.Add("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a" + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "Using Aspose.Total for Java developers can create a wide range of applications.");
-		else
-			c1 = row.Cells.Add("item1" + c);
-		c1.Margin = new MarginInfo();
-		c1.Margin.Left = 30;
-		c1.Margin.Top = 10;
-		c1.Margin.Bottom = 10;
-	}
+    Row row = table.Rows.Add();
+    for (int c = 0; c <= 2; c++)
+    {
+        Cell cell = row.Cells.Add("Content " + c);
+        cell.Margin = new MarginInfo { Left = 30, Top = 10, Bottom = 10 };
+    }
 }
+```
+
+Kode ini menambahkan tabel sederhana dengan tiga kolom ke halaman. Anda dapat memodifikasinya sesuai dengan kebutuhan spesifik Anda.
+
+## Langkah 7: Simpan PDF
+
+Setelah semuanya disiapkan, langkah terakhir adalah menyimpan dokumen PDF ke lokasi yang Anda inginkan.
+
+```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
+Console.WriteLine("Symbols replaced successfully in header and footer. File saved at " + dataDir);
 ```
+
+ Anda menentukan jalur file dan menyimpan dokumen menggunakan`doc.Save()`Selesai! Anda telah berhasil membuat PDF dengan header dan footer yang disesuaikan.
 
 ## Kesimpulan
 
-Dalam tutorial ini, Anda telah mempelajari cara menggunakan simbol yang dapat diganti di header dan footer dokumen PDF menggunakan pustaka Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah dan menjalankan kode C# yang disediakan, Anda dapat membuat PDF, mengatur margin, menambahkan header dan footer dengan simbol yang dapat diganti, dan menyimpan PDF.
+Mengganti simbol di header dan footer menggunakan Aspose.PDF untuk .NET tidak hanya mudah tetapi juga ampuh. Dengan mengikuti panduan langkah demi langkah di atas, Anda dapat dengan mudah menyesuaikan PDF Anda dengan konten dinamis, seperti nomor halaman, nama laporan, dan tanggal. Metode ini sangat fleksibel, memungkinkan Anda untuk menyisipkan tabel, menyesuaikan format, dan mengontrol tata letak agar sesuai dengan kebutuhan spesifik Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan dari tutorial "Simbol yang Dapat Diganti di Header Footer"?
+### Bisakah saya menyesuaikan font untuk header dan footer?  
+Ya, Anda dapat sepenuhnya menyesuaikan font, ukuran, warna, dan gaya untuk teks di header dan footer.
 
-A: Tutorial "Simbol yang Dapat Diganti di Header dan Footer" bertujuan untuk memandu Anda melalui proses penggunaan pustaka Aspose.PDF untuk .NET guna menambahkan simbol yang dapat diganti ke header dan footer dokumen PDF. Simbol yang dapat diganti memungkinkan Anda mengganti placeholder tertentu secara dinamis dengan nilai aktual saat membuat PDF.
+### Bagaimana cara menambahkan gambar ke header dan footer?  
+ Anda dapat menggunakan`ImageStamp` untuk menyisipkan gambar ke dalam header dan footer Anda.
 
-#### T: Apa saja simbol yang dapat diganti dalam konteks header dan footer PDF?
+### Apakah mungkin untuk menambahkan hyperlink di header atau footer?  
+ Ya, Anda bisa menggunakannya`TextFragment` dengan hyperlink dengan mengatur`Hyperlink` milik.
 
-A: Simbol yang dapat diganti adalah tempat penampung yang dapat Anda sisipkan ke dalam header dan footer dokumen PDF. Simbol ini berfungsi sebagai tempat penampung dinamis untuk nilai yang dapat diisi saat runtime, seperti nomor halaman, tanggal, dan informasi khusus.
+### Dapatkah saya menggunakan header yang berbeda untuk halaman ganjil dan genap?  
+Ya, Aspose.PDF memungkinkan Anda menentukan header dan footer yang berbeda untuk halaman ganjil dan genap.
 
-#### T: Mengapa saya ingin menggunakan simbol yang dapat diganti dalam header dan footer PDF?
-
-A: Simbol yang dapat diganti di header dan footer berguna saat Anda ingin menyertakan informasi dinamis dalam dokumen PDF Anda, seperti nomor halaman, tanggal, atau data variabel lainnya yang dapat berubah saat dokumen dibuat.
-
-#### T: Bagaimana cara mengatur margin untuk halaman PDF?
-
- A: Anda dapat mengatur margin untuk halaman PDF menggunakan`MarginInfo` kelas dan menugaskannya ke`Margin` milik`PageInfo` halaman. Sesuaikan nilai margin sesuai kebutuhan.
-
-#### T: Bagaimana cara menambahkan simbol yang dapat diganti ke header dan footer?
-
- A: Anda dapat menambahkan simbol yang dapat diganti dengan membuat`HeaderFooter` objek untuk header dan footer halaman. Kemudian, Anda dapat menambahkan`TextFragment`objek dengan teks yang diinginkan, termasuk simbol yang dapat diganti, ke`Paragraphs` koleksi dari`HeaderFooter` obyek.
-
-#### T: Dapatkah saya menyesuaikan tampilan simbol yang dapat diganti?
-
- A: Ya, Anda dapat menyesuaikan tampilan simbol yang dapat diganti dengan memodifikasi properti`TextFragment` objek yang berisi simbol. Anda dapat mengatur properti seperti font, ukuran font, warna, perataan, dan spasi baris.
-
-#### T: Simbol pengganti apa saja yang bisa saya gunakan?
-
-A: Anda dapat menggunakan berbagai simbol yang dapat diganti, seperti:
-
-- `$p`: Nomor halaman saat ini.
-- `$P`: Jumlah total halaman.
-- `$d`Tanggal saat ini.
-- `$t`: Waktu saat ini.
-- Tempat penampung khusus yang Anda tentukan.
-
-#### T: Dapatkah saya menyertakan teks dan format lain di sekitar simbol yang dapat diganti?
-
- A: Ya, Anda dapat menyertakan teks dan format lain di sekitar simbol yang dapat diganti dalam`TextFragment` objek. Hal ini memungkinkan Anda membuat header dan footer yang lebih kompleks yang menggabungkan konten dinamis dan statis.
-
-#### T: Bagaimana cara menyimpan dokumen PDF yang dihasilkan?
-
- A: Untuk menyimpan dokumen PDF yang dihasilkan, Anda dapat menggunakan`Save` metode dari`Document`class. Berikan jalur dan nama file output yang diinginkan sebagai argumen.
-
-#### T: Apakah Lisensi Aspose yang valid diperlukan untuk tutorial ini?
-
-A: Ya, Lisensi Aspose yang valid diperlukan untuk menjalankan kode dengan sukses dalam tutorial ini. Anda dapat memperoleh lisensi penuh atau lisensi sementara 30 hari dari situs web Aspose.
+### Bagaimana cara menyesuaikan posisi header dan footer?  
+Anda dapat menyesuaikan margin dan properti perataan untuk mengontrol posisi header dan footer Anda.

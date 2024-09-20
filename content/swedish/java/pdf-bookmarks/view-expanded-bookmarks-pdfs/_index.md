@@ -51,7 +51,7 @@ pdfDocument.setPageMode(PageMode.UseOutlines);
 ```
 
 ### Steg 5: Spara den modifierade PDF-filen
-Slutligen, spara den modifierade PDF:en:
+Slutligen, spara den ändrade PDF:en:
 
 ```java
 pdfDocument.save("output.pdf");

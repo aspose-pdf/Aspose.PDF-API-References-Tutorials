@@ -84,7 +84,7 @@ I det här utdraget itererar vi genom varje artefakt och kontrollerar om dess un
 
 ## Steg 5: Mata ut resultatet
 
-Äntligen är det dags att se hur många vattenstämplar vi har upptäckt i dokumentet. Låt oss skriva ut det härliga numret till konsolen:
+Äntligen är det dags att se hur många vattenstämplar vi har upptäckt i dokumentet. Låt oss skriva ut det härliga numret på konsolen:
 
 ```csharp
 Console.WriteLine("Page contains " + count + " watermarks");

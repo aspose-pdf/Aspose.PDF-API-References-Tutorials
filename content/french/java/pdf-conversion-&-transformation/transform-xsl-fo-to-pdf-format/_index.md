@@ -76,4 +76,4 @@ Absolument ! Aspose.PDF pour Java offre de nombreuses options de personnalisatio
 
 ## Conclusion
 
-La conversion sans effort de documents XSL-FO au format PDF est essentielle pour les entreprises qui doivent présenter des données et générer des rapports. Avec Aspose.PDF pour Java, cette tâche devient simple. En suivant ce guide et en utilisant le code fourni, vous pouvez intégrer de manière transparente cette fonctionnalité dans vos applications Java. Bon codage !
+La conversion sans effort de documents XSL-FO au format PDF est essentielle pour les entreprises qui s'occupent de la présentation des données et de la génération de rapports. Avec Aspose.PDF pour Java, cette tâche devient simple. En suivant ce guide et en utilisant le code fourni, vous pouvez intégrer de manière transparente cette fonctionnalité dans vos applications Java. Bon codage !

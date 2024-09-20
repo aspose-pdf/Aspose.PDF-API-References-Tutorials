@@ -63,7 +63,7 @@ Konvertieren Sie XSL-FO in PDF mit Aspose.PDF für Java. Schritt-für-Schritt-An
 Erfahren Sie, wie Sie mit Aspose.PDF für Java PDF in HTML mit Schriftartenersetzung konvertieren. Schritt-für-Schritt-Anleitung mit Quellcode für nahtlose Konvertierungen. Optimieren Sie jetzt Ihre Webinhalte!
 ### [Hinzufügen von JavaScript mithilfe von DOM in PDF](./adding-javascript-using-dom-in-pdf/)
 Erfahren Sie, wie Sie die PDF-Interaktivität mit JavaScript mithilfe von Aspose.PDF für Java verbessern. Schritt-für-Schritt-Anleitung mit Quellcode für dynamische PDFs.
-### [Mit Java Ebenen zu einer PDF-Datei hinzufügen](./add-layers-to-pdf-file-using-java/)
+### [Mit Java einer PDF-Datei Ebenen hinzufügen](./add-layers-to-pdf-file-using-java/)
 Erfahren Sie, wie Sie mit Aspose.PDF für Java mit Java Ebenen zu einer PDF-Datei hinzufügen. Diese Schritt-für-Schritt-Anleitung enthält Quellcode und erklärt die einfache PDF-Bearbeitung.
 ### [Inhaltsverzeichnis zu einer vorhandenen PDF-Datei in Java hinzufügen](./add-table-of-contents-to-existing-pdf-in-java/)
 Erfahren Sie, wie Sie mit Aspose.PDF für Java in Java ein Inhaltsverzeichnis zu einer PDF-Datei hinzufügen. Verbessern Sie die Dokumentnavigation mit dieser Schritt-für-Schritt-Anleitung.

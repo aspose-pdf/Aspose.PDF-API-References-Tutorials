@@ -83,7 +83,7 @@ using (FileStream imageStream = new FileStream(dataDir + "\\Thumbanils" + counte
 {
 ```
 
-ここでは、各サムネイルに新しいJPGファイルを作成します。`FileStream`ファイル名にはカウンターが含まれるため、各サムネイルには一意の名前が付けられます。
+ここでは、各サムネイルに対して新しいJPGファイルを作成します。`FileStream`ファイル名にはカウンターが含まれるため、各サムネイルには一意の名前が付けられます。
 
 ### ステップ4.2: 解像度を定義する
 

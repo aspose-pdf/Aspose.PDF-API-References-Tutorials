@@ -1,6 +1,6 @@
 ---
-title: Få sidräkning i PDF-fil
-linktitle: Få sidräkning i PDF-fil
+title: Hämta sidräkning i PDF-fil
+linktitle: Hämta sidräkning i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du får sidräkningen i en PDF-fil med Aspose.PDF för .NET. Följ vår steg-för-steg-guide för en enkel och effektiv lösning.
 type: docs
@@ -58,7 +58,7 @@ Page page = doc.Pages.Add();
 
  Den här raden lägger till en ny sida i PDF-filen. Du kan tänka på det som att lägga till ett nytt pappersark till ditt dokument. Varje gång du ringer`doc.Pages.Add()`, läggs en ny sida till i PDF-filen.
 
-## Steg 3: Lägg till text i PDF-filen
+## Steg 3: Lägg till text i PDF:en
 
  Det är här saker och ting blir intressanta. Vi lägger nu till text på sidan med hjälp av a`TextFragment`. Det här steget simulerar ett scenario där du vill fylla dina sidor med innehåll och sedan kontrollera hur många sidor du har genererat.
 
@@ -110,4 +110,4 @@ Absolut. Aspose.PDF bearbetar alla typer av innehåll inklusive text, bilder och
 Ja, Aspose.PDF erbjuder flera optimeringstekniker som att komprimera bilder och teckensnitt, vilket kan hjälpa till med prestanda för stora PDF-filer.
 
 ### Behöver jag en licens för att använda Aspose.PDF för .NET?  
- Du kan prova det med en[gratis provperiod](https://releases.aspose.com/) , men för full funktionalitet behöver du en licens. Du kan också få en[tillfällig licens](https://purchase.aspose.com/temporary-license/) i utvärderingssyfte.
+ Du kan prova med en[gratis provperiod](https://releases.aspose.com/) , men för full funktionalitet behöver du en licens. Du kan också få en[tillfällig licens](https://purchase.aspose.com/temporary-license/) i utvärderingssyfte.

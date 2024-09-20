@@ -53,7 +53,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document("input.pdf");
 com.aspose.pdf.XslFoLoadOptions xmlOptions = new com.aspose.pdf.XslFoLoadOptions();
 ```
 
-### 第 3 步：將 PDF 轉換為 XML
+### 步驟 3：將 PDF 轉換為 XML
 
 ```java
 //將 PDF 轉換為 XML
@@ -104,7 +104,7 @@ Aspose.PDF for Java 提供了各種選項來自訂 XML 輸出以滿足您的特�
 
 ### 將 PDF 轉換為 XML 有哪些優點？
 
-將 PDF 轉換為 XML 具有多種優點，例如結構化資料擷取、輕鬆的內容操作以及與各種資料處理工具的兼容性。
+將 PDF 轉換為 XML 具有多種優勢，例如結構化資料擷取、輕鬆的內容操作以及與各種資料處理工具的兼容性。
 
 ### 在哪裡可以找到更多有關 Aspose.PDF for Java 的資源？
 

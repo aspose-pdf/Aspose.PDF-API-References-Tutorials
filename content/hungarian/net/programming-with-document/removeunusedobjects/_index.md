@@ -75,7 +75,7 @@ Az opció engedélyezésével utasítja az Aspose.PDF fájlt, hogy vizsgálja me
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-Képzelje el, hogy a régi, nem használt tárgyak kidobása nélkül takarítja ki a házát. Nem lenne nagy különbség, igaz? Hasonlóképpen, az erőforrások optimalizálása biztosítja a nem használt objektumok eltávolítását, így a PDF-fájl mérete kisebb és hatékonyabb.
+Képzelje el, hogy a régi, nem használt tárgyak kidobása nélkül takarítja ki a házát. Nem sokat változna, igaz? Hasonlóképpen, az erőforrások optimalizálása biztosítja a nem használt objektumok eltávolítását, így a PDF-fájl mérete kisebb és hatékonyabb.
 
 ## 4. lépés: Mentse el az optimalizált PDF-fájlt
 

@@ -86,6 +86,6 @@ Aspose.PDF for Java poskytuje robustní funkce pro práci s PDF. Složitost tabu
 
 Ano, Aspose.PDF for Java je navržen pro práci s dokumenty PDF různých velikostí a složitostí, včetně těch s mnoha tabulkami.
 
-### Kde mohu získat přístup k dalším zdrojům a dokumentaci k Aspose.PDF pro Java?
+### Kde mohu získat přístup k dalším zdrojům a dokumentaci k Aspose.PDF pro Javu?
 
  Komplexní dokumentaci a zdroje pro Aspose.PDF pro Javu naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

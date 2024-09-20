@@ -197,7 +197,7 @@ Ebben a cikkben a Java és Aspose.PDF for Java használatával PDF-dokumentumokb
 
 A beágyazott szerkezeti elemek a PDF dokumentumon belüli elemek, amelyek meghatározzák a tartalom szerkezetét. Segítik a dokumentum szövegének és egyéb elemeinek rendszerezését, így a fogyatékkal élő felhasználók számára is könnyebben hozzáférhetővé válik.
 
-### Hogyan telepíthetem az Aspose.PDF for Java-t?
+### Hogyan telepíthetem az Aspose.PDF for Java fájlt?
 
  Az Aspose.PDF for Java telepítéséhez látogasson el az Aspose webhelyére[itt](https://releases.aspose.com/pdf/java/) és töltse le a legújabb verziót. Ezután adja hozzá a JAR-fájlt a Java-projekt összeállítási útvonalához.
 
@@ -205,7 +205,7 @@ A beágyazott szerkezeti elemek a PDF dokumentumon belüli elemek, amelyek megha
 
 Igen, módosíthatja a beágyazott szöveg színét a PDF-ben az Aspose.PDF for Java segítségével. Használja a`setTextState().setForegroundColor(Color)` módszer a szín megadására.
 
-### Milyen előnyökkel jár a hozzáférhető PDF-ek létrehozása?
+### Milyen előnyökkel jár az akadálymentes PDF-ek létrehozása?
 
 Az akadálymentesített PDF-fájlok a fogyatékkal élő felhasználók számára előnyösek azáltal, hogy olyan funkciókat biztosítanak, mint a képernyőolvasó kompatibilitás, a navigációs lehetőségek és a kisegítő lehetőségek szabványainak (pl. PDF/UA) való megfelelés.
 

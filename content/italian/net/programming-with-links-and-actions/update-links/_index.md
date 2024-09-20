@@ -44,7 +44,7 @@ Ora scomponiamo questo processo in passaggi facili da seguire.
 
 ## Passaggio 1: imposta il tuo progetto
 
-Per prima cosa, crea una nuova applicazione console C# in Visual Studio. Questo sarà il tuo spazio di lavoro per scrivere e testare il tuo codice.
+Per prima cosa, crea una nuova applicazione console C# in Visual Studio. Questa sarà la tua area di lavoro per scrivere e testare il tuo codice.
 
 1. Aprire Visual Studio.
 2. Fare clic su "Crea un nuovo progetto".

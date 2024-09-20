@@ -42,7 +42,7 @@ using System;
 ```
 Nachdem Sie nun alles eingerichtet haben, wollen wir den Vorgang zum Festlegen einer Feldbegrenzung in einem PDF-Dokument aufschlüsseln.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 In diesem Schritt geben Sie den Pfad zum Verzeichnis an, in dem Ihre PDF-Dokumente gespeichert sind. Dies ist wichtig, da das Programm wissen muss, wo die Eingabe-PDF-Datei zu finden ist und wo die Ausgabedatei gespeichert werden soll.
 

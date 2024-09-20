@@ -10,7 +10,7 @@ url: /zh/java/pdf-conversion-transformation/convert-pdfs-to-epub-ebooks/
 
 ## 将 PDF 转换为 EPUB 电子书的简介
 
-在数字时代，对电子书的需求不断增长，EPUB 是电子书最广泛使用的格式之一。将 PDF 转换为 EPUB 格式是一项常见要求，可以使用 Aspose.PDF for Java 高效实现。在本分步指南中，我们将通过代码示例引导您完成将 PDF 文档转换为 EPUB 电子书的过程。
+在数字时代，对电子书的需求不断增长，EPUB 是电子书最广泛使用的格式之一。将 PDF 转换为 EPUB 格式是一种常见要求，可以使用 Aspose.PDF for Java 高效实现。在本分步指南中，我们将通过代码示例引导您完成将 PDF 文档转换为 EPUB 电子书的过程。
 
 ## 了解 PDF 到 EPUB 的转换过程
 

@@ -91,7 +91,7 @@ textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 
 ### 將格式套用至內嵌文本
 
-您可以將各種格式選項應用於內聯文本，包括粗體、斜體和底線：
+您可以對內嵌文字套用各種格式選項，包括粗體、斜體和底線：
 
 ```java
 textFragment.getTextState().setBold(true);

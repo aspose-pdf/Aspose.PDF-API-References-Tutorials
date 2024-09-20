@@ -98,7 +98,7 @@ Absolutně! Aspose.PDF for Java poskytuje širokou škálu funkcí pro manipulac
 
 ### Je Aspose.PDF for Java vhodný pro jednoduché i složité PDF projekty?
 
-Ano, Aspose.PDF for Java je všestranný a lze jej použít jak pro základní úlohy PDF, tak pro komplexní projekty PDF s pokročilými požadavky.
+Ano, Aspose.PDF for Java je všestranný a lze jej použít jak pro základní úlohy PDF, tak pro komplexní PDF projekty s pokročilými požadavky.
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 

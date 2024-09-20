@@ -56,7 +56,7 @@ Naučte se, jak snadno převádět text na soubory PDF pomocí Aspose.PDF for Ja
 ### [Export XML do PDF dokumentů](./export-xml-to-pdf-documents/)
 Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to se dozvíte v tomto komplexním průvodci.
 ### [Převod souborů XPS na soubory PDF](./convert-xps-to-pdf-files/)
-Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.
+Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem celý proces zjednodušuje.
 ### [Transformujte XSL-FO do formátu PDF](./transform-xsl-fo-to-pdf-format/)
 Transformujte XSL-FO do PDF pomocí Aspose.PDF pro Javu. Podrobný průvodce, zdrojový kód a časté dotazy pro efektivní převod dat.
 ### [Převeďte PDF do HTML pomocí náhrady písem](./convert-pdf-to-html-with-font-substitution/)

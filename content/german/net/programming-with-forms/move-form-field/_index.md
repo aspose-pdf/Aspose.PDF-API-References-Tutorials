@@ -75,7 +75,7 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 Jetzt kommt der spannende Teil: das Verschieben des Formularfelds! Dies erreichen wir, indem wir seine rechteckigen Grenzen ändern, die die Position und Größe des Formularfelds auf der Seite definieren.
 
 ```csharp
-// Ändern Sie die Position des Formularfelds (neue Koordinaten).
+// Ändern Sie die Position des Formularfelds (neue Koordinaten)
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 ```
 

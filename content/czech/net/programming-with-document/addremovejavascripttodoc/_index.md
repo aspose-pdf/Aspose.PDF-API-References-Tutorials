@@ -15,7 +15,7 @@ V této příručce si projdeme, jak pomocí Aspose.PDF for .NET vložit JavaScr
 
 Než se pustíme do kódu, je potřeba nastavit několik věcí:
 
-1.  Aspose.PDF for .NET: Budete potřebovat knihovnu Aspose.PDF for .NET nainstalovanou ve vašem projektu. Pokud ji ještě nemáte, stáhněte si knihovnu z[Stránka pro stahování Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET: Budete potřebovat knihovnu Aspose.PDF for .NET nainstalovanou ve vašem projektu. Pokud ji ještě nemáte, stáhněte si knihovnu z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
 2. IDE nebo textový editor: Můžete použít jakékoli IDE kompatibilní s .NET, jako je Visual Studio.
 3. Základní znalosti C#: Tento tutoriál předpokládá, že ovládáte C# a znáte práci s PDF.
 4. Licence: Ujistěte se, že používáte platnou licenci, abyste se vyhnuli omezením. Dočasnou licenci můžete získat od[zde](https://purchase.aspose.com/temporary-license/).

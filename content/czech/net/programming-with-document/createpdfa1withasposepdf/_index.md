@@ -9,7 +9,7 @@ url: /cs/net/programming-with-document/createpdfa1withasposepdf/
 ---
 ## Zavedení
 
-Chcete vytvořit soubor PDF/A-1 pomocí Aspose.PDF pro .NET? Jste na správném místě! PDF/A je široce uznávaný formát používaný pro dlouhodobé uchovávání dokumentů, který zajišťuje, že vaše soubory budou přístupné a čitelné po celá desetiletí. Ale jak můžete vytvořit tento standardizovaný formát pomocí Aspose.PDF? V tomto podrobném tutoriálu vám přesně ukážeme, jak vytvořit soubor PDF/A-1 pomocí výkonných funkcí, které poskytuje Aspose.PDF pro .NET.
+Chcete vytvořit soubor PDF/A-1 pomocí Aspose.PDF pro .NET? Jste na správném místě! PDF/A je široce uznávaný formát používaný pro dlouhodobé uchování dokumentů, který zajišťuje, že vaše soubory budou přístupné a čitelné po celá desetiletí. Ale jak můžete vytvořit tento standardizovaný formát pomocí Aspose.PDF? V tomto podrobném tutoriálu vám přesně ukážeme, jak vytvořit soubor PDF/A-1 pomocí výkonných funkcí, které poskytuje Aspose.PDF pro .NET.
 
 ## Předpoklady
 

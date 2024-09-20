@@ -122,7 +122,7 @@ W tym bloku kodu:
 
 ## Wniosek
 
-Wyodrębnianie podpisów cyfrowych i powiązanych z nimi informacji o certyfikacie z dokumentów PDF przy użyciu Aspose.PDF dla .NET jest dość proste, gdy podzielisz je na proste kroki. Niezależnie od tego, czy audytujesz dokumenty, weryfikujesz podpisy, czy po prostu przechowujesz certyfikaty w celu bezpiecznego przechowywania, ten samouczek wyposaży Cię w wiedzę, aby zrobić to sprawnie. Pamiętaj, że zabezpieczanie i weryfikowanie dokumentów ma kluczowe znaczenie w dzisiejszym cyfrowym świecie, a korzystanie z narzędzi takich jak Aspose.PDF dla .NET znacznie ułatwia obsługę.
+Wyodrębnianie podpisów cyfrowych i powiązanych z nimi informacji o certyfikacie z dokumentów PDF przy użyciu Aspose.PDF dla .NET jest dość proste, gdy rozłoży się je na proste kroki. Niezależnie od tego, czy audytujesz dokumenty, weryfikujesz podpisy, czy po prostu przechowujesz certyfikaty w celu bezpiecznego przechowywania, ten samouczek wyposaży Cię w wiedzę, aby zrobić to sprawnie. Pamiętaj, że zabezpieczanie i weryfikowanie dokumentów ma kluczowe znaczenie w dzisiejszym cyfrowym świecie, a korzystanie z narzędzi takich jak Aspose.PDF dla .NET znacznie ułatwia obsługę.
 
 ## Najczęściej zadawane pytania
 

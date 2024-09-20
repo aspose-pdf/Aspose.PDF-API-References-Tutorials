@@ -2,291 +2,191 @@
 title: Prvek tabulky stylu
 linktitle: Prvek tabulky stylu
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se formátovat prvek tabulky pomocí Aspose.PDF pro .NET. Podrobný průvodce přizpůsobením stylů a vlastností.
+description: Naučte se vytvářet a upravovat prvky tabulky v Aspose.PDF pro .NET pomocí podrobných pokynů, vlastního stylu a souladu s PDF/UA.
 type: docs
 weight: 170
 url: /cs/net/programming-with-tagged-pdf/style-table-element/
 ---
-tomto podrobném tutoriálu vás provedeme poskytnutým zdrojovým kódem C# krok za krokem k formátování prvku pole pomocí Aspose.PDF for .NET. Postupujte podle pokynů níže, abyste pochopili, jak přizpůsobit styly a vlastnosti prvku pole.
+## Zavedení
 
-## Krok 1: Nastavení prostředí
+V tomto článku se ponoříme do toho, jak vytvořit a nastylovat prvek tabulky pomocí Aspose.PDF pro .NET. Dozvíte se, jak strukturovat tabulku, používat vlastní styly a ověřovat shodu vašeho dokumentu s PDF/UA. Na konci tohoto tutoriálu budete schopni snadno vytvářet profesionálně vypadající tabulky ve vašich PDF!
 
-Než začnete, ujistěte se, že jste své vývojové prostředí nakonfigurovali pro použití Aspose.PDF pro .NET. To zahrnuje instalaci knihovny Aspose.PDF a konfiguraci vašeho projektu tak, aby na něj odkazoval.
+## Předpoklady
 
-## Krok 2: Vytvoření dokumentu
+Než se pustíte do výukového programu, musíte se ujistit, že máte následující:
 
-V tomto kroku vytvoříme nový objekt dokumentu Aspose.PDF.
+1. Visual Studio nebo podobné IDE nainstalované na vašem počítači.
+2. .NET Framework nebo .NET Core SDK pro spuštění aplikace.
+3.  Knihovna Aspose.PDF for .NET stažená a odkazovaná ve vašem projektu. Nejnovější verzi si můžete stáhnout z[zde](https://releases.aspose.com/pdf/net/).
+4.  Platná licence Aspose nebo a[dočasná licence](https://purchase.aspose.com/temporary-license/) k odemknutí plné funkčnosti knihovny.
+
+## Importujte balíčky
+
+Chcete-li začít, importujte potřebné jmenné prostory do svého projektu:
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Vytvoření dokumentu
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Vytvořili jsme nový dokument a nastavili jsme název dokumentu a jazyk.
+Tyto jmenné prostory pokrývají základní operace PDF, tagovaný obsah, tabulky a formátování textu.
 
-## Krok 3: Získání prvku kořenové struktury
+Nyní si rozeberme proces vytváření a stylování tabulky v Aspose.PDF. Projdeme si každou část podrobně, abyste ji mohli sledovat.
 
-V tomto kroku získáme element kořenové struktury pro náš dokument.
+## Krok 1: Vytvořte nový dokument PDF a nastavte označený obsah
 
-```csharp
-// Získejte prvek kořenové struktury
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Získali jsme prvek kořenové struktury, který bude sloužit jako kontejner pro prvek pole.
-
-## Krok 4: Vytvoření prvku struktury pole
-
-Nyní vytvoříme nový prvek struktury tabulky pro náš dokument.
+V tomto prvním kroku vytvoříme prázdný dokument PDF a nastavíme jeho tagovaný obsah.
 
 ```csharp
-// Vytvořte prvek struktury pole
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-```
-
-Vytvořili jsme nový prvek struktury pole a přidali jej do prvku kořenové struktury.
-
-## Krok 5: Přizpůsobení stylů a vlastností prvků pole
-
-V tomto kroku přizpůsobíme styly a vlastnosti prvku pole.
-
-```csharp
-// Přizpůsobte styly a vlastnosti prvku pole
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-
-// Přizpůsobte styl opakovaných čar
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-```
-
-K přizpůsobení prvku tabulky jsme použili různé vlastnosti, jako je barva pozadí, okraje, zarovnání, výchozí styl buňky, okraje, šířka sloupce atd.
-
-## Krok 6: Přidejte záhlaví, tělo a zápatí tabulky
-
-Nyní k prvku tabulky přidáme záhlaví, tělo a zápatí tabulky.
-```csharp
-// Přidejte záhlaví tabulky
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-
-// Počet řádků a sloupců v tabulce
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// Vytvořte řádek záhlaví tabulky
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-}
-
-//Přidejte řádky těla tabulky
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Přidejte spodní čáru stolu
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-Do tabulky jsme přidali záhlaví, řádky těla a řádek zápatí pomocí odpovídajících prvků.
-
-## Krok 7: Uložení označeného dokumentu PDF
-
-Nyní, když jsme vytvořili náš dokument s prvkem styled table, uložíme jej jako tagovaný dokument PDF.
-
-```csharp
-// Uložte označený dokument PDF
-document.Save(dataDir + "StyleTableElement.pdf");
-```
-
-Označený dokument PDF jsme uložili do určeného adresáře.
-
-## Krok 8: Ověření souladu s PDF/UA
-
-Dále ověříme shodu našeho dokumentu s PDF/UA.
-
-```csharp
-// Kontrola shody s PDF/UA
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Nahráli jsme označený dokument PDF a ověřili jsme jeho shodu s PDF/UA vygenerováním zprávy XML.
-
-### Ukázkový zdrojový kód pro prvek tabulky stylu pomocí Aspose.PDF pro .NET 
-
-```csharp
-
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Vytvořte dokument
+// Vytvořte nový dokument PDF
 Document document = new Document();
+
+// Nastavení označeného obsahu
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
+```
 
+ Začneme vytvořením nového`Document` objekt představující naše PDF. The`TaggedContent`objekt slouží ke správě struktury dokumentu a zajišťuje soulad se standardy přístupnosti. Nastavíme název a jazyk dokumentu pro správné tagování.
+
+## Krok 2: Definujte kořenový prvek
+
+Dále vytvoříme element kořenové struktury, který funguje jako kontejner pro veškerý obsah v našem PDF.
+
+```csharp
 // Získejte prvek kořenové struktury
 StructureElement rootElement = taggedContent.RootElement;
+```
 
+ The`RootElement` slouží jako základní kontejner pro všechny strukturované prvky včetně našeho stolu. Pomáhá udržovat strukturní hierarchii dokumentu, což je důležité pro organizaci i dostupnost.
+
+## Krok 3: Vytvořte a upravte styl prvku tabulky
+
+ Nyní, když je kořenový prvek nastaven, vytvoříme a`TableElement` a použít styly, jako je barva pozadí, okraje a zarovnání.
+
+```csharp
 // Vytvořte prvek struktury tabulky
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
+
+// Upravte styl stolu
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
+```
+
+ Vytváříme a`TableElement` , který definuje strukturu naší tabulky. The`BackgroundColor`, `Border` a`Alignment` vlastnosti nám umožňují přizpůsobit vzhled tabulky. The`Broken` Vlastnost zajišťuje, že pokud se tabulka přeruší přes stránky, přeruší se vertikálně.
+
+## Krok 4: Nastavte rozměry tabulky a styly buněk
+
+V tomto kroku definujeme počet sloupců, odsazení buněk a další důležité vlastnosti tabulky.
+
+```csharp
 tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
 tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
+```
+
+ Specifikujeme šířky sloupců, abychom zajistili, že každý sloupec v tabulce bude rovnoměrně rozmístěn. The`DefaultCellBorder`, `DefaultCellPadding` a`DefaultCellTextState` definovat výchozí styly pro buňky, včetně ohraničení, odsazení, barvy textu a velikosti písma.
+
+## Krok 5: Přidejte opakující se řádky a vlastní styly
+
+Můžeme také definovat styly pro opakování řádků a dalších specifických prvků tabulky, jako jsou záhlaví a zápatí.
+
+```csharp
 tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
+```
+
+ The`RepeatingRowsCount` zajišťuje, že se první tři řádky opakují, pokud tabulka zahrnuje více stránek. Nastavili jsme`RepeatingRowsStyle` chcete-li na tyto řádky použít vlastní barvu pozadí.
+
+## Krok 6: Přidejte prvky hlavy, těla a nohy stolu
+
+Nyní vytvoříme sekce záhlaví, těla a zápatí tabulky a naplníme je obsahem.
+
+```csharp
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
+
+// Vytvořte řádek záhlaví
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-// Uložit označený dokument PDF
+// Naplňte tělo tabulky
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
+{
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
+}
+```
+
+ Stůl je rozdělen na tři části: hlavu, tělo a nohu. Nejprve vytvoříme řádek záhlaví pomocí`TableTHElement` přidejte záhlaví sloupců. Poté naplníme tělo tabulky`TableTDElement`, vyplní každou buňku štítkem, který obsahuje její polohu.
+
+## Krok 7: Uložte dokument
+
+Nakonec PDF dokument uložíme do určeného adresáře.
+
+```csharp
+// Uložte tagovaný dokument PDF
 document.Save(dataDir + "StyleTableElement.pdf");
+```
 
-// Kontrola shody s PDF/UA
+Tento krok dokončuje proces vytváření dokumentu uložením souboru PDF se stylizovanou tabulkou.
+
+## Krok 8: Ověřte soulad s PDF/UA
+
+Po uložení dokumentu je nezbytné zajistit, aby vyhovoval standardům PDF/UA (Universal Accessibility).
+
+```csharp
+// Zkontrolujte shodu s PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Zde znovu načteme dokument a ověříme jej podle standardů PDF/UA. Soulad zajišťuje, že vaše PDF splňuje požadavky na přístupnost, takže je vhodné pro širokou škálu uživatelů.
 
 ## Závěr
 
-V tomto tutoriálu jsme se naučili formátovat prvek pole pomocí Aspose.PDF pro .NET. Upravili jsme styly a vlastnosti prvku tabulky, přidali záhlaví, řádky těla a zápatí, uložili jsme tagovaný dokument PDF a ověřili jeho shodu s PDF/UA.
+Aspose.PDF pro .NET je vytváření a stylování tabulek v dokumentech PDF jednoduché a intuitivní. Podle kroků uvedených v tomto kurzu můžete vytvářet tabulky s přizpůsobenými styly a zajistit, aby vaše soubory PDF splňovaly standardy usnadnění. Ať už generujete sestavy nebo vytváříte strukturované dokumenty, tabulky jsou mocným nástrojem pro přehlednou prezentaci dat.
 
-### FAQ
+## FAQ
 
-#### Otázka: Jaký je účel tohoto tutoriálu o formátování prvku pole pomocí Aspose.PDF pro .NET?
+### Mohu přidat obrázky do buněk tabulky?
+ Ano, obrázky můžete vkládat do buněk tabulky pomocí`Image` živel.
 
-Odpověď: Cílem tohoto tutoriálu je provést vás procesem formátování prvku pole v dokumentu PDF pomocí Aspose.PDF pro .NET. Poskytuje podrobné pokyny a příklady zdrojového kódu C#, které vám pomohou přizpůsobit styly a vlastnosti prvku pole.
+### Jak dynamicky upravím šířku sloupců?
+ Můžete nastavit`ColumnAdjustment` majetek do`AutoFitToWindow` pro automatickou úpravu šířky sloupců podle obsahu.
 
-#### Otázka: Jaké jsou předpoklady pro následování tohoto kurzu?
+### Je soulad s PDF/UA povinný pro všechny dokumenty?
+I když to není povinné, doporučuje se pro dokumenty, které vyžadují vysoké standardy přístupnosti.
 
-A: Než začnete, ujistěte se, že jste nastavili své vývojové prostředí pro použití Aspose.PDF pro .NET. To zahrnuje instalaci knihovny Aspose.PDF a konfiguraci vašeho projektu tak, aby na ni odkazoval.
+### Mohu na konkrétní řádky použít různé styly?
+ Ano, můžete přizpůsobit jednotlivé řádky nebo buňky jejich úpravou`TextState` nebo`BackgroundColor`.
 
-#### Otázka: Jak mohu vytvořit nový dokument PDF a nastavit jeho název a jazyk pomocí Aspose.PDF pro .NET?
-
- A: Chcete-li vytvořit nový dokument PDF, musíte vytvořit a`Document` objekt z knihovny Aspose.PDF. Zdrojový kód jazyka C# poskytnutý tutoriálem ukazuje, jak vytvořit dokument a nastavit jeho název a vlastnosti jazyka.
-
-#### Otázka: Jaký je význam elementu kořenové struktury v dokumentu PDF?
-
-Odpověď: Prvek kořenové struktury funguje jako kontejner pro další prvky struktury a pomáhá organizovat a kategorizovat obsah dokumentu PDF. Hraje klíčovou roli při vytváření logické struktury dokumentu.
-
-#### Otázka: Jak vytvořím a přizpůsobím prvek struktury pole pomocí Aspose.PDF pro .NET?
-
- Odpověď: Prvek struktury pole můžete vytvořit pomocí`CreateTableElement()` metoda. Zdrojový kód výukového programu poskytuje příklady přizpůsobení různých vlastností prvku tabulky, jako je barva pozadí, ohraničení, zarovnání, šířka sloupce a další.
-
-#### Otázka: Mohu přizpůsobit styly a vlastnosti buněk tabulky v prvku pole?
-
-Odpověď: Ano, výukový program popisuje, jak přizpůsobit styly a vlastnosti celého prvku tabulky, včetně záhlaví, řádků těla a zápatí. Neřeší však konkrétně přizpůsobení jednotlivých buněk tabulky.
-
-#### Otázka: Jak mohu přidat záhlaví, řádky těla a zápatí do prvku tabulky?
-
-Odpověď: Výukový program vysvětluje, jak vytvořit a přidat záhlaví, řádky těla a zápatí do prvku tabulky pomocí vhodných metod poskytovaných Aspose.PDF pro .NET.
-
-#### Otázka: Co je soulad s PDF/UA a jak to mohu ověřit pro můj tagovaný dokument PDF?
-
- Odpověď: Soulad s PDF/UA zajišťuje, že dokument PDF odpovídá standardům přístupnosti, takže je přístupnější pro uživatele se zdravotním postižením. Výukový program ukazuje, jak ověřit shodu PDF/UA pomocí`Validate()` a vygenerovat zprávu o souladu s XML.
-
-#### Otázka: Jak mohu začlenit tyto koncepty do svých vlastních aplikací .NET?
-
-Odpověď: Poskytnuté příklady zdrojového kódu C# můžete použít jako vodítko k implementaci formátování prvků pole ve vašich vlastních aplikacích .NET. Upravte a přizpůsobte kód tak, aby odpovídal vašim požadavkům, a integrujte jej do svých projektů.
-
-#### Otázka: Existují nějaké doporučené doporučené postupy pro formátování prvků pole v dokumentech PDF?
-
-Odpověď: Při formátování prvků pole (tabulek) zvažte čitelnost a přístupnost obsahu. Používejte jasná a čitelná písma, vhodné barvy a udržujte konzistentní rozvržení. Ověřte shodu s PDF/UA, abyste zajistili splnění standardů přístupnosti.
-
-#### Otázka: Jaké další funkce Aspose.PDF pro .NET mohu prozkoumat pro přizpůsobení dokumentu PDF?
-
-Odpověď: Aspose.PDF for .NET nabízí řadu funkcí pro přizpůsobení dokumentu PDF, včetně manipulace s textem, vkládání obrázků, správy polí formuláře, digitálních podpisů, anotací a dalších. Další funkce naleznete v oficiální dokumentaci a zdrojích.
+### Jaká je výhoda používání označeného obsahu?
+Tagovaný obsah zlepšuje dostupnost dokumentů a pomáhá zajistit shodu se standardy jako PDF/UA.

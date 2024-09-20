@@ -2,161 +2,171 @@
 title: Zugriff auf untergeordnete Elemente
 linktitle: Zugriff auf untergeordnete Elemente
 second_title: Aspose.PDF für .NET API-Referenz
-description: Schritt-für-Schritt-Anleitung zum Zugreifen auf und Bearbeiten von untergeordneten Elementen eines PDF-Dokuments mit Aspose.PDF für .NET. Personalisieren Sie Ihren PDF-Inhalt.
+description: Erfahren Sie in diesem Schritt-für-Schritt-Tutorial, wie Sie mit Aspose.PDF für .NET auf untergeordnete Elemente in getaggten PDFs zugreifen und diese ändern.
 type: docs
 weight: 10
 url: /de/net/programming-with-tagged-pdf/access-children-elements/
 ---
-In diesem Tutorial erhalten Sie eine Schritt-für-Schritt-Anleitung zum Zugriff auf untergeordnete Elemente eines PDF-Dokuments mit Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen, bearbeiten und konvertieren können. Mit den markierten Inhaltsstrukturfunktionen von Aspose.PDF können Sie auf die Eigenschaften strukturierter Elemente in einem PDF-Dokument zugreifen und diese ändern.
+## Einführung
+
+Wenn es um die programmgesteuerte Bearbeitung von PDF-Dokumenten geht, glänzt Aspose.PDF für .NET mit seiner umfassenden API, mit der Entwickler verschiedene Aufgaben präzise ausführen können. Eine wichtige Funktion bei der Arbeit mit getaggten PDFs ist der Zugriff auf und die Änderung von untergeordneten Elementen innerhalb der Dokumentstruktur. In diesem Artikel erfahren Sie, wie Sie diese Funktion nutzen können, um auf Eigenschaften von untergeordneten Elementen in einem getaggten PDF zuzugreifen und diese festzulegen.
 
 ## Voraussetzungen
 
-Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Bevor wir uns in den Code stürzen, benötigen Sie für den Anfang ein paar Dinge:
 
-1. Visual Studio mit .NET Framework installiert.
-2. Die Aspose.PDF-Bibliothek für .NET.
+1. .NET Framework: Stellen Sie sicher, dass auf Ihrem Computer eine Version des .NET Frameworks installiert ist. Aspose.PDF unterstützt auch .NET Core.
+2.  Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek installiert haben. Sie können die neueste Version von der[Aspose Downloads Seite](https://releases.aspose.com/pdf/net/).
+3. Entwicklungsumgebung: Richten Sie eine IDE wie Visual Studio ein, in der Sie Ihren C#-Code schreiben und ausführen können.
+4. Beispiel-PDF-Datei: Sie benötigen ein Beispiel-PDF-Dokument mit Tags, mit dem Sie arbeiten können. Für dieses Tutorial verwenden wir „StructureElementsTree.pdf“, das Sie im Dokumentverzeichnis Ihres Projekts ablegen sollten.
 
-## Schritt 1: Projekt-Setup
+Sobald Sie alles eingerichtet haben, können Sie mit dem Codieren beginnen!
 
-Erstellen Sie zunächst ein neues Projekt in Visual Studio und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu. Sie können die Bibliothek von der offiziellen Aspose-Website herunterladen und auf Ihrem Computer installieren.
+## Importieren erforderlicher Pakete
 
-## Schritt 2: Importieren Sie die erforderlichen Namespaces
-
-Importieren Sie in Ihre C#-Codedatei die Namespaces, die für den Zugriff auf die von Aspose.PDF bereitgestellten Klassen und Methoden erforderlich sind:
+Stellen Sie vor dem Codieren sicher, dass Sie die erforderlichen Namespaces in Ihr C#-Projekt importieren. Dadurch können Sie nahtlos auf die Klassen und Methoden der Aspose.PDF-Bibliothek zugreifen.
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Schritt 3: Laden des PDF-Dokuments und Zugreifen auf untergeordnete Elemente
+Lassen Sie uns diese Aufgabe in überschaubare Schritte aufteilen.
 
-Verwenden Sie den folgenden Code, um das PDF-Dokument zu laden und auf die untergeordneten Elemente zuzugreifen:
+## Schritt 1: Richten Sie Ihr Dokumentverzeichnis ein
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-Document document = new Document(dataDir + "StructureElementsTree.pdf");
-ITaggedContent taggedContent = document.TaggedContent;
-ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+Beginnen wir mit der Definition des Verzeichnisses, in dem Sie Ihre PDF-Dokumente speichern möchten. Dieser Schritt ist entscheidend, da er dem Programm mitteilt, wo es nach der Datei suchen soll. 
 
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// Zugriff auf die Eigenschaften des Elements
-string title = structureElement.Title;
-string language = structureElement.Language;
-string actualText = structureElement.ActualText;
-string expansionText = structureElement.ExpansionText;
-string alternativeText = structureElement.AlternativeText;
-}
-}
-```
-
-Mit diesem Code können Sie auf die untergeordneten Elemente der Stammstruktur des PDF-Dokuments zugreifen und die Eigenschaften jedes Elements abrufen.
-
-## Schritt 4: Auf untergeordnete Stammelemente zugreifen und Eigenschaften ändern
-
-Verwenden Sie den folgenden Code, um auf die untergeordneten Elemente des Stammelements zuzugreifen und die Eigenschaften zu ändern:
-
-```csharp
-elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
-
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// Ändern Sie die Eigenschaften des Elements
-structureElement.Title = "title";
-structureElement.Language = "fr-FR";
-structureElement.ActualText = "actual text";
-structureElement.ExpansionText = "exp";
-structureElement.AlternativeText = "alt";
-}
-}
-```
-
-Mit diesem Code können Sie auf die untergeordneten Elemente des ersten Elements des Stammelements zugreifen und die Eigenschaften jedes Elements ändern.
-
-
-### Beispielquellcode für Access Children Elements mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Einfach ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad auf Ihrem Computer. 
+
+## Schritt 2: Öffnen Sie das PDF-Dokument
+
+Im nächsten Schritt wird Ihr getaggtes PDF-Dokument in Ihre Anwendung geladen. Hier beginnt die Magie!
+
+```csharp
 // PDF-Dokument öffnen
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
+```
+
+Stellen Sie sicher, dass der angegebene Pfad auf die PDF-Datei verweist, die Sie bearbeiten möchten.
+
+## Schritt 3: Markierten Inhalt abrufen
+
+Jetzt greifen wir auf den getaggten Inhalt des Dokuments zu, sodass Sie problemlos mit seinen Strukturelementen interagieren können.
+
+```csharp
 // Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
+```
+
+Diese Zeile bereitet Sie darauf vor, in die Struktur des PDF einzutauchen.
+
+## Schritt 4: Auf Stammelemente zugreifen
+
+Bevor wir auf untergeordnete Elemente zugreifen, beginnen wir mit den Stammelementen. Dadurch können Sie die Strukturhierarchie besser verstehen.
+
+```csharp
 // Zugriff auf Stammelement(e)
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+```
+
+Hier erhalten Sie eine Liste der untergeordneten Elemente der Wurzel.
+
+## Schritt 5: Abrufen der Eigenschaften untergeordneter Elemente
+
+Lassen Sie uns nun die Stammelemente durchlaufen, um Eigenschaften von jedem Strukturelement abzurufen. Mit diesem Schritt können Sie überprüfen, welcher Inhalt vorhanden ist.
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// Abrufen von Eigenschaften
-		string title = structureElement.Title;
-		string language = structureElement.Language;
-		string actualText = structureElement.ActualText;
-		string expansionText = structureElement.ExpansionText;
-		string alternativeText = structureElement.AlternativeText;
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // Abrufen von Eigenschaften
+        string title = structureElement.Title;
+        string language = structureElement.Language;
+        string actualText = structureElement.ActualText;
+        string expansionText = structureElement.ExpansionText;
+        string alternativeText = structureElement.AlternativeText;
+        
+        // Anzeige der abgerufenen Eigenschaften (optional)
+        Console.WriteLine($"Title: {title}, Language: {language}, ActualText: {actualText}");
+    }
 }
-//Zugriff auf untergeordnete Elemente des ersten Elements im Stammelement
+```
+
+Diese Schleife prüft, ob das aktuelle Element ein Strukturelement ist, ruft seine Eigenschaften ab und druckt sie aus. Wie praktisch ist das denn?
+
+## Schritt 6: Zugriff auf untergeordnete Elemente des ersten Stammelements
+
+Nachdem wir nun auf die Stammelemente zugegriffen haben, wollen wir uns eingehender mit dem ersten Stammelement befassen, um auf seine untergeordneten Elemente zuzugreifen.
+
+```csharp
+// Zugriff auf untergeordnete Elemente des ersten Elements im Stammelement
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
+```
+
+ Durch Ändern`ChildElements[1]` zu einem anderen Index können Sie verschiedene Stammelemente untersuchen, falls diese vorhanden sind.
+
+## Schritt 7: Eigenschaften des untergeordneten Elements ändern
+
+Wenn Sie auf die untergeordneten Elemente zugreifen, möchten Sie möglicherweise deren Eigenschaften aktualisieren. Das ist ganz einfach!
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// Festlegen von Eigenschaften
-		structureElement.Title = "title";
-		structureElement.Language = "fr-FR";
-		structureElement.ActualText = "actual text";
-		structureElement.ExpansionText = "exp";
-		structureElement.AlternativeText = "alt";
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // Eigenschaften festlegen. Passen Sie diese Werte nach Bedarf an!
+        structureElement.Title = "New Title";
+        structureElement.Language = "fr-FR";
+        structureElement.ActualText = "Updated actual text";
+        structureElement.ExpansionText = "Updated exp";
+        structureElement.AlternativeText = "Updated alt";
+    }
 }
+```
+
+Es ist, als würden Sie jedem ausgewählten Strukturelement ein neues Aussehen verleihen!
+
+## Schritt 8: Speichern Sie das getaggte PDF-Dokument
+
+Nachdem Sie die Änderungen vorgenommen haben, möchten Sie abschließend Ihr aktualisiertes PDF speichern. 
+
+```csharp
 // Getaggtes PDF-Dokument speichern
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
+Geben Sie Ihrem geänderten Dokument einen eindeutigen Namen, damit Sie es später leicht identifizieren können.
+
 ## Abschluss
 
-In diesem Tutorial haben Sie gelernt, wie Sie auf untergeordnete Elemente eines PDF-Dokuments zugreifen und Elementeigenschaften mit Aspose.PDF für .NET ändern. Auf diese Weise können Sie die strukturierten Elemente in einem PDF-Dokument nach Ihren Wünschen anpassen und bearbeiten.
+Mit Aspose.PDF für .NET ist der Zugriff auf untergeordnete Elemente in einem getaggten PDF-Dokument ein Kinderspiel und ermöglicht Ihnen die effektive Bearbeitung von Inhalten. Wenn Sie dieser Schritt-für-Schritt-Anleitung folgen, können Sie Ihre PDF-Dokumente problemlos lesen, ändern und speichern. Egal, ob Sie Metadaten aktualisieren oder die Struktur ändern, die Aspose.PDF-Bibliothek bietet die erforderlichen Tools, um die Arbeit effizient zu erledigen.
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was ist der Zweck des Zugriffs auf untergeordnete Elemente in einem PDF-Dokument mit Aspose.PDF für .NET?
+### Was ist ein getaggtes PDF?
+Ein getaggtes PDF ist ein Dokument, das Metadaten enthält, die eine bessere Zugänglichkeit und Navigation ermöglichen.
 
-A: Der Zugriff auf untergeordnete Elemente in einem PDF-Dokument mit Aspose.PDF für .NET ermöglicht Ihnen die programmgesteuerte Bearbeitung und Anpassung der strukturierten Elemente im Dokument. Dazu kann die Änderung von Eigenschaften wie Titeln, Sprachen, eigentlichem Text, Erweiterungstext und Alternativtext gehören, um die Zugänglichkeit und Darstellung des Dokuments zu verbessern.
+### Kann ich in Aspose.PDF auf nicht strukturierte Elemente zugreifen?
+Ja, obwohl sich dieses Tutorial auf Strukturelemente konzentriert, kann auch auf andere Elementtypen zugegriffen werden.
 
-#### F: Welche Rolle spielt die Aspose.PDF-Bibliothek in diesem Prozess?
+### Muss ich Aspose.PDF kaufen, um es zu verwenden?
+Sie können es zunächst kostenlos testen, für den vollen Funktionsumfang und Support ist jedoch möglicherweise ein Kauf erforderlich.
 
-A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die verschiedene Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Konvertieren von PDF-Dokumenten bietet. In diesem Tutorial wird die Bibliothek verwendet, um ein PDF-Dokument zu laden, auf getaggte Inhalte und strukturierte Elemente zuzugreifen und deren Eigenschaften zu ändern.
+### Ist Aspose.PDF mit .NET Core kompatibel?
+Ja, Aspose.PDF unterstützt .NET Core zusammen mit anderen Versionen des .NET Frameworks.
 
-#### F: Was sind die Voraussetzungen für die Arbeit mit untergeordneten Elementen in einem PDF-Dokument mit Aspose.PDF für .NET?
-
-A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Visual Studio mit dem .NET-Framework installiert haben und dass in Ihrem Projekt auf die Aspose.PDF-Bibliothek für .NET verwiesen wird.
-
-#### F: Wie ermöglicht der bereitgestellte C#-Code den Zugriff auf und die Änderung von untergeordneten Elementen in einem PDF-Dokument?
-
-A: Der Code zeigt, wie man ein PDF-Dokument lädt, auf den getaggten Inhalt zugreift und die untergeordneten Elemente des Stammelements und spezifische Elemente durchläuft. Er zeigt, wie man Eigenschaften strukturierter Elemente abruft und wie man diese Eigenschaften ändert, um das Dokument anzupassen.
-
-#### F: Kann ich über die im Code angezeigten hinaus auf andere Eigenschaften der untergeordneten Elemente zugreifen und diese ändern?
-
-A: Ja, Sie können mit ähnlichen Techniken auf verschiedene andere Eigenschaften der untergeordneten Elemente zugreifen und diese ändern. Die im Code gezeigten Eigenschaften (Titel, Sprache, eigentlicher Text usw.) sind nur Beispiele. Sie können die Aspose.PDF-Dokumentation durchsuchen, um weitere Eigenschaften und Methoden zu entdecken, die zur Bearbeitung verfügbar sind.
-
-#### F: Wie identifiziere ich, auf welche untergeordneten Elemente im PDF-Dokument ich zugreifen möchte?
-A: Der Code bietet ein Beispiel für den Zugriff auf die untergeordneten Elemente des Stammelements und eines bestimmten Elements darin. Sie können die Elemente, auf die Sie zugreifen möchten, anhand ihrer Hierarchie und Struktur innerhalb des getaggten Inhalts des PDF-Dokuments identifizieren.
-
-#### F: Ist es mit diesem Ansatz möglich, neue untergeordnete Elemente hinzuzufügen oder vorhandene zu löschen?
-
-A: Während sich der bereitgestellte Code auf den Zugriff auf und die Änderung vorhandener untergeordneter Elemente konzentriert, können Sie den Ansatz erweitern, um neue untergeordnete Elemente hinzuzufügen oder vorhandene zu löschen, indem Sie entsprechende Methoden der Aspose.PDF-Bibliothek verwenden.
-
-#### F: Kann ich diesen Ansatz verwenden, um mit verschachtelten untergeordneten Elementen im PDF-Dokument zu arbeiten?
-
-A: Ja, Sie können ähnliche Techniken anwenden, um auf verschachtelte untergeordnete Elemente innerhalb der Struktur des PDF-Dokuments zuzugreifen und diese zu ändern. Indem Sie die Hierarchie der Elemente durchlaufen, können Sie auf Elemente auf verschiedenen Ebenen zugreifen und diese bearbeiten.
+### Wo finde ich weitere Dokumentation zu Aspose.PDF?
+ Weitere Dokumentation finden Sie auf der[Aspose-Dokumentationsseite](https://reference.aspose.com/pdf/net/).

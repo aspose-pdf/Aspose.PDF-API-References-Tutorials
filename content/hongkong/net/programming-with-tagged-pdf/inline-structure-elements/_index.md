@@ -7,316 +7,175 @@ type: docs
 weight: 110
 url: /zh-hant/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-在本逐步指南中，我們將向您展示如何在 Aspose.PDF for .NET 中使用內嵌結構元素。 Aspose.PDF 是一個功能強大的程式庫，可讓您以程式設計方式操作 PDF 文件。內嵌結構元素可讓您使用不同層級和段落的標題在 PDF 文件中建立層次結構。
+## 介紹
 
-讓我們深入研究程式碼並了解如何在 Aspose.PDF for .NET 中使用內聯結構元素。
+在當今的數位環境中，建立易於存取且結構良好的文件至關重要。如果您曾經發現自己在滾動瀏覽 PDF 時卻迷失在文字海洋中，那麼您就知道良好組織的重要性。在 PDF 中標記元素可以增強可訪問性，使螢幕閱讀器更輕鬆地解釋內容。在本指南中，我們將深入研究使用 Aspose.PDF for .NET 建立標記的 PDF 文檔，確保您的工作符合文檔結構的現代標準。
 
 ## 先決條件
 
-在開始之前，請確保您具備以下條件：
+在我們開始行動之前，讓我們確保您擁有遵循所需的一切：
 
-1. 安裝了適用於.NET 的 Aspose.PDF 庫。
-2. C# 程式語言的基礎知識。
+1. C# 基礎知識：熟悉 C# 程式設計和 .NET 框架基礎知識至關重要。
+2. 安裝了 Visual Studio：您需要一個像 Visual Studio 這樣的 IDE 來編寫和執行程式碼。
+3.  Aspose.PDF for .NET：請確定下載並安裝 Aspose.PDF for .NET。您可以從[下載連結](https://releases.aspose.com/pdf/net/).
+4. 臨時許可證：這是可選的，但如果您想不受限制地評估所有功能，請考慮獲取[臨時執照](https://purchase.aspose.com/temporary-license/).
 
-## 第一步：建構環境
+一旦滿足了這些先決條件，您就可以建立第一個標籤的 PDF 文件了！
 
-首先，開啟 C# 開發環境並建立一個新專案。請確定您已在專案中新增對 .NET 的 Aspose.PDF 庫的參考。
+## 導入包
+
+首先，讓我們導入必要的套件。這允許您的專案利用 Aspose.PDF 庫的功能。
+
+1. 開啟您的 Visual Studio 專案。
+2. 新增對 Aspose.PDF 庫的引用。如果尚未新增，可以使用 NuGet Package Manager 進行安裝。
+3. 在 C# 檔案的頂部包含以下命名空間：
 
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 第 2 步：建立文檔
+完成這些匯入後，您就已經為成功做好了準備。
 
-第一步是使用以下命令建立新的 PDF 文檔`Document`班級。
+## 程式碼分解：建立標記 PDF 的逐步指南
+
+現在我們已經完成所有設置，讓我們逐步分解程式碼。我們將使用標題和段落等結構化元素來建立標籤的 PDF，以實現更好的可訪問性。
+
+### 步驟1：設定文檔目錄
+
+首先，設定文檔的儲存路徑。維護有組織的文件結構是個好主意。
 
 ```csharp
-//建立 PDF 文件
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //替換成你的實際路徑
+```
+
+### 步驟 2：建立 PDF 文件實例
+
+接下來，建立一個實例`Document`類，它將作為 PDF 內容的容器。
+
+```csharp
 Document document = new Document();
 ```
 
-## 第 3 步：處理標記內容
+### 第 3 步：存取標記內容
 
-然後我們取得要使用的文檔的標記內容。
+現在，存取文件的標記內容。這就是奇蹟發生的地方——透過標記內容，我們增強了其可訪問性。
 
 ```csharp
-//取得文件的標記內容
-ITaggedContent taggedContent = document.TaggedContent;
+ITaggedContent taggedContent = document.TaggedContent;    
 ```
 
-## 步驟 4：設定文件標題和語言
+### 第 4 步：設定標題和語言
 
-我們現在可以設定文件標題和語言。
-
-```csharp
-//定義文檔標題和語言
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## 第5步：線上新增結構元素
-
-現在我們將向文件添加內聯結構元素，例如不同層級的標題和段落。
+為 PDF 文件設定標題和語言對於使用者和螢幕閱讀器都至關重要。這使您的文件內容更加豐富且易於存取。
 
 ```csharp
-//取得根結構元素
-StructureElement rootElement = taggedContent.RootElement;
-
-//新增不同等級的標題
-HeaderElement h1 = taggedContent.CreateHeaderElement(1);
-HeaderElement h2 = taggedContent.CreateHeaderElement(2);
-HeaderElement h3 = taggedContent.CreateHeaderElement(3);
-HeaderElement h4 = taggedContent.CreateHeaderElement(4);
-HeaderElement h5 = taggedContent.CreateHeaderElement(5);
-HeaderElement h6 = taggedContent.CreateHeaderElement(6);
-rootElement.AppendChild(h1);
-rootElement.AppendChild(h2);
-rootElement.AppendChild(h3);
-rootElement.AppendChild(h4);
-rootElement.AppendChild(h5);
-rootElement.AppendChild(h6);
-
-//在每個標題中新增內容
-SpanElement spanH11 = taggedContent.CreateSpanElement();
-spanH11.SetText("H1.");
-h1.AppendChild(spanH11);
-SpanElement spanH12 = taggedContent.CreateSpanElement();
-spanH12.SetText("Level 1 header");
-h1.AppendChild(spanH12);
-
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2.");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 header");
-h2.AppendChild(spanH22);
-
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3.");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 header");
-h3.AppendChild(spanH32);
-
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4.");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 header");
-h4.AppendChild(spanH42);
-
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5.");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 header");
-h5.AppendChild(spanH52);
-
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6.");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Heading level 6");
-h6.AppendChild(spanH62);
-
-//新增一段
-ParagraphElement p = taggedContent.CreateParagraphElement();
-p.SetText("P.");
-rootElement.AppendChild(p);
-
-//為段落添加內容
-SpanElement span1 = taggedContent.CreateSpanElement();
-span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet.");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit.");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo.");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit.");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. So cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit.");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-```
-
-在這裡，我們創建內聯結構元素，例如不同層級的標題和段落，並在其中添加內容。
-
-## 步驟 6：儲存標記的 PDF 文檔
-
-最後，我們儲存標記的 PDF 文件。
-
-```csharp
-//儲存標記的 PDF 文檔
-document.Save(dataDir + "InlineStructureElements.pdf");
-```
-
-### 使用 Aspose.PDF for .NET 的內嵌結構元素的範例原始碼 
-
-```csharp
-
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//建立 PDF 文件
-Document document = new Document();
-
-//取得與 TaggedPdf 一起使用的內容
-ITaggedContent taggedContent = document.TaggedContent;
-
-//設定文檔網的標題和語言
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-//取得根結構元素
+### 步驟5：取得根結構元素
+
+讓我們開始為文件添加元素。首先，取得標記內容的根結構元素，它作為建構文件結構的基礎。
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+### 第 6 步：建立標題元素
+
+現在是時候建立標題元素了。這將有助於將內容組織成層次結構。我們將創建六個層級的標題。
+
+```csharp
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
 HeaderElement h4 = taggedContent.CreateHeaderElement(4);
 HeaderElement h5 = taggedContent.CreateHeaderElement(5);
 HeaderElement h6 = taggedContent.CreateHeaderElement(6);
+```
+
+### 第 7 步：將標頭附加到根元素
+
+建立標題元素後，將它們附加到根元素。這建構了文件的結構層次結構。
+
+```csharp
 rootElement.AppendChild(h1);
 rootElement.AppendChild(h2);
 rootElement.AppendChild(h3);
 rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
+```
+
+### 第 8 步：為每個標題新增文本
+
+現在，讓我們為每個標題添加一些文字。這是一個簡單的過程，但對於使您的文件有用至關重要。 
+
+```csharp
+// H1
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1. ");
 h1.AppendChild(spanH11);
 SpanElement spanH12 = taggedContent.CreateSpanElement();
 spanH12.SetText("Level 1 Header");
 h1.AppendChild(spanH12);
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2. ");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 Header");
-h2.AppendChild(spanH22);
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3. ");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 Header");
-h3.AppendChild(spanH32);
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4. ");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 Header");
-h4.AppendChild(spanH42);
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5. ");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 Header");
-h5.AppendChild(spanH52);
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6. ");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Level 6 Header");
-h6.AppendChild(spanH62);
+
+//重複 H2 - H6，如上圖所示
+```
+
+### 第 9 步：建立段落元素
+
+接下來，讓我們加入一個段落元素。這將作為 PDF 的主要內容區域。 
+
+```csharp
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P. ");
 rootElement.AppendChild(p);
+```
+
+### 第 10 步：為段落新增文本
+
+現在我們有了段落元素，是時候用文字填滿它了。您可以新增多個跨度來組成您的內容。
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
 p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet. ");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit. ");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo. ");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. ");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. ");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-
-//儲存標記的 PDF 文檔
-document.Save(dataDir + "InlineStructureElements.pdf");
-
+//根據需要繼續附加額外的跨度
 ```
+
+### 步驟11：儲存有標籤的PDF文檔
+
+最後，添加所有內容後，您需要儲存文件。讓我們總結一下吧！
+
+```csharp
+document.Save(dataDir + "InlineStructureElements.pdf");
+```
+
+瞧！您現在已經有了一個結構化且易於存取的標籤的 PDF 文件。
 
 ## 結論
 
-恭喜！您已經了解如何透過 Aspose.PDF for .NET 使用內聯結構元素。現在，您可以使用不同層級和段落的標題在 PDF 文件中建立層次結構。探索 Aspose.PDF 的更多功能以發現其全部潛力。
+建立帶有標籤的 PDF 文件可能看起來令人畏懼，但使用 Aspose.PDF for .NET，這一切變得輕而易舉！透過遵循本逐步指南，您已經掌握了文件結構的要點。請記住，正確標記 PDF 可以增強其可訪問性，確保您的有價值的內容吸引更廣泛的受眾。因此，繼續讓您的 PDF 不僅美觀而且用戶友好！
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：PDF 文件中的內聯結構元素是什麼？
+### 什麼是標籤的 PDF？
+標籤的 PDF 是包含有關文件結構的資訊的 PDF，使殘障使用者更容易存取。
 
-答：PDF 文件中的內聯結構元素（例如不同層級的標題和段落）用於建立分層結構，以結構化方式組織和呈現內容。這些元素可讓您在文件中建立清晰的層次結構和資訊流。
+### 為什麼標籤在 PDF 中很重要？
+標記增強了可訪問性，使螢幕閱讀器能夠清楚地解釋文檔，從而為殘障用戶提供更好的體驗。
 
-#### Q：內嵌結構元素如何增強 PDF 文件的可讀性和組織性？
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，您可以透過以下方式評估 Aspose.PDF for .NET[免費試用](https://releases.aspose.com/).
 
-答：內聯結構元素，特別是標題和段落，透過提供邏輯結構來幫助提高 PDF 文件的可讀性和組織性。標題表示不同的重要性等級並幫助讀者瀏覽內容，而段落則將相關資訊分組在一起。
+### 我可以在哪裡獲得 Aspose.PDF 支援？
+可以透過以下方式獲得支持[Aspose 支援論壇](https://forum.aspose.com/c/pdf/10).
 
-#### Q：Aspose.PDF for .NET 如何促進內聯結構元素的使用？
-
-答：Aspose.PDF for .NET 提供了類別和方法來建立和操作內聯結構元素，例如標題和段落。這些元素可以進行自訂、分層組織並豐富內容，以改善文件的視覺呈現和可訪問性。
-
-####  Q：這樣做的目的是什麼`taggedContent` object in relation to inline structure elements?
-
-答： 的`taggedContent`對象，從獲得`TaggedContent`的財產`Document`，允許您使用結構化元素，包括內聯結構元素。它使您能夠建立、自訂和組織文件中的標題和段落。
-
-#### Q：內聯結構元素如何幫助創建清晰的文件層次結構？
-
-答：內聯結構元素（例如不同層級的標題）有助於在文件中建立清晰且定義明確的層次結構。讀者可以快速識別主主題、副主題和相關內容，使文件更易於瀏覽和理解。
-
-#### Q：我可以使用 Aspose.PDF for .NET 自訂內聯結構元素的外觀和格式嗎？
-
-答：是的，您可以自訂內聯結構元素的外觀和格式。您可以設定字體樣式、大小、顏色、對齊方式、縮排和間距等屬性，以實現標題和段落所需的視覺呈現。
-
-#### Q：如何使用 Aspose.PDF for .NET 中的內聯結構元素建立不同層級的標題並將其新增至 PDF 文件？
-
-答：您可以使用以下命令建立不同層級的標題`CreateHeaderElement`方法，然後將它們附加到根結構元素。隨後，您可以使用以下命令為每個標題元素添加內容`CreateSpanElement`建立文字跨度的方法。
-
-#### Q：我可以使用內嵌結構元素在 PDF 文件中建立清單、項目符號或其他類型的內容組織嗎？
-
-答：雖然內聯結構元素本身主要用於標題和段落，但您可以將它們與Aspose.PDF for .NET 提供的其他功能結合使用，以建立清單、項目符號點、表格和其他類型的內容組織，以實現全面的內容組織。
-
-#### Q：內聯結構元素如何有助於文件的可存取性？
-
-答：內聯結構元素在增強文件可存取性方面發揮著至關重要的作用。結構正確的標題和段落提供了清晰的文件層次結構，有助於螢幕閱讀器和其他輔助技術準確地向殘障使用者解釋和傳達內容。
-
-#### Q：我可以探索內嵌結構元素的更高級用途，例如建立互動式元素或嵌入多媒體嗎？
-
-答：當然！雖然本教學重點介紹建立標題和段落，但 Aspose.PDF for .NET 提供了建立互動式元素、嵌入多媒體、新增超連結等進階功能。檢查庫的文檔和範例以深入研究這些高級功能。
+### 如何購買 Aspose.PDF for .NET 授權？
+您可以直接從[購買頁面](https://purchase.aspose.com/buy).

@@ -2,291 +2,191 @@
 title: Elemen Tabel Gaya
 linktitle: Elemen Tabel Gaya
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara memformat elemen tabel dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk menyesuaikan gaya dan properti.
+description: Pelajari cara membuat dan menata elemen tabel di Aspose.PDF untuk .NET dengan petunjuk langkah demi langkah, gaya khusus, dan kepatuhan PDF/UA.
 type: docs
 weight: 170
 url: /id/net/programming-with-tagged-pdf/style-table-element/
 ---
-Dalam tutorial terperinci ini, kami akan memandu Anda melalui kode sumber C# yang disediakan langkah demi langkah untuk memformat elemen array menggunakan Aspose.PDF untuk .NET. Ikuti petunjuk di bawah ini untuk memahami cara menyesuaikan gaya dan properti elemen array.
+## Perkenalan
 
-## Langkah 1: Menyiapkan lingkungan
+Dalam artikel ini, kita akan membahas cara membuat dan menata elemen tabel menggunakan Aspose.PDF untuk .NET. Anda akan mempelajari cara menyusun tabel, menerapkan gaya khusus, dan memvalidasi kepatuhan PDF/UA dokumen Anda. Di akhir tutorial ini, Anda akan dapat membuat tabel yang tampak profesional dalam PDF Anda dengan mudah!
 
-Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan Anda untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal pustaka Aspose.PDF dan mengonfigurasi proyek Anda untuk merujuknya.
+## Prasyarat
 
-## Langkah 2: Membuat dokumen
+Sebelum memulai tutorial, Anda harus memastikan Anda memiliki hal berikut:
 
-Pada langkah ini, kita akan membuat objek dokumen baru Aspose.PDF.
+1. Visual Studio atau IDE serupa terinstal di komputer Anda.
+2. .NET Framework atau .NET Core SDK untuk menjalankan aplikasi.
+3.  Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda. Anda dapat mengambil versi terbaru dari[Di Sini](https://releases.aspose.com/pdf/net/).
+4.  Lisensi Aspose yang valid atau[lisensi sementara](https://purchase.aspose.com/temporary-license/) untuk membuka fungsionalitas penuh perpustakaan.
+
+## Paket Impor
+
+Untuk memulai, impor namespace yang diperlukan ke dalam proyek Anda:
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Ruang nama ini mencakup operasi inti PDF, konten yang diberi tag, tabel, dan pemformatan teks.
+
+Sekarang mari kita bahas proses pembuatan dan penataan tabel di Aspose.PDF. Kami akan membahas setiap bagian secara terperinci sehingga Anda dapat mengikutinya.
+
+## Langkah 1: Buat Dokumen PDF Baru dan Siapkan Konten yang Ditandai
+
+Pada langkah pertama ini, kita akan membuat dokumen PDF kosong dan menyiapkan konten yang diberi tag.
 
 ```csharp
 // Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Pembuatan dokumen
+// Buat dokumen PDF baru
 Document document = new Document();
+
+// Siapkan konten yang diberi tag
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
 ```
 
-Kami telah membuat dokumen baru dan menetapkan judul dan bahasa dokumen.
+ Kita mulai dengan membuat yang baru`Document` objek, yang mewakili PDF kita.`TaggedContent`Objek digunakan untuk mengelola struktur dokumen, memastikan kepatuhan terhadap standar aksesibilitas. Kami menetapkan judul dan bahasa dokumen untuk penandaan yang tepat.
 
-## Langkah 3: Mendapatkan elemen struktur akar
+## Langkah 2: Tentukan Elemen Root
 
-Pada langkah ini kita akan mendapatkan elemen struktur akar untuk dokumen kita.
+Berikutnya, kita akan membuat elemen struktur root, yang berfungsi sebagai wadah untuk semua konten dalam PDF kita.
 
 ```csharp
 // Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Kita mendapat elemen struktur akar yang akan berfungsi sebagai wadah bagi elemen array.
+ Itu`RootElement` berfungsi sebagai wadah dasar untuk semua elemen terstruktur, termasuk tabel kita. Wadah ini membantu menjaga hierarki struktural dokumen, yang penting untuk pengorganisasian dan aksesibilitas.
 
-## Langkah 4: Membuat elemen struktur array
+## Langkah 3: Membuat dan Menata Elemen Tabel
 
-Sekarang mari membuat elemen struktur tabel baru untuk dokumen kita.
+ Sekarang setelah elemen root telah disiapkan, kita akan membuat`TableElement` dan menerapkan gaya seperti warna latar belakang, batas, dan perataan.
 
 ```csharp
-// Membuat elemen struktur array
+// Buat elemen struktur tabel
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-```
 
-Kami telah membuat elemen struktur array baru dan menambahkannya ke elemen struktur root.
-
-## Langkah 5: Menyesuaikan Gaya dan Properti Elemen Array
-
-Pada langkah ini, kita akan menyesuaikan gaya dan properti elemen array.
-
-```csharp
-// Sesuaikan gaya dan properti elemen array
+// Menata tabel
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
+```
+
+ Kami menciptakan sebuah`TableElement` , yang mendefinisikan struktur tabel kita.`BackgroundColor`, `Border` , Dan`Alignment` properti memungkinkan kita untuk menyesuaikan tampilan tabel.`Broken` Properti memastikan bahwa jika tabel terbagi beberapa halaman, tabel tersebut akan terbagi secara vertikal.
+
+## Langkah 4: Mengatur Dimensi Tabel dan Gaya Sel
+
+Pada langkah ini, kita akan menentukan jumlah kolom, pengisi sel, dan properti tabel penting lainnya.
+
+```csharp
+tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
+```
 
-// Sesuaikan gaya garis berulang
+ Kami menentukan lebar kolom untuk memastikan setiap kolom dalam tabel memiliki jarak yang sama.`DefaultCellBorder`, `DefaultCellPadding` , Dan`DefaultCellTextState` menentukan gaya default untuk sel, termasuk batas, bantalan, warna teks, dan ukuran font.
+
+## Langkah 5: Tambahkan Baris Berulang dan Gaya Kustom
+
+Kita juga dapat menentukan gaya untuk mengulang baris dan elemen tabel spesifik lainnya seperti header dan footer.
+
+```csharp
+tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-Kami menggunakan berbagai properti untuk menyesuaikan elemen tabel, seperti warna latar belakang, batas, perataan, gaya sel default, margin, lebar kolom, dll.
+ Itu`RepeatingRowsCount` memastikan bahwa tiga baris pertama diulang jika tabel mencakup beberapa halaman. Kami mengatur`RepeatingRowsStyle` untuk menerapkan warna latar belakang khusus pada baris-baris ini.
 
-## Langkah 6: Tambahkan header, body, dan footer tabel
+## Langkah 6: Tambahkan Elemen Kepala, Badan, dan Kaki Tabel
 
-Sekarang mari tambahkan header, body, dan footer tabel ke elemen tabel.
+Sekarang, mari buat bagian header, body, dan footer tabel dan isi dengan konten.
+
 ```csharp
-// Tambahkan tajuk tabel
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Jumlah baris dan kolom dalam tabel
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// Membuat baris tajuk tabel
+// Buat baris tajuk
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
+headTrElement.AlternativeText = "Head Row";
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-//Tambahkan baris badan tabel
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+// Mengisi badan tabel
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
 {
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Tambahkan garis pijakan tabel
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
 }
 ```
 
-Kami menambahkan header, baris isi, dan baris footer ke tabel menggunakan elemen yang sesuai.
+ Tabel dibagi menjadi tiga bagian: kepala, badan, dan kaki. Pertama-tama kita membuat baris tajuk menggunakan`TableTHElement`dan menambahkan judul kolom. Kemudian, kita mengisi badan tabel dengan`TableTDElement`, mengisi setiap sel dengan label yang menyertakan posisinya.
 
-## Langkah 7: Menyimpan dokumen PDF yang diberi tag
+## Langkah 7: Simpan Dokumen
 
-Sekarang setelah kita membuat dokumen dengan elemen tabel bergaya, kita akan menyimpannya sebagai dokumen PDF yang diberi tag.
+Terakhir, kami menyimpan dokumen PDF ke direktori yang ditentukan.
 
 ```csharp
 // Simpan dokumen PDF yang diberi tag
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-Kami menyimpan dokumen PDF yang diberi tag pada direktori yang ditentukan.
+Langkah ini menyelesaikan proses pembuatan dokumen dengan menyimpan berkas PDF dengan tabel bergaya.
 
-## Langkah 8: Validasi kepatuhan PDF/UA
+## Langkah 8: Validasi Kepatuhan PDF/UA
 
-Berikutnya, kami akan memvalidasi kesesuaian PDF/UA dokumen kami.
-
-```csharp
-// Pemeriksaan kepatuhan PDF/UA
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Kami mengunggah dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA-nya dengan membuat laporan XML.
-
-### Contoh kode sumber untuk Elemen Tabel Gaya menggunakan Aspose.PDF untuk .NET 
+Setelah menyimpan dokumen, penting untuk memastikan bahwa dokumen tersebut mematuhi standar PDF/UA (Aksesibilitas Universal).
 
 ```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Buat dokumen
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table style");
-taggedContent.SetLanguage("en-US");
-
-// Dapatkan elemen struktur akar
-StructureElement rootElement = taggedContent.RootElement;
-
-// Buat elemen struktur tabel
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement.Alignment = HorizontalAlignment.Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement.ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
-
-// Simpan Dokumen Pdf yang Ditandai
-document.Save(dataDir + "StyleTableElement.pdf");
-
-// Memeriksa kepatuhan PDF/UA
+// Periksa kepatuhan PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Di sini, kami memuat ulang dokumen dan memvalidasinya berdasarkan standar PDF/UA. Kepatuhan memastikan bahwa PDF Anda memenuhi persyaratan aksesibilitas, sehingga cocok untuk berbagai macam pengguna.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara memformat elemen array dengan Aspose.PDF untuk .NET. Kita menyesuaikan gaya dan properti elemen tabel, menambahkan header, baris isi, dan footer, menyimpan dokumen PDF yang diberi tag, dan memvalidasi kepatuhan PDF/UA-nya.
+Dengan Aspose.PDF untuk .NET, membuat dan menata tabel dalam dokumen PDF Anda menjadi mudah dan intuitif. Dengan mengikuti langkah-langkah yang diuraikan dalam tutorial ini, Anda dapat membuat tabel dengan gaya yang disesuaikan dan memastikan PDF Anda memenuhi standar aksesibilitas. Baik Anda membuat laporan atau membuat dokumen terstruktur, tabel merupakan alat yang ampuh untuk menyajikan data dengan jelas.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan tutorial memformat elemen array menggunakan Aspose.PDF untuk .NET?
+### Bisakah saya menambahkan gambar di dalam sel tabel?
+ Ya, Anda dapat memasukkan gambar ke dalam sel tabel menggunakan`Image` elemen.
 
-J: Tujuan dari tutorial ini adalah untuk memandu Anda melalui proses pemformatan elemen array dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda menyesuaikan gaya dan properti elemen array.
+### Bagaimana cara menyesuaikan lebar kolom secara dinamis?
+ Anda dapat mengatur`ColumnAdjustment` properti untuk`AutoFitToWindow` untuk menyesuaikan lebar kolom secara otomatis berdasarkan konten.
 
-#### T: Apa saja prasyarat untuk mengikuti tutorial ini?
+### Apakah kepatuhan PDF/UA wajib untuk semua dokumen?
+Meskipun tidak wajib, namun direkomendasikan untuk dokumen yang memerlukan standar aksesibilitas tinggi.
 
-J: Sebelum memulai, pastikan Anda telah menyiapkan lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini melibatkan pemasangan pustaka Aspose.PDF dan konfigurasi proyek Anda untuk merujuknya.
+### Bisakah saya menerapkan gaya yang berbeda pada baris tertentu?
+ Ya, Anda dapat menyesuaikan baris atau sel individual dengan menyesuaikannya`TextState` atau`BackgroundColor`.
 
-#### T: Bagaimana cara membuat dokumen PDF baru dan mengatur judul dan bahasanya menggunakan Aspose.PDF untuk .NET?
-
- A: Untuk membuat dokumen PDF baru, Anda perlu membuat`Document` objek dari pustaka Aspose.PDF. Kode sumber C# yang disediakan dalam tutorial ini menunjukkan cara membuat dokumen dan mengatur judul serta properti bahasanya.
-
-#### T: Apa pentingnya elemen struktur akar dalam dokumen PDF?
-
-A: Elemen struktur root berfungsi sebagai wadah bagi elemen struktur lainnya, membantu mengatur dan mengkategorikan konten dokumen PDF. Elemen ini berperan penting dalam membangun struktur logis dokumen.
-
-#### T: Bagaimana cara membuat dan menyesuaikan elemen struktur array menggunakan Aspose.PDF untuk .NET?
-
- A: Anda dapat membuat elemen struktur array menggunakan`CreateTableElement()` metode. Kode sumber tutorial menyediakan contoh penyesuaian berbagai properti elemen tabel, seperti warna latar belakang, batas, perataan, lebar kolom, dan banyak lagi.
-
-#### T: Dapatkah saya menyesuaikan gaya dan properti sel tabel dalam elemen array?
-
-A: Ya, tutorial ini membahas cara menyesuaikan gaya dan properti seluruh elemen tabel, termasuk header, baris body, dan footer. Namun, tutorial ini tidak secara khusus membahas penyesuaian sel tabel individual.
-
-#### T: Bagaimana cara menambahkan header, baris isi, dan footer ke elemen tabel?
-
-A: Tutorial ini menjelaskan cara membuat dan menambahkan header, baris isi, dan footer ke elemen tabel menggunakan metode yang sesuai yang disediakan oleh Aspose.PDF untuk .NET.
-
-#### T: Apa itu kepatuhan PDF/UA, dan bagaimana saya dapat memvalidasinya untuk dokumen PDF saya yang diberi tag?
-
- A: Kepatuhan PDF/UA memastikan bahwa dokumen PDF sesuai dengan standar aksesibilitas, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas. Tutorial ini menunjukkan cara memvalidasi kesesuaian PDF/UA menggunakan`Validate()` metode dan menghasilkan laporan kepatuhan XML.
-
-#### T: Bagaimana saya dapat memasukkan konsep-konsep ini ke dalam aplikasi .NET saya sendiri?
-
-J: Anda dapat menggunakan contoh kode sumber C# yang disediakan sebagai panduan untuk menerapkan pemformatan elemen array dalam aplikasi .NET Anda sendiri. Ubah dan sesuaikan kode agar sesuai dengan kebutuhan Anda dan integrasikan ke dalam proyek Anda.
-
-#### T: Apakah ada praktik terbaik yang direkomendasikan untuk memformat elemen array dalam dokumen PDF?
-
-A: Saat memformat elemen array (tabel), pertimbangkan keterbacaan dan aksesibilitas konten. Gunakan font yang jelas dan mudah dibaca, warna yang sesuai, dan pertahankan tata letak yang konsisten. Validasi kepatuhan PDF/UA untuk memastikan standar aksesibilitas terpenuhi.
-
-#### T: Fitur Aspose.PDF for .NET apa lagi yang dapat saya jelajahi untuk kustomisasi dokumen PDF?
-
-J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk kustomisasi dokumen PDF, termasuk manipulasi teks, penyisipan gambar, manajemen bidang formulir, tanda tangan digital, anotasi, dan banyak lagi. Lihat dokumentasi dan sumber daya resmi untuk menjelajahi fungsi tambahan.
+### Apa manfaat menggunakan konten yang diberi tag?
+Konten yang diberi tag meningkatkan aksesibilitas dokumen dan membantu memastikan kepatuhan terhadap standar seperti PDF/UA.

@@ -151,7 +151,7 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將編號樣式（羅馬數字和信件）套用到 PDF 檔案中的標題。 Aspose.PDF 為控制頁面佈局、編號樣式和內容定位提供了靈活性，為您提供了創建組織良好的專業 PDF 文件的強大工具集。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將編號樣式（羅馬數字和信件）套用到 PDF 檔案中的標題。 Aspose.PDF 為控制頁面佈局、編號樣式和內容定位提供了靈活性，為您提供了創建組織良好的專業 PDF 文件的強大工具集。
 
 ## 常見問題解答
 

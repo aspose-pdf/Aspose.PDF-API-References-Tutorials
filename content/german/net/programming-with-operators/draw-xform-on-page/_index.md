@@ -61,7 +61,7 @@ using (Document doc = new Document(inFile))
 }
 ```
 
- Mithilfe der`using` Anweisung stellt sicher, dass die Ressourcen nach Abschluss der Vorgänge automatisch bereinigt werden.
+ Mit dem`using` Anweisung stellt sicher, dass die Ressourcen nach Abschluss der Vorgänge automatisch bereinigt werden.
 
 ## Schritt 3: Seiteninhalte aufrufen und mit dem Zeichnen beginnen
 

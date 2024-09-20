@@ -102,7 +102,7 @@ Questa semplice riga di codice visualizza il testo estratto nella finestra della
 
 ## Conclusione
 
-Lavorare con annotazioni in documenti PDF, in particolare annotazioni timbro, può aggiungere funzionalità significative alle tue applicazioni. Con Aspose.PDF per .NET, hai un set robusto di strumenti che semplifica l'estrazione di dati, la manipolazione di annotazioni e l'interazione con i PDF in modi significativi. In questo tutorial, ti abbiamo mostrato come estrarre testo da un'annotazione timbro in pochi semplici passaggi. Ora è il tuo turno di sperimentare queste funzionalità nei tuoi progetti!
+Lavorare con le annotazioni nei documenti PDF, in particolare le annotazioni timbro, può aggiungere funzionalità significative alle tue applicazioni. Con Aspose.PDF per .NET, hai un set robusto di strumenti che semplifica l'estrazione di dati, la manipolazione di annotazioni e l'interazione con i PDF in modi significativi. In questo tutorial, ti abbiamo mostrato come estrarre testo da un'annotazione timbro in pochi semplici passaggi. Ora è il tuo turno di sperimentare queste funzionalità nei tuoi progetti!
 
 ## Domande frequenti
 

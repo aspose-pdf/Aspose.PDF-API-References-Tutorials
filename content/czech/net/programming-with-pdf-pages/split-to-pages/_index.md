@@ -102,7 +102,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 
 ## Závěr
 
-Rozdělení souborů PDF nebylo nikdy jednodušší, že? Pomocí několika řádků kódu pomocí Aspose.PDF pro .NET můžete efektivně oddělit stránky a zjednodušit si život. Ať už zpracováváte obchodní zprávy, akademické dokumenty nebo osobní dokumenty, znalost, jak rozdělit soubory PDF, vám ušetří čas a námahu.
+Rozdělení PDF nebylo nikdy jednodušší, že? Pomocí několika řádků kódu pomocí Aspose.PDF pro .NET můžete efektivně oddělit stránky a zjednodušit si život. Ať už zpracováváte obchodní zprávy, akademické dokumenty nebo osobní dokumenty, znalost, jak rozdělit soubory PDF, vám ušetří čas a námahu.
 
 ## FAQ
 

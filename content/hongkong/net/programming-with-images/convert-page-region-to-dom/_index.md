@@ -64,7 +64,7 @@ Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
 ```
 
 ## 第三步：設定裁剪框
-定義矩形後，現在可以使用該矩形裁剪 PDF 頁面。這有效地告訴文檔只考慮這個特定區域。
+定義矩形後，現在可以使用該矩形裁剪 PDF 頁面。這有效地告訴文檔只考慮這個特定領域。
 
 ```csharp
 //根據所需頁面區域的矩形設定 CropBox 值
@@ -123,7 +123,7 @@ Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at "
 
 ## 結論
 
-現在你就得到它了！只需幾個簡單的步驟，您就可以使用 Aspose.PDF for .NET 將 PDF 頁面的特定區域轉換為映像。這個強大的工具為希望高效操作 PDF 文件的開發人員開啟了一個充滿可能性的世界。因此，捲起袖子，嘗試這段程式碼，並探索使用 Aspose.PDF 還可以實現什麼目標。天空才是極限！
+現在你就擁有了！只需幾個簡單的步驟，您就可以使用 Aspose.PDF for .NET 將 PDF 頁面的特定區域轉換為映像。這個強大的工具為希望高效操作 PDF 文件的開發人員開啟了一個充滿可能性的世界。因此，捲起袖子，嘗試這段程式碼，並探索使用 Aspose.PDF 還可以實現什麼目標。天空才是極限！
 
 ## 常見問題解答
 

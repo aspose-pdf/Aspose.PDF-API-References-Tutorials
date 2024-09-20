@@ -62,7 +62,7 @@ Jakmile je adresář nastaven, je čas otevřít první dokument PDF. To se prov
 Document pdfDocument1 = new Document(dataDir + "Concat1.pdf");
 ```
 
- To, co tady děláme, je vytváření nového`Document`objekt a předat mu cestu k prvnímu souboru PDF. Tato akce načte soubor do paměti pro manipulaci.
+ To, co zde děláme, je vytváření nového`Document`objekt a předat mu cestu k prvnímu souboru PDF. Tato akce načte soubor do paměti pro manipulaci.
 
 ## Krok 3: Otevřete druhý dokument PDF
 

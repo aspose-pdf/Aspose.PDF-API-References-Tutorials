@@ -60,7 +60,7 @@ pdfDocument.save("output.docx", SaveFormat.DocX);
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
+### كيف أقوم بتثبيت Aspose.PDF لـJava؟
 
 لتثبيت Aspose.PDF لـ Java، قم بتنزيل ملفات JAR من موقع الويب وأضفها إلى مشروع Java الخاص بك. يمكنك أيضًا استخدام Maven لإدارة التبعيات.
 

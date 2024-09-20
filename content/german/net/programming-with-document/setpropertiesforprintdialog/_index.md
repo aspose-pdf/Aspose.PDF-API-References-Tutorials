@@ -51,7 +51,7 @@ Mit diesen Paketen können Sie in den interessanten Teil der Manipulation von PD
 
 Lassen Sie uns nun den von Ihnen bereitgestellten Codeausschnitt in verständliche Schritte aufteilen.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Bevor Sie etwas mit PDF-Dokumenten machen, sollten Sie festlegen, wo Ihr Dokument gespeichert wird. Lassen Sie uns das mit einer Variablen tun:
 

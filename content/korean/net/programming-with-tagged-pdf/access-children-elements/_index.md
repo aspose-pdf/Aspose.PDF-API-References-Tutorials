@@ -2,161 +2,171 @@
 title: 자식 요소에 접근
 linktitle: 자식 요소에 접근
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 문서의 자식 요소에 액세스하고 편집하는 단계별 가이드. PDF 콘텐츠를 개인화하세요.
+description: 이 단계별 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF의 자식 요소에 액세스하고 수정하는 방법을 알아봅니다.
 type: docs
 weight: 10
 url: /ko/net/programming-with-tagged-pdf/access-children-elements/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서의 자식 요소에 액세스하는 방법에 대한 단계별 가이드를 제공합니다. Aspose.PDF는 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환할 수 있는 강력한 라이브러리입니다. Aspose.PDF의 표시된 콘텐츠 구조 기능을 사용하면 PDF 문서에서 구조화된 요소의 속성에 액세스하고 수정할 수 있습니다.
+## 소개
+
+PDF 문서를 프로그래밍 방식으로 조작하는 경우 Aspose.PDF for .NET은 포괄적인 API로 빛을 발하며, 개발자는 다양한 작업을 정밀하게 수행할 수 있습니다. 태그가 지정된 PDF로 작업하는 데 중요한 기능 중 하나는 문서 구조 내의 자식 요소에 액세스하고 수정하는 것입니다. 이 문서에서는 이 기능을 활용하여 태그가 지정된 PDF의 자식 요소에 액세스하고 속성을 설정하는 방법을 살펴보겠습니다.
 
 ## 필수 조건
 
-시작하기 전에 다음 전제 조건이 충족되었는지 확인하세요.
+코드로 들어가기 전에 시작하는 데 필요한 몇 가지 사항이 있습니다.
 
-1. .NET Framework와 함께 설치된 Visual Studio.
-2. .NET용 Aspose.PDF 라이브러리.
+1. .NET Framework: 컴퓨터에 .NET Framework 버전이 설치되어 있는지 확인하세요. Aspose.PDF는 .NET Core도 지원합니다.
+2.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리를 설치해야 합니다. 최신 버전은 다음에서 다운로드할 수 있습니다.[Aspose 다운로드 페이지](https://releases.aspose.com/pdf/net/).
+3. 개발 환경: C# 코드를 작성하고 실행할 수 있는 Visual Studio와 같은 IDE를 설정합니다.
+4. 샘플 PDF 파일: 작업할 샘플 태그가 지정된 PDF 문서가 필요합니다. 이 튜토리얼에서는 "StructureElementsTree.pdf"를 사용하며, 프로젝트의 문서 디렉토리에 넣어야 합니다.
 
-## 1단계: 프로젝트 설정
+모든 것을 설정했으면 이제 코딩을 시작할 준비가 되었습니다!
 
-시작하려면 Visual Studio에서 새 프로젝트를 만들고 .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다. Aspose 공식 웹사이트에서 라이브러리를 다운로드하여 컴퓨터에 설치할 수 있습니다.
+## 필수 패키지 가져오기
 
-## 2단계: 필요한 네임스페이스 가져오기
-
-C# 코드 파일에서 Aspose.PDF에서 제공하는 클래스와 메서드에 액세스하는 데 필요한 네임스페이스를 가져옵니다.
+코딩하기 전에 C# 프로젝트에서 필요한 네임스페이스를 가져오세요. 이렇게 하면 Aspose.PDF 라이브러리에서 클래스와 메서드에 원활하게 액세스할 수 있습니다.
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 3단계: PDF 문서 로드 및 자식 요소 액세스
+이 작업을 관리 가능한 단계로 나누어 보겠습니다.
 
-다음 코드를 사용하여 PDF 문서를 로드하고 자식 요소에 액세스합니다.
+## 1단계: 문서 디렉토리 설정
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-Document document = new Document(dataDir + "StructureElementsTree.pdf");
-ITaggedContent taggedContent = document.TaggedContent;
-ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+PDF 문서를 저장할 디렉토리를 정의하는 것으로 시작해 보겠습니다. 이 단계는 프로그램에 파일을 찾을 위치를 알려주기 때문에 중요합니다. 
 
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// 요소의 속성에 접근합니다
-string title = structureElement.Title;
-string language = structureElement.Language;
-string actualText = structureElement.ActualText;
-string expansionText = structureElement.ExpansionText;
-string alternativeText = structureElement.AlternativeText;
-}
-}
-```
-
-이 코드를 사용하면 PDF 문서 구조의 루트에 있는 자식 요소에 접근하여 각 요소의 속성을 가져올 수 있습니다.
-
-## 4단계: 루트 요소 자식에 액세스하고 속성 변경
-
-다음 코드를 사용하여 루트 요소의 자식에 액세스하고 속성을 수정합니다.
-
-```csharp
-elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
-
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// 요소의 속성을 수정합니다
-structureElement.Title = "title";
-structureElement.Language = "fr-FR";
-structureElement.ActualText = "actual text";
-structureElement.ExpansionText = "exp";
-structureElement.AlternativeText = "alt";
-}
-}
-```
-
-이 코드를 사용하면 루트 요소의 첫 번째 요소의 자식에 접근하고 각 요소의 속성을 수정할 수 있습니다.
-
-
-### .NET용 Aspose.PDF를 사용하여 Access Children Elements에 대한 샘플 소스 코드 
 ```csharp
 // 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ 간단히 교체하세요`"YOUR DOCUMENT DIRECTORY"` 컴퓨터의 실제 경로와 일치합니다. 
+
+## 2단계: PDF 문서 열기
+
+다음 단계는 태그가 지정된 PDF 문서를 애플리케이션에 로드하는 것입니다. 여기서 마법이 시작됩니다!
+
+```csharp
 // PDF 문서 열기
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// TaggedPdf로 작업할 콘텐츠 가져오기
+```
+
+제공한 경로가 조작하려는 PDF 파일을 가리키는지 확인하세요.
+
+## 3단계: 태그가 지정된 콘텐츠 가져오기
+
+이제 문서에서 태그가 지정된 콘텐츠에 액세스하여 구조 요소와 쉽게 상호 작용할 수 있습니다.
+
+```csharp
+// TaggedPdf 작업을 위한 콘텐츠 가져오기
 ITaggedContent taggedContent = document.TaggedContent;
+```
+
+이 줄은 PDF의 구조를 깊이 있게 살펴볼 수 있는 계기가 됩니다.
+
+## 4단계: 루트 요소에 액세스
+
+자식 요소에 접근하기 전에 루트 요소부터 시작해 보겠습니다. 그러면 구조 계층 구조를 더 잘 이해하는 데 도움이 될 것입니다.
+
+```csharp
 // 루트 요소에 대한 액세스
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+```
+
+여기서는 루트의 자식 요소 목록을 얻고 있습니다.
+
+## 5단계: 자식 요소 속성 검색
+
+이제 루트 요소를 반복하여 각 구조 요소에서 속성을 검색해 보겠습니다. 이 단계는 어떤 콘텐츠가 있는지 확인하는 데 도움이 됩니다.
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// 속성을 가져옵니다
-		string title = structureElement.Title;
-		string language = structureElement.Language;
-		string actualText = structureElement.ActualText;
-		string expansionText = structureElement.ExpansionText;
-		string alternativeText = structureElement.AlternativeText;
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // 속성을 가져옵니다
+        string title = structureElement.Title;
+        string language = structureElement.Language;
+        string actualText = structureElement.ActualText;
+        string expansionText = structureElement.ExpansionText;
+        string alternativeText = structureElement.AlternativeText;
+        
+        // 검색된 속성을 표시합니다(선택 사항)
+        Console.WriteLine($"Title: {title}, Language: {language}, ActualText: {actualText}");
+    }
 }
-//루트 요소의 첫 번째 요소의 자식 요소에 대한 접근
+```
+
+이 루프는 현재 요소가 구조 요소인지 확인하고, 속성을 검색하여 인쇄합니다. 얼마나 편리한가요?
+
+## 6단계: 첫 번째 루트 요소의 자식 요소에 액세스
+
+이제 루트 요소에 접근했으니, 첫 번째 루트 요소를 더 자세히 살펴보고 그 자식 요소에 접근해 보겠습니다.
+
+```csharp
+// 루트 요소의 첫 번째 요소의 자식 요소에 대한 접근
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
+```
+
+ 변경하여`ChildElements[1]` 다른 인덱스로 이동하면, 존재하는 경우 다른 루트 요소를 탐색할 수 있습니다.
+
+## 7단계: 자식 요소 속성 수정
+
+자식 요소에 액세스하면 해당 속성을 업데이트하고 싶을 수 있습니다. 간단하죠!
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// 속성 설정
-		structureElement.Title = "title";
-		structureElement.Language = "fr-FR";
-		structureElement.ActualText = "actual text";
-		structureElement.ExpansionText = "exp";
-		structureElement.AlternativeText = "alt";
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // 속성을 설정합니다. 필요에 따라 이 값을 사용자 정의하세요!
+        structureElement.Title = "New Title";
+        structureElement.Language = "fr-FR";
+        structureElement.ActualText = "Updated actual text";
+        structureElement.ExpansionText = "Updated exp";
+        structureElement.AlternativeText = "Updated alt";
+    }
 }
+```
+
+선택한 구조 요소 각각을 새롭게 바꾸는 것과 같습니다!
+
+## 8단계: 태그가 지정된 PDF 문서 저장
+
+마지막으로 변경 사항을 적용한 후에는 업데이트된 PDF를 저장해야 합니다. 
+
+```csharp
 // 태그가 지정된 PDF 문서 저장
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
+나중에 쉽게 식별할 수 있도록 수정한 문서에 고유한 이름을 지정하세요.
+
 ## 결론
 
-이 튜토리얼에서는 PDF 문서의 자식 요소에 액세스하는 방법과 Aspose.PDF for .NET을 사용하여 요소 속성을 수정하는 방법을 배웠습니다. 이를 통해 필요에 따라 PDF 문서의 구조화된 요소를 사용자 정의하고 조작할 수 있습니다.
+Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 문서의 자식 요소에 액세스하는 것은 매우 간단하여 콘텐츠를 효과적으로 조작할 수 있습니다. 이 단계별 가이드를 따르면 PDF 문서를 쉽게 읽고, 수정하고, 저장할 수 있습니다. 메타데이터를 업데이트하든 구조를 변경하든 Aspose.PDF 라이브러리는 작업을 효율적으로 수행하는 데 필요한 도구를 제공합니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: Aspose.PDF for .NET을 사용하여 PDF 문서의 자식 요소에 액세스하는 목적은 무엇입니까?
+### 태그가 지정된 PDF란 무엇입니까?
+태그가 지정된 PDF는 메타데이터가 포함된 문서로, 접근성과 탐색이 더욱 용이합니다.
 
-A: Aspose.PDF for .NET을 사용하여 PDF 문서의 자식 요소에 액세스하면 문서 내의 구조화된 요소를 프로그래밍 방식으로 조작하고 사용자 지정할 수 있습니다. 여기에는 제목, 언어, 실제 텍스트, 확장 텍스트 및 대체 텍스트와 같은 속성을 수정하여 문서의 접근성과 표현을 향상시키는 것이 포함될 수 있습니다.
+### Aspose.PDF에서 비구조적 요소에 접근할 수 있나요?
+네, 이 튜토리얼에서는 구조 요소에 초점을 맞추었지만 다른 유형의 요소에도 액세스할 수 있습니다.
 
-#### 질문: 이 프로세스에서 Aspose.PDF 라이브러리의 역할은 무엇인가요?
+### Aspose.PDF를 사용하려면 구매해야 합니까?
+처음에는 무료로 사용해 볼 수 있지만, 모든 기능과 지원을 받으려면 구매해야 할 수도 있습니다.
 
-A: Aspose.PDF for .NET은 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환하기 위한 다양한 기능을 제공하는 강력한 라이브러리입니다. 이 튜토리얼에서 라이브러리는 PDF 문서를 로드하고, 태그가 지정된 콘텐츠와 구조화된 요소에 액세스하고, 해당 속성을 수정하는 데 사용됩니다.
+### Aspose.PDF는 .NET Core와 호환됩니까?
+네, Aspose.PDF는 .NET Framework의 다른 버전과 함께 .NET Core를 지원합니다.
 
-#### 질문: Aspose.PDF for .NET을 사용하여 PDF 문서의 자식 요소 작업을 하기 위한 전제 조건은 무엇입니까?
-
-답변: 시작하기 전에 .NET 프레임워크와 함께 Visual Studio가 설치되어 있는지 확인하고 프로젝트에서 .NET용 Aspose.PDF 라이브러리가 참조되었는지 확인하세요.
-
-#### 질문: 제공된 C# 코드를 사용하면 PDF 문서의 자식 요소에 액세스하고 수정할 수 있나요?
-
-A: 이 코드는 PDF 문서를 로드하고, 태그가 지정된 콘텐츠에 액세스하고, 루트와 특정 요소의 자식 요소를 탐색하는 방법을 보여줍니다. 구조화된 요소의 속성을 검색하는 방법과 해당 속성을 수정하여 문서를 사용자 지정하는 방법을 보여줍니다.
-
-#### 질문: 코드에 표시된 것 외에 자식 요소의 다른 속성에 접근하여 수정할 수 있나요?
-
-A: 네, 비슷한 기술을 사용하여 자식 요소의 다양한 다른 속성에 액세스하고 수정할 수 있습니다. 코드에서 보여지는 속성(제목, 언어, 실제 텍스트 등)은 단지 예일 뿐이며, Aspose.PDF 설명서를 탐색하여 조작에 사용할 수 있는 더 많은 속성과 메서드를 찾을 수 있습니다.
-
-#### 질문: PDF 문서 내에서 어떤 자식 요소에 액세스하고 싶은지 어떻게 식별합니까?
-A: 이 코드는 루트 요소의 자식 요소와 그 안의 특정 요소에 액세스하는 예를 제공합니다. PDF 문서의 태그가 지정된 콘텐츠 내에서 계층 구조와 구조를 기준으로 액세스하려는 요소를 식별할 수 있습니다.
-
-#### 질문: 이 방법을 사용하면 새로운 자식 요소를 추가하거나 기존 자식 요소를 삭제할 수 있나요?
-
-A: 제공된 코드는 기존 자식 요소에 액세스하고 수정하는 데 중점을 두고 있지만, Aspose.PDF 라이브러리에서 제공하는 적절한 메서드를 사용하면 새로운 자식 요소를 추가하거나 기존 자식 요소를 삭제하는 방식으로 접근 방식을 확장할 수 있습니다.
-
-#### 질문: 이 방법을 사용하면 PDF 문서 내에서 중첩된 자식 요소를 작업할 수 있나요?
-
-A: 네, 유사한 기술을 적용하여 PDF 문서 구조 내의 중첩된 자식 요소에 액세스하고 수정할 수 있습니다. 요소의 계층을 탐색하여 다양한 수준에서 요소에 액세스하고 조작할 수 있습니다.
+### Aspose.PDF에 대한 더 많은 문서는 어디에서 찾을 수 있나요?
+ 추가 문서는 다음에서 찾을 수 있습니다.[Aspose 문서 페이지](https://reference.aspose.com/pdf/net/).

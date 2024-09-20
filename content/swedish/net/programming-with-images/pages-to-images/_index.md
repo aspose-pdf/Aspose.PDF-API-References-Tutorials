@@ -104,7 +104,7 @@ Att använda en hög upplösning säkerställer att de utgående bilderna behål
 
 ## Steg 6: Bearbeta sidan och spara bilden
 
-Det är här magin händer – att konvertera PDF-sidan till en bild och spara den via filströmmen vi konfigurerade tidigare.
+Det är här magin händer – att konvertera PDF-sidan till en bild och spara den via filströmmen vi ställde in tidigare.
 
 ```csharp
 // Konvertera en viss sida och spara bilden för att streama

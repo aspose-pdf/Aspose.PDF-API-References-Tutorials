@@ -17,7 +17,7 @@ Než si vyhrneme rukávy a ponoříme se do kódu, je pár věcí, které musít
 
 1.  Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovaný Aspose.PDF pro .NET. Můžete si jej stáhnout z[odkaz ke stažení](https://releases.aspose.com/pdf/net/) nebo jej použijte prostřednictvím NuGet ve Visual Studiu.
 2. Vývojové prostředí: Měli byste mít nastavené vývojové prostředí .NET. Visual Studio je skvělá volba.
-3. Základní znalost C#: I když je tato příručka vhodná pro začátečníky, základní znalost C# vám pomůže snadněji ji sledovat.
+3. Základní znalost C#: I když je tato příručka vhodná pro začátečníky, základní znalost C# vám pomůže snáze ji sledovat.
 4. Dokument a soubor PDF k připojení: Budete potřebovat existující dokument PDF a soubor, který chcete připojit. V našem příkladu použijeme dokument PDF a velký soubor obrázku.
 5.  Dočasná licence: Chcete-li odemknout plný potenciál Aspose.PDF bez jakýchkoli omezení, možná budete chtít získat[dočasná licence](https://purchase.aspose.com/temporary-license/).
 
@@ -69,7 +69,7 @@ FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-lo
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
- Vysvětlení: The`EmbeddedFiles` vlastnictví`Document` objekt je kolekce, která obsahuje všechny přílohy dokumentu. Přidáním`FileSpecification` k této sbírce efektivně přikládáme náš soubor do PDF.
+ Vysvětlení: The`EmbeddedFiles` vlastnictvím`Document` objekt je kolekce, která obsahuje všechny přílohy dokumentu. Přidáním`FileSpecification` k této sbírce efektivně přikládáme náš soubor do PDF.
 
 ## Krok 4: Převeďte PDF do formátu PDF/A
 

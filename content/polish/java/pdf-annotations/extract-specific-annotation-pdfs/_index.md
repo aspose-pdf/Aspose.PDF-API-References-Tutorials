@@ -10,7 +10,7 @@ url: /pl/java/pdf-annotations/extract-specific-annotation-pdfs/
 
 ## Wstęp
 
-Adnotacje w plikach PDF mogą być skarbnicą informacji. Umożliwiają użytkownikom dodawanie komentarzy, wyróżnianie ważnych sekcji, a nawet dołączanie niestandardowych notatek. Czasami jednak może być konieczne wyodrębnienie określonych adnotacji do celów raportowania lub analizy. Aspose.PDF for Java ułatwia to zadanie dzięki kompleksowemu zestawowi funkcji.
+Adnotacje w plikach PDF mogą być skarbnicą informacji. Umożliwiają użytkownikom dodawanie komentarzy, wyróżnianie ważnych sekcji, a nawet dołączanie niestandardowych notatek. Czasami jednak może być konieczne wyodrębnienie określonych adnotacji w celach raportowania lub analizy. Aspose.PDF for Java ułatwia to zadanie dzięki kompleksowemu zestawowi funkcji.
 
 ## Wymagania wstępne
 

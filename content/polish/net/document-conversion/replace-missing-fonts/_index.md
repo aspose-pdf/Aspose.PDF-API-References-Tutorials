@@ -56,7 +56,7 @@ catch (Exception)
 }
 ```
 
-Tutaj próbujemy znaleźć czcionkę. Jeśli nie zostanie znaleziona, wyłapujemy wyjątek i zastępujemy ją bardziej powszechną czcionką „Arial”. Dzięki temu dokument nadal będzie wyglądał dobrze, nawet jeśli oryginalna czcionka nie będzie dostępna.
+Tutaj próbujemy znaleźć czcionkę. Jeśli nie zostanie znaleziona, wyłapujemy wyjątek i zastępujemy ją bardziej powszechną czcionką „Arial”. Dzięki temu dokument nadal będzie wyglądał dobrze, nawet jeśli oryginalna czcionka nie jest dostępna.
 
 ## Krok 3: Załaduj dokument PDF
 

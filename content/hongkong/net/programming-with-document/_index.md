@@ -33,7 +33,7 @@ description: 此資源提供了文件程式設計的 Aspose.PDF for .NET 函式�
 | [取得 XMP 元數據](./getxmpmetadata/) | 在此逐步指南中了解如何使用 Aspose.PDF for .NET 從 PDF 中提取 XMP 元資料。輕鬆從 PDF 文件中獲取有價值的見解。 |  
 | [取得字體替換警告](./getwarningsforfontsubstitution/) | 了解如何使用 Aspose.PDF for .NET 的 GetWarningsForFontSubstitution 功能在開啟 PDF 文件時檢測字體替換警告。 |  
 | [取得 PDF 檔案中的縮放係數](./getzoomfactor/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 取得 PDF 檔案中的縮放係數。 |  
-| [隱藏目錄中的頁碼](./hidepagenumbersintoc/) | 了解如何使用 Aspose.PDF for .NET 在目錄中隱藏頁碼。請按照包含程式碼範例的詳細指南來建立專業的 PDF。 |  
+| [隱藏目錄中的頁碼](./hidepagenumbersintoc/) | 了解如何使用 Aspose.PDF for .NET 在目錄中隱藏頁碼。請按照此包含程式碼範例的詳細指南來建立專業的 PDF。 |  
 | [連結重複的串流](./linkduplicatestreams/) | 了解如何使用 Aspose.PDF for .NET 連結 PDF 文件中的重複流。優化您的 PDF 以獲得更好的效能並減少檔案大小。 |  
 | [優化 PDF 文件](./optimizedocument/) | 透過我們的逐步指南，了解如何使用 Aspose.PDF for .NET 最佳化 PDF 文件。透過減少檔案大小和複雜性來增強 Web 效能。 |  
 | [優化 PDF 檔案的檔案大小](./optimizefilesize/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 最佳化 PDF 檔案大小。減小檔案大小而不損失品質。 |  

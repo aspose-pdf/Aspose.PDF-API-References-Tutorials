@@ -19,7 +19,7 @@ Než se vrhneme na to, co je nutné pro operátory PDF, ujistěte se, že máte 
 2.  Knihovna Aspose.PDF: Ujistěte se, že máte ve svém prostředí .NET nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[Aspose PDF for .NET releases page](https://releases.aspose.com/pdf/net/).
 3. Visual Studio nebo libovolné IDE: K psaní a spouštění kódu budete potřebovat integrované vývojové prostředí (IDE), jako je Visual Studio.
 4.  Soubory obrázků: Připravte si obrázky, které chcete přidat do PDF. Pro tento tutoriál použijeme ukázkový obrázek s názvem`PDFOperators.jpg`.
-5.  Šablona PDF: Pojmenujte si ukázkový soubor PDF`PDFOperators.pdf` připravené ve vašem projektovém adresáři.
+5.  Šablona PDF: Nechte si pojmenovat ukázkový soubor PDF`PDFOperators.pdf` připravené ve vašem projektovém adresáři.
 
 Jakmile splníte tyto předpoklady, jste připraveni začít s PDF manipulovat jako profesionál!
 

@@ -2,186 +2,147 @@
 title: 在 PDF 檔案中指定行距
 linktitle: 在 PDF 檔案中指定行距
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中指定行距。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 中指定行距。非常適合尋求精確文字格式的開發人員。
 type: docs
 weight: 510
 url: /zh-hant/net/programming-with-text/specify-line-spacing/
 ---
-本教學課程說明如何使用 Aspose.PDF for .NET 在 PDF 檔案中指定行距。提供的 C# 原始程式碼逐步演示了該過程。
+## 介紹
+
+您是否曾經為控制 PDF 檔案中的行間距而苦惱過？也許您的文字看起來過於擁擠，或者只是看起來沒有您想要的那麼精美。在本教學中，我們將介紹如何使用 Aspose.PDF for .NET 輕鬆指定 PDF 中的行距。我們將使用簡單的逐步指南來引導您從空白 PDF 轉換為包含自訂行距的 PDF。如果您需要精確的報告、發票或證書等文件的文字佈局，那麼這是完美的選擇。
 
 ## 先決條件
 
-在繼續學習本教學之前，請確保您具備以下條件：
+在我們進入程式碼之前，讓我們確保您已擁有所需的一切：
 
-- C# 程式語言的基礎知識。
-- 安裝了 Aspose.PDF for .NET 函式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
+1. 已安裝 Aspose.PDF for .NET。如果沒有，請從[Aspose.PDF下載頁面](https://releases.aspose.com/pdf/net/).
+2. .NET 開發環境（如 Visual Studio）。
+3. TrueType 字型檔（`.ttf` ）我們將在範例中使用。您可以使用任何字體，但在本指南中，我們將使用`HPSimplified.TTF`字體。
+4. C# 和 PDF 操作的基礎知識。
 
-## 第 1 步：設定項目
+如果您準備好了，讓我們繼續匯入必要的套件。
 
-首先在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。
+## 導入包
 
-## 步驟2：導入必要的命名空間
-
-在 C# 檔案的開頭新增以下 using 指令以匯入所需的命名空間：
+在您的 C# 專案中，您需要匯入 Aspose.PDF 命名空間才能使用 PDF 功能。操作方法如下：
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## 第三步：設定文檔目錄路徑
+這些命名空間可讓您建立和操作 PDF 文檔，以及使用文字格式和字型選項。
 
-使用以下命令設定文檔目錄的路徑`dataDir`多變的：
+我們會將其分解為幾個小步驟，以便您可以輕鬆遵循。每個步驟都將重點放在流程的關鍵部分，從設定 PDF 到指定行距。
+
+## 第 1 步：設定項目並定義文件目錄
+
+我們需要做的第一件事是定義文件所在的位置。這有助於程式知道在哪裡可以找到字體以及在哪裡保存生成的 PDF。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
-代替`"YOUR DOCUMENT DIRECTORY"`與文檔目錄的實際路徑。
+在此步驟中，您將替換`"YOUR DOCUMENT DIRECTORY"`與您儲存檔案的實際路徑。這將是您放置字體檔案的位置（`HPSimplified.TTF`) 以及 PDF 的保存位置。
 
-## 第 4 步：載入輸入的 PDF 文件
+## 第 2 步：載入 PDF 文檔
 
-使用以下命令載入輸入 PDF 文件`Document`班級：
+現在，我們需要建立一個新的 PDF 文件。對於本指南，我們將從空白文件開始，但如果需要，您也可以載入現有 PDF。
 
 ```csharp
 Document doc = new Document();
 ```
 
-## 第 5 步：建立 TextFormattingOptions
+這將建立一個新的空 PDF 文件。容易，對吧？
 
-創建一個`TextFormattingOptions`物件並將行距模式設定為`FullSize`:
+## 第 3 步：設定文字格式選項
+
+這就是奇蹟發生的地方。我們將為要新增至 PDF 的文字指定行距模式。 Aspose.PDF 為我們提供了幾個選項，但在本指南中，我們將使用`LineSpacingMode.FullSize`，這確保了充分考慮行距。
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## 第 6 步：建立一個 TextFragment
+此程式碼將行距模式設定為`FullSize`，確保文字以適當的間距顯示。還有其他選項，例如`Proportional`如果您想要不同的間距行為，但現在，讓我們堅持使用`FullSize`.
 
-創建一個`TextFragment`物件並指定文字內容：
+## 第 4 步：建立文字片段
+
+現在，我們將建立將放置在 PDF 中的實際文字。該文字將遵循我們定義的行距。
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## 第7步：載入字型檔案（可選）
+我們用字串創建了一個文字片段`"Hello world"`。當然，您可以根據自己的喜好自訂此文字。
 
-如果要在文字中使用特定字體，請將 TrueType 字體檔案載入到`FileStream`目的：
+## 第 5 步：載入並套用自訂字體
+
+為了讓文字脫穎而出，我們將從文件中載入自訂 TrueType 字型。此步驟是可選的，但它可以為您的 PDF 增添專業氣息。
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
-代替`"HPSimplified.TTF"`與實際的字體檔案名稱。
+在這裡，我們加載字體文件並將其應用到文字片段。如果檔案路徑有效，則使用該字體。否則，將套用預設字體。
 
-## 步驟8：指定文字位置和行間距
+## 第 6 步：設定文字位置和格式
 
-設定文字片段的位置並指定`TextFormattingOptions`到`TextState.FormattingOptions`財產：
+接下來，我們需要在 PDF 上定位文字。我們還將應用先前建立的格式選項。
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## 步驟 9：將文字加入文件中
+這`Position`方法設定文字在頁面上顯示的座標（在本例中，距左側 100 個單位，距底部 600 個單位）。此處套用格式選項，包括行間距模式。
 
-將文字片段新增至文件中，方法是將其附加到`TextBuilder`或直接到頁面`Paragraphs`收藏：
+## 步驟 7：將文字新增至 PDF 頁面
+
+現在我們的文字已格式化並定位，是時候將其新增至 PDF 文件了。
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## 第10步：儲存生成的PDF文檔
+此程式碼在 PDF 文件中建立一個新頁面並在其中添加文字片段。
 
-儲存修改後的PDF文件：
+## 第 8 步：儲存 PDF
+
+我們已經到了最後一步！現在一切都已設定完畢，讓我們儲存 PDF。
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-確保更換`"SpecifyLineSpacing_out.pdf"`與所需的輸出檔名。
-
-### 使用 Aspose.PDF for .NET 指定行距的範例原始程式碼 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-//加載輸入 PDF 文件
-Document doc = new Document();
-//使用 LineSpacingMode.FullSize 建立 TextFormattingOptions
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-//為文件第一頁建立文字產生器對象
-//TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-//使用範例字串建立文字片段
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//將 TrueType 字型載入到串流物件中
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		//設定文字字串的字體名稱
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//指定文字片段的位置
-		textFragment.Position = new Position(100, 600);
-		//將目前片段的 TextFormattingOptions 設定為預先定義（指向 LineSpacingMode.FullSize）
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		//將文字新增至 TextBuilder，以便可以將其放置在 PDF 文件上
-		//textBuilder.AppendText(textFragment);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	//儲存生成的 PDF 文檔
-	doc.Save(dataDir);
-}
-```
+這將以指定的行距保存 PDF，您的文件已準備就緒！
 
 ## 結論
 
-恭喜！您已成功學習如何使用 Aspose.PDF for .NET 在 PDF 文件中指定行距。本教學課程提供了從設定項目到儲存修改後的文件的逐步指南。現在，您可以將此程式碼合併到您自己的 C# 專案中，以自訂 PDF 檔案中文字的行距。
+就是這樣！您剛剛使用 Aspose.PDF for .NET 建立了一個具有自訂行距的 PDF 文件。它是一款功能強大的工具，可讓您控制 PDF 文件的各個方面，這只是您可以實現的功能的一個範例。從文字放置到格式，可能性是無限的。
 
-### 常見問題解答
+如果您想更深入了解 PDF 操作，Aspose.PDF 提供了豐富的功能供您探索。不要猶豫，嘗試並突破您對文件的限制！
 
-#### Q：「指定 PDF 檔案中的行距」教學的目的為何？
+## 常見問題解答
 
-答：「在 PDF 檔案中指定行距」教學課程旨在指導使用者如何使用 .NET 的 Aspose.PDF 庫自訂 PDF 文件中文字的行距。本教程提供逐步說明和 C# 程式碼範例來演示該過程。
+### 我可以將行間距調整為其他模式嗎？  
+是的，您可以使用其他模式，例如`Proportional`或者`Fixed`根據您的需求。
 
-#### Q：本教學如何幫助指定 PDF 文件中的行距？
+### 是否可以從系統而不是文件加載字體？  
+是的，您可以使用載入系統安裝的字體`FontRepository`.
 
-答：本教學幫助使用者了解如何利用 Aspose.PDF for .NET 的功能來指定 PDF 文件中文字的行距。透過遵循提供的步驟和程式碼範例，使用者可以根據自己的喜好調整行間距。
+### 我可以將 Aspose.PDF for .NET 與其他文件格式一起使用嗎？  
+絕對地！ Aspose.PDF for .NET 支援多種格式，如 XML、HTML 等。
 
-#### Q：學習本教程需要滿足哪些先決條件？
+### 我需要許可證才能使用 Aspose.PDF for .NET 嗎？  
+是的，要獲得完整功能，您需要許可證，您可以獲得該許可證[這裡](https://purchase.aspose.com/buy).
 
-答：在開始本教學之前，您應該對 C# 程式語言有基本的了解。此外，您需要安裝 Aspose.PDF for .NET 程式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
-
-#### Q：如何設定我的專案來遵循本教學？
-
-答：首先，在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。這使您能夠利用該程式庫的功能來處理 PDF 文件和自訂行距。
-
-#### Q：我可以使用本教學指定任何類型文字的行距嗎？
-
-答：是的，本教學提供如何使用 Aspose.PDF for .NET 為 PDF 文件中的任何文字內容指定行距的說明。您可以使用提供的程式碼範例根據您的需求調整文字的行距。
-
-#### Q：教學中如何指定行距模式？
-
-答：本教學示範如何創建`TextFormattingOptions`對象並設定其`LineSpacing`財產給`TextFormattingOptions.LineSpacingMode.FullSize`。此模式指定文字內容的整行間距。
-
-#### Q：如何載入文字的特定字體？
-
-答：如果您希望在文字內容中使用特定字體，本教學提供如何將 TrueType 字體檔案載入到`FileStream`對象並將其設定為字體`TextFragment`。這使您能夠自訂文字的字體及其行距。
-
-#### Q：如何自訂 PDF 文件中文字的位置？
-
- A：若要自訂文字的位置，請建立一個`TextFragment`對象並設定其`Position`屬性到所需的座標（X 和 Y）。這使您可以控製文字在 PDF 文件中的放置位置。
-
-#### Q：我可以將這些行間距修改套用到現有 PDF 文件嗎？
-
-答：是的，您可以修改現有 PDF 文件中文字的行距。本教學示範如何創建`TextFragment`以指定的行距和位置，然後將其新增至頁面的`Paragraphs`收藏。
+### 如何設定多個段落的行間距？  
+您可以申請`TextFormattingOptions`對每個`TextFragment`或者`TextParagraph`控制多行或多段落的間距。

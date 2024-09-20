@@ -32,7 +32,7 @@ Mielőtt belemerülnénk a kódolásba, be kell állítania az Aspose.PDF-et Jav
 </dependency>
 ```
 
-Ha a Gradle-t részesíti előnyben, vegye fel ezt a sajátjába`build.gradle` fájl:
+Ha jobban szereti a Gradle-t, vegye fel ezt is a sajátjába`build.gradle` fájl:
 
 ```gradle
 implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' // Cserélje ki a legújabb verzióra

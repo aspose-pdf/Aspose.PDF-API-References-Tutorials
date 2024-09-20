@@ -8,7 +8,7 @@ weight: 12
 url: /nl/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
 
-Gelabelde PDF's zijn zo gestructureerd dat ze toegankelijk zijn voor mensen met een beperking en ook helpen bij geautomatiseerde extractie van inhoud. In deze stapsgewijze handleiding onderzoeken we hoe u inhoud uit gelabelde PDF's kunt extraheren met behulp van Java en de Aspose.PDF voor Java-bibliotheek. We geven broncodevoorbeelden om het proces duidelijk en toegankelijk te maken.
+Gelabelde PDF's zijn zo gestructureerd dat ze toegankelijk zijn voor mensen met een beperking en ook helpen bij geautomatiseerde extractie van inhoud. In deze stapsgewijze handleiding onderzoeken we hoe u inhoud uit gelabelde PDF's kunt extraheren met behulp van Java en de Aspose.PDF voor Java-bibliotheek. We bieden broncodevoorbeelden om het proces duidelijk en toegankelijk te maken.
 
 ## Invoering
 

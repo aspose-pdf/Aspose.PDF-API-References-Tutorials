@@ -93,7 +93,7 @@ Resolution resolution = new Resolution(300);
 PngDevice pngDevice = new PngDevice(resolution);
 ```
 
- The`Resolution` třída nám umožňuje určit kvalitu obrazu; 300 DPI se obvykle považuje za dobrou rovnováhu mezi kvalitou a velikostí souboru.
+ The`Resolution` třída nám umožňuje specifikovat kvalitu obrazu; 300 DPI se obvykle považuje za dobrou rovnováhu mezi kvalitou a velikostí souboru.
 
 ## Krok 6: Zpracujte každou stránku
 

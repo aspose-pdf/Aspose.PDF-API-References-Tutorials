@@ -108,7 +108,7 @@ Att manipulera PDF-filer behöver inte vara komplicerat. Med Aspose.PDF är det 
 ### Kan jag rotera sidan i andra vinklar än 90 grader?
  Ja, Aspose.PDF låter dig rotera sidor med 0, 90, 180 eller 270 grader med hjälp av`Rotation` egendom.
 
-### Vad händer om min PDF-fil inte har några sidor?
+### Vad händer om min PDF inte har några sidor?
  Om din PDF-fil inte har några sidor kan du lägga till en tom sida med hjälp av`Pages.Add()` metod, som visas i denna handledning.
 
 ### Kan jag manipulera flera sidor samtidigt?

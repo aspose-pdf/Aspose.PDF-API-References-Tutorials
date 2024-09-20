@@ -2,7 +2,7 @@
 title: Použijte styl číslování v záhlaví PDF pomocí Java
 linktitle: Použijte styl číslování v záhlaví PDF pomocí Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak použít styly číslování na nadpisy PDF pomocí Aspose.PDF pro Java. Náš podrobný průvodce poskytuje příklady zdrojového kódu pro profesionální úpravu vašich dokumentů.
+description: Naučte se používat styly číslování na nadpisy PDF pomocí Aspose.PDF for Java. Náš podrobný průvodce poskytuje příklady zdrojového kódu pro profesionální úpravu vašich dokumentů.
 type: docs
 weight: 14
 url: /cs/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/

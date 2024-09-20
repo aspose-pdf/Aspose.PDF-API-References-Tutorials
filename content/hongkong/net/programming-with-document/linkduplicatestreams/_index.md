@@ -17,7 +17,7 @@ url: /zh-hant/net/programming-with-document/linkduplicatestreams/
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[地點](https://releases.aspose.com/pdf/net/).
 2. Visual Studio：一個可以編寫和測試程式碼的開發環境。
-3. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 4. 範例 PDF 文件：對於本教學課程，您需要使用 PDF 文件。您可以建立一個簡單的範例或從 Internet 下載範例。
 
 ## 導入包
@@ -103,7 +103,7 @@ pdfDocument.Save(dataDir);
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功連結 PDF 文件中的重複流。這個簡單而強大的功能可以顯著提高 PDF 檔案的效率，使它們更易於管理和共享。請記住，優化文件不僅可以節省空間，還可以提高效能，這對每個參與者來說都是雙贏的。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功連結 PDF 文件中的重複流。這個簡單而強大的功能可以顯著提高 PDF 檔案的效率，使它們更易於管理和共享。請記住，優化文件不僅可以節省空間，還可以提高效能，這對每個參與者來說都是雙贏的。
 
 ## 常見問題解答
 

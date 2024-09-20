@@ -66,7 +66,7 @@ Trong bài viết này, chúng tôi đã khám phá cách xuất dữ liệu XML
 
 ### Tôi có thể tùy chỉnh giao diện của tài liệu PDF không?
 
-Có, bạn có thể tùy chỉnh giao diện của tài liệu PDF bằng Aspose.PDF for Java. Bạn có thể thiết lập kích thước trang, lề, phông chữ, màu sắc và nhiều thứ khác để tạo PDF phù hợp với phong cách mong muốn của bạn.
+Có, bạn có thể tùy chỉnh giao diện của tài liệu PDF bằng Aspose.PDF for Java. Bạn có thể thiết lập kích thước trang, lề, phông chữ, màu sắc, v.v. để tạo PDF phù hợp với phong cách mong muốn của bạn.
 
 ### Aspose.PDF cho Java có phù hợp với các tệp XML lớn không?
 

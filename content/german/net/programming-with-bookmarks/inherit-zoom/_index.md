@@ -46,7 +46,7 @@ using Aspose.Pdf;
 
 Nachdem Sie nun alles eingerichtet haben, können wir mit der eigentlichen Codierung fortfahren!
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Als Erstes müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis angeben. Hier befindet sich Ihre PDF-Eingabedatei und hier wird die Ausgabedatei gespeichert.
 

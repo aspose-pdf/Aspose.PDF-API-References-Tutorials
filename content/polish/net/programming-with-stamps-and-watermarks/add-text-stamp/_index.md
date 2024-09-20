@@ -9,7 +9,7 @@ url: /pl/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
 ## Wstęp
 
-dzisiejszej erze cyfrowej pliki PDF są powszechnym formatem udostępniania i dostarczania dokumentów. Niezależnie od tego, czy jesteś programistą, twórcą treści, czy po prostu osobą, która chce ulepszyć swoje pliki PDF, wiedza o tym, jak programowo manipulować plikami PDF, może być przełomowa. Jedną z przydatnych funkcji, z których możesz chcieć skorzystać, jest możliwość dodawania stempli tekstowych w plikach PDF. Dodanie stempla tekstowego może nadać dokumentom profesjonalny charakter lub przekazać ważne informacje, takie jak „Próbka”, „Poufne” lub nawet znak wodny.
+dzisiejszej erze cyfrowej pliki PDF są powszechnym formatem udostępniania i dostarczania dokumentów. Niezależnie od tego, czy jesteś programistą, twórcą treści, czy po prostu osobą, która chce ulepszyć swoje pliki PDF, wiedza o tym, jak programowo manipulować plikami PDF, może być przełomowa. Jedną z przydatnych funkcji, z których możesz chcieć skorzystać, jest możliwość dodawania stempli tekstowych do plików PDF. Dodanie stempla tekstowego może nadać dokumentom profesjonalny charakter lub przekazać ważne informacje, takie jak „Próbka”, „Poufne” lub nawet znak wodny.
 
 ## Wymagania wstępne
 

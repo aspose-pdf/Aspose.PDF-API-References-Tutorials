@@ -103,7 +103,7 @@ dataDir = dataDir + "TextinFooter_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
- A fájlt új néven mentjük,`TextinFooter_out.pdf`, ugyanabban a könyvtárban. Nyugodtan nevezze át, ha szükséges.
+ A fájlt új néven mentjük,`TextinFooter_out.pdf`, ugyanabban a könyvtárban. Nyugodtan nevezze át szükség szerint.
 
 ## 7. lépés: Erősítse meg a sikert
 
@@ -128,10 +128,10 @@ Lábléc hozzáadása PDF-dokumentumhoz az Aspose.PDF for .NET használatával e
  Testreszabhatja a szöveget a gombbal`TextStamp.TextState` tulajdonság a betűtípus, méret és szín beállításához.
 
 ### Hozzáadhatok képeket a lábléchez szöveg helyett?  
- Igen, használhatod`ImageStamp` képek hozzáadásához a PDF-fájl láblécéhez.
+ Igen, használhatod`ImageStamp` képek hozzáadásához egy PDF-fájl láblécéhez.
 
 ### Lehetséges-e csak bizonyos oldalakhoz láblécet hozzáadni?  
  Teljesen! A konkrét célzással megadhatja azokat az oldalszámokat, ahol a láblécet kívánja`Page` tárgyakat.
 
-### Hogyan távolíthatok el egy meglévő láblécet a PDF-ből?  
+### Hogyan távolíthatok el egy meglévő láblécet egy PDF-ből?  
  A meglévő bélyegzőket a gombbal törölheti`Page.DeleteStampById` módszerrel vagy használatával`RemoveStamp` az összes bélyeg eltávolításához.

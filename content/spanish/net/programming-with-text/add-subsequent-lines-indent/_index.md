@@ -2,182 +2,143 @@
 title: Agregar sangría a líneas posteriores en un archivo PDF
 linktitle: Agregar sangría a líneas posteriores en un archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda cómo agregar sangría a las líneas subsiguientes del texto en un archivo PDF usando Aspose.PDF para .NET.
+description: Aprenda a agregar sangrías a las líneas subsiguientes de los archivos PDF con Aspose.PDF para .NET. Siga esta guía detallada paso a paso para aplicar formato de texto profesional.
 type: docs
 weight: 60
 url: /es/net/programming-with-text/add-subsequent-lines-indent/
 ---
-Este tutorial le guiará a través del proceso de agregar sangrías a las líneas posteriores del texto en un archivo PDF mediante Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra los pasos necesarios.
+## Introducción
 
-## Requisitos
-Antes de comenzar, asegúrese de tener lo siguiente:
+La creación de archivos PDF visualmente atractivos suele implicar algo más que simplemente colocar texto en una página. ¿Alguna vez se ha preguntado cómo puede agregar sangría a las líneas posteriores dentro de un documento PDF para que parezca más profesional? Ya sea que esté creando un informe, un libro electrónico o cualquier documento en el que el diseño sea importante, poder controlar cómo fluye el texto es fundamental. Hoy, exploraremos cómo agregar sangría a las líneas posteriores de un archivo PDF con Aspose.PDF para .NET. Esta función puede ser especialmente útil para los párrafos que necesitan una sangría francesa, lo que mejora la legibilidad y la estética. ¡Así que, vayamos directo al grano!
 
-- Visual Studio o cualquier otro compilador de C# instalado en su máquina.
-- Biblioteca Aspose.PDF para .NET. Puede descargarla desde el sitio web oficial de Aspose o usar un administrador de paquetes como NuGet para instalarla.
+## Prerrequisitos
 
-## Paso 1: Configurar el proyecto
-1. Cree un nuevo proyecto de C# en su entorno de desarrollo preferido.
-2. Agregue una referencia a la biblioteca Aspose.PDF para .NET.
+Antes de comenzar, hay algunas cosas que debes tener en cuenta:
 
-## Paso 2: Importar los espacios de nombres necesarios
-En el archivo de código donde desea agregar sangría a las líneas subsiguientes, agregue la siguiente directiva using en la parte superior del archivo:
+-  Aspose.PDF para .NET: Necesitará tener instalada esta biblioteca. Si aún no la tiene, puede[Descárgalo aquí](https://releases.aspose.com/pdf/net/).
+- Entorno de desarrollo: sería útil tener conocimientos básicos de C# y un IDE como Visual Studio.
+- .NET Framework: este tutorial asume que está trabajando en un entorno .NET.
+-  Licencia temporal: si no tiene una licencia completa para Aspose.PDF, puede solicitar una[licencia temporal](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+¡Ahora que estás listo, pasemos a la sección de codificación!
 
-## Paso 3: Establezca el directorio del documento
- En el código, localiza la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se almacenan sus documentos.
+## Importación de espacios de nombres
 
-## Paso 4: Crear un nuevo objeto Documento
- Crear una nueva instancia`Document` objeto agregando la siguiente línea de código:
+Lo primero es lo primero: deberá importar los espacios de nombres necesarios para que la biblioteca Aspose.PDF esté disponible en su proyecto. Es un paso simple, pero esencial para que todo funcione.
 
 ```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Paso 5: Agregar una página al documento
- Agregue una nueva página al documento utilizando el`Add` método de la`Pages` colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
+Una vez importados, estará listo para trabajar con las potentes herramientas proporcionadas por Aspose.PDF.
 
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
+## Paso 1: Configura tu documento y página
 
-## Paso 6: Crear un TextFragment con sangría en las líneas subsiguientes
- Crear una instancia`TextFragment` objeto y proporcione el texto deseado. En el código proporcionado, el texto se asigna a la variable`text` Luego, inicializar`TextFormattingOptions` Para el`TextFragment` y especificar el`SubsequentLinesIndent` valor.
+Antes de poder agregar cualquier sangría, debemos crear un nuevo documento PDF y agregarle una página. Este será el lienzo donde aplicaremos el formato de texto.
 
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-     SubsequentLinesIndent = 20
-};
-```
-
-## Paso 7: Agrega el TextFragment a la página
- Añade el`TextFragment` objeto a la colección de párrafos de la página.
-
-```csharp
-page.Paragraphs.Add(text);
-```
-
-## Paso 8: Repita los pasos 6 y 7 para líneas adicionales
-Para agregar líneas posteriores con la misma sangría, repita los pasos 6 y 7 para cada línea. Actualice el contenido del texto según sea necesario.
-
-```csharp
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-```
-
-## Paso 9: Guarde el documento PDF
- Guarde el documento PDF utilizando el`Save` método de la`Document` objeto. Especifique la ruta del archivo de salida.
-
-```csharp
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-### Código fuente de muestra para agregar sangría a líneas posteriores mediante Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // Crear nuevo objeto de documento
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-Aspose.Pdf.Page page = document.Pages.Add();
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-//Inicialice TextFormattingOptions para el fragmento de texto y especifique el valor de FollowingLinesIndent
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-	SubsequentLinesIndent = 20
-};
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
 
-## Conclusión
-Ha agregado correctamente la sangría de las líneas subsiguientes al texto mediante Aspose.PDF para .NET. El archivo PDF resultante ahora se puede encontrar en la ruta de archivo de salida especificada.
-
-### Preguntas frecuentes
-
-#### P: ¿Cuál es el enfoque de este tutorial?
-
-A: Este tutorial ofrece una guía completa sobre cómo agregar sangrías a las líneas posteriores del texto en un archivo PDF mediante la biblioteca Aspose.PDF para .NET. Incluye ejemplos de código fuente de C# para ilustrar los pasos necesarios para lograrlo.
-
-#### P: ¿Qué espacios de nombres necesito importar para este tutorial?
-
-R: En el archivo de código donde desea agregar sangría a las líneas subsiguientes, importe los siguientes espacios de nombres al comienzo del archivo:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### P: ¿Cómo especifico el directorio del documento?
-
- A: En el código, localiza la línea`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
-
-#### P: ¿Cómo creo un objeto Documento?
-
- A: En el paso 4, creará una nueva instancia`Document` objeto utilizando la siguiente línea de código:
-
-```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-```
-
-#### P: ¿Cómo agrego una página al documento?
-
- A: En el paso 5, agregará una nueva página al documento utilizando el`Add` método de la`Pages` recopilación:
-
-```csharp
+//Agregar una nueva página al documento
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### P: ¿Cómo puedo agregar sangría en las líneas subsiguientes del texto?
+Aquí inicializamos el documento PDF y le agregamos una página en blanco. Bastante sencillo hasta ahora, ¿verdad? Piensa en esto como si estuvieras preparando el terreno antes de agregar tu contenido.
 
- A: En el paso 6, crearás un`TextFragment` objeto y asignarle el texto deseado. Luego, inicializará`TextFormattingOptions` Para el`TextFragment` y especificar el`SubsequentLinesIndent` valor:
+## Paso 2: Crea el fragmento de texto
+
+ A continuación, debes crear un`TextFragment` objeto que contendrá el texto que se mostrará en el PDF. Posteriormente, este texto se formateará con las sangrías necesarias.
 
 ```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
+Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment(
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog."
+);
+```
+
+Este es un simple ejemplo de texto que se repite varias veces para llenar el espacio de la página. Puedes reemplazarlo con cualquier texto relevante para tu proyecto.
+
+## Paso 3: Inicializar las opciones de formato de texto
+
+ ¡Aquí es donde ocurre la magia! Ahora que tienes tu`TextFragment` , necesitará inicializar las opciones de formato de texto para especificar el`SubsequentLinesIndent`Esta configuración aplicará una sangría a todas las líneas excepto a la primera.
+
+```csharp
+// Inicialice TextFormattingOptions para el fragmento de texto y especifique el valor de FollowingLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
     SubsequentLinesIndent = 20
 };
 ```
 
-#### P: ¿Cómo agrego el TextFragment al documento PDF?
+En este ejemplo, hemos establecido la sangría en 20 unidades. Esto significa que cada línea después de la primera tendrá una sangría de 20 unidades, lo que crea una sangría francesa visualmente distintiva.
 
- A: En el paso 7, agregarás el`TextFragment` objeto (`text`) a la colección de párrafos de la página:
+## Paso 4: Agregar texto a la página
+
+ Ahora que ha aplicado el formato necesario, es hora de agregar el texto a la página. Esto se hace agregando el`TextFragment` a la colección de párrafos de la página.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### P: ¿Puedo repetir el proceso para líneas adicionales?
+En este punto, la página tiene el texto y las líneas siguientes sangradas. Pero ¿por qué detenerse allí? Agreguemos más líneas para que el documento parezca más completo.
 
-R: Sí, en el paso 8, puede repetir el proceso para líneas adicionales con la misma sangría creando nuevas`TextFragment` objetos y agregarlos a la colección de párrafos de la página.
+## Paso 5: Agregar fragmentos de texto adicionales
 
-#### P: ¿Cómo guardo el documento PDF resultante?
+Para demostrar cómo pueden aparecer varios fragmentos de texto en el mismo documento, puede agregar algunas líneas más. Cada una de estas líneas se puede formatear de forma independiente o utilizar el mismo formato que en el paso anterior.
 
- A: Después de agregar el texto con sangría en las líneas subsiguientes, utilice el`Save` método de la`Document` objeto para guardar el documento PDF:
+```csharp
+text = new Aspose.Pdf.Text.TextFragment("Line2");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line3");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line4");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line5");
+page.Paragraphs.Add(text);
+```
+
+Con cada nuevo fragmento de texto que se agrega a la página, el documento comienza a tomar forma. Es fácil imaginar cómo se puede utilizar esta función en distintos escenarios, ya sea que se trate de crear documentos extensos o contenido breve.
+
+## Paso 6: Guardar el documento
+
+Una vez que hayas agregado todo el texto y aplicado el formato deseado, es momento de guardar el documento. La siguiente línea de código hace exactamente eso: guarda el archivo en el directorio especificado.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### P: ¿Cuál es la conclusión clave de este tutorial?
+¡Eso es todo! Tu archivo PDF ahora contiene texto con las líneas subsiguientes sangradas.
 
-R: Si siguió este tutorial, aprendió a mejorar la legibilidad del texto en un documento PDF agregando sangría a las líneas posteriores mediante Aspose.PDF para .NET. Esta técnica puede resultar útil para varios tipos de documentos e informes.
+## Conclusión
+
+¡Y ya lo tienes! Acabas de aprender a agregar sangrías a las líneas posteriores de tu PDF con Aspose.PDF para .NET. Este método es perfecto para agregar un toque profesional a tus documentos, ya que te brinda la flexibilidad de controlar cómo se muestra el texto. Ya sea que estés preparando informes comerciales, documentos legales o prácticamente cualquier tipo de archivo PDF, la sangría es una herramienta pequeña pero poderosa para mejorar la legibilidad. Si disfrutaste de este tutorial, ¿por qué no exploras otras funciones que Aspose.PDF tiene para ofrecer?
+
+## Preguntas frecuentes
+
+### ¿Puedo aplicar diferentes sangrías a diferentes párrafos?  
+ Sí, puedes aplicar diferentes configuraciones de sangría a cada uno`TextFragment` modificando sus características individuales`TextState.FormattingOptions`.
+
+###  ¿Qué unidades se utilizan para la`SubsequentLinesIndent` property?  
+La sangría se mide en puntos, que es la unidad de medida estándar en los documentos PDF.
+
+### ¿Puedo aplicar esto a archivos PDF ya existentes?  
+¡Por supuesto! Puedes cargar un PDF existente y aplicarle estos cambios de la misma manera que lo harías con un documento nuevo.
+
+### ¿Existe un límite sobre cuánto puedo sangrar las líneas siguientes?  
+No hay un límite estricto, pero para facilitar la legibilidad, se recomienda mantener la sangría dentro de límites razonables.
+
+### ¿Puedo combinar esto con otras opciones de formato de texto?  
+ ¡Sí! Puedes combinar el`SubsequentLinesIndent` propiedad con otras opciones de formato de texto, como tamaño de fuente, color y alineación, para personalizar aún más su texto.

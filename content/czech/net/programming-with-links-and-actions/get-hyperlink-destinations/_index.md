@@ -19,7 +19,7 @@ Než se ponoříte do tohoto článku, ujistěte se, že máte vše po ruce.
 Ujistěte se, že máte nastavené vývojové prostředí .NET. Můžete použít Visual Studio nebo jakékoli jiné C# IDE dle vašeho výběru. 
 
 ### Aspose.PDF pro knihovnu .NET 
- Budete potřebovat knihovnu Aspose.PDF. Pokud ji ještě nemáte, můžete si ji stáhnout z[tento odkaz](https://releases.aspose.com/pdf/net/) . Chcete to otestovat, než se do toho pustíte? Vyzkoušejte[zkušební verze zdarma](https://releases.aspose.com/) první!
+ Budete potřebovat knihovnu Aspose.PDF. Pokud ji ještě nemáte, můžete si ji stáhnout z[tento odkaz](https://releases.aspose.com/pdf/net/) . Chcete to otestovat, než se zapojíte? Vyzkoušejte[zkušební verze zdarma](https://releases.aspose.com/) první!
 
 ### Základní znalosti programování 
 Nezbytností je znalost C# a objektově orientovaného programování. Pokud jste již kódovali, jste na dobrém místě!
@@ -116,7 +116,7 @@ Detailní rozpis:
 - `IList<Annotation> list`: Uloží všechny vybrané anotace odkazů.
 - Iterace v seznamu: U každého odkazu získáváme jeho cílové URI a vytiskneme jej. 
 
-## Krok 7: Řešení výjimek
+## Krok 7: Ošetřete výjimky
 
 Ujistěte se, že svou práci zabalíte do bloku pokusu. To pomáhá zachytit všechny problémy, které se mohou objevit, jako je přístup k neexistujícímu souboru nebo chybné anotace odkazů.
 

@@ -91,7 +91,7 @@ Jakmile je razítko stránky aplikováno na všechny stránky, uložte upravený
 pdfDocument.save("output.pdf");
 ```
 
-## Spuštění aplikace Java
+## Spuštění Java aplikace
 
 Nyní můžete spustit aplikaci Java. Přidá razítko stránky k určenému dokumentu PDF.
 

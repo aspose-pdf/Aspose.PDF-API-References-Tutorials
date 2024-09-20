@@ -140,7 +140,7 @@ Grattis! Du har framgångsrikt lagt till underordnade bokmärken till en PDF-fil
 Aspose.PDF för .NET är ett kraftfullt bibliotek som låter utvecklare skapa, manipulera och konvertera PDF-dokument programmatiskt.
 
 ### Kan jag lägga till flera underordnade bokmärken?
-Ja, du kan skapa flera underordnade bokmärken under ett överordnat bokmärke genom att upprepa stegen för att skapa och lägga till underordnade bokmärken.
+Ja, du kan skapa flera underordnade bokmärken under ett enda överordnat bokmärke genom att upprepa stegen för att skapa och lägga till underordnade bokmärken.
 
 ### Är Aspose.PDF gratis att använda?
  Aspose.PDF erbjuder en gratis provperiod, men för full funktionalitet måste du köpa en licens. Kolla in[köpsida](https://purchase.aspose.com/buy) för mer information.

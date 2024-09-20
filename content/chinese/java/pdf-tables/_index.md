@@ -26,6 +26,6 @@ url: /zh/java/pdf-tables/
 ### [使用 Java 隐藏 PDF 中的跨单元格边框](./hide-spanned-cell-border-in-pdf-using-java/)
 通过一步步的 Aspose.PDF for Java 教程学习如何使用 Java 隐藏 PDF 中跨越单元格的边框。
 ### [使用 Java 操作现有 PDF 中的表格](./manipulate-tables-in-existing-pdf-using-java/)
-了解如何使用 Java 和 Aspose.PDF for Java 来操作 PDF 表格。本分步指南涵盖了表格提取、修改等内容，以实现有效的 PDF 处理。
+了解如何使用 Java 和 Aspose.PDF for Java 操作 PDF 表格。本分步指南涵盖表格提取、修改等，以实现有效的 PDF 处理。
 ### [使用 Java 从现有 PDF 中删除表格](./remove-tables-from-existing-pdf-using-java/)
 了解如何使用 Java 和 Aspose.PDF for Java 轻松从 PDF 中删除表格。高效删除表格的分步指南。

@@ -18,7 +18,7 @@ url: /zh-hant/net/document-conversion/pdf-to-doc/
 1. .NET Framework：請確定您的電腦上安裝了 .NET Framework。 Aspose.PDF 與 .NET 應用程式無縫協作。
 2.  Aspose.PDF 庫：您需要下載 Aspose.PDF 庫。您可以從[下載連結](https://releases.aspose.com/pdf/net/).
 3. IDE：像 Visual Studio 這樣的開發環境將使您的生活更輕鬆。如果您還沒有，那麼是時候獲得它了！
-4. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+4. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 
 ## 導入包
 
@@ -74,7 +74,7 @@ pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 
 ## 結論
 
-現在你就得到它了！您剛剛學習如何使用 Aspose.PDF for .NET 將 PDF 檔案轉換為 DOC 格式。這個強大的程式庫使處理 PDF 文件變得輕而易舉，讓您可以專注於真正重要的事情——您的內容。無論您是要轉換工作、學校還是個人專案的文檔，Aspose.PDF 都能為您提供支援。那麼，你還在等什麼？潛入 PDF 操作的世界並釋放您的創造力！
+現在你就擁有了！您剛剛學習如何使用 Aspose.PDF for .NET 將 PDF 檔案轉換為 DOC 格式。這個強大的程式庫使處理 PDF 文件變得輕而易舉，讓您可以專注於真正重要的事情 - 您的內容。無論您是要轉換工作、學校還是個人專案的文檔，Aspose.PDF 都能為您提供支援。那麼，你還在等什麼？潛入 PDF 操作的世界並釋放您的創造力！
 
 ## 常見問題解答
 

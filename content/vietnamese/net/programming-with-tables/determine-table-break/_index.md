@@ -2,175 +2,193 @@
 title: Xác định ngắt bảng trong tệp PDF
 linktitle: Xác định ngắt bảng trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách xác định ngắt bảng trong tệp PDF bằng Aspose.PDF cho .NET.
+description: Khám phá cách xác định ngắt bảng trong tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước của chúng tôi, bao gồm các ví dụ về mã và mẹo khắc phục sự cố.
 type: docs
 weight: 60
 url: /vi/net/programming-with-tables/determine-table-break/
 ---
-Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách xác định ngắt bảng trong tệp PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn bằng C# từng bước. Vào cuối hướng dẫn này, bạn sẽ biết cách xác định xem bảng có vượt quá lề trang hay không. Hãy bắt đầu nào!
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
-Trước tiên, hãy đảm bảo bạn đã thiết lập môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu đến thư viện và nhập các không gian tên cần thiết.
+Việc tạo và thao tác các tệp PDF có thể giống như thuần hóa một con thú hoang. Một lúc nào đó, bạn nghĩ rằng mình đã hiểu rõ, và ngay sau đó, tài liệu lại hoạt động không thể đoán trước. Bạn đã bao giờ tự hỏi làm thế nào để quản lý hiệu quả các bảng trong PDF — cụ thể là làm thế nào để xác định khi nào một bảng sẽ bị hỏng? Trong bài viết này, chúng ta sẽ tìm hiểu cách sử dụng Aspose.PDF cho .NET để xác định khi nào một bảng mở rộng vượt quá kích thước của một trang. Vì vậy, hãy thắt dây an toàn và cùng khám phá thế giới thao tác PDF!
 
-## Bước 2: Tạo tài liệu PDF
- Trong bước này, chúng ta tạo một cái mới`Document` đối tượng để đại diện cho tài liệu PDF.
+## Điều kiện tiên quyết
+
+Trước khi bắt đầu viết mã thực tế, hãy đảm bảo rằng bạn đã chuẩn bị mọi thứ:
+
+1. Môi trường phát triển .NET: Đảm bảo bạn đã cài đặt Visual Studio hoặc bất kỳ IDE tương thích nào.
+2.  Thư viện Aspose.PDF: Bạn cần thêm thư viện Aspose.PDF vào dự án của mình. Bạn có thể tải xuống từ[Tải xuống PDF Aspose](https://releases.aspose.com/pdf/net/) hoặc bạn có thể cài đặt nó thông qua NuGet Package Manager:
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. Kiến thức cơ bản về C#: Hướng dẫn này giả định rằng bạn có hiểu biết hợp lý về C# và lập trình hướng đối tượng.
+
+Bây giờ chúng ta đã có đủ điều kiện tiên quyết, hãy bắt đầu bằng cách nhập các gói cần thiết.
+
+## Nhập gói
+
+Để bắt đầu sử dụng Aspose.PDF trong dự án của bạn, bạn cần bao gồm các không gian tên có liên quan. Sau đây là cách bạn có thể thực hiện:
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Tài liệu này sẽ được sử dụng để thêm phần và bảng.
+Các không gian tên này sẽ cung cấp cho bạn quyền truy cập vào các chức năng cốt lõi cần thiết để thao tác với các tệp PDF.
 
-## Bước 3: Thêm phần và bảng
-Bây giờ chúng ta sẽ thêm một phần vào tài liệu PDF và tạo một bảng bên trong phần này.
+Hãy chia nhỏ quy trình thành các bước dễ quản lý. Chúng ta sẽ tạo một tài liệu PDF, thêm một bảng và xác định xem nó có chuyển sang trang mới khi thêm nhiều hàng hơn không.
+
+## Bước 1: Thiết lập thư mục tài liệu của bạn
+
+Trước khi bắt đầu mã hóa, hãy xác định vị trí lưu tệp PDF đầu ra của bạn. Điều này rất quan trọng vì đây là nơi bạn sẽ tìm thấy tài liệu được tạo sau này.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Thay thế bằng thư mục của bạn.
 ```
 
-Chúng tôi cũng chỉ định lề trên là 300 điểm cho bảng. Bạn có thể điều chỉnh giá trị này theo nhu cầu của mình.
+## Bước 2: Khởi tạo tài liệu PDF
 
-## Bước 4: Thiết lập bảng
-Ở bước này, chúng ta sẽ cấu hình các thuộc tính của bảng, chẳng hạn như độ rộng cột và đường viền.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-Ở đây chúng ta xác định chiều rộng của các cột bảng và đường viền ô. Bạn có thể điều chỉnh các giá trị này theo sở thích của mình.
-
-## Bước 5: Thêm hàng và ô vào bảng
-Bây giờ chúng ta sẽ tạo các hàng và ô trong bảng bằng cách sử dụng vòng lặp.
+ Tiếp theo, bạn sẽ tạo một phiên bản mới của`Document` lớp từ thư viện Aspose.PDF. Đây là nơi tất cả phép thuật PDF của bạn sẽ diễn ra!
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-Ở đây chúng ta tạo 17 hàng trong bảng và thêm ba ô vào mỗi hàng. Bạn có thể điều chỉnh khóa theo nhu cầu của mình.
-
-## Bước 6: Xác định ngắt bảng
-Bây giờ chúng ta sẽ xác định xem bảng có vượt quá lề trang hay không bằng cách so sánh chiều cao của trang với tổng chiều cao của các đối tượng trong bảng.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-Chúng tôi tính toán chiều cao của trang và tổng chiều cao của các đối tượng có tính đến lề. Nếu chênh lệch là 10 hoặc ít hơn, bảng sẽ vượt quá lề trang.
-
-## Bước 7: Lưu tài liệu PDF
-Cuối cùng, chúng ta lưu tài liệu PDF cùng với kết quả.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-Hãy đảm bảo chỉ định đúng thư mục tài liệu. Tệp PDF kết quả sẽ được lưu với các ngắt bảng đã xác định.
-
-### Mã nguồn ví dụ để Xác định ngắt bảng bằng Aspose.PDF cho .NET
-
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Khởi tạo một lớp đối tượng PDF
 Document pdf = new Document();
-// Thêm phần vào bộ sưu tập phần tài liệu PDF
+```
+
+## Bước 3: Tạo trang
+
+Mỗi tệp PDF cần một trang. Sau đây là cách bạn có thể thêm một trang mới vào tài liệu của mình.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Khởi tạo một đối tượng bảng
+```
+
+## Bước 4: Khởi tạo Bảng
+
+Bây giờ, hãy tạo bảng thực tế mà bạn muốn theo dõi để tìm thời điểm nghỉ.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// Thêm bảng vào bộ sưu tập đoạn văn của phần mong muốn
+table1.Margin.Top = 300; // Chừa lại một ít không gian trên bàn.
+```
+
+## Bước 5: Thêm Bảng vào Trang
+
+Sau khi tạo xong bảng, bước tiếp theo là thêm bảng đó vào trang chúng ta đã tạo trước đó.
+
+```csharp
 page.Paragraphs.Add(table1);
-// Thiết lập với chiều rộng cột của bảng
-table1.ColumnWidths = "100 100 100";
-// Đặt đường viền ô mặc định bằng cách sử dụng đối tượng BorderInfo
+```
+
+## Bước 6: Xác định Thuộc tính Bảng
+
+Hãy xác định một số thuộc tính quan trọng cho bảng của chúng ta, như độ rộng cột và đường viền.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // Mỗi cột rộng 100 đơn vị.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Đặt đường viền bảng bằng cách sử dụng đối tượng BorderInfo tùy chỉnh khác
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Tạo đối tượng MarginInfo và thiết lập lề trái, dưới, phải và trên của nó
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// Đặt khoảng đệm ô mặc định thành đối tượng MarginInfo
+```
+
+## Bước 7: Thiết lập lề ô
+
+Chúng ta cần đảm bảo rằng các ô của chúng ta có một số phần đệm để trình bày tốt hơn. Sau đây là cách thiết lập.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // Trên, Trái, Phải, Dưới
 table1.DefaultCellPadding = margin;
-// Nếu bạn tăng bộ đếm lên 17, bàn sẽ bị hỏng
-// Bởi vì nó không thể được chứa thêm trên trang này nữa
+```
+
+## Bước 8: Thêm hàng vào bảng
+
+Bây giờ chúng ta đã sẵn sàng để thêm hàng! Chúng ta sẽ lặp lại và tạo 17 hàng. (Tại sao lại là 17? Vâng, đó là nơi chúng ta sẽ thấy bảng bị ngắt!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// Nhận thông tin về Chiều cao trang
+```
+
+## Bước 9: Lấy chiều cao trang
+
+Để kiểm tra xem bảng có vừa hay không, chúng ta cần biết chiều cao của trang. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// Lấy thông tin tổng chiều cao của lề trên và dưới của trang,
-// Lề trên cùng của bảng và chiều cao của bảng.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// Hiển thị Chiều cao trang, Chiều cao bảng, Lề đầu bảng và Đầu trang
-// Và thông tin lề dưới
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## Bước 10: Tính tổng chiều cao của các vật thể
 
-// Kiểm tra xem chúng ta có trừ tổng của Lề trên trang + Lề dưới trang không
-// + Lề đầu bảng và chiều cao bảng từ Chiều cao trang và nhỏ hơn
-// Hơn 10 (một hàng trung bình có thể lớn hơn 10)
+Bây giờ, chúng ta hãy tính tổng chiều cao của tất cả các đối tượng (lề trang, lề bảng và chiều cao của bảng) trên trang.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## Bước 11: Hiển thị thông tin chiều cao
+
+Thật hữu ích khi xem một số thông tin gỡ lỗi, phải không? Hãy in tất cả thông tin chiều cao có liên quan vào bảng điều khiển.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## Bước 12: Kiểm tra tình trạng gãy bảng
+
+Cuối cùng, chúng ta muốn xem liệu việc thêm bất kỳ hàng nào nữa có khiến bảng bị ngắt sang trang khác hay không.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Nếu giá trị nhỏ hơn 10 thì hiển thị thông báo.
-	//Điều đó cho thấy rằng không thể đặt một hàng khác và nếu chúng ta thêm hàng mới
-	// Hàng, bảng sẽ bị hỏng. Tùy thuộc vào giá trị chiều cao của hàng.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## Bước 13: Lưu tài liệu PDF
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Lưu tài liệu pdf
+Sau tất cả những công sức bỏ ra, hãy lưu tài liệu PDF vào thư mục bạn chỉ định.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## Bước 14: Tin nhắn xác nhận
+
+Để cho bạn biết mọi việc diễn ra suôn sẻ, chúng tôi sẽ gửi cho bạn một tin nhắn xác nhận.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## Phần kết luận
-Trong hướng dẫn này, chúng ta đã học cách xác định ngắt bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể sử dụng hướng dẫn từng bước này để kiểm tra xem bảng có vượt quá lề trang trong các dự án C# của riêng bạn không.
 
-### Câu hỏi thường gặp để xác định ngắt bảng trong tệp PDF
+Trong hướng dẫn này, chúng tôi đã xem xét kỹ lưỡng cách xác định thời điểm một bảng trong tài liệu PDF sẽ bị hỏng khi sử dụng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể dễ dàng xác định giới hạn không gian và quản lý tốt hơn các bố cục PDF của mình. Với sự luyện tập, bạn sẽ thu thập được các kỹ năng để thao tác bảng hiệu quả và tạo các tệp PDF được trau chuốt như một chuyên gia. Vậy tại sao không thử và xem nó có thể hoạt động như thế nào đối với bạn?
 
-#### H: Mục đích của việc xác định ngắt bảng trong tài liệu PDF là gì?
+## Câu hỏi thường gặp
 
-A: Mục đích của việc xác định ngắt bảng trong tài liệu PDF là để kiểm tra xem bảng có vượt quá lề trang hay không. Điều này đảm bảo rằng nội dung của bảng được hiển thị chính xác trong không gian trang khả dụng. Bằng cách phát hiện ngắt bảng, bạn có thể xử lý tình trạng tràn nội dung và điều chỉnh bố cục bảng cho phù hợp.
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chuyển đổi và thao tác các tài liệu PDF trực tiếp trong các ứng dụng .NET của họ.
 
-#### H: Làm thế nào để điều chỉnh lề trên của bảng?
+### Tôi có thể dùng thử Aspose.PDF miễn phí không?
+ Vâng! Bạn có thể tải xuống[dùng thử miễn phí](https://releases.aspose.com/) để khám phá các tính năng của sản phẩm trước khi mua hàng.
 
- A: Trong mã nguồn C# được cung cấp, bạn có thể điều chỉnh lề trên cùng của bảng bằng cách sửa đổi giá trị của`table1.Margin.Top`thuộc tính. Tăng hoặc giảm giá trị tùy ý để đặt lề trên mong muốn cho bảng.
+### Tôi có thể tìm hỗ trợ cho Aspose.PDF ở đâu?
+ Bạn có thể tìm thấy thông tin hữu ích và nhận được sự hỗ trợ từ cộng đồng Aspose trên[diễn đàn hỗ trợ](https://forum.aspose.com/c/pdf/10).
 
-#### H: Tôi có thể tùy chỉnh giao diện của bảng như màu ô và kích thước phông chữ không?
+### Điều gì xảy ra nếu tôi cần nhiều hơn 17 hàng trong bảng của mình?
+Nếu vượt quá không gian cho phép, bảng của bạn sẽ không vừa trên trang và bạn phải thực hiện hành động thích hợp để định dạng bảng cho đúng.
 
-A: Có, bạn có thể tùy chỉnh giao diện của bảng và các ô của bảng bằng nhiều thuộc tính và phương pháp khác nhau do Aspose.PDF cung cấp cho .NET. Ví dụ, bạn có thể thay đổi màu nền ô, kích thước phông chữ, họ phông chữ, căn chỉnh văn bản, v.v. Tham khảo tài liệu chính thức để biết thêm thông tin về cách tùy chỉnh giao diện của bảng.
-
-#### H: Điều gì xảy ra nếu bảng vượt quá lề trang?
-
-A: Nếu bảng vượt quá lề trang, có thể dẫn đến việc cắt bớt hoặc chồng chéo nội dung, khiến tài liệu PDF khó đọc và khó sắp xếp hơn. Bằng cách phát hiện các ngắt bảng và xử lý tràn, bạn có thể đảm bảo rằng nội dung vẫn được hiển thị đúng trong phạm vi trang khả dụng.
-
-#### H: Tôi có thể xác định ngắt bảng cho nhiều bảng trong cùng một tài liệu PDF không?
-
-A: Có, bạn có thể xác định ngắt bảng cho nhiều bảng trong cùng một tài liệu PDF. Chỉ cần lặp lại các bước cho mỗi bảng bạn muốn phân tích và điều chỉnh bố cục bảng khi cần thiết để tránh tràn nội dung.
+### Tôi có thể mua thư viện Aspose.PDF ở đâu?
+ Bạn có thể mua thư viện từ[trang mua hàng](https://purchase.aspose.com/buy).

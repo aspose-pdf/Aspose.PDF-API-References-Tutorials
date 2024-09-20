@@ -112,4 +112,4 @@ Aspose propose une version d'essai gratuite que vous pouvez utiliser pour évalu
  La documentation est disponible à l'adresse[Documentation PDF d'Aspose](https://reference.aspose.com/pdf/net/).
 
 ### Que dois-je faire si je rencontre des problèmes avec ma licence ?
- Si vous rencontrez des problèmes, vous pouvez demander de l'aide au[Forum d'assistance Aspose](https://forum.aspose.com/c/pdf/10).
+ Si vous rencontrez des problèmes, vous pouvez demander de l'aide auprès du[Forum d'assistance Aspose](https://forum.aspose.com/c/pdf/10).

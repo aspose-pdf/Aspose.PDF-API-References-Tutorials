@@ -7,7 +7,7 @@ type: docs
 weight: 11
 url: /fr/java/pdf-tags-and-structure/create-structure-element-tree-in-pdf-using-java/
 ---
-Dans ce didacticiel, nous vous expliquerons le processus de création d'une arborescence d'éléments de structure dans un document PDF à l'aide d'Aspose.PDF pour Java. Les arborescences d'éléments de structure sont essentielles pour rendre les documents PDF accessibles et bien structurés, en particulier pour les utilisateurs malvoyants qui s'appuient sur des lecteurs d'écran. Nous vous fournirons des instructions étape par étape et le code source Java pour y parvenir.
+Dans ce didacticiel, nous vous expliquerons le processus de création d'une arborescence d'éléments de structure dans un document PDF à l'aide d'Aspose.PDF pour Java. Les arborescences d'éléments de structure sont essentielles pour rendre les documents PDF accessibles et bien structurés, en particulier pour les utilisateurs malvoyants qui utilisent des lecteurs d'écran. Nous vous fournirons des instructions étape par étape et le code source Java pour y parvenir.
 
 ## Introduction
 

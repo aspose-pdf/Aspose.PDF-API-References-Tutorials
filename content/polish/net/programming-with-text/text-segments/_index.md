@@ -7,138 +7,135 @@ type: docs
 weight: 540
 url: /pl/net/programming-with-text/text-segments/
 ---
-Ten samouczek wyjaśnia, jak wyszukiwać określone segmenty tekstu w pliku PDF za pomocą Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje różne scenariusze przy użyciu wyrażeń regularnych.
+## Wstęp
+
+Dokumenty PDF są wszechobecne w dzisiejszym cyfrowym świecie, często używane do wszystkiego, od formalnych raportów po e-booki. Ale wyodrębnianie z nich tekstu może czasami przypominać szukanie igły w stogu siana. Na szczęście z pomocą bibliotek takich jak Aspose.PDF dla .NET zadanie to staje się znacznie prostsze! W tym przewodniku pokażemy, jak wyodrębnić określone segmenty tekstu z pliku PDF za pomocą Aspose.PDF, dzieląc je na jasne, wykonalne kroki. 
 
 ## Wymagania wstępne
 
-Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
+Zanim zagłębisz się w szczegóły ekstrakcji tekstu, będziesz potrzebować kilku rzeczy:
 
-- Podstawowa znajomość języka programowania C#.
-- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. Tutaj będziemy pisać nasz kod.
+2. Środowisko .NET Framework lub .NET Core: Upewnij się, że masz odpowiednie środowisko dla swojej aplikacji. Aspose obsługuje zarówno .NET Framework, jak i .NET Core.
+3.  Biblioteka Aspose.PDF: Będziesz potrzebować biblioteki Aspose.PDF dla .NET. Jeśli jeszcze jej nie zainstalowałeś, możesz ją pobrać[Tutaj](https://releases.aspose.com/pdf/net/).
+4. Podstawowa znajomość języka C#: Znajomość języka C# będzie pomocna, ale nawet jeśli jesteś początkującym, poprowadzimy Cię krok po kroku przez kod.
+5. Dokument PDF: Miej pod ręką plik PDF, z którego chcesz wyodrębnić tekst. Może to być cokolwiek, od raportu finansowego po artykuł.
 
-## Krok 1: Skonfiguruj projekt
+## Importuj pakiety
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+Teraz, gdy wszystko jest już skonfigurowane, następnym krokiem jest zaimportowanie niezbędnych pakietów do programu C#. Jest to kluczowe, ponieważ umożliwia dostęp do wszystkich potężnych funkcji biblioteki Aspose.PDF.
 
-## Krok 2: Importuj niezbędne przestrzenie nazw
+### Utwórz nowy projekt
 
-Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
+- Otwórz Visual Studio i utwórz nowy projekt C#. Możesz wybrać aplikację konsolową dla uproszczenia.
+
+### Dodaj odniesienie Aspose.PDF
+
+-  Kliknij prawym przyciskiem myszy`References` folder w Eksploratorze rozwiązań.
+- Wybierz opcję „Dodaj odniesienie” i przejdź do lokalizacji, w której pobrano plik Aspose.PDF.dll.
+- Dodaj tę bibliotekę DLL do swojego projektu. Ten krok łączy Twój projekt z biblioteką Aspose.PDF, odblokowując jej funkcjonalności.
+
+### Importuj przestrzeń nazw
+
+Na górze pliku C# należy uwzględnić przestrzeń nazw Aspose.PDF:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
+Polecenie to informuje program, aby używał klas i metod z biblioteki Aspose.PDF.
 
-## Krok 3: Użyj TextFragmentAbsorber do wyszukiwania tekstu
+Rozłóżmy wyodrębnianie różnych typów segmentów tekstu na praktycznych przykładach. Użyjemy`TextFragmentAbsorber` Klasa, która jest kluczem do wyszukiwania i wyodrębniania tekstu z dokumentów PDF.
 
- Utwórz`TextFragmentAbsorber` obiekt umożliwiający wyszukiwanie określonych segmentów tekstu przy użyciu wyrażeń regularnych:
+## Krok 1: Zainicjuj dokument
+
+Aby pracować z dowolnym plikiem PDF, musisz go załadować do swojej aplikacji. Oto jak to zrobić:
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber;
+// Załaduj dokument PDF
+Document pdfDocument = new Document("Path/To/Your/PDFFile.pdf");
 ```
+ Zastępować`"Path/To/Your/PDFFile.pdf"` z rzeczywistą ścieżką do Twojego pliku PDF.
 
-## Krok 4: Przeprowadź wyszukiwanie tekstu za pomocą wyrażeń regularnych
+## Krok 2: Utwórz TextFragmentAbsorber
 
-Przeprowadź wyszukiwanie tekstu na podstawie różnych scenariuszy, używając wyrażeń regularnych. Oto kilka przykładów:
+ Teraz przyjrzyjmy się różnym przykładom użycia`TextFragmentAbsorber` aby pobrać tekst.
 
-- Aby wyszukać dokładne dopasowanie słowa: 
+### Przykład 1: Wyodrębnij dokładne słowo
+
+ Aby znaleźć dokładne dopasowanie do określonego słowa, możesz zainicjować`TextFragmentAbsorber` tak:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
+// Wyszukaj dokładne dopasowanie „Słowo”
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
 ```
+ Ten kod ustawia absorber tak, aby precyzyjnie znalazł słowo „Słowo”, traktując je jako całe słowo.`\b` oznacza granice słów.
 
-- Aby wyszukać ciąg znaków pisany wielkimi lub małymi literami: 
+### Przykład 2: wyszukiwanie bez uwzględniania wielkości liter
+
+Jeśli chcesz znaleźć konkretny ciąg znaków bez względu na wielkość liter (np. „linia”), możesz to zrobić w następujący sposób:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
+// Wyszukaj ciąg „Linia” bez uwzględniania wielkości liter
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
 ```
+ Ten`(?i)` powoduje, że wyszukiwanie ignoruje wielkość liter. 
 
-- Aby przeszukać wszystkie ciągi w dokumencie PDF: 
+### Przykład 3: Wyodrębnij cały tekst z pliku PDF
+
+Czy kiedykolwiek musiałeś przeanalizować cały tekst w pliku PDF? Oto prosty sposób, aby to zrobić:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+// Analizuj wszystkie ciągi znaków w dokumencie PDF
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
+ Wyrażenie regularne`[\S]+` wychwytuje wszystkie znaki inne niż spacje. 
 
-- Aby znaleźć tekst po określonym ciągu do podziału wiersza: 
+## Krok 3: Akceptuj Absorber w dokumencie
+
+Teraz musisz zaakceptować absorber w dokumencie PDF:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
+// Zaakceptuj absorber w dokumencie
+pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
+Ten wiersz informuje dokument PDF o konieczności przetworzenia absorbera, który zainicjowałeś.
 
-- Aby znaleźć tekst po dopasowaniu wyrażenia regularnego: 
+## Krok 4: Pobierz i wyświetl wyniki
+
+Na koniec pobierzmy wyodrębniony tekst i wyświetlmy go. Oto jak możesz to zrobić:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
+// Pobierz wyodrębnione fragmenty tekstu
+TextFragmentCollection textFragments = textFragmentAbsorber.TextFragments;
+
+// Przejdź przez każdy fragment i wyprowadź go
+foreach (TextFragment textFragment in textFragments)
+{
+    Console.WriteLine(textFragment.Text);
+}
 ```
-
-- Aby wyszukać hiperłącza/adresy URL w dokumencie PDF: 
-
-```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
-Zastąp wyrażenia regularne pożądanymi wzorcami wyszukiwania.
-
-## Krok 5: Wykonaj wyszukiwanie i przetwórz wyniki
-
- Wykonaj wyszukiwanie za pomocą utworzonego`TextFragmentAbsorber` zgłaszaj sprzeciw i przetwarzaj wyniki na podstawie swoich wymagań.
-
-### Przykładowy kod źródłowy dla segmentów tekstu przy użyciu Aspose.PDF dla .NET 
-```csharp
-TextFragmentAbsorber textFragmentAbsorber;
-// Aby wyszukać dokładne dopasowanie słowa, możesz rozważyć użycie wyrażenia regularnego.
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
-// Aby przeszukać ciąg znaków składający się z wielkich lub małych liter, możesz rozważyć użycie wyrażenia regularnego.
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
-//Aby przeszukać wszystkie ciągi znaków (analizować wszystkie ciągi znaków) w dokumencie PDF, spróbuj użyć następującego wyrażenia regularnego.
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-// Znajdź pasujący ciąg znaków i zwróć wszystko, co znajduje się po ciągu, aż do końca wiersza.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
-// Proszę użyć następującego wyrażenia regularnego, aby znaleźć tekst odpowiadający wyrażeniu regularnemu.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// Aby przeszukać hiperłącza/adresy URL wewnątrz dokumentu PDF, spróbuj użyć następującego wyrażenia regularnego.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
+Ta pętla przetwarza każdy znaleziony fragment i wyświetla go na konsoli.
 
 ## Wniosek
 
-Gratulacje! Udało Ci się nauczyć, jak wyszukiwać określone segmenty tekstu w dokumencie PDF za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przykłady różnych scenariuszy wyszukiwania przy użyciu wyrażeń regularnych. Teraz możesz włączyć ten kod do własnych projektów C#, aby wyszukiwać i przetwarzać segmenty tekstu w plikach PDF.
+ Wyodrębnianie tekstu z plików PDF nie musi być trudnym zadaniem. Dzięki Aspose.PDF dla .NET możesz sprawnie zlokalizować i wyciągnąć potrzebne informacje. Niezależnie od tego, czy chcesz wychwycić pojedyncze słowo, czy przeanalizować cały dokument, elastyczność wyrażeń regularnych w`TextFragmentAbsorber`zapewnia Ci potężne możliwości wyszukiwania. Więc po co czekać? Zanurz się w swoich dokumentach PDF i zacznij wydobywać cenne informacje już dziś!
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Segmenty tekstu w pliku PDF”?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF to zaawansowana biblioteka służąca do tworzenia, edytowania i konwertowania plików PDF w aplikacjach .NET.
 
-A: Samouczek „Segmenty tekstu w pliku PDF” ma na celu poprowadzenie użytkowników przez proces wyszukiwania określonych segmentów tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C# do przeprowadzania wyszukiwań tekstu na podstawie różnych scenariuszy przy użyciu wyrażeń regularnych.
+### Czy mogę używać pliku Aspose.PDF w aplikacji .NET Core?
+Tak, Aspose.PDF dla .NET obsługuje zarówno aplikacje .NET Framework, jak i .NET Core.
 
-#### P: W jaki sposób ten samouczek pomaga w wyszukiwaniu segmentów tekstu w dokumencie PDF?
+### Czy jest dostępna bezpłatna wersja próbna?
+ Oczywiście! Możesz pobrać bezpłatną wersję próbną[Tutaj](https://releases.aspose.com/).
 
-A: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać bibliotekę Aspose.PDF for .NET do wyszukiwania określonych segmentów tekstu w dokumencie PDF. Poprzez dostarczanie różnych przykładów kodu i wyrażeń regularnych użytkownicy mogą dostosować swoje zapytania wyszukiwania tekstu, aby znaleźć żądaną zawartość w plikach PDF.
+### Gdzie mogę uzyskać pomoc dotyczącą Aspose.PDF?
+ Możesz skontaktować się ze społecznością wsparcia Aspose[Tutaj](https://forum.aspose.com/c/pdf/10).
 
-#### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
-
-A: Przed rozpoczęciem samouczka powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
-
-#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
-
-A: Aby rozpocząć, utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Pozwoli ci to wykorzystać funkcjonalność biblioteki do pracy z dokumentami PDF i fragmentami tekstu.
-
-#### P: W jaki sposób mogę wyszukiwać określone segmenty tekstu w pliku PDF?
-
- A: Aby wyszukać określone segmenty tekstu, należy utworzyć`TextFragmentAbsorber` obiekt. Samouczek zawiera różne przykłady kodu wykorzystujące wyrażenia regularne, aby zademonstrować różne scenariusze wyszukiwania. Modyfikując wyrażenia regularne, możesz zdefiniować pożądane wzorce wyszukiwania.
-
-#### P: Jakie typy scenariuszy wyszukiwania zostały omówione w tym samouczku?
-
-A: Samouczek obejmuje szereg scenariuszy wyszukiwania przy użyciu wyrażeń regularnych, takich jak dokładne dopasowania słów, wyszukiwania bez uwzględniania wielkości liter, wyszukiwanie wszystkich ciągów w dokumencie, znajdowanie tekstu po określonych ciągach i wyszukiwanie hiperłączy/adresów URL. Dostarczone przykłady kodu można dostosować do konkretnych wymagań wyszukiwania.
-
-#### P: W jaki sposób mogę przetworzyć wyniki wyszukiwania po wykonaniu wyszukiwania tekstowego?
-
- A: Po utworzeniu`TextFragmentAbsorber`obiektu i wykonując wyszukiwanie, możesz przetwarzać wyniki wyszukiwania na podstawie swoich wymagań. Samouczek koncentruje się na demonstracji samego procesu wyszukiwania, podczas gdy sposób przetwarzania i wykorzystywania wyników wyszukiwania zależy od potrzeb Twojego projektu.
-
-#### P: Czy mogę wykorzystać podane przykłady kodu we własnych projektach?
-
-A: Tak, możesz użyć podanych przykładów kodu jako odniesienia we własnych projektach C#. Przykłady pokazują, jak skonfigurować wyszukiwanie, zdefiniować wyrażenia regularne i wykonać wyszukiwanie tekstu. Możesz dostosować i zintegrować ten kod ze swoimi aplikacjami, aby wyszukiwać określone segmenty tekstu w plikach PDF.
-
-#### P: Gdzie mogę znaleźć kompletny samouczek wraz z przykładowym kodem?
-
- A: Dostęp do pełnego samouczka i przykładowego kodu C# można uzyskać, klikając poniższy link:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)
+### Jak kupić licencję na Aspose.PDF?
+ Możesz kupić licencję[Tutaj](https://purchase.aspose.com/buy).

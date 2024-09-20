@@ -1,6 +1,6 @@
 ---
-title: Állítsa be a fájladatokat a PDF-fájlban
-linktitle: Állítsa be a fájladatokat a PDF-fájlban
+title: Állítsa be a fájl adatait a PDF-fájlban
+linktitle: Állítsa be a fájl adatait a PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan állíthat be fájladatokat PDF-dokumentumokban az Aspose.PDF for .NET használatával. Egyszerűen javíthatja PDF-fájljait metaadatokkal.
 type: docs
@@ -95,7 +95,7 @@ dataDir = dataDir + "SetFileInfo_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
- Magyarázat: Íme, hozzáfűzzük`_out.pdf` az eredeti fájlnévre, hogy új fájlt hozzon létre a módosított dokumentumhoz. A`Save` metódus, majd beírja a módosításokat az új fájlba.
+ Magyarázat: Itt, hozzáfűzzük`_out.pdf` az eredeti fájlnévre, hogy új fájlt hozzon létre a módosított dokumentumhoz. A`Save` metódus, majd beírja a módosításokat az új fájlba.
 
 ## 6. lépés: Erősítse meg a változtatásokat
 

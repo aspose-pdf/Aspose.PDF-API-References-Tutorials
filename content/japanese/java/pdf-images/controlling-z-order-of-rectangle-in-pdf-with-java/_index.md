@@ -2,7 +2,7 @@
 title: Java で PDF 内の四角形の Z オーダーを制御する
 linktitle: Java で PDF 内の四角形の Z オーダーを制御する
 second_title: Aspose.PDF Java PDF 処理 API
-description: Aspose.PDF for Java を使用して、PDF 内の四角形の Z 順序を Java で制御する方法を学びます。正確な PDF 操作のためのステップバイステップ ガイド。
+description: Aspose.PDF for Java を使用して、Java で PDF 内の四角形の Z 順序を制御する方法を学びます。正確な PDF 操作のためのステップバイステップ ガイド。
 type: docs
 weight: 11
 url: /ja/java/pdf-images/controlling-z-order-of-rectangle-in-pdf-with-java/

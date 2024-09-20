@@ -8,7 +8,7 @@ weight: 11
 url: /hu/java/pdf-attachments/remove-attachments-from-pdfs/
 ---
 
-## Bevezetés a mellékletek PDF-ből való eltávolításához
+## Bevezetés a mellékletek eltávolításához PDF-ekből
 
 A mai digitális korban a PDF-fájlokkal való munka számos szoftveralkalmazás szerves részévé vált. Ezek a PDF-fájlok gyakran tartalmaznak különféle mellékleteket, például képeket, dokumentumokat vagy egyéb fájlokat. Előfordulhatnak azonban olyan helyzetek, amikor ezeket a mellékleteket programozottan el kell távolítania, és ekkor jön a segítség az Aspose.PDF for Java. Ebben a lépésenkénti útmutatóban megvizsgáljuk, hogyan távolíthat el mellékleteket a PDF-fájlokból az Aspose.PDF használatával Javaban.
 
@@ -25,7 +25,7 @@ Mielőtt belemerülnénk a kódba, győződjön meg arról, hogy mindennel rende
 
 2. Adja hozzá az Aspose.PDF for Java könyvtárat a projekthez. Ezt úgy teheti meg, hogy belefoglalja a JAR fájlt a projekt felépítési útvonalába.
 
-3. Most már készen áll a kódolás megkezdésére!
+3. Most készen áll a kódolás megkezdésére!
 
 ## Mellékletek eltávolítása
 

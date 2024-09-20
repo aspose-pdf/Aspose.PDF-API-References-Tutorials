@@ -2,88 +2,124 @@
 title: Szöveg keresése és téglalap rajzolása
 linktitle: Szöveg keresése és téglalap rajzolása
 second_title: Aspose.PDF for .NET API Reference
-description: Tanulja meg, hogyan kereshet szöveget PDF-ben, hogyan rajzolhat téglalapokat a talált szöveg köré, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével.
+description: Tanuljon meg szöveget keresni PDF-ben, és téglalapokkal kiemelje az Aspose.PDF for .NET segítségével! Könnyű, lépésről lépésre bemutató oktatóanyag a továbbfejlesztett PDF-kezelési készségekhez.
 type: docs
 weight: 460
 url: /hu/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Ez az oktatóanyag elmagyarázza, hogyan használhatja az Aspose.PDF for .NET fájlt egy adott szöveg megkeresésére egy PDF-dokumentumban, rajzoljon egy téglalapot a talált szöveg köré, és hogyan mentse el a módosított dokumentumot. A mellékelt C# forráskód lépésről lépésre mutatja be a folyamatot.
+## Bevezetés
+
+Szeretné fejleszteni PDF-kezelési készségeit? Szeretné megtanulni, hogyan kereshet konkrét szöveget PDF-fájlokban, és hogyan emelheti ki téglalappal? A tökéletes útmutatóhoz jutottál! Ma végigvezetem Önt, hogyan használhatja az Aspose.PDF for .NET fájlt szövegek keresésére egy PDF-dokumentumban, és téglalapokat rajzolhat köré. Ez a cikk lépésről lépésre bemutatja az egyértelműséget és a hasznosságot szem előtt tartó oktatóanyagot, amely biztosítja, hogy követni tudja és alkalmazni tudja ezeket a technikákat projektjeinél. 
 
 ## Előfeltételek
 
-Mielőtt folytatná az oktatóanyagot, győződjön meg arról, hogy rendelkezik a következőkkel:
+Mielőtt belevágna az oktatóanyagba, készítsük elő, mire van szüksége a zökkenőmentes munkafolyamat biztosításához:
 
-- C# programozási nyelv alapismerete.
-- Aspose.PDF for .NET könyvtár telepítve. Beszerezheti az Aspose webhelyéről, vagy a NuGet segítségével telepítheti a projektbe.
+1. A .NET alapjai: ismernie kell a C# programozást és a .NET keretrendszert, hogy hatékonyan kövesse ezt az oktatóanyagot.
+   
+2. A Visual Studio telepítve: A kód írásához és teszteléséhez integrált fejlesztői környezetre (IDE) lesz szüksége. A Visual Studio Community nagyszerű lehetőség, és ingyenes.
+   
+3. Aspose.PDF for .NET: Telepíteni kell az Aspose.PDF könyvtárat a projektben. Letöltheti[itt](https://releases.aspose.com/pdf/net/) vagy fontolja meg a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) kiterjesztett funkciókhoz.
+   
+4.  Minta PDF-dokumentum: Ehhez az oktatóanyaghoz szüksége lesz egy PDF-mintafájlra`SearchAndGetTextFromAll.pdf` a projektkönyvtárban tárolva. 
 
-## 1. lépés: Állítsa be a projektet
+## Csomagok importálása
 
-Kezdje azzal, hogy hozzon létre egy új C# projektet a kívánt integrált fejlesztői környezetben (IDE), és adjon hozzá egy hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+A kezdéshez először importálnia kell a szükséges csomagokat a .NET-projektbe. Kövesse az alábbi lépéseket:
 
-## 2. lépés: Importálja a szükséges névtereket
+### Nyissa meg a Visual Studio-t
 
-Adja hozzá a következőket direktívák használatával a C# fájl elejéhez a szükséges névterek importálásához:
+Indítsa el a Visual Studio alkalmazást, és hozzon létre egy új konzolalkalmazást, vagy használjon egy meglévőt, ahol a PDF-funkciókat szeretné megvalósítani.
+
+### Adja hozzá az Aspose.PDF fájlt projektjéhez
+
+1. Kattintson a jobb gombbal a projektre a Solution Explorerben.
+2. Válassza a "NuGet-csomagok kezelése" lehetőséget.
+3.  Keressen rá`Aspose.PDF` és telepítse a legújabb verziót.
+
+Ezzel megteremti az alapot minden elképesztő PDF-manipulációhoz, amelyet éppen végrehajtani készül.
+
+## Névterek importálása
+
+A programfájl tetején érdemes importálni a vonatkozó névtereket az Aspose könyvtárból:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## 3. lépés: Állítsa be a dokumentumkönyvtár elérési útját
+Ez megkönnyíti az osztályok és metódusok elérését az Aspose.PDF könyvtáron belül a feladatokhoz.
 
- Állítsa be a dokumentumkönyvtár elérési útját a`dataDir` változó:
+
+Most, hogy mindent beállított, bontsuk fel kezelhető lépésekre a PDF-ben található szöveg keresésének folyamatát, és rajzoljunk köré egy téglalapot.
+
+## 1. lépés: Állítsa be a dokumentum elérési útját
+
+ Először állítsa be a PDF-fájl elérési útját. Ügyeljen arra, hogy cserélje ki`YOUR DOCUMENT DIRECTORY` a tényleges útvonallal, ahol az Ön`SearchAndGetTextFromAll.pdf` tárolva van.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+## 2. lépés: Nyissa meg a PDF-dokumentumot
 
-## 4. lépés: Töltse be a PDF dokumentumot
-
- Töltse be a PDF dokumentumot a`Document` osztály:
+ Ezután hozzon létre egy példányt a`Document` osztály a PDF betöltéséhez:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Cserélje ki`"SearchAndGetTextFromAll.pdf"` a PDF-fájl tényleges nevével.
+Ez a kódsor megnyitja a megadott PDF-fájlt, lehetővé téve annak további manipulálását.
 
-## 5. lépés: Hozzon létre egy TextFragmentAbsorber-t
+## 3. lépés: Hozzon létre egy szövegelnyelőt
 
- Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
+ Most szüksége lesz egy módra, hogy szöveget keressen a dokumentumban. Ehhez használjuk a`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Cserélje ki`@"[\S]+"` a kívánt reguláris kifejezésmintával.
+ A reguláris kifejezés`@"[\S]+"` úgy lett kialakítva, hogy illeszkedjen a PDF-ben található nem szóközökhöz. 
 
-## 6. lépés: Engedélyezze a reguláris kifejezések keresését
+## 4. lépés: Konfigurálja a szöveges keresési beállításokat
 
- A reguláris kifejezések keresésének engedélyezése a`TextSearchOptions` az abszorber tulajdonságai:
+Ezután be kell állítania a szöveges keresési beállításokat:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## 7. lépés: Keresés az összes oldalon
+ Itt, a`true` paraméter azt jelenti, hogy a keresés megkülönbözteti a kis- és nagybetűket. Beállíthatja`false` ha kis- és nagybetűket nem érző keresést szeretne.
 
-Fogadja el az elnyelőt a dokumentum összes oldalán:
+## 5. lépés: Fogadja el a szövegelnyelőt a dokumentumban
+
+ A tiéddel`TextFragmentAbsorber` és a keresési lehetőségek készen állnak, itt az ideje, hogy szöveget vegyen fel a dokumentumból:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## 8. lépés: Rajzolj egy téglalapot a talált szöveg köré
+Ez a módszer megvizsgálja a PDF minden oldalát, hogy megtalálja a megadott mintának megfelelő szövegrészleteket.
 
- Hozzon létre a`PdfContentEditor` objektumot, és a visszakeresett szövegtöredékek között görgessen, és rajzoljon egy téglalapot minden szövegszegmens köré:
+## 6. lépés: Hozzon létre egy PdfContentEditort
+
+ Ha alakzatokat szeretne rajzolni a dokumentumra, szüksége lesz a`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Ez a szerkesztő lehetővé teszi a PDF-tartalom egyszerű kezelését és szerkesztését.
+
+## 7. lépés: Ismételje meg a talált szövegtöredékeket
+
+Most érdemes végigpörgetni a talált szövegrészleteket, és téglalapokat rajzolni köréjük:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+ Ez a ciklus minden szövegtöredéken és szegmensükön iterál, és meghívja a`DrawBox` módszer a téglalap rajzolására.
+
+## 8. lépés: Határozza meg a DrawBox módszert
+
+ Meg kell határoznia a`DrawBox` metódust, amely kezeli a téglalap rajzolási logikát. Íme egy egyszerű megvalósítás:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Számítsa ki a téglalap méreteit a szövegszegmens alapján
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Rajzoljon egy téglalapot a számított értékek felhasználásával
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Ez a módszer a szegmens határoló téglalapja alapján határozza meg a téglalap helyzetét és méretét, és a szerkesztő segítségével rajzolja meg.
+
 ## 9. lépés: Mentse el a módosított dokumentumot
 
-Mentse el a módosított dokumentumot:
+Miután a talált szöveg köré rajzolta a téglalapokat, elmentheti a módosított dokumentumot:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Ügyeljen arra, hogy cserélje ki`"SearchTextAndDrawRectangle_out.pdf"` a kívánt kimeneti fájlnévvel.
+Győződjön meg arról, hogy az új fájlt más néven menti, hogy elkerülje az eredeti dokumentum felülírását.
 
-### Minta forráskód a Szöveg kereséséhez és a Téglalap rajzolásához az Aspose.PDF for .NET használatával 
+## 10. lépés: Megerősítő üzenet
+
+Végül nyomtasson egy megerősítő üzenetet a konzolra, hogy tudassa a művelet sikerességéről:
+
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Nyissa meg a dokumentumot
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+És megvan! Sikeresen létrehozott egy szkriptet, amellyel szöveget kereshet a PDF-ben, és téglalapokkal kiemelheti.
+
 ## Következtetés
 
-Gratulálok! Sikeresen megtanulta, hogyan kereshet meghatározott szöveget egy PDF-dokumentumban, hogyan rajzoljon téglalapot a talált szöveg köré, és mentse el a módosított dokumentumot az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a szükséges műveletek végrehajtásáig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy szöveget manipuláljon és téglalapokat rajzoljon PDF-fájlokba.
+Gratulálok! Ön most egy olyan hatékony készségre tett szert, amely nagymértékben javíthatja PDF-kezelési képességeit az Aspose.PDF for .NET használatával. Néhány egyszerű lépéssel megkereshet bármilyen szöveget a dokumentumban, és vizuálisan kiemelheti, így PDF-dokumentumait interaktívabbá és kezelhetőbbé teheti. Ne habozzon kísérletezni a különböző regex mintákkal és színválasztékkal, hogy valóban a magáévá tegye ezt az eszközt!
 
-### GYIK
+## GYIK
 
-#### K: Mi a "Szöveg keresése és téglalap rajzolása" oktatóanyag célja?
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy olyan könyvtár, amely átfogó módot biztosít PDF-dokumentumok programozott létrehozására, kezelésére és konvertálására.
 
-V: A "Szöveg keresése és téglalap rajzolása" oktatóanyag célja, hogy végigvezesse a felhasználókat a .NET-hez készült Aspose.PDF könyvtár használatán, hogy konkrét szöveget kereshessenek egy PDF-dokumentumban, téglalapokat rajzoljanak a talált szövegszegmensek köré, és elmentsék a módosított szöveget. dokumentum. Az oktatóanyag részletes utasításokat és C# kódmintákat tartalmaz a folyamat egyes lépéseinek illusztrálására.
+### Használhatom ingyenesen az Aspose.PDF-et?
+Igen, az Aspose ingyenes próbaverziót kínál, amellyel tesztelheti a könyvtár funkcióit. Nézd meg[itt](https://releases.aspose.com/).
 
-#### K: Hogyan segít ez az oktatóanyag téglalapok rajzolásában egy adott szöveg köré egy PDF-dokumentumban?
+### Milyen programozási nyelvet kell használnom az Aspose.PDF for .NET-hez?
+Az Aspose.PDF for .NET a C# és más .NET nyelvekkel való használatra készült.
 
-V: Ez az oktatóanyag átfogó útmutatót nyújt a PDF-dokumentum meghatározott szövegszegmensei körüli téglalapok megkereséséhez és rajzolásához. Bemutatja a projekt beállításának, a PDF-dokumentum betöltésének, a reguláris kifejezések keresésének engedélyezésének, a talált szövegszegmensek köré téglalapok rajzolásának és a módosított PDF mentésének folyamatát.
+### Hogyan kaphatok segítséget az Aspose.PDF-hez?
+ Bármilyen problémával vagy kérdéssel kapcsolatban felkeresheti az Aspose támogatási fórumát. Keressen támogatást[itt](https://forum.aspose.com/c/pdf/10).
 
-#### K: Milyen előfeltételek szükségesek az oktatóanyag követéséhez?
-
-V: Mielőtt elkezdené az oktatóanyagot, ismernie kell a C# programozási nyelvet. Ezenkívül telepítenie kell az Aspose.PDF for .NET könyvtárat. Beszerezheti az Aspose webhelyéről, vagy telepítheti projektjébe a NuGet segítségével.
-
-#### K: Hogyan állíthatom be a projektemet, hogy kövesse ezt az oktatóanyagot?
-
-V: Kezdje egy új C# projekt létrehozásával a preferált integrált fejlesztői környezetben (IDE). Ezután adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárra a projekthez. Ez lehetővé teszi a könyvtár funkcióinak használatát a PDF dokumentumok kezeléséhez.
-
-#### K: Rajzolhatok téglalapokat adott szöveg köré ennek az oktatóanyagnak a segítségével?
-
-V: Igen, az oktatóanyag a PDF-dokumentum meghatározott szövegszegmensei köré téglalapok rajzolására összpontosít. Bemutatja, hogyan keresheti meg a kívánt szöveget reguláris kifejezések segítségével, hogyan hozhat létre téglalapokat az azonosított szövegszegmensek köré, és hogyan mentheti el a módosított PDF-fájlt.
-
-#### K: Hogyan adhatom meg a keresendő szöveget, és téglalapokat rajzolok köré?
-
- V: A keresendő szöveg megadásához és téglalapok rajzolásához hozzon létre a`TextFragmentAbsorber` objektumot, és állítsa be a mintáját a segítségével`Text` paraméter. Cserélje ki az alapértelmezett mintát`@"[\S]+"` az oktatóprogram kódjában a kívánt reguláris kifejezésmintával.
-
-#### K: Hogyan engedélyezhetem a reguláris kifejezések keresését a szövegben?
-
- V: A reguláris kifejezések keresése az a. létrehozásával engedélyezhető`TextSearchOptions` objektumot, és állítsa be az értékét`true` . Rendelje hozzá ezt az objektumot a`TextSearchOptions` tulajdona a`TextFragmentAbsorber` példa. Ez biztosítja, hogy a szöveges keresés során a rendszer a reguláris kifejezésmintát használja.
-
-#### K: Hogyan rajzolhatok téglalapokat a talált szöveg köré?
-
- V: Miután azonosította a szövegszegmenseket a`TextFragmentAbsorber` , az oktatóanyag ciklust biztosít ezeken a szegmenseken keresztüli ismétléshez. Az oktatóanyag minden szövegszegmenshez bemutatja, hogyan lehet körülötte téglalapot létrehozni a`DrawBox` módszert, és adja meg a téglalap megjelenését.
-
-#### K: Milyen lépésekkel mentheti el a módosított PDF-et rajzolt téglalapokkal?
-
-V: Miután téglalapokat rajzolt a kívánt szövegszegmensek köré, használja a`Document` osztályé`Save` módot a módosított dokumentum mentésére. Az oktatóanyag mintakódja bemutatja, hogyan mentheti el a szerkesztett PDF-fájlt, és hogyan jelenítheti meg a sikerüzenetet.
-
-#### K: Testreszabhatom a rajzolt téglalapok megjelenését?
-
- V: Igen, testreszabhatja a rajzolt téglalapok megjelenését. Az oktatóanyag mintakódjában a`DrawBox` módszert használják téglalapok létrehozására. Módosíthatja az olyan tulajdonságokat, mint a szín, a stílus és a vastagság a rajzolt téglalapok megjelenésének testreszabásához.
+### Honnan tölthetem le az Aspose.PDF-et .NET-hez?
+ A könyvtár letölthető az Aspose weboldaláról,[itt](https://releases.aspose.com/pdf/net/).

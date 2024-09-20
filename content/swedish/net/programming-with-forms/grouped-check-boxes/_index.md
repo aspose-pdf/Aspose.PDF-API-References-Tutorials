@@ -90,7 +90,7 @@ opt2.Style = BoxStyle.Cross;
 
 Detta låter dig kontrollera utseendet och känslan av kryssrutorna, vilket gör dem mer användarvänliga och visuellt tilltalande.
 
-## Steg 5: Konfigurera gränsegenskaper
+## Steg 5: Konfigurera kantegenskaper
 
 Gränser spelar en viktig roll för att göra kryssrutorna lätt identifierbara. Här lägger vi till fasta ramar runt varje alternativknapp och definierar deras bredd och färg.
 
@@ -145,7 +145,7 @@ Att lägga till interaktiva element som grupperade kryssrutor till PDF-dokument 
 ## FAQ's
 
 ### Kan jag lägga till fler än två alternativknappar i en grupp?
- Absolut! Bara instansiera ytterligare`RadioButtonOptionField` objekt och lägg till dem i`RadioButtonField` som visas i handledningen.
+ Absolut! Instantiera helt enkelt ytterligare`RadioButtonOptionField` objekt och lägg till dem i`RadioButtonField` som visas i handledningen.
 
 ### Hur hanterar jag flera grupper av kryssrutor i ett dokument?
 För att skapa flera grupper, instansiera separat`RadioButtonField` objekt för varje grupp.

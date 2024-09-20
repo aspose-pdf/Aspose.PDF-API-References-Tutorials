@@ -2,7 +2,7 @@
 title: 選擇 PDF 文件中的單選按鈕
 linktitle: 選擇 PDF 文件中的單選按鈕
 second_title: Aspose.PDF for .NET API 參考
-description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中選擇單選按鈕。輕鬆自動化表單互動。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 選擇 PDF 文件中的單選按鈕。輕鬆自動化表單互動。
 type: docs
 weight: 250
 url: /zh-hant/net/programming-with-forms/select-radio-button/
@@ -91,7 +91,7 @@ Console.WriteLine("\nRadioButton from group selected successfully.\nFile saved a
 
 ## 結論
 
-現在你就得到它了！透過遵循本逐步指南，您已了解如何使用 Aspose.PDF for .NET 以程式設計方式選擇 PDF 文件中的單選按鈕。當自動化大型文件中的表單互動或建立自動填寫表單的腳本時，此過程非常有用。
+現在你就擁有了！透過遵循本逐步指南，您已了解如何使用 Aspose.PDF for .NET 以程式設計方式選擇 PDF 文件中的單選按鈕。當自動化大型文件中的表單互動或建立自動填寫表單的腳本時，此過程非常有用。
 
 ## 常見問題解答
 

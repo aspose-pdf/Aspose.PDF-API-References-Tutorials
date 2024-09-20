@@ -23,7 +23,7 @@ Mielőtt belevágnánk az apróságokba, győződjünk meg arról, hogy mindenne
 
 ## Csomagok importálása
 
-A kezdéshez importálnia kell a szükséges névtereket az Aspose.PDF for .NET könyvtárból. Ez lehetővé teszi a PDF-ekkel való munkát és a képek kibontását.
+A kezdéshez importálnia kell a szükséges névtereket az Aspose.PDF for .NET könyvtárból. Ezzel PDF-ekkel dolgozhat és képeket bonthat ki.
 
 ```csharp
 using System.IO;
@@ -34,7 +34,7 @@ using System;
 
 Ezek a névterek kulcsfontosságúak a PDF-ek kezeléséhez és a képek C#-ban történő kezeléséhez az Aspose.PDF for .NET használatával.
 
-Bontsuk le a folyamatot világos, könnyen követhető lépésekre. Minden egyes lépés célja, hogy végigvezesse Önt a képek PDF-fájlból történő kinyerésének folyamatán.
+Bontsuk le a folyamatot világos, könnyen követhető lépésekre. Minden egyes lépés célja, hogy végigvezesse a képek PDF-fájlból történő kibontásának folyamatán.
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtár elérési útját
 

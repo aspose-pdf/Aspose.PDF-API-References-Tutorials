@@ -16,7 +16,7 @@ Linki do dokumentów PDF występują w różnych formach, od prostych hiperłąc
 
 ## Tworzenie interaktywnych plików PDF
 
-Aspose.PDF for Java umożliwia tworzenie wysoce interaktywnych dokumentów PDF. W tych samouczkach zanurzymy się w świat zakładek PDF, spisów treści i interaktywnych formularzy. Odkryjesz, jak dodawać zakładki w celu łatwej nawigacji, dynamicznie generować spis treści i tworzyć interaktywne formularze, które użytkownicy mogą wypełniać cyfrowo. Pod koniec tych samouczków będziesz mieć wiedzę i umiejętności, aby przekształcić swoje pliki PDF w interaktywne i angażujące dokumenty, idealne do prezentacji, raportów i nie tylko.
+Aspose.PDF for Java umożliwia tworzenie wysoce interaktywnych dokumentów PDF. W tych samouczkach zanurzymy się w świat zakładek PDF, spisów treści i interaktywnych formularzy. Odkryjesz, jak dodawać zakładki, aby ułatwić nawigację, dynamicznie generować spis treści i tworzyć interaktywne formularze, które użytkownicy mogą wypełniać cyfrowo. Pod koniec tych samouczków będziesz mieć wiedzę i umiejętności, aby przekształcić swoje pliki PDF w interaktywne i angażujące dokumenty, idealne do prezentacji, raportów i nie tylko.
 
 ## Optymalizacja doświadczeń użytkownika
 

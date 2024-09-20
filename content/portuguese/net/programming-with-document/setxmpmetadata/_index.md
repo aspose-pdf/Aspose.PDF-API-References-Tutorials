@@ -61,7 +61,7 @@ Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
 É aqui que a mágica acontece! Agora que temos o documento PDF carregado, podemos definir as propriedades de metadados, como a data de criação, um apelido ou qualquer propriedade personalizada que você desejar.
 
-Pense nessa etapa como se estivesse preenchendo a seção "Sobre mim" do seu perfil. É onde você adiciona a data de criação, um apelido ou qualquer outro detalhe que você queira que seja incorporado ao arquivo PDF.
+Pense nesta etapa como preencher a seção "Sobre mim" do seu perfil. É onde você adiciona a data de criação, um apelido ou qualquer outro detalhe que você queira que seja incorporado ao arquivo PDF.
 
 ```csharp
 pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;

@@ -2,127 +2,124 @@
 title: 从 PDF 文件的页面区域提取文本
 linktitle: 从 PDF 文件的页面区域提取文本
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 从 PDF 文件页面的特定区域提取文本。
+description: 通过本分步指南学习如何使用 Aspose.PDF for .NET 从 PDF 中的特定区域提取文本。高效地从文档中收集和保存文本。
 type: docs
 weight: 190
 url: /zh/net/programming-with-text/extract-text-from-page-region/
 ---
-本教程将指导您使用 Aspose.PDF for .NET 从 PDF 文件中页面的特定区域提取文本的过程。提供的 C# 源代码演示了必要的步骤。
+## 介绍
 
-## 要求
-开始之前，请确保您已准备好以下物品：
+处理 PDF 通常需要提取特定内容，无论是从表单、表格还是文档的某些部分提取数据。在本教程中，我们将介绍如何使用 Aspose.PDF for .NET 从 PDF 的特定区域提取文本。我们无需筛选整个文档，而是准确找到文本所在的位置并高效地提取它。
 
-- 您的机器上安装的 Visual Studio 或任何其他 C# 编译器。
-- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，也可以使用 NuGet 等包管理器来安装它。
+## 先决条件
 
-## 步骤 1：设置项目
-1. 在您首选的开发环境中创建一个新的 C# 项目。
-2. 添加对 Aspose.PDF for .NET 库的引用。
+在我们开始编写代码之前，请确保您已准备好以下项目：
 
-## 步骤 2：导入所需的命名空间
-在要提取文本的代码文件中，在文件顶部添加以下使用指令：
+1.  Aspose.PDF for .NET：如果您还没有，请下载并安装 Aspose.PDF for .NET 库。[下载 Aspose.PDF for .NET](https://releases.aspose.com/pdf/net/).
+2. IDE：任何 .NET 开发环境，如 Visual Studio。
+3. .NET Framework：确保您的项目设置了适当的.NET 框架。
+4. PDF 文档：我们将从中提取文本的示例 PDF。
+
+别忘了你可以[获得免费试用](https://releases.aspose.com/)Aspose.PDF 或者使用[临时执照](https://purchase.aspose.com/temporary-license/)以实现全部功能。
+
+## 导入必要的包
+
+要开始使用 Aspose.PDF for .NET，您需要将所需的命名空间导入到您的项目中。这些包提供了处理 PDF 文档所需的类和方法。
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## 步骤3：设置文档目录
-在代码中，找到以下行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`使用存储文档的目录路径。
+## 步骤 1：设置文档目录并加载 PDF
 
-## 步骤 4：打开 PDF 文档
-使用打开现有 PDF 文档`Document`构造函数并将路径传递给输入的 PDF 文件。
+第一步是指定 PDF 文件的位置并将其加载到项目中。您可以使用要处理的 PDF 文件的本地目录路径。
 
-```csharp
-Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-```
-
-## 步骤 5：从页面区域提取文本
-创建一个`TextAbsorber`对象来从文档中提取文本。配置`TextSearchOptions`将搜索限制在由矩形定义的特定页面区域内。
-
-```csharp
-TextAbsorber absorb = new TextAbsorber();
-absorb.TextSearchOptions.LimitToPageBounds = true;
-absorb.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
-pdfDocument.Pages[1].Accept(absorb);
-```
-
-## 步骤 6：获取提取的文本
-从访问提取的文本`TextAbsorber`目的。
-
-```csharp
-string extractedText = absorb.Text;
-```
-
-## 步骤 7：保存提取的文本
-创建一个`TextWriter`并打开要保存提取文本的文件。将提取的文本写入文件并关闭流。
-
-```csharp
-TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-tw.WriteLine(extractedText);
-tw. Close();
-```
-
-### 使用 Aspose.PDF for .NET 从页面区域提取文本的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//打开文档
+
+//打开 PDF 文档
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
+```
+
+此步骤可确保 PDF 文件正确加载并可供处理。`Document` Aspose.PDF 库中的类允许您操作 PDF 文件。
+
+## 步骤 2：初始化文本吸收器以进行提取
+
+在此步骤中，我们创建一个`TextAbsorber`对象，用于从 PDF 文档中提取文本。`TextAbsorber`具有灵活性，可以定制以关注特定区域或页面。
+
+```csharp
 //创建 TextAbsorber 对象来提取文本
 TextAbsorber absorber = new TextAbsorber();
+```
+
+这`TextAbsorber`class 是一个强大的工具，可以捕获指定范围内的所有文本。
+
+## 步骤 3：定义要提取文本的区域
+
+神奇的事情就在这里发生。我们不必从整个页面提取文本，而是将提取范围限制在页面的特定矩形区域。当您确切知道内容所在的位置时，这种方法非常有效。
+
+```csharp
+//将文本提取限制在特定区域
 absorber.TextSearchOptions.LimitToPageBounds = true;
 absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
+```
+
+这`Rectangle`对象允许您定义要从中提取文本的区域的坐标（以点为单位）。`TextSearchOptions.LimitToPageBounds`确保只提取指定矩形内的文本。
+
+## 步骤 4：在所需页面上接受吸收器
+
+设置区域后，下一步是接受`TextAbsorber`您要从中提取文本的特定页面。这里，我们将重点关注 PDF 的第一页。
+
+```csharp
 //接受第一页的吸收器
 pdfDocument.Pages[1].Accept(absorber);
+```
+
+通过调用`Accept`方法在页面上，我们指示 Aspose.PDF 运行吸收器并从定义的区域收集文本。
+
+## 步骤 5：检索并存储提取的文本
+
+吸收器完成工作后，就该收集提取的文本并保存了。此步骤包括检索文本并将其写入`.txt`文件。
+
+```csharp
 //获取提取的文本
 string extractedText = absorber.Text;
-//创建一个写入器并打开文件
+
+//创建一个 writer 来保存提取的文本
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-//向文件写入一行文本
+
+//将文本写入文件
 tw.WriteLine(extractedText);
+
 //关闭流
 tw.Close();
 ```
 
+在这里，`TextWriter`类用于将提取的文本写入文本文件。这可确保您提取的内容安全存储以供日后使用。
+
 ## 结论
-您已成功使用 Aspose.PDF for .NET 从 PDF 文档页面的特定区域提取文本。提取的文本已保存到指定的输出文件。
 
-### 常见问题解答
+从 PDF 文档中的特定区域提取文本非常有用，尤其是在处理表单或表格等结构化内容时。使用 Aspose.PDF for .NET，您只需几行代码即可完成此任务。通过定义区域、初始化`TextAbsorber`，并保存提取的文本，您可以完全控制从 PDF 中提取的内容。
 
-#### 问：本教程的目的是什么？
+无论您正在处理小型项目还是管理大型文档，此方法都提供了一种有效的方法，可以从 PDF 中提取相关数据，而无需梳理整个文档。
 
-答：本教程旨在指导您使用 Aspose.PDF for .NET 从 PDF 文件中页面的特定区域提取文本的过程。随附的 C# 源代码提供了完成此任务的分步说明。
+## 常见问题解答
 
-#### 问：我应该导入哪些命名空间？
+### 我可以一次从多个页面提取文本吗？
+是的，通过迭代`Pages`收集`pdfDocument`，您可以应用`TextAbsorber`到多个页面。
 
-答：在您打算提取文本的代码文件中，在文件开头包含以下使用指令：
+### 如果文本位于 PDF 的不同区域内怎么办？
+您可以轻松调整`Rectangle`坐标以匹配您的文本所在的区域。
 
-```csharp
-using Aspose.Pdf;
-using System.IO;
-```
+### 这适用于扫描的 PDF 吗？
+不，扫描的 PDF 需要 OCR（光学字符识别）才能将图像转换为文本。Aspose.PDF 也提供 OCR 功能。
 
-#### 问：如何指定文档目录？
+### 有没有办法根据特定关键词提取文本？
+是的，你可以使用`TextFragmentAbsorber`用于基于关键字的文本提取。
 
-答：找到该线`string dataDir = "YOUR DOCUMENT DIRECTORY";`在代码中替换`"YOUR DOCUMENT DIRECTORY"`使用您的文档目录的实际路径。
-
-#### 问：如何打开现有的 PDF 文档？
-
-答：在第 4 步中，您将使用`Document`构造函数并提供输入 PDF 文件的路径。
-
-#### 问：如何从特定页面区域提取文本？
-
-答：第 5 步涉及创建`TextAbsorber`对象来从 PDF 文档中提取文本。然后您将配置`TextSearchOptions`使用坐标在页面上定义特定的矩形区域。
-
-#### 问：如何访问提取的文本？
-
-答：第 6 步将引导您访问从`TextAbsorber`目的。
-
-#### 问：如何将提取的文本保存到文件？
-
-答：在第 7 步中，您将创建一个`TextWriter`，打开要保存提取文本的文件，将提取的文本写入文件，然后关闭流。
-
-#### 问：本教程的重点是什么？
-
-答：通过本教程，您学会了如何使用 Aspose.PDF for .NET 从 PDF 文档页面的特定区域提取文本。提取的文本已保存到指定的输出文件中，让您可以精确定位和分析所需的文本内容。
+### 如何从加密的 PDF 中提取文本？
+您需要先提供正确的密码来解密 PDF，然后继续提取文本。

@@ -2,108 +2,107 @@
 title: Agregar información sobre herramientas al texto en un archivo PDF
 linktitle: Agregar información sobre herramientas al texto en un archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a agregar información sobre herramientas al texto en un archivo PDF usando Aspose.PDF para .NET.
+description: Aprenda a agregar información sobre herramientas al texto de los archivos PDF con Aspose.PDF para .NET. Mejore sus archivos PDF con textos informativos al pasar el mouse sin esfuerzo.
 type: docs
 weight: 90
 url: /es/net/programming-with-text/add-tooltip-to-text/
 ---
-Este tutorial le guiará a través del proceso de agregar información sobre herramientas al texto de un archivo PDF mediante Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra los pasos necesarios.
+## Introducción
 
-## Requisitos
-Antes de comenzar, asegúrese de tener lo siguiente:
+Cuando se trata de crear archivos PDF atractivos e interactivos, las descripciones emergentes pueden resultar muy útiles. ¿Conoce esos pequeños cuadros emergentes que le brindan información adicional cuando pasa el cursor sobre algo? Pueden brindar contexto, descripciones o incluso consejos sin saturar el documento. En este tutorial, le mostraremos cómo agregar descripciones emergentes al texto de un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. Ya sea que sea un desarrollador experimentado o que recién esté comenzando a incursionar en el mundo de los archivos PDF, ¡está en el lugar correcto! ¡Así que comencemos!
 
-- Visual Studio o cualquier otro compilador de C# instalado en su máquina.
-- Biblioteca Aspose.PDF para .NET. Puede descargarla desde el sitio web oficial de Aspose o usar un administrador de paquetes como NuGet para instalarla.
+## Prerrequisitos
 
-## Paso 1: Configurar el proyecto
-1. Cree un nuevo proyecto de C# en su entorno de desarrollo preferido.
-2. Agregue una referencia a la biblioteca Aspose.PDF para .NET.
+Antes de pasar a la parte de codificación, asegurémonos de que tienes todo lo que necesitas para seguir sin problemas.
 
-## Paso 2: Importar los espacios de nombres necesarios
-En el archivo de código donde desea agregar información sobre herramientas al texto, agregue las siguientes directivas using en la parte superior del archivo:
+### Visual Studio instalado
+Es esencial tener Visual Studio instalado en su máquina, ya que será su entorno de desarrollo principal para aplicaciones .NET.
+
+### Biblioteca Aspose.PDF para .NET
+ También necesitarás tener a tu disposición la biblioteca Aspose.PDF. Puedes[Descárgalo aquí](https://releases.aspose.com/pdf/net/)Asegúrese de incluirlo en las referencias de su proyecto.
+
+### Conocimientos básicos de C#
+Un conocimiento previo de C# será de gran ayuda, ya que codificaremos en ese lenguaje. Pero no te preocupes: ¡te guiaré en cada paso!
+
+### Un documento PDF con el que trabajar
+Puedes comenzar con un documento PDF en blanco, como hacemos en este ejemplo, o utilizar uno existente si lo prefieres.
+
+¡Ahora, pasemos a la parte de codificación!
+
+## Importar paquetes 
+
+ El primer paso en nuestra aventura de codificación implica importar los paquetes necesarios. Abra su proyecto de Visual Studio y, en la parte superior de su archivo C#, deberá agregar lo siguiente`using` directivas:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Paso 3: Establezca el directorio del documento
- En el código, localiza la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se almacenan sus documentos.
+Estos paquetes le brindan acceso a todas las clases y funcionalidades que necesita para crear y manipular documentos PDF.
 
-## Paso 4: Crea un documento de muestra con texto
- Crear uno nuevo`Document`objeto y agregar páginas con fragmentos de texto. En el código proporcionado, se agregan dos fragmentos de texto al documento con el texto de información sobre herramientas correspondiente.
+## Paso 1: Configurar el directorio de documentos
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+Lo primero es lo primero: debemos configurar la ruta en la que guardarás tus documentos. Piensa en esto como si buscaras un lugar cómodo en tu sistema de archivos donde residirán todas tus creaciones.
 
-## Paso 5: Abra el documento y busque los fragmentos de texto
- Cargue el documento creado utilizando el`Document` constructor y busque los fragmentos de texto que necesitan información sobre herramientas utilizando`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## Paso 6: Agregar información sobre herramientas a los fragmentos de texto
- Recorra los fragmentos de texto extraídos y cree botones invisibles en sus posiciones. Asigne el texto de información sobre herramientas deseado a los botones.`AlternateName` propiedad de la`ButtonField`. Agregue los campos de botón al formulario del documento.
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## Paso 7: Repita el procedimiento para fragmentos de texto adicionales con información sobre herramientas larga
-Repita los pasos 5 y 6 para los fragmentos de texto con información sobre herramientas extensa. Modifique los criterios de búsqueda y el texto de la información sobre herramientas según corresponda.
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## Paso 8: Guarde el documento modificado
- Guarde el documento PDF modificado utilizando el`Save` método de la`Document` objeto.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Código fuente de muestra para agregar información sobre herramientas al texto usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Crear un documento de muestra con texto
+```
+
+ Asegúrese de reemplazar`YOUR DOCUMENT DIRECTORY` con la ruta actual en su máquina.
+
+## Paso 2: Crear un documento PDF de muestra
+
+A continuación, es el momento de crear un PDF sencillo con algo de texto. ¡Aquí es donde iniciamos nuestro proceso creativo!
+
+```csharp
+//Crear un documento de muestra con texto
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+En este paso, creamos un documento, agregamos dos fragmentos de texto y lo guardamos en la ruta previamente especificada.
+
+## Paso 3: Abrir el documento para procesarlo
+
+Ahora que hemos creado nuestro documento, ¡abrámoslo para que podamos trabajar en esas descripciones emergentes!
+
+```csharp
 // Abrir documento con texto
 Document document = new Document(outputFile);
-//Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
+```
+
+Aquí simplemente cargamos el documento que acabamos de crear.
+
+## Paso 4: Crear un absorbedor de texto para encontrar fragmentos de texto
+
+Necesitamos encontrar los fragmentos de texto donde queremos agregar las descripciones emergentes. ¡Esto es como usar una lupa para resaltar una parte específica de un mapa grande! 
+
+```csharp
+// Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Acepta el absorbedor para las páginas del documento.
 document.Pages.Accept(absorber);
+```
+
+## Paso 5: Extraer fragmentos de texto
+
+A continuación, extraemos los fragmentos de texto que encontramos en nuestro paso anterior.
+
+```csharp
 // Obtener los fragmentos de texto extraídos
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+Este fragmento nos permite conservar referencias de los fragmentos de texto que nos interesan.
+
+## Paso 6: Recorrer los fragmentos y agregar información sobre herramientas
+
+Ahora viene la parte divertida. Recorreremos cada uno de los fragmentos de texto y agregaremos una descripción emergente a cada uno. Imagina envolver pequeños regalos (descripciones emergentes) alrededor de elementos específicos (fragmentos de texto).
+
+```csharp
 // Recorrer los fragmentos
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,7 +113,16 @@ foreach (TextFragment fragment in textFragments)
 	// Añadir campo de botón al documento
 	document.Form.Add(field);
 }
-// A continuación habrá un ejemplo de información sobre herramientas muy larga.
+```
+
+En cada iteración, creamos un campo de botón que corresponde a la posición del fragmento de texto y le asignamos el texto de la información sobre herramientas.
+
+## Paso 7: Repetir para las descripciones emergentes largas
+
+De la misma forma que agregamos una descripción emergente simple, podemos hacer lo mismo con textos más largos. ¡Extendamos nuestra creatividad!
+
+```csharp
+// A continuación se mostrará un ejemplo de una descripción emergente muy larga.
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+Aquí estamos haciendo el mismo tipo de trabajo que antes, pero con una información sobre herramientas mucho más extendida.
+
+## Paso 8: Guarde su documento
+
+El paso final es guardar el documento con todas esas nuevas y brillantes descripciones emergentes. 
+
+```csharp
 // Guardar documento
 document.Save(outputFile);
 ```
 
+¡Y listo! Has añadido información sobre herramientas a tu PDF, haciéndolo más interactivo y fácil de usar.
+
 ## Conclusión
-Ha añadido correctamente información sobre herramientas al texto de un documento PDF con Aspose.PDF para .NET. El archivo PDF resultante ahora se puede encontrar en la ruta de archivo de salida especificada.
+
+Aquí lo tienes: una guía fácil de seguir sobre cómo agregar información sobre herramientas al texto en archivos PDF usando Aspose.PDF para .NET. Esta técnica puede mejorar significativamente la experiencia del usuario, haciendo que tus documentos sean más informativos sin abrumar al lector con demasiado texto a la vez. 
+
+Con solo pasar el cursor sobre una palabra o frase, el lector obtiene información relevante que agrega valor sin sobrecargarla. ¡Así que, arremánguese y pruébelo! Antes de que se dé cuenta, podría estar creando todo tipo de documentos atractivos que se destaquen.
 
 ## Preguntas frecuentes
 
-#### P: ¿Cuál es el enfoque de este tutorial?
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una biblioteca que permite a los desarrolladores crear, manipular y convertir documentos PDF en aplicaciones .NET.
 
-A: Este tutorial se centra en agregar información sobre herramientas al texto dentro de un archivo PDF mediante la biblioteca Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra los pasos necesarios para lograrlo.
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una prueba gratuita para que explores sus funciones. Puedes encontrarla aquí[aquí](https://releases.aspose.com/).
 
-#### P: ¿Qué espacios de nombres deben importarse para este tutorial?
+### ¿Hay opciones de licencia disponibles para Aspose.PDF?
+Sí, puedes comprar una licencia u obtener una licencia temporal. Consulta las opciones[aquí](https://purchase.aspose.com/).
 
-R: En el archivo de código donde desea agregar información sobre herramientas al texto, importe los siguientes espacios de nombres al comienzo del archivo:
+### ¿Puedo agregar elementos interactivos además de información sobre herramientas usando Aspose.PDF?
+¡Por supuesto! Aspose.PDF permite agregar varios elementos interactivos como hipervínculos, botones y formularios.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
-
-#### P: ¿Cómo especifico el directorio del documento?
-
- A: En el código, busque la línea`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
-
-#### P: ¿Cómo puedo crear un documento de muestra con texto?
-
- A: En el paso 4, crearás un nuevo`Document` objeto y agregar páginas con fragmentos de texto. El código proporcionado agrega dos fragmentos de texto con el texto de información sobre herramientas correspondiente.
-
-#### P: ¿Cómo abro el documento y encuentro los fragmentos de texto?
-
- A: En el paso 5, cargará el documento creado utilizando el`Document` constructor y busque los fragmentos de texto que requieren información sobre herramientas utilizando el`TextFragmentAbsorber`.
-
-#### P: ¿Cómo puedo agregar información sobre herramientas a los fragmentos de texto?
-
- A: En el paso 6, recorrerá los fragmentos de texto extraídos y creará botones invisibles en sus posiciones. El texto de la información sobre herramientas se asigna a la`AlternateName` propiedad de la`ButtonField`, que se añade al formato del documento.
-
-#### P: ¿Cómo repito el proceso para fragmentos de texto adicionales con información sobre herramientas larga?
-
-R: Para fragmentos de texto con información sobre herramientas larga, repita los pasos 5 y 6. Modifique los criterios de búsqueda y el texto de la información sobre herramientas según corresponda.
-
-#### P: ¿Cómo guardo el documento modificado?
-
- A: En el paso 8, guardará el documento PDF modificado utilizando el`Save` método de la`Document` objeto.
-
-#### P: ¿Cuál es la principal conclusión de este tutorial?
-
-R: Al seguir este tutorial, aprendió a mejorar su documento PDF agregando información sobre herramientas al texto mediante Aspose.PDF para .NET. Esto puede brindar información adicional valiosa para los lectores cuando interactúan con el contenido del PDF.
+### ¿Dónde puedo encontrar más documentación sobre Aspose.PDF?
+ Puedes consultar la documentación[aquí](https://reference.aspose.com/pdf/net/) para obtener orientación más detallada.

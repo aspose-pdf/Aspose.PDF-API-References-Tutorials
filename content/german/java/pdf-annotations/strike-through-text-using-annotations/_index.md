@@ -90,7 +90,7 @@ Aspose.PDF für Java ist mit verschiedenen Java-Versionen kompatibel. Stellen Si
 
 ### Gibt es andere Arten von Anmerkungen, die ich mit Aspose.PDF für Java hinzufügen kann?
 
-Ja, Aspose.PDF für Java unterstützt verschiedene Arten von Anmerkungen, darunter Text, Hervorhebungen, Unterstreichungen und mehr. Detaillierte Beispiele und Verwendungshinweise finden Sie in der Dokumentation.
+Ja, Aspose.PDF für Java unterstützt verschiedene Arten von Anmerkungen, darunter Text, Hervorhebung, Unterstreichung und mehr. Detaillierte Beispiele und Verwendungshinweise finden Sie in der Dokumentation.
 
 ### Wo finde ich weitere Ressourcen und Dokumentation für Aspose.PDF für Java?
 

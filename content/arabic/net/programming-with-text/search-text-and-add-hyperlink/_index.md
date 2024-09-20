@@ -2,189 +2,165 @@
 title: البحث عن النص وإضافة ارتباط تشعبي
 linktitle: البحث عن النص وإضافة ارتباط تشعبي
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية البحث عن نص في ملف PDF، وإضافة ارتباطات تشعبية إلى النص الموجود، وحفظ المستند المعدل باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية البحث عن النص وإضافة ارتباطات تشعبية في ملفات PDF باستخدام Aspose.PDF لـ .NET من خلال البرنامج التعليمي الخاص بنا خطوة بخطوة.
 type: docs
 weight: 450
 url: /ar/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-يوضح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF for .NET للبحث عن نص معين في مستند PDF، وإضافة ارتباط تشعبي إلى النص الموجود، وحفظ المستند المعدل. يوضح كود المصدر C# المقدم العملية خطوة بخطوة.
+## مقدمة
+
+هل تبحث عن طريقة ليس فقط لمعالجة ملفات PDF بل وأيضًا لتحسينها عن طريق إدراج ارتباطات تشعبية؟ حسنًا، أنت في المكان الصحيح! باستخدام مكتبة Aspose.PDF القوية لـ .NET، يمكنك البحث عن أنماط النص في مستندات PDF وإضافة ارتباطات تشعبية بسلاسة. تخيل أن لديك مستندًا لا ينقل المعلومات فحسب، بل يربط القراء أيضًا بالموارد ذات الصلة بمجرد النقر فوق رابط. يبدو رائعًا، أليس كذلك؟ في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية البحث عن نص باستخدام التعبيرات العادية وإضافة ارتباطات تشعبية داخل ملفات PDF الخاصة بك. سواء كنت مطورًا متمرسًا أو مبتدئًا، فستجد هذه العملية بسيطة ومجزية.
 
 ## المتطلبات الأساسية
 
-قبل المتابعة بالبرنامج التعليمي، تأكد من توفر ما يلي:
+قبل أن نتعمق في التفاصيل، دعنا نتأكد من أنك تمتلك كل ما تحتاج إليه لمتابعة الأمر. إليك قائمة مرجعية مفيدة:
 
-- المعرفة الأساسية للغة البرمجة C#.
-- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لتثبيتها في مشروعك.
+- .NET Framework: يجب أن يكون لديك إطار عمل .NET مثبتًا على جهازك (الإصدار 4.0 أو أعلى).
+- مكتبة Aspose.PDF لـ .NET: لا تنس تنزيل مكتبة Aspose.PDF وإضافتها إلى مشروعك. يمكنك العثور عليها[هنا](https://releases.aspose.com/pdf/net/).
+- IDE: ستحتاج إلى بيئة تطوير متكاملة (IDE) مثل Visual Studio لكتابة وتشغيل التعليمات البرمجية.
+- ملف PDF نموذجي: احصل على ملف PDF نموذجي يمكنك من خلاله اختبار الكود. يمكنك إنشاء ملف PDF بسيط أو استخدام أحد المستندات الموجودة لديك.
 
-## الخطوة 1: إعداد المشروع
+بمجرد الانتهاء من كل شيء في هذه القائمة، سنكون جاهزين للانطلاق!
 
-ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+## استيراد الحزم
 
-## الخطوة 2: استيراد المساحات الأساسية الضرورية
+الخطوة الأولى في رحلتنا هي استيراد الحزم اللازمة. وهنا نخبر مشروعنا بالأدوات التي سنستخدمها. وإليك كيفية القيام بذلك:
 
-أضف التوجيهات التالية في بداية ملف C# الخاص بك لاستيراد المساحات المطلوبة:
+في ملف C# الخاص بك، ابدأ بتضمين المساحات التالية في الأعلى:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Content;
-using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## الخطوة 3: تعيين المسار إلى دليل المستند
+من خلال استيراد هذه المساحات الاسمية، فإنك تمنح برنامجك إمكانية الوصول إلى جميع الميزات الرائعة التي يقدمها Aspose.PDF.
 
- قم بتعيين المسار إلى دليل المستند الخاص بك باستخدام`dataDir` عامل:
+الآن بعد أن قمنا بإعداد كل شيء، حان وقت البدء في العمل. سنتناول هذا الأمر في سلسلة من الخطوات، لذا اتبعها بعناية!
+
+### الخطوة 1: قم بتعيين دليل المستندات الخاص بك
+
+أولاً، ستحتاج إلى تحديد مكان تخزين ملفات PDF الخاصة بك. عدّل`dataDir` متغير يشير إلى دليل المستند الخاص بك. إليك كيفية القيام بذلك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+ تأكد من الاستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي لمستنداتك.
 
-## الخطوة 4: إنشاء TextFragmentAbsorber
+### الخطوة 2: إنشاء TextFragmentAbsorber
 
- إنشاء`TextFragmentAbsorber` كائن للعثور على جميع حالات عبارة البحث المدخلة:
+ بعد ذلك، نحتاج إلى أداة للعثور على النص الذي نريد ربطه. أدخل`TextFragmentAbsorber`سيساعدنا هذا الرجل الصغير في البحث عن نمط النص المحدد في ملف PDF الخاص بنا.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
- يستبدل`"\\d{4}-\\d{4}"` مع نمط التعبير العادي المطلوب.
+هنا، نبحث عن نمط محدد: أربعة أرقام، وشرطة، تليها أربعة أرقام أخرى (مثل رقم الهاتف أو السنة).
 
-## الخطوة 5: تمكين البحث عن التعبيرات العادية
+### الخطوة 3: تمكين البحث باستخدام التعبيرات العادية
 
- تمكين البحث عن التعبيرات العادية عن طريق ضبط`TextSearchOptions` خصائص الممتص:
+ نحن نستخدم بالفعل تعبيرًا عاديًا للعثور على نمط النص الخاص بنا، ولكننا بحاجة إلى التأكد من`absorber` يعرف أنه تم تمكينه. وهذا أمر بالغ الأهمية لكي يتمكن من البحث بشكل صحيح.
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## الخطوة 6: افتح مستند PDF وقم بربطه
+### الخطوة 4: تهيئة PdfContentEditor
 
- إنشاء`PdfContentEditor` الكائن وربطه بملف PDF المصدر:
+ الآن بعد أن أصبح لدينا جهاز الامتصاص جاهزًا، نحتاج إلى`PdfContentEditor` للعمل مع ملف PDF الخاص بنا. تتيح لنا هذه الفئة الارتباط بملف PDF الخاص بنا والتلاعب به.
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
+```
+
+### الخطوة 5: ربط ملف PDF المصدر الخاص بك
+
+بعد أن أصبح محرر المحتوى جاهزًا، حان الوقت لربطه بملف PDF الفعلي الذي نريد العمل عليه.
+
+```csharp
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
- يستبدل`"SearchRegularExpressionPage.pdf"` مع الاسم الفعلي لملف PDF الخاص بك.
+ تأكد من الاستبدال`"SearchRegularExpressionPage.pdf"` مع اسم ملف PDF الخاص بك.
 
-## الخطوة 7: قبول الممتص للصفحة
+### الخطوة 6: قبول الممتص للصفحة
 
-اقبل الممتص للصفحة المطلوبة من المستند:
+نحتاج إلى إخبار محررنا بأننا نريد البحث في صفحة معينة من المستند. في هذه الحالة، فلننتقل إلى الصفحة 1.
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
- يستبدل`1` مع رقم الصفحة المطلوب.
+### الخطوة 7: الاستعداد للتكرار عبر أجزاء النص
 
-## الخطوة 8: إضافة ارتباطات تشعبية إلى النص الموجود
+الآن، أصبحنا مستعدين لتكرار كل أجزاء النص التي وجدها الممتص لدينا. وسنقوم بتعديل مظهرها وإعداد ارتباطنا التشعبي.
 
-قم بالتنقل عبر أجزاء النص المسترجعة وأضف ارتباطات تشعبية إليها:
+```csharp
+int[] dashArray = { };
+String[] LEArray = { };
+Color blue = Color.Blue;
+```
+
+هنا، نقوم بتعيين بعض المعلمات، مثل لون الرابط التشعبي الخاص بنا.
+
+### الخطوة 8: تكرار كل جزء من النص
+
+بالنسبة لكل جزء نصي يتطابق مع بحثنا، سنقوم بتغيير لونه وإنشاء ارتباط تشعبي. وهذا هو الشكل الذي يبدو عليه:
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // إنشاء مستطيل بناءً على موضع جزء النص
-    System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
+    Rectangle rect = new Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    //أضف رابط ويب إلى المستطيل
-    editor.CreateWebLink(rect, "http://www.aspose.com"، 1، System.Drawing.Color.Blue)؛
+    Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
+    
+    editor.CreateWebLink(rect, "http://www.aspose.com، 1، أزرق، اسم الإجراء)؛
+    editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
+        (float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
 ```
 
- يستبدل`"http://www.aspose.com"` مع عنوان URL للرابط التشعبي المطلوب.
+### الخطوة 9: احفظ ملف PDF المحرر
 
-## الخطوة 9: احفظ وأغلق المستند المعدل
-
-احفظ المستند المعدل وأغلق المحرر:
+لقد اقتربنا من الانتهاء! والآن حان الوقت لحفظ التغييرات التي أجريناها في ملف PDF جديد.
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
 editor.Save(dataDir);
-editor.Close();
-Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
- تأكد من الاستبدال`"SearchTextAndAddHyperlink_out.pdf"` مع اسم ملف الإخراج المطلوب.
+### الخطوة 10: إغلاق المحرر
 
-### عينة من كود المصدر للبحث عن نص وإضافة ارتباط تشعبي باستخدام Aspose.PDF لـ .NET 
+وأخيرًا، لا تنسَ إغلاق مستندك لتحرير الموارد!
+
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// إنشاء كائن امتصاص للعثور على جميع حالات عبارة البحث المدخلة
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// تمكين البحث عن التعبيرات العادية
-absorber.TextSearchOptions = new TextSearchOptions(true);
-// فتح المستند
-PdfContentEditor editor = new PdfContentEditor();
-// ربط ملف PDF المصدر
-editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// تقبل الممتص للصفحة
-editor.Document.Pages[1].Accept(absorber);
-int[] dashArray = { };
-String[] LEArray = { };
-System.Drawing.Color blue = System.Drawing.Color.Blue;
-// التنقل عبر الشظايا
-foreach (TextFragment textFragment in absorber.TextFragments)
-{
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
-		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
-		(int)Math.Round(textFragment.Rectangle.Height + 1));
-	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http:// Www.aspose.com، 1، أزرق، اسم الإجراء)؛
-	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
-		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
-}
-dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
-editor.Save(dataDir);
 editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
+
+الآن، قمت للتو بإنشاء ملف PDF يحتوي على رابط تشعبي تم إنشاؤه ديناميكيًا استنادًا إلى نتائج البحث. ما مدى روعة ذلك؟
 
 ## خاتمة
 
-مبروك! لقد تعلمت بنجاح كيفية البحث عن نص معين في مستند PDF، وإضافة ارتباطات تشعبية إلى النص الموجود، وحفظ المستند المعدل باستخدام Aspose.PDF for .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، من إعداد المشروع إلى تنفيذ الإجراءات المطلوبة. يمكنك الآن دمج هذا الكود في مشاريع C# الخاصة بك لمعالجة النص وإضافة ارتباطات تشعبية في ملفات PDF.
+والآن، لقد انتهيت! باتباع هذه الخطوات، تكون قد تعلمت كيفية البحث في ملف PDF وإضافة ارتباطات تشعبية باستخدام مكتبة Aspose.PDF for .NET. وهذا من شأنه أن يفتح لك عالمًا من الاحتمالات، خاصة إذا كنت تعمل مع مستندات تتطلب التفاعل. تخيل إضافة ارتباطات إلى الموارد ذات الصلة، أو مواقع الويب المرجعية، أو حتى الصفحات الداخلية - كل هذا باستخدام بضعة أسطر فقط من التعليمات البرمجية!
+## الأسئلة الشائعة
 
-### الأسئلة الشائعة
+### ما هو Aspose.PDF لـ .NET؟  
+Aspose.PDF for .NET هي مكتبة تسمح للمطورين بإنشاء مستندات PDF ومعالجتها وإدارتها في تطبيقات .NET.
 
-#### س: ما هو الغرض من البرنامج التعليمي "البحث عن النص وإضافة ارتباط تشعبي"؟
+### كيف يمكنني تنزيل Aspose.PDF لـ .NET؟  
+ يمكنك تحميل المكتبة[هنا](https://releases.aspose.com/pdf/net/).
 
-أ: يهدف البرنامج التعليمي "البحث عن نص وإضافة ارتباط تشعبي" إلى توضيح كيفية استخدام مكتبة Aspose.PDF لـ .NET للبحث عن نص معين داخل مستند PDF، وإضافة ارتباطات تشعبية إلى النص الموجود، ثم حفظ المستند المعدل. يوفر البرنامج التعليمي دليلاً شاملاً وعينات من أكواد C# لتوضيح العملية خطوة بخطوة.
+### هل يمكنني تجربة Aspose.PDF مجانًا؟  
+ بالتأكيد! يمكنك الحصول على نسخة تجريبية مجانية[هنا](https://releases.aspose.com/).
 
-#### س: كيف يساعد هذا البرنامج التعليمي في إضافة ارتباطات تشعبية إلى نص محدد في مستند PDF؟
+### هل يتوفر الدعم لمنتجات Aspose؟  
+ نعم، يمكنك العثور على الدعم ومناقشات المجتمع[هنا](https://forum.aspose.com/c/pdf/10).
 
-أ: يرشدك هذا البرنامج التعليمي خلال عملية استخدام مكتبة Aspose.PDF لتحديد موقع نص معين في مستند PDF، وتطبيق ارتباط تشعبي على النص المحدد، وحفظ ملف PDF المعدل. ويغطي الخطوات الأساسية مثل إعداد المشروع، وتحميل المستند، وتمكين البحث باستخدام التعبيرات العادية، وإضافة ارتباطات تشعبية إلى النص الموجود.
-
-#### س: ما هي المتطلبات الأساسية اللازمة لمتابعة هذا البرنامج التعليمي؟
-
-ج: قبل البدء، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، يجب أن يكون لديك مكتبة Aspose.PDF for .NET مثبتة، والتي يمكن الحصول عليها من موقع Aspose على الويب أو تثبيتها باستخدام NuGet في مشروعك.
-
-#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
-
-أ: ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE). ثم أضف مرجعًا إلى مكتبة Aspose.PDF for .NET، مما سيمكنك من الاستفادة من إمكانيات المكتبة في مشروعك.
-
-#### س: هل يمكنني إضافة ارتباطات تشعبية إلى نص محدد باستخدام هذا البرنامج التعليمي؟
-
-ج: نعم، يركز هذا البرنامج التعليمي بشكل خاص على إضافة ارتباطات تشعبية إلى نص معين في مستند PDF. ويوضح كيفية العثور على النص المطلوب واستخراجه باستخدام التعبيرات العادية، وإنشاء ارتباطات تشعبية مرتبطة بأجزاء النص، وحفظ ملف PDF المعدل.
-
-#### س: كيف أقوم بتحديد النص الذي أريد البحث عنه وإضافة ارتباط تشعبي إليه؟
-
- أ: لتحديد النص الذي تريد البحث عنه وإضافة ارتباط تشعبي إليه، قم بإنشاء`TextFragmentAbsorber` الكائن وتعيين نمطه باستخدام`Text` المعلمة. استبدال النمط الافتراضي`"\\d{4}-\\d{4}"` في كود البرنامج التعليمي باستخدام نمط التعبير العادي المطلوب.
-
-#### س: كيف يمكنني تمكين البحث عن التعبيرات العادية للنص؟
-
- أ: يتم تمكين البحث عن التعبيرات العادية عن طريق إنشاء`TextSearchOptions` الكائن وتعيين قيمته إلى`true` . تعيين هذا الكائن إلى`TextSearchOptions` ممتلكات`TextFragmentAbsorber` يضمن هذا تطبيق نمط التعبير العادي أثناء البحث عن النص.
-
-#### س: كيف أضيف ارتباطات تشعبية إلى النص الموجود؟
-
- أ: بعد تحديد أجزاء النص باستخدام`TextFragmentAbsorber` يوفر البرنامج التعليمي حلقة للتكرار خلال هذه الأجزاء. لكل جزء نصي، يوضح البرنامج التعليمي كيفية تعيين لون النص إلى اللون الأزرق وإنشاء ارتباط تشعبي باستخدام`CreateWebLink` طريقة.
-
-#### س: ما هي خطوات حفظ ملف PDF المعدل مع الروابط التشعبية؟
-
- أ: بعد إضافة ارتباطات تشعبية إلى أجزاء النص المطلوبة، استخدم`PdfContentEditor` فئة لحفظ المستند المعدّل. يوضح كود العينة في البرنامج التعليمي كيفية حفظ ملف PDF المحرر وإغلاق المحرر وعرض رسالة النجاح.
+### كيف يمكنني الحصول على ترخيص مؤقت لـ Aspose.PDF؟  
+ يمكنك طلب ترخيص مؤقت[هنا](https://purchase.aspose.com/temporary-license/).

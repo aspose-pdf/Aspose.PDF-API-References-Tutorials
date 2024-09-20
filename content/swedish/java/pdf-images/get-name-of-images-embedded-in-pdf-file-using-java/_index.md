@@ -51,7 +51,7 @@ com.aspose.pdf.Page page = pdfDocument.getPages().get_Item(1); // Ersätt med ö
 com.aspose.pdf.XImageCollection images = page.getResources().getImages();
 ```
 
-## Skriva Java-kod för bildextraktion
+## Skriver Java-kod för bildextraktion
 
 Låt oss nu gå igenom de inbäddade bilderna och extrahera deras namn:
 

@@ -36,7 +36,7 @@ Naučte se, jak převést konkrétní oblast stránky na obrázek v PDF pomocí 
 ### [Převeďte stránky PDF na obrázek BMP pomocí Javy](./convert-pdf-pages-to-bmp-image-using-java/)
 Naučte se převádět stránky PDF na obrázky BMP pomocí Javy s Aspose.PDF pro Javu. Postupujte podle našeho podrobného průvodce pro bezproblémový převod PDF na BMP.
 ### [Zjistěte, zda je Image Inside PDF v Javě barevný nebo černobílý](./identify-if-image-inside-pdf-is-colored-or-black-and-white-in-java/)
-Naučte se, jak identifikovat barevné nebo černobílé obrázky uvnitř PDF pomocí Aspose.PDF pro Java. Náš průvodce krok za krokem tento proces zjednodušuje.
+Naučte se, jak identifikovat barevné nebo černobílé obrázky uvnitř PDF pomocí Aspose.PDF pro Java. Náš průvodce krok za krokem celý proces zjednodušuje.
 ### [Nahradit obrázek ve stávajícím souboru PDF pomocí Java](./replace-image-in-existing-pdf-file-using-java/)
 Naučte se, jak nahradit obrázky v souborech PDF pomocí jazyka Java pomocí Aspose.PDF for Java. Podrobný průvodce s příklady kódu pro bezproblémovou výměnu obrázků.
 ### [Nastavení DPI nebo PPI obrázků v PDF pomocí Java](./setting-dpi-or-ppi-of-images-in-pdf-using-java/)

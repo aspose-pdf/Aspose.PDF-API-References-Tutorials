@@ -65,7 +65,7 @@ RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf
 
 ## 4. lépés: A szerkesztési megjegyzés testreszabása
 
-Itt az ideje, hogy stílust alakítson ki szerkesztési kommentárján! Különféle tulajdonságokat állíthat be a megjelenés testreszabásához:
+Itt az ideje, hogy stílust formáljon a szerkesztési kommentárjának! Különféle tulajdonságokat állíthat be a megjelenés testreszabásához:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;

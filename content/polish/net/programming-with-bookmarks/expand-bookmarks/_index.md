@@ -9,7 +9,7 @@ url: /pl/net/programming-with-bookmarks/expand-bookmarks/
 ---
 ## Wstęp
 
-Czy kiedykolwiek otworzyłeś plik PDF tylko po to, aby odkryć, że wszystkie zakładki są zwinięte? Może to być frustrujące, szczególnie gdy próbujesz poruszać się po długim dokumencie. Na szczęście dzięki Aspose.PDF dla .NET możesz łatwo programowo rozszerzać zakładki w plikach PDF. Ten przewodnik przeprowadzi Cię przez proces krok po kroku, zapewniając, że rozumiesz każdą część kodu i jak on działa. Więc weź swój ulubiony napój i zanurzmy się w świecie manipulacji PDF!
+Czy kiedykolwiek otworzyłeś plik PDF i odkryłeś, że wszystkie zakładki są zwinięte? To może być frustrujące, zwłaszcza gdy próbujesz poruszać się po długim dokumencie. Na szczęście dzięki Aspose.PDF dla .NET możesz łatwo programowo rozszerzać zakładki w plikach PDF. Ten przewodnik przeprowadzi Cię przez proces krok po kroku, zapewniając, że rozumiesz każdą część kodu i sposób jego działania. Więc weź swój ulubiony napój i zanurzmy się w świecie manipulacji PDF!
 
 ## Wymagania wstępne
 

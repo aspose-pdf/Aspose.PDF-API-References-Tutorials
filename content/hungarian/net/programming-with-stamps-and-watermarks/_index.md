@@ -7,7 +7,7 @@ url: /hu/net/programming-with-stamps-and-watermarks/
 description: Az Aspose.PDF for .NET programozás bélyegekkel és vízjelekkel oktatóanyagai megtanítják Önnek, hogyan adhat hozzá biztonsági és személyre szabott elemeket PDF-dokumentumaihoz.
 ---
 
-Az Aspose.PDF „Programozás bélyegekkel és vízjelekkel” .NET-hez készült oktatóanyagai végigvezetik a bélyegek és vízjelek PDF-dokumentumokhoz való hozzáadásának lépésein. Megtanulja a bélyegek testreszabását, szöveges és grafikus vízjelek alkalmazását, valamint helyzetük és megjelenésük kezelését. Ezek az oktatóanyagok segítenek abban, hogy egyszerű és hatékony módon biztonsági és azonosítási réteget adjon PDF-fájljaihoz.
+Az Aspose.PDF „Programozás bélyegekkel és vízjelekkel” .NET-hez készült oktatóanyagai végigvezetik a bélyegek és vízjelek PDF-dokumentumokhoz való hozzáadásának lépésein. Megtanulja a bélyegzők testreszabását, szöveges és grafikus vízjelek alkalmazását, valamint helyzetük és megjelenésük kezelését. Ezek az oktatóanyagok segítenek abban, hogy egyszerű és hatékony módon biztonsági és azonosítási réteget adjon PDF-fájljaihoz.
 
 ## Oktatóanyagok
 | Cím | Leírás |

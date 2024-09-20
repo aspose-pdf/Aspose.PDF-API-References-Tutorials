@@ -129,7 +129,7 @@ doc.Save(dataDir + "SetCalloutProperty.pdf");
 
 ## Conclusione
 
-Ed ecco fatto! Hai appena creato un documento PDF con un'annotazione callout usando Aspose.PDF per .NET. Questa annotazione può essere incredibilmente utile per evidenziare o spiegare parti specifiche del tuo documento. Aspose.PDF offre una potente API che rende la manipolazione PDF semplice e flessibile. Che tu stia aggiungendo annotazioni, convertendo documenti o gestendo complesse attività PDF, Aspose.PDF ti copre.
+Ed ecco fatto! Hai appena creato un documento PDF con un'annotazione callout usando Aspose.PDF per .NET. Questa annotazione può essere incredibilmente utile per evidenziare o spiegare parti specifiche del tuo documento. Aspose.PDF offre una potente API che rende la manipolazione PDF semplice e flessibile. Che tu stia aggiungendo annotazioni, convertendo documenti o gestendo complesse attività PDF, Aspose.PDF ha tutto ciò che ti serve.
 
 ## Domande frequenti
 

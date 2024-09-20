@@ -1,6 +1,6 @@
 ---
-title: Smazat konkrétní stránku v souboru PDF
-linktitle: Smazat konkrétní stránku v souboru PDF
+title: Odstranit konkrétní stránku v souboru PDF
+linktitle: Odstranit konkrétní stránku v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
 description: V tomto podrobném průvodci se dozvíte, jak odstranit konkrétní stránku ze souboru PDF pomocí Aspose.PDF for .NET.
 type: docs
@@ -102,14 +102,14 @@ Smazání stránky z PDF se může zdát jako složitý úkol, ale s Aspose.PDF 
 ### Mohu odstranit více stránek najednou pomocí Aspose.PDF pro .NET?
  Ano! Můžete odstranit více stránek zadáním rozsahu stránek v`Delete` metoda. Například,`pdfDocument.Pages.Delete(2, 4)` smaže stránky 2 až 4.
 
-### Existuje nějaký limit, kolik stránek mohu smazat?
+### Existuje omezení počtu stránek, které mohu smazat?
 Ne, neexistuje žádné omezení, pokud stránky v dokumentu existují. Můžete odstranit tolik stránek, kolik potřebujete.
 
 ### Změní tento proces původní soubor PDF?
 Ne, pokud to nepřepíšete. V příkladu jsme uložili aktualizovaný soubor s novým názvem, abychom zachovali původní.
 
 ### Potřebuji k použití Aspose.PDF pro tuto funkci placenou licenci?
- Můžete využít bezplatnou zkušební verzi nebo požádat o a[dočasná licence](https://purchase.aspose.com/temporary-license/), ale abyste se vyhnuli jakýmkoli omezením, doporučujeme plnou licenci.
+ Můžete použít bezplatnou zkušební verzi nebo požádat o a[dočasná licence](https://purchase.aspose.com/temporary-license/), ale abyste se vyhnuli jakýmkoli omezením, doporučujeme plnou licenci.
 
 ### Mohu obnovit smazanou stránku?
 Jakmile je stránka odstraněna a soubor je uložen, nelze ji obnovit. V případě potřeby se ujistěte, že máte zálohu původního dokumentu.

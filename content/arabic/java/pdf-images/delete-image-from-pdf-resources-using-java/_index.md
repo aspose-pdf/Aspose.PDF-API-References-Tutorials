@@ -109,7 +109,7 @@ public class DeleteImagesFromPDF {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
+### كيف أقوم بتثبيت Aspose.PDF لـJava؟
 
  لتثبيت Aspose.PDF لـ Java، يمكنك تنزيل المكتبة من موقع الويب[هنا](https://releases.aspose.com/pdf/java/). اتبع تعليمات التثبيت الواردة في الوثائق.
 

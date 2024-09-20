@@ -2,7 +2,7 @@
 title: Eksportuj pliki PDF do skoroszytów programu Excel
 linktitle: Eksportuj pliki PDF do skoroszytów programu Excel
 second_title: Aspose.PDF Java PDF Processing API
-description: Dowiedz się, jak bez wysiłku eksportować pliki PDF do skoroszytów programu Excel za pomocą Aspose.PDF dla Java. Przewodnik krok po kroku dotyczący bezproblemowej ekstrakcji danych.
+description: Dowiedz się, jak bez wysiłku eksportować pliki PDF do skoroszytów programu Excel za pomocą Aspose.PDF dla Java. Przewodnik krok po kroku do bezproblemowej ekstrakcji danych.
 type: docs
 weight: 16
 url: /pl/java/pdf-conversion-transformation/export-pdfs-to-excel-workbooks/

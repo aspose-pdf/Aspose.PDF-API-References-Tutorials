@@ -2,214 +2,179 @@
 title: Criar PDF com várias colunas
 linktitle: Criar PDF com várias colunas
 second_title: Referência da API do Aspose.PDF para .NET
-description: Aprenda a criar um PDF com várias colunas usando o Aspose.PDF para .NET.
+description: Aprenda a criar PDFs multicolunas usando Aspose.PDF para .NET. Um guia passo a passo com exemplos de código e explicações detalhadas. Perfeito para profissionais.
 type: docs
 weight: 110
 url: /pt/net/programming-with-text/create-multi-column-pdf/
 ---
-Este tutorial guiará você pelo processo de criação de um PDF multicoluna usando Aspose.PDF para .NET. O código-fonte C# fornecido demonstra as etapas necessárias.
+## Introdução
 
-## Requisitos
-Antes de começar, certifique-se de ter o seguinte:
+Criar PDFs com várias colunas é uma ótima maneira de apresentar texto em um formato mais organizado e legível. Não importa se você está elaborando um relatório, artigo ou layout para uma publicação, estruturas com várias colunas podem tornar seu conteúdo mais envolvente. Neste tutorial, mostraremos como criar um PDF com várias colunas usando o Aspose.PDF para .NET. Não se preocupe, dividiremos tudo em etapas simples que facilitarão o acompanhamento, mesmo se você for novo na plataforma.
 
-- Visual Studio ou qualquer outro compilador C# instalado em sua máquina.
-- Biblioteca Aspose.PDF para .NET. Você pode baixá-la do site oficial do Aspose ou usar um gerenciador de pacotes como o NuGet para instalá-la.
+## Pré-requisitos
 
-## Etapa 1: Configurar o projeto
-1. Crie um novo projeto C# no seu ambiente de desenvolvimento preferido.
-2. Adicione uma referência à biblioteca Aspose.PDF para .NET.
+Antes de começarmos a trabalhar no código, há algumas coisas que você precisa ter em mãos para seguir adiante sem problemas:
 
-## Etapa 2: Importar os namespaces necessários
-No arquivo de código onde você deseja criar um PDF com várias colunas, adicione as seguintes diretivas using no topo do arquivo:
+1.  Aspose.PDF para .NET: Você precisa ter esta biblioteca instalada. Você pode baixá-la de[aqui](https://releases.aspose.com/pdf/net/).
+2. Ambiente de desenvolvimento: configure seu IDE preferido, como o Visual Studio, para escrever e executar código C#.
+3. .NET Framework: certifique-se de ter uma versão compatível do .NET instalada.
+4. Noções básicas de C#: familiaridade com a sintaxe C# será útil, mas explicaremos cada etapa em detalhes.
+5.  Licença temporária: Aspose.PDF requer uma licença para evitar marcas d'água ou limitações. Você pode obter uma[licença temporária](https://purchase.aspose.com/temporary-license/) se necessário.
+
+## Pacotes de importação
+
+Antes de começar a codificar, você precisa importar os namespaces necessários que permitirão que você interaja com o Aspose.PDF. Aqui está o que você precisará importar:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Etapa 3: Defina o diretório do documento
- No código, localize a linha que diz`string dataDir = "YOUR DOCUMENT DIRECTORY";` e substituir`"YOUR DOCUMENT DIRECTORY"` com o caminho para o diretório onde seus documentos estão armazenados.
+Esses namespaces fornecem acesso às classes necessárias para criar PDFs, desenhar formas e manipular formatação de texto.
 
-## Etapa 4: Crie uma nova instância de Documento
- Instanciar um novo`Document` objeto adicionando a seguinte linha de código:
+Vamos dividir o processo de criação de um PDF com várias colunas em etapas simples e gerenciáveis.
 
-```csharp
-Document doc = new Document();
-```
+## Etapa 1: Configurando o documento
 
-## Etapa 5: Defina as margens da página
- Especifique as informações de margem esquerda e direita para o arquivo PDF usando o`PageInfo.Margin` propriedade do`Document`.
+Para começar, você precisa criar um novo documento PDF. Isso envolve definir as margens e adicionar uma página onde seu conteúdo ficará.
 
-```csharp
-doc.PageInfo.Margin.Left = 40;
-doc.PageInfo.Margin.Right = 40;
-```
-
-## Etapa 6: Adicionar uma página ao documento
- Adicione uma nova página ao documento usando o`Add` método do`Pages` coleção. No código fornecido, a nova página é atribuída à variável`page`.
-
-```csharp
-Page page = doc.Pages.Add();
-```
-
-## Etapa 7: Crie um objeto Graph e adicione uma linha
- Criar um novo`Graph` objeto com dimensões específicas e adicione uma linha a ele. Em seguida, adicione o`Graph` objetar ao`Paragraphs` coleção da página.
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-float[] backPos = new float[] { 1, 2, 500, 2 };
-Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
-graph1.Shapes.Add(l1);
-page.Paragraphs.Add(graph1);
-```
-
-## Etapa 8: adicione texto de título com formatação HTML
- Criar um`HtmlFragment` objeto e defina seu conteúdo para o texto HTML desejado. Em seguida, adicione o fragmento ao`Paragraphs` coleção da página.
-
-```csharp
-string s = "<font face=\"Times New Roman\" size=4>" +
-     "<strong>How to Steer Clear of money scams</<strong>" +
-     "</font>";
-HtmlFragment heading_text = new HtmlFragment(s);
-page.Paragraphs.Add(heading_text);
-```
-
-## Etapa 9: Crie um FloatingBox com várias colunas
- Criar um`FloatingBox` objeto e defina o número de colunas e o espaçamento entre colunas. Em seguida, adicione fragmentos de texto e uma linha ao`Paragraphs` coleção do`FloatingBox`.
-
-```csharp
-Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-box. ColumnInfo. ColumnCount = 2;
-box.ColumnInfo.ColumnSpacing = "5";
-box.ColumnInfo.ColumnWidths = "105 105";
-
-TextFragment text1 = new TextFragment("By A Googling (The Official Google Blog)");
-text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-
-TextFragment text2 = new TextFragment("Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam...");
-box.Paragraphs.Add(text2);
-
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-float[] posArr2 = new float[] { 1, 10, 100, 10 };
-Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
-graph2.Shapes.Add(l2);
-box.Paragraphs.Add(graph2);
-
-page.Paragraphs.Add(box);
-```
-
-## Etapa 10: Salve o documento PDF
- Salve o documento PDF usando o`Save` método do`Document` objeto.
-
-```csharp
-doc.Save(dataDir);
-```
-
-### Código-fonte de exemplo para criar PDF com várias colunas usando Aspose.PDF para .NET 
 ```csharp
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Criar um novo documento PDF
 Document doc = new Document();
-// Especifique as informações da margem esquerda do arquivo PDF
+
+// Defina as margens do arquivo PDF
 doc.PageInfo.Margin.Left = 40;
-// Especifique as informações da margem direita para o arquivo PDF
 doc.PageInfo.Margin.Right = 40;
+
+// Adicionar uma página ao documento
 Page page = doc.Pages.Add();
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// Adicione a linha à coleção de paráfrases do objeto de seção
+```
+
+ Aqui, criamos um`Document`objeto e definir as margens esquerda e direita para 40 unidades. Então, adicionamos uma nova página a este documento, que manterá nosso layout de várias colunas.
+
+## Etapa 2: Adicionar uma linha para separar seções
+
+Em seguida, vamos adicionar uma linha horizontal à página para separação visual. Isso ajuda a criar uma aparência limpa e profissional.
+
+```csharp
+// Crie um objeto gráfico para manter a linha
+Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
+
+// Adicione a linha à coleção de parágrafos da página
 page.Paragraphs.Add(graph1);
-// Especifique as coordenadas para a linha
+
+// Defina as coordenadas para a linha
 float[] posArr = new float[] { 1, 2, 500, 2 };
+
+// Crie uma linha e adicione-a ao gráfico
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// Crie variáveis de string com texto contendo tags HTML
+```
+
+ Aqui, estamos criando uma linha horizontal usando o`Graph` e`Line` classes. Esta linha é adicionada à página`Paragraphs` coleção, que contém todos os elementos visuais.
+
+## Etapa 3: Adicionar texto HTML com formatação
+
+Em seguida, vamos inserir algum texto que inclua tags HTML para mostrar como você pode formatar texto dinamicamente no PDF.
+
+```csharp
+// Crie uma string com conteúdo HTML
 string s = "<font face=\"Times New Roman\" size=4>" +
-"<strong> How to Steer Clear of money scams</<strong> "
-+ "</font>";
-// Crie parágrafos de texto contendo texto HTML
+           "<strong> How to Steer Clear of Money Scams </strong>" +
+           "</font>";
+
+// Crie um novo HtmlFragment com o texto formatado
 HtmlFragment heading_text = new HtmlFragment(s);
+
+// Adicione o texto HTML à página
 page.Paragraphs.Add(heading_text);
+```
+
+ Usando o`HtmlFragment`class, podemos adicionar texto formatado que inclui tags HTML como tamanho da fonte, estilo e texto em negrito. Isso é útil para melhorar a aparência do seu conteúdo PDF.
+
+## Etapa 4: Criando um layout com várias colunas
+
+Agora criaremos um layout multicolunas. É aqui que a mágica acontece — você pode especificar quantas colunas quer e qual deve ser a largura delas.
+
+```csharp
+// Crie uma caixa flutuante para conter as colunas
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// Adicione quatro colunas na seção
+
+// Defina o número de colunas e o espaçamento entre elas
 box.ColumnInfo.ColumnCount = 2;
-// Defina o espaçamento entre as colunas
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
+
+// Adicione a caixa à página
+page.Paragraphs.Add(box);
+```
+
+Aqui, estamos criando uma caixa flutuante que conterá duas colunas. Definimos o espaçamento entre as colunas e especificamos que cada coluna deve ter 105 unidades de largura. Isso nos permite criar o layout de coluna desejado dentro do PDF.
+
+## Etapa 5: Adicionar texto às colunas
+
+ Vamos agora preencher as colunas com algum conteúdo de texto. Você pode adicionar diferentes`TextFragment` objetos para cada coluna.
+
+```csharp
+// Crie e formate o primeiro fragmento de texto
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
 text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Crie um objeto de gráfico para desenhar uma linha
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// Especifique as coordenadas para a linha
+box.Paragraphs.Add(text1);
+
+// Adicione outra linha para separação
+Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-//Adicione a linha à coleção de parágrafos do objeto de seção
 box.Paragraphs.Add(graph2);
-TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
+
+//Crie e adicione um segundo fragmento de texto
+TextFragment text2 = new TextFragment("Lorem ipsum dolor sit amet, consectetur adipiscing elit...");
 box.Paragraphs.Add(text2);
-page.Paragraphs.Add(box);
-dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// Salvar arquivo PDF
-doc.Save(dataDir);
-Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusão
-Você criou com sucesso um PDF multicoluna usando Aspose.PDF para .NET. O arquivo PDF resultante agora pode ser encontrado no caminho de arquivo de saída especificado.
+ Nós adicionamos um`TextFragment` para a caixa flutuante, seguido por outra linha horizontal. O segundo`TextFragment` contém mais texto para preencher a segunda coluna. Esses fragmentos nos permitem adicionar vários elementos de texto ao PDF com diferentes opções de formatação.
 
-### Perguntas frequentes
+## Etapa 6: Salvando o PDF
 
-#### P: Qual é o foco deste tutorial?
-
-Este tutorial é focado em guiar você pelo processo de criação de um PDF multicoluna usando a biblioteca Aspose.PDF for .NET. O código-fonte C# fornecido demonstra as etapas necessárias para atingir isso.
-
-#### P: Quais namespaces devo importar para este tutorial?
-
-R: No arquivo de código onde você deseja criar um PDF com várias colunas, importe os seguintes namespaces no início do arquivo:
+Depois de adicionar todo o seu conteúdo, o passo final é salvar o documento como um arquivo PDF.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+// Defina o caminho de saída para o PDF
+dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
+
+// Salvar o documento PDF
+doc.Save(dataDir);
+
+// Mensagem de sucesso de saída
+Console.WriteLine("\nMulti-column PDF file created successfully.\nFile saved at " + dataDir);
 ```
 
-#### P: Como especifico o diretório do documento?
+Este bloco salva o arquivo PDF no diretório especificado e emite uma mensagem de sucesso no console. O PDF agora está pronto para visualização!
 
- A: No código, encontre a linha`string dataDir = "YOUR DOCUMENT DIRECTORY";` e substituir`"YOUR DOCUMENT DIRECTORY"` com o caminho real para o diretório do seu documento.
+## Conclusão
 
-#### P: Como crio uma nova instância de Documento?
+Seguindo estas etapas simples, você pode facilmente criar um PDF multicolunas com aparência profissional usando o Aspose.PDF para .NET. Seja para um relatório, artigo ou boletim informativo, esta técnica ajuda a organizar o conteúdo em um formato visualmente atraente. O Aspose.PDF oferece ferramentas poderosas para personalizar seus PDFs, desde margens e layout até formatação de texto e formas de desenho. Agora é sua vez de experimentar e levar suas habilidades de criação de PDF para o próximo nível!
 
- R: Na Etapa 4, você instanciará um novo`Document` objeto usando o código fornecido.
+## Perguntas frequentes
 
-#### P: Como defino as margens da página?
+### Posso criar mais de duas colunas em um PDF?
+ Sim, você pode criar quantas colunas precisar. Basta ajustar o`ColumnCount` propriedade para corresponder ao número de colunas que você deseja.
 
- A: Na Etapa 5, você usará o`PageInfo.Margin` propriedade do`Document` para especificar as informações de margem esquerda e direita do arquivo PDF.
+### Como altero a largura de cada coluna?
+ Você pode modificar o`ColumnWidths` propriedade para especificar larguras diferentes para cada coluna. Esta propriedade aceita uma sequência de valores separados por espaços.
 
-#### P: Como adiciono uma página ao documento?
+### É possível adicionar imagens às colunas?
+ Claro! Você pode adicionar imagens usando o`Image` classe e inclua-os na caixa flutuante ou em qualquer outro elemento de layout no seu PDF.
 
- R: Na Etapa 6, você adicionará uma nova página ao documento usando o`Add` método do`Pages` coleção.
+### Posso estilizar texto com tags HTML nas colunas?
+ Sim, você pode usar tags HTML dentro`HtmlFragment` objetos para estilizar seu texto. Isso inclui adicionar fontes, tamanhos, cores e muito mais.
 
-#### P: Como crio um objeto Graph e adiciono uma linha?
-
- R: Na Etapa 7, você criará um novo`Graph` objeto, adicione uma linha a ele e, em seguida, adicione o`Graph` objetar ao`Paragraphs` coleção da página.
-
-#### P: Como adiciono texto de título com formatação HTML?
-
-R: Na Etapa 8, você criará um`HtmlFragment` objeto e defina seu conteúdo para o texto HTML desejado e, em seguida, adicione o fragmento ao`Paragraphs` coleção da página.
-
-#### P: Como posso criar um FloatingBox com várias colunas?
-
- A: Na Etapa 9, você criará um`FloatingBox` objeto com várias colunas e espaçamento entre colunas, em seguida, adicione fragmentos de texto e uma linha ao`Paragraphs` coleção do`FloatingBox`.
-
-#### P: Como faço para salvar o documento PDF?
-
- R: Na Etapa 10, você salvará o documento PDF usando o`Save` método do`Document` objeto.
-
-#### P: Qual é o principal aprendizado deste tutorial?
-
-R: Ao seguir este tutorial, você aprendeu a criar um documento PDF com várias colunas usando o Aspose.PDF para .NET. Isso pode ser útil para exibir conteúdo em um layout estruturado e organizado.
+### Como posso adicionar mais páginas com o mesmo layout de colunas?
+ Você pode adicionar páginas adicionais usando`doc.Pages.Add()` e repita o processo de adicionar colunas e conteúdo para cada página.

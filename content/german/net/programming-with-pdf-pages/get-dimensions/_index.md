@@ -65,7 +65,7 @@ Stellen Sie es sich so vor, als würden Sie ein leeres Notizbuch öffnen und auf
 
 ## Schritt 3: Informationen zur Seitenhöhe und -breite abrufen
 
- Da wir nun eine Seite haben, mit der wir arbeiten können, können wir die Abmessungen der Seite ermitteln. Wir verwenden dazu die`GetPageRect()` Methode zum Abrufen der Höhe und Breite.
+ Da wir nun eine Seite haben, mit der wir arbeiten können, können wir die Abmessungen der Seite ermitteln. Wir verwenden die`GetPageRect()` Methode zum Abrufen der Höhe und Breite.
 
 ```csharp
 // Informationen zur Seitenhöhe und -breite abrufen

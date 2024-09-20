@@ -143,7 +143,7 @@ U hebt Aspose.PDF verteld om het document op te slaan met de opgegeven bestandsn
 
 ## Conclusie
 
-En daar heb je het! Je hebt geleerd hoe je Aspose.PDF voor .NET gebruikt om een afbeelding punt voor punt op te slaan in de XImage-verzameling. Is het niet bevredigend om te zien hoe je code vorm krijgt en iets nuttigs genereert? Of je nu applicaties bouwt of gewoon rapporten wilt automatiseren, deze gids is een geweldig basisstuk. Vergeet niet dat de kracht van Aspose.PDF je kan helpen bij een veelheid aan taken die verder gaan dan alleen deze, dus blijf ontdekken!
+En daar heb je het! Je hebt geleerd hoe je Aspose.PDF voor .NET gebruikt om een afbeelding punt voor punt op te slaan in de XImage-verzameling. Is het niet bevredigend om te zien hoe je code vorm krijgt en iets nuttigs genereert? Of je nu applicaties bouwt of gewoon rapporten wilt automatiseren, deze gids is een geweldig basisstuk. Vergeet niet dat de kracht van Aspose.PDF je kan helpen bij een veelvoud aan taken die verder gaan dan alleen deze, dus blijf ontdekken!
 
 ## Veelgestelde vragen
 

@@ -2,175 +2,193 @@
 title: 确定 PDF 文件中的表格中断
 linktitle: 确定 PDF 文件中的表格中断
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 确定 PDF 文件中的表格分隔符。
+description: 通过我们的分步指南（包括代码示例和故障排除提示）了解如何使用 Aspose.PDF for .NET 确定 PDF 文件中的表格中断。
 type: docs
 weight: 60
 url: /zh/net/programming-with-tables/determine-table-break/
 ---
-在本教程中，我们将学习如何使用 Aspose.PDF for .NET 确定 PDF 文件中的表格分隔符。我们将逐步解释 C# 中的源代码。在本教程结束时，您将了解如何确定表格是否超出页边距。让我们开始吧！
+## 介绍
 
-## 步骤 1：设置环境
-首先，确保您已使用 Aspose.PDF for .NET 设置了 C# 开发环境。添加对库的引用并导入必要的命名空间。
+创建和操作 PDF 文件就像驯服一头野兽。前一刻，您以为自己已经搞定了，下一刻，文档的行为却变得不可预测。您是否想过如何有效地管理 PDF 中的表格 — 具体来说，如何确定表格何时会中断？在本文中，我们将深入探讨如何使用 Aspose.PDF for .NET 来识别表格何时超出页面大小。所以系好安全带，让我们探索 PDF 操作的世界吧！
 
-## 步骤 2：创建 PDF 文档
-在此步骤中，我们创建一个新的`Document`对象来表示 PDF 文档。
+## 先决条件
+
+在开始实际编码之前，请确保一切准备就绪：
+
+1. .NET 开发环境：确保您已安装 Visual Studio 或任何兼容的 IDE。
+2.  Aspose.PDF 库：您需要将 Aspose.PDF 库添加到您的项目中。您可以从[Aspose PDF 下载](https://releases.aspose.com/pdf/net/)页面，或者你也可以通过 NuGet 包管理器安装：
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. C# 基础知识：本指南假设您对 C# 和面向对象编程有一定的了解。
+
+现在我们已经满足了先决条件，让我们开始导入必要的包。
+
+## 导入包
+
+要开始在项目中使用 Aspose.PDF，您需要包含相关的命名空间。具体操作如下：
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-该文档将用于添加章节和表格。
+这些命名空间将使您能够访问操作 PDF 文件所需的核心功能。
 
-## 步骤 3：添加部分和表格
-现在我们要向我们的 PDF 文档添加一个部分，并在该部分内创建一个表格。
+让我们将这个过程分解成几个易于管理的步骤。我们将创建一个 PDF 文档，添加一个表格，并确定在添加更多行时它是否会分页到新页面。
+
+## 步骤 1：设置文档目录
+
+在开始编码之前，请确定输出 PDF 的保存位置。这很重要，因为稍后您将在这里找到生成的文档。
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //替换为您的目录。
 ```
 
-我们还为表格指定了 300 点的上边距。您可以根据需要调整此值。
+## 步骤 2：实例化 PDF 文档
 
-## 步骤 4：表设置
-在此步骤中，我们配置表格属性，例如列宽和边框。
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-这里我们定义表格列的宽度和单元格边框。您可以根据自己的喜好调整这些值。
-
-## 步骤 5：向表中添加行和单元格
-现在我们将使用循环在表中创建行和单元格。
+接下来，你将创建一个新的实例`Document`来自 Aspose.PDF 库的类。这就是您所有 PDF 魔法发生的地方！
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-这里我们在表格中创建17行，每行添加三个单元格。您可以根据需要调整扣环。
-
-## 步骤 6：确定表格分隔符
-现在我们将通过比较页面的高度和表格中对象的总高度来确定表格是否超出页边距。
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-我们计算页面高度和考虑页边距的对象总高度。如果差值小于或等于 10，则表格超出页边距。
-
-## 步骤 7：保存 PDF 文档
-最后，我们将结果保存为 PDF 文档。
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-确保指定正确的文档目录。生成的 PDF 文件将使用确定的表格分隔符保存。
-
-### 使用 Aspose.PDF for .NET 确定表格中断的示例源代码
-
-```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//实例化对象 PDF 类
 Document pdf = new Document();
-//将部分添加到 PDF 文档部分集合
+```
+
+## 步骤 3：创建页面
+
+每个 PDF 都需要一页。以下是向文档添加新页面的方法。
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-//实例化表对象
+```
+
+## 步骤 4：实例化表
+
+现在，让我们创建您想要监控中断的实际表。
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-//在所需部分的段落集合中添加表格
+table1.Margin.Top = 300; //在桌子上方留出一些空间。
+```
+
+## 步骤 5：将表格添加到页面
+
+创建表后，下一步是将其添加到我们之前创建的页面。
+
+```csharp
 page.Paragraphs.Add(table1);
-//设置表格的列宽
-table1.ColumnWidths = "100 100 100";
-//使用 BorderInfo 对象设置默认单元格边框
+```
+
+## 步骤 6：定义表属性
+
+让我们为表格定义一些重要的属性，例如列宽和边框。
+
+```csharp
+table1.ColumnWidths = "100 100 100"; //每列宽 100 个单位。
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-//使用另一个自定义的 BorderInfo 对象设置表格边框
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-//创建 MarginInfo 对象并设置其左边距、下边距、右边距和上边距
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-//将默认单元格填充设置为 MarginInfo 对象
+```
+
+## 步骤 7：设置单元格边距
+
+我们需要确保单元格具有一些填充，以便更好地呈现。下面介绍如何设置。
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); //上、左、右、下
 table1.DefaultCellPadding = margin;
-//如果你将计数器增加到 17，桌子就会坏掉
-//因为此页面无法再容纳更多内容
+```
+
+## 步骤 8：向表中添加行
+
+现在我们可以添加行了！我们将循环并创建 17 行。（为什么是 17 行？因为这就是表格分隔符！）
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//在表格中创建行，然后在行中创建单元格
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-//获取页面高度信息
+```
+
+## 步骤 9：获取页面高度
+
+为了检查我们的表格是否合适，我们需要知道页面的高度。 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-//获取页面顶部和底部边距的总高度信息，
-//桌面边距和桌面高度。
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-//显示页面高度、表格高度、表格顶部边距和页面顶部
-//以及底部边距信息
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## 步骤 10：计算物体的总高度
 
-//检查我们是否扣除页面顶部边距 + 页面底部边距的总和
-// 表格顶部边距和表格高度小于页面高度
-//大于10（平均一行可以大于10）
+现在，让我们计算页面上所有对象（页边距、表格边距和表格高度）的总高度。
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## 步骤11：显示高度信息
+
+查看一些调试信息很有帮助，不是吗？让我们将所有相关的高度信息打印到控制台。
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## 步骤 12：检查表格中断情况
+
+最后，我们想看看是否添加更多行会导致表格拆分到另一页。
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	//如果值小于 10，则显示消息。
-	//这表明另一行不能放置，如果我们添加新的
-	//行、表会断裂。这取决于行高值。
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## 步骤 13：保存 PDF 文档
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-//保存 pdf 文档
+经过所有这些辛苦工作后，让我们将 PDF 文档保存到您指定的目录中。
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## 步骤14：确认信息
+
+为了让您知道一切进展顺利，我们发送一条确认消息。
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## 结论
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 确定 PDF 文档中的表格分隔符。您可以使用本分步指南检查表格是否超出了您自己的 C# 项目中的页边距。
 
-### 确定 PDF 文件中表格分隔符的常见问题解答
+在本指南中，我们仔细研究了使用 Aspose.PDF for .NET 时如何确定 PDF 文档中的表格何时会中断。通过遵循这些步骤，您可以轻松识别空间限制并更好地管理 PDF 布局。通过练习，您将掌握有效操作表格和像专业人士一样创建精美 PDF 的技能。那么为什么不尝试一下，看看它如何为您服务呢？
 
-#### 问：确定 PDF 文档中的表格分隔符的目的是什么？
+## 常见问题解答
 
-答：确定 PDF 文档中的表格分隔符的目的是检查表格是否超出页边距。这可确保表格内容在可用的页面空间内正确显示。通过检测表格分隔符，您可以处理内容溢出并相应地调整表格布局。
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个强大的库，允许开发人员直接在其 .NET 应用程序中创建、转换和操作 PDF 文档。
 
-#### 问：如何调整表格的上边距？
+### 我可以免费试用 Aspose.PDF 吗？
+是的！您可以下载[免费试用](https://releases.aspose.com/)在购买之前探索其功能。
 
-答：在提供的 C# 源代码中，您可以通过修改`table1.Margin.Top`属性。根据需要增加或减少该值以设置表格所需的上边距。
+### 我如何找到对 Aspose.PDF 的支持？
+您可以在 Aspose 社区上找到有用的信息并获得支持[支持论坛](https://forum.aspose.com/c/pdf/10).
 
-#### 问：我可以自定义表格的外观，例如单元格颜色和字体大小吗？
+### 如果我的表需要超过 17 行，会发生什么情况？
+如果超出可用空间，表格将无法容纳在页面上，因此您应该采取适当的措施来正确格式化表格。
 
-答：是的，您可以使用 Aspose.PDF for .NET 提供的各种属性和方法自定义表格及其单元格的外观。例如，您可以更改单元格背景颜色、字体大小、字体系列、文本对齐方式等。有关如何自定义表格外观的更多信息，请参阅官方文档。
-
-#### 问：如果表格超出页边距会发生什么情况？
-
-答：如果表格超出页边距，可能会导致内容截断或重叠，使 PDF 文档的可读性和条理性下降。通过检测表格中断并处理溢出，您可以确保内容在可用的页面区域内正确显示。
-
-#### 问：我可以确定同一 PDF 文档中多个表格的分页符吗？
-
-答：是的，您可以确定同一 PDF 文档中多个表格的分页符。只需对要分析的每个表格重复上述步骤，并根据需要调整表格布局，以防止内容溢出。
+### 我可以在哪里购买 Aspose.PDF 库？
+您可以从[购买页面](https://purchase.aspose.com/buy).

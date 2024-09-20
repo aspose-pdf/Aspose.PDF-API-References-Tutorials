@@ -45,7 +45,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Instantiera ett PDF-dokument
 
- Därefter skapar vi ett tomt PDF-dokument som så småningom kommer att innehålla vår bild. Med hjälp av`Aspose.Pdf.Document` konstruktor, initialiserar vi ett tomt dokument.
+ Därefter skapar vi ett tomt PDF-dokument som så småningom kommer att innehålla vår bild. Med hjälp av`Aspose.Pdf.Document` konstruktor, initierar vi ett tomt dokument.
 
 ```csharp
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();

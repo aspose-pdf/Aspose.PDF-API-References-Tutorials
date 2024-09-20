@@ -2,82 +2,61 @@
 title: PDF 文件中表格内的 HTML 标签
 linktitle: PDF 文件中表格内的 HTML 标签
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中的表格内使用 HTML 标签。
+description: 通过本分步指南了解如何使用 Aspose.PDF for .NET 在 PDF 的表格单元格内嵌入 HTML 标签。创建动态、专业的 PDF 文档。
 type: docs
 weight: 100
 url: /zh/net/programming-with-tables/html-tags-inside-table/
 ---
-在本教程中，我们将学习如何使用 Aspose.PDF for .NET 在 PDF 文档的表格中使用 HTML 标签。我们将逐步解释 C# 中的源代码。在本教程结束时，您将了解如何将 HTML 内容插入 PDF 文档的表格中。让我们开始吧！
+## 介绍
 
-## 步骤 1：设置环境
-确保您已使用 Aspose.PDF for .NET 配置了 C# 开发环境。添加对库的引用并导入必要的命名空间。
+在 .NET 中处理 PDF 时，Aspose.PDF 库是创建、操作和转换 PDF 文档的出色工具。Aspose.PDF 提供的高级功能之一是能够在 PDF 文件的表格单元格内包含 HTML 内容。本教程将指导您如何使用 Aspose.PDF for .NET 实现此目的。在本指南结束时，您将能够动态生成在单元格中嵌入 HTML 内容的表格。
 
-## 第 2 步：创建表数据
-我们创建一个包含字符串类型“数据”列的 DataTable。然后使用 HTML 内容向此 DataTable 添加行。
+## 先决条件
+
+在深入了解分步指南之前，请确保您拥有必要的工具和资源。
+
+-  Aspose.PDF for .NET：您需要最新版本的 Aspose.PDF。[点击此处下载](https://releases.aspose.com/pdf/net/).
+- .NET 环境：确保您已安装 Visual Studio 或任何其他与 .NET 框架兼容的 IDE。
+- 许可证：如果您没有使用 Aspose.PDF 的许可版本，您可以获取[临时执照](https://purchase.aspose.com/temporary-license/).
+- 对 C# 的基本了解：熟悉 C# 和面向对象编程会很有帮助。
+- HTML 知识：对 HTML 结构的一些了解将对本教程有所帮助。
+
+## 导入必要的包
+
+在开始编写代码之前，导入必要的命名空间至关重要。这些命名空间允许我们使用 Aspose.PDF 类和方法来操作 PDF 文档。
 
 ```csharp
-DataTable dt = new DataTable("Employee");
-dt.Columns.Add("data", System.Type.GetType("System.String"));
-
-DataRow dr = dt.NewRow();
-dr[0] = "<li>Department of Emergency Medicine: 3400 Spruce Street Ground Silverstein Bldg Philadelphia PA 19104-4206</li>";
-dt.Rows.Add(dr);
-dr = dt. NewRow();
-dr[0] = "<li>Penn Observation Medicine Service: 3400 Spruce Street Ground Floor Donner Philadelphia PA 19104-4206</li>";
-dt.Rows.Add(dr);
-dr = dt. NewRow();
-dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street . Philadelphia PA 19104-2640</li>";
-dt.Rows.Add(dr);
+using System;
+using System.Data;
 ```
 
-## 步骤3：创建文档和表格
-我们创建一个新的 PDF 文档，并在该文档中添加一个页面。接下来，我们初始化 Table 类的实例并设置表格属性。
+现在，让我们将任务分解为详细的步骤，并清晰简洁地解释流程的每个部分。
+
+## 步骤 1：设置文档目录
+
+第一步是定义文档目录的路径。这是我们创建和操作 PDF 后将其保存到的位置。
 
 ```csharp
-Document doc = new Document();
-doc.Pages.Add();
-
-Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
-tableProvider. ColumnWidths = "400 50";
-tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 2.5F;
-margin. Left = 2.5F;
-margin. Bottom = 1.0F;
-tableProvider. DefaultCellPadding = margin;
-```
-
-## 步骤 4：将数据导入表
-我们使用“ImportDataTable”方法将数据从 DataTable 导入到表中。我们指定方法参数来指示应导入 DataTable 的哪些行和列范围。
-
-```csharp
-tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
-```
-
-## 步骤 5：将表格添加到文档
-我们将表格添加到文档页面。
-
-```csharp
-doc.Pages[1].Paragraphs.Add(tableProvider);
-```
-
-## 第 6 阶段：保存文档
-我们将包含 HTML 内容的表格保存为 PDF 文档。
-
-```csharp
-doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
-```
-
-### 使用 Aspose.PDF for .NET 的表格内 HTML 标签的示例源代码
-
-```csharp
-//文档目录的路径。
+//定义文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+确保更换`"YOUR DOCUMENT DIRECTORY"`替换为您想要保存 PDF 文件的实际路径。这很重要，因为这样当文档生成时，您可以轻松地找到它。
+
+## 步骤 2：创建 DataTable 并使用 HTML 内容填充
+
+现在我们创建一个`DataTable`保存 PDF 表格中将显示的数据。这`DataTable`将存储 HTML 内容，例如`<li>`标签，我们想要嵌入到单元格中。
+
+```csharp
+//创建 DataTable 并添加列
 DataTable dt = new DataTable("Employee");
 dt.Columns.Add("data", System.Type.GetType("System.String"));
+```
 
+一旦`DataTable`创建后，您需要用要在表格中显示的 HTML 内容填充它。在本例中，我们将添加带有地址的 HTML 列表项。
+
+```csharp
+//添加包含 HTML 内容的行
 DataRow dr = dt.NewRow();
 dr[0] = "<li>Department of Emergency Medicine: 3400 Spruce Street Ground Silverstein Bldg Philadelphia PA 19104-4206</li>";
 dt.Rows.Add(dr);
@@ -87,50 +66,88 @@ dt.Rows.Add(dr);
 dr = dt.NewRow();
 dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street . Philadelphia PA 19104-2640</li>";
 dt.Rows.Add(dr);
+```
 
+此步骤确保表格单元格包含 HTML 格式的内容，这些内容将在 PDF 文档中正确呈现。
+
+## 步骤 3：创建新的 PDF 文档
+
+获得数据后，下一步就是初始化一个新的 PDF 文档。此文档将作为我们添加表格的画布。
+
+```csharp
+//初始化新的 PDF 文档
 Document doc = new Document();
 doc.Pages.Add();
+```
+
+这个简单的代码片段创建了一个空白的 PDF 文档并向其中添加了一个新页面，该页面稍后将包含表格。
+
+## 步骤 4：设置表
+
+现在，我们将在 PDF 文档中创建并设置表格。该表格将定义其列宽和边框设置。
+
+```csharp
 //初始化表的新实例
 Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
 //设置表格的列宽
-tableProvider.ColumnWidths = "400 50 ";
-//将表格边框颜色设置为LightGray
+tableProvider.ColumnWidths = "400 50";
+//将表格边框颜色设置为浅灰色
 tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-//设置表格单元格的边框
+//设置单个表格单元格的边框
 tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+```
+
+在此步骤中，您已成功创建表格并为表格及其单元格设置自定义列宽和边框。列宽可确保表格内数据的正确对齐。
+
+## 步骤 5：定义填充并导入数据
+
+为了增强表格的视觉美感，我们将定义单元格的内边距。然后，我们导入`DataTable`将 HTML 内容放入 PDF 表中。
+
+```csharp
+//设置表格单元格的内边距
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 2.5F;
 margin.Left = 2.5F;
 margin.Bottom = 1.0F;
 tableProvider.DefaultCellPadding = margin;
 
+//将数据表导入 PDF 表
 tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
+```
 
+通过设置边距，我们可以给表格单元格留出一些空间，使内容更具视觉吸引力。`ImportDataTable`方法引入`DataTable`我们之前创建的，确保 HTML 内容嵌入到单元格中。
+
+## 步骤 6：将表格添加到 PDF 并保存
+
+最后，我们将表格添加到PDF文档的第一页并保存文件。
+
+```csharp
+//将表格添加到 PDF 文档的第一页
 doc.Pages[1].Paragraphs.Add(tableProvider);
+
+//保存 PDF 文档
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
+此步骤将包含HTML内容的表格放置在PDF的第一页，并将文件保存到指定的目录中。
+
 ## 结论
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档的表格内使用 HTML 标签。您可以使用本分步指南使用 C# 将 HTML 内容插入 PDF 文档的表格单元格中。
 
-### PDF 文件中表格内的 HTML 标签常见问题解答
+通过遵循上述步骤，您已成功使用 Aspose.PDF for .NET 在 PDF 文档的表格单元格内嵌入 HTML 标签。本教程演示了如何利用 Aspose.PDF 的强大功能在 .NET 应用程序中创建动态且具有视觉吸引力的 PDF 文档。无论您是生成发票、报告还是包含 HTML 内容的详细表格，此方法都能为您的 PDF 操作需求提供坚实的基础。
 
-#### 问：我可以在表格单元格内使用其他 HTML 标签和属性吗？
+## 常见问题解答
 
-答：是的，您可以在表格单元格内使用各种 HTML 标签和属性，例如`<b>`, `<i>`, `<a>`等等。Aspose.PDF for .NET 支持各种 HTML 元素和样式，您可以使用它们来格式化表格单元格中的内容。
+### Aspose.PDF 能处理表格单元格内的复杂 HTML 内容吗？  
+是的，Aspose.PDF 可以处理和呈现表格单元格内的各种 HTML 标签，包括列表、图像和链接。
 
-#### 问：我可以将 CSS 样式应用于表格单元格内的 HTML 内容吗？
+### 如何调整表格中列的大小？  
+您可以使用`ColumnWidths`属性来指定每列的宽度。
 
-答：是的，您可以将 CSS 样式应用于表格单元格内的 HTML 内容。Aspose.PDF for .NET 提供可应用于 HTML 元素的基本 CSS 样式支持。
+### 是否可以格式化表格单元格内的文本？  
+当然！您可以使用以下 HTML 标签`<b>`, `<i>`， 和`<u>`在内容中设置表格单元格内的文本的格式。
 
-#### 问：是否可以在表格单元格内添加图像和 HTML 内容？
+### 如果我的 HTML 内容对于表格单元格来说太大，会发生什么情况？  
+如果内容溢出单元格，表格会自动调整，但您可以自定义单元格大小和自动换行选项来控制内容的显示方式。
 
-答：是的，您可以在表格单元格内添加图片和 HTML 内容。您可以使用 HTML`<img>`标签包含来自各种来源的图像，例如本地文件或 URL。
-
-#### 问：如何为表格指定不同的列宽？
-
-答：您可以使用`ColumnWidths`表格的属性。该属性采用包含空格分隔值的字符串，其中每个值代表以磅为单位的列宽。
-
-#### 问：我可以在包含 HTML 内容的单元格内使用嵌套表格吗？
-
-答：是的，您可以在包含 HTML 内容的单元格内使用嵌套表格。您可以创建单独的表格实例，并将其添加为单元格内 HTML 内容的一部分，以实现嵌套效果。
+### 我可以向 PDF 文档添加多个表格吗？  
+是的，您只需重复添加表格的步骤即可将多个表格添加到 PDF 文档中，每个表格都位于 PDF 的新页面或新部分。

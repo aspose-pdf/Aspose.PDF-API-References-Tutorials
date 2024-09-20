@@ -10,7 +10,7 @@ url: /hu/java/pdf-conversion-transformation/convert-pdfs-to-xml-format/
 
 ## Bevezetés a PDF-fájlok XML formátumba konvertálásához az Aspose.PDF for Java használatával
 
-A PDF dokumentumokat széles körben használják egységes formázásuk és kompatibilitásuk miatt a különböző platformokon. Vannak azonban olyan helyzetek, amikor szükség lehet adatok kibontására vagy egy PDF-fájl tartalmának újraformázására. Ilyen esetekben elengedhetetlen a PDF-ek XML formátumba konvertálása. Ez a cikk végigvezeti Önt a PDF-fájlok XML-formátumba konvertálásának folyamatán az Aspose.PDF for Java segítségével, amely egy hatékony könyvtár a PDF-ekkel való munkavégzéshez.
+A PDF dokumentumokat széles körben használják egységes formázásuk és kompatibilitásuk miatt a különböző platformokon. Vannak azonban olyan helyzetek, amikor szükség lehet adatok kibontására vagy egy PDF-fájl tartalmának újraformázására. Ilyen esetekben elengedhetetlen a PDF-ek XML formátumba konvertálása. Ez a cikk végigvezeti a PDF-fájlok XML-formátumba konvertálásának folyamatán az Aspose.PDF for Java használatával, amely egy hatékony könyvtár a PDF-ekkel való munkavégzéshez.
 
 ## Mi az Aspose.PDF for Java?
 

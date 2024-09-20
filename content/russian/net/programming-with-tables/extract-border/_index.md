@@ -2,30 +2,58 @@
 title: Извлечь границу в файл PDF
 linktitle: Извлечь границу в файл PDF
 second_title: Справочник по API Aspose.PDF для .NET
-description: Узнайте, как извлечь границу из PDF-файла с помощью Aspose.PDF для .NET.
+description: Узнайте, как извлечь границы из файла PDF и сохранить их как изображение с помощью Aspose.PDF для .NET. Пошаговое руководство с примерами кода и советами для успеха.
 type: docs
 weight: 80
 url: /ru/net/programming-with-tables/extract-border/
 ---
-В этом уроке мы научимся извлекать границу из PDF-файла с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код на C#. В конце этого урока вы узнаете, как извлечь границу из PDF-документа и сохранить ее как изображение. Начнем!
+## Введение
 
-## Шаг 1: Настройка среды
-Сначала убедитесь, что вы настроили среду разработки C# с Aspose.PDF для .NET. Добавьте ссылку на библиотеку и импортируйте необходимые пространства имен.
+При работе с PDF-файлами извлечение определенных элементов, таких как границы или графические пути, может показаться сложной задачей. Но с Aspose.PDF для .NET вы можете легко извлекать границы или фигуры из файла PDF и сохранять их как изображение. В этом уроке мы погрузимся в процесс извлечения границы из PDF-файла и сохранения его как изображения PNG. Приготовьтесь взять под контроль графическое содержимое вашего PDF-файла!
 
-## Шаг 2: Загрузка PDF-документа
-На этом этапе мы загружаем PDF-документ из указанного файла.
+## Предпосылки
+
+Прежде чем погрузиться в код, убедитесь, что у вас все настроено:
+
+1.  Aspose.PDF для .NET: Если вы еще не установили библиотеку Aspose.PDF, вы можете[скачать здесь](https://releases.aspose.com/pdf/net/). Вам также необходимо будет применить лицензию, либо через бесплатную пробную версию, либо через приобретенную лицензию.
+2. Настройка IDE: Настройте проект C# в Visual Studio или любой другой .NET IDE. Убедитесь, что вы добавили необходимые ссылки в библиотеку Aspose.PDF.
+3. Входной PDF-файл: Имейте готовый PDF-файл, из которого вы будете извлекать границы. Этот урок будет ссылаться на файл с именем`input.pdf`.
+
+## Импорт необходимых пакетов
+
+Давайте начнем с импорта требуемых пространств имен. Эти пакеты предоставляют инструменты, необходимые для управления содержимым PDF.
 
 ```csharp
+using System.IO;
+using System;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Collections;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Теперь, когда мы изучили основы, давайте перейдем к пошаговому руководству, в котором мы подробно разберем каждую часть кода.
+
+
+## Шаг 1: Загрузка PDF-документа
+
+Первый шаг — загрузить PDF-документ, содержащий границу, которую вы хотите извлечь. Представьте, что вы открываете книгу, прежде чем начать читать — вам нужен доступ к ее содержанию!
+
+ Начнем с указания каталога, в котором хранится ваш PDF-файл, и загрузим документ с помощью`Aspose.Pdf.Document` сорт.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим каталогом, в котором находится ваш PDF-файл.
+ Этот код загружает`input.pdf` файл из указанного вами каталога. Убедитесь, что путь к файлу правильный, иначе вы можете получить ошибку «файл не найден».
 
-## Шаг 3: Извлечение края
-Мы извлечем границу из PDF-документа, повторяя операции, содержащиеся в документе.
+## Шаг 2: Настройка графики и растрового изображения
+
+Прежде чем начать извлечение, нам нужно создать холст для рисования. В мире .NET это означает настройку объектов Bitmap и Graphics. Bitmap представляет изображение, а объект Graphics позволит нам рисовать фигуры, такие как границы, извлеченные из PDF.
 
 ```csharp
-Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
@@ -33,226 +61,106 @@ System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.M
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
 System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+```
 
-using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
+Вот краткий обзор:
+- Мы создаем растровое изображение размером с первую страницу PDF-файла.
+- GraphicsPath используется для определения фигур (в данном случае границ).
+- Матрица определяет, как будет преобразована графика; нам нужна матрица инверсии, поскольку PDF и .NET имеют разные системы координат.
+
+## Шаг 3: Обработка содержимого PDF-файла
+
+
+Файл PDF представляет собой серию команд рисования, и нам необходимо обработать каждую из этих команд, чтобы определить и извлечь информацию о границах.
+
+```csharp
+foreach (Operator op in doc.Pages[1].Contents)
 {
-     // Обработать все операции с контентом
-     foreach(Operator op in doc.Pages[1].Contents)
-     {
-         // Проверьте тип операции
-         // ...
-         // Добавьте код для обработки каждой операции
-     }
+    // Обработка команд, таких как сохранение/восстановление состояния, рисование линий, заполнение фигур и т. д.
 }
 ```
 
- Мы создаем`graphicsState` стек для хранения графических состояний, растровое изображение для захвата извлеченной границы,`GraphicsPath` объект для хранения путей рисования и других переменных для отслеживания состояния и цветов.
+Код проходит через каждый оператор рисования в потоке содержимого PDF. Каждый оператор может представлять линию, прямоугольник или другую графическую инструкцию.
 
-## Шаг 4: Обработка транзакции
-На этом этапе мы обрабатываем каждую операцию документа для извлечения границы.
+## Шаг 4: Обработка операторов PDF
+
+Каждый оператор в файле PDF управляет действием. Чтобы извлечь границу, нам нужно определить такие команды, как «переместить в», «линия в» и «нарисовать прямоугольник». Следующие операторы обрабатывают эти действия:
+
+- MoveTo: перемещает курсор в начальную точку.
+- LineTo: рисует линию от текущей точки до новой точки.
+- Re: Рисует прямоугольник (может быть частью границы).
 
 ```csharp
-// Проверьте тип операции
-if (opSaveState != null)
-{
-     // Сохраните предыдущее состояние и поместите текущее состояние наверх стека.
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opRestoreState != null)
-{
-     // Удалить текущее состояние и восстановить предыдущее состояние
-     graphicsState. Pop();
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opCtm != null)
-{
-     // Получить текущую матрицу преобразования
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-         (float)opCtm.Matrix.A,
-         (float)opCtm.Matrix.B,
-         (float)opCtm.Matrix.C,
-         (float)opCtm.Matrix.D,
-         (float)opCtm.Matrix.E,
-         (float)opCtm.Matrix.F);
+Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
+Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
+Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
 
-     // Умножить текущую матрицу на матрицу состояния
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opMoveTo != null)
+if (opMoveTo != null)
 {
-     // Обновить последнюю точку рисования
-     lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
+    lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Обработать рисунок линии
-     // ...
-     // Добавьте код для обработки рисования линии
+    System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
+    graphicsPath.AddLine(lastPoint, linePoint);
+    lastPoint = linePoint;
 }
-// ...
-// Добавьте блоки else if для других операций
+else if (opRe != null)
+{
+    System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
+    graphicsPath.AddRectangle(re);
+}
 ```
 
-Мы проверяем тип операции с помощью условий и запускаем соответствующий код для каждой операции.
+На этом этапе:
+- Мы фиксируем точки для каждой нарисованной линии или фигуры.
+- Для прямоугольников (`opRe` ), мы добавляем их непосредственно в`graphicsPath`, который мы позже используем для рисования границы.
 
-## Шаг 5: Резервное копирование образа
-Наконец, мы сохраняем растровое изображение, содержащее извлеченную границу, в указанный файл.
+## Шаг 5: Рисование границы
 
-```csharp
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-```
-
-Обязательно укажите правильный каталог и имя файла для сохранения выходного изображения.
-
-### Пример исходного кода для извлечения границы с использованием Aspose.PDF для .NET
+После того, как мы определили линии и прямоугольники, которые формируют границу, нам нужно фактически нарисовать их на объекте Bitmap. Вот тут-то и вступает в дело объект Graphics.
 
 ```csharp
-// Путь к каталогу документов.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document(dataDir + "input.pdf");
-
-Stack graphicsState = new Stack();
-System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
-System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Значение матрицы ctm по умолчанию: 1,0,0,1,0,0
-System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Система координат System.Drawing расположена в верхнем левом углу, а система координат PDF — в нижнем левом углу, поэтому нам нужно применить матрицу инверсии.
-System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
-System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
-System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
-System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-	gr.SmoothingMode = SmoothingMode.HighQuality;
-	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-
-	// Обработать все команды содержимого
-	foreach (Operator op in doc.Pages[1].Contents)
-	{
-		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-		Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-		Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-		Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
-		Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
-		Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
-		Aspose.Pdf.Operators.EndPath opEndPath = op as Aspose.Pdf.Operators.EndPath;
-		Aspose.Pdf.Operators.Stroke opStroke = op as Aspose.Pdf.Operators.Stroke;
-		Aspose.Pdf.Operators.Fill opFill = op as Aspose.Pdf.Operators.Fill;
-		Aspose.Pdf.Operators.EOFill opEOFill = op as Aspose.Pdf.Operators.EOFill;
-		Aspose.Pdf.Operators.SetRGBColor opRGBFillColor = op as Aspose.Pdf.Operators.SetRGBColor;
-		Aspose.Pdf.Operators.SetRGBColorStroke opRGBStrokeColor = op as Aspose.Pdf.Operators.SetRGBColorStroke;
-
-		if (opSaveState != null)
-		{
-			// Сохранить предыдущее состояние и поместить текущее состояние наверх стека
-			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opRestoreState != null)
-		{
-			// Удалить текущее состояние и восстановить предыдущее
-			graphicsState.Pop();
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opCtm != null)
-		{
-			System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-				(float)opCtm.Matrix.A,
-				(float)opCtm.Matrix.B,
-				(float)opCtm.Matrix.C,
-				(float)opCtm.Matrix.D,
-				(float)opCtm.Matrix.E,
-				(float)opCtm.Matrix.F);
-
-			// Умножить текущую матрицу на матрицу состояния
-			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opMoveTo != null)
-		{
-			lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
-		}
-		else if (opLineTo != null)
-		{
-			System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
-			graphicsPath.AddLine(lastPoint, linePoint);
-
-			lastPoint = linePoint;
-		}
-		else if (opRe != null)
-		{
-			System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
-			graphicsPath.AddRectangle(re);
-		}
-		else if (opEndPath != null)
-		{
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opRGBFillColor != null)
-		{
-			fillColor = opRGBFillColor.getColor();
-		}
-		else if (opRGBStrokeColor != null)
-		{
-			strokeColor = opRGBStrokeColor.getColor();
-		}
-		else if (opStroke != null)
-		{
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Winding;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opEOFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Alternate;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-	}
+    gr.SmoothingMode = SmoothingMode.HighQuality;
+    gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
 }
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-
-Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
+- Мы создаем графический объект на основе растрового изображения.
+- SmoothingMode.HighQuality гарантирует, что мы получим красивое плавное изображение.
+- Наконец, мы используем DrawPath для рисования границы.
+
+## Шаг 6: Сохранение извлеченной границы
+
+Теперь, когда мы извлекли границу, пришло время сохранить ее как файл изображения. Это сохранит границу как PNG.
+
+```csharp
+dataDir = dataDir + "ExtractBorder_out.png";
+bitmap.Save(dataDir, ImageFormat.Png);
+```
+
+- Растровое изображение сохраняется как изображение PNG.
+- Теперь вы можете открыть это изображение, чтобы увидеть извлеченную границу.
+
 ## Заключение
-В этом уроке мы узнали, как извлечь границу из документа PDF с помощью Aspose.PDF для .NET. Вы можете использовать это пошаговое руководство для извлечения границы из других документов PDF.
 
-### Часто задаваемые вопросы по извлечению границы в файле PDF
+Извлечение границ из файла PDF с помощью Aspose.PDF для .NET может показаться сложным на первый взгляд, но как только вы разберетесь, все станет просто. Понимая операторы рисования в PDF и используя мощные библиотеки .NET, вы сможете эффективно манипулировать и извлекать графический контент. Это руководство дает вам надежную основу для начала работы с манипуляциями PDF!
 
-#### В: Какова цель извлечения границы из PDF-файла?
+## Часто задаваемые вопросы
 
-A: Извлечение границы из файла PDF может быть полезным для различных целей. Это позволяет вам изолировать и анализировать структурные элементы документа, такие как таблицы, диаграммы или графические элементы. Вы можете использовать извлеченную границу для определения макета, размеров и позиционирования содержимого в документе PDF.
+### Как работать с несколькими страницами в PDF-файле?  
+ Вы можете просмотреть каждую страницу документа, выполнив итерацию`doc.Pages` вместо жесткого кодирования`doc.Pages[1]`.
 
-#### В: Могу ли я извлечь границу из определенных страниц или областей в документе PDF?
+### Могу ли я извлечь другие элементы, например текст, используя тот же подход?  
+Да, Aspose.PDF предоставляет богатые API для извлечения текста, изображений и другого контента из PDF-файлов.
 
- A: Да, вы можете изменить предоставленный исходный код C#, чтобы извлечь границу из определенных страниц или областей в документе PDF. Манипулируя`doc.Pages` Собирая и указывая пользовательские критерии, вы можете выбрать извлечение границы из определенных страниц или областей интереса.
+### Как применить лицензию, чтобы избежать ограничений?  
+ Ты можешь[применить лицензию](https://purchase.aspose.com/temporary-license/) загрузив его через`License` класс предоставлен Aspose.
 
-#### В: Как настроить формат и качество выходного изображения?
+### Что делать, если у моего PDF-файла нет границ?  
+Если ваш PDF не содержит видимых границ, процесс извлечения графики может не дать никакого результата. Убедитесь, что содержимое PDF включает в себя прорисовываемые границы.
 
- A: В предоставленном коде C# извлеченная граница сохраняется как изображение PNG. Если вы хотите изменить формат выходного изображения, вы можете изменить`ImageFormat.Png` параметр в`bitmap.Save` метод в другие поддерживаемые форматы изображений, такие как JPEG, BMP или GIF. Кроме того, вы можете настроить качество изображения или параметры сжатия в соответствии с вашими требованиями.
-
-#### В: Какие еще операции я могу выполнить с извлеченной границей?
-
-A: После того, как вы извлекли границу как изображение, вы можете дополнительно обработать его с помощью библиотек или алгоритмов обработки изображений. Вы можете проанализировать изображение, применить фильтры изображения, обнаружить шаблоны или выполнить OCR (оптическое распознавание символов) для извлечения текста из изображения, если это необходимо.
-
-#### В: Существуют ли какие-либо ограничения или соображения при извлечении границ из сложных PDF-документов?
-
-A: Процесс извлечения может различаться в зависимости от сложности документа PDF. Сложные PDF-файлы с несколькими слоями, прозрачностью или сложной графикой могут потребовать дополнительной обработки или корректировки для точного извлечения границы. Важно тщательно протестировать процесс извлечения на различных документах PDF, чтобы обеспечить надежные результаты.
+### Могу ли я сохранить вывод в форматах, отличных от PNG?  
+ Да, просто измените`ImageFormat.Png` в другой поддерживаемый формат, такой как`ImageFormat.Jpeg`.

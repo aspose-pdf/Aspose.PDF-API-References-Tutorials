@@ -26,7 +26,7 @@ Nejprve musíte mít nastavené vývojové prostředí s .NET. To obvykle zahrnu
 
 Chcete-li pracovat s PDF, budete potřebovat knihovnu Aspose.PDF. Tato knihovna vám umožňuje volně manipulovat se soubory PDF, včetně extrahování obrázků. Zde je návod, jak jej získat:
 
--  Můžete[stáhněte si nejnovější verzi](https://releases.aspose.com/pdf/net/) z Aspose.PDF pro .NET.
+-  Můžete[stáhnout nejnovější verzi](https://releases.aspose.com/pdf/net/) z Aspose.PDF pro .NET.
 -  Pokud si to chcete před nákupem vyzkoušet, a[zkušební verze zdarma](https://releases.aspose.com/) je k dispozici.
 -  Pokud se rozhodnete pokračovat v dlouhodobém užívání, můžete[koupit licenci](https://purchase.aspose.com/buy) nebo dokonce[požádat o dočasnou licenci](https://purchase.aspose.com/temporary-license/) pro testovací účely.
 
@@ -96,7 +96,7 @@ foreach (Field field in pdfDocument.Form)
 To je ta vzrušující část – extrahování obrázku! Pokud pole podpisu není prázdné, můžeme jeho obrázek extrahovat pomocí následujícího kódu:
 
 ```csharp
-string outFile = dataDir + @"output_out.jpg"; // Cesta k extrahovanému obrázku
+string outFile = dataDir + @"output_out.jpg"; // Cesta pro extrahovaný obrázek
 using (Stream imageStream = sf.ExtractImage())
 {
     if (imageStream != null)

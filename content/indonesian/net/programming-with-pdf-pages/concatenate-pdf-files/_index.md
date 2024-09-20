@@ -76,7 +76,7 @@ Memuat kedua dokumen PDF sangat penting untuk proses penggabungan. Keduanya akan
 
 ## Langkah 4: Tambahkan Halaman dari Dokumen Kedua ke Dokumen Pertama
 
-Di sinilah kesenangan sesungguhnya dimulai! Kita perlu menggabungkan halaman dari PDF kedua ke PDF pertama. Berikut cara melakukannya:
+Di sinilah keseruan sesungguhnya dimulai! Kita perlu menggabungkan halaman dari PDF kedua ke PDF pertama. Berikut cara melakukannya:
 
 ```csharp
 pdfDocument1.Pages.Add(pdfDocument2.Pages);

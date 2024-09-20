@@ -136,7 +136,7 @@ System.Console.WriteLine("PDF pages are converted to individual images successfu
 
 ## 結論
 
-現在你就得到它了！使用 Aspose.PDF for .NET 將 PDF 頁面轉換為映像是一個簡單的過程，為文件管理開啟了新的可能性。無論您是要建立 PDF 內容的圖像預覽還是需要其他項目的圖像，此方法都可以為您提供有效執行此操作的工具。
+現在你就擁有了！使用 Aspose.PDF for .NET 將 PDF 頁面轉換為映像是一個簡單的過程，為文件管理開啟了新的可能性。無論您是要建立 PDF 內容的圖像預覽還是需要其他項目的圖像，此方法都可以為您提供有效執行此操作的工具。
 
 透過上述易於遵循的步驟，您現在應該有足夠的信心在自己的應用程式中處理 PDF 到圖像的轉換。因此，請繼續嘗試 Aspose.PDF，並提升您的文件處理能力！
 

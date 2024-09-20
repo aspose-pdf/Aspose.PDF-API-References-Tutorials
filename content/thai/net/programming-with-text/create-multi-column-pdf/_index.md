@@ -2,214 +2,179 @@
 title: สร้าง PDF หลายคอลัมน์
 linktitle: สร้าง PDF หลายคอลัมน์
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: เรียนรู้วิธีการสร้าง PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET
+description: เรียนรู้วิธีสร้าง PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET คำแนะนำทีละขั้นตอนพร้อมตัวอย่างโค้ดและคำอธิบายโดยละเอียด เหมาะสำหรับมืออาชีพ
 type: docs
 weight: 110
 url: /th/net/programming-with-text/create-multi-column-pdf/
 ---
-บทช่วยสอนนี้จะแนะนำคุณเกี่ยวกับขั้นตอนการสร้าง PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET โค้ดต้นฉบับ C# ที่ให้มาจะสาธิตขั้นตอนที่จำเป็น
+## การแนะนำ
 
-## ความต้องการ
-ก่อนที่คุณจะเริ่มต้น ให้แน่ใจว่าคุณมีสิ่งต่อไปนี้:
+การสร้าง PDF หลายคอลัมน์เป็นวิธีที่ยอดเยี่ยมในการนำเสนอข้อความในรูปแบบที่เป็นระเบียบและอ่านง่ายขึ้น ไม่ว่าคุณจะกำลังร่างรายงาน บทความ หรือเค้าโครงสำหรับสิ่งพิมพ์ โครงสร้างหลายคอลัมน์สามารถทำให้เนื้อหาของคุณน่าสนใจยิ่งขึ้น ในบทช่วยสอนนี้ เราจะแนะนำวิธีสร้าง PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET ไม่ต้องกังวล เราจะแบ่งขั้นตอนทั้งหมดออกเป็นขั้นตอนง่ายๆ ที่จะทำให้ทำตามได้ง่าย แม้ว่าคุณจะเป็นผู้ใช้ใหม่ของแพลตฟอร์มนี้ก็ตาม
 
-- Visual Studio หรือคอมไพเลอร์ C# อื่น ๆ ติดตั้งอยู่บนเครื่องของคุณ
-- Aspose.PDF สำหรับไลบรารี .NET คุณสามารถดาวน์โหลดได้จากเว็บไซต์ Aspose อย่างเป็นทางการหรือใช้ตัวจัดการแพ็คเกจเช่น NuGet เพื่อติดตั้ง
+## ข้อกำหนดเบื้องต้น
 
-## ขั้นตอนที่ 1: ตั้งค่าโครงการ
-1. สร้างโครงการ C# ใหม่ในสภาพแวดล้อมการพัฒนาที่คุณต้องการ
-2. เพิ่มการอ้างอิงถึงไลบรารี Aspose.PDF สำหรับ .NET
+ก่อนที่เราจะเริ่มต้นเขียนโค้ด มีบางสิ่งบางอย่างที่คุณต้องมีเพื่อให้สามารถทำตามได้อย่างราบรื่น:
 
-## ขั้นตอนที่ 2: นำเข้าเนมสเปซที่จำเป็น
-ในไฟล์โค้ดที่คุณต้องการสร้าง PDF หลายคอลัมน์ ให้เพิ่มคำสั่ง using ต่อไปนี้ที่ด้านบนของไฟล์:
+1.  Aspose.PDF สำหรับ .NET: คุณต้องติดตั้งไลบรารีนี้ คุณสามารถดาวน์โหลดได้จาก[ที่นี่](https://releases.aspose.com/pdf/net/).
+2. สภาพแวดล้อมการพัฒนา: ตั้งค่า IDE ที่คุณต้องการเช่น Visual Studio เพื่อเขียนและรันโค้ด C#
+3. .NET Framework: ตรวจสอบให้แน่ใจว่าคุณได้ติดตั้ง .NET เวอร์ชันที่เข้ากันได้
+4. ความเข้าใจพื้นฐานเกี่ยวกับ C#: ความคุ้นเคยกับรูปแบบไวยากรณ์ C# จะเป็นประโยชน์ แต่เราจะอธิบายแต่ละขั้นตอนโดยละเอียด
+5.  ใบอนุญาตชั่วคราว: Aspose.PDF ต้องมีใบอนุญาตเพื่อหลีกเลี่ยงลายน้ำหรือข้อจำกัด คุณสามารถรับได้[ใบอนุญาตชั่วคราว](https://purchase.aspose.com/temporary-license/) หากจำเป็น
+
+## แพ็คเกจนำเข้า
+
+ก่อนที่คุณจะเริ่มเขียนโค้ด คุณต้องนำเข้าเนมสเปซที่จำเป็นซึ่งจะช่วยให้คุณโต้ตอบกับ Aspose.PDF ได้ นี่คือสิ่งที่คุณต้องนำเข้า:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## ขั้นตอนที่ 3: ตั้งค่าไดเรกทอรีเอกสาร
- ในโค้ด ให้ค้นหาบรรทัดที่ระบุว่า`string dataDir = "YOUR DOCUMENT DIRECTORY";` และแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางไปยังไดเร็กทอรีที่คุณเก็บเอกสารไว้
+เนมสเปซเหล่านี้ให้สิทธิ์การเข้าถึงคลาสที่จำเป็นสำหรับการสร้าง PDF การวาดรูปร่าง และการจัดการการจัดรูปแบบข้อความ
 
-## ขั้นตอนที่ 4: สร้างอินสแตนซ์เอกสารใหม่
- สร้างอินสแตนซ์ใหม่`Document` วัตถุโดยการเพิ่มบรรทัดโค้ดดังต่อไปนี้:
+มาแบ่งกระบวนการสร้าง PDF หลายคอลัมน์ออกเป็นขั้นตอนง่าย ๆ ที่จัดการได้
 
-```csharp
-Document doc = new Document();
-```
+## ขั้นตอนที่ 1: การตั้งค่าเอกสาร
 
-## ขั้นตอนที่ 5: ตั้งค่าระยะขอบหน้า
- ระบุข้อมูลระยะขอบซ้ายและขวาของไฟล์ PDF โดยใช้`PageInfo.Margin` ทรัพย์สินของ`Document`.
+ในการเริ่มต้น คุณต้องสร้างเอกสาร PDF ใหม่ ซึ่งเกี่ยวข้องกับการกำหนดระยะขอบและเพิ่มหน้าที่จะใส่เนื้อหา
 
-```csharp
-doc.PageInfo.Margin.Left = 40;
-doc.PageInfo.Margin.Right = 40;
-```
-
-## ขั้นตอนที่ 6: เพิ่มหน้าลงในเอกสาร
- เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`page`.
-
-```csharp
-Page page = doc.Pages.Add();
-```
-
-## ขั้นตอนที่ 7: สร้างวัตถุกราฟและเพิ่มเส้น
- สร้างใหม่`Graph` วัตถุที่มีขนาดเฉพาะและเพิ่มเส้นเข้าไป จากนั้นเพิ่ม`Graph` คัดค้านการ`Paragraphs` การรวบรวมหน้า
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-float[] backPos = new float[] { 1, 2, 500, 2 };
-Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
-graph1.Shapes.Add(l1);
-page.Paragraphs.Add(graph1);
-```
-
-## ขั้นตอนที่ 8: เพิ่มข้อความหัวเรื่องด้วยการจัดรูปแบบ HTML
- สร้าง`HtmlFragment` วัตถุและกำหนดเนื้อหาให้เป็นข้อความ HTML ที่ต้องการ จากนั้นเพิ่มส่วนย่อยลงใน`Paragraphs` การรวบรวมหน้า
-
-```csharp
-string s = "<font face=\"Times New Roman\" size=4>" +
-     "<strong>How to Steer Clear of money scams</<strong>" +
-     "</font>";
-HtmlFragment heading_text = new HtmlFragment(s);
-page.Paragraphs.Add(heading_text);
-```
-
-## ขั้นตอนที่ 9: สร้าง FloatingBox ที่มีหลายคอลัมน์
- สร้าง`FloatingBox` วัตถุและกำหนดจำนวนคอลัมน์และระยะห่างระหว่างคอลัมน์ จากนั้นเพิ่มส่วนข้อความและบรรทัดลงใน`Paragraphs` การรวบรวมของ`FloatingBox`.
-
-```csharp
-Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-box. ColumnInfo. ColumnCount = 2;
-box.ColumnInfo.ColumnSpacing = "5";
-box.ColumnInfo.ColumnWidths = "105 105";
-
-TextFragment text1 = new TextFragment("By A Googling (The Official Google Blog)");
-text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-
-TextFragment text2 = new TextFragment("Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam...");
-box.Paragraphs.Add(text2);
-
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-float[] posArr2 = new float[] { 1, 10, 100, 10 };
-Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
-graph2.Shapes.Add(l2);
-box.Paragraphs.Add(graph2);
-
-page.Paragraphs.Add(box);
-```
-
-## ขั้นตอนที่ 10: บันทึกเอกสาร PDF
- บันทึกเอกสาร PDF โดยใช้`Save` วิธีการของ`Document` วัตถุ.
-
-```csharp
-doc.Save(dataDir);
-```
-
-### ตัวอย่างโค้ดต้นฉบับสำหรับการสร้าง PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET 
 ```csharp
 // เส้นทางไปยังไดเร็กทอรีเอกสาร
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// สร้างเอกสาร PDF ใหม่
 Document doc = new Document();
-// ระบุข้อมูลระยะขอบด้านซ้ายของไฟล์ PDF
+
+// ตั้งค่าระยะขอบของไฟล์ PDF
 doc.PageInfo.Margin.Left = 40;
-// ระบุข้อมูลระยะขอบด้านขวาของไฟล์ PDF
 doc.PageInfo.Margin.Right = 40;
+
+// เพิ่มหน้าลงในเอกสาร
 Page page = doc.Pages.Add();
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// เพิ่มบรรทัดลงในคอลเล็กชั่นพาราเฟรฟของวัตถุส่วน
+```
+
+ เราสร้างสิ่งนี้ไว้ที่นี่`Document`วัตถุและตั้งค่าระยะขอบซ้ายและขวาเป็น 40 หน่วย จากนั้นเราเพิ่มหน้าใหม่ลงในเอกสารนี้ ซึ่งจะเก็บเค้าโครงหลายคอลัมน์ของเรา
+
+## ขั้นตอนที่ 2: การเพิ่มบรรทัดเพื่อแยกส่วน
+
+ต่อไปเราจะเพิ่มเส้นแนวนอนให้กับหน้าเพจเพื่อให้แยกออกจากกันอย่างชัดเจน ซึ่งจะช่วยให้หน้าเพจดูสะอาดและเป็นมืออาชีพ
+
+```csharp
+// สร้างวัตถุกราฟเพื่อยึดเส้น
+Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
+
+// เพิ่มบรรทัดเข้าในคอลเลกชันย่อหน้าของหน้า
 page.Paragraphs.Add(graph1);
-// ระบุพิกัดของเส้น
+
+// กำหนดพิกัดของเส้น
 float[] posArr = new float[] { 1, 2, 500, 2 };
+
+// สร้างเส้นและเพิ่มลงในกราฟ
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// สร้างตัวแปรสตริงด้วยข้อความที่มีแท็ก HTML
+```
+
+ ที่นี่เราจะสร้างเส้นแนวนอนโดยใช้`Graph` และ`Line` คลาส บรรทัดนี้จะถูกเพิ่มเข้าไปในหน้า`Paragraphs` คอลเลกชั่นที่รวบรวมองค์ประกอบภาพทั้งหมดไว้
+
+## ขั้นตอนที่ 3: การเพิ่มข้อความ HTML พร้อมการจัดรูปแบบ
+
+ต่อไปเราจะแทรกข้อความที่มีแท็ก HTML เพื่อแสดงวิธีการจัดรูปแบบข้อความแบบไดนามิกใน PDF
+
+```csharp
+// สร้างสตริงที่มีเนื้อหา HTML
 string s = "<font face=\"Times New Roman\" size=4>" +
-"<strong> How to Steer Clear of money scams</<strong> "
-+ "</font>";
-// สร้างย่อหน้าข้อความที่มีข้อความ HTML
+           "<strong> How to Steer Clear of Money Scams </strong>" +
+           "</font>";
+
+// สร้าง HtmlFragment ใหม่ด้วยข้อความที่จัดรูปแบบแล้ว
 HtmlFragment heading_text = new HtmlFragment(s);
+
+// เพิ่มข้อความ HTML ลงในหน้า
 page.Paragraphs.Add(heading_text);
+```
+
+ การใช้`HtmlFragment`ในคลาสนี้ เราสามารถเพิ่มข้อความที่มีรูปแบบที่รวมถึงแท็ก HTML เช่น ขนาดตัวอักษร สไตล์ และข้อความตัวหนา ซึ่งมีประโยชน์สำหรับการปรับปรุงรูปลักษณ์ของเนื้อหา PDF ของคุณ
+
+## ขั้นตอนที่ 4: การสร้างเค้าโครงหลายคอลัมน์
+
+ตอนนี้เราจะสร้างเค้าโครงแบบหลายคอลัมน์ นี่คือจุดที่ความมหัศจรรย์เกิดขึ้น คุณสามารถระบุจำนวนคอลัมน์ที่ต้องการและความกว้างของคอลัมน์ได้
+
+```csharp
+// สร้างกล่องลอยเพื่อยึดคอลัมน์
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// เพิ่มสี่คอลัมน์ในส่วนนี้
+
+// กำหนดจำนวนคอลัมน์และระยะห่างระหว่างคอลัมน์
 box.ColumnInfo.ColumnCount = 2;
-// กำหนดระยะห่างระหว่างคอลัมน์
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
+
+// เพิ่มกล่องลงในหน้า
+page.Paragraphs.Add(box);
+```
+
+ที่นี่ เรากำลังสร้างกล่องลอยที่มีสองคอลัมน์ เรากำหนดระยะห่างระหว่างคอลัมน์และระบุว่าแต่ละคอลัมน์ควรมีความกว้าง 105 หน่วย วิธีนี้ช่วยให้เราสร้างเค้าโครงคอลัมน์ที่ต้องการภายใน PDF ได้
+
+## ขั้นตอนที่ 5: การเพิ่มข้อความลงในคอลัมน์
+
+ ตอนนี้เรามาเพิ่มเนื้อหาข้อความลงในคอลัมน์กัน คุณสามารถเพิ่มข้อความต่างๆ ลงไปได้`TextFragment` วัตถุไปยังแต่ละคอลัมน์
+
+```csharp
+// สร้างและจัดรูปแบบส่วนข้อความแรก
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
 text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// สร้างวัตถุกราฟเพื่อวาดเส้น
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// ระบุพิกัดของเส้น
+box.Paragraphs.Add(text1);
+
+// เพิ่มอีกบรรทัดเพื่อแยก
+Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-//เพิ่มบรรทัดลงในคอลเลกชันย่อหน้าของวัตถุส่วน
 box.Paragraphs.Add(graph2);
-TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
+
+//สร้างและเพิ่มส่วนข้อความที่สอง
+TextFragment text2 = new TextFragment("Lorem ipsum dolor sit amet, consectetur adipiscing elit...");
 box.Paragraphs.Add(text2);
-page.Paragraphs.Add(box);
-dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// บันทึกไฟล์ PDF
-doc.Save(dataDir);
-Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## บทสรุป
-คุณได้สร้าง PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET สำเร็จแล้ว ตอนนี้สามารถพบไฟล์ PDF ที่ได้ในเส้นทางไฟล์เอาต์พุตที่ระบุ
+ เราเพิ่ม`TextFragment` ไปยังกล่องลอยตามด้วยเส้นแนวนอนอีกเส้นหนึ่ง เส้นที่สอง`TextFragment` มีข้อความเพิ่มเติมเพื่อเติมในคอลัมน์ที่สอง ส่วนย่อยเหล่านี้ช่วยให้เราเพิ่มองค์ประกอบข้อความต่างๆ ลงใน PDF พร้อมตัวเลือกการจัดรูปแบบที่แตกต่างกัน
 
-### คำถามที่พบบ่อย
+## ขั้นตอนที่ 6: บันทึก PDF
 
-#### ถาม: บทช่วยสอนนี้เน้นอะไร?
-
-บทช่วยสอนนี้เน้นที่การแนะนำคุณตลอดขั้นตอนการสร้าง PDF หลายคอลัมน์โดยใช้ไลบรารี Aspose.PDF สำหรับ .NET โค้ดต้นฉบับ C# ที่ให้มาจะสาธิตขั้นตอนที่จำเป็นในการบรรลุผลดังกล่าว
-
-#### ถาม: ฉันควรนำเข้าเนมสเปซใดสำหรับบทช่วยสอนนี้?
-
-ก: ในไฟล์โค้ดที่คุณต้องการสร้าง PDF หลายคอลัมน์ นำเข้าเนมสเปซต่อไปนี้ที่จุดเริ่มต้นของไฟล์:
+หลังจากเพิ่มเนื้อหาทั้งหมดแล้ว ขั้นตอนสุดท้ายคือบันทึกเอกสารเป็นไฟล์ PDF
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+// กำหนดเส้นทางเอาต์พุตสำหรับ PDF
+dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
+
+// บันทึกเอกสาร PDF
+doc.Save(dataDir);
+
+// ข้อความเอาท์พุตสำเร็จ
+Console.WriteLine("\nMulti-column PDF file created successfully.\nFile saved at " + dataDir);
 ```
 
-#### ถาม: ฉันจะระบุไดเรกทอรีเอกสารได้อย่างไร?
+บล็อกนี้จะบันทึกไฟล์ PDF ไปยังไดเร็กทอรีที่ระบุ และส่งข้อความแสดงความสำเร็จในคอนโซล ตอนนี้ PDF พร้อมสำหรับการดูแล้ว!
 
- ก: ในโค้ด ให้หาบรรทัด`string dataDir = "YOUR DOCUMENT DIRECTORY";` และแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางจริงไปยังไดเร็กทอรีเอกสารของคุณ
+## บทสรุป
 
-#### ถาม: ฉันจะสร้างอินสแตนซ์เอกสารใหม่ได้อย่างไร
+หากทำตามขั้นตอนง่ายๆ เหล่านี้ คุณก็สามารถสร้าง PDF หลายคอลัมน์ที่ดูเป็นมืออาชีพได้อย่างง่ายดายโดยใช้ Aspose.PDF สำหรับ .NET ไม่ว่าจะเป็นรายงาน บทความ หรือจดหมายข่าว เทคนิคนี้จะช่วยจัดระเบียบเนื้อหาให้เป็นรูปแบบที่ดึงดูดสายตา Aspose.PDF นำเสนอเครื่องมืออันทรงพลังสำหรับปรับแต่ง PDF ของคุณ ตั้งแต่ขอบและเค้าโครง ไปจนถึงการจัดรูปแบบข้อความและการวาดรูปร่าง ตอนนี้ถึงตาคุณแล้วที่จะลองใช้และยกระดับทักษะการสร้าง PDF ของคุณขึ้นไปอีกขั้น!
 
- ก: ในขั้นตอนที่ 4 คุณจะสร้างอินสแตนซ์ใหม่`Document` วัตถุโดยใช้โค้ดที่ให้มา
+## คำถามที่พบบ่อย
 
-#### ถาม: ฉันจะตั้งค่าระยะขอบหน้าได้อย่างไร
+### ฉันสามารถสร้างมากกว่าสองคอลัมน์ใน PDF ได้หรือไม่
+ ใช่ คุณสามารถสร้างคอลัมน์ได้มากเท่าที่คุณต้องการ เพียงปรับ`ColumnCount` คุณสมบัติให้ตรงกับจำนวนคอลัมน์ที่คุณต้องการ
 
- A: ในขั้นตอนที่ 5 คุณจะใช้`PageInfo.Margin` ทรัพย์สินของ`Document` เพื่อระบุข้อมูลระยะขอบซ้ายและขวาของไฟล์ PDF
+### ฉันจะเปลี่ยนความกว้างของแต่ละคอลัมน์ได้อย่างไร
+ คุณสามารถปรับเปลี่ยนได้`ColumnWidths` คุณสมบัติในการระบุความกว้างที่แตกต่างกันสำหรับแต่ละคอลัมน์ คุณสมบัตินี้ยอมรับสตริงของค่าที่คั่นด้วยช่องว่าง
 
-#### ถาม: ฉันจะเพิ่มหน้าลงในเอกสารได้อย่างไร
+### สามารถเพิ่มรูปภาพลงในคอลัมน์ได้หรือไม่?
+ แน่นอน! คุณสามารถเพิ่มรูปภาพได้โดยใช้`Image` และรวมไว้ภายในกล่องลอยหรือองค์ประกอบเค้าโครงอื่น ๆ ใน PDF ของคุณ
 
- ก: ในขั้นตอนที่ 6 คุณจะเพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` ของสะสม.
+### ฉันสามารถกำหนดรูปแบบข้อความด้วยแท็ก HTML ในคอลัมน์ได้หรือไม่
+ ใช่ คุณสามารถใช้แท็ก HTML ได้ภายใน`HtmlFragment` วัตถุสำหรับกำหนดรูปแบบข้อความของคุณ ซึ่งรวมถึงการเพิ่มแบบอักษร ขนาด สี และอื่นๆ
 
-#### ถาม: ฉันจะสร้างวัตถุกราฟและเพิ่มเส้นได้อย่างไร
-
- A: ในขั้นตอนที่ 7 คุณจะสร้างใหม่`Graph` วัตถุ เพิ่มบรรทัดเข้าไป แล้วเพิ่ม`Graph` คัดค้านการ`Paragraphs` การรวบรวมหน้า
-
-#### ถาม: ฉันจะเพิ่มข้อความหัวเรื่องด้วยการจัดรูปแบบ HTML ได้อย่างไร
-
-A: ในขั้นตอนที่ 8 คุณจะสร้าง`HtmlFragment` วัตถุและกำหนดเนื้อหาให้เป็นข้อความ HTML ที่ต้องการ จากนั้นเพิ่มส่วนย่อยลงใน`Paragraphs` การรวบรวมหน้า
-
-#### ถาม: ฉันจะสร้าง FloatingBox ที่มีหลายคอลัมน์ได้อย่างไร
-
- A: ในขั้นตอนที่ 9 คุณจะสร้าง`FloatingBox` วัตถุที่มีหลายคอลัมน์และระยะห่างระหว่างคอลัมน์ จากนั้นเพิ่มส่วนข้อความและบรรทัดลงไป`Paragraphs` การรวบรวมของ`FloatingBox`.
-
-#### ถาม: ฉันจะบันทึกเอกสาร PDF ได้อย่างไร
-
- ก: ในขั้นตอนที่ 10 คุณจะบันทึกเอกสาร PDF โดยใช้`Save` วิธีการของ`Document` วัตถุ.
-
-#### ถาม: สิ่งสำคัญที่สุดที่ได้จากบทช่วยสอนนี้คืออะไร?
-
-A: เมื่อทำตามบทช่วยสอนนี้ คุณจะได้เรียนรู้วิธีสร้างเอกสาร PDF หลายคอลัมน์โดยใช้ Aspose.PDF สำหรับ .NET ซึ่งสามารถเป็นประโยชน์ในการแสดงเนื้อหาในรูปแบบที่มีโครงสร้างและเป็นระเบียบ
+### ฉันจะเพิ่มหน้าเพิ่มเติมด้วยเค้าโครงคอลัมน์แบบเดียวกันได้อย่างไร
+ คุณสามารถเพิ่มหน้าเพิ่มเติมได้โดยใช้`doc.Pages.Add()` และทำซ้ำขั้นตอนการเพิ่มคอลัมน์และเนื้อหาสำหรับแต่ละหน้า

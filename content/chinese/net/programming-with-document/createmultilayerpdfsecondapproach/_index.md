@@ -9,7 +9,7 @@ url: /zh/net/programming-with-document/createmultilayerpdfsecondapproach/
 ---
 ## 介绍
 
-在当今的数字文档世界中，创建专业的分层 PDF 的能力非常有价值。无论您是添加水印、在图像上插入文本还是创建复杂的布局，您都需要一个强大的解决方案来完全控制您的 PDF 图层。Aspose.PDF for .NET 是一款功能强大的工具，可使此过程变得顺畅而直接。
+在当今的数字文档世界中，创建专业的分层 PDF 的能力非常有价值。无论您是添加水印、在图像上插入文本还是创建复杂的布局，您都需要一个强大的解决方案来完全控制您的 PDF 图层。Aspose.PDF for .NET 是一个强大的工具，可以使这个过程变得顺畅而直接。
 
 ## 先决条件
 

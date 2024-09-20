@@ -38,7 +38,7 @@ Document pdfDocument = new Document("input.pdf");
  Most meg kell határoznunk az eltávolítani kívánt űrlapmezőt. Ezt a neve alapján teheti meg. Cserélje ki`"fieldName"` a törölni kívánt űrlapmező tényleges nevével.
 
 ```java
-// Azonosítsa az űrlapmezőt név szerint
+// Az űrlapmező azonosítása név szerint
 String fieldName = "fieldName";
 Field formField = pdfDocument.getForm().getField(fieldName);
 ```

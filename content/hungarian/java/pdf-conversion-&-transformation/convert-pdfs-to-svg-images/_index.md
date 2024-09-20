@@ -112,11 +112,11 @@ Igen, az Aspose.PDF for Java támogatja a PDF-ek konvertálását különféle f
 
 ### Ingyenesen használható az Aspose.PDF for Java?
 
-Az Aspose.PDF for Java egy kereskedelmi könyvtár, amelynek próbaverziója elérhető. Fedezze fel funkcióit, és fontolja meg a licenc megvásárlását hosszabb használathoz.
+Az Aspose.PDF for Java egy kereskedelmi könyvtár, amelynek próbaverziója elérhető. Fedezze fel a funkcióit, és fontolja meg a licenc megvásárlását hosszabb használathoz.
 
 ### Hogyan szabhatom testre az SVG kimenetet?
 
- Az SVG kimenetet testreszabhatja a`SvgSaveOptions`A rendelkezésre álló opciók listáját a dokumentációban találja.
+ Testreszabhatja az SVG kimenetet a`SvgSaveOptions`A rendelkezésre álló opciók listáját a dokumentációban találja.
 
 ### Az Aspose.PDF for Java alkalmas a kötegelt PDF-feldolgozásra?
 

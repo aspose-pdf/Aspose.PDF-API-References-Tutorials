@@ -2,193 +2,190 @@
 title: PDF Dosyasında Gizli Metin Bloğu
 linktitle: PDF Dosyasında Gizli Metin Bloğu
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasında gizli metin bloklarının nasıl oluşturulacağını öğrenin.
+description: .NET için Aspose.PDF kullanarak gizli metin bloklarıyla etkileşimli PDF'ler oluşturun. Bu eğitim, belgelerinizi geliştirmek için adım adım bir kılavuz sağlar.
 type: docs
 weight: 230
 url: /tr/net/programming-with-text/hidden-text-block/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasında gizli metin bloğunun nasıl oluşturulacağını açıklayacağız. Gizli metin bloğu, fare imleci belirli bir alanın üzerine geldiğinde görünür hale gelen yüzen bir metindir. Sağlanan C# kaynak kodunu kullanarak gizli metin bloğunu oluşturmanın adım adım sürecini ele alacağız.
+## giriiş
 
-## Gereksinimler
+Günümüzün dijital ortamında, PDF'ler sözleşmelerden eğitim materyallerine kadar her şey için başvurulan format olmaya devam ediyor. Çok yönlülükleri ve güvenilirlikleri eşsizdir. Peki ya PDF'lerinize fazladan bir etkileşim katmanı ekleyebilseydiniz? Aspose.PDF for .NET ile gizli metin bloklarının dünyasına dalıyoruz. Bu, ilgi çekici ve kullanıcı dostu belgeler oluşturmayı her zamankinden daha kolay hale getiren güçlü bir araçtır. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu eğitim sizin için tasarlandı ve PDF'lerinizin tüm potansiyelini ortaya çıkarmak için adım adım talimatlar ve ipuçlarıyla dolu!
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+## Ön koşullar
 
-- Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temellerini anlamak.
+Kollarımızı sıvayıp başlamadan önce, ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım. İhtiyacınız olanlar şunlardır:
 
-## Adım 1: Belge Dizinini Ayarlayın
+1. Aspose.PDF for .NET: Bu kütüphane, .NET uygulamalarında PDF dosyalarıyla çalışmak için olmazsa olmazdır. Bunu kontrol edebilir, indirebilir veya hatta ücretsiz deneme sürümünü alabilirsiniz.[Aspose PDF Belgeleri](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: Aspose.PDF kitaplığını çalıştırmak için gerekli olduğundan .NET Framework'ün yüklü olduğundan emin olun.
+3. Geliştirme Ortamı: Visual Studio gibi bir kod düzenleyici veya Entegre Geliştirme Ortamı (IDE) kodlamayı kolaylaştıracaktır. 
+4. Temel C# Bilgisi: C# ile programlama yapacağımız için dilin temellerine hakim olmak kavramları çok daha kolay kavramanıza yardımcı olacaktır.
+5. Öğrenme Tutkusu: Son olarak, coşkunuzu da getirin! Bugün harika bir şey öğreneceğiz.
 
- Öncelikle, oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` İstediğiniz dizinin yolunu içeren değişken.
+Bu ön koşulları sağladığınızda PDF'lerinizde etkileşimli gizli metin blokları oluşturmaya hazırsınız!
+
+## Paketleri İçe Aktar
+
+Projenizde Aspose.PDF'yi kullanmaya başlamak için gerekli paketleri içe aktarmanız gerekir. İşte nasıl:
+
+### Bir C# Projesi Oluşturun
+
+İlk önce, Visual Studio'nuzu veya herhangi bir C# IDE'nizi açın ve yeni bir proje oluşturun. Basitleştirmek için bir Konsol Uygulaması türü seçin.
+
+### Aspose.PDF'yi Projenize Ekleyin
+
+Projenize Aspose.PDF kütüphanesini eklemeniz gerekecek. Bunu NuGet Paket Yöneticisi aracılığıyla yapabilirsiniz. İşte hızlı bir tek satırlık açıklama:
+
+```bash
+Install-Package Aspose.PDF
+```
+
+Bu komut PDF belgeleriyle kolayca çalışmanız için gerekli dosyaları çekecektir.
+
+### Gerekli Ad Alanlarını İçe Aktar
+
+Paket kurulduktan sonra, bir sonraki adım C# dosyanızın en üstündeki ad alanlarını içe aktarmaktır. Bu, tüm harika Aspose işlevlerine erişim sağlar:
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Artık ortamınız hazır olduğuna göre, PDF dosyasında gizli metin bloğu oluşturma sürecini adım adım inceleyelim.
+
+## Adım 1: Belge Dizininizi Tanımlayın
+
+Dosyalarınızın nerede bulunacağını tanımlayın. Bu, belgelerinizi sorunsuz bir şekilde yönetmenize yardımcı olur. Kurulum için aşağıdaki kodu kullanın:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` PDF'nin oluşturulmasını istediğiniz makinedeki gerçek yol ile.
 
 ## Adım 2: Örnek Bir Belge Oluşturun
 
-Bu adımda, örnek bir PDF belgesi oluşturup buna bir metin parçası ekliyoruz. Metin parçası, gizli metin bloğunu görüntülemek için tetikleyici görevi görecektir.
+Şimdi, basit bir PDF belgesi oluşturalım. Bu ilk adım, PDF belgesini başlatmayı ve gizli metnimiz için odak noktası olacak bir metin parçası eklemeyi içerir.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## Adım 3: Belgeyi açın
+Burada, belgeye basitçe bir dize ekliyoruz. Bu, fare üzerine geldiğinde gizli metin eylemini tetikleyecektir.
 
- Şimdi, daha önce oluşturulan belgeyi kullanarak açıyoruz`Document` sınıf.
+## Adım 3: Oluşturulan Belgeyi Açın
+
+Artık ilk belgemiz hazır olduğuna göre, daha fazla düzenleme için açalım:
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Adım 4: Metin Parçasını Bulun
+Bu satır, az önce oluşturduğumuz belgeyi yükler ve üzerinde değişiklikler yapmamızı sağlar.
 
- Biz bir kullanıyoruz`TextFragmentAbsorber`Gizli metin bloğunun görüntülenmesini tetikleyecek metin parçasını bulmak için nesne. Bu durumda, "Yüzen metni görüntülemek için fare imlecini buraya taşıyın" metninin tam olarak aynısını arıyoruz.
+## Adım 4: İfadeleri Bulmak İçin Bir TextAbsorber Oluşturun
+
+ Sonra, üzerinde çalışacağımız metin parçasını tanımlamak istiyoruz. İşte burası`TextFragmentAbsorber` devreye giriyor:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## Adım 5: Gizli Metin Alanını Oluşturun
-
- Biz bir tane yaratıyoruz`TextBoxField` Gizli metin alanını temsil eden nesne. Bu alan, fare imleci tetikleyici metnin üzerine geldiğinde görünür hale gelen metni içerecektir.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## Adım 6: Gizli Metin Alanını Belgeye Ekleyin
-
-Gizli metin alanını belgenin form koleksiyonuna ekliyoruz.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## Adım 7: Görünmez Düğmeyi Oluşturun
-
-Tetikleyici metin parçasının üstüne konumlandırılacak görünmez bir buton alanı oluşturuyoruz. Bu buton alanı fare giriş ve çıkış olaylarıyla ilişkili eylemlere sahip olacak.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## Adım 8: Belgeyi Kaydedin
-
-Son olarak değiştirilmiş belgeyi gizli metin bloğuyla birlikte kaydediyoruz.
-
-```csharp
-document. Save(outputFile);
-```
-
-### .NET için Aspose.PDF kullanılarak Gizli Metin Bloğu için örnek kaynak kodu 
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Metin içeren örnek belge oluşturun
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Metin içeren belgeyi aç
-Document document = new Document(outputFile);
-//Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Belge sayfaları için emiciyi kabul edin
 document.Pages.Accept(absorber);
-// İlk çıkarılan metin parçasını al
+```
+
+Bu adımda Aspose'a daha önce belirttiğimiz metni bulmasını söylüyoruz.
+
+## Adım 5: Metin Parçasını Çıkarın
+
+Metin parçacığına sahip olduğumuzda, onu daha fazla düzenlememize olanak tanıyan aşağıdaki kodu kullanarak çıkaracağız:
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Sayfanın belirtilen dikdörtgeninde yüzen metin için gizli metin alanı oluştur
+```
+
+Burada, emilen ilk parçaya odaklanıyoruz. Daha fazla metniniz varsa, koleksiyon üzerinde yineleme yapmak isteyebilirsiniz.
+
+## Adım 6: Gizli Metin Alanını Oluşturun
+
+Şimdi sihir için! Kullanıcı belirtilen metnin üzerine geldiğinde görüntülenen gizli bir metin alanı oluşturun. Bu kod parçacığını kullanın:
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Alan değeri olarak görüntülenecek metni ayarlayın
 floatingField.Value = "This is the \"floating text field\".";
-// Bu senaryo için alanı 'salt okunur' yapmanızı öneririz
 floatingField.ReadOnly = true;
-// Belge açıldığında alanı görünmez yapmak için 'gizli' bayrağını ayarlayın
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Benzersiz bir alan adı belirlemek gerekli değildir ancak izin verilir
+```
+
+Bu kod, kayan metnin konumunu tanımlar ve özelliklerini ayarlar; bunları varsayılan olarak salt okunur ve gizli yapar.
+
+## Adım 7: Alan Görünümünü Özelleştirin
+
+Kayan metninize biraz hava katın! Kayan metin alanının varsayılan görünümünü özelleştirin:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// Alan görünümünün özelliklerini ayarlamak gerekli değildir ancak daha iyi hale getirir
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Belgeye metin alanı ekle
+```
+
+Yazı tipi boyutundan renklere kadar bu ayarları dilediğiniz gibi düzenleyebilir, arayüzü daha kullanıcı dostu ve çekici hale getirebilirsiniz.
+
+## Adım 8: Belgeye Metin Alanı Ekleyin
+
+Metin alanı ayarlandıktan sonra, belgeye kayan alanı eklemenin zamanı geldi:
+
+```csharp
 document.Form.Add(floatingField);
-// Metin parçası konumunda görünmez düğme oluştur
+```
+
+Bu satır yeni oluşturulan gizli metin alanını PDF'nize entegre eder.
+
+## Adım 9: Görünmez Bir Düğme Alanı Oluşturun
+
+Bu buton, yüzen metin alanının gezinme eylemlerini yönetecektir. Görünmez bir buton oluşturmak için aşağıdaki kodu ekleyin:
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Belirtilen alan (açıklama) ve görünmezlik bayrağı için yeni gizleme eylemi oluştur.
-// (Yukarıda belirttiyseniz, kayan alana adıyla da başvurabilirsiniz.)
-// Görünmez düğme alanına fare girişi/çıkışı sırasında eylemler ekleyin
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Belgeye düğme alanı ekle
-document.Form.Add(buttonField);
-// Belgeyi kaydet
+```
+
+Burada, fare girdiğinde kayan metni gösterecek ve fare çıktığında gizleyecek şekilde düğmeyi yapılandırdık.
+
+## Adım 10: Belgeyi Kaydedin
+
+Son olarak çalışmanızı kaydedip sonucu görmenin zamanı geldi:
+
+```csharp
 document.Save(outputFile);
 ```
 
+Bu eylemle PDF'niz artık etkileşimli bir deneyimle hazır hale gelir ve kullanıcılara içeriğinizle etkileşime girmeleri için yepyeni bir yol sunar!
+
 ## Çözüm
 
-Bu eğitimde, Aspose.PDF for .NET kütüphanesini kullanarak gizli bir metin bloğu oluşturmayı öğrendiniz. Adım adım kılavuzu izleyerek, fare imleci belirli bir alanın üzerine geldiğinde görünür hale gelen gizli bir metin alanına sahip bir PDF belgesi oluşturabilirsiniz. Gizli metin bloğunun görünümünü ve davranışını gereksinimlerinize göre özelleştirebilirsiniz.
+Ve işte karşınızda! Bu adımları izleyerek, .NET için Aspose.PDF kullanarak bir PDF dosyasında gizli bir metin bloğu başarıyla oluşturdunuz. Bu basit ama güçlü özellik, belgelerinizdeki kullanıcı etkileşimini önemli ölçüde artırabilir. İster eğitim materyalleri ister müşteri kaynakları hazırlayın, gezinme sırasında bilgileri gizleme ve gösterme yeteneği cilalı, modern bir dokunuş sağlar. 
 
-### SSS
+## SSS
 
-#### S: "PDF Dosyasında Gizli Metin Bloğu" eğitiminin amacı nedir?
+### Aspose.PDF for .NET nedir?  
+Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgeleri oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan sağlam bir kütüphanedir.
 
-A: "PDF Dosyasında Gizli Metin Bloğu" öğreticisi, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF dosyasında gizli bir metin bloğunun nasıl oluşturulacağını açıklar. Gizli bir metin bloğu, fare imleci belirli bir alanın üzerine geldiğinde görünür hale gelen yüzen bir metindir. Bu öğretici, C# kaynak kodunu kullanarak adım adım bir kılavuz sağlar.
+### Aspose.PDF'yi nasıl yüklerim?  
+Visual Studio'daki NuGet Paket Yöneticisi aracılığıyla yükleyebilirsiniz. Sadece şu komutu kullanın:`Install-Package Aspose.PDF`.
 
-#### S: Neden bir PDF dosyasında gizli bir metin bloğu oluşturmak isteyeyim?
+### PDF'lerde başka etkileşimli öğeler oluşturabilir miyim?  
+Evet, gizli metin bloklarının ötesinde, Aspose.PDF'i kullanarak düğmeler, köprüler, açıklamalar ve çok daha fazlasını ekleyebilirsiniz.
 
-A: Gizli bir metin bloğu oluşturmak, yalnızca kullanıcının fare imlecini belirli bir alanın üzerine getirdiğinde görünür hale gelen ek bilgi veya bağlam sağlamak istediğiniz etkileşimli PDF belgeleri için yararlı olabilir.
+### Ücretsiz deneme imkanı var mı?  
+ Kesinlikle! Ücretsiz denemeyi şuradan alabilirsiniz:[Aspose sürüm sayfası](https://releases.aspose.com/).
 
-#### S: Belge dizinini nasıl ayarlarım?
-
-A: Belge dizinini ayarlamak için:
-
-1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` Oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu içeren değişken.
-
-#### S: Örnek bir belge nasıl oluşturabilirim ve buna bir metin parçası nasıl ekleyebilirim?
-
- A: Eğitimde şunu kullanıyorsunuz:`Document` Bir örnek PDF belgesi oluşturmak ve bir metin parçası eklemek için sınıf. Bu metin parçası, gizli metin bloğunu görüntülemek için tetikleyici görevi görür.
-
-#### S: Gizli metin bloğunu tetikleyen metin parçasını nasıl bulabilirim?
-
- A: Eğitimde bir`TextFragmentAbsorber` Gizli metin bloğunun görüntülenmesini tetikleyen metin parçasını bulmak için nesne. PDF belgesi içinde belirli bir metin dizesini arar.
-
-#### S: Gizli metin alanını nasıl oluşturabilir ve özelleştirebilirim?
-
- A: Sen bir tane yarat`TextBoxField`Gizli metin alanını temsil eden nesne. Eğitim, gizli metin alanının konumu, değeri, görünümü ve davranışı gibi çeşitli özellikleri ayarlamak için kod sağlar.
-
-#### S: Gizli metin bloğuyla ilişkili görünmez bir düğme nasıl oluştururum?
-
- A: Görünmez bir düğme alanı, şunu kullanarak oluşturulur:`ButtonField` sınıf. Bu düğme alanı tetikleyici metin parçasının üstünde konumlandırılmıştır ve fare giriş ve çıkış olaylarıyla ilişkili eylemlere sahiptir. Bu eylemler gizli metin bloğunun görünürlüğünü kontrol eder.
-
-#### S: Gizli metin bloğunun ve tetikleyici alanının görünümünü özelleştirebilir miyim?
-
-C: Evet, hem gizli metin alanının hem de görünmez butonun yazı tipi, rengi, boyutu ve konumu gibi çeşitli özelliklerini özelleştirebilirsiniz.
-
-#### S: Gizli metin bloğuyla değiştirilen belgeyi nasıl kaydederim?
-
- A: Eğitimde, değiştirilen belgenin nasıl kaydedileceği gösterilmektedir.`Save` yöntemi`Document` sınıf.
+### Aspose.PDF ile ilgili yardıma ihtiyacım olursa ne yapmalıyım?  
+ Destek almaktan çekinmeyin[Aspose forumu](https://forum.aspose.com/c/pdf/10) Herhangi bir soru veya sorunla karşılaştığınızda bize ulaşın.

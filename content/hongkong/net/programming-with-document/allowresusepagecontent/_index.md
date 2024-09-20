@@ -91,7 +91,7 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功優化了 PDF 文件。透過執行這些簡單的步驟，您可以確保您的 PDF 檔案不僅更小，而且更易於共享和管理。請記住，優化 PDF 可以節省您的時間和頻寬，讓您的數位生活更加順暢。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功優化了 PDF 文件。透過執行這些簡單的步驟，您可以確保您的 PDF 檔案不僅更小，而且更易於共享和管理。請記住，優化 PDF 可以節省您的時間和頻寬，讓您的數位生活更加順暢。
 
 ## 常見問題解答
 

@@ -2,7 +2,7 @@
 title: Převod souborů XPS na soubory PDF
 linktitle: Převod souborů XPS na soubory PDF
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.
+description: Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem celý proces zjednodušuje.
 type: docs
 weight: 27
 url: /cs/java/pdf-conversion-transformation/convert-xps-to-pdf-files/

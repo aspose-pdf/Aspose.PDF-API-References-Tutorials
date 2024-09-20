@@ -21,7 +21,7 @@ Se till att du har en .NET-utvecklingsmiljö inställd. Detta kan vara Visual St
 
 ### Aspose.PDF för .NET Library
 
-Nästa på vår checklista är Aspose.PDF för .NET-biblioteket. Du kan enkelt ladda ner den från webbplatsen. Detta bibliotek låter dig arbeta med PDF-dokument på en mängd olika sätt, inklusive att konvertera olika filformat till PDF. Här kan du få det:
+Nästa på vår checklista är Aspose.PDF för .NET-biblioteket. Du kan enkelt ladda ner den från hemsidan. Detta bibliotek låter dig arbeta med PDF-dokument på en mängd olika sätt, inklusive att konvertera olika filformat till PDF. Här kan du få det:
 
 ### Grundläggande kunskaper i C#
 
@@ -31,7 +31,7 @@ Redo att börja? Låt oss importera de nödvändiga paketen!
 
 ## Importera paket
 
-För att utnyttja kraften i Aspose.PDF för .NET måste du importera biblioteket till ditt projekt. Detta görs vanligtvis i din C#-kodfil. Här är en snabb genomgång av hur du gör:
+För att utnyttja kraften i Aspose.PDF för .NET måste du importera biblioteket till ditt projekt. Detta görs vanligtvis i din C#-kodfil. Här är en snabb genomgång av hur du gör det:
 
 ### Öppna ditt projekt
 

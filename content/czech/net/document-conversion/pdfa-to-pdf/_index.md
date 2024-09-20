@@ -13,7 +13,7 @@ Vítejte ve světě Aspose.PDF pro .NET! Pokud chcete převést dokumenty PDF/A 
 
 ## Předpoklady
 
-Než začneme, je potřeba mít připraveno několik věcí:
+Než začneme, je třeba mít připraveno několik věcí:
 
 1. .NET Framework: Ujistěte se, že máte na svém počítači nainstalované rozhraní .NET Framework. Aspose.PDF bezproblémově spolupracuje s aplikacemi .NET.
 2. Knihovna Aspose.PDF: Budete si muset stáhnout knihovnu Aspose.PDF. Můžete to najít[zde](https://releases.aspose.com/pdf/net/).
@@ -44,7 +44,7 @@ Nyní, když máme vše nastaveno, přejděme k samotnému procesu převodu!
 
 ## Krok 1: Nastavte adresář dokumentů
 
-Nejprve musíte zadat cestu k adresáři dokumentů. Zde se nachází váš soubor PDF/A a kde bude převedený soubor PDF uložen.
+Nejprve musíte zadat cestu k adresáři dokumentů. Zde se nachází váš soubor PDF/A a kam se uloží převedený soubor PDF.
 
 ```csharp
 // Cesta k adresáři dokumentů.

@@ -2,235 +2,160 @@
 title: Làm nổi bật ký tự trong tệp PDF
 linktitle: Làm nổi bật ký tự trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách làm nổi bật các ký tự trong tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách làm nổi bật các ký tự trong PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước toàn diện này.
 type: docs
 weight: 240
 url: /vi/net/programming-with-text/highlight-character-in-pdf/
 ---
-Trong hướng dẫn này, chúng tôi sẽ giải thích cách làm nổi bật các ký tự trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Chúng tôi sẽ hướng dẫn từng bước để làm nổi bật các ký tự trong tệp PDF bằng mã nguồn C# được cung cấp.
+## Giới thiệu
 
-## Yêu cầu
+Khi làm việc với PDF, nhu cầu làm nổi bật văn bản hoặc ký tự thường nảy sinh—cho dù là vì mục đích học thuật, chỉnh sửa hay chỉ để cải thiện khả năng đọc. Hãy tưởng tượng bạn có một tài liệu đẹp, nhưng bạn muốn nhấn mạnh một số phần nhất định. Đó là lúc tính năng làm nổi bật xuất hiện! Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách làm nổi bật các ký tự trong tệp PDF bằng thư viện Aspose.PDF mạnh mẽ cho .NET. 
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+## Điều kiện tiên quyết
 
-- Đã cài đặt thư viện Aspose.PDF cho .NET.
-- Hiểu biết cơ bản về lập trình C#.
+Trước khi bắt đầu code, hãy đảm bảo rằng chúng ta có mọi thứ cần thiết. Sau đây là những gì bạn cần:
 
-## Bước 1: Thiết lập thư mục tài liệu
+1. Môi trường phát triển: Hướng dẫn này giả định rằng bạn đang làm việc trong Visual Studio hoặc một IDE .NET tương tự.
+2.  Aspose.PDF cho Thư viện .NET: Nếu bạn chưa có, bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/) và thêm nó vào dự án của bạn. 
+3. Kiến thức cơ bản về C#: Một bài học cơ bản về lập trình C# sẽ giúp bạn hiểu cách triển khai dễ dàng.
+4. Tài liệu PDF: Bạn nên có một tệp PDF mẫu sẵn sàng để làm việc. Bạn có thể tạo một tệp hoặc sử dụng một tài liệu hiện có.
 
- Đầu tiên, bạn cần thiết lập đường dẫn đến thư mục chứa tệp PDF đầu vào của bạn. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong`dataDir` biến có đường dẫn đến tệp PDF của bạn.
+## Nhập gói
+
+Để bắt đầu, chúng ta cần nhập các không gian tên cần thiết. Để thực hiện việc này, bạn sẽ muốn đưa chúng vào đầu tệp C# của mình:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf.Devices;
+using Aspose.Pdf.Text;
+using System;
+using System.Drawing;
 ```
 
-## Bước 2: Tải Tài liệu PDF
+Các gói này rất cần thiết để tạo, thao tác và xử lý tài liệu PDF bằng thư viện Aspose.
 
- Tiếp theo, chúng tôi tải tài liệu PDF đầu vào bằng cách sử dụng`Aspose.Pdf.Document` lớp học.
+Bây giờ, chúng ta hãy chia nhỏ quy trình thành các bước dễ hiểu để làm nổi bật các ký tự trong tệp PDF của bạn. 
+
+## Bước 1: Khởi tạo Tài liệu PDF
+
+Bước đầu tiên là khởi tạo tài liệu PDF của bạn. Điều này bao gồm việc tải tệp PDF mà bạn sẽ làm việc. Sau đây là cách thực hiện:
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Hãy chắc chắn thiết lập đường dẫn chính xác.
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
+Trong đoạn trích này, hãy thay thế`YOUR DOCUMENT DIRECTORY` với đường dẫn thực tế trên máy của bạn nơi tệp PDF đầu vào của bạn được đặt.`Aspose.Pdf.Document` lớp được khởi tạo để tải tệp PDF của bạn.
 
-## Bước 3: Chuyển đổi PDF sang hình ảnh
+## Bước 2: Thiết lập quy trình kết xuất
 
- Để làm nổi bật các ký tự, chúng tôi chuyển đổi tài liệu PDF thành hình ảnh bằng cách sử dụng`PdfConverter` lớp. Chúng tôi thiết lập độ phân giải cho quá trình chuyển đổi và lấy hình ảnh dưới dạng`Bitmap` sự vật.
+Tiếp theo, chúng ta cần chuẩn bị quy trình kết xuất cho tài liệu của mình. Điều này rất cần thiết để làm nổi bật chính xác các ký tự trên trang.
 
 ```csharp
-int resolution = 150;
+int resolution = 150; // Cài đặt độ phân giải để chụp ảnh.
 using (MemoryStream ms = new MemoryStream())
 {
-     PdfConverter conv = new PdfConverter(pdfDocument);
-     conv. Resolution = new Resolution(resolution, resolution);
-     conv. GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-     Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
+    PdfConverter conv = new PdfConverter(pdfDocument);
+    conv.Resolution = new Resolution(resolution, resolution);
+    conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
+ Chúng tôi xác định độ phân giải để làm rõ, cho phép văn bản được hiển thị đúng cách.`PdfConverter`biến các trang PDF thành hình ảnh để chúng ta có thể vẽ trên đó.
 
-## Bước 4: Làm nổi bật các ký tự
+## Bước 3: Tạo đối tượng đồ họa để vẽ
 
- Chúng tôi lặp qua từng trang của tài liệu PDF và sử dụng`TextFragmentAbsorber` đối tượng để tìm tất cả các từ trong trang. Sau đó, chúng tôi lặp lại các đoạn văn bản, phân đoạn và ký tự để làm nổi bật chúng bằng hình chữ nhật.
+Sau khi thiết lập quy trình vẽ, chúng ta cần tạo một đối tượng đồ họa để thực hiện tô sáng:
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Đặt tỷ lệ và chuyển đổi
-     float scale = resolution / 72f;
-     gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+    float scale = resolution / 72f; // Hệ số tỷ lệ.
+    gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+```
+Ở đây, chúng ta tạo đối tượng đồ họa từ ảnh bitmap. Biến đổi giúp điều chỉnh kết xuất để phù hợp với độ phân giải cần thiết một cách chính xác.
 
-     // Lặp qua các trang
-     for (int i = 0; i < pdfDocument.Pages.Count; i++)
-     {
-         Page page = pdfDocument.Pages[1];
+## Bước 4: Lặp qua từng trang và tô sáng văn bản
 
-         //Tìm tất cả các từ trong trang
-         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-         textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-         page. Accept(textFragmentAbsorber);
-         TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+Bây giờ, chúng ta hãy duyệt qua từng trang trong tệp PDF và tìm các đoạn văn bản mà chúng ta muốn làm nổi bật:
 
-         // Lặp qua các đoạn văn bản
-         foreach(TextFragment textFragment in textFragmentCollection)
-         {
-             if (i == 0)
-             {
-                 // Làm nổi bật các ký tự
-                 gr.DrawRectangle(
-                     Think.Yellow,
-                     (float)textFragment.Position.XIndent,
-                     (float)textFragment.Position.YIndent,
-                     (float)textFragment.Rectangle.Width,
-                     (float)textFragment.Rectangle.Height);
+```csharp
+for (int i = 0; i < pdfDocument.Pages.Count; i++)
+{
+    Page page = pdfDocument.Pages[i + 1]; // Các trang được lập chỉ mục theo kiểu 1 trong Aspose.
+    TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+    textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
+    page.Accept(textFragmentAbsorber);
+```
+ Chúng tôi truy cập từng trang và tìm kiếm tất cả văn bản bằng cách sử dụng`TextFragmentAbsorber` . Mẫu biểu thức chính quy`@"[\S]+"` bắt giữ tất cả các ký tự không phải khoảng trắng.
 
-                 // Lặp qua các phân đoạn
-                 foreach(TextSegment segment in textFragment.Segments)
-                 {
-                     // Đoạn nổi bật
-                     gr.DrawRectangle(
-                         Think Green,
-                         (float)segment.Rectangle.LLX,
-                         (float)segment.Rectangle.LLY,
-                         (float)segment.Rectangle.Width,
-                         (float)segment.Rectangle.Height);
+## Bước 5: Trích xuất các đoạn văn bản và tô sáng
 
-                     // Lặp qua các ký tự
-                     foreach(CharInfo characterInfo in segment.Characters)
-                     {
-                         // Nhân vật nổi bật
-                         gr.DrawRectangle(
-                             Think.Black,
-                             (float)characterInfo.Rectangle.LLx,
-                             (float)characterInfo.Rectangle.LLY,
-                             (float)characterInfo.Rectangle.Width,
-                             (float)characterInfo.Rectangle.Height);
-                     }
-                 }
-             }
-         }
-     }
+Bây giờ là lúc trích xuất các đoạn văn bản và làm nổi bật chúng. Quá trình này bao gồm việc vẽ các hình chữ nhật xung quanh các ký tự mà chúng ta muốn làm nổi bật:
+
+```csharp
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+
+foreach (TextFragment textFragment in textFragmentCollection)
+{
+    // Làm nổi bật logic ở đây
+    for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
+    {
+        TextSegment segment = textFragment.Segments[segNum];
+        for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
+        {
+            CharInfo characterInfo = segment.Characters[charNum];
+            gr.DrawRectangle(Pens.Black, 
+                (float)characterInfo.Rectangle.LLX, 
+                (float)characterInfo.Rectangle.LLY, 
+                (float)characterInfo.Rectangle.Width, 
+                (float)characterInfo.Rectangle.Height);
+        }
+    }
 }
 ```
+Chúng tôi lặp qua từng đoạn văn bản, các phân đoạn và ký tự riêng lẻ, vẽ các hình chữ nhật xung quanh chúng bằng cách sử dụng đối tượng đồ họa đã tạo trước đó.
 
-## Bước 5: Lưu hình ảnh đầu ra
+## Bước 6: Lưu hình ảnh đã chỉnh sửa
 
-Cuối cùng, chúng ta lưu hình ảnh đã chỉnh sửa với các ký tự được tô sáng vào tệp đầu ra đã chỉ định.
+Sau khi tô sáng, bạn sẽ cần lưu hình ảnh kết quả dưới dạng tệp PNG mới:
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
+Dòng này lưu hình ảnh bitmap đã chỉnh sửa của bạn dưới dạng tệp PNG trong thư mục được chỉ định. 
 
-### Mã nguồn mẫu cho tính năng Làm nổi bật ký tự trong PDF bằng Aspose.PDF cho .NET 
+## Bước 7: Kết thúc bằng Xử lý ngoại lệ
+
+Cuối cùng, bạn nên gói mã của mình trong khối try-catch, đảm bảo rằng chúng ta xử lý mọi lỗi không mong muốn một cách khéo léo:
+
 ```csharp
-try
-{
-	// Đường dẫn đến thư mục tài liệu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	int resolution = 150;
-	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
-	using (MemoryStream ms = new MemoryStream())
-	{
-		PdfConverter conv = new PdfConverter(pdfDocument);
-		conv.Resolution = new Resolution(resolution, resolution);
-		conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
-		using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
-		{
-			float scale = resolution / 72f;
-			gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
-			for (int i = 0; i < pdfDocument.Pages.Count; i++)
-			{
-				Page page = pdfDocument.Pages[1];
-				// Tạo đối tượng TextAbsorber để tìm tất cả các từ
-				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-				page.Accept(textFragmentAbsorber);
-				// Lấy các đoạn văn bản đã trích xuất
-				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Lặp lại các đoạn
-				foreach (TextFragment textFragment in textFragmentCollection)
-				{
-					if (i == 0)
-					{
-						gr.DrawRectangle(
-						Pens.Yellow,
-						(float)textFragment.Position.XIndent,
-						(float)textFragment.Position.YIndent,
-						(float)textFragment.Rectangle.Width,
-						(float)textFragment.Rectangle.Height);
-						for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
-						{
-							TextSegment segment = textFragment.Segments[segNum];
-							for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
-							{
-								CharInfo characterInfo = segment.Characters[charNum];
-								Aspose.Pdf.Rectangle rect = page.GetPageRect(true);
-								Console.WriteLine("TextFragment = " + textFragment.Text + "    Page URY = " + rect.URY +
-												  "   TextFragment URY = " + textFragment.Rectangle.URY);
-								gr.DrawRectangle(
-								Pens.Black,
-								(float)characterInfo.Rectangle.LLX,
-								(float)characterInfo.Rectangle.LLY,
-								(float)characterInfo.Rectangle.Width,
-								(float)characterInfo.Rectangle.Height);
-							}
-							gr.DrawRectangle(
-							Pens.Green,
-							(float)segment.Rectangle.LLX,
-							(float)segment.Rectangle.LLY,
-							(float)segment.Rectangle.Width,
-							(float)segment.Rectangle.Height);
-						}
-					}
-				}
-			}
-		}
-		dataDir = dataDir + "HighlightCharacterInPDF_out.png";
-		bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
-	}
-	Console.WriteLine("\nCharacters highlighted successfully in pdf document.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get a 30-day temporary license from [here](https://mua.aspose.com/temporary-license/).");
 }
 ```
 
+Khối này sẽ phát hiện mọi ngoại lệ có thể xảy ra trong quá trình xử lý và cung cấp phản hồi có thông tin cho người dùng.
+
 ## Phần kết luận
 
-Trong hướng dẫn này, bạn đã học cách làm nổi bật các ký tự trong tài liệu PDF bằng thư viện Aspose.PDF cho .NET. Bằng cách làm theo hướng dẫn từng bước và thực thi mã C# được cung cấp, bạn có thể làm nổi bật các ký tự trong PDF và lưu đầu ra dưới dạng hình ảnh.
+Và bạn đã có nó! Bạn đã tô sáng thành công các ký tự trong tệp PDF bằng Aspose.PDF cho .NET. Thư viện mạnh mẽ này mở ra cánh cửa đến vô số khả năng trong việc thao tác PDF—cho dù bạn đang làm việc với chú thích, điền biểu mẫu hay thậm chí là chuyển đổi tài liệu. Khi bạn tiếp tục hành trình với Aspose, hãy nhớ rằng thực hành là chìa khóa. Hãy tiếp tục thử nghiệm với các tính năng khác nhau và bạn sẽ nhanh chóng trở thành chuyên gia PDF!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn "Làm nổi bật ký tự trong tệp PDF" là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện cho phép tạo, xử lý và chuyển đổi các tài liệu PDF theo chương trình trong các ứng dụng .NET.
 
-A: Hướng dẫn "Đánh dấu ký tự trong tệp PDF" giải thích cách sử dụng thư viện Aspose.PDF cho .NET để đánh dấu các ký tự trong tài liệu PDF. Hướng dẫn cung cấp hướng dẫn từng bước và mã nguồn C# để thực hiện việc này.
+### Tôi có thể đánh dấu nhiều đoạn văn bản cùng lúc không?
+Có, mã được cung cấp có thể được điều chỉnh để làm nổi bật nhiều đoạn bằng cách lặp qua toàn bộ văn bản trong PDF.
 
-#### H: Tại sao tôi muốn làm nổi bật các ký tự trong tài liệu PDF?
+### Có phiên bản miễn phí của Aspose.PDF không?
+Có, Aspose cung cấp bản dùng thử miễn phí để bạn có thể dùng thử thư viện trước khi mua.
 
-A: Việc tô sáng các ký tự trong tài liệu PDF có thể hữu ích cho nhiều mục đích khác nhau, chẳng hạn như nhấn mạnh nội dung cụ thể hoặc làm cho một số văn bản dễ nhìn và dễ phân biệt hơn.
+### Tôi có cần giấy phép nào để sử dụng Aspose.PDF không?
+Có, cần phải có giấy phép hợp lệ để sử dụng cho mục đích thương mại, nhưng bạn có thể xin giấy phép tạm thời trong 30 ngày để thử nghiệm.
 
-#### H: Tôi phải thiết lập thư mục tài liệu như thế nào?
-
-A: Để thiết lập thư mục tài liệu:
-
-1.  Thay thế`"YOUR DOCUMENT DIRECTORY"` trong`dataDir` biến có đường dẫn đến thư mục chứa tệp PDF đầu vào của bạn.
-
-#### H: Làm thế nào để tải tài liệu PDF và chuyển đổi nó thành hình ảnh?
-
- A: Trong hướng dẫn,`Aspose.Pdf.Document` lớp được sử dụng để tải tài liệu PDF đầu vào. Sau đó,`PdfConverter` lớp được sử dụng để chuyển đổi tài liệu PDF thành hình ảnh. Độ phân giải của hình ảnh được thiết lập và hình ảnh được lấy ra dưới dạng`Bitmap` sự vật.
-
-#### H: Làm thế nào để tô sáng các ký tự trong hình ảnh tài liệu PDF?
-
-A: Hướng dẫn này hướng dẫn bạn thực hiện quy trình lặp qua từng trang của tài liệu PDF, tìm từ bằng cách sử dụng`TextFragmentAbsorber`và lặp lại các đoạn văn bản, phân đoạn và ký tự để làm nổi bật chúng bằng hình chữ nhật.
-
-#### H: Tôi có thể tùy chỉnh giao diện của các ký tự và phân đoạn được tô sáng không?
-
-A: Có, bạn có thể tùy chỉnh giao diện của các ký tự và phân đoạn được tô sáng bằng cách sửa đổi màu sắc và kiểu dáng được sử dụng trong thao tác vẽ.
-
-#### H: Làm thế nào để lưu hình ảnh đã chỉnh sửa có các ký tự được tô sáng?
-
- A: Hướng dẫn này trình bày cách lưu hình ảnh đã chỉnh sửa với các ký tự được tô sáng vào tệp đầu ra đã chỉ định bằng cách sử dụng`Save` phương pháp của`Bitmap` lớp học.
-
-#### H: Có cần Giấy phép Aspose hợp lệ cho hướng dẫn này không?
-
-A: Có, cần phải có Giấy phép Aspose hợp lệ để hướng dẫn này hoạt động chính xác. Bạn có thể mua giấy phép đầy đủ hoặc xin giấy phép tạm thời 30 ngày từ trang web Aspose.
+### Tôi có thể tìm thêm tài liệu ở đâu?
+ Bạn có thể tham khảo[Tài liệu Aspose.PDF](https://reference.aspose.com/pdf/net/) để biết thông tin chi tiết hơn về cách triển khai và các tính năng.

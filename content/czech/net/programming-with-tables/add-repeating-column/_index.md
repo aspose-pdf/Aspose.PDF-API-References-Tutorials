@@ -2,120 +2,105 @@
 title: Přidat opakující se sloupec do dokumentu PDF
 linktitle: Přidat opakující se sloupec do dokumentu PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak přidat opakující se sloupec do dokumentu PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se přidávat opakující se sloupce do dokumentů PDF pomocí Aspose.PDF pro .NET. Průvodce krok za krokem s příklady a kódem. Ideální pro vývojáře.
 type: docs
 weight: 20
 url: /cs/net/programming-with-tables/add-repeating-column/
 ---
-V tomto tutoriálu se naučíme, jak přidat opakující se sloupec do dokumentu PDF pomocí Aspose.PDF pro .NET. Vysvětlíme si zdrojový kód v C# krok za krokem. Na konci tohoto tutoriálu budete vědět, jak vytvořit tabulku s opakujícím se sloupcem v dokumentu PDF. Začněme!
+## Zavedení
 
-## Krok 1: Nastavení prostředí
-Nejprve se ujistěte, že jste nastavili vývojové prostředí C# pomocí Aspose.PDF pro .NET. Přidejte odkaz do knihovny a importujte potřebné jmenné prostory.
+Pokud pracujete s dokumenty PDF a potřebujete přidat opakující se sloupce, jste na správném místě! Pomocí Aspose.PDF for .NET můžete snadno spravovat tabulky a obsah v PDF. Ať už vytváříte dynamické sestavy, faktury nebo jakýkoli jiný strukturovaný dokument, opakující se sloupce mohou změnit hru v organizaci dat. Pojďme se ponořit do podrobného průvodce, jak do dokumentu PDF přidat opakující se sloupce.
 
-## Krok 2: Vytvoření dokumentu PDF
-V tomto kroku vytvoříme nový dokument PDF.
+## Předpoklady
+
+Než se pustíme do kódu, ujistěte se, že máte vše nastaveno:
+
+- Aspose.PDF for .NET: Ve svém projektu musíte mít nainstalovanou knihovnu Aspose.PDF for .NET.
+- [Stáhněte si Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/)
+- [Bezplatná zkušební verze](https://releases.aspose.com/)
+- Vývojové prostředí: Ujistěte se, že máte nainstalované IDE kompatibilní s .NET, jako je Visual Studio.
+- Základní porozumění C#: I když vše rozebereme, základní znalost C# vám pomůže hladce pokračovat.
+  
+ Pokud ještě nemáte Aspose.PDF pro .NET, můžete získat a[dočasná licence](https://purchase.aspose.com/temporary-license/) začít zkoumat jeho vlastnosti.
+
+## Importujte balíčky
+
+Chcete-li začít, musíte importovat potřebné jmenné prostory z Aspose.PDF pro .NET. Postup je následující:
 
 ```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Vytvořili jsme prázdný dokument PDF, kam můžeme přidat obsah.
+Tyto balíčky poskytují základní třídy a metody potřebné pro práci s dokumenty PDF a manipulaci s tabulkami.
 
-## Krok 3: Vytvoření tabulek
-V tomto kroku vytvoříme hlavní tabulku (`outerTable`) a vnořená tabulka (`mytable`), který se bude ve sloupci opakovat.
+Nyní si tento proces rozdělíme do několika kroků, abychom do dokumentu PDF přidali opakující se sloupce. Sledujte nás!
 
-```csharp
-Table outerTable = new Table();
-outerTable.ColumnWidths = "100%";
-outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+## Krok 1: Nastavte cestu k adresáři vašich dokumentů
 
-Table mytable = new Table();
-mytable.Broken = TableBroken.VerticalInSamePage;
-mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
-```
-
-Zadali jsme vlastnosti tabulky, jako je šířka sloupce a režim zalomení vnořené tabulky.
-
-## Krok 4: Přidání tabulek do dokumentu
-Nyní přidáme vytvořené tabulky do PDF dokumentu.
+Než vytvoříme nebo s jakýmikoli soubory budeme manipulovat, musíme definovat cestu, kam se vygenerované PDF uloží. Ve svém projektu C# nastavte cestu k adresáři, kde budou umístěny vaše soubory:
 
 ```csharp
-page.Paragraphs.Add(outerTable);
-var bodyRow = outerTable.Rows.Add();
-var bodyCell = bodyRow.Cells.Add();
-bodyCell.Paragraphs.Add(mytable);
-mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
-```
-
-Nejprve přidáme hlavní tabulku (`outerTable`) do dokumentu PDF. Dále přidáme vnořenou tabulku (`mytable` ) jako odstavec v buňce v hlavní tabulce. Uvádíme také počet opakujících se sloupců pro`mytable` (v tomto příkladu 5 sloupců).
-
-## Krok 5: Přidání záhlaví a řádků
-Nyní přidáme záhlaví a řádky do tabulky.
-
-```csharp
-Row headerRow = mytable.Rows.Add();
-headerRow.Cells.Add("header 1");
-headerRow.Cells.Add("header 2");
-headerRow.Cells.Add("header 3");
-// ...
-//Zde přidejte další záhlaví
-
-for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-{
-     Row row1 = mytable.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-     // ...
-     // Zde přidejte další sloupce
-}
-```
-
-Nejprve přidáme záhlaví do prvního řádku tabulky (`headerRow`). Poté přidáme řádky dat ze smyčky. V tomto příkladu přidáme 6 řádků dat.
-
-## Krok 6: Uložení dokumentu PDF
-Nakonec dokument PDF uložíme do zadaného souboru.
-
-```csharp
-string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-doc.Save(outFile);
-```
-
-Ujistěte se, že zadáváte správný adresář a název souboru pro uložení výstupního souboru PDF.
-
-### Příklad zdrojového kódu pro přidání opakujícího se sloupce pomocí Aspose.PDF pro .NET
-
-```csharp
-// Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// Vytvořte nový dokument
+```
+
+ Tato cesta ukazuje do adresáře, kam se uloží výstupní PDF. Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou na vašem počítači.
+
+## Krok 2: Vytvořte nový dokument PDF
+
+ Chcete-li začít, vytvořte instanci nového`Document` objekt. To bude sloužit jako kontejner pro všechny stránky a obsah v PDF.
+
+```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-// Vytvořte instanci vnější tabulky, která zabírá celou stránku
+ Zde jsme vytvořili nový dokument PDF a přidali do něj prázdnou stránku. The`doc.Pages.Add()` metoda vloží do dokumentu novou stránku.
+
+## Krok 3: Vytvořte instanci vnějšího stolu
+
+Dále vytvoříme vnější tabulku. Tato tabulka bude pokrývat celou šířku stránky a bude sloužit jako kontejner pro další tabulky, včetně té, která bude obsahovat opakující se sloupce.
+
+```csharp
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+```
 
-// Vytvořte instanci objektu tabulky, který bude vnořen do externalTable, který se rozpadne na stejné stránce
+ Nastavili jsme`ColumnWidths` vlastnost na "100%", což znamená, že tabulka se roztáhne přes celou šířku stránky.
+
+## Krok 4: Vytvořte vnitřní tabulku
+
+ Nyní vytvoříme vnitřní tabulku, která bude mít opakující se sloupce. Zde jsou klíčové vlastnosti`Broken` , což umožňuje, aby tabulka pokračovala přes stejnou stránku, a`ColumnAdjustment`, který automaticky upraví šířku sloupců tak, aby odpovídala obsahu.
+
+```csharp
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
+```
 
-// Přidejte vnější tabulku do odstavců stránky
-// Přidejte mytable do externalTable
+Tato vnitřní tabulka bude vnořena do vnější tabulky.
+
+## Krok 5: Přidejte tabulky na stránku
+
+Nyní, když máme připravené vnější i vnitřní tabulky, přidáme je na stránku. Tento krok zajistí, že tabulky budou zahrnuty do struktury dokumentu.
+
+```csharp
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
 bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
+```
 
-// Přidat řádek záhlaví
+ Zde jsme přidali`outerTable` na stránku a pak do vnější tabulky jsme vnořili`mytable` . Navíc jsme nastavili`RepeatingColumnsCount`až 5, určující, kolik sloupců se má při přidání dat opakovat.
+
+## Krok 6: Přidejte řádek záhlaví
+
+Nyní je čas přidat záhlaví do tabulky. Řádek záhlaví poskytuje kontext datům a pomáhá strukturovat sloupce. 
+
+```csharp
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -131,51 +116,64 @@ row.Cells.Add("header 14");
 row.Cells.Add("header 15");
 row.Cells.Add("header 16");
 row.Cells.Add("header 17");
+```
 
+Tento fragment kódu přidá první řádek (který použijeme jako záhlaví) a naplní jej buňkami obsahujícími text jako „záhlaví 1“, „záhlaví 2“ a tak dále.
+
+## Krok 7: Přidejte datové řádky
+
+Nakonec můžeme do tabulky přidat nějaká data. Tato smyčka dynamicky vytváří řádky a naplňuje buňky obsahem:
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-
 {
-	// Vytvořte řádky v tabulce a poté buňky v řádcích
-	Aspose.Pdf.Row row1 = mytable.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
+    Aspose.Pdf.Row row1 = mytable.Rows.Add();
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
 }
+```
+
+Cyklus se šestkrát iteruje, přidá řádky a naplní každou buňku odpovídajícími daty sloupce (např. „sloupec 1, 1“, „sloupec 2, 2“ atd.).
+
+## Krok 8: Uložte dokument
+
+Po přidání všech řádků a sloupců je posledním krokem uložení dokumentu do zadané cesty k souboru.
+
+```csharp
 doc.Save(outFile);
 ```
 
+Váš dokument je nyní uložen s opakujícími se sloupci!
+
 ## Závěr
-tomto tutoriálu jsme se naučili, jak přidat opakující se sloupec do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce můžete použít k vytvoření tabulek s opakujícími se sloupci ve vašich vlastních projektech C#.
 
-### Časté dotazy pro přidání opakujícího se sloupce do dokumentu PDF
+Tady to máš! Pomocí těchto jednoduchých kroků můžete pomocí Aspose.PDF for .NET vytvořit dokument PDF s opakujícími se sloupci. Využitím flexibility vnořených tabulek můžete dosáhnout složitých rozvržení, díky kterým budou vaše PDF vypadat profesionálně a uspořádaně. Vyzkoušejte to pro svůj další projekt a prozkoumejte plný potenciál Aspose.PDF ke zvládnutí vašich potřeb v oblasti generování PDF.
 
-#### Otázka: Mohu přizpůsobit počet opakujících se sloupců ve vnořené tabulce?
+## FAQ
 
- Odpověď: Ano, počet opakujících se sloupců ve vnořené tabulce můžete přizpůsobit. V uvedeném příkladu jsme nastavili`mytable.RepeatingColumnsCount = 5;`, což znamená, že se bude opakovat 5 sloupců. Tuto hodnotu můžete změnit na libovolné požadované číslo.
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, upravovat a spravovat dokumenty PDF programově.
 
-#### Otázka: Je možné dynamicky přidávat další řádky do vnořené tabulky?
+### Mohu dynamicky upravit počet opakujících se sloupců?
+ Ano, počet opakujících se sloupců můžete změnit úpravou`RepeatingColumnsCount` vlastnictví.
 
-Odpověď: Ano, do vnořené tabulky můžete dynamicky přidávat další řádky stejným způsobem, jak je znázorněno ve výukovém programu. K přidání řádků na základě vašich dat můžete použít smyčky nebo jakoukoli jinou logiku.
+### Jak mohu použít licenci na Aspose.PDF pro .NET?
+ Licenci ze souboru nebo streamu můžete použít následujícím způsobem[dokumentace](https://reference.aspose.com/pdf/net/).
 
-#### Otázka: Mohu použít styly a formátování na tabulku a její buňky?
+### Je možné přidat obrázky do buněk tabulky?
+Ano, Aspose.PDF for .NET podporuje přidávání různých typů obsahu, včetně obrázků, do buněk tabulky.
 
-Odpověď: Ano, na tabulku a její buňky můžete použít styly a formátování pomocí Aspose.PDF for .NET. Knihovna poskytuje různé vlastnosti a metody pro přizpůsobení vzhledu tabulky a jejího obsahu.
-
-#### Otázka: Je Aspose.PDF for .NET kompatibilní s .NET Core?
-
-Odpověď: Ano, Aspose.PDF pro .NET je kompatibilní s .NET Core. Můžete jej použít v aplikacích .NET Framework i .NET Core.
-
-#### Otázka: Mohu tento přístup použít k přidání opakujících se sloupců do existujícího dokumentu PDF?
-
-Odpověď: Ano, tento přístup můžete použít k přidání opakujících se sloupců do existujícího dokumentu PDF. Jednoduše načtěte existující dokument pomocí Aspose.PDF pro .NET a postupujte podle stejných kroků pro vytvoření a přidání opakujícího se sloupce.
+### Mohu si rozložení tabulky dále přizpůsobit?
+Absolutně! Aspose.PDF poskytuje rozsáhlé funkce pro přizpůsobení stylů tabulek, včetně ohraničení, odsazení, zarovnání a dalších.

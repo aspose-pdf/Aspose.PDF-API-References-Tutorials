@@ -108,7 +108,7 @@ Ez észleli a kivételeket, és tájékoztató üzenetet küld, amely segít a l
 
 ## Következtetés
 
-Gratulálok! Sikeresen beállított egy célhivatkozást egy PDF-fájlban az Aspose.PDF for .NET használatával. Megtanulta, hogyan tölthet be PDF-dokumentumot, hogyan módosíthat egy megjegyzést, és mentheti el a változtatásokat – mindezt a projektekben a PDF-fájlokkal való munkavégzéshez nélkülözhetetlen készségeket. Függetlenül attól, hogy webhelyekre, belső dokumentumokra vagy további forrásokra hivatkozik, ezek a technikák kibővítik a PDF-fájlok által elért lehetőségeket.
+Gratulálok! Sikeresen beállított egy célhivatkozást egy PDF-fájlban az Aspose.PDF for .NET használatával. Megtanulta, hogyan tölthet be PDF-dokumentumot, hogyan módosíthat egy megjegyzést, és hogyan mentheti el a változtatásokat – mindezt a projektekben a PDF-fájlokkal való munkavégzéshez elengedhetetlen készségeket. Függetlenül attól, hogy webhelyekre, belső dokumentumokra vagy további forrásokra hivatkozik, ezek a technikák kibővítik a PDF-fájlok által elért lehetőségeket.
 
 ## GYIK
 

@@ -109,7 +109,7 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 ## 結論
 
-使用 Aspose.PDF for .NET 在 PDF 文件中設定文件資訊是一個簡單的過程，可以大大增強 PDF 的可用性。透過執行這些步驟，您可以輕鬆新增作者、建立日期等元數據，讓您的文件更加豐富且專業。無論您是在開發產生 PDF 的應用程序，還是只是需要更好地管理文檔，Aspose.PDF 都能為您提供高效完成工作所需的工具。
+使用 Aspose.PDF for .NET 在 PDF 文件中設定文件資訊是一個簡單的過程，可以大大增強 PDF 的可用性。透過執行這些步驟，您可以輕鬆新增作者、建立日期等元數據，讓您的文件更加豐富且專業。無論您是在開發產生 PDF 的應用程序，還是只是需要更好地管理文檔，Aspose.PDF 都能提供您高效完成工作所需的工具。
 
 ## 常見問題解答
 

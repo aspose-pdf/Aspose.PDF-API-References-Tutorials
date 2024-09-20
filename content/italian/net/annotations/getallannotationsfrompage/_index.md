@@ -9,7 +9,7 @@ url: /it/net/annotations/getallannotationsfrompage/
 ---
 ## Introduzione
 
-Benvenuti nel mondo di Aspose.PDF per .NET! Se state cercando di manipolare i documenti PDF in modo programmatico, siete capitati nel posto giusto. Aspose.PDF è una potente libreria che consente agli sviluppatori di creare, modificare e gestire file PDF con facilità. In questo tutorial, approfondiremo una funzionalità specifica: l'estrazione di annotazioni da una pagina PDF. Che siate sviluppatori esperti o alle prime armi, questa guida vi guiderà passo dopo passo nel processo, assicurandovi di comprendere ogni dettaglio lungo il percorso.
+Benvenuti nel mondo di Aspose.PDF per .NET! Se state cercando di manipolare i documenti PDF a livello di programmazione, siete capitati nel posto giusto. Aspose.PDF è una potente libreria che consente agli sviluppatori di creare, modificare e gestire file PDF con facilità. In questo tutorial, approfondiremo una funzionalità specifica: l'estrazione di annotazioni da una pagina PDF. Che siate sviluppatori esperti o alle prime armi, questa guida vi guiderà passo dopo passo nel processo, assicurandovi di comprendere ogni dettaglio lungo il percorso.
 
 ## Prerequisiti
 

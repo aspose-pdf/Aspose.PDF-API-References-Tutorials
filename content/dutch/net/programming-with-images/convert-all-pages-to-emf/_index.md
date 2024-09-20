@@ -20,7 +20,7 @@ Voordat we met het stapsgewijze proces beginnen, moet u een aantal zaken instell
 1.  Aspose.PDF voor .NET: Zorg ervoor dat u de nieuwste versie van Aspose.PDF voor .NET in uw project hebt geïnstalleerd. U kunt deze downloaden van de[Aspose PDF-downloadlink](https://releases.aspose.com/pdf/net/).
 2. Ontwikkelomgeving: Een ontwikkelomgeving zoals Visual Studio of een andere .NET-compatibele IDE.
 3.  Licentie: U moet een geldige Aspose-licentie aanvragen of een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/). U kunt het in de proefmodus uitvoeren als u er nog geen hebt.
-4. Een voorbeeld PDF-bestand: U hebt een PDF-document nodig om te converteren. Als u er geen hebt, kunt u elke PDF van uw keuze gebruiken.
+4. Een voorbeeld PDF-bestand: U hebt een PDF-document nodig om te converteren. Als u er geen hebt, kunt u elke PDF naar keuze gebruiken.
 
 ## Pakketten importeren
 

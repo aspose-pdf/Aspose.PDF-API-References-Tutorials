@@ -7,174 +7,169 @@ type: docs
 weight: 140
 url: /id/net/programming-with-tagged-pdf/setup-language-and-title/
 ---
-Dalam panduan ini, kami akan memberi tahu Anda cara mengonfigurasi bahasa dan judul dokumen PDF menggunakan pustaka Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda membuat, memanipulasi, dan mengonversi file PDF secara terprogram.
+## Perkenalan
 
-Mari selami kodenya dan pelajari cara mengonfigurasi bahasa dan judul dokumen PDF menggunakan Aspose.PDF untuk .NET.
+Membuat PDF yang diberi tag merupakan aktivitas penting untuk memastikan aksesibilitas dan menyediakan format terstruktur untuk dokumen. Seiring dengan semakin inklusifnya lingkungan digital, pemahaman tentang cara membuat dokumen yang diberi tag menjadi semakin penting. Panduan komprehensif ini akan memandu Anda melalui proses pengaturan bahasa dan judul dalam PDF yang diberi tag menggunakan Aspose.PDF untuk .NET. Kami akan menguraikannya menjadi beberapa langkah yang mudah dipahami sehingga meskipun Anda baru memulai, Anda akan merasa seperti seorang profesional pada akhirnya. 
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda telah menginstal Aspose.PDF untuk .NET dan menyiapkan lingkungan pengembangan Anda.
+Sebelum menyelami dunia PDF yang diberi tag, mari kita kumpulkan semua yang Anda butuhkan. Berikut ini yang harus Anda siapkan:
 
-## Langkah 1: Membuat dokumen
+- Pengetahuan Dasar tentang .NET: Meskipun Anda tidak perlu menjadi seorang coder yang hebat, keakraban dengan konsep .NET akan membuat perjalanan ini lebih lancar.
+-  Aspose.PDF untuk .NET Terpasang: Pastikan Anda telah memasang pustaka tersebut. Anda dapat mengunduhnya untuk evaluasi atau membeli lisensi. Periksa[halaman unduhan di sini](https://releases.aspose.com/pdf/net/).
+- Visual Studio: Di sinilah Anda akan menulis dan menguji kode Anda. Jika Anda tidak memilikinya, unduh dari situs web Microsoft.
+- Kemahiran Bahasa C#: Panduan ini ditulis dalam bahasa C#. Sedikit pengalaman dengan C# pasti akan membantu Anda memahami bagian-bagian kode dengan mudah.
 
- Langkah pertama adalah membuat dokumen PDF baru menggunakan`Document` kelas.
+## Paket Impor
+
+Setelah Anda menyiapkan prasyarat, saatnya mengimpor paket yang diperlukan. Anda dapat melakukannya dengan menambahkan perintah berikut di bagian atas berkas C# Anda:
 
 ```csharp
-// Buat dokumen PDF
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Ruang nama ini memungkinkan Anda mengakses komponen yang diperlukan untuk membuat dan memanipulasi PDF dengan konten yang diberi tag. Anda mungkin bertanya-tanya, "Mengapa mengimpor paket?" Ini seperti menyiapkan kotak peralatan sebelum membangun sesuatu—Anda memerlukan peralatan yang tepat.
+
+## Langkah 1: Inisialisasi Dokumen
+
+Langkah pertama dalam perjalanan kita adalah membuat objek dokumen baru. Anda dapat menganggapnya sebagai peletakan fondasi untuk sebuah rumah—semuanya akan dibangun di atasnya.
+
+```csharp
 Document document = new Document();
 ```
 
-## Langkah 2: Akses konten yang diberi tag
+Di sini, kami membuat dokumen PDF baru. Di sinilah semua konten Anda akan berada. 
 
- Selanjutnya, kita mengakses konten dokumen yang diberi tag menggunakan`ITaggedContent` obyek.
+## Langkah 2: Tentukan Direktori Dokumen
 
-```csharp
-// Akses konten yang diberi tag
-Tagged.ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Langkah 3: Tetapkan judul dan bahasa
-
- Sekarang kita dapat mengatur judul dokumen dan bahasa menggunakan`SetTitle` Dan`SetLanguage` metode dari`ITaggedContent` obyek.
+Berikutnya adalah menentukan di mana dokumen Anda akan disimpan. Anda memerlukan tempat untuk menyimpan berkas PDF yang baru Anda buat.
 
 ```csharp
-// Tentukan judul dokumen
-taggedContent.SetTitle("Example of tagged document");
-
-// Mengatur bahasa dokumen
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Langkah 4: Tambahkan konten multibahasa
-
-Berikutnya, kami menambahkan konten multibahasa ke dokumen menggunakan elemen paragraf untuk setiap bahasa.
-
-```csharp
-// Tambahkan paragraf dalam bahasa Inggris
-LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
-pEN.SetText("Hello, World!");
-pEN.Language = "en-US";
-taggedContent.RootElement.AppendChild(pEN);
-
-// Tambahkan paragraf dalam bahasa Jerman
-LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
-pDE.SetText("Hello Welt!");
-pDE.Language = "de-DE";
-taggedContent.RootElement.AppendChild(pDE);
-
-//Tambahkan paragraf dalam bahasa Prancis
-LogicalStructure.ParagraphElement pFR = taggedContent.CreateParagraphElement();
-pFR.SetText("Hello world!");
-pFR.Language = "fr-FR";
-taggedContent.RootElement.AppendChild(pFR);
-
-// Tambahkan paragraf dalam bahasa Spanyol
-LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
-pSP.SetText("¡Hola Mundo!");
-pSP.Language = "es-ES";
-taggedContent.RootElement.AppendChild(pSP);
-```
-
-## Langkah 5: Simpan dokumen PDF yang diberi tag
-
-Terakhir, kami menyimpan dokumen PDF yang diberi tag.
-
-```csharp
-// Simpan dokumen PDF yang diberi tag
-document.Save(dataDir + "SetupLanguageAndTitle.pdf");
-```
-
-### Contoh kode sumber untuk Pengaturan Bahasa dan Judul menggunakan Aspose.PDF untuk .NET 
-```csharp
-
-Document document = new Document();
-
-// Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Dapatkan Konten yang Ditandai
+ Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat Anda ingin menyimpan PDF. Ini sama seperti mencari tempat parkir untuk mobil baru Anda.
+
+## Langkah 3: Dapatkan Konten yang Ditandai
+
+Sekarang, mari kita akses konten yang diberi tag pada dokumen kita. Konten yang diberi tag berfungsi sebagai tulang punggung untuk membuat PDF yang mudah diakses. 
+
+```csharp
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
+```
 
-// Atur Judul dan Bahasa
+Dengan melakukan ini, Anda mengaktifkan potensi untuk menyusun PDF Anda, seperti membuat kerangka buku sebelum benar-benar menulisnya.
+
+## Langkah 4: Atur Judul dan Bahasa
+
+Setelah konten yang diberi tag siap, saatnya menentukan judul dokumen dan bahasa utama. 
+
+```csharp
 taggedContent.SetTitle("Example Tagged Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Header (en-US, diwarisi dari dokumen)
+Anggaplah langkah ini sebagai pemberian identitas pada dokumen Anda. Judul mewakili esensi dari isi dokumen, sementara bahasanya mengomunikasikan konteks linguistik utama kepada pembaca.
+
+## Langkah 5: Buat Elemen Header
+
+PDF terstruktur sering kali menyertakan tajuk untuk membantu memandu pembaca. Mari buat elemen tajuk.
+
+```csharp
 LogicalStructure.HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 h1.SetText("Phrase on different languages");
 taggedContent.RootElement.AppendChild(h1);
+```
 
-// Paragraf (Bahasa Inggris)
+Di sini, kami membuat header (H1) dengan teks. Ini seperti menanam rambu yang mengarahkan pembaca ke apa yang akan mereka baca selanjutnya. 
+
+## Langkah 6: Tambahkan Paragraf dalam Beberapa Bahasa
+
+Di sinilah bagian yang menyenangkan dimulai—menambahkan konten dalam berbagai bahasa. Kita akan menambahkan beberapa paragraf untuk mewakili berbagai bahasa.
+
+### Menambahkan Paragraf Bahasa Inggris
+
+Mari kita mulai dengan bahasa Inggris:
+
+```csharp
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
 taggedContent.RootElement.AppendChild(pEN);
+```
 
-// Paragraf (Jerman)
+Baris ini menambahkan sapaan ramah dalam bahasa Inggris. Seperti menyapa pembaca Anda dalam bahasa pilihan mereka.
+
+### Menambahkan Paragraf Bahasa Jerman
+
+Selanjutnya, mari kita tambahkan paragraf bahasa Jerman:
+
+```csharp
 LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
 pDE.SetText("Hallo Welt!");
 pDE.Language = "de-DE";
 taggedContent.RootElement.AppendChild(pDE);
+```
 
-// Paragraf (bahasa Prancis)
+Dengan ini, Anda menjangkau audiens berbahasa Jerman dan memperluas aksesibilitas dokumen Anda.
+
+### Menambahkan Paragraf Bahasa Prancis
+
+Demikian pula untuk bahasa Prancis:
+
+```csharp
 LogicalStructure.ParagraphElement pFR = taggedContent.CreateParagraphElement();
 pFR.SetText("Bonjour le monde!");
 pFR.Language = "fr-FR";
 taggedContent.RootElement.AppendChild(pFR);
+```
 
-// Paragraf (bahasa Spanyol)
+Sekali lagi, kami merangkul keberagaman dengan menyertakan teks bahasa Prancis. 
+
+### Menambahkan Paragraf Bahasa Spanyol
+
+Terakhir, mari kita bahas bahasa Spanyol:
+
+```csharp
 LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
 pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
-
-// Simpan Dokumen Pdf yang Ditandai
-document.Save(dataDir + "SetupLanguageAndTitle.pdf");
-
 ```
+
+Dengan tambahan ini, Anda menunjukkan bahwa dokumen Anda berbicara dalam banyak bahasa, sehingga mendorong inklusivitas.
+
+## Langkah 7: Simpan Dokumen PDF yang Ditandai
+
+Sekarang setelah Anda membuat dokumen dengan berbagai bahasa, waktunya menyimpannya. 
+
+```csharp
+document.Save(dataDir + "SetupLanguageAndTitle.pdf");
+```
+
+Dan begitu saja, kreasi Anda selesai dan disimpan! Anggap saja ini seperti menyegel amplop sebelum mengirim surat Anda.
 
 ## Kesimpulan
 
-Selamat! Kini Anda tahu cara mengonfigurasi bahasa dan judul dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menjelajahi lebih jauh fitur-fitur Aspose.PDF untuk membuat dokumen PDF yang dipersonalisasi dan multibahasa.
+Membuat PDF yang diberi tag dengan Aspose.PDF untuk .NET bukan hanya tentang pengodean; ini tentang membuat dokumen Anda mudah diakses dan ramah bagi semua pembaca. Anda telah mempelajari cara mengatur judul, bahasa, dan bahkan menambahkan beberapa paragraf multibahasa ke PDF Anda. Dengan keterampilan ini, Anda berada di jalur yang tepat untuk menghasilkan konten digital yang inklusif. 
 
-### Pertanyaan yang Sering Diajukan
 
-#### T: Apa pentingnya mengonfigurasi bahasa dan judul dokumen PDF?
+## Pertanyaan yang Sering Diajukan
 
-A: Mengonfigurasi bahasa dan judul dokumen PDF penting untuk aksesibilitas dan metadata. Menetapkan bahasa yang benar memastikan penandaan bahasa dan ekstraksi teks yang tepat, sementara memberikan judul yang tepat meningkatkan identifikasi dan pengorganisasian dokumen.
+### Apa itu PDF yang diberi tag?
+PDF yang diberi tag adalah jenis dokumen PDF yang berisi informasi tambahan yang memungkinkan pembacaan terstruktur atas kontennya. Ini khususnya bermanfaat untuk teknologi bantuan.
 
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi konfigurasi bahasa dan judul dokumen?
+### Bagaimana Aspose.PDF untuk .NET membantu dalam membuat PDF yang diberi tag?
+Aspose.PDF untuk .NET menyediakan berbagai kelas dan metode yang memungkinkan Anda membuat dan memanipulasi PDF dengan mudah, termasuk menambahkan konten yang diberi tag untuk aksesibilitas.
 
- A: Aspose.PDF untuk .NET menyediakan API untuk mengatur judul dan bahasa dokumen dengan mudah menggunakan`SetTitle` Dan`SetLanguage` metode dari`ITaggedContent` objek. Hal ini memungkinkan Anda memastikan representasi bahasa yang akurat dan judul dokumen yang bermakna.
+### Bisakah saya membuat PDF yang diberi tag dalam berbagai bahasa?
+Ya! Aspose.PDF mendukung berbagai bahasa, sehingga Anda dapat menambahkan konten dalam berbagai bahasa dalam dokumen PDF yang sama.
 
-#### T: Dapatkah saya mengatur bahasa yang berbeda untuk bagian tertentu dari dokumen PDF menggunakan Aspose.PDF untuk .NET?
+### Apakah saya memerlukan lisensi untuk menggunakan Aspose.PDF?
+Meskipun Anda dapat mencobanya secara gratis, lisensi diperlukan untuk penggunaan produksi. Pertimbangkan untuk mengunjungi[halaman pembelian](https://purchase.aspose.com/buy) untuk informasi lebih lanjut.
 
- A: Ya, Anda dapat mengatur bahasa yang berbeda untuk bagian tertentu dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan menerapkan`Language` properti ke elemen paragraf, Anda dapat menentukan bahasa untuk setiap bagian konten, sehingga memungkinkan dokumen multibahasa.
-
-#### T: Mengapa konten multibahasa penting, dan bagaimana cara menambahkannya ke dokumen PDF menggunakan Aspose.PDF untuk .NET?
-
-J: Konten multibahasa meningkatkan aksesibilitas dan jangkauan global dokumen PDF. Aspose.PDF untuk .NET memungkinkan Anda menambahkan konten multibahasa dengan membuat elemen paragraf untuk setiap bahasa, mengatur teks dan properti bahasa yang sesuai.
-
-#### T: Bagaimana caranya`SetTitle` method contribute to improving document accessibility and organization?
-
- Sebuah:`SetTitle` metode menetapkan judul dokumen PDF, yang digunakan untuk identifikasi dokumen, hasil pencarian, dan pengaturan. Memberikan judul yang jelas dan bermakna akan meningkatkan aksesibilitas dokumen dan meningkatkan pengalaman pengguna.
-
-####  T: Apa peran dari`SetLanguage` method in PDF document configuration?
-
- Sebuah:`SetLanguage` Metode ini menetapkan bahasa default untuk dokumen PDF, memastikan penandaan bahasa dan ekstraksi teks yang akurat. Metode ini membantu menjaga konsistensi bahasa dan aksesibilitas di seluruh dokumen.
-
-#### T: Dapatkah saya menggunakan Aspose.PDF untuk .NET untuk mengatur judul dan bahasa dokumen secara dinamis berdasarkan preferensi pengguna?
-
-A: Ya, Anda dapat mengatur judul dan bahasa dokumen secara dinamis berdasarkan preferensi pengguna menggunakan Aspose.PDF untuk .NET. Dengan mengintegrasikan input pengguna atau data sistem, Anda dapat menyesuaikan judul dan bahasa dokumen sesuai kebutuhan.
-
-#### T: Bagaimana saya dapat memverifikasi bahwa konfigurasi bahasa dan judul telah diterapkan dengan benar pada dokumen PDF?
-
-J: Anda dapat memverifikasi konfigurasi bahasa dan judul dengan memeriksa properti dan metadata dokumen PDF. Anda juga dapat menggunakan penampil PDF atau alat ekstraksi teks untuk memastikan bahwa penandaan bahasa dan judul dokumen akurat.
-
-#### T: Apakah ada praktik terbaik yang harus diikuti saat mengonfigurasi bahasa dan judul dokumen PDF?
-
-J: Saat mengonfigurasi bahasa dan judul, pertimbangkan audiens yang dituju, konten dokumen, dan persyaratan aksesibilitas. Pilih judul yang deskriptif dan pengaturan bahasa yang akurat untuk meningkatkan kegunaan dan aksesibilitas dokumen.
-
-#### T: Dapatkah saya mengubah bahasa dan judul dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET?
-
- A: Ya, Anda dapat mengubah bahasa dan judul dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET. Dengan memuat dokumen, mengakses konten yang diberi tag, dan menggunakan`SetTitle` Dan`SetLanguage` metode, Anda dapat memperbarui atribut ini sesuai kebutuhan.
+### Di mana saya dapat menemukan informasi lebih lanjut tentang Aspose.PDF?
+ Anda dapat menemukan dokumentasi dan dukungan lengkap untuk Aspose.PDF[Di Sini](https://reference.aspose.com/pdf/net/).

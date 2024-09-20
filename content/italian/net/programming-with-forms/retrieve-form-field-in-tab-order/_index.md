@@ -9,7 +9,7 @@ url: /it/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
 ## Introduzione
 
-Gestire i documenti PDF e assicurarsi che funzionino come previsto, specialmente con i campi interattivi, a volte può sembrare come radunare gatti. Ma non preoccuparti, con gli strumenti giusti puoi prendere il controllo e far funzionare i tuoi PDF esattamente come desideri. In questa guida, ci immergiamo in come recuperare i campi del modulo in ordine di tabulazione usando Aspose.PDF per .NET. Questo è un trucco essenziale per semplificare l'esperienza utente, assicurandoti che la navigazione nel modulo sia fluida. 
+Gestire i documenti PDF e assicurarsi che funzionino come previsto, specialmente con i campi interattivi, a volte può sembrare come radunare dei gatti. Ma non preoccuparti, con gli strumenti giusti puoi prendere il controllo e far funzionare i tuoi PDF esattamente come vuoi. In questa guida, ci immergiamo in come recuperare i campi del modulo in ordine di tabulazione usando Aspose.PDF per .NET. Questo è un trucco essenziale per semplificare l'esperienza utente, assicurandoti che la navigazione del modulo sia fluida. 
 
 ## Prerequisiti
 

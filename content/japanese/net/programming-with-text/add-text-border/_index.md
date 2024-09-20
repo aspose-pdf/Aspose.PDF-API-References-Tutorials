@@ -2,192 +2,154 @@
 title: PDF ファイルにテキスト枠線を追加する
 linktitle: PDF ファイルにテキスト枠線を追加する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルにテキスト境界線を追加する方法を学習します。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイルにテキスト境界線を追加する方法を学習します。PDF ドキュメントを強化します。
 type: docs
 weight: 70
 url: /ja/net/programming-with-text/add-text-border/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルにテキスト境界線を追加するプロセスについて説明します。提供されている C# ソース コードは、必要な手順を示しています。
+## 導入
 
-## 要件
-始める前に、次のものがあることを確認してください。
+PDF ドキュメントの作成と操作は、今日のデジタル世界では欠かせないスキルとなっています。レポート、請求書、またはその他の種類のドキュメントを作成する場合でも、テキストの表示方法を制御できれば大きな違いが生まれます。実装したい拡張機能の 1 つは、PDF ファイル内のテキストの周囲に境界線を追加することです。このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイルにテキスト境界線を追加する手順を説明します。それでは、早速始めましょう。
 
-- マシンにインストールされている Visual Studio またはその他の C# コンパイラ。
-- Aspose.PDF for .NET ライブラリ。公式 Aspose Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
+## 前提条件
 
-## ステップ1: プロジェクトを設定する
-1. 好みの開発環境で新しい C# プロジェクトを作成します。
-2. Aspose.PDF for .NET ライブラリへの参照を追加します。
+始める前に、いくつか準備しておく必要があります。心配しないでください。とても簡単です!
 
-## ステップ2: 必要な名前空間をインポートする
-テキスト境界線を追加するコード ファイルで、ファイルの先頭に次の using ディレクティブを追加します。
+1. Visual Studio: マシンに Visual Studio がインストールされていることを確認してください。これは、コードを記述して実行する開発環境になります。
+2.  Aspose.PDF for .NET: Aspose.PDFライブラリをダウンロードしてインストールする必要があります。[Aspose PDF for .NET ダウンロード ページ](https://releases.aspose.com/pdf/net/)まずは試してみたいという方は、[無料トライアルはこちら](https://releases.aspose.com/).
+3. C# の基礎知識: C# プログラミング言語の基礎を理解しておくと、例を簡単に理解できるようになります。
+4. .NET Framework: プロジェクトに .NET Framework がインストールされ、設定されていることを確認します。
+
+これらの前提条件が整ったら、コーディングを開始する準備が整います。
+
+## パッケージのインポート
+
+これですべての設定が完了したので、プロジェクトで Aspose.PDF を使用するために必要なパッケージをインポートしましょう。これを行うには、C# ファイルの先頭に次の using ディレクティブを追加します。
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## ステップ3: ドキュメントディレクトリを設定する
-コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを指定します。
+これらの名前空間を使用すると、PDF ドキュメントやテキスト フラグメントを効率的に操作できるようになります。 
 
-## ステップ4: 新しいDocumentオブジェクトを作成する
-新しいインスタンスを作成する`Document`次のコード行を追加してオブジェクトを作成します。
+それでは、テキストの境界線を追加するプロセスを詳細な手順に分解してみましょう。各手順を説明して、内部で何が起こっているかを正確に理解できるようにします。
 
-```csharp
-Document pdfDocument = new Document();
-```
+## ステップ1: ドキュメントを設定する
 
-## ステップ5: ドキュメントにページを追加する
-ドキュメントに新しいページを追加するには、`Add`方法の`Pages`コレクション。提供されたコードでは、新しいページが変数に割り当てられます`pdfPage`.
+まず最初に、新しい PDF ドキュメントを作成する必要があります。ここですべての魔法が起こります。
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## ステップ6: TextFragmentを作成する
-作成する`TextFragment`オブジェクトを作成し、必要なテキストを入力します。テキストフラグメントの位置を`Position`プロパティ。提供されたコードでは、テキストは「メインテキスト」に設定され、ページ上の (100, 600) に配置されます。
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## ステップ7: テキストプロパティを設定する
-フォント サイズ、フォント タイプ、背景色、前景色などのテキスト プロパティをカスタマイズします。提供されているコードでは、テキスト フラグメントに対してフォント サイズ、フォント、背景色、前景色、ストロークの色などのプロパティが設定されています。
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## ステップ8: テキストの境界線を有効にする
-テキストの境界線を有効にするには、`DrawTextRectangleBorder`テキストフラグメントのプロパティ`TextState`に`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## ステップ9: TextFragmentをページに追加する
-使用`TextBuilder`クラスを追加する`TextFragment`ページにオブジェクトを追加します。
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## ステップ10: PDF文書を保存する
-PDF文書を保存するには、`Save`方法の`Document`オブジェクト。手順 3 で設定した出力ファイル パスを指定します。
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### Aspose.PDF for .NET を使用してテキスト境界線を追加するためのサンプル ソース コード 
 ```csharp
 //ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 //新しいドキュメントオブジェクトを作成する
 Document pdfDocument = new Document();
+```
+
+このステップでは、PDFファイルを保存するディレクトリを指定します。次に、`Document` PDF ドキュメントを表すクラスです。
+
+## ステップ2: 新しいページを追加する
+
+次に、ドキュメントにページを追加する必要があります。これは、テキストを配置する空白のキャンバスを追加するものと考えてください。
+
+```csharp
 //特定のページを取得する
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ここでは、`Add()`方法`Pages`私たちのコレクション`pdfDocument`オブジェクト。これにより、ドキュメントに新しいページが追加され、その参照が`pdfPage`変数。
+
+## ステップ3: テキストフラグメントを作成する
+
+次に、PDF に表示するテキストを作成しましょう。ここで、テキスト フラグメントの内容を定義します。
+
+```csharp
 //テキストフラグメントを作成
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+このコードでは、新しい`TextFragment`オブジェクトに「メインテキスト」というテキストを追加します。また、ページ上の位置も設定します。`Position`クラス。座標 (100, 600) は、テキストがページ上のどこに配置されるかを指定します。
+
+## ステップ4: テキストプロパティを設定する
+
+次に、テキスト フラグメントをカスタマイズして、見た目を魅力的にします。これには、フォント サイズ、フォントの種類、背景色、前景色の設定が含まれます。
+
+```csharp
 //テキストプロパティを設定する
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+ここでは、フォント サイズを 12 に設定し、フォントとして「Times New Roman」を使用し、赤いテキストに明るい灰色の背景色を適用します。これらのプロパティは、テキストの視認性を高めるのに役立ちます。
+
+## ステップ5: 境界線の線の色を設定する
+
+さて、次はテキストの周囲に境界線を追加するという楽しい部分です。
+
+```csharp
 //テキスト四角形の周囲に境界線（ストローク）を描画するためのStrokingColorプロパティを設定します。
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+このステップでは、テキストの周囲に描画する境界線の色を指定します。ここでは、濃い赤色を選択しました。
+
+## ステップ6: テキストの四角形の境界線を有効にする
+
+実際にテキストの周りに境界線を描くには、`DrawTextRectangleBorder`財産。
+
+```csharp
 // DrawTextRectangleBorderプロパティの値をtrueに設定する
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+このプロパティを`true`、指定されたストロークの色に基づいてテキスト四角形の周囲に境界線を描画するように Aspose.PDF に指示します。
+
+## ステップ7: テキストフラグメントをページに追加する
+
+すべてのプロパティが設定されたテキスト フラグメントの準備ができたので、それをページに追加します。
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ここでは、`TextBuilder`私たちの`pdfPage`次に、`AppendText`追加する方法`textFragment`ページに。 
+
+## ステップ8: ドキュメントを保存する
+
+最後に、PDF ドキュメントを指定されたディレクトリに保存する必要があります。これが決定的な瞬間です。
+
+```csharp
 //文書を保存する
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+このステップでは、`Save`私たちの方法`pdfDocument`オブジェクトを作成し、ファイルを保存するパスを指定します。コードを実行すると、指定したディレクトリにテキストの境界線が付いた新しく作成された PDF が見つかります。
+
 ## 結論
-Aspose.PDF for .NET を使用して PDF ドキュメントにテキスト境界線を正常に追加しました。結果の PDF ファイルは、指定した出力ファイル パスにあります。
 
-### よくある質問
+これで完了です。Aspose.PDF for .NET を使用して、PDF ファイルにテキストの境界線を正常に追加できました。このシンプルでありながら強力な機能により、PDF ドキュメントの読みやすさと美しさが大幅に向上します。レポート、パンフレット、またはその他の種類のドキュメントを作成する場合でも、テキストの書式設定を操作する方法を知っておくと便利です。
 
-#### Q: このチュートリアルの主な焦点は何ですか?
+## よくある質問
 
-A: このチュートリアルでは、Aspose.PDF for .NET ライブラリを使用して PDF ファイルにテキスト境界線を追加する手順を説明します。提供されている C# ソース コードは、これを実現するために必要な手順を示しています。
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者が .NET フレームワークを使用してプログラムで PDF ドキュメントを作成、操作、処理できるようにする強力なライブラリです。
 
-#### Q: このチュートリアルではどの名前空間をインポートする必要がありますか?
+### Aspose.PDF を無料で試すことはできますか?
+はい！Asposeは[無料トライアル](https://releases.aspose.com/)PDF ライブラリの機能をテストしてから購入することができます。
 
-A: テキスト境界線を追加するコード ファイルで、ファイルの先頭に次の名前空間をインポートします。
+### Aspose.PDF for .NET を購入するにはどうすればよいですか?
+ Aspose.PDF for .NETは、以下のサイトから直接購入できます。[購入ページ](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### Aspose.PDF のサポートはありますか?
+もちろんです！サポートを受けるには、[Aspose サポート フォーラム](https://forum.aspose.com/c/pdf/10).
 
-#### Q: ドキュメントディレクトリを指定するにはどうすればよいですか?
-
- A: コード内で次の行を見つけます`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
-
-#### Q: Document オブジェクトを作成するにはどうすればよいですか?
-
- A: ステップ4では、新しいインスタンスを作成します。`Document`次のコード行を使用してオブジェクトを作成します。
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### Q: ドキュメントにページを追加するにはどうすればよいですか?
-
- A: ステップ5では、`Add`方法の`Pages`コレクション：
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### Q: TextFragment を作成してその位置を設定するにはどうすればよいですか?
-
- A: ステップ6では、`TextFragment`オブジェクトを作成し、ページ上の位置を設定します。`Position`財産：
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### Q: テキストの境界線を含むテキストのプロパティをカスタマイズするにはどうすればよいですか?
-
-A: ステップ 7 では、フォント サイズ、フォント タイプ、背景色、前景色、テキストの境界線など、さまざまなテキスト プロパティをカスタマイズします。
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### Q: TextFragment を PDF ドキュメントに追加するにはどうすればよいですか?
-
- A: ステップ9では、`TextBuilder`クラスを追加する`TextFragment`ページに異議を唱える:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### Q: 生成された PDF ドキュメントをどのように保存しますか?
-
-A: 枠線付きのテキストを追加した後、`Save`方法の`Document` PDF ドキュメントを保存するオブジェクト:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### Q: このチュートリアルから得られる主な教訓は何ですか?
-
-A: このチュートリアルでは、Aspose.PDF for .NET を使用してテキスト境界線を追加し、PDF ドキュメントを強化する方法を学習しました。これは、PDF ファイル内の特定のテキスト コンテンツを強調する場合に特に便利です。
+### 一時ライセンスが必要な場合はどうすればいいですか?
+ Asposeは、[一時ライセンス](https://purchase.aspose.com/temporary-license/)限られた期間ライブラリを評価する必要がある開発者向けのオプション。

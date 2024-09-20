@@ -25,7 +25,7 @@ Leer hoe u opmerkingen toevoegt aan PDF-documenten met Aspose.PDF voor Java - ee
 Leer hoe u PDF-annotaties moeiteloos verwijdert met Aspose.PDF voor Java. Inclusief stapsgewijze handleiding en code.
 ### [Specifieke annotaties in PDF-bestanden verwijderen](./delete-specific-annotations-pdf-files/)
 Leer hoe u moeiteloos specifieke annotaties in PDF-bestanden verwijdert met Aspose.PDF voor Java. Stapsgewijze handleiding met codevoorbeelden voor nauwkeurig PDF-annotatiebeheer.
-### [Annotaties ophalen uit PDF-pagina's](./retrieve-annotations-pdf-pages/)
+### [Annotaties ophalen van PDF-pagina's](./retrieve-annotations-pdf-pages/)
 Leer hoe u annotaties van PDF-pagina's kunt ophalen met Aspose.PDF voor Java. Bekijk stapsgewijze instructies en codevoorbeelden in deze uitgebreide gids.
 ### [Specifieke annotaties uit PDF's extraheren](./extract-specific-annotation-pdfs/)
 Leer hoe u specifieke annotaties uit PDF's kunt extraheren met Aspose.PDF voor Java. Deze stapsgewijze handleiding biedt codevoorbeelden en FAQ's voor efficiënte PDF-annotatie-extractie.

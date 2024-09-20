@@ -48,7 +48,7 @@ pdfDocument.getPages().get_Item(1).getParagraphs().add(table);
 
 ## Stile della tabella
 
-Per definire lo stile della tabella, puoi personalizzare vari aspetti, come il colore di sfondo delle celle, il carattere del testo e altro ancora.
+Per definire lo stile della tabella, puoi personalizzare vari aspetti, come il colore dello sfondo delle celle, il carattere del testo e altro ancora.
 
 ```java
 //Codice Java per definire lo stile della tabella

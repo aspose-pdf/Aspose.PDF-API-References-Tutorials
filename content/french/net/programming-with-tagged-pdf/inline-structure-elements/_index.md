@@ -7,316 +7,175 @@ type: docs
 weight: 110
 url: /fr/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-Dans ce guide étape par étape, nous vous montrerons comment utiliser les éléments de structure en ligne avec Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de manipuler des documents PDF par programmation. Les éléments de structure en ligne vous permettent de créer une structure hiérarchique dans votre document PDF à l'aide de titres de différents niveaux et paragraphes.
+## Introduction
 
-Plongeons dans le code et apprenons à utiliser les éléments de structure en ligne avec Aspose.PDF pour .NET.
+Créer des documents accessibles et bien structurés est essentiel dans le paysage numérique actuel. Si vous avez déjà fait défiler un PDF et que vous vous êtes perdu dans une mer de texte, vous connaissez l'importance d'une bonne organisation. Le balisage des éléments dans votre PDF peut améliorer l'accessibilité, ce qui permet aux lecteurs d'écran d'interpréter plus facilement le contenu. Dans ce guide, nous nous penchons sur l'utilisation d'Aspose.PDF pour .NET pour créer des documents PDF balisés, garantissant que votre travail répond aux normes modernes en matière de structuration de documents.
 
 ## Prérequis
 
-Avant de commencer, assurez-vous de disposer des éléments suivants :
+Avant de passer à l’action, assurons-nous que vous disposez de tout ce dont vous avez besoin pour suivre :
 
-1. Bibliothèque Aspose.PDF pour .NET installée.
-2. Une connaissance de base du langage de programmation C#.
+1. Connaissances de base de C# : une connaissance de la programmation C# et des bases du framework .NET est essentielle.
+2. Visual Studio installé : vous aurez besoin d’un IDE comme Visual Studio pour écrire et exécuter votre code.
+3.  Aspose.PDF pour .NET : assurez-vous de télécharger et d'installer Aspose.PDF pour .NET. Vous pouvez le récupérer à partir du[lien de téléchargement](https://releases.aspose.com/pdf/net/).
+4. Une licence temporaire : elle est facultative, mais si vous souhaitez évaluer toutes les fonctionnalités sans limitations, envisagez d'obtenir une[permis temporaire](https://purchase.aspose.com/temporary-license/).
 
-## Étape 1 : Configuration de l'environnement
+Une fois ces conditions préalables remplies, vous êtes prêt à créer votre premier document PDF balisé !
 
-Pour commencer, ouvrez votre environnement de développement C# et créez un nouveau projet. Assurez-vous d'avoir ajouté une référence à la bibliothèque Aspose.PDF pour .NET dans votre projet.
+## Paquets d'importation
+
+Pour commencer, importons les packages nécessaires. Cela permet à votre projet de tirer parti des capacités de la bibliothèque Aspose.PDF.
+
+1. Ouvrez votre projet Visual Studio.
+2. Ajoutez une référence à la bibliothèque Aspose.PDF. Si vous ne l’avez pas encore ajoutée, vous pouvez utiliser le gestionnaire de packages NuGet pour l’installer.
+3. Incluez les espaces de noms suivants en haut de votre fichier C# :
 
 ```csharp
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Étape 2 : Création du document
+Avec ces importations en place, vous êtes assuré de réussir.
 
- La première étape consiste à créer un nouveau document PDF à l'aide de`Document` classe.
+## Décomposition du code : guide étape par étape pour créer un PDF balisé
+
+Maintenant que tout est prêt, décomposons le code étape par étape. Nous allons créer un PDF balisé avec des éléments structurés tels que des en-têtes et des paragraphes, permettant une meilleure accessibilité.
+
+### Étape 1 : définir le répertoire du document
+
+Tout d'abord, définissez le chemin d'accès où votre document sera enregistré. Il est judicieux de conserver une structure de fichiers organisée.
 
 ```csharp
-// Créer le document PDF
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Remplacez par votre chemin réel
+```
+
+### Étape 2 : Créer une instance de document PDF
+
+ Ensuite, créez une instance de`Document` classe, qui servira de conteneur pour votre contenu PDF.
+
+```csharp
 Document document = new Document();
 ```
 
-## Étape 3 : travailler avec du contenu balisé
+### Étape 3 : Accéder au contenu balisé
 
-Nous obtenons ensuite le contenu balisé du document avec lequel travailler.
+Accédez maintenant au contenu balisé du document. C'est là que la magie opère : en balisant le contenu, nous améliorons son accessibilité.
 
 ```csharp
-// Obtenir le contenu balisé du document
-ITaggedContent taggedContent = document.TaggedContent;
+ITaggedContent taggedContent = document.TaggedContent;    
 ```
 
-## Étape 4 : définir le titre et la langue du document
+### Étape 4 : définir le titre et la langue
 
-Nous pouvons maintenant définir le titre et la langue du document.
-
-```csharp
-// Définir le titre et la langue du document
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Étape 5 : Ajouter des éléments structurels en ligne
-
-Nous allons maintenant ajouter des éléments de structure en ligne tels que des titres de différents niveaux et des paragraphes à notre document.
+Définir un titre et une langue pour votre document PDF est essentiel pour les utilisateurs et les lecteurs d'écran. Cela rend votre document plus informatif et accessible.
 
 ```csharp
-// Obtenir l'élément de structure racine
-StructureElement rootElement = taggedContent.RootElement;
-
-// Ajouter des en-têtes de différents niveaux
-HeaderElement h1 = taggedContent.CreateHeaderElement(1);
-HeaderElement h2 = taggedContent.CreateHeaderElement(2);
-HeaderElement h3 = taggedContent.CreateHeaderElement(3);
-HeaderElement h4 = taggedContent.CreateHeaderElement(4);
-HeaderElement h5 = taggedContent.CreateHeaderElement(5);
-HeaderElement h6 = taggedContent.CreateHeaderElement(6);
-rootElement.AppendChild(h1);
-rootElement.AppendChild(h2);
-rootElement.AppendChild(h3);
-rootElement.AppendChild(h4);
-rootElement.AppendChild(h5);
-rootElement.AppendChild(h6);
-
-// Ajoutez du contenu à chaque en-tête
-SpanElement spanH11 = taggedContent.CreateSpanElement();
-spanH11.SetText("H1.");
-h1.AppendChild(spanH11);
-SpanElement spanH12 = taggedContent.CreateSpanElement();
-spanH12.SetText("Level 1 header");
-h1.AppendChild(spanH12);
-
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2.");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 header");
-h2.AppendChild(spanH22);
-
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3.");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 header");
-h3.AppendChild(spanH32);
-
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4.");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 header");
-h4.AppendChild(spanH42);
-
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5.");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 header");
-h5.AppendChild(spanH52);
-
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6.");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Heading level 6");
-h6.AppendChild(spanH62);
-
-// Ajouter un paragraphe
-ParagraphElement p = taggedContent.CreateParagraphElement();
-p.SetText("P.");
-rootElement.AppendChild(p);
-
-// Ajouter du contenu au paragraphe
-SpanElement span1 = taggedContent.CreateSpanElement();
-span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet.");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit.");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo.");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit.");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. So cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit.");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-```
-
-Ici, nous créons des éléments de structure en ligne, tels que des titres de différents niveaux et un paragraphe, et leur ajoutons du contenu.
-
-## Étape 6 : Enregistrer le document PDF balisé
-
-Enfin, nous sauvegardons le document PDF balisé.
-
-```csharp
-// Enregistrer le document PDF balisé
-document.Save(dataDir + "InlineStructureElements.pdf");
-```
-
-### Exemple de code source pour les éléments de structure en ligne à l'aide d'Aspose.PDF pour .NET 
-
-```csharp
-
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Créer un document PDF
-Document document = new Document();
-
-// Obtenez du contenu pour travailler avec TaggedPdf
-ITaggedContent taggedContent = document.TaggedContent;
-
-// Définir le titre et la langue du document
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Obtenir l'élément de structure de la racine
+### Étape 5 : Obtenir l’élément de structure racine
+
+Commençons par ajouter des éléments à votre document. Tout d'abord, récupérez l'élément de structure racine du contenu balisé, qui sert de base à la construction de la structure de votre document.
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+### Étape 6 : Créer des éléments d’en-tête
+
+Il est maintenant temps de créer des éléments d'en-tête. Cela aidera à organiser le contenu dans une hiérarchie. Nous allons créer six niveaux d'en-têtes.
+
+```csharp
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
 HeaderElement h4 = taggedContent.CreateHeaderElement(4);
 HeaderElement h5 = taggedContent.CreateHeaderElement(5);
 HeaderElement h6 = taggedContent.CreateHeaderElement(6);
+```
+
+### Étape 7 : ajouter des en-têtes à l'élément racine
+
+Après avoir créé les éléments d'en-tête, ajoutez-les à l'élément racine. Cela permet de construire la hiérarchie structurelle du document.
+
+```csharp
 rootElement.AppendChild(h1);
 rootElement.AppendChild(h2);
 rootElement.AppendChild(h3);
 rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
+```
+
+### Étape 8 : ajouter du texte à chaque en-tête
+
+Ajoutons maintenant du texte à chaque en-tête. Il s'agit d'un processus simple mais essentiel pour rendre votre document utile. 
+
+```csharp
+// H1
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1. ");
 h1.AppendChild(spanH11);
 SpanElement spanH12 = taggedContent.CreateSpanElement();
 spanH12.SetText("Level 1 Header");
 h1.AppendChild(spanH12);
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2. ");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 Header");
-h2.AppendChild(spanH22);
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3. ");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 Header");
-h3.AppendChild(spanH32);
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4. ");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 Header");
-h4.AppendChild(spanH42);
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5. ");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 Header");
-h5.AppendChild(spanH52);
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6. ");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Level 6 Header");
-h6.AppendChild(spanH62);
+
+// Répétez pour H2 - H6 comme indiqué ci-dessus
+```
+
+### Étape 9 : Créer un élément de paragraphe
+
+Ensuite, ajoutons un élément de paragraphe. Il servira de zone de contenu principale de votre PDF. 
+
+```csharp
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P. ");
 rootElement.AppendChild(p);
+```
+
+### Étape 10 : ajouter du texte au paragraphe
+
+Maintenant que nous avons notre élément paragraphe, il est temps de le remplir avec du texte. Vous pouvez ajouter plusieurs sections pour composer votre contenu.
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
 p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet. ");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit. ");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo. ");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. ");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. ");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-
-// Enregistrer le document PDF balisé
-document.Save(dataDir + "InlineStructureElements.pdf");
-
+// Continuez à ajouter des portées supplémentaires si nécessaire
 ```
+
+### Étape 11 : Enregistrer le document PDF balisé
+
+Enfin, après avoir ajouté tout votre contenu, vous devez enregistrer votre document. Terminons !
+
+```csharp
+document.Save(dataDir + "InlineStructureElements.pdf");
+```
+
+Et voilà ! Vous disposez désormais d’un document PDF balisé, structuré et accessible.
 
 ## Conclusion
 
-Félicitations ! Vous avez appris à utiliser les éléments de structure en ligne avec Aspose.PDF pour .NET. Vous pouvez désormais créer une structure hiérarchique dans votre document PDF en utilisant des titres de différents niveaux et paragraphes. Explorez d'autres fonctionnalités d'Aspose.PDF pour découvrir tout son potentiel.
+Créer des documents PDF balisés peut sembler intimidant, mais avec Aspose.PDF pour .NET, c'est un jeu d'enfant ! En suivant ce guide étape par étape, vous maîtrisez les bases de la structuration de documents. N'oubliez pas qu'un balisage approprié de votre PDF améliore son accessibilité, garantissant ainsi que votre contenu précieux atteigne un public plus large. Alors, allez-y et rendez vos PDF non seulement beaux mais aussi conviviaux !
 
-### FAQ
+## FAQ
 
-#### Q : Quels sont les éléments de structure en ligne dans un document PDF et comment contribuent-ils à la création d’une structure hiérarchique ?
+### Qu'est-ce qu'un PDF balisé ?
+Un PDF balisé est un PDF qui inclut des informations sur la structure du document, le rendant plus accessible aux utilisateurs handicapés.
 
-R : Les éléments de structure en ligne dans un document PDF, tels que les titres de différents niveaux et les paragraphes, sont utilisés pour créer une structure hiérarchique qui organise et présente le contenu de manière structurée. Ces éléments vous permettent d'établir une hiérarchie et un flux d'informations clairs au sein du document.
+### Pourquoi le balisage est-il important dans les PDF ?
+Le balisage améliore l’accessibilité, permettant aux lecteurs d’écran d’interpréter clairement le document, offrant ainsi une meilleure expérience aux utilisateurs handicapés.
 
-#### Q : Comment les éléments de structure en ligne peuvent-ils améliorer la lisibilité et l’organisation d’un document PDF ?
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, vous pouvez évaluer Aspose.PDF pour .NET via un[essai gratuit](https://releases.aspose.com/).
 
-: Les éléments de structure en ligne, notamment les titres et les paragraphes, contribuent à améliorer la lisibilité et l'organisation d'un document PDF en fournissant une structure logique. Les titres indiquent différents niveaux d'importance et aident les lecteurs à parcourir le contenu, tandis que les paragraphes regroupent les informations connexes.
+### Où puis-je obtenir de l'aide pour Aspose.PDF ?
+ L'assistance est accessible via le[Forum d'assistance Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### Q : Comment Aspose.PDF pour .NET facilite-t-il l’utilisation d’éléments de structure en ligne ?
-
-R : Aspose.PDF pour .NET propose des classes et des méthodes pour créer et manipuler des éléments de structure en ligne, tels que des titres et des paragraphes. Ces éléments peuvent être personnalisés, organisés hiérarchiquement et enrichis de contenu pour améliorer la présentation visuelle et l'accessibilité du document.
-
-####  Q : Quel est le but de la`taggedContent` object in relation to inline structure elements?
-
- A : Le`taggedContent` objet, obtenu à partir du`TaggedContent` propriété d'un`Document`, vous permet de travailler avec des éléments structurés, y compris des éléments de structure en ligne. Il vous permet de créer, de personnaliser et d'organiser des titres et des paragraphes dans le document.
-
-#### Q : Comment les éléments de structure en ligne aident-ils à créer une hiérarchie de documents claire ?
-
-R : Les éléments de structure en ligne, tels que les titres de différents niveaux, contribuent à établir une hiérarchie claire et bien définie dans le document. Les lecteurs peuvent identifier rapidement les sujets principaux, les sous-sujets et le contenu associé, ce qui facilite la navigation et la compréhension du document.
-
-#### Q : Puis-je personnaliser l'apparence et la mise en forme des éléments de structure en ligne à l'aide d'Aspose.PDF pour .NET ?
-
-R : Oui, vous pouvez personnaliser l'apparence et la mise en forme des éléments de structure en ligne. Vous pouvez définir des propriétés telles que les styles de police, les tailles, les couleurs, l'alignement, l'indentation et l'espacement pour obtenir la présentation visuelle souhaitée pour les titres et les paragraphes.
-
-#### Q : Comment créer et ajouter des titres de différents niveaux à un document PDF à l'aide d'éléments de structure en ligne dans Aspose.PDF pour .NET ?
-
- A : Vous pouvez créer des titres de différents niveaux à l'aide de la`CreateHeaderElement`méthode, puis ajoutez-les à l'élément de structure racine. Par la suite, vous pouvez ajouter du contenu à chaque élément d'en-tête à l'aide de la méthode`CreateSpanElement` méthode pour créer des étendues de texte.
-
-#### Q : Puis-je utiliser des éléments de structure en ligne pour créer des listes, des puces ou d’autres types d’organisation de contenu dans un document PDF ?
-
-R : Bien que les éléments de structure en ligne soient principalement utilisés pour les titres et les paragraphes, vous pouvez les utiliser en combinaison avec d'autres fonctionnalités offertes par Aspose.PDF pour .NET pour créer des listes, des puces, des tableaux et d'autres types d'organisation de contenu pour une structure de document complète.
-
-#### Q : Comment les éléments de structure en ligne contribuent-ils à l’accessibilité des documents ?
-
-R : Les éléments de structure en ligne jouent un rôle crucial dans l'amélioration de l'accessibilité des documents. Des titres et des paragraphes correctement structurés fournissent une hiérarchie claire du document qui aide les lecteurs d'écran et autres technologies d'assistance à interpréter et à transmettre avec précision le contenu aux utilisateurs handicapés.
-
-#### Q : Puis-je explorer des utilisations plus avancées des éléments de structure en ligne, telles que la création d’éléments interactifs ou l’intégration de contenu multimédia ?
-
-R : Absolument ! Bien que ce didacticiel se concentre sur la création de titres et de paragraphes, Aspose.PDF pour .NET offre des fonctionnalités avancées pour créer des éléments interactifs, intégrer du contenu multimédia, ajouter des hyperliens, etc. Consultez la documentation et les exemples de la bibliothèque pour découvrir ces fonctionnalités avancées.
+### Comment puis-je acheter la licence Aspose.PDF pour .NET ?
+ Vous pouvez acheter une licence directement auprès du[page d'achat](https://purchase.aspose.com/buy).

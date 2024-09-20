@@ -105,7 +105,7 @@ Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataD
 
 ## 結論
 
-現在你就得到它了！只需五個簡單的步驟，您就可以使用 Aspose.PDF for .NET 成功將組合方塊新增至 PDF 。這項強大的功能只是 Aspose.PDF 提供的用於自訂和操作 PDF 文件的眾多功能之一。無論您是建立複雜的表單還是簡單的下拉列表，Aspose.PDF for .NET 都能滿足您的需求。既然您已經看到它有多麼簡單，為什麼不探索其他一些表單字段，例如複選框、文字字段或單選按鈕呢？
+現在你就擁有了！只需五個簡單的步驟，您就可以使用 Aspose.PDF for .NET 成功將組合方塊新增至 PDF 。這項強大的功能只是 Aspose.PDF 提供的用於自訂和操作 PDF 文件的眾多功能之一。無論您是建立複雜的表單還是簡單的下拉列表，Aspose.PDF for .NET 都能滿足您的需求。既然您已經看到它有多麼簡單，為什麼不探索其他一些表單字段，例如複選框、文字字段或單選按鈕呢？
 
 ## 常見問題解答
 

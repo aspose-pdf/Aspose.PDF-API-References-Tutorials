@@ -2,236 +2,194 @@
 title: Excel-werkbladgegevens exporteren naar tabel
 linktitle: Excel-werkbladgegevens exporteren naar tabel
 second_title: Aspose.PDF voor .NET API-referentie
-description: Exporteer gegevens van een Excel-blad naar een PDF-tabel met Aspose.PDF voor .NET.
+description: Leer hoe u Excel-werkbladgegevens exporteert naar een PDF-tabel met Aspose.PDF voor .NET. Stapsgewijze zelfstudie met codevoorbeelden, vereisten en nuttige tips.
 type: docs
 weight: 70
 url: /nl/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-In deze tutorial leren we hoe u gegevens uit een Excel-werkblad kunt exporteren en een tabel in een PDF-document kunt maken met behulp van de Aspose.PDF voor .NET-bibliotheek. We lopen stap voor stap door de broncode en leggen elke sectie gedetailleerd uit. Aan het einde van deze tutorial kunt u PDF-bestanden genereren met tabellen die gegevens uit Excel-werkbladen bevatten. Laten we beginnen!
+## Invoering
+
+Heb je ooit gegevens uit een Excel-werkblad moeten exporteren naar een PDF-bestand, netjes gerangschikt in een tabelformaat? Stel je voor dat je een heleboel gegevens in Excel hebt, maar ze moet delen als een professioneel ogende PDF. Dat klinkt ingewikkeld, toch? Maar met Aspose.PDF voor .NET kun je deze taak in een handomdraai uitvoeren. In deze tutorial leiden we je door het proces van het exporteren van Excel-werkbladgegevens naar een tabel in een PDF-document met behulp van Aspose.PDF voor .NET. We nemen je stap voor stap mee en breken alles af, zodat je je aan het einde een professional voelt, zelfs als je hier nieuw in bent.
 
 ## Vereisten
-Voordat we beginnen, zorg ervoor dat u het volgende heeft:
 
-- Basiskennis van de programmeertaal C#
-- Visual Studio geïnstalleerd op uw machine
-- Aspose.PDF voor .NET-bibliotheek toegevoegd aan uw project
+Voordat we beginnen met coderen, moeten we eerst een paar dingen regelen:
 
-## Stap 1: De omgeving instellen
-Om te beginnen, maak een nieuw C#-project in Visual Studio. Voeg de referentie toe aan de Aspose.PDF voor .NET-bibliotheek door met de rechtermuisknop op uw project te klikken in de Solution Explorer, 'Manage NuGet Packages' te selecteren en te zoeken naar 'Aspose.PDF'. Installeer het pakket en u bent klaar om te gaan.
+1.  Aspose.PDF voor .NET Library – Zorg ervoor dat u de nieuwste versie hebt geïnstalleerd. U kunt[download het hier](https://releases.aspose.com/pdf/net/).
+2.  Aspose.Cells voor .NET Library – U hebt dit nodig om Excel-bewerkingen uit te voeren. Download het van[hier](https://releases.aspose.com/cells/net/).
+3. .NET-ontwikkelomgeving – Een hulpmiddel als Visual Studio is perfect voor codering.
+4. Excel-bestand – Zorg dat u een Excel-bestand met de gegevens die u wilt exporteren bij de hand hebt.
 
-## Stap 2: Het Excel-werkblad laden
-In de eerste stap van onze code definiëren we het pad naar de directory die het Excel-document bevat. Vervang "UW DOCUMENTENMAP" door het daadwerkelijke directorypad waar uw Excel-bestand zich bevindt.
+ Als u de bibliotheken Aspose.PDF en Aspose.Cells niet hebt, kunt u beginnen met een[gratis proefperiode](https://releases.aspose.com/).
+
+## Pakketten importeren
+
+Zorg er allereerst voor dat u zowel de Aspose.PDF- als de Aspose.Cells-bibliotheken in uw project hebt geïnstalleerd. U kunt ze installeren met NuGet Package Manager in Visual Studio.
+
+Hier leest u hoe u de benodigde pakketten in uw C#-code importeert:
+
+```csharp
+using System.Data;
+using System.IO;
+using System.Linq;
+```
+
+Nu de vereisten zijn ingesteld, gaan we het proces van het exporteren van gegevens van een Excel-blad naar een tabel in een PDF-document doorlopen.
+
+## Stap 1: Laad de Excel-werkmap
+
+Om te beginnen moet u uw Excel-werkmap in het programma laden. In deze stap gebruiken we Aspose.Cells om het Excel-bestand te openen.
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
+// Laad de Excel-werkmap
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
 ```
 
-Hier gebruiken we de Aspose.Cells-bibliotheek om de Excel-werkmap te laden. Zorg ervoor dat u "newBook1.xlsx" vervangt door de naam van uw Excel-bestand.
+ Uitleg: Hier geven we het pad op naar de map waar ons Excel-bestand zich bevindt en laden we de werkmap met behulp van`Aspose.Cells.Workbook` Zorg ervoor dat je het aanpast`"YOUR DOCUMENT DIRECTORY"` om naar de locatie van uw bestand te verwijzen.
 
-## Stap 3: Toegang tot het werkblad
- Vervolgens moeten we toegang krijgen tot het eerste werkblad in het Excel-bestand. We doen dit met behulp van de`Worksheets` verzameling van de`Workbook` voorwerp.
+## Stap 2: Toegang tot het eerste werkblad
+
+Nadat we de werkmap hebben geladen, moeten we toegang krijgen tot het eerste werkblad waarin onze gegevens zijn opgeslagen.
 
 ```csharp
 // Toegang krijgen tot het eerste werkblad in het Excel-bestand
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
 ```
 
- Als uw Excel-bestand meerdere werkbladen bevat, kunt u de indexwaarde wijzigen`[0]` om toegang te krijgen tot een ander werkblad.
+Uitleg: Deze stap is eenvoudig: we pakken het eerste werkblad uit de werkmap, dat de te exporteren gegevens bevat.
 
-## Stap 4: Gegevens exporteren naar DataTable
- Nu gaan we de inhoud van het Excel-werkblad exporteren naar een`DataTable` object. We specificeren het bereik van cellen dat geëxporteerd moet worden met behulp van de`ExportDataTable` methode.
+## Stap 3: Gegevens exporteren naar DataTable
+
+Nu gaan we de gegevens uit het Excel-bestand exporteren naar een DataTable-object. Dit object fungeert als tussenpersoon voor het overbrengen van de gegevens naar de PDF.
 
 ```csharp
-// De inhoud van 7 rijen en 2 kolommen exporteren, beginnend bij de 1e cel, naar DataTable
+// De inhoud van 7 rijen en 2 kolommen exporteren vanaf de 1e cel naar DataTable
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 ```
 
-In dit voorbeeld exporteren we alle rijen en kolommen vanaf de eerste cel (0, 0) tot de laatste cel in het werkblad. Stel het juiste bereik in op basis van uw vereisten.
+ Uitleg: De`ExportDataTable` methode extraheert de gegevens vanaf de eerste cel van het werkblad en bestrijkt alle rijen en kolommen. Deze gegevens worden vervolgens opgeslagen in een`DataTable` voor verder gebruik.
 
-## Stap 5: Een PDF-document maken
-Nu gaan we een nieuw PDF-document maken met behulp van de Aspose.PDF-bibliotheek.
+## Stap 4: Maak een nieuw PDF-document
+
+Vervolgens moeten we een nieuw PDF-document maken met behulp van Aspose.PDF.
 
 ```csharp
 // Een Document-instantie instantiëren
-Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
+Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
+
+// Een pagina maken in het documentexemplaar
+Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Hiermee wordt een leeg PDF-document gemaakt, waar we inhoud aan kunnen toevoegen.
+ Uitleg: Hier initialiseren we een nieuwe`Aspose.Pdf.Document`en voeg er een pagina aan toe. Deze pagina zal later de tabel bevatten die we maken van de Excel-gegevens.
 
-## Stap 6: Een pagina en tabel toevoegen
-Om de gegevens in een tabelformaat weer te geven, moeten we een pagina en een tabel aan het PDF-document toevoegen.
+## Stap 5: Een tabelobject in PDF maken
+
+Laten we verder gaan met het maken van een tabel in het PDF-document.
 
 ```csharp
-// Een pagina maken in het documentexemplaar
-Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
-
 // Een tabelobject maken
-Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 
-// Voeg het Table-object toe aan de alineaverzameling van de sectie
-sec1.Paragraphs.Add(tab1);
+// Voeg het Tabel-object toe aan de alineaverzameling van de pagina
+page.Paragraphs.Add(table);
 ```
 
-Hier maken we een nieuwe pagina en een tabelobject. Vervolgens voegen we de tabel toe aan de paragrafenverzameling van de pagina.
+ Uitleg: Wij creëren een`Aspose.Pdf.Table` object en voeg het toe aan de alineaverzameling van de pagina. Dit zorgt ervoor dat de tabel op de pagina wordt weergegeven.
 
-## Stap 7: Tabeleigenschappen instellen
-Voordat we de gegevens importeren, moeten we een aantal eigenschappen van de tabel instellen, zoals de kolombreedtes en standaardcelranden.
+## Stap 6: Kolombreedtes en randen instellen
+
+Tabellen in PDF hebben gedefinieerde kolombreedtes nodig. We voegen ook randen toe om de tabel leesbaarder te maken.
 
 ```csharp
 // Kolombreedtes van de tabel instellen
-tab1.ColumnWidths = "40 100 100";
+table.ColumnWidths = "40 100 100";
 
-// Standaard celrand van de tabel instellen met behulp van het BorderInfo-object
-tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
+// Standaard celrand instellen
+table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-In dit voorbeeld stellen we de kolombreedtes in op 40, 100 en 100 eenheden. Pas de waarden aan op basis van uw gegevens. We stellen ook de standaard celrand in om randen aan alle zijden van elke cel weer te geven.
+ Uitleg: We stellen de breedtes van de drie kolommen in en geven alle cellen een standaardrand met een dikte van`0.1F`.
 
-## Stap 8: Gegevens importeren in de tabel
- Nu gaan we de gegevens importeren van de`DataTable` object in de tabel plaatsen met behulp van de`ImportDataTable` methode.
+## Stap 7: Gegevens importeren uit DataTable naar PDF-tabel
+
+Nu is het tijd om de gegevens uit de DataTable te importeren in onze PDF-tabel.
 
 ```csharp
-// Importeer gegevens in het Table-object vanuit de hierboven gemaakte DataTable
-tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
+// Gegevens importeren in het tabelobject vanuit de DataTable
+table.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
 ```
 
- Hier specificeren we het bereik van rijen en kolommen die geïmporteerd moeten worden. In dit voorbeeld importeren we alle rijen en kolommen van de`dataTable` voorwerp.
+ Uitleg: De`ImportDataTable`methode brengt alle gegevens over van de`DataTable` naar de PDF-tabel. Hiermee wordt de tabel gevuld met de gegevens uit uw Excel-sheet.
 
-## Stap 9: De tabel opmaken
-Om het uiterlijk van de tabel te verbeteren, kunnen we opmaak toepassen op specifieke cellen of rijen. In deze stap formatteren we de eerste rij en afwisselende rijen van de tabel.
+## Stap 8: Stijl de koptekstrij
+
+Laten we de koptekstrij van de tabel opmaken door de achtergrondkleur, het lettertype en de uitlijning te wijzigen.
 
 ```csharp
-// Haal de 1e rij uit de tabel
-Aspose.Pdf.Row row1 = tab1.Rows[0];
+// Haal de eerste rij uit de tabel
+Aspose.Pdf.Row headerRow = table.Rows[0];
 
-// Formatteer de eerste rij
-foreach(Aspose.Pdf.Cell curCell in row1.Cells)
+// Stijl instellen voor de koptekstrij
+foreach (Aspose.Pdf.Cell cell in headerRow.Cells)
 {
-     // Stel de achtergrondkleur van de cellen in de eerste rij in
-     curCell.BackgroundColor = Color.Blue;// Stel het gezicht in voor de cellen in de eerste rij
-     curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-    
-     // Stel de letterkleur van de cellen in de eerste rij in
-     curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-    
-     // Stel de tekstuitlijning in voor de cellen in de eerste rij
-     curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-}
-
-// Alternatieve rijopmaak
-for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
-{
-     foreach(Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
-     {
-         // De achtergrondkleur van de cellen in afwisselende rijen instellen
-         curCell.BackgroundColor = Color.Gray;
-        
-         // Stel de tekstkleur van de cellen in afwisselende rijen in
-         curCell.DefaultCellTextState.ForegroundColor = Color.White;
-     }
+    cell.BackgroundColor = Color.Blue;
+    cell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
+    cell.DefaultCellTextState.ForegroundColor = Color.Yellow;
+    cell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 ```
 
-Hier itereren we door de cellen in de eerste rij en stellen hun achtergrondkleur, lettertype, lettertypekleur en tekstuitlijning in. Vervolgens itereren we door alle cellen in de afwisselende rijen en stellen hun achtergrond- en tekstkleur in.
+Uitleg: We doorlopen alle cellen in de eerste rij (kop) en stellen de achtergrondkleur in op blauw, de tekstkleur op geel en lijnen de tekst uit op het midden.
 
-## Stap 10: Het PDF-document opslaan
-Ten slotte slaan we het PDF-document op de opgegeven locatie op.
+## Stap 9: Stijl de resterende rijen
+
+Om onderscheid te maken tussen de koptekst en de rest van de rijen, voegen we een andere stijl toe voor de overige rijen.
+
+```csharp
+for (int i = 1; i <= dataTable.Rows.Count; i++)
+{
+    foreach (Aspose.Pdf.Cell cell in table.Rows[i].Cells)
+    {
+        cell.BackgroundColor = Color.Gray;
+        cell.DefaultCellTextState.ForegroundColor = Color.White;
+    }
+}
+```
+
+Uitleg: Voor alle rijen behalve de koptekst stellen we een grijze achtergrond en een witte tekstkleur in.
+
+## Stap 10: Sla het PDF-document op
+
+Sla ten slotte het PDF-document met de tabel op.
 
 ```csharp
 // PDF opslaan
-pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
+pdfDocument.Save(dataDir + "Exceldata_toPdf_table.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het gewenste mappad en de gewenste bestandsnaam voor het PDF-uitvoerbestand.
-
-### Voorbeeldbroncode voor het exporteren van Excel-werkbladgegevens naar een tabel met behulp van Aspose.PDF voor .NET
-
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
-// Toegang krijgen tot het eerste werkblad in het Excel-bestand
-Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
-// De inhoud van 7 rijen en 2 kolommen exporteren, beginnend bij de 1e cel, naar DataTable
-DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
-
-// Instantieer een Document-instance
-Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Een pagina maken in het documentexemplaar
-Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
-
-// Een tabelobject maken
-Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-
-// Voeg het Table-object toe aan de alineaverzameling van de sectie
-sec1.Paragraphs.Add(tab1);
-
-// Stel kolombreedtes van de tabel in. We moeten de ColumnCount handmatig opgeven.
-// Omdat het huidige Excel-werkblad drie kolommen heeft, specificeren we hetzelfde aantal
-tab1.ColumnWidths = "40 100 100";
-
-// Standaard celrand van de tabel instellen met behulp van het BorderInfo-object
-tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-
-// Importeer gegevens in het Table-object vanuit de hierboven gemaakte DataTable
-tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-// Haal de 1e rij uit de tabel
-Aspose.Pdf.Row row1 = tab1.Rows[0];
-
-// Loop door alle cellen in de eerste rij en stel hun achtergrondkleur in op blauw
-foreach (Aspose.Pdf.Cell curCell in row1.Cells)
-{
-	// Stel de achtergrond in van alle cellen in de eerste rij van de tabel.
-	curCell.BackgroundColor = Color.Blue;
-	// Stel het lettertype in voor de cellen van de eerste rij in de tabel.
-	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	// Stel de lettertypekleur in van alle cellen in de eerste rij van de tabel.
-	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-	// Stel de tekstuitlijning voor de cellen van de eerste rij in op Centreren.
-	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-}
-
-for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
-{
-	// Loop door alle cellen in de eerste rij en stel hun achtergrondkleur in op blauw
-	foreach (Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
-	{
-		// Stel de achtergrondkleur in voor alle cellen, behalve de eerste rij.
-		curCell.BackgroundColor = Color.Gray;
-		// Stel de tekstkleur in voor alle cellen, behalve de eerste rij.
-		curCell.DefaultCellTextState.ForegroundColor = Color.White;
-	}
-}
-
-// PDF opslaan
-pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
-```
+Uitleg: We slaan de PDF op in de opgegeven directory. Voilà! Uw Excel-gegevens staan nu in een prachtig opgemaakte PDF-tabel.
 
 ## Conclusie
-In deze tutorial hebben we geleerd hoe u gegevens van een Excel-werkblad naar een PDF-tabel kunt exporteren met behulp van de Aspose.PDF voor .NET-bibliotheek. We hebben het stapsgewijze proces behandeld van het laden van het Excel-werkblad, het maken van een PDF-document, het toevoegen van een tabel, het importeren van gegevens en het formatteren van de tabel. U kunt nu programmatisch PDF-bestanden genereren met tabellen die Excel-gegevens bevatten.
 
-### Veelgestelde vragen
+En daar heb je het! In slechts een paar stappen heb je gegevens uit een Excel-werkblad geëxporteerd naar een tabel in een PDF met Aspose.PDF voor .NET. Door het proces op te splitsen en het gaandeweg te stylen, kun je je uitvoer aanpassen en ervoor zorgen dat je gegevens er schoon en professioneel uitzien. Dus de volgende keer dat iemand je een Excel-bestand geeft en vraagt om een PDF-rapport, weet je precies wat je moet doen.
 
-#### V: Wat is het doel van het exporteren van Excel-werkbladgegevens naar een PDF-tabel?
+## Veelgestelde vragen
 
-A: Door Excel-werkbladgegevens te exporteren naar een PDF-tabel kunt u de gegevens in een gestructureerd en georganiseerd formaat presenteren. Hiermee kunt u PDF-bestanden genereren met tabellen die gegevens uit Excel-werkbladen bevatten, waardoor het eenvoudiger wordt om informatie te delen en te bewaren in een draagbaar documentformaat.
+### Kan ik de tabel verder aanpassen?
+Absoluut! Je kunt kleuren, lettertypen, uitlijning en zelfs randen aan specifieke cellen toevoegen.
 
-#### V: Kan ik het uiterlijk van de PDF-tabel aanpassen?
+### Is Aspose.PDF voor .NET gratis?
+ Het biedt een gratis proefperiode, maar voor langdurig gebruik heb je een licentie nodig. Je kunt[koop het hier](https://purchase.aspose.com/buy).
 
-A: Ja, u kunt het uiterlijk van de PDF-tabel aanpassen met behulp van verschillende eigenschappen die worden geleverd door Aspose.PDF voor .NET. In de meegeleverde C#-broncode kunt u de kolombreedtes, celranden, tekstuitlijning, lettertypestijl en meer aanpassen aan uw specifieke vereisten.
+### Kan ik alleen specifieke rijen en kolommen exporteren?
+ Ja, u kunt de parameters in de`ExportDataTable` Methode om specifieke bereiken te exporteren.
 
-#### V: Hoe kan ik Excel-bestanden met meerdere werkbladen verwerken?
+### Werkt dit met grote Excel-bestanden?
+Ja, Aspose.Cells is ontworpen om grote Excel-bestanden efficiënt te verwerken.
 
- A: In de meegeleverde C#-code hebben we toegang gekregen tot het eerste werkblad in het Excel-bestand met behulp van de index`[0]` . Als uw Excel-bestand meerdere werkbladen bevat, kunt u deze openen door de indexwaarde dienovereenkomstig te wijzigen, zoals`[1]` voor het tweede werkblad of`[2]` voor het derde werkblad.
-
-#### V: Kan ik een andere opmaak toepassen op specifieke rijen of cellen in de PDF-tabel?
-
-A: Ja, u kunt verschillende opmaak toepassen op specifieke rijen of cellen in de PDF-tabel. In de meegeleverde C#-broncode hebben we gedemonstreerd hoe u de eerste rij en afwisselende rijen anders kunt opmaken door hun achtergrondkleur, lettertypestijl en lettertypekleur te wijzigen. U kunt vergelijkbare opmaaktechnieken toepassen op specifieke rijen of cellen indien nodig.
-
-#### V: Is Aspose.PDF voor .NET de enige bibliotheek waarmee Excel-gegevens naar een PDF-tabel kunnen worden geëxporteerd?
-
-A: Aspose.PDF voor .NET is een krachtige bibliotheek voor het werken met PDF-documenten in .NET-toepassingen. Hoewel er mogelijk andere bibliotheken beschikbaar zijn, biedt Aspose.PDF voor .NET een breed scala aan functies en mogelijkheden voor het genereren, bewerken en exporteren van PDF-bestanden met tabellen uit Excel-gegevens, waardoor het een populaire keuze is voor dergelijke taken.
+### Hoe kan ik meer pagina's aan de PDF toevoegen?
+ Je kunt gebruiken`pdfDocument.Pages.Add()` om zoveel pagina's toe te voegen als u nodig hebt.

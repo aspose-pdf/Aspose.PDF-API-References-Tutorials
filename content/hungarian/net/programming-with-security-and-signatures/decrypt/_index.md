@@ -19,7 +19,7 @@ Mielőtt belevetnénk magunkat a PDF-fájlok visszafejtésének aprólékos dolg
 
 1. Alapvető C# ismerete: Ismernie kell a C# programozási nyelv alapjait, mivel egy kis kódot fogunk írni.
 2. A Visual Studio telepítve: Integrált fejlesztői környezetként (IDE) a Visual Studio-t fogjuk használni. Győződjön meg arról, hogy telepítve van a gépén.
-3.  Aspose.PDF for .NET Library: Az Aspose.PDF könyvtárnak elérhetőnek kell lennie. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+3.  Aspose.PDF for .NET Library: Az Aspose.PDF könyvtárnak elérhetőnek kell lennie. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 4. PDF-fájlok tesztelésre: Szerezzen be egy PDF-fájlt, amelyet vissza szeretne fejteni. Ezenkívül győződjön meg arról, hogy rendelkezik a PDF jelszavával. 
 5. .NET-keretrendszer beállítása: Győződjön meg arról, hogy a környezete kompatibilis .NET-keretrendszerrel van konfigurálva.
 
@@ -31,7 +31,7 @@ PDF fájlok Aspose.PDF használatával történő visszafejtéséhez vezető utu
 
 ### Hozzon létre egy új projektet
 
-Nyissa meg a Visual Studio-t egy új C# projekt létrehozásához.
+Nyissa meg a Visual Studio-t egy új C#-projekt létrehozásához.
 
 1. Lépjen a Fájl > Új > Projekt menüpontra.
 2. Válassza a Konzolalkalmazás lehetőséget (ügyeljen arra, hogy a .NET-verziójával kompatibilis alkalmazást válassza).
@@ -77,7 +77,7 @@ A következő lépés a titkosított PDF-fájl megnyitása. Itt az imént megado
 Document document = new Document(dataDir + "Decrypt.pdf", "password");
 ```
 
- Cserélje ki`"Decrypt.pdf"` a titkosított PDF nevével és`"password"` a megnyitásához szükséges tényleges jelszóval. Ez olyan, mintha kinyitná a digitális trezor ajtaját!
+ Cserélje ki`"Decrypt.pdf"` a titkosított PDF nevével és`"password"` a megnyitáshoz szükséges tényleges jelszóval. Ez olyan, mintha kinyitná a digitális trezor ajtaját!
 
 ## 3. lépés: A PDF visszafejtése
 

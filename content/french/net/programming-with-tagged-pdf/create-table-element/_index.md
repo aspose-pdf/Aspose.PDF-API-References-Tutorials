@@ -7,281 +7,180 @@ type: docs
 weight: 80
 url: /fr/net/programming-with-tagged-pdf/create-table-element/
 ---
-Dans ce guide étape par étape, nous vous expliquerons le processus de création d'un élément de tableau à l'aide d'Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de manipuler des documents PDF par programmation. La création d'un élément de tableau est une exigence courante lors de la génération de PDF dynamiques, et Aspose.PDF offre un moyen simple et efficace d'y parvenir.
+## Introduction
 
-Plongeons dans le code et apprenons à créer un élément de tableau à l’aide d’Aspose.PDF pour .NET.
+Vous êtes-vous déjà demandé comment créer et personnaliser sans effort des éléments de tableau dans un PDF à l'aide de .NET ? Eh bien, Aspose.PDF pour .NET est votre solution de référence ! Que vous automatisiez la génération de rapports ou que vous créiez dynamiquement des tableaux pour divers documents, Aspose.PDF fournit une API riche pour travailler avec des éléments de tableau. Ce guide vous guidera étape par étape sur la façon de créer un tableau, de le styliser et même de vous assurer qu'il est conforme aux normes de conformité PDF/UA. Cela semble passionnant, n'est-ce pas ? Plongeons-nous directement dans le vif du sujet !
 
 ## Prérequis
 
-Avant de commencer, assurez-vous de disposer des éléments suivants :
+Avant de commencer, vous aurez besoin de quelques éléments en place :
+1.  Aspose.PDF pour .NET : Téléchargez la dernière version à partir de[Téléchargement d'Aspose.PDF pour .NET](https://releases.aspose.com/pdf/net/).
+2. Environnement de développement : tout IDE pris en charge par .NET (par exemple, Visual Studio).
+3. Connaissances de base de C# : Une familiarité avec la programmation C# est recommandée.
 
-1. Bibliothèque Aspose.PDF pour .NET installée.
-2. Une connaissance de base du langage de programmation C#.
+ Enfin, n'oubliez pas votre licence Aspose.PDF. Si vous n'en avez pas, vous pouvez utiliser la[essai gratuit](https://releases.aspose.com/) ou demander un[permis temporaire](https://purchase.aspose.com/temporary-license/) pour tout tester.
 
-## Étape 1 : Configuration de l'environnement
+## Paquets d'importation
 
-Pour commencer, ouvrez votre environnement de développement C# et créez un nouveau projet. Assurez-vous d'avoir ajouté une référence à la bibliothèque Aspose.PDF pour .NET dans votre projet.
-
-```csharp
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## Étape 2 : Création du document
-
- La première étape consiste à créer un nouveau document PDF à l'aide de`Document` classe.
+Tout d'abord, nous allons importer les packages nécessaires. Cela nous permettra de travailler avec toutes les classes pertinentes pour créer des tableaux dans des documents PDF.
 
 ```csharp
-// Créer le document
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Array");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Ici, nous définissons également le titre et la langue du contenu balisé.
+Dans cette section, nous allons décomposer le processus de création d'une table en plusieurs étapes. Chaque étape se concentre sur différentes parties du processus de création et de personnalisation de la table.
 
-## Étape 3 : création de l’élément de tableau
+## Étape 1 : Créer un nouveau document PDF
 
-Ensuite, nous devons créer l'élément de tableau et l'ajouter au document. Nous commençons par obtenir l'élément de structure racine, puis nous créons un nouvel élément de tableau en utilisant le`CreateTableElement` méthode.
+La première chose à faire est de créer un nouveau document PDF. Il servira de conteneur pour notre tableau.
 
-```csharp
-// Obtenir l'élément de structure racine
-StructureElement rootElement = taggedContent.RootElement;
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTHElement theElement = headTrElement.CreateTH();
-thElement.SetText(String.Format("Header {0}", colIndex));
-theElement.BackgroundColor = Color.GreenYellow;
-theElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-theElement. IsNoBorder = true;
-theElement.Margin = new MarginInfo(16.0, 2
-
-.0, 8.0, 2.0);
-theElement.Alignment = HorizontalAlignment.Right;
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-TableTRElement trElement = tableTBodyElement.CreateTR();
-trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-int colSpan = 1;
-int rowSpan = 1;
-if (colIndex == 1 && rowIndex == 1)
-{
-colSpan = 2;
-rowSpan = 2;
-}
-else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-{
-keep on going;
-}
-else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-{
-keep on going;
-}
-TableTDElement tdelement = trElement.CreateTD();
-tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-tdElement.BackgroundColor = Color.Yellow;
-tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-tdElement.IsNoBorder = false;
-tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-tdElement.Alignment = HorizontalAlignment.Center;
-TextState cellTextState = new TextState();
-cellTextState.ForegroundColor = Color.DarkBlue;
-cellTextState.FontSize = 7.5F;
-cellTextState.FontStyle = FontStyles.Bold;
-cellTextState.Font = FontRepository.FindFont("Arial");
-tdElement. DefaultCellTextState = cellTextState;
-tdElement.IsWordWrapped = true;
-tdElement.VerticalAlignment = VerticalAlignment.Center;
-tdElement.ColSpan = colSpan;
-tdElement. RowSpan = rowSpan;
-}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTDElement tdElement = footTrElement.CreateTD();
-tdElement.SetText(String.Format("Foot {0}", colIndex));
-tdElement.Alignment = HorizontalAlignment.Center;
-tdElement.StructureTextState.FontSize = 7F;
-tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for the table");
-tableAttributes.SetAttribute(summaryAttribute);
-
-// Enregistrer le document PDF balisé
-document.Save(dataDir + "CreateTableElement.pdf");
-
-// Vérification de conformité PDF/UA
-document = new Document(dataDir + "CreateTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-### Exemple de code source pour créer un élément de tableau à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Créer un document
+// Créer un nouveau document PDF
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table");
-taggedContent.SetLanguage("en-US");
+```
 
+ Ici, nous initialisons une nouvelle instance du`Document` classe, qui sera notre fichier PDF vierge. N'oubliez pas de définir le chemin de votre fichier !
+
+## Étape 2 : Configurer le contenu balisé
+
+Ensuite, nous devons activer le contenu balisé, ce qui garantit l'accessibilité du tableau. Les PDF balisés sont nécessaires pour la conformité avec PDF/UA (accessibilité universelle).
+
+```csharp
+// Activer le contenu balisé
+ITaggedContent taggedContent = document.TaggedContent;
+taggedContent.SetTitle("Example Table");
+taggedContent.SetLanguage("en-US");
+```
+
+Cette étape définit le titre et la langue du document, garantissant ainsi la conformité du tableau aux normes d'accessibilité. L'accessibilité des documents est essentielle pour l'expérience utilisateur et les exigences légales dans certains secteurs.
+
+## Étape 3 : Créer l’élément de tableau
+
+Vient maintenant la partie amusante : créer la table elle-même !
+
+```csharp
 // Obtenir l'élément de structure racine
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
+```
+
+ Ici, nous utilisons le`RootElement` du contenu balisé pour ajouter notre tableau. Il s'agit essentiellement d'ajouter un tableau en tant que nœud enfant à la structure du document.
+
+## Étape 4 : Personnaliser les bordures et les en-têtes du tableau
+
+Vous ne voulez pas que votre table paraisse fade, n'est-ce pas ? Ajoutons un peu de style !
+
+```csharp
 tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
+```
+
+ Nous définissons des bordures et ajoutons des en-têtes, du corps et des pieds de page au tableau. Notez l'utilisation de`BorderInfo` pour styliser les bordures du tableau avec une couleur bleu foncé.
+
+## Étape 5 : ajouter des lignes et des cellules au tableau
+
+Maintenant, remplissons notre tableau avec des lignes et des cellules. Cette partie du processus est celle où nous définissons la disposition de notre tableau.
+
+### Étape 5.1 : Créer une ligne d’en-tête
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
 headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
+
+for (int colIndex = 0; colIndex < 4; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-	thElement.BackgroundColor = Color.GreenYellow;
-	thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-	thElement.IsNoBorder = true;
-	thElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	thElement.Alignment = HorizontalAlignment.Right;
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
+    thElement.BackgroundColor = Color.GreenYellow;
+    thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
+    thElement.Alignment = HorizontalAlignment.Right;
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+ Nous créons une ligne d'en-tête avec 4 colonnes, et chaque cellule d'en-tête est stylisée avec une couleur d'arrière-plan de`GreenYellow`Nous définissons également une bordure et un alignement pour les en-têtes.
+
+### Étape 5.2 : Ajouter des lignes de corps
+
+```csharp
+for (int rowIndex = 0; rowIndex < 50; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		int colSpan = 1;
-		int rowSpan = 1;
-		if (colIndex == 1 && rowIndex == 1)
-		{
-			colSpan = 2;
-			rowSpan = 2;
-		}
-		else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-		{
-			continue;
-		}
-		else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-		{
-			continue;
-		}
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-		tdElement.BackgroundColor = Color.Yellow;
-		tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-		tdElement.IsNoBorder = false;
-		tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-		tdElement.Alignment = HorizontalAlignment.Center;
-		TextState cellTextState = new TextState();
-		cellTextState.ForegroundColor = Color.DarkBlue;
-		cellTextState.FontSize = 7.5F;
-		cellTextState.FontStyle = FontStyles.Bold;
-		cellTextState.Font = FontRepository.FindFont("Arial");
-		tdElement.DefaultCellTextState = cellTextState;
-		tdElement.IsWordWrapped = true;
-		tdElement.VerticalAlignment = VerticalAlignment.Center;
-		tdElement.ColSpan = colSpan;
-		tdElement.RowSpan = rowSpan;
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = $"Row {rowIndex}";
+
+    for (int colIndex = 0; colIndex < 4; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+        tdElement.BackgroundColor = Color.Yellow;
+        tdElement.Alignment = HorizontalAlignment.Center;
+    }
 }
+```
+
+Ici, nous créons dynamiquement 50 lignes et 4 colonnes, les remplissons de texte et stylisons les cellules. La couleur d'arrière-plan est définie sur jaune, avec le texte centré.
+
+### Étape 5.3 : Ajouter une ligne de pied de page
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
 footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-	tdElement.Alignment = HorizontalAlignment.Center;
-	tdElement.StructureTextState.FontSize = 7F;
-	tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for table");
-tableAttributes.SetAttribute(summaryAttribute);
 
-// Enregistrer le document PDF balisé
+for (int colIndex = 0; colIndex < 4; colIndex++)
+{
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText($"Foot {colIndex}");
+    tdElement.Alignment = HorizontalAlignment.Center;
+}
+```
+
+ Pour compléter le tableau, nous ajoutons un pied de page avec un texte centré et un`LightSeaGreen` arrière-plan.
+
+## Étape 6 : Valider la conformité PDF/UA
+
+Une fois le tableau créé, il est essentiel de s'assurer que le PDF est conforme à la norme PDF/UA.
+
+```csharp
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// Vérification de la conformité PDF/UA
+// Valider la conformité PDF/UA
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Cet extrait enregistre le fichier PDF et vérifie s'il est conforme aux normes PDF/UA. Si le document est conforme, il est accessible aux utilisateurs handicapés.
 
 ## Conclusion
 
-Vous avez appris à créer un élément de tableau à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais générer des documents PDF avec des tableaux dynamiques à l'aide de cette méthode. N'hésitez pas à explorer d'autres fonctionnalités d'Aspose.PDF pour découvrir tout son potentiel.
+Félicitations ! Vous avez réussi à créer un tableau entièrement personnalisé dans un PDF à l'aide d'Aspose.PDF pour .NET. Du style du tableau à la conformité PDF/UA, vous disposez désormais d'une base solide pour générer des tableaux dynamiques dans vos documents PDF. N'oubliez pas d'explorer les nombreuses fonctionnalités d'Aspose.PDF pour améliorer encore davantage vos documents !
 
-### FAQ
+## FAQ
 
-#### Q : Qu'est-ce qu'un élément de tableau dans un document PDF et pourquoi aurais-je besoin d'en créer un à l'aide d'Aspose.PDF pour .NET ?
+### Puis-je personnaliser la police et le style du texte du tableau ?
+Oui, Aspose.PDF vous permet de personnaliser entièrement les polices, les styles de texte et l'alignement à l'aide de`TextState` classe.
 
-R : Un élément de tableau dans un document PDF représente une collection structurée de données, souvent utilisée pour créer des tableaux ou des grilles. Vous devrez peut-être créer un élément de tableau à l'aide d'Aspose.PDF pour .NET lors de la génération de PDF dynamiques qui nécessitent une présentation de données structurée, comme des informations tabulaires ou des grilles.
+### Comment ajouter dynamiquement des colonnes ou des lignes ?
+ Vous pouvez ajuster le nombre de colonnes ou de lignes en modifiant le`rowIndex` et`colIndex` dans les boucles.
 
-#### Q : Comment Aspose.PDF pour .NET simplifie-t-il le processus de création d’un élément de tableau ?
+### Est-il possible de fusionner des cellules dans le tableau ?
+ Oui, vous pouvez utiliser le`ColSpan` et`RowSpan` propriétés permettant de fusionner des cellules sur des colonnes ou des lignes.
 
-R : Aspose.PDF pour .NET fournit un ensemble complet de classes et de méthodes qui vous permettent de créer, personnaliser et gérer des éléments de tableau (tableaux) dans un document PDF par programmation. Cela élimine le besoin de manipulation manuelle des PDF et simplifie la création de représentations de données structurées.
+### Qu'est-ce que la conformité PDF/UA ?
+La conformité PDF/UA garantit que le document est accessible aux utilisateurs handicapés, conformément aux normes internationales d'accessibilité.
 
-#### Q : Quelles sont les étapes clés impliquées dans la création d’un élément de tableau à l’aide d’Aspose.PDF pour .NET ?
-
-R : Les étapes clés incluent la configuration de l'environnement, la création du document, l'obtention de l'élément de structure racine, la création d'un élément de tableau, la définition des lignes et des cellules dans le tableau et la spécification du formatage et des propriétés des éléments. L'exemple de code fourni illustre ces étapes.
-
-####  Q : Quel rôle joue le`taggedContent` object play in creating an array element?
-
- A : Le`taggedContent` objet, obtenu à partir du document`TaggedContent`propriété, vous permet de définir la structure du contenu balisé dans le document PDF. Cela comprend la création et l'organisation d'éléments de tableau et de leurs éléments enfants de manière hiérarchique.
-
-#### Q : Comment le code garantit-il l’accessibilité et la sémantique de l’élément de tableau créé ?
-
- A : Le code définit des attributs tels que`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , et`ColSpan` pour améliorer l'accessibilité et la sémantique de l'élément de tableau. Ces attributs contribuent à une représentation des données bien structurée, informative et visuellement attrayante.
-
-#### Q : Quelle est l’importance de la conformité PDF/UA dans le contexte de la création d’éléments de tableau ?
-
- A : La conformité PDF/UA (Universal Accessibility) garantit que les documents PDF générés sont accessibles aux utilisateurs handicapés et répondent à certaines normes d'accessibilité. L'exemple de code vérifie la conformité PDF/UA à l'aide de`Validate` méthode, vous aidant à créer des documents inclusifs et accessibles.
-
-#### Q : Puis-je personnaliser davantage la mise en forme et l’apparence des éléments du tableau ?
-
-: Oui, vous pouvez personnaliser la mise en forme et l'apparence des éléments du tableau en ajustant des attributs tels que la couleur d'arrière-plan, le style de bordure, la taille de police et l'alignement. Aspose.PDF pour .NET fournit une large gamme de propriétés pour adapter la présentation visuelle à vos besoins.
-
-#### Q : Comment puis-je étendre ces connaissances pour créer des structures de tableau plus complexes ou incorporer des éléments de tableau dans des documents PDF plus volumineux ?
-
-R : Vous pouvez étendre ces connaissances en explorant des fonctionnalités supplémentaires d'Aspose.PDF pour .NET, telles que la fusion de plusieurs éléments de tableau, la création de tableaux imbriqués, l'ajout d'en-têtes et de pieds de page et l'intégration d'éléments de tableau dans des mises en page PDF plus volumineuses. La documentation et les exemples de la bibliothèque fournissent des conseils pour ces scénarios avancés.
-
-#### Q : Est-il possible d'importer des données à partir de sources externes, telles que des bases de données ou des feuilles de calcul, pour remplir les éléments du tableau ?
-
-R : Oui, vous pouvez importer des données à partir de sources externes pour renseigner les éléments du tableau. Vous pouvez utiliser des techniques de récupération et de transformation de données en C# pour récupérer des données à partir de bases de données, de feuilles de calcul ou d'autres sources, puis renseigner les éléments du tableau en conséquence.
-
-#### Q : Comment puis-je utiliser les connaissances acquises grâce à ce didacticiel pour améliorer la qualité et la convivialité des documents PDF que je crée par programmation ?
-
-R : Les connaissances acquises grâce à ce didacticiel vous permettent de créer des éléments de tableau (tableaux) structurés et visuellement attrayants dans des documents PDF. En intégrant ces techniques, vous pouvez améliorer la lisibilité, l'accessibilité et l'expérience utilisateur des PDF générés dynamiquement, les rendant ainsi plus informatifs et conviviaux.
+### Comment tester la conformité PDF/UA dans Aspose.PDF ?
+ Vous pouvez utiliser le`Validate` méthode pour vérifier si le document est conforme aux normes PDF/UA.

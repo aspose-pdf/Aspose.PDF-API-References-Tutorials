@@ -28,7 +28,7 @@ Khi đã chuẩn bị xong mọi thứ, bạn đã sẵn sàng để quẩy tưn
 
 ## Nhập gói
 
-Trước khi bắt đầu quá trình mã hóa, bạn cần đảm bảo rằng bạn đã nhập đúng không gian tên vào dự án của mình. Đây là những không gian tên quan trọng để truy cập chức năng mà chúng ta sẽ sử dụng.
+Trước khi bắt đầu quá trình mã hóa, bạn cần đảm bảo rằng bạn đã nhập đúng không gian tên vào dự án của mình. Đây là những không gian tên quan trọng để truy cập vào chức năng mà chúng ta sẽ sử dụng.
 
 ```csharp
 using System;
@@ -42,7 +42,7 @@ Khi đã sẵn sàng các dữ liệu cần thiết, chúng ta có thể tiến 
 
 Đầu tiên, chúng ta cần tải tài liệu PDF có chứa các trường biểu mẫu XFA. XFA (Kiến trúc biểu mẫu XML) là một loại biểu mẫu PDF cho phép bạn tạo các biểu mẫu động với nhiều trường khác nhau mà người dùng có thể điền vào.
 
-Hãy tưởng tượng bạn có một biểu mẫu, giống như biểu mẫu bạn điền tại phòng khám bác sĩ, nhưng ở định dạng kỹ thuật số. Hãy tải biểu mẫu kỹ thuật số đó bằng Aspose.PDF cho .NET.
+Hãy tưởng tượng bạn có một biểu mẫu, khá giống với biểu mẫu bạn điền tại phòng khám bác sĩ, nhưng ở định dạng kỹ thuật số. Hãy tải biểu mẫu kỹ thuật số đó bằng Aspose.PDF cho .NET.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.

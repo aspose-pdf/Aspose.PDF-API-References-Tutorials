@@ -15,7 +15,7 @@ Přemýšleli jste někdy o tom, jak vytvořit interaktivní formuláře ve vaš
 
 Než se ponoříte do kódu, ujistěte se, že máte vše, co potřebujete, abyste mohli začít:
 
-- Knihovna Aspose.PDF for .NET: Stáhněte a nainstalujte ji z[Stránka pro stahování Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
+- Knihovna Aspose.PDF for .NET: Stáhněte a nainstalujte ji z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
 - Vývojové prostředí .NET, jako je Visual Studio.
 - Základní znalost programování v C# a práce s .NET aplikacemi.
 -  Platná licence Aspose.PDF (můžete získat a[dočasná licence](https://purchase.aspose.com/temporary-license/) nebo jej použijte ve zkušebním režimu).

@@ -45,7 +45,7 @@ using System.Text;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。最適化する PDF がどこにあるかをプログラムが知る必要があるため、これは非常に重要です。
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが配置されている実際のパスを入力します。最適化する PDF がどこにあるかをプログラムが知る必要があるため、これは非常に重要です。
 
 ## ステップ2: PDFドキュメントを開く
 

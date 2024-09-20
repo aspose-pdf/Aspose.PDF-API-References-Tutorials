@@ -126,7 +126,7 @@ Console.WriteLine("\nLinks updated successfully.\nFile saved at " + dataDir);
 
 S tímto kódem uložíte PDF s aktualizovanými odkazy do nového souboru. Po spuštění programu nezapomeňte zkontrolovat výstupní adresář.
 
-## Krok 7: Řešení výjimek
+## Krok 7: Ošetřete výjimky
 
 Vždy je dobré zpracovávat výjimky, aby byla vaše aplikace robustní. Zde je návod, jak zachytit případné chyby:
 

@@ -2,7 +2,7 @@
 title: 按 Tab 鍵順序擷取表單字段
 linktitle: 按 Tab 鍵順序擷取表單字段
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 按 Tab 鍵順序擷取和修改表單欄位。包含程式碼範例的逐步指南可簡化 PDF 表單導覽。
+description: 了解如何使用 Aspose.PDF for .NET 按 Tab 鍵順序擷取和修改表單欄位。帶有程式碼範例的逐步指南可簡化 PDF 表單導覽。
 type: docs
 weight: 240
 url: /zh-hant/net/programming-with-forms/retrieve-form-field-in-tab-order/
@@ -122,7 +122,7 @@ foreach (Field field in doc1.Form)
 
 ## 結論
 
-現在你就得到它了！檢索和修改 PDF 文件中的表單欄位標籤順序不僅易於管理，而且對於建立無縫的使用者體驗也至關重要。使用 Aspose.PDF for .NET，您可以輕鬆控制使用者瀏覽 PDF 表單的方式，確保一切按照您的預期進行。
+現在你就擁有了！檢索和修改 PDF 文件中的表單欄位標籤順序不僅易於管理，而且對於建立無縫的使用者體驗也至關重要。使用 Aspose.PDF for .NET，您可以輕鬆控制使用者瀏覽 PDF 表單的方式，確保一切按照您的預期進行。
 
 ## 常見問題解答
 

@@ -2,7 +2,7 @@
 title: Konwertuj pliki PDF do formatu XPS
 linktitle: Konwertuj pliki PDF do formatu XPS
 second_title: Aspose.PDF Java PDF Processing API
-description: Bezproblemowa konwersja plików PDF do formatu XPS z Aspose.PDF dla Java. Odblokuj ulepszone drukowanie, bezpieczeństwo i zgodność.
+description: Bezproblemowa konwersja plików PDF do formatu XPS dzięki Aspose.PDF dla Java. Odblokuj ulepszone drukowanie, bezpieczeństwo i zgodność.
 type: docs
 weight: 13
 url: /pl/java/pdf-conversion-transformation/convert-pdfs-to-xps-format/
@@ -73,7 +73,7 @@ tym przykładzie jakość obrazu JPEG ustawiliśmy na 90%. Więcej opcji dostoso
 
 ## Obsługa błędów
 
-Obsługa błędów jest kluczowa w przypadku konwersji dokumentów. Aspose.PDF for Java zapewnia solidne mechanizmy obsługi błędów, aby zapewnić płynny proces konwersji. Możesz przechwytywać i obsługiwać wyjątki, aby rozwiązywać wszelkie problemy, które mogą wystąpić podczas konwersji.
+Obsługa błędów jest kluczowa w przypadku konwersji dokumentów. Aspose.PDF for Java zapewnia solidne mechanizmy obsługi błędów, aby zapewnić płynny proces konwersji. Możesz przechwytywać i obsługiwać wyjątki, aby rozwiązać wszelkie problemy, które mogą wystąpić podczas konwersji.
 
 ## Optymalizacja wydajności
 

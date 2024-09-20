@@ -154,7 +154,7 @@ while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 }
 ```
 
-Ez a lépés egy doboz tartalmának kiöntéséhez hasonlít, hogy lássa, mi is van valójában. Összegyűjtötte a médiakliphez kapcsolódó összes adatot!
+Ez a lépés egy doboz tartalmának kiöntéséhez hasonlít, hogy lássa, mi is van valójában. Összegyűjtötted a médiaklipedhez kapcsolódó összes adatot!
 
 ## 11. lépés: Adja meg a megjelenítés részleteit
 
@@ -185,5 +185,5 @@ Az Aspose.PDF for .NET egy .NET-alkalmazásokhoz tervezett könyvtár, amely leh
 ### Hol találok támogatást az Aspose.PDF számára?
  Támogatásért keresse fel a PDF-nek szentelt Aspose fórumot[itt](https://forum.aspose.com/c/pdf/10).
 
-### Megvásárolhatom közvetlenül az Aspose.PDF-et?
+### Megvásárolhatom az Aspose.PDF-et közvetlenül?
  Teljesen! A terméket a címen keresztül vásárolhatja meg[vásárlási oldal](https://purchase.aspose.com/buy).

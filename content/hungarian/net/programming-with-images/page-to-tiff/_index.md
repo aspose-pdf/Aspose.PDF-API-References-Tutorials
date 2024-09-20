@@ -36,7 +36,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Devices;
 ```
 
- Ezek a névterek elengedhetetlenek a`Document` osztályba a PDF betöltéséhez és a`TiffDevice` osztály az oldalak TIFF formátumba konvertálásához.
+ Ezek a névterek elengedhetetlenek a`Document` osztályba a PDF betöltéséhez és a`TiffDevice` osztályt az oldalak TIFF formátumba konvertálásához.
 
 ## 1. lépés: Inicializálja a dokumentumobjektumot
 
@@ -133,4 +133,4 @@ Igen, a JPEG-hez hasonló tömörítési módszer választása csökkentheti a f
 Igen, az oldaltartomány és a TIFF-beállítások módosításával többoldalas TIFF-et hozhat létre a teljes PDF-ből.
 
 ### Hogyan hagyhatom ki az üres oldalakat a konvertálás során?
- Állítsa be a`SkipBlankPages` ingatlan a`TiffSettings` hogy`true` az üres oldalak automatikus kihagyásához.
+ Állítsa be a`SkipBlankPages` ingatlan a`TiffSettings` hogy`true` hogy automatikusan kihagyja az üres oldalakat.

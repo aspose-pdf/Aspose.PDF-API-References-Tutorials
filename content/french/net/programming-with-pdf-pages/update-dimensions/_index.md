@@ -23,7 +23,7 @@ Avant de passer à l'action, vous devez mettre en place quelques éléments :
 
 4. Compétences de codage de base : être à l’aise avec les bases de la programmation C# contribuera grandement à la compréhension de ce didacticiel.
 
-5. Exemple de fichier PDF : préparez un exemple de fichier PDF, car nous l'utiliserons à des fins de démonstration. Vous pouvez créer un document PDF simple ou télécharger n'importe quel PDF que vous souhaitez modifier.
+5. Exemple de fichier PDF : Préparez un exemple de fichier PDF, car nous l'utiliserons à des fins de démonstration. Vous pouvez créer un document PDF simple ou télécharger n'importe quel PDF que vous souhaitez modifier.
 
 ## Paquets d'importation
 

@@ -2,182 +2,143 @@
 title: إضافة مسافة بادئة للأسطر اللاحقة في ملف PDF
 linktitle: إضافة مسافة بادئة للأسطر اللاحقة في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية إضافة مسافة بادئة للأسطر اللاحقة إلى النص في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية إضافة مسافة بادئة للأسطر اللاحقة إلى ملفات PDF باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل التفصيلي خطوة بخطوة لتنسيق النص بشكل احترافي.
 type: docs
 weight: 60
 url: /ar/net/programming-with-text/add-subsequent-lines-indent/
 ---
-سيرشدك هذا البرنامج التعليمي خلال عملية إضافة مسافة بادئة للأسطر اللاحقة إلى النص في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة.
+## مقدمة
 
-## متطلبات
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+غالبًا ما يتضمن إنشاء ملفات PDF جذابة بصريًا أكثر من مجرد وضع نص على صفحة. هل تساءلت يومًا كيف يمكنك إضافة مسافة بادئة إلى الأسطر اللاحقة داخل مستند PDF، مما يجعله يبدو أكثر احترافية؟ سواء كنت تقوم ببناء تقرير أو كتاب إلكتروني أو أي مستند حيث يكون التخطيط مهمًا، فإن القدرة على التحكم في كيفية تدفق النص أمر بالغ الأهمية. اليوم، سنستكشف كيفية إضافة مسافة بادئة للأسطر اللاحقة إلى ملف PDF باستخدام Aspose.PDF لـ .NET. يمكن أن تكون هذه الميزة مفيدة بشكل خاص للفقرات التي تحتاج إلى مسافة بادئة معلقة، مما يحسن قابلية القراءة والجماليات. لذا، دعنا ننتقل مباشرة إلى الموضوع!
 
-- Visual Studio أو أي مُجمِّع C# آخر مُثبت على جهازك.
-- مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من موقع Aspose الرسمي أو استخدام مدير حزم مثل NuGet لتثبيتها.
+## المتطلبات الأساسية
 
-## الخطوة 1: إعداد المشروع
-1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
-2. أضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+قبل أن نبدأ، هناك بعض الأشياء التي تحتاجها:
 
-## الخطوة 2: استيراد المساحات المطلوبة
-في ملف الكود الذي تريد إضافة مسافة بادئة للأسطر اللاحقة فيه، أضف التوجيه التالي باستخدام في الجزء العلوي من الملف:
+-  Aspose.PDF لـ .NET: ستحتاج إلى تثبيت هذه المكتبة. إذا لم تكن قد قمت بذلك بالفعل، فيمكنك[تحميله هنا](https://releases.aspose.com/pdf/net/).
+- بيئة التطوير: المعرفة الأساسية بلغة C# وبيئة التطوير المتكاملة مثل Visual Studio سيكون من المفيد.
+- .NET Framework: يفترض هذا البرنامج التعليمي أنك تعمل في بيئة .NET.
+-  الترخيص المؤقت: إذا لم يكن لديك ترخيص كامل لـ Aspose.PDF، فيمكنك طلب[رخصة مؤقتة](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+الآن بعد أن أصبحت مستعدًا، دعنا ننتقل إلى قسم الترميز!
 
-## الخطوة 3: تعيين دليل المستند
- في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
+## استيراد المساحات الاسمية
 
-## الخطوة 4: إنشاء كائن مستند جديد
- إنشاء مثيل جديد`Document` الكائن عن طريق إضافة سطر التعليمات البرمجية التالي:
+أولاً وقبل كل شيء، ستحتاج إلى استيراد مساحات الأسماء اللازمة لجعل مكتبة Aspose.PDF متاحة في مشروعك. هذه خطوة بسيطة، لكنها ضرورية لبدء العمل.
 
 ```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 5: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
+بمجرد استيرادها، ستكون جاهزًا للعمل باستخدام الأدوات القوية التي يوفرها Aspose.PDF.
 
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
+## الخطوة 1: إعداد المستند والصفحة
 
-## الخطوة 6: إنشاء TextFragment مع وضع مسافة بادئة للأسطر اللاحقة
- إنشاء مثيل`TextFragment` الكائن وتوفير النص المطلوب. في الكود المقدم، يتم تعيين النص للمتغير`text` . ثم قم بالتهيئة`TextFormattingOptions` من اجل`TextFragment` وحدد`SubsequentLinesIndent` قيمة.
+قبل أن نتمكن من إضافة أي مسافة بادئة، نحتاج إلى إنشاء مستند PDF جديد وإضافة صفحة إليه. ستكون هذه هي اللوحة التي سنطبق عليها تنسيق النص.
 
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-     SubsequentLinesIndent = 20
-};
-```
-
-## الخطوة 7: إضافة TextFragment إلى الصفحة
- أضف`TextFragment` الاعتراض على مجموعة الفقرات في الصفحة.
-
-```csharp
-page.Paragraphs.Add(text);
-```
-
-## الخطوة 8: كرر الخطوتين 6 و7 للخطوط الإضافية
-لإضافة أسطر لاحقة بنفس المسافة البادئة، كرر الخطوتين 6 و7 لكل سطر. قم بتحديث محتوى النص حسب الحاجة.
-
-```csharp
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-```
-
-## الخطوة 9: احفظ مستند PDF
- احفظ مستند PDF باستخدام`Save` طريقة`Document` الكائن. حدد مسار ملف الإخراج.
-
-```csharp
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-### عينة من كود المصدر لإضافة مسافة بادئة للأسطر اللاحقة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // إنشاء كائن مستند جديد
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-Aspose.Pdf.Page page = document.Pages.Add();
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-//قم بتفعيل TextFormattingOptions لشظية النص وحدد قيمة SubsequentLinesIndent
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-	SubsequentLinesIndent = 20
-};
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
 
-## خاتمة
-لقد نجحت في إضافة مسافة بادئة للأسطر اللاحقة إلى النص باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
-
-### الأسئلة الشائعة
-
-#### س: ما هو التركيز في هذا البرنامج التعليمي؟
-
-ج: يوفر هذا البرنامج التعليمي دليلاً شاملاً حول كيفية إضافة مسافة بادئة للأسطر اللاحقة إلى النص في ملف PDF باستخدام مكتبة Aspose.PDF for .NET. وهو يتضمن أمثلة لأكواد المصدر بلغة C# لتوضيح الخطوات المطلوبة لتحقيق ذلك.
-
-#### س: ما هي المساحات الأسماء التي أحتاج إلى استيرادها لهذا البرنامج التعليمي؟
-
-أ: في ملف الكود الذي تنوي إضافة مسافة بادئة للأسطر اللاحقة، قم باستيراد المساحات التالية في بداية الملف:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### س: كيف أحدد دليل المستند؟
-
- أ: في الكود، حدد السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
-
-#### س: كيف أقوم بإنشاء كائن مستند؟
-
- أ: في الخطوة 4، ستقوم بإنشاء مثيل جديد`Document` الكائن باستخدام سطر التعليمات البرمجية التالي:
-
-```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-```
-
-#### س: كيف أضيف صفحة إلى المستند؟
-
- أ: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` مجموعة:
-
-```csharp
+//إضافة صفحة جديدة إلى المستند
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### س: كيف يمكنني إضافة مسافة بادئة للأسطر اللاحقة في النص؟
+هنا، نقوم بتهيئة مستند PDF وإضافة صفحة فارغة إليه. الأمر بسيط للغاية حتى الآن، أليس كذلك؟ فكر في هذا الأمر باعتباره إعدادًا للمرحلة قبل إضافة المحتوى الخاص بك.
 
- أ: في الخطوة 6، ستقوم بإنشاء`TextFragment` الكائن وتعيين النص المطلوب إليه. بعد ذلك، ستقوم بتهيئة`TextFormattingOptions` من اجل`TextFragment` وحدد`SubsequentLinesIndent` قيمة:
+## الخطوة 2: إنشاء جزء النص
+
+ بعد ذلك، تحتاج إلى إنشاء`TextFragment` الكائن الذي سيحمل النص الذي ستعرضه على ملف PDF الخاص بك. سيتم تنسيق هذا النص لاحقًا بالمسافات البادئة المطلوبة.
 
 ```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
+Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment(
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog."
+);
+```
+
+هذا مجرد مثال بسيط لنص تم تكراره عدة مرات لملء المساحة في الصفحة. يمكنك استبداله بأي نص ذي صلة بمشروعك.
+
+## الخطوة 3: تهيئة خيارات تنسيق النص
+
+ هذا هو المكان الذي يحدث فيه السحر! الآن بعد أن حصلت على`TextFragment` ، ستحتاج إلى تهيئة خيارات تنسيق النص لتحديد`SubsequentLinesIndent`سيؤدي هذا الإعداد إلى تطبيق المسافة البادئة على جميع الأسطر باستثناء السطر الأول.
+
+```csharp
+// قم بتهيئة TextFormattingOptions لشظية النص وحدد قيمة SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
     SubsequentLinesIndent = 20
 };
 ```
 
-#### س: كيف أضيف TextFragment إلى مستند PDF؟
+في هذا المثال، قمنا بتعيين المسافة البادئة إلى 20 وحدة. وهذا يعني أن كل سطر بعد السطر الأول سيكون متباعدًا بمقدار 20 وحدة، مما يؤدي إلى إنشاء مسافة بادئة معلقة مميزة بصريًا.
 
- أ: في الخطوة 7، ستضيف`TextFragment` هدف (`text`) إلى مجموعة فقرات الصفحة:
+## الخطوة 4: إضافة نص إلى الصفحة
+
+ الآن بعد أن قمت بتطبيق التنسيق اللازم، حان الوقت لإضافة النص إلى الصفحة. يتم ذلك عن طريق إضافة`TextFragment` إلى مجموعة فقرات الصفحة.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### س: هل يمكنني تكرار العملية للخطوط الإضافية؟
+في هذه المرحلة، تحتوي الصفحة على النص مع الأسطر التالية المسننة. ولكن لماذا نتوقف عند هذا الحد؟ دعنا نضيف المزيد من الأسطر لجعل المستند يبدو أكثر اكتمالاً.
 
-ج: نعم، في الخطوة 8، يمكنك تكرار العملية للأسطر الإضافية بنفس المسافة البادئة عن طريق إنشاء أسطر جديدة`TextFragment` الكائنات وإضافتها إلى مجموعة الفقرات الخاصة بالصفحة.
+## الخطوة 5: إضافة أجزاء نصية إضافية
 
-#### س: كيف أحفظ مستند PDF الناتج؟
+لتوضيح كيفية ظهور أجزاء نصية متعددة في نفس المستند، يمكنك إضافة بضعة أسطر إضافية. ويمكن تنسيق كل سطر من هذه الأسطر بشكل مستقل أو استخدام نفس التنسيق كما في الخطوة السابقة.
 
- أ: بعد إضافة النص مع المسافة البادئة للأسطر اللاحقة، استخدم`Save` طريقة`Document` كائن لحفظ مستند PDF:
+```csharp
+text = new Aspose.Pdf.Text.TextFragment("Line2");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line3");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line4");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line5");
+page.Paragraphs.Add(text);
+```
+
+مع كل جزء نصي جديد يضاف إلى الصفحة، يبدأ مستندك في اتخاذ شكله. يمكنك بسهولة تخيل كيفية استخدام هذا في سيناريوهات مختلفة، سواء كنت تقوم بإنشاء مستندات طويلة أو محتوى قصير.
+
+## الخطوة 6: احفظ المستند
+
+بمجرد إضافة كل النص وتطبيق التنسيق المطلوب، حان الوقت لحفظ المستند. يقوم السطر التالي من التعليمات البرمجية بذلك، حيث يحفظ الملف في الدليل المحدد.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### س: ما هو أهم ما يمكن تعلمه من هذا البرنامج التعليمي؟
+هذا كل شيء! يحتوي ملف PDF الخاص بك الآن على نص مع مسافات بادئة للأسطر اللاحقة.
 
-ج: باتباع هذا البرنامج التعليمي، ستتعلم بنجاح كيفية تحسين قابلية قراءة النص في مستند PDF عن طريق إضافة مسافة بادئة للأسطر اللاحقة باستخدام Aspose.PDF لـ .NET. يمكن أن تكون هذه التقنية مفيدة لأنواع مختلفة من المستندات والتقارير.
+## خاتمة
+
+والآن، لقد تعلمت للتو كيفية إضافة مسافات بادئة للأسطر اللاحقة إلى ملف PDF باستخدام Aspose.PDF لـ .NET. هذه الطريقة مثالية لإضافة لمسة احترافية إلى مستنداتك، مما يمنحك المرونة للتحكم في كيفية عرض النص. سواء كنت تقوم بإعداد تقارير الأعمال أو المستندات القانونية أو أي نوع من ملفات PDF، فإن المسافة البادئة هي أداة صغيرة ولكنها قوية لتحسين قابلية القراءة. إذا استمتعت بهذا البرنامج التعليمي، فلماذا لا تستكشف الميزات الأخرى التي يقدمها Aspose.PDF؟
+
+## الأسئلة الشائعة
+
+### هل يمكنني تطبيق مسافات بادئة مختلفة على فقرات مختلفة؟  
+ نعم، يمكنك تطبيق إعدادات المسافة البادئة المختلفة على كل`TextFragment` عن طريق تعديل فرديتهم`TextState.FormattingOptions`.
+
+###  ما هي الوحدات المستخدمة في`SubsequentLinesIndent` property?  
+يتم قياس المسافة البادئة بالنقاط، وهي وحدة القياس القياسية في مستندات PDF.
+
+### هل يمكنني تطبيق هذا على ملفات PDF الموجودة بالفعل؟  
+بالتأكيد! يمكنك تحميل ملف PDF موجود وتطبيق هذه التغييرات عليه بنفس الطريقة التي تستخدمها مع مستند جديد.
+
+### هل هناك حد أقصى لكيفية إضافة مسافة بادئة للأسطر اللاحقة؟  
+لا يوجد حد صارم، ولكن لأغراض القراءة، يوصى بالحفاظ على المسافة البادئة ضمن حدود معقولة.
+
+### هل يمكنني دمج هذا مع خيارات تنسيق النص الأخرى؟  
+ نعم! يمكنك الجمع بين`SubsequentLinesIndent` يمكنك أيضًا تخصيص النص الخاص بك باستخدام خاصية تخصيص النص الأخرى مثل حجم الخط واللون والمحاذاة لتخصيص النص الخاص بك بشكل أكبر.

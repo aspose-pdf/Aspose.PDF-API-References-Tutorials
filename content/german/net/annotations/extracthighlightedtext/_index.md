@@ -94,7 +94,7 @@ foreach (TextFragment tf in collection)
 
 ## Abschluss
 
-Das Extrahieren von markiertem Text aus einer PDF-Datei mit Aspose.PDF für .NET ist eine leistungsstarke Funktion, die Ihren Arbeitsablauf optimieren kann, insbesondere wenn Sie mit großen Dokumenten arbeiten. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie diese Funktion problemlos in Ihre eigenen Projekte implementieren. Egal, ob Sie Ihre Notizen organisieren, Berichte erstellen oder Datenanalysen durchführen, diese Methode bietet eine nahtlose Lösung zum Extrahieren und Verwenden von markiertem Text.
+Das Extrahieren von markiertem Text aus einer PDF-Datei mit Aspose.PDF für .NET ist eine leistungsstarke Funktion, die Ihren Arbeitsablauf optimieren kann, insbesondere wenn Sie mit großen Dokumenten arbeiten. Wenn Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie diese Funktion problemlos in Ihre eigenen Projekte implementieren. Egal, ob Sie Ihre Notizen organisieren, Berichte erstellen oder Datenanalysen durchführen, diese Methode bietet eine nahtlose Lösung zum Extrahieren und Verwenden von markiertem Text.
 
 ## Häufig gestellte Fragen
 

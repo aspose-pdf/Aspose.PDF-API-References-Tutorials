@@ -10,11 +10,11 @@ url: /fr/java/pdf-annotations/add-comments-pdf-documents/
 
 ## Introduction à l'ajout de commentaires aux documents PDF
 
-Les documents PDF sont devenus une norme pour le partage d'informations numérique en raison de leur compatibilité universelle et de leur formatage cohérent. L'une des caractéristiques essentielles des PDF est la possibilité d'ajouter des commentaires, des annotations et des notes aux documents. Cet article vous guidera tout au long du processus d'ajout de commentaires aux documents PDF à l'aide d'Aspose.PDF pour Java, une API puissante pour la manipulation de PDF.
+Les documents PDF sont devenus une norme pour le partage d'informations numériquement en raison de leur compatibilité universelle et de leur formatage cohérent. L'une des caractéristiques essentielles des PDF est la possibilité d'ajouter des commentaires, des annotations et des notes aux documents. Cet article vous guidera tout au long du processus d'ajout de commentaires aux documents PDF à l'aide d'Aspose.PDF pour Java, une API puissante pour la manipulation de PDF.
 
 ## Premiers pas avec Aspose.PDF pour Java
 
- Pour commencer, vous devez configurer votre environnement de développement. Assurez-vous que la bibliothèque Aspose.PDF pour Java est installée. Vous pouvez la télécharger à partir de[ici](https://releases.aspose.com/pdf/java/).
+Pour commencer, vous devez configurer votre environnement de développement. Assurez-vous que la bibliothèque Aspose.PDF pour Java est installée. Vous pouvez la télécharger à partir de[ici](https://releases.aspose.com/pdf/java/).
 
 ## Créer un document PDF
 

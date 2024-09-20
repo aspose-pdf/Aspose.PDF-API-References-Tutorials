@@ -9,7 +9,7 @@ url: /nl/net/programming-with-pdf-pages/change-orientation/
 ---
 ## Invoering
 
-Heb je ooit moeite gehad met een PDF-bestand waarvan de pagina-oriëntatie gewoon... niet klopte? Misschien heb je te maken met een document dat verkeerd is gescand of gemaakt, en de pagina's moeten worden gedraaid om logisch te zijn. Gelukkig voor ons biedt Aspose.PDF voor .NET een eenvoudige, krachtige manier om PDF-bestanden op vrijwel elke denkbare manier te manipuleren, inclusief het wijzigen van de oriëntatie van je pagina's. Of je nu wilt overschakelen van staand naar liggend of andersom, deze gids leidt je stap voor stap door het proces.
+Heb je ooit moeite gehad met een PDF-bestand waarvan de pagina-oriëntatie gewoon... verkeerd is? Misschien heb je te maken met een document dat verkeerd is gescand of gemaakt, en de pagina's moeten worden gedraaid om logisch te zijn. Gelukkig voor ons biedt Aspose.PDF voor .NET een eenvoudige, krachtige manier om PDF-bestanden op vrijwel elke denkbare manier te manipuleren, inclusief het wijzigen van de oriëntatie van je pagina's. Of je nu wilt overschakelen van staand naar liggend of andersom, deze gids leidt je stap voor stap door het proces.
 
 Dus, als u er klaar voor bent om aan de slag te gaan en die PDF-pagina's eenvoudig te roteren, laten we dan beginnen!
 

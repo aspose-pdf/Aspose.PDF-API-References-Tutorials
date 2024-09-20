@@ -9,7 +9,7 @@ url: /it/net/programming-with-document/addjavascripttopage/
 ---
 ## Introduzione
 
-Ti sei mai chiesto come migliorare i tuoi PDF con elementi interattivi come avvisi pop-up o funzioni di stampa automatica? Bene, buone notizie: puoi farlo! Utilizzando Aspose.PDF per .NET, puoi aggiungere JavaScript senza problemi ai tuoi documenti PDF. Che tu stia automatizzando attività o creando esperienze utente dinamiche, l'incorporamento di JavaScript nei PDF fornisce ai tuoi file quel livello extra di funzionalità.
+Ti sei mai chiesto come migliorare i tuoi PDF con elementi interattivi come avvisi pop-up o funzioni di stampa automatica? Bene, buone notizie: puoi farlo! Utilizzando Aspose.PDF per .NET, puoi aggiungere JavaScript ai tuoi documenti PDF senza problemi. Che tu stia automatizzando attività o creando esperienze utente dinamiche, l'incorporamento di JavaScript nei PDF fornisce ai tuoi file quel livello extra di funzionalità.
 
 ## Prerequisiti
 

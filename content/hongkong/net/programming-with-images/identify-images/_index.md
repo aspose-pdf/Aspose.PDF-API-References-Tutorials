@@ -13,7 +13,7 @@ url: /zh-hant/net/programming-with-images/identify-images/
 
 ## 先決條件
 
-在開始本教學之前，我們先回顧一下完成此任務所需的條件：
+在開始本教學之前，我們先回顧一下完成此任務所需的內容：
 
 -  Aspose.PDF for .NET：請確定您已安裝最新版本。你可以[下載 .NET 版 Aspose.PDF](https://releases.aspose.com/pdf/net/)或訪問[免費試用](https://releases.aspose.com/).
 - IDE：您需要一個像 Visual Studio 這樣的開發環境。

@@ -2,235 +2,160 @@
 title: Sorot Karakter Dalam File PDF
 linktitle: Sorot Karakter Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menyorot karakter dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara menyorot karakter dalam PDF menggunakan Aspose.PDF untuk .NET dalam panduan langkah demi langkah yang komprehensif ini.
 type: docs
 weight: 240
 url: /id/net/programming-with-text/highlight-character-in-pdf/
 ---
-Dalam tutorial ini, kami akan menjelaskan cara menyorot karakter dalam file PDF menggunakan pustaka Aspose.PDF untuk .NET. Kami akan membahas proses langkah demi langkah untuk menyorot karakter dalam PDF menggunakan kode sumber C# yang disediakan.
+## Perkenalan
 
-## Persyaratan
+Saat bekerja dengan PDF, kebutuhan untuk menyorot teks atau karakter sering muncul—baik untuk tujuan akademis, penyuntingan, atau sekadar meningkatkan keterbacaan. Bayangkan Anda memiliki dokumen yang indah, tetapi Anda ingin menekankan bagian-bagian tertentu. Di situlah penyorotan berperan! Dalam tutorial ini, kita akan menyelami cara menyorot karakter dalam file PDF menggunakan pustaka Aspose.PDF for .NET yang canggih. 
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+## Prasyarat
 
-- Pustaka Aspose.PDF untuk .NET terinstal.
-- Pemahaman dasar tentang pemrograman C#.
+Sebelum kita mulai membuat kode, mari kita pastikan kita memiliki semua yang kita butuhkan. Berikut ini yang akan Anda perlukan:
 
-## Langkah 1: Siapkan Direktori Dokumen
+1. Lingkungan Pengembangan: Tutorial ini mengasumsikan Anda bekerja di Visual Studio atau IDE .NET serupa.
+2.  Aspose.PDF untuk Pustaka .NET: Jika Anda belum melakukannya, Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/) dan menambahkannya ke proyek Anda. 
+3. Pengetahuan Dasar C#: Pengenalan pemrograman C# akan membantu Anda memahami implementasinya dengan mudah.
+4. Dokumen PDF: Anda harus memiliki contoh berkas PDF yang siap digunakan. Anda dapat membuat satu atau memanfaatkan dokumen yang sudah ada.
 
- Pertama, Anda perlu mengatur jalur ke direktori tempat file PDF input Anda berada. Ganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke berkas PDF Anda.
+## Mengimpor Paket
+
+Untuk memulai, kita perlu mengimpor namespace yang diperlukan. Untuk melakukannya, Anda perlu menyertakannya di bagian atas berkas C# Anda:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf.Devices;
+using Aspose.Pdf.Text;
+using System;
+using System.Drawing;
 ```
 
-## Langkah 2: Muat Dokumen PDF
+Paket-paket ini penting untuk membuat, memanipulasi, dan memproses dokumen PDF menggunakan pustaka Aspose.
 
- Selanjutnya kita muat dokumen PDF input menggunakan`Aspose.Pdf.Document` kelas.
+Sekarang, mari kita uraikan prosesnya menjadi langkah-langkah yang mudah dipahami untuk menyorot karakter dalam PDF Anda. 
+
+## Langkah 1: Inisialisasi Dokumen PDF
+
+Langkah pertama adalah menginisialisasi dokumen PDF Anda. Ini melibatkan pemuatan berkas PDF yang akan Anda gunakan. Berikut cara melakukannya:
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Pastikan untuk mengatur jalur yang benar.
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
+Dalam cuplikan ini, ganti`YOUR DOCUMENT DIRECTORY` dengan jalur sebenarnya pada mesin Anda tempat file PDF input Anda berada.`Aspose.Pdf.Document` kelas dibuat untuk memuat PDF Anda.
 
-## Langkah 3: Ubah PDF ke Gambar
+## Langkah 2: Siapkan Proses Rendering
 
- Untuk menyorot karakter, kami mengonversi dokumen PDF menjadi gambar menggunakan`PdfConverter` kelas. Kami mengatur resolusi untuk konversi dan mengambil gambar sebagai`Bitmap` obyek.
+Selanjutnya, kita perlu menyiapkan proses rendering untuk dokumen kita. Ini penting untuk menyorot karakter-karakter pada halaman secara akurat.
 
 ```csharp
-int resolution = 150;
+int resolution = 150; // Atur resolusi untuk pengambilan gambar.
 using (MemoryStream ms = new MemoryStream())
 {
-     PdfConverter conv = new PdfConverter(pdfDocument);
-     conv. Resolution = new Resolution(resolution, resolution);
-     conv. GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-     Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
+    PdfConverter conv = new PdfConverter(pdfDocument);
+    conv.Resolution = new Resolution(resolution, resolution);
+    conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
+ Kami menentukan resolusi untuk kejelasan, yang memungkinkan teks ditampilkan dengan benar.`PdfConverter`mengubah halaman PDF menjadi gambar sehingga kita dapat menggambar di atasnya.
 
-## Langkah 4: Sorot Karakter
+## Langkah 3: Buat Objek Grafik untuk Menggambar
 
- Kami mengulang setiap halaman dokumen PDF dan menggunakan`TextFragmentAbsorber` objek untuk menemukan semua kata di halaman. Kami kemudian mengulangi fragmen teks, segmen, dan karakter untuk menyorotnya menggunakan persegi panjang.
+Setelah menyiapkan proses menggambar, kita perlu membuat objek grafik tempat kita akan melakukan penyorotan:
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Atur skala dan transformasi
-     float scale = resolution / 72f;
-     gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+    float scale = resolution / 72f; // Faktor skala.
+    gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+```
+Di sini, kita membuat objek grafis dari gambar bitmap. Transformasi membantu menyesuaikan rendering agar sesuai dengan resolusi yang dibutuhkan dengan tepat.
 
-     // Berulang melalui halaman
-     for (int i = 0; i < pdfDocument.Pages.Count; i++)
-     {
-         Page page = pdfDocument.Pages[1];
+## Langkah 4: Ulangi Setiap Halaman dan Sorot Teks
 
-         //Temukan semua kata di halaman
-         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-         textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-         page. Accept(textFragmentAbsorber);
-         TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+Sekarang, mari kita telusuri setiap halaman dalam PDF dan temukan fragmen teks yang ingin kita soroti:
 
-         // Ulangi melalui fragmen teks
-         foreach(TextFragment textFragment in textFragmentCollection)
-         {
-             if (i == 0)
-             {
-                 // Sorot karakter
-                 gr.DrawRectangle(
-                     Think.Yellow,
-                     (float)textFragment.Position.XIndent,
-                     (float)textFragment.Position.YIndent,
-                     (float)textFragment.Rectangle.Width,
-                     (float)textFragment.Rectangle.Height);
+```csharp
+for (int i = 0; i < pdfDocument.Pages.Count; i++)
+{
+    Page page = pdfDocument.Pages[i + 1]; // Halaman diindeks 1 di Aspose.
+    TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+    textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
+    page.Accept(textFragmentAbsorber);
+```
+ Kami mengakses setiap halaman dan mencari semua teks menggunakan`TextFragmentAbsorber` Pola ekspresi reguler`@"[\S]+"` menangkap semua karakter selain spasi.
 
-                 // Ulangi melalui segmen
-                 foreach(TextSegment segment in textFragment.Segments)
-                 {
-                     // Sorot segmen
-                     gr.DrawRectangle(
-                         Think Green,
-                         (float)segment.Rectangle.LLX,
-                         (float)segment.Rectangle.LLY,
-                         (float)segment.Rectangle.Width,
-                         (float)segment.Rectangle.Height);
+## Langkah 5: Ekstrak Fragmen Teks dan Sorot
 
-                     // Ulangi melalui karakter
-                     foreach(CharInfo characterInfo in segment.Characters)
-                     {
-                         // Sorot karakter
-                         gr.DrawRectangle(
-                             Think.Black,
-                             (float)characterInfo.Rectangle.LLx,
-                             (float)characterInfo.Rectangle.LLY,
-                             (float)characterInfo.Rectangle.Width,
-                             (float)characterInfo.Rectangle.Height);
-                     }
-                 }
-             }
-         }
-     }
+Sekarang saatnya mengekstrak fragmen teks dan menyorotnya. Proses ini melibatkan penggambaran persegi panjang di sekitar karakter yang ingin kita soroti:
+
+```csharp
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+
+foreach (TextFragment textFragment in textFragmentCollection)
+{
+    // Menyorot logika di sini
+    for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
+    {
+        TextSegment segment = textFragment.Segments[segNum];
+        for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
+        {
+            CharInfo characterInfo = segment.Characters[charNum];
+            gr.DrawRectangle(Pens.Black, 
+                (float)characterInfo.Rectangle.LLX, 
+                (float)characterInfo.Rectangle.LLY, 
+                (float)characterInfo.Rectangle.Width, 
+                (float)characterInfo.Rectangle.Height);
+        }
+    }
 }
 ```
+Kita mengulang setiap fragmen teks, segmen-segmennya, dan karakter-karakter individual, menggambar persegi panjang di sekelilingnya menggunakan objek grafik yang telah dibuat sebelumnya.
 
-## Langkah 5: Simpan Gambar Output
+## Langkah 6: Simpan Gambar yang Dimodifikasi
 
-Terakhir, kami menyimpan gambar yang dimodifikasi dengan karakter yang disorot ke file keluaran yang ditentukan.
+Setelah menyorot, Anda perlu menyimpan gambar yang dihasilkan sebagai file PNG baru:
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
+Baris ini menyimpan gambar bitmap yang dimodifikasi sebagai berkas PNG di direktori yang ditentukan. 
 
-### Contoh kode sumber untuk Menyorot Karakter dalam PDF menggunakan Aspose.PDF untuk .NET 
+## Langkah 7: Akhiri dengan Penanganan Pengecualian
+
+Terakhir, sebaiknya Anda membungkus kode Anda dalam blok try-catch, untuk memastikan bahwa kami menangani kesalahan tak terduga dengan baik:
+
 ```csharp
-try
-{
-	// Jalur ke direktori dokumen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	int resolution = 150;
-	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
-	using (MemoryStream ms = new MemoryStream())
-	{
-		PdfConverter conv = new PdfConverter(pdfDocument);
-		conv.Resolution = new Resolution(resolution, resolution);
-		conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
-		using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
-		{
-			float scale = resolution / 72f;
-			gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
-			for (int i = 0; i < pdfDocument.Pages.Count; i++)
-			{
-				Page page = pdfDocument.Pages[1];
-				// Buat objek TextAbsorber untuk menemukan semua kata
-				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-				page.Accept(textFragmentAbsorber);
-				// Dapatkan fragmen teks yang diekstraksi
-				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Ulangi melalui fragmen
-				foreach (TextFragment textFragment in textFragmentCollection)
-				{
-					if (i == 0)
-					{
-						gr.DrawRectangle(
-						Pens.Yellow,
-						(float)textFragment.Position.XIndent,
-						(float)textFragment.Position.YIndent,
-						(float)textFragment.Rectangle.Width,
-						(float)textFragment.Rectangle.Height);
-						for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
-						{
-							TextSegment segment = textFragment.Segments[segNum];
-							for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
-							{
-								CharInfo characterInfo = segment.Characters[charNum];
-								Aspose.Pdf.Rectangle rect = page.GetPageRect(true);
-								Console.WriteLine("TextFragment = " + textFragment.Text + "    Page URY = " + rect.URY +
-												  "   TextFragment URY = " + textFragment.Rectangle.URY);
-								gr.DrawRectangle(
-								Pens.Black,
-								(float)characterInfo.Rectangle.LLX,
-								(float)characterInfo.Rectangle.LLY,
-								(float)characterInfo.Rectangle.Width,
-								(float)characterInfo.Rectangle.Height);
-							}
-							gr.DrawRectangle(
-							Pens.Green,
-							(float)segment.Rectangle.LLX,
-							(float)segment.Rectangle.LLY,
-							(float)segment.Rectangle.Width,
-							(float)segment.Rectangle.Height);
-						}
-					}
-				}
-			}
-		}
-		dataDir = dataDir + "HighlightCharacterInPDF_out.png";
-		bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
-	}
-	Console.WriteLine("\nCharacters highlighted successfully in pdf document.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get a 30-day temporary license from [here](https://pembelian.aspose.com/temporary-license/).");
 }
 ```
 
+Blok ini menangkap setiap pengecualian yang mungkin terjadi selama proses dan memberikan umpan balik informatif kepada pengguna.
+
 ## Kesimpulan
 
-Dalam tutorial ini, Anda telah mempelajari cara menyorot karakter dalam dokumen PDF menggunakan pustaka Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah dan menjalankan kode C# yang disediakan, Anda dapat menyorot karakter dalam PDF dan menyimpan hasilnya sebagai gambar.
+Nah, itu dia! Anda telah berhasil menyorot karakter dalam file PDF menggunakan Aspose.PDF untuk .NET. Pustaka canggih ini membuka pintu bagi kemungkinan tak terbatas dalam manipulasi PDF—baik saat Anda bekerja dengan anotasi, pengisian formulir, atau bahkan konversi dokumen. Saat Anda melanjutkan perjalanan dengan Aspose, ingatlah bahwa latihan adalah kuncinya. Teruslah bereksperimen dengan berbagai fitur, dan Anda akan segera menjadi ahli PDF!
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan dari tutorial "Menyorot Karakter dalam Berkas PDF"?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pembuatan, manipulasi, dan konversi dokumen PDF secara terprogram dalam aplikasi .NET.
 
-J: Tutorial "Sorot Karakter dalam Berkas PDF" menjelaskan cara menggunakan pustaka Aspose.PDF untuk .NET guna menyorot karakter dalam dokumen PDF. Tutorial ini menyediakan panduan langkah demi langkah dan kode sumber C# untuk mencapainya.
+### Bisakah saya menyorot beberapa fragmen teks sekaligus?
+Ya, kode yang disediakan dapat disesuaikan untuk menyorot beberapa fragmen dengan melakukan pengulangan pada semua teks dalam PDF.
 
-#### T: Mengapa saya ingin menyorot karakter dalam dokumen PDF?
+### Apakah ada versi gratis Aspose.PDF?
+Ya, Aspose menawarkan uji coba gratis, jadi Anda dapat menguji pustaka sebelum membeli.
 
-A: Menyorot karakter dalam dokumen PDF dapat berguna untuk berbagai tujuan, seperti menekankan konten tertentu atau membuat teks tertentu lebih terlihat dan dapat dibedakan.
+### Apakah saya memerlukan lisensi untuk menggunakan Aspose.PDF?
+Ya, lisensi yang valid diperlukan untuk penggunaan komersial, tetapi Anda dapat memperoleh lisensi sementara selama 30 hari untuk pengujian.
 
-#### T: Bagaimana cara mengatur direktori dokumen?
-
-A: Untuk mengatur direktori dokumen:
-
-1.  Mengganti`"YOUR DOCUMENT DIRECTORY"` di dalam`dataDir` variabel dengan jalur ke direktori tempat berkas PDF masukan Anda berada.
-
-#### T: Bagaimana cara memuat dokumen PDF dan mengubahnya menjadi gambar?
-
- A: Dalam tutorialnya,`Aspose.Pdf.Document` kelas digunakan untuk memuat dokumen PDF input. Kemudian,`PdfConverter` kelas digunakan untuk mengubah dokumen PDF menjadi gambar. Resolusi gambar diatur, dan gambar diambil sebagai`Bitmap` obyek.
-
-#### T: Bagaimana cara menyorot karakter pada gambar dokumen PDF?
-
-A: Tutorial ini memandu Anda melalui proses perulangan melalui setiap halaman dokumen PDF, menemukan kata-kata menggunakan`TextFragmentAbsorber`, dan mengulangi fragmen teks, segmen, dan karakter untuk menyorotnya menggunakan persegi panjang.
-
-#### T: Dapatkah saya menyesuaikan tampilan karakter dan segmen yang disorot?
-
-A: Ya, Anda dapat menyesuaikan tampilan karakter dan segmen yang disorot dengan memodifikasi warna dan gaya yang digunakan dalam operasi menggambar.
-
-#### T: Bagaimana cara menyimpan gambar yang dimodifikasi dengan karakter yang disorot?
-
- A: Tutorial ini menunjukkan cara menyimpan gambar yang dimodifikasi dengan karakter yang disorot ke file keluaran yang ditentukan menggunakan`Save` metode dari`Bitmap` kelas.
-
-#### T: Apakah Lisensi Aspose yang valid diperlukan untuk tutorial ini?
-
-A: Ya, Lisensi Aspose yang valid diperlukan agar tutorial ini dapat berfungsi dengan benar. Anda dapat membeli lisensi penuh atau memperoleh lisensi sementara selama 30 hari dari situs web Aspose.
+### Di mana saya dapat menemukan dokumentasi lebih lanjut?
+ Anda dapat merujuk ke[Dokumentasi Aspose.PDF](https://reference.aspose.com/pdf/net/) untuk informasi lebih rinci tentang implementasi dan fitur.

@@ -94,7 +94,7 @@ Console.ReadLine();
 ```
 
 - 在这里，我们调整`dataDir`再次指定新创建的PDF文件的输出路径。
-- 我们利用`Save`我们的方法`pdfDocument`对象，传递输出文件路径和我们配置的`saveOptions`.
+- 我们利用`Save`方法`pdfDocument`对象，传递输出文件路径和我们配置的`saveOptions`.
 - 最后，`Console.ReadLine()`用于暂停控制台窗口，让您在关闭之前查看输出。
 
 ## 结论

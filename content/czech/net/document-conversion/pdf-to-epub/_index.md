@@ -67,7 +67,7 @@ Document pdfDocument = new Document(dataDir + "PDFToEPUB.pdf");
 EpubSaveOptions options = new EpubSaveOptions();
 ```
 
- Tento řádek vytvoří novou instanci`EpubSaveOptions`, kterou nakonfigurujete v dalším kroku.
+ Tento řádek vytvoří novou instanci`EpubSaveOptions`, který nakonfigurujete v dalším kroku.
 
 ## Krok 4: Zadejte režim rozpoznávání obsahu
 

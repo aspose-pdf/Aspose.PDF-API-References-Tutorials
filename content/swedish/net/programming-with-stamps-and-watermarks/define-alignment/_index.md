@@ -174,4 +174,4 @@ Ja, Aspose.PDF kan användas i både skrivbords- och webbapplikationer, vilket g
  Absolut! Du kan komma åt en gratis testversion av Aspose.PDF från[här](https://releases.aspose.com/).
 
 ### Var kan jag hitta support för Aspose.PDF?  
- Du kan hitta hjälp och stöd på[Aspose Forum](https://forum.aspose.com/c/pdf/10).
+ Du kan få hjälp och stöd på[Aspose Forum](https://forum.aspose.com/c/pdf/10).

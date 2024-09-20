@@ -9,7 +9,7 @@ url: /nl/net/document-conversion/pdf-to-xml/
 ---
 ## Invoering
 
-In de digitale wereld van vandaag is het essentieel om documenten van het ene formaat naar het andere te kunnen converteren. Of u nu een ontwikkelaar, een zakelijke professional of iemand bent die regelmatig met PDF's werkt, weten hoe u PDF-bestanden naar XML kunt converteren kan een game-changer zijn. XML (eXtensible Markup Language) wordt veel gebruikt voor datarepresentatie en is met name handig voor data-uitwisseling tussen systemen. In deze tutorial gaan we onderzoeken hoe u Aspose.PDF voor .NET kunt gebruiken om PDF-bestanden naadloos naar XML-formaat te converteren. 
+In de digitale wereld van vandaag is het essentieel om documenten van het ene formaat naar het andere te kunnen converteren. Of u nu een ontwikkelaar, een zakelijke professional of gewoon iemand bent die regelmatig met PDF's werkt, weten hoe u PDF-bestanden naar XML kunt converteren kan een game-changer zijn. XML (eXtensible Markup Language) wordt veel gebruikt voor datarepresentatie en is met name handig voor data-uitwisseling tussen systemen. In deze tutorial gaan we onderzoeken hoe u Aspose.PDF voor .NET kunt gebruiken om PDF-bestanden naadloos naar XML-formaat te converteren. 
 
 ## Vereisten
 

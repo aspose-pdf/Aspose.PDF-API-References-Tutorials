@@ -2,182 +2,143 @@
 title: Ajouter un retrait aux lignes suivantes dans le fichier PDF
 linktitle: Ajouter un retrait aux lignes suivantes dans le fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Découvrez comment ajouter un retrait de lignes ultérieures au texte d'un fichier PDF à l'aide d'Aspose.PDF pour .NET.
+description: Découvrez comment ajouter des retraits aux lignes suivantes des fichiers PDF à l'aide d'Aspose.PDF pour .NET. Suivez ce guide détaillé étape par étape pour une mise en forme professionnelle du texte.
 type: docs
 weight: 60
 url: /fr/net/programming-with-text/add-subsequent-lines-indent/
 ---
-Ce didacticiel vous guidera tout au long du processus d'ajout de retraits de lignes ultérieures au texte d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni illustre les étapes nécessaires.
+## Introduction
 
-## Exigences
-Avant de commencer, assurez-vous de disposer des éléments suivants :
+Créer des PDF visuellement attrayants implique souvent plus que simplement placer du texte sur une page. Vous êtes-vous déjà demandé comment ajouter un retrait aux lignes suivantes d'un document PDF, pour lui donner un aspect plus professionnel ? Que vous créiez un rapport, un livre électronique ou tout autre document où la mise en page est importante, il est essentiel de pouvoir contrôler la façon dont le texte s'écoule. Aujourd'hui, nous allons découvrir comment ajouter un retrait aux lignes suivantes d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette fonctionnalité peut être particulièrement utile pour les paragraphes qui nécessitent un retrait suspendu, ce qui améliore la lisibilité et l'esthétique. Alors, passons directement à l'action !
 
-- Visual Studio ou tout autre compilateur C# installé sur votre machine.
-- Bibliothèque Aspose.PDF pour .NET. Vous pouvez la télécharger depuis le site officiel d'Aspose ou utiliser un gestionnaire de paquets comme NuGet pour l'installer.
+## Prérequis
 
-## Étape 1 : Configurer le projet
-1. Créez un nouveau projet C# dans votre environnement de développement préféré.
-2. Ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
+Avant de commencer, vous devez mettre en place quelques éléments :
 
-## Étape 2 : Importer les espaces de noms requis
-Dans le fichier de code dans lequel vous souhaitez ajouter un retrait pour les lignes suivantes, ajoutez la directive using suivante en haut du fichier :
+-  Aspose.PDF pour .NET : vous devez avoir installé cette bibliothèque. Si ce n'est pas déjà fait, vous pouvez[téléchargez-le ici](https://releases.aspose.com/pdf/net/).
+- Environnement de développement : une connaissance de base de C# et d'un IDE comme Visual Studio serait utile.
+- .NET Framework : ce didacticiel suppose que vous travaillez dans un environnement .NET.
+-  Licence temporaire : Si vous ne disposez pas d'une licence complète pour Aspose.PDF, vous pouvez demander une[permis temporaire](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+Maintenant que vous êtes prêt, passons à la section codage !
 
-## Étape 3 : définir le répertoire du document
- Dans le code, recherchez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin vers le répertoire où sont stockés vos documents.
+## Importation d'espaces de noms
 
-## Étape 4 : Créer un nouvel objet Document
- Instancier un nouveau`Document` objet en ajoutant la ligne de code suivante :
+Tout d'abord, vous devez importer les espaces de noms nécessaires pour rendre la bibliothèque Aspose.PDF disponible dans votre projet. Il s'agit d'une étape simple, mais essentielle pour faire avancer les choses.
 
 ```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Étape 5 : Ajouter une page au document
- Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+Une fois ceux-ci importés, vous êtes prêt à travailler avec les puissants outils fournis par Aspose.PDF.
 
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
+## Étape 1 : Configurez votre document et votre page
 
-## Étape 6 : créer un fragment de texte avec des lignes ultérieures en retrait
- Instancier un`TextFragment` objet et fournir le texte souhaité. Dans le code fourni, le texte est attribué à la variable`text` . Ensuite, initialisez`TextFormattingOptions` pour le`TextFragment` et précisez le`SubsequentLinesIndent` valeur.
+Avant de pouvoir ajouter une indentation, nous devons créer un nouveau document PDF et y ajouter une page. Ce sera la toile sur laquelle nous appliquerons notre mise en forme de texte.
 
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-     SubsequentLinesIndent = 20
-};
-```
-
-## Étape 7 : ajouter le fragment de texte à la page
- Ajoutez le`TextFragment` objet à la collection de paragraphes de la page.
-
-```csharp
-page.Paragraphs.Add(text);
-```
-
-## Étape 8 : Répétez les étapes 6 et 7 pour des lignes supplémentaires
-Pour ajouter des lignes suivantes avec le même retrait, répétez les étapes 6 et 7 pour chaque ligne. Mettez à jour le contenu du texte si nécessaire.
-
-```csharp
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-```
-
-## Étape 9 : Enregistrez le document PDF
- Enregistrez le document PDF à l'aide de la`Save` méthode de la`Document` objet. Spécifiez le chemin du fichier de sortie.
-
-```csharp
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-### Exemple de code source pour l'ajout d'un retrait de lignes ultérieures à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // Créer un nouvel objet de document
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-Aspose.Pdf.Page page = document.Pages.Add();
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-//Initialisez TextFormattingOptions pour le fragment de texte et spécifiez la valeur FollowingLinesIndent
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-	SubsequentLinesIndent = 20
-};
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
 
-## Conclusion
-Vous avez ajouté avec succès un retrait aux lignes suivantes du texte à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant se trouve désormais dans le chemin de fichier de sortie spécifié.
-
-### FAQ
-
-#### Q : Quel est l’objectif de ce tutoriel ?
-
-R : Ce didacticiel fournit un guide complet sur la façon d'ajouter un retrait de lignes ultérieures au texte d'un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Il comprend des exemples de code source C# pour illustrer les étapes nécessaires à cette fin.
-
-#### Q : Quels espaces de noms dois-je importer pour ce tutoriel ?
-
-R : Dans le fichier de code dans lequel vous souhaitez ajouter un retrait pour les lignes suivantes, importez les espaces de noms suivants au début du fichier :
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### Q : Comment spécifier le répertoire du document ?
-
- A : Dans le code, localisez la ligne`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
-
-#### Q : Comment créer un objet Document ?
-
- A : À l’étape 4, vous allez instancier un nouveau`Document` objet en utilisant la ligne de code suivante :
-
-```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-```
-
-#### Q : Comment ajouter une page au document ?
-
- A : À l'étape 5, vous ajouterez une nouvelle page au document à l'aide de l'`Add` méthode de la`Pages` collection:
-
-```csharp
+//Ajouter une nouvelle page au document
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Q : Comment puis-je ajouter un retrait aux lignes suivantes du texte ?
+Ici, nous initialisons le document PDF et y ajoutons une page vierge. C'est assez simple jusqu'ici, n'est-ce pas ? Considérez cela comme une préparation avant d'ajouter votre contenu.
 
- A : À l'étape 6, vous allez créer un`TextFragment` objet et lui assigner le texte souhaité. Ensuite, vous initialiserez`TextFormattingOptions` pour le`TextFragment` et précisez le`SubsequentLinesIndent` valeur:
+## Étape 2 : Créer le fragment de texte
+
+ Ensuite, vous devez créer un`TextFragment` objet qui contiendra le texte que vous afficherez sur votre PDF. Ce texte sera ensuite formaté avec les indentations requises.
 
 ```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
+Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment(
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog."
+);
+```
+
+Il s'agit simplement d'un exemple de texte simple répété plusieurs fois pour remplir l'espace sur la page. Vous pouvez le remplacer par n'importe quel texte pertinent pour votre projet.
+
+## Étape 3 : Initialiser les options de formatage du texte
+
+ C'est ici que la magie opère ! Maintenant que vous avez votre`TextFragment` , vous devrez initialiser les options de formatage du texte pour spécifier le`SubsequentLinesIndent`Ce paramètre appliquera un retrait à toutes les lignes sauf la première.
+
+```csharp
+// Initialisez TextFormattingOptions pour le fragment de texte et spécifiez la valeur FollowingLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
     SubsequentLinesIndent = 20
 };
 ```
 
-#### Q : Comment ajouter le TextFragment au document PDF ?
+Dans cet exemple, nous avons défini le retrait sur 20 unités. Cela signifie que chaque ligne après la première sera indentée de 20 unités, créant ainsi un retrait suspendu visuellement distinct.
 
- A : À l'étape 7, vous ajouterez le`TextFragment` objet (`text`) à la collection de paragraphes de la page :
+## Étape 4 : Ajouter du texte à la page
+
+ Maintenant que vous avez appliqué la mise en forme nécessaire, il est temps d'ajouter le texte à la page. Cela se fait en ajoutant le`TextFragment` à la collection de paragraphes de la page.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q : Puis-je répéter le processus pour des lignes supplémentaires ?
+À ce stade, la page contient le texte et les lignes suivantes sont en retrait. Mais pourquoi s'arrêter là ? Ajoutons des lignes supplémentaires pour que le document paraisse plus complet.
 
- : Oui, à l'étape 8, vous pouvez répéter le processus pour des lignes supplémentaires avec le même retrait en créant de nouvelles`TextFragment` objets et les ajouter à la collection de paragraphes de la page.
+## Étape 5 : ajouter des fragments de texte supplémentaires
 
-#### Q : Comment puis-je enregistrer le document PDF obtenu ?
+Pour illustrer comment plusieurs fragments de texte peuvent apparaître dans le même document, vous pouvez ajouter quelques lignes supplémentaires. Chacune de ces lignes peut être formatée indépendamment ou utiliser la même mise en forme que celle de l'étape précédente.
 
- A : Après avoir ajouté le texte avec les lignes suivantes en retrait, utilisez le`Save` méthode de la`Document` objet pour enregistrer le document PDF :
+```csharp
+text = new Aspose.Pdf.Text.TextFragment("Line2");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line3");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line4");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line5");
+page.Paragraphs.Add(text);
+```
+
+À chaque nouveau fragment de texte ajouté à la page, votre document commence à prendre forme. Vous pouvez facilement imaginer comment vous pouvez utiliser cela dans différents scénarios, que vous créiez des documents longs ou du contenu court.
+
+## Étape 6 : Enregistrer le document
+
+Une fois que vous avez ajouté tout votre texte et appliqué la mise en forme souhaitée, il est temps d'enregistrer le document. La ligne de code suivante fait exactement cela, en enregistrant le fichier dans le répertoire spécifié.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q : Quel est le point clé à retenir de ce tutoriel ?
+Et voilà ! Votre fichier PDF contient désormais du texte avec des lignes suivantes en retrait.
 
-R : En suivant ce didacticiel, vous avez appris à améliorer la lisibilité du texte dans un document PDF en ajoutant un retrait aux lignes suivantes à l'aide d'Aspose.PDF pour .NET. Cette technique peut être utile pour différents types de documents et de rapports.
+## Conclusion
+
+Et voilà ! Vous venez d'apprendre à ajouter des retraits de ligne à votre PDF à l'aide d'Aspose.PDF pour .NET. Cette méthode est parfaite pour ajouter une touche professionnelle à vos documents, en vous offrant la possibilité de contrôler la manière dont le texte est affiché. Que vous prépariez des rapports commerciaux, des documents juridiques ou à peu près n'importe quel type de fichier PDF, l'indentation est un outil petit mais puissant pour améliorer la lisibilité. Si vous avez apprécié ce didacticiel, pourquoi ne pas découvrir les autres fonctionnalités qu'Aspose.PDF a à offrir ?
+
+## FAQ
+
+### Puis-je appliquer des retraits différents à différents paragraphes ?  
+ Oui, vous pouvez appliquer différents paramètres d'indentation à chaque`TextFragment` en modifiant leur individu`TextState.FormattingOptions`.
+
+###  Quelles unités sont utilisées pour le`SubsequentLinesIndent` property?  
+Le retrait est mesuré en points, qui est l'unité de mesure standard dans les documents PDF.
+
+### Puis-je appliquer cela à des PDF déjà existants ?  
+Absolument ! Vous pouvez charger un PDF existant et lui appliquer ces modifications de la même manière que vous le feriez pour un nouveau document.
+
+### Existe-t-il une limite à l'indentation que je peux appliquer aux lignes suivantes ?  
+Il n'y a pas de limite stricte, mais pour des raisons de lisibilité, il est recommandé de conserver l'indentation dans des limites raisonnables.
+
+### Puis-je combiner cela avec d’autres options de formatage de texte ?  
+ Oui ! Vous pouvez combiner les`SubsequentLinesIndent` propriété avec d'autres options de formatage de texte telles que la taille de la police, la couleur et l'alignement pour personnaliser encore plus votre texte.

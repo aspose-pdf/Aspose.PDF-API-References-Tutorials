@@ -2,30 +2,58 @@
 title: Estrai bordo nel file PDF
 linktitle: Estrai bordo nel file PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come estrarre il bordo da un file PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come estrarre i bordi da un file PDF e salvarli come immagine usando Aspose.PDF per .NET. Guida passo passo con esempi di codice e suggerimenti per il successo.
 type: docs
 weight: 80
 url: /it/net/programming-with-tables/extract-border/
 ---
-In questo tutorial, impareremo come estrarre il bordo in un file PDF usando Aspose.PDF per .NET. Spiegheremo il codice sorgente in C# passo dopo passo. Alla fine di questo tutorial, saprai come estrarre il bordo da un documento PDF e salvarlo come immagine. Cominciamo!
+## Introduzione
 
-## Fase 1: Impostazione dell'ambiente
-Per prima cosa, assicurati di aver impostato il tuo ambiente di sviluppo C# con Aspose.PDF per .NET. Aggiungi il riferimento alla libreria e importa i namespace necessari.
+Quando si lavora con i PDF, estrarre elementi specifici come bordi o percorsi grafici potrebbe sembrare un compito arduo. Ma con Aspose.PDF per .NET, puoi facilmente estrarre bordi o forme da un file PDF e salvarli come immagine. In questo tutorial, ci immergeremo nel processo di estrazione di un bordo da un PDF e del suo salvataggio come immagine PNG. Preparati a prendere il controllo dei contenuti grafici del tuo PDF!
 
-## Passaggio 2: caricamento del documento PDF
-In questo passaggio carichiamo il documento PDF dal file specificato.
+## Prerequisiti
+
+Prima di immergerci nel codice, assicurati di aver impostato tutto:
+
+1.  Aspose.PDF per .NET: se non hai ancora installato la libreria Aspose.PDF, puoi[scaricalo qui](https://releases.aspose.com/pdf/net/). Dovrai anche applicare la licenza, tramite la prova gratuita o una licenza acquistata.
+2. Configurazione IDE: Configura un progetto C# in Visual Studio o in qualsiasi altro IDE .NET. Assicurati di aver aggiunto i riferimenti necessari alla libreria Aspose.PDF.
+3. File PDF di input: tieni pronto un file PDF da cui estrarre i bordi. Questo tutorial farà riferimento a un file denominato`input.pdf`.
+
+## Importazione dei pacchetti richiesti
+
+Cominciamo importando i namespace richiesti. Questi pacchetti forniscono gli strumenti necessari per manipolare il contenuto PDF.
 
 ```csharp
+using System.IO;
+using System;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Collections;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Ora che abbiamo capito le basi, passiamo alla guida dettagliata, in cui analizzeremo ogni parte del codice per spiegarla in dettaglio.
+
+
+## Passaggio 1: caricamento del documento PDF
+
+Il primo passo è caricare il documento PDF che contiene il bordo che vuoi estrarre. Immagina di aprire un libro prima di iniziare a leggere: hai bisogno di accedere al contenuto!
+
+ Inizieremo specificando la directory in cui è archiviato il file PDF e caricheremo il documento utilizzando`Aspose.Pdf.Document` classe.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Assicurati di sostituire "DIRECTORY DEI TUOI DOCUMENTI" con la directory effettiva in cui si trova il tuo file PDF.
+ Questo codice carica il`input.pdf` file dalla directory specificata. Assicurati che il percorso del file sia corretto, altrimenti potresti ricevere un errore di file non trovato.
 
-## Fase 3: estrazione dei bordi
-Estrarremo il bordo dal documento PDF iterando sulle operazioni contenute nel documento.
+## Fase 2: Impostazione della grafica e del bitmap
+
+Prima di iniziare l'estrazione, dobbiamo creare una tela su cui disegnare. Nel mondo di .NET, questo significa impostare un oggetto Bitmap e Graphics. Il Bitmap rappresenta l'immagine e l'oggetto Graphics ci consentirà di disegnare forme, come i bordi, estratte dal PDF.
 
 ```csharp
-Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
@@ -33,226 +61,106 @@ System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.M
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
 System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+```
 
-using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
+Ecco una ripartizione:
+- Creiamo un'immagine bitmap delle dimensioni della prima pagina del PDF.
+- GraphicsPath viene utilizzato per definire le forme (in questo caso, i bordi).
+- La matrice definisce il modo in cui verrà trasformata la grafica; abbiamo bisogno di una matrice di inversione perché PDF e .NET hanno sistemi di coordinate diversi.
+
+## Fase 3: Elaborazione dei contenuti PDF
+
+
+Il file PDF è una serie di comandi di disegno e dobbiamo elaborare ciascuno di questi comandi per identificare ed estrarre le informazioni sul bordo.
+
+```csharp
+foreach (Operator op in doc.Pages[1].Contents)
 {
-     // Elaborare tutte le operazioni sui contenuti
-     foreach(Operator op in doc.Pages[1].Contents)
-     {
-         // Controllare il tipo di operazione
-         // ...
-         // Aggiungere codice per elaborare ogni operazione
-     }
+    // Elaborazione di comandi quali salvataggio/ripristino dello stato, disegno di linee, riempimento di forme, ecc.
 }
 ```
 
- Creiamo un`graphicsState` pila per memorizzare gli stati grafici, un'immagine bitmap per catturare il bordo estratto, un`GraphicsPath` oggetto per memorizzare i percorsi di disegno e altre variabili per tracciare lo stato e i colori.
+Il codice esegue un loop attraverso ogni operatore di disegno nel flusso di contenuti del PDF. Ogni operatore potrebbe rappresentare una linea, un rettangolo o un'altra istruzione grafica.
 
-## Fase 4: Elaborazione delle transazioni
-In questa fase elaboriamo ogni operazione del documento per estrarre il bordo.
+## Fase 4: Gestione degli operatori PDF
+
+Ogni operatore nel file PDF controlla un'azione. Per estrarre il bordo, dobbiamo identificare comandi come "sposta su", "linea su" e "disegna rettangolo". I seguenti operatori gestiscono queste azioni:
+
+- MoveTo: sposta il cursore al punto di partenza.
+- LineTo: traccia una linea dal punto corrente a un nuovo punto.
+- Re: Disegna un rettangolo (potrebbe essere parte del bordo).
 
 ```csharp
-// Controllare il tipo di operazione
-if (opSaveState != null)
-{
-     // Salva lo stato precedente e sposta lo stato corrente in cima alla pila
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opRestoreState != null)
-{
-     // Elimina lo stato corrente e ripristina lo stato precedente
-     graphicsState. Pop();
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opCtm != null)
-{
-     // Recupera la matrice di trasformazione corrente
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-         (float)opCtm.Matrix.A,
-         (float)opCtm.Matrix.B,
-         (float)opCtm.Matrix.C,
-         (float)opCtm.Matrix.D,
-         (float)opCtm.Matrix.E,
-         (float)opCtm.Matrix.F);
+Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
+Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
+Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
 
-     // Moltiplicare la matrice corrente per la matrice di stato
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opMoveTo != null)
+if (opMoveTo != null)
 {
-     // Aggiorna l'ultimo punto di disegno
-     lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
+    lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Elaborare il disegno di una linea
-     // ...
-     // Aggiungere codice per gestire il disegno di una linea
+    System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
+    graphicsPath.AddLine(lastPoint, linePoint);
+    lastPoint = linePoint;
 }
-// ...
-// Aggiungere blocchi else if per altre operazioni
+else if (opRe != null)
+{
+    System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
+    graphicsPath.AddRectangle(re);
+}
 ```
 
-Verifichiamo il tipo di operazione utilizzando le condizioni ed eseguiamo il codice appropriato per ciascuna operazione.
+In questa fase:
+- Catturiamo i punti per ogni linea o forma disegnata.
+- Per i rettangoli (`opRe` ), li aggiungiamo direttamente al`graphicsPath`, che utilizzeremo più avanti per disegnare il bordo.
 
-## Passaggio 5: Immagine di backup
-Infine, salviamo l'immagine bitmap contenente il bordo estratto in un file specificato.
+## Fase 5: Disegnare il bordo
 
-```csharp
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-```
-
-Assicuratevi di specificare la directory e il nome file corretti in cui salvare l'immagine di output.
-
-### Esempio di codice sorgente per Estrai bordo utilizzando Aspose.PDF per .NET
+Una volta identificate le linee e i rettangoli che formano il bordo, dobbiamo effettivamente disegnarli sull'oggetto Bitmap. È qui che entra in gioco l'oggetto Graphics.
 
 ```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document(dataDir + "input.pdf");
-
-Stack graphicsState = new Stack();
-System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
-System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Il valore predefinito della matrice ctm è 1,0,0,1,0,0
-System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Sistema.Il sistema di coordinate del disegno è basato in alto a sinistra, mentre il sistema di coordinate PDF è basato in basso a sinistra, quindi dobbiamo applicare la matrice di inversione
-System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
-System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
-System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
-System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-	gr.SmoothingMode = SmoothingMode.HighQuality;
-	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-
-	// Elaborare tutti i comandi dei contenuti
-	foreach (Operator op in doc.Pages[1].Contents)
-	{
-		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-		Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-		Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-		Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
-		Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
-		Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
-		Aspose.Pdf.Operators.EndPath opEndPath = op as Aspose.Pdf.Operators.EndPath;
-		Aspose.Pdf.Operators.Stroke opStroke = op as Aspose.Pdf.Operators.Stroke;
-		Aspose.Pdf.Operators.Fill opFill = op as Aspose.Pdf.Operators.Fill;
-		Aspose.Pdf.Operators.EOFill opEOFill = op as Aspose.Pdf.Operators.EOFill;
-		Aspose.Pdf.Operators.SetRGBColor opRGBFillColor = op as Aspose.Pdf.Operators.SetRGBColor;
-		Aspose.Pdf.Operators.SetRGBColorStroke opRGBStrokeColor = op as Aspose.Pdf.Operators.SetRGBColorStroke;
-
-		if (opSaveState != null)
-		{
-			// Salva lo stato precedente e sposta lo stato attuale in cima alla pila
-			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opRestoreState != null)
-		{
-			// Elimina lo stato attuale e ripristina quello precedente
-			graphicsState.Pop();
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opCtm != null)
-		{
-			System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-				(float)opCtm.Matrix.A,
-				(float)opCtm.Matrix.B,
-				(float)opCtm.Matrix.C,
-				(float)opCtm.Matrix.D,
-				(float)opCtm.Matrix.E,
-				(float)opCtm.Matrix.F);
-
-			// Moltiplicare la matrice corrente per la matrice di stato
-			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opMoveTo != null)
-		{
-			lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
-		}
-		else if (opLineTo != null)
-		{
-			System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
-			graphicsPath.AddLine(lastPoint, linePoint);
-
-			lastPoint = linePoint;
-		}
-		else if (opRe != null)
-		{
-			System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
-			graphicsPath.AddRectangle(re);
-		}
-		else if (opEndPath != null)
-		{
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opRGBFillColor != null)
-		{
-			fillColor = opRGBFillColor.getColor();
-		}
-		else if (opRGBStrokeColor != null)
-		{
-			strokeColor = opRGBStrokeColor.getColor();
-		}
-		else if (opStroke != null)
-		{
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Winding;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opEOFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Alternate;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-	}
+    gr.SmoothingMode = SmoothingMode.HighQuality;
+    gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
 }
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-
-Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
+- Creiamo un oggetto Graphics basato sulla bitmap.
+- SmoothingMode.HighQuality garantisce un'immagine piacevolmente omogenea.
+- Infine, utilizziamo DrawPath per disegnare il bordo.
+
+## Passaggio 6: salvataggio del bordo estratto
+
+Ora che abbiamo estratto il bordo, è il momento di salvarlo come file immagine. Questo salverà il bordo come PNG.
+
+```csharp
+dataDir = dataDir + "ExtractBorder_out.png";
+bitmap.Save(dataDir, ImageFormat.Png);
+```
+
+- La bitmap viene salvata come immagine PNG.
+- Ora puoi aprire questa immagine per visualizzare il bordo estratto.
+
 ## Conclusione
-In questo tutorial, abbiamo imparato come estrarre il bordo da un documento PDF usando Aspose.PDF per .NET. Puoi usare questa guida passo passo per estrarre il bordo da altri documenti PDF.
 
-### FAQ per estrarre il bordo nel file PDF
+Estrarre i bordi da un file PDF usando Aspose.PDF per .NET potrebbe sembrare complicato all'inizio, ma una volta capito, diventa semplice. Comprendendo gli operatori di disegno in un PDF e utilizzando le potenti librerie .NET, puoi manipolare ed estrarre contenuti grafici in modo efficiente. Questa guida ti fornisce una solida base per iniziare a manipolare PDF!
 
-#### D: Qual è lo scopo dell'estrazione del bordo da un file PDF?
+## Domande frequenti
 
-R: Estrarre il bordo da un file PDF può essere utile per vari scopi. Consente di isolare e analizzare gli elementi strutturali del documento, come tabelle, diagrammi o elementi grafici. È possibile utilizzare il bordo estratto per identificare il layout, le dimensioni e il posizionamento del contenuto all'interno del documento PDF.
+### Come faccio a gestire più pagine in un PDF?  
+ È possibile scorrere ogni pagina del documento iterando`doc.Pages` invece di codificare in modo rigido`doc.Pages[1]`.
 
-#### D: Posso estrarre il bordo da pagine o aree specifiche all'interno del documento PDF?
+### Posso estrarre altri elementi, come il testo, utilizzando lo stesso approccio?  
+Sì, Aspose.PDF fornisce API avanzate per estrarre testo, immagini e altri contenuti dai file PDF.
 
- R: Sì, puoi modificare il codice sorgente C# fornito per estrarre il bordo da pagine o regioni specifiche all'interno del documento PDF. Manipolando il`doc.Pages` raccolta e specificando criteri personalizzati, è possibile scegliere di estrarre il bordo da pagine specifiche o aree di interesse.
+### Come posso richiedere una licenza per evitare limitazioni?  
+ Puoi[applicare una licenza](https://purchase.aspose.com/temporary-license/) caricandolo tramite il`License` classe fornita da Aspose.
 
-#### D: Come posso personalizzare il formato e la qualità dell'immagine di output?
+### Cosa succede se il mio PDF non ha bordi?  
+Se il tuo PDF non contiene bordi visibili, il processo di estrazione della grafica potrebbe non produrre alcun risultato. Assicurati che il contenuto del PDF includa bordi disegnabili.
 
- A: Nel codice C# fornito, il bordo estratto viene salvato come immagine PNG. Se si desidera modificare il formato dell'immagine di output, è possibile modificare il`ImageFormat.Png` parametro nel`bitmap.Save` metodo ad altri formati immagine supportati, come JPEG, BMP o GIF. Inoltre, puoi regolare la qualità dell'immagine o le impostazioni di compressione in base alle tue esigenze.
-
-#### D: Quali altre operazioni posso eseguire sul bordo estratto?
-
-R: Una volta estratto il bordo come immagine, puoi elaborarlo ulteriormente utilizzando librerie o algoritmi di elaborazione delle immagini. Puoi analizzare l'immagine, applicare filtri alle immagini, rilevare pattern o eseguire l'OCR (riconoscimento ottico dei caratteri) per estrarre il testo dall'immagine, se necessario.
-
-#### D: Ci sono limitazioni o considerazioni da fare quando si estraggono bordi da documenti PDF complessi?
-
-R: Il processo di estrazione può variare a seconda della complessità del documento PDF. I PDF complessi con più livelli, trasparenza o grafica avanzata potrebbero richiedere un'elaborazione o delle regolazioni aggiuntive per estrarre accuratamente il bordo. È essenziale testare attentamente il processo di estrazione su vari documenti PDF per garantire risultati affidabili.
+### Posso salvare l'output in formati diversi da PNG?  
+ Sì, cambia semplicemente il`ImageFormat.Png` in un altro formato supportato come`ImageFormat.Jpeg`.

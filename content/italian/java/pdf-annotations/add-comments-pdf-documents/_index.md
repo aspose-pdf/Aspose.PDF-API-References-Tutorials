@@ -14,7 +14,7 @@ I documenti PDF sono diventati uno standard per la condivisione di informazioni 
 
 ## Introduzione ad Aspose.PDF per Java
 
- Per iniziare, dovrai impostare il tuo ambiente di sviluppo. Assicurati di avere la libreria Aspose.PDF per Java installata. Puoi scaricarla da[Qui](https://releases.aspose.com/pdf/java/).
+Per iniziare, dovrai impostare il tuo ambiente di sviluppo. Assicurati di avere la libreria Aspose.PDF per Java installata. Puoi scaricarla da[Qui](https://releases.aspose.com/pdf/java/).
 
 ## Creazione di un documento PDF
 
@@ -82,4 +82,4 @@ Il numero di commenti che è possibile aggiungere a un documento PDF dipende da 
 
 ### Come posso estrarre i commenti da un PDF tramite programmazione?
 
-È possibile estrarre commenti da un documento PDF utilizzando Aspose.PDF per Java, scorrendo le annotazioni del documento.
+È possibile estrarre commenti da un documento PDF utilizzando Aspose.PDF per Java scorrendo le annotazioni del documento.

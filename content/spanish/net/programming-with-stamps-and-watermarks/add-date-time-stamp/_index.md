@@ -19,7 +19,7 @@ Antes de comenzar, hay algunos requisitos previos que debes tener en cuenta:
 
 1. Visual Studio: asegúrate de tener Visual Studio instalado en tu equipo. Aquí es donde escribirás y ejecutarás tu código.
 2. Aspose.PDF para .NET: Debe descargar e instalar la biblioteca Aspose.PDF. Puede encontrar la última versión[aquí](https://releases.aspose.com/pdf/net/).
-3. Conocimientos básicos de C#: La familiaridad con la programación en C# te ayudará a comprender mejor los ejemplos, pero no te preocupes si recién estás empezando; te explicaremos todo paso a paso.
+3. Conocimientos básicos de C#: La familiaridad con la programación en C# te ayudará a comprender mejor los ejemplos, pero no te preocupes si recién estás comenzando; te explicaremos todo paso a paso.
 4.  Un archivo PDF: tenga listo un archivo PDF de muestra. Para nuestro ejemplo, usaremos un archivo llamado`AddTextStamp.pdf`.
 
 Una vez que tenga estos requisitos previos, ¡estará listo para comenzar a agregar marcas de fecha y hora a sus archivos PDF!

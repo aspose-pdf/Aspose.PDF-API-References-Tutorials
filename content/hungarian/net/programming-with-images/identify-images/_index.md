@@ -15,7 +15,7 @@ Ha PDF fájlokkal dolgozik, elengedhetetlen, hogy tudja, hogyan kezelheti a doku
 
 Mielőtt elkezdené az oktatóanyagot, nézzük meg, mire lesz szüksége a feladat elvégzéséhez:
 
--  Aspose.PDF for .NET: Győződjön meg arról, hogy a legújabb verziót telepítette. Tudod[töltse le az Aspose.PDF-et .NET-hez](https://releases.aspose.com/pdf/net/) vagy elérheti a[ingyenes próbaverzió](https://releases.aspose.com/).
+-  Aspose.PDF for .NET: Győződjön meg arról, hogy a legújabb verziót telepítette. Megteheti[töltse le az Aspose.PDF-et .NET-hez](https://releases.aspose.com/pdf/net/) vagy elérheti a[ingyenes próbaverzió](https://releases.aspose.com/).
 - IDE: Olyan fejlesztői környezetre lesz szüksége, mint a Visual Studio.
 - .NET-keretrendszer: Győződjön meg arról, hogy a .NET-keretrendszer telepítve van és be van állítva a projektben.
 -  Ideiglenes jogosítvány: Ön is szeretne a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) teljes könyvtári funkciók feloldásához, ha a próbaverzióval dolgozik.
@@ -67,7 +67,7 @@ foreach (Page page in document.Pages)
 }
 ```
 
-Ez a kód kiírja a PDF minden oldalának oldalszámát, jelezve, hogy melyik oldal van éppen feldolgozás alatt.
+Ez a kód a PDF minden oldalához kiírja az oldalszámot, jelezve, hogy melyik oldal van éppen feldolgozás alatt.
 
 ## 4. lépés: Az ImagePlacementAbsorber segítségével azonosítsa a képeket
 

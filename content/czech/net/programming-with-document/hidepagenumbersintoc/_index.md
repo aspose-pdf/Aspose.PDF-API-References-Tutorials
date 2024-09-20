@@ -2,7 +2,7 @@
 title: Skrýt čísla stránek v obsahu
 linktitle: Skrýt čísla stránek v obsahu
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se skrýt čísla stránek v obsahu pomocí Aspose.PDF for .NET. Chcete-li vytvářet profesionální soubory PDF, postupujte podle tohoto podrobného průvodce s příklady kódu.
+description: Naučte se, jak skrýt čísla stránek v obsahu pomocí Aspose.PDF for .NET. Chcete-li vytvářet profesionální soubory PDF, postupujte podle tohoto podrobného průvodce s příklady kódu.
 type: docs
 weight: 220
 url: /cs/net/programming-with-document/hidepagenumbersintoc/
@@ -141,7 +141,7 @@ Ne, Aspose.PDF skryje nebo zobrazí čísla stránek pro celý obsah. Nemůžete
 ### Je možné přidat další úrovně do TOC?
  Ano, můžete zvýšit`FormatArrayLength` definovat více úrovní nadpisů TOC.
 
-### Jak mohu změnit písmo pro všechny položky obsahu?
+### Jak mohu změnit písmo pro všechny položky TOC?
  Písmo můžete změnit úpravou`TextState.Font` vlastnost pro každou úroveň v`FormatArray`.
 
 ### Mohu vložit hypertextové odkazy do obsahu?

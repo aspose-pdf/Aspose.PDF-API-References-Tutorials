@@ -9,7 +9,7 @@ url: /it/net/annotations/updatefreetextannotation/
 ---
 ## Introduzione
 
-Nell'era digitale, i PDF sono diventati un punto fermo per la condivisione di documenti. Che si tratti di un report, di un contratto o di una semplice nota, i PDF mantengono la loro formattazione su diversi dispositivi, il che li rende incredibilmente utili. Ma cosa succede se hai bisogno di aggiornare le annotazioni in un PDF? Ecco dove entra in gioco Aspose.PDF per .NET. Questa potente libreria consente agli sviluppatori di manipolare i file PDF con facilità, incluso l'aggiornamento delle annotazioni di testo libero. In questo tutorial, ti guideremo attraverso i passaggi per aggiornare un'annotazione di testo libero in un documento PDF utilizzando Aspose.PDF per .NET. Quindi, prendi il tuo cappello da programmatore e tuffiamoci!
+Nell'era digitale, i PDF sono diventati un punto fermo per la condivisione di documenti. Che si tratti di un report, di un contratto o di una semplice nota, i PDF mantengono la loro formattazione su diversi dispositivi, il che li rende incredibilmente utili. Ma cosa succede se hai bisogno di aggiornare le annotazioni in un PDF? Ecco dove entra in gioco Aspose.PDF per .NET. Questa potente libreria consente agli sviluppatori di manipolare i file PDF con facilità, incluso l'aggiornamento delle annotazioni di testo libero. In questo tutorial, ti guideremo attraverso i passaggi per aggiornare un'annotazione di testo libero in un documento PDF utilizzando Aspose.PDF per .NET. Quindi, prendi il tuo cappello da programmatore e tuffiamoci dentro!
 
 ## Prerequisiti
 

@@ -111,7 +111,7 @@ Console.WriteLine("\nArabic text filled successfully in form field.\nFile saved 
 Ναι, το Aspose.PDF υποστηρίζει πολλές γλώσσες, συμπεριλαμβανομένων των αραβικών, αγγλικών, γαλλικών και άλλων.
 
 ### Πού μπορώ να κατεβάσω το Aspose.PDF για .NET;
- Μπορείτε να το κατεβάσετε από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/net/).
+ Μπορείτε να το κατεβάσετε από το[Aspose website](https://releases.aspose.com/pdf/net/).
 
 ### Υπάρχει δωρεάν δοκιμή διαθέσιμη;
  Ναι, μπορείτε να δοκιμάσετε το Aspose.PDF δωρεάν κατεβάζοντας τη δοκιμαστική έκδοση[εδώ](https://releases.aspose.com/).

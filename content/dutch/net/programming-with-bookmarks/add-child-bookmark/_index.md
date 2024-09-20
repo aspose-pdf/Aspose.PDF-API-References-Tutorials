@@ -100,7 +100,7 @@ Vergelijkbaar met de parent bookmark, maken we een child bookmark met een eigen 
 Nu beide bladwijzers zijn gemaakt, is het tijd om ze aan elkaar te koppelen.
 
 ```csharp
-// Voeg een onderliggende bladwijzer toe aan de verzameling van de bovenliggende bladwijzer
+// Voeg een kinderbladwijzer toe aan de verzameling van de bovenliggende bladwijzer
 pdfOutline.Add(pdfChildOutline);
 ```
 

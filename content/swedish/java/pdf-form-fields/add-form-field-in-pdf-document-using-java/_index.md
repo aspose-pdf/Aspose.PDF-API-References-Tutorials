@@ -90,10 +90,10 @@ page.getAnnotations().add(checkboxField);
 
 ### Radioknappar
 
-Radioknappar används när användare behöver välja ett alternativ från en grupp. Varje alternativ är en separat alternativknapp, men de tillhör samma grupp. Så här lägger du till alternativknappar:
+Radioknappar används när användare behöver välja ett alternativ från en grupp. Varje alternativ är en separat alternativknapp, men de tillhör samma grupp. Så här lägger du till radioknappar:
 
 ```java
-// Skapa alternativknappar
+// Skapa radioknappar
 RadioButtonOptionField option1 = new RadioButtonOptionField(page, new Rectangle(100, 200, 20, 20));
 RadioButtonOptionField option2 = new RadioButtonOptionField(page, new Rectangle(100, 180, 20, 20));
 option1.setPartialName("optYes"); // Ange fältnamn för alternativ 1

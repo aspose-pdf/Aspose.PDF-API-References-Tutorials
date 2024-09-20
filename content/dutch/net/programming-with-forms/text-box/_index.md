@@ -163,7 +163,7 @@ Aspose.PDF voor .NET is een uitgebreide bibliotheek voor het maken, bewerken en 
  Ja, Aspose biedt een gratis proefperiode aan waartoe u toegang hebt[hier](https://releases.aspose.com/).
 
 ### Hoe krijg ik ondersteuning voor Aspose.PDF?
- U kunt ondersteuning en discussies in de community vinden op de[Aspose-forum](https://forum.aspose.com/c/pdf/10).
+ Ondersteuning en discussies in de community vindt u op de[Aspose-forum](https://forum.aspose.com/c/pdf/10).
 
 ### Welke soorten formuliervelden kan ik toevoegen met Aspose.PDF?
 U kunt tekstvakken, selectievakjes, keuzerondjes, vervolgkeuzemenu's en meer toevoegen.

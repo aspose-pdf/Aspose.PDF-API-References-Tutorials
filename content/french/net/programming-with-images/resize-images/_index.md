@@ -29,7 +29,7 @@ La première étape de tout projet logiciel consiste à mettre de l'ordre dans v
 
 1. Ouvrez votre projet : lancez Visual Studio et ouvrez votre projet existant ou créez-en un nouveau.
 
-2. Ajouter une référence : accédez à l'« Explorateur de solutions », cliquez avec le bouton droit sur « Références », sélectionnez « Ajouter une référence » et recherchez Aspose.PDF dans votre liste d'assemblys. Si vous venez de le télécharger, assurez-vous d'accéder à l'emplacement du fichier DLL Aspose.PDF.
+2. Ajouter une référence : accédez à l'« Explorateur de solutions », cliquez avec le bouton droit sur « Références », sélectionnez « Ajouter une référence » et recherchez Aspose.PDF dans votre liste d'assemblages. Si vous venez de le télécharger, assurez-vous d'accéder à l'emplacement du fichier DLL Aspose.PDF.
 
 3. Importer l'espace de noms : dans votre fichier C#, vous devrez inclure les espaces de noms suivants en haut :
 

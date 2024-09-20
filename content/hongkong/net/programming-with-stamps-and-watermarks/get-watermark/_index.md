@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/get-watermark/
 -  Aspose.PDF for .NET 函式庫：從下列位置下載資料庫：[這裡](https://releases.aspose.com/pdf/net/)或使用 NuGet 套件管理器來安裝它。
 - .NET 開發環境：您可以使用 Visual Studio 或任何首選 IDE 進行 C# 開發。
 - C# 基礎：本教學假設您對 C# 和 .NET 開發有一定的了解。
--  PDF 檔案：準備一個包含用於測試目的的浮水印的 PDF 檔案。我們稱之為`watermark.pdf`貫穿整個教程。
+-  PDF 文件：準備一個 PDF 文件，其中包含用於測試目的的浮水印。我們稱之為`watermark.pdf`貫穿整個教程。
 
 要開始使用 Aspose.PDF，您可以探索[文件](https://reference.aspose.com/pdf/net/)了解圖書館的概況。
 

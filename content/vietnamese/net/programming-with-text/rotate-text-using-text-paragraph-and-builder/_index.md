@@ -7,65 +7,79 @@ type: docs
 weight: 410
 url: /vi/net/programming-with-text/rotate-text-using-text-paragraph-and-builder/
 ---
-Hướng dẫn này giải thích cách sử dụng Aspose.PDF cho .NET để xoay văn bản bằng các đoạn văn bản và trình xây dựng trong tệp PDF. Mã nguồn C# được cung cấp sẽ trình bày từng bước của quy trình.
+## Giới thiệu
+
+ Tạo tài liệu PDF động có thể là một cách thú vị để trình bày dữ liệu, báo cáo và ý tưởng của bạn một cách trực quan. Một công cụ mạnh mẽ có thể giúp bạn thực hiện việc này theo cách có cấu trúc là Aspose.PDF cho .NET. Trong hướng dẫn này, chúng ta sẽ khám phá cách sử dụng Aspose.PDF để xoay văn bản trong tệp PDF bằng cách sử dụng`TextParagraph` Và`TextBuilder` classes. Cho dù bạn muốn tạo báo cáo có chú thích hay tài liệu hấp dẫn về mặt hình ảnh, việc thành thạo thao tác văn bản trong PDF là điều cần thiết. Sẵn sàng đảo ngược văn bản của bạn theo nghĩa đen? Hãy cùng bắt đầu!
 
 ## Điều kiện tiên quyết
 
-Trước khi thực hiện hướng dẫn, hãy đảm bảo bạn có những điều sau:
+Trước khi bắt đầu cuộc phiêu lưu xoay văn bản, bạn cần chuẩn bị một số điều cần thiết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc sử dụng NuGet để cài đặt vào dự án của bạn.
+- Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn dễ dàng điều hướng qua mã hơn.
+- Thiết lập Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy để viết và chạy mã.
+- Thư viện Aspose.PDF: Bạn cần phải tham chiếu thư viện Aspose.PDF trong dự án của mình. Nếu bạn chưa cài đặt, bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Đảm bảo môi trường của bạn hỗ trợ .NET; bạn có thể sử dụng .NET Framework hoặc .NET Core tùy theo nhu cầu.
 
-## Bước 1: Thiết lập dự án
+Bây giờ chúng ta đã có nền tảng, hãy nhập các gói cần thiết để bắt đầu làm việc với tệp PDF.
 
-Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) mà bạn thích và thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+## Nhập gói
 
-## Bước 2: Nhập các không gian tên cần thiết
-
-Thêm lệnh using sau vào đầu tệp C# của bạn để nhập các không gian tên cần thiết:
+Để làm việc với Aspose.PDF cho .NET, bạn cần nhập đúng không gian tên. Ở đầu tệp C# của bạn, hãy thêm các chỉ thị sau:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Text.TextBuilder;
+using Aspose.Pdf.Facades;
 ```
 
-## Bước 3: Tạo tài liệu PDF
+Các gói này sẽ cung cấp cho bạn tất cả các lớp bạn cần để thao tác văn bản và các khía cạnh khác của tài liệu một cách hiệu quả.
 
- Khởi tạo`Document` đối tượng để tạo một tài liệu PDF mới:
+Bây giờ chúng ta đã thiết lập xong, hãy cùng phân tích các bước thực tế liên quan đến việc xoay văn bản trong tài liệu PDF. Chúng ta sẽ bắt đầu từ việc khởi tạo tài liệu cho đến khi lưu tài liệu. Hãy thắt dây an toàn!
+
+## Bước 1: Khởi tạo đối tượng tài liệu
+
+ Bước đầu tiên là tạo và khởi tạo một`Document` đối tượng. Đối tượng này đóng vai trò như khung vẽ để bạn thêm văn bản.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Khởi tạo đối tượng tài liệu
 Document pdfDocument = new Document();
 ```
 
- Hãy chắc chắn thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+ Các`Document`Lớp là xương sống của PDF của bạn. Nó giúp quản lý các trang và nội dung bên trong chúng.
 
-## Bước 4: Thêm trang
+## Bước 2: Thêm trang
 
- Lấy một trang cụ thể từ tài liệu bằng cách sử dụng`Pages.Add()` phương pháp:
+Tiếp theo, chúng ta hãy thêm một trang mới vào tài liệu để chèn văn bản.
 
 ```csharp
+// Lấy trang cụ thể
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Bước 5: Tạo và xoay đoạn văn bản
+Ở đây, chúng ta thêm một trang mới vào PDF. Trang này sẽ là nơi các đoạn văn bản của chúng ta sẽ nằm.
 
- Tạo một`for` vòng lặp để tạo nhiều đoạn văn bản có các góc quay khác nhau:
+## Bước 3: Tạo và cấu hình đoạn văn bản
+
+ Bây giờ niềm vui bắt đầu! Chúng ta sẽ tạo ra nhiều`TextParagraph` các đối tượng và cấu hình các thuộc tính của chúng bao gồm vị trí và góc quay.
 
 ```csharp
 for (int i = 0; i < 4; i++)
 {
-	TextParagraph paragraph = new TextParagraph();
-	paragraph.Position = new Position(200, 600);
-	paragraph.Rotation = i * 90 + 45;
+    TextParagraph paragraph = new TextParagraph();
+    paragraph.Position = new Position(200, 600);
+    // Chỉ định vòng quay
+    paragraph.Rotation = i * 90 + 45;
+}
 ```
 
-Điều chỉnh giá trị vị trí và xoay theo yêu cầu của bạn.
+Trong vòng lặp này, chúng ta tạo bốn đoạn văn, mỗi đoạn được xoay thêm 90 độ. Mỗi đoạn văn ban đầu được định vị tại tọa độ (200, 600).
 
-## Bước 6: Tạo và cấu hình các đoạn văn bản
+## Bước 4: Tạo đoạn văn bản
 
- Tạo nhiều`TextFragment` đối tượng, thiết lập văn bản và thuộc tính của chúng:
+ Sau khi thiết lập các đoạn văn, đã đến lúc thêm một số văn bản! Chúng tôi sẽ tạo`TextFragment` các đối tượng chứa văn bản thực tế mà chúng ta muốn hiển thị.
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("Paragraph Text");
@@ -73,26 +87,22 @@ textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-
-TextFragment textFragment2 = new TextFragment("Second line of text");
-textFragment2.TextState.FontSize = 12;
-textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-
-TextFragment textFragment3 = new TextFragment("And some more text...");
-textFragment3.TextState.FontSize = 12;
-textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-textFragment3.TextState.Underline = true;
 ```
 
-Điều chỉnh văn bản và các thuộc tính khác theo ý muốn.
+Mỗi đoạn văn bản có thể có các thuộc tính tùy chỉnh, chẳng hạn như kích thước phông chữ, kiểu phông chữ, màu nền và màu nền trước. Chúng tôi lặp lại quy trình này cho nhiều đoạn văn bản:
 
-## Bước 7: Thêm các đoạn văn bản vào đoạn văn
+```csharp
+TextFragment textFragment2 = new TextFragment("Second line of text");
+textFragment2.TextState = ConfigureText("Second line of text");
+TextFragment textFragment3 = new TextFragment("And some more text...");
+textFragment3.TextState = ConfigureText("And some more text...", true);
+```
 
- Thêm các đoạn văn bản đã tạo vào đoạn văn bằng cách sử dụng`AppendLine` phương pháp:
+ Phương pháp`ConfigureText`có thể là một phương pháp tiện ích mà bạn tạo ra để đóng gói các thuộc tính kiểu dáng văn bản, cải thiện khả năng tái sử dụng mã và tính rõ ràng.
+
+## Bước 5: Thêm các đoạn văn bản vào đoạn văn
+
+Tiếp theo, chúng ta sẽ thêm các đoạn văn bản vào đoạn văn của mình. Điều này tạo ra một luồng văn bản có cấu trúc trong đoạn văn.
 
 ```csharp
 paragraph.AppendLine(textFragment1);
@@ -100,107 +110,46 @@ paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
 
-## Bước 8: Tạo TextBuilder và thêm đoạn văn
+ Sử dụng`AppendLine`, bạn đảm bảo rằng mỗi phần văn bản được thêm theo chiều dọc dưới dạng các dòng riêng biệt trong đoạn văn.
 
- Tạo một`TextBuilder` đối tượng sử dụng`pdfPage` và thêm đoạn văn bản vào trang PDF:
+## Bước 6: Thêm Đoạn văn vào Trang PDF
+
+ Bây giờ đoạn văn của chúng ta đã đầy văn bản, chúng ta cần đặt nó vào trang PDF bằng cách sử dụng`TextBuilder` sự vật.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
 textBuilder.AppendParagraph(paragraph);
-}
 ```
 
-## Bước 9: Lưu tài liệu PDF
+ Đây là nơi phép thuật xảy ra! Bạn đang lấy đoạn văn đã chuẩn bị và kể lại`TextBuilder` để đặt nó lên trang canvas (trang PDF) mà bạn đã tạo trước đó.
 
- Lưu tài liệu PDF đã sửa đổi vào một tệp bằng cách sử dụng`Save` phương pháp:
+## Bước 7: Lưu tài liệu
+
+Cuối cùng, đã đến lúc lưu lại công sức của chúng ta! Chỉ định thư mục và tên của tệp PDF đầu ra.
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 ```
 
- Hãy chắc chắn thay thế`"TextFragmentTests_Rotated4_out.pdf"` với tên tập tin đầu ra mong muốn.
-
-### Mã nguồn mẫu cho Xoay văn bản bằng đoạn văn bản và trình tạo sử dụng Aspose.PDF cho .NET 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Khởi tạo đối tượng tài liệu
-Document pdfDocument = new Document();
-// Lấy trang cụ thể
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-for (int i = 0; i < 4; i++)
-{
-	TextParagraph paragraph = new TextParagraph();
-	paragraph.Position = new Position(200, 600);
-	// Chỉ định vòng quay
-	paragraph.Rotation = i * 90 + 45;
-	// Tạo đoạn văn bản
-	TextFragment textFragment1 = new TextFragment("Paragraph Text");
-	// Tạo đoạn văn bản
-	textFragment1.TextState.FontSize = 12;
-	textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// Tạo đoạn văn bản
-	TextFragment textFragment2 = new TextFragment("Second line of text");
-	// Đặt thuộc tính văn bản
-	textFragment2.TextState.FontSize = 12;
-	textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// Tạo đoạn văn bản
-	TextFragment textFragment3 = new TextFragment("And some more text...");
-	// Đặt thuộc tính văn bản
-	textFragment3.TextState.FontSize = 12;
-	textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	textFragment3.TextState.Underline = true;
-	paragraph.AppendLine(textFragment1);
-	paragraph.AppendLine(textFragment2);
-	paragraph.AppendLine(textFragment3);
-	// Tạo đối tượng TextBuilder
-	TextBuilder textBuilder = new TextBuilder(pdfPage);
-	// Thêm đoạn văn bản vào trang PDF
-	textBuilder.AppendParagraph(paragraph);
-}
-// Lưu tài liệu
-pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
-```
+ Trong dòng này, thay thế`dataDir` với đường dẫn đến thư mục đầu ra mong muốn của bạn. Tệp PDF sẽ được lưu với tên "TextFragmentTests_Rotated4_out.pdf."
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học thành công cách xoay văn bản bằng đoạn văn bản và trình xây dựng trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước, từ việc tạo tài liệu đến lưu phiên bản đã sửa đổi. Bây giờ bạn có thể kết hợp mã này vào các dự án C# của riêng mình để thao tác xoay văn bản trong các tệp PDF.
+Và bạn đã có nó rồi—hướng dẫn đầy đủ về cách xoay văn bản trong PDF bằng Aspose.PDF cho .NET! Tất cả là về việc chia nhỏ các tác vụ thành các bước dễ quản lý và trước khi bạn biết điều đó, bạn đã biến PDF của mình thành một tài liệu năng động thể hiện phong cách và sự sáng tạo của bạn. Cho dù bạn đang tạo báo cáo, tạo lời mời hay chỉ thử nghiệm với các sắp xếp văn bản, Aspose.PDF cung cấp các công cụ linh hoạt để đáp ứng nhu cầu của bạn. Vậy thì còn chần chừ gì nữa? Hãy bắt đầu thử nghiệm và xem bạn có thể sáng tạo đến mức nào với các tài liệu PDF của mình!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn "Xoay văn bản bằng đoạn văn bản và trình tạo" là gì?
+### Tôi có thể xoay văn bản theo bất kỳ hướng nào không?
+Có, bạn có thể chỉ định bất kỳ góc quay nào (bội số của 90 độ) để đạt được nhiều hướng khác nhau.
 
-A: Hướng dẫn "Xoay văn bản bằng đoạn văn bản và trình tạo" cung cấp hướng dẫn toàn diện về cách sử dụng thư viện Aspose.PDF cho .NET để xoay văn bản bằng đoạn văn bản và trình tạo trong tài liệu PDF. Hướng dẫn trình bày hướng dẫn từng bước và bao gồm mã C# mẫu để xoay văn bản bằng đoạn văn bản và định dạng tùy chỉnh.
+### Nếu tôi muốn thêm hình ảnh thay vì văn bản thì sao?
+ Aspose.PDF cũng cho phép bạn thao tác hình ảnh! Bạn có thể thêm hình ảnh bằng cách sử dụng`Image` các lớp học theo cách tương tự.
 
-#### H: Bài hướng dẫn này khác với các bài hướng dẫn xoay văn bản trước đây như thế nào?
+### Aspose.PDF cho .NET có miễn phí không?
+ Nó cung cấp bản dùng thử miễn phí, nhưng để tiếp tục sử dụng, bạn phải mua giấy phép. Kiểm tra[Mua](https://purchase.aspose.com/buy) trang để biết thêm chi tiết!
 
-A: Không giống như các hướng dẫn trước, hướng dẫn này kết hợp việc sử dụng các đoạn văn bản, trình xây dựng và góc xoay để đạt được hiệu ứng xoay văn bản nâng cao hơn. Nó trình bày cách tạo nhiều đoạn văn bản với các góc xoay khác nhau và áp dụng định dạng tùy chỉnh cho từng đoạn văn bản.
+### Tôi có thể nhận được hỗ trợ khi sử dụng Aspose.PDF không?
+Có, bạn có thể tìm thấy sự hỗ trợ và đăng câu hỏi của mình trên[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### H: Việc sử dụng đoạn văn bản và trình tạo để xoay văn bản có ý nghĩa gì?
-
-A: Sử dụng đoạn văn bản và trình xây dựng cho phép kiểm soát tốt hơn việc xoay và định dạng văn bản. Đoạn văn bản cung cấp một cách có cấu trúc để sắp xếp các đoạn văn bản, trong khi trình xây dựng tạo điều kiện thuận lợi cho việc tạo và thao tác nội dung văn bản trong tài liệu PDF.
-
-#### H: Tôi có thể áp dụng các góc xoay khác nhau cho mỗi đoạn văn bản không?
-
- A: Có, bạn có thể áp dụng các góc xoay khác nhau cho mỗi đoạn văn bản bằng cách thiết lập`Rotation` tài sản của`TextParagraph` đối tượng. Tính năng này cho phép bạn tạo các hiệu ứng xoay văn bản đa dạng và động trong tài liệu PDF.
-
-#### H: Làm thế nào để tùy chỉnh định dạng của các đoạn văn bản trong đoạn văn bản?
-
- A: Bạn có thể tùy chỉnh định dạng của các đoạn văn bản bằng cách thiết lập các thuộc tính khác nhau của`TextState` trong mỗi`TextFragment` đối tượng. Các thuộc tính như kích thước phông chữ, kiểu phông chữ, màu nền trước và sau, và gạch chân có thể được điều chỉnh để đạt được hiệu ứng hình ảnh mong muốn.
-
-#### H: Tôi có thể tạo hiệu ứng xoay văn bản phức tạp hơn bằng phương pháp này không?
-
-A: Hoàn toàn đúng. Bằng cách lặp lại việc tạo nhiều đoạn văn bản với các góc xoay và tùy chọn định dạng khác nhau, bạn có thể tạo ra các hiệu ứng xoay văn bản phức tạp và hấp dẫn về mặt thị giác, giúp tăng khả năng đọc và tính thẩm mỹ cho tài liệu PDF của bạn.
-
-#### H: Có thể kết hợp xoay văn bản với các kỹ thuật thao tác văn bản khác không?
-
-A: Có, bạn có thể kết hợp xoay văn bản với các kỹ thuật thao tác văn bản khác do thư viện Aspose.PDF cung cấp. Điều này bao gồm thêm bảng, hình ảnh, siêu liên kết và nhiều thứ khác để tạo tài liệu PDF phong phú và nhiều thông tin.
-
-#### H: Tôi có cần giấy phép đặc biệt để sử dụng thư viện Aspose.PDF trong dự án của mình không?
-
-A: Có, bạn cần giấy phép Aspose hợp lệ để sử dụng thư viện Aspose.PDF trong dự án của mình. Bạn có thể lấy giấy phép từ trang web Aspose, nơi sẽ cung cấp cho bạn thông tin xác thực cần thiết để tích hợp và sử dụng thư viện hiệu quả.
+### Làm thế nào để tôi có được giấy phép tạm thời cho Aspose.PDF?
+ Bạn có thể xin giấy phép tạm thời cho mục đích thử nghiệm từ[Trang Giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).

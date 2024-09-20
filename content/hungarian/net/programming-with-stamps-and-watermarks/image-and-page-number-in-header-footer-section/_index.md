@@ -80,7 +80,7 @@ Most már van egy fejléce, amelyet személyre szabhat!
 
 ## 5. lépés: Adjon hozzá egy képet a fejléchez
 
-Most elérkeztünk a szórakoztató részhez! A képet hozzá kell adnia a fejléchez. Először hozzon létre egy képobjektumot:
+Most pedig elérkeztünk a szórakoztató részhez! A képet hozzá kell adnia a fejléchez. Először hozzon létre egy képobjektumot:
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();

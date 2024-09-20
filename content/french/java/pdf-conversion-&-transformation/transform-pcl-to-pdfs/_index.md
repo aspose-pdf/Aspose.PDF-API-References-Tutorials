@@ -69,7 +69,7 @@ pdfDocument.getPages().add();
 pdfDocument.getPages().get_Item(1).getParagraphs().add(new TextFragment("Converted PDF from PCL"));
 ```
 
-## Étape 4 : définir les paramètres de la page
+## Étape 4 : Définir les paramètres de la page
 
 Spécifiez les paramètres de page du document PDF, tels que la taille de page et les marges. Vous pouvez personnaliser ces paramètres en fonction de vos besoins.
 

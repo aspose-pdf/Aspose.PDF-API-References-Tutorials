@@ -1,6 +1,6 @@
 ---
-title: Hiperhivatkozási helyek letöltése PDF-fájlban
-linktitle: Hiperhivatkozási helyek letöltése PDF-fájlban
+title: Hiperhivatkozási célhelyek beszerzése PDF-fájlban
+linktitle: Hiperhivatkozási célhelyek beszerzése PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan bonthat ki egyszerűen hiperhivatkozási célokat PDF-fájlokból az Aspose.PDF for .NET segítségével. Kövesse ezt az egyszerű, lépésről lépésre bemutató oktatóanyagot.
 type: docs
@@ -131,11 +131,11 @@ Miért fontos ez?: Senki sem szereti a váratlan összeomlásokat, igaz? Ezzel a
 
 ## 8. lépés: Fordítás és futtatás
 
-Végre eljött az igazság pillanatának ideje! Nyomja meg a Futtatás gombot, és ellenőrizze, hogy a program a várt módon működik-e. A kibontott hiperhivatkozási célokat a konzolon kinyomtatva kell látnia.
+Végre eljött az igazság pillanatának ideje! Nyomja meg a Futtatás gombot, és nézze meg, hogy a program a várt módon működik-e. A kibontott hiperhivatkozási célokat a konzolon kell látnia kinyomtatva.
 
 ## Következtetés
 
-A hiperhivatkozási célok kinyerése egy PDF-fájlból az Aspose.PDF for .NET használatával nagyon egyszerű, nem igaz? Néhány sornyi kóddal könnyedén összegyűjtheti a hivatkozásokat, így időt és fáradságot takarít meg. A könyvtár objektum-orientált szerkezete intuitívá teszi a munkát, és az eredmény egy tiszta konzolkimenet, amely tükrözi az Ön kemény munkáját. Készen áll további feladatok automatizálására a PDF-kezelésben? Az ég a határ!
+A hiperhivatkozási célok kinyerése egy PDF-fájlból az Aspose.PDF for .NET használatával egyszerű, nem igaz? Néhány sornyi kóddal könnyedén összegyűjtheti a hivatkozásokat, így időt és fáradságot takarít meg. A könyvtár objektum-orientált szerkezete intuitívá teszi a munkát, és az eredmény egy tiszta konzolkimenet, amely tükrözi az Ön kemény munkáját. Készen áll további feladatok automatizálására a PDF-kezelésben? Az ég a határ!
 
 ## GYIK
 

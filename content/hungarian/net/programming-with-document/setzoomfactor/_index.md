@@ -80,7 +80,7 @@ GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 
 - `1`: A megnyitni kívánt oldal száma (jelen esetben az első oldal).
 - `0`: A vízszintes helyzet (a 0 azt jelenti, hogy középen van).
-- `0`: Függőleges helyzet (a 0 azt jelenti, hogy középen van).
+- `0`: A függőleges helyzet (0 azt jelenti, hogy középen van).
 - `.5`: A nagyítási tényező (ebben az esetben 50%).
 
 Nyugodtan állítsa be a zoom tényezőt kedvére!

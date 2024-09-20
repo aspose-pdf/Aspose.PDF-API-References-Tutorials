@@ -2,7 +2,7 @@
 title: PDF-ből XML-be
 linktitle: PDF-ből XML-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből az átfogó oktatóanyagból megtudhatja, hogyan konvertálhat PDF-et XML-be az Aspose.PDF for .NET használatával. Lépésről lépésre, kódpéldákkal.
+description: Ebből az átfogó oktatóanyagból megtudhatja, hogyan konvertálhat PDF-et XML-be az Aspose.PDF for .NET használatával. Lépésről lépésre útmutató kódpéldákkal.
 type: docs
 weight: 210
 url: /hu/net/document-conversion/pdf-to-xml/
@@ -78,5 +78,5 @@ Igen, az Aspose.PDF támogatja az XML-fájlok visszakonvertálását is PDF form
 ### Hol találok további dokumentációt?
  Az Aspose.PDF for .NET webhelyen átfogó dokumentációt találhat[itt](https://reference.aspose.com/pdf/net/).
 
-### Hogyan kaphatok támogatást az Aspose.PDF-hez?
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
  Támogatást kaphat az Aspose fórum meglátogatásával[itt](https://forum.aspose.com/c/pdf/10).

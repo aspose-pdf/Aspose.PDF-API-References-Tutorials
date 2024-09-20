@@ -9,7 +9,7 @@ url: /zh-hant/net/annotations/invisibleannotation/
 ---
 ## 介紹
 
-是否曾想為您的 PDF 檔案添加不可見但有效的註解？無論您是想添加註釋用於列印目的還是想在文件中留下隱藏的訊息，隱形註釋都非常有用。在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 在 PDF 檔案中建立不可見註解的過程。這個強大的 .NET 程式庫可讓您輕鬆操作 PDF 文檔，在本指南結束時，您將掌握像專業人士一樣向 PDF 文件添加隱形註釋的藝術！
+是否曾想為您的 PDF 檔案添加不可見但有效的註解？無論您是想添加註釋以進行列印，還是想在文件中留下隱藏的訊息，隱形註釋都非常有用。在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 在 PDF 檔案中建立不可見註解的過程。這個強大的 .NET 程式庫可讓您輕鬆操作 PDF 文檔，在本指南結束時，您將掌握像專業人士一樣向 PDF 文件添加隱形註釋的藝術！
 
 ## 先決條件
 
@@ -18,7 +18,7 @@ url: /zh-hant/net/annotations/invisibleannotation/
 - Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
 - .NET 開發環境：您應該安裝 Visual Studio 或任何其他首選的 .NET 開發環境。
 - C# 基礎知識：了解 C# 語法和程式設計至關重要。
-- 有效許可證或免費試用：如果您沒有許可證，您可以獲得臨時許可證[這裡](https://purchase.aspose.com/temporary-license/)或使用免費試用版。
+- 有效許可證或免費試用：如果您沒有許可證，可以取得臨時許可證[這裡](https://purchase.aspose.com/temporary-license/)或使用免費試用版。
 
 ## 導入包
 
@@ -98,7 +98,7 @@ Console.WriteLine("\nAnnotation invisible successfully.\nFile saved at " + dataD
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功地在 PDF 檔案中新增了不可見註解。本教學將引導您完成從設定環境到儲存最終文件的每個步驟。無論您是添加隱藏訊息還是出於列印目的添加註釋，不可見註釋都是一項強大的功能，您可以使用 Aspose.PDF for .NET 輕鬆實現。快樂編碼！
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功地在 PDF 檔案中新增了不可見註解。本教學將引導您完成從設定環境到儲存最終文件的每個步驟。無論您是添加隱藏訊息還是出於列印目的添加註釋，不可見註釋都是一項強大的功能，您可以使用 Aspose.PDF for .NET 輕鬆實現。快樂編碼！
 
 ## 常見問題解答
 

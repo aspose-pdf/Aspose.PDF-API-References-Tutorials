@@ -2,108 +2,107 @@
 title: Tambahkan Tooltip ke Teks dalam File PDF
 linktitle: Tambahkan Tooltip ke Teks dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menambahkan tooltip ke teks dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara menambahkan tooltips ke teks dalam file PDF menggunakan Aspose.PDF for .NET. Sempurnakan PDF Anda dengan teks hover informatif dengan mudah.
 type: docs
 weight: 90
 url: /id/net/programming-with-text/add-tooltip-to-text/
 ---
-Tutorial ini akan memandu Anda melalui proses penambahan tooltip ke teks dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan.
+## Perkenalan
 
-## Persyaratan
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Dalam hal membuat PDF yang menarik dan interaktif, tooltips bisa sangat berharga. Anda tahu kotak pop-up kecil yang memberi Anda informasi tambahan saat Anda mengarahkan kursor ke sesuatu? Kotak tersebut dapat memberikan konteks, deskripsi, atau bahkan sedikit saran tanpa mengacaukan dokumen Anda. Dalam tutorial ini, kami akan memandu Anda tentang cara menambahkan tooltips ke teks dalam file PDF menggunakan pustaka Aspose.PDF for .NET. Baik Anda seorang pengembang berpengalaman atau baru mulai mengenal dunia PDF, Anda berada di tempat yang tepat! Jadi, mari kita mulai!
 
-- Visual Studio atau kompiler C# lainnya terinstal di komputer Anda.
-- Aspose.PDF untuk pustaka .NET. Anda dapat mengunduhnya dari situs web resmi Aspose atau menggunakan pengelola paket seperti NuGet untuk menginstalnya.
+## Prasyarat
 
-## Langkah 1: Siapkan proyek
-1. Buat proyek C# baru di lingkungan pengembangan pilihan Anda.
-2. Tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Sebelum kita masuk ke bagian pengkodean, mari pastikan Anda memiliki semua yang dibutuhkan agar dapat mengikutinya dengan lancar.
 
-## Langkah 2: Impor namespace yang diperlukan
-Pada berkas kode tempat Anda ingin menambahkan keterangan alat ke teks, tambahkan perintah penggunaan berikut di bagian atas berkas:
+### Visual Studio Terpasang
+Sangat penting untuk menginstal Visual Studio di komputer Anda, karena ini akan menjadi lingkungan pengembangan utama untuk aplikasi .NET.
+
+### Aspose.PDF untuk Pustaka .NET
+ Anda juga perlu memiliki pustaka Aspose.PDF. Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/)Pastikan untuk menyertakannya dalam referensi proyek Anda.
+
+### Pengetahuan Dasar C#
+Latar belakang dalam C# akan sangat membantu karena kita akan membuat kode dalam bahasa tersebut. Namun jangan khawatir—saya akan memandu Anda melalui setiap langkah!
+
+### Dokumen PDF untuk Bekerja
+Anda dapat memulai dengan dokumen PDF kosong, seperti yang kami lakukan dalam contoh ini, atau menggunakan dokumen PDF yang sudah ada jika Anda mau.
+
+Sekarang, mari kita lanjut ke bagian pengkodean!
+
+## Paket Impor 
+
+ Langkah pertama dalam petualangan coding kita melibatkan pengimporan paket-paket yang diperlukan. Buka proyek Visual Studio Anda, dan di bagian atas file C# Anda, Anda ingin menambahkan yang berikut ini`using` arahan:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Langkah 3: Mengatur direktori dokumen
- Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
+Paket-paket ini memberi Anda akses ke semua kelas dan fungsi yang Anda perlukan untuk membuat dan memanipulasi dokumen PDF.
 
-## Langkah 4: Buat dokumen contoh dengan teks
- Buat yang baru`Document`objek dan tambahkan halaman dengan fragmen teks. Dalam kode yang diberikan, dua fragmen teks ditambahkan ke dokumen dengan teks keterangan alat masing-masing.
+## Langkah 1: Siapkan Direktori Dokumen Anda
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+Pertama-tama, kita perlu menyiapkan jalur tempat Anda akan menyimpan dokumen. Anggap saja ini seperti mencari tempat yang nyaman di sistem berkas tempat semua kreasi Anda akan berada.
 
-## Langkah 5: Buka dokumen dan temukan fragmen teks
- Muat dokumen yang dibuat menggunakan`Document` konstruktor dan temukan fragmen teks yang memerlukan tooltip menggunakan`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## Langkah 6: Tambahkan tooltip ke fragmen teks
- Ulangi fragmen teks yang diekstrak dan buat tombol tak terlihat di posisinya. Tetapkan teks keterangan alat yang diinginkan ke`AlternateName` milik`ButtonField`Tambahkan bidang tombol ke formulir dokumen.
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## Langkah 7: Ulangi untuk fragmen teks tambahan dengan keterangan alat yang panjang
-Ulangi langkah 5 dan 6 untuk fragmen teks dengan tooltip yang panjang. Ubah kriteria pencarian dan teks tooltip sesuai kebutuhan.
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## Langkah 8: Simpan dokumen yang dimodifikasi
- Simpan dokumen PDF yang dimodifikasi menggunakan`Save` metode dari`Document` obyek.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Contoh kode sumber untuk Menambahkan Tooltip ke Teks menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Buat contoh dokumen dengan teks
+```
+
+ Pastikan untuk mengganti`YOUR DOCUMENT DIRECTORY` dengan jalur sebenarnya di mesin Anda.
+
+## Langkah 2: Buat Contoh Dokumen PDF
+
+Berikutnya, saatnya membuat PDF sederhana dengan beberapa teks. Di sinilah kita memulai proses kreatif kita!
+
+```csharp
+//Buat contoh dokumen dengan teks
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+Pada langkah ini, kita membuat dokumen, menambahkan dua fragmen teks, dan menyimpannya ke jalur yang telah kita tentukan sebelumnya.
+
+## Langkah 3: Buka Dokumen untuk Diproses
+
+Sekarang kita sudah membuat dokumen kita, mari kita buka sehingga kita dapat mengerjakan tooltip tersebut!
+
+```csharp
 // Buka dokumen dengan teks
 Document document = new Document(outputFile);
-//Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
+```
+
+Di sini, kita cukup memuat dokumen yang baru saja kita buat.
+
+## Langkah 4: Buat Text Absorber untuk Menemukan Fragmen Teks
+
+Kita perlu menemukan fragmen teks tempat kita ingin menambahkan keterangan alat. Ini seperti menggunakan kaca pembesar untuk menyorot bagian tertentu dari peta besar! 
+
+```csharp
+// Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Terima penyerap untuk halaman dokumen
 document.Pages.Accept(absorber);
+```
+
+## Langkah 5: Ekstrak Fragmen Teks
+
+Berikutnya, kami mengekstrak fragmen teks yang kami temukan dari langkah sebelumnya.
+
+```csharp
 // Dapatkan fragmen teks yang diekstraksi
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+Potongan ini memungkinkan kita untuk menyimpan referensi untuk fragmen teks yang kita minati.
+
+## Langkah 6: Ulangi Fragmen dan Tambahkan Tooltip
+
+Sekarang tibalah bagian yang menyenangkan! Kita akan mengulang setiap fragmen teks dan menambahkan keterangan alat pada masing-masing fragmen. Bayangkan membungkus hadiah kecil (keterangan alat) di sekitar item tertentu (fragmen teks).
+
+```csharp
 // Ulangi melalui fragmen
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,6 +113,15 @@ foreach (TextFragment fragment in textFragments)
 	// Tambahkan bidang tombol ke dokumen
 	document.Form.Add(field);
 }
+```
+
+Pada tiap iterasi, kami membuat bidang tombol yang sesuai dengan posisi fragmen teks dan menetapkan teks keterangan alat padanya.
+
+## Langkah 7: Ulangi untuk Tooltip Panjang
+
+Sama seperti kita menambahkan tooltip sederhana, kita dapat melakukan hal yang sama untuk teks yang lebih panjang. Mari kembangkan kreativitas kita!
+
+```csharp
 // Berikut ini akan menjadi contoh tooltip yang sangat panjang
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+Di sini, kita melakukan jenis pekerjaan yang sama seperti sebelumnya, tetapi dengan keterangan alat yang jauh lebih luas.
+
+## Langkah 8: Simpan Dokumen Anda
+
+Langkah terakhir adalah menyimpan dokumen Anda dengan semua tooltip baru yang menarik itu. 
+
+```csharp
 // Simpan dokumen
 document.Save(outputFile);
 ```
 
+Selesai! Anda telah menambahkan tooltips ke PDF Anda, membuatnya lebih mudah digunakan dan interaktif.
+
 ## Kesimpulan
-Anda telah berhasil menambahkan tooltips ke teks dalam dokumen PDF menggunakan Aspose.PDF for .NET. File PDF yang dihasilkan kini dapat ditemukan di jalur file output yang ditentukan.
 
-## Tanya Jawab Umum
+Itulah panduan mudah tentang cara menambahkan tooltips ke teks dalam file PDF menggunakan Aspose.PDF for .NET. Teknik ini dapat meningkatkan pengalaman pengguna secara signifikan, membuat dokumen Anda lebih informatif tanpa membebani pembaca dengan terlalu banyak teks sekaligus. 
 
-#### T: Apa fokus dari tutorial ini?
+Dengan hanya mengarahkan kursor pada kata atau frasa, pembaca akan mendapatkan informasi relevan yang memberikan nilai tambah tanpa gangguan. Jadi, segeralah bekerja keras dan cobalah! Sebelum Anda menyadarinya, Anda dapat membuat berbagai dokumen menarik yang menonjol.
 
-J: Tutorial ini berfokus pada penambahan tooltip ke teks dalam file PDF menggunakan pustaka Aspose.PDF for .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan untuk mencapainya.
+## Pertanyaan yang Sering Diajukan
 
-#### T: Namespace mana yang perlu diimpor untuk tutorial ini?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF dalam aplikasi .NET.
 
-A: Pada berkas kode tempat Anda ingin menambahkan keterangan alat ke teks, impor namespace berikut di awal berkas:
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan uji coba gratis bagi Anda untuk menjelajahi fitur-fiturnya! Anda dapat menemukannya[Di Sini](https://releases.aspose.com/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
+### Apakah ada pilihan lisensi yang tersedia untuk Aspose.PDF?
+Ya, Anda dapat membeli lisensi atau memperoleh lisensi sementara. Lihat pilihannya[Di Sini](https://purchase.aspose.com/).
 
-#### T: Bagaimana cara menentukan direktori dokumen?
+### Bisakah saya menambahkan elemen interaktif selain tooltip menggunakan Aspose.PDF?
+Tentu saja! Aspose.PDF memungkinkan penambahan berbagai elemen interaktif seperti hyperlink, tombol, dan formulir.
 
- A: Pada kode tersebut, temukan baris`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
-
-#### T: Bagaimana cara membuat dokumen contoh dengan teks?
-
- A: Pada Langkah 4, Anda akan membuat yang baru`Document` objek dan tambahkan halaman dengan fragmen teks. Kode yang diberikan menambahkan dua fragmen teks dengan teks keterangan alat masing-masing.
-
-#### T: Bagaimana cara membuka dokumen dan menemukan fragmen teks?
-
- A: Pada Langkah 5, Anda akan memuat dokumen yang dibuat menggunakan`Document` konstruktor dan temukan fragmen teks yang memerlukan tooltip menggunakan`TextFragmentAbsorber`.
-
-#### T: Bagaimana cara menambahkan keterangan alat pada fragmen teks?
-
- A: Pada Langkah 6, Anda akan mengulang fragmen teks yang diekstrak dan membuat tombol tak terlihat pada posisinya. Teks keterangan alat ditetapkan ke`AlternateName` milik`ButtonField`, yang ditambahkan ke formulir dokumen.
-
-#### T: Bagaimana cara mengulang proses untuk fragmen teks tambahan dengan tooltip yang panjang?
-
-A: Untuk fragmen teks dengan tooltip yang panjang, ulangi Langkah 5 dan 6. Ubah kriteria pencarian dan teks tooltip sebagaimana mestinya.
-
-#### T: Bagaimana cara menyimpan dokumen yang sudah dimodifikasi?
-
- A: Pada Langkah 8, Anda akan menyimpan dokumen PDF yang dimodifikasi menggunakan`Save` metode dari`Document` obyek.
-
-#### T: Apa hasil utama dari tutorial ini?
-
-J: Dengan mengikuti tutorial ini, Anda telah mempelajari cara menyempurnakan dokumen PDF dengan menambahkan tooltips ke teks menggunakan Aspose.PDF for .NET. Ini dapat memberikan informasi tambahan yang berharga bagi pembaca saat mereka berinteraksi dengan konten PDF.
+### Di mana saya dapat menemukan dokumentasi lebih lanjut tentang Aspose.PDF?
+ Anda dapat memeriksa dokumentasinya[Di Sini](https://reference.aspose.com/pdf/net/) untuk panduan lebih mendalam.

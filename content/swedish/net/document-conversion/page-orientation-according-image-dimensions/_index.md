@@ -49,7 +49,7 @@ Därefter skapar du ett nytt PDF-dokument. Det är här alla dina bilder kommer 
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
- Den här raden initierar en ny instans av`Document` klass, som representerar din PDF-fil.
+ Denna rad initierar en ny instans av`Document` klass, som representerar din PDF-fil.
 
 ## Steg 3: Hämta bildfiler
 

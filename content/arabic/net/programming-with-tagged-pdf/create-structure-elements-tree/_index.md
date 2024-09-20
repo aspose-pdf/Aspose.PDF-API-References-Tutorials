@@ -2,126 +2,139 @@
 title: إنشاء شجرة عناصر الهيكل
 linktitle: إنشاء شجرة عناصر الهيكل
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: إنشاء هيكل من عناصر الشجرة باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لإنشاء مستند PDF منظم.
+description: تعرف على كيفية إنشاء شجرة عناصر هيكلية في مستندات PDF باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل خطوة بخطوة.
 type: docs
 weight: 70
 url: /ar/net/programming-with-tagged-pdf/create-structure-elements-tree/
 ---
-في هذا الدليل التفصيلي، سنشرح الكود المصدري بلغة C# لإنشاء بنية من عناصر الشجرة باستخدام Aspose.PDF لـ .NET. وسنوضح لك كيفية إنشاء مستند PDF يحتوي على عناصر منظمة وكيفية تنظيمها بشكل هرمي. إن استخدام مكتبة Aspose.PDF يبسط إلى حد كبير التعامل مع عناصر PDF ويوفر وظائف متقدمة للعمل مع المستندات المنظمة.
+## مقدمة
 
-## الخطوة 1: إعداد البيئة
- قبل أن تبدأ، تأكد من إعداد بيئة التطوير الخاصة بك باستخدام Aspose.PDF لـ .NET. تأكد أيضًا من تعيين المسار إلى دليل المستندات الخاص بك في`dataDir` عامل.
+عندما يتعلق الأمر بالعمل مع ملفات PDF، وخاصة بالنسبة لأولئك الذين يهدفون إلى ضمان إمكانية الوصول والمحتوى المنظم، فإن إنشاء شجرة عناصر البنية أمر بالغ الأهمية. فكر في هذه الشجرة باعتبارها الهيكل العظمي لمستندك، وتوفر تخطيطًا يساعد في تنظيم وإدارة المحتوى. إذا كنت جديدًا على Aspose.PDF لـ .NET، فلا تقلق! سترشدك هذه المقالة خلال العملية خطوة بخطوة.
 
-## الخطوة 2: إنشاء مستند PDF
- للبدء، سنقوم بإنشاء مستند PDF جديد باستخدام`Document` تم توفير الفئة بواسطة Aspose.PDF. هذا هو الكود لهذه الخطوة:
+## المتطلبات الأساسية
+
+قبل أن نتعمق في التفاصيل الدقيقة للكود، تأكد من أن لديك كل ما تحتاجه:
+
+1.  Aspose.PDF for .NET: تأكد من تثبيت هذه المكتبة. يمكنك تنزيلها من هنا:[تنزيل Aspose.PDF لـ .NET](https://releases.aspose.com/pdf/net/).
+2. بيئة .NET: من الضروري وجود بيئة تطوير .NET عاملة (مثل Visual Studio).
+3. المعرفة الأساسية بلغة C#: إن الفهم الأساسي للغة C# سيساعدك على استيعاب المفاهيم بسرعة.
+
+ إذا لم تكن قد قمت بذلك بالفعل، فقد ترغب في التحقق من[التوثيق](https://reference.aspose.com/pdf/net/) لمزيد من الأفكار.
+
+## استيراد الحزم
+
+قبل البدء في كتابة التعليمات البرمجية، يتعين عليك استيراد مساحات الأسماء الضرورية في تطبيق .NET الخاص بك. وإليك كيفية القيام بذلك:
 
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// إنشاء مستند PDF
-Document document = new Document();
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 3: جعل المحتوى يعمل مع TaggedPdf
- تتيح مكتبة Aspose.PDF العمل مع مستندات PDF المنظمة باستخدام مفهوم PDF المُوسم. ولتحقيق هذا الغرض، نحتاج إلى الحصول على مرجع لعنصر المحتوى المُوسم باستخدام ملف تعريف المستند.`TaggedContent`الخاصية. هذا هو الكود لهذه الخطوة:
+يخبر هذا برنامجك باستخدام ميزات PDF في Aspose، بما في ذلك وظائف PDF المُوسومة. الآن، دعنا نستعد ونبدأ في استخدام الكود!
+
+## الخطوة 1: تحديد مسار المستند
+
+للبدء، ستحتاج إلى تحديد المكان الذي ستوضع فيه مستند PDF الخاص بك. الأمر أشبه باختيار رف لكتابك!
 
 ```csharp
-// احصل على محتوى للعمل عليه مع TaggedPdf
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## الخطوة 4: تعيين عنوان المستند واللغة
- قبل أن نبدأ في إنشاء بنية العناصر، نحتاج إلى تحديد عنوان ولغة المستند. ويمكن القيام بذلك باستخدام`SetTitle` و`SetLanguage` طرق`taggedContent` هذا هو الكود لهذه الخطوة:
-
-```csharp
-// تحديد عنوان المستند واللغة
-taggedContent.SetTitle("Structured PDF Document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## الخطوة 5: إنشاء عناصر البنية المنطقية
-الآن بعد أن قمنا بإعداد مستندنا وتعيين العنوان واللغة، يمكننا البدء في إنشاء عناصر هيكل منطقي. سيتم تنظيم هذه العناصر بشكل هرمي لتشكيل شجرة الهيكل. فيما يلي الكود لهذه الخطوة:
-
-```csharp
-// الحصول على عنصر البنية الجذرية (المستند)
-StructureElement rootElement = taggedContent.RootElement;
-
-// إنشاء الهيكل المنطقي
-SectElement sect1 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect1);
-
-SectElement sect2 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect2);
-
-DivElement div11 = taggedContent.CreateDivElement();
-sect1.AppendChild(div11);
-
-DivElement div12 = taggedContent.CreateDivElement();
-sect1.AppendChild(div12);
-
-ArtElement art21 = taggedContent.CreateArtElement();
-sect2.AppendChild(art21);
-
-ArtElement art22
-
-  = taggedContent.CreateArtElement();
-sect2.AppendChild(art22);
-
-DivElement div211 = taggedContent.CreateDivElement();
-art21.AppendChild(div211);
-
-DivElement div212 = taggedContent.CreateDivElement();
-art21.AppendChild(div212);
-
-DivElement div221 = taggedContent.CreateDivElement();
-art22.AppendChild(div221);
-
-DivElement div222 = taggedContent.CreateDivElement();
-art22.AppendChild(div222);
-
-SectElement sect3 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect3);
-
-DivElement div31 = taggedContent.CreateDivElement();
-sect3.AppendChild(div31);
-```
-
-## الخطوة 6: حفظ مستند PDF المُوسوم
- بمجرد إنشاء بنية العنصر، يمكننا حفظ مستند PDF. استخدم`Save` طريقة`document` كائن لتحديد المسار واسم ملف PDF المراد حفظه. هذا هو الكود الخاص بهذه الخطوة:
-
-```csharp
-// احفظ مستند PDF المُوسوم
-document.Save(dataDir + "StructureElementsTree.pdf");
-```
-
-### عينة من كود المصدر لإنشاء شجرة عناصر الهيكل باستخدام Aspose.PDF لـ .NET 
-```csharp
-
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// إنشاء مستند PDF
+```
+
+ تأكد من الاستبدال`"YOUR DOCUMENT DIRECTORY"` مع مسار الملف الفعلي الخاص بك. هذا هو المكان الذي سيتم فيه تخزين ملف PDF النهائي الخاص بك.
+
+## الخطوة 2: إنشاء مستند PDF
+
+الآن، حان الوقت لإنشاء المستند نفسه. فكر في هذا الأمر كأنك تقوم بإنشاء الصفحة الأولى من كتابك. 
+
+```csharp
 Document document = new Document();
+```
+
+يؤدي هذا السطر إلى إنشاء مستند PDF جديد يمكنك البناء عليه.
+
+## الخطوة 3: تهيئة المحتوى المُوسوم
+
+هذا الجزء هو حيث تبدأ السحر. تحتاج إلى الوصول إلى المحتوى المُوسوم للمستند.
+
+```csharp
 // احصل على محتوى للعمل باستخدام TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// تعيين العنوان واللغة لـDocumnet
+```
+
+من خلال القيام بذلك، فإنك تقوم بإعداد المستند لحمل البيانات المنظمة، تمامًا مثل تحضير لوحة قماشية فارغة لتحفة فنية!
+
+## الخطوة 4: تعيين العنوان واللغة
+
+يوفر تحديد العنوان واللغة السياق. الأمر أشبه بإعطاء مستندك اسمًا وصوتًا.
+
+```csharp
+// تعيين العنوان واللغة للمستند
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
+
+الآن أصبح لوثيقتك هوية!
+
+## الخطوة 5: الحصول على العنصر الجذر
+
+كل هيكل يحتاج إلى أساس، أليس كذلك؟ هنا، تقوم بإعداد عنصر البنية الجذرية.
+
+```csharp
 // الحصول على عنصر البنية الجذرية (المستند)
 StructureElement rootElement = taggedContent.RootElement;
-// إنشاء هيكل منطقي
+```
+
+سيعمل عنصر الجذر هذا كأعلى مستوى في بنية مستندك.
+
+## الخطوة 6: إنشاء أقسام البنية المنطقية
+
+تساعد الأقسام في تنظيم المحتوى منطقيًا. فلنقم بإنشاء هذه الأقسام واحدًا تلو الآخر، مثل الفصول في الكتاب!
+
+```csharp
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 SectElement sect2 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect2);
+```
+
+مع هذه الخطوط، قمت بإضافة قسمين! 
+
+## الخطوة 7: إضافة عناصر Div إلى الأقسام
+
+يمكن اعتبار عناصر الأقسام بمثابة فقرات أو أقسام داخل الفصل. دعنا نضفي بعض الإثارة على الأمر من خلال إضافة محتوى إلى تلك الأقسام.
+
+```csharp
 DivElement div11 = taggedContent.CreateDivElement();
 sect1.AppendChild(div11);
 DivElement div12 = taggedContent.CreateDivElement();
 sect1.AppendChild(div12);
+```
+
+لقد قمت هنا بإضافة عنصرين div أسفل القسم الأول. 
+
+## الخطوة 8: إضافة عناصر فنية إلى القسم التالي
+
+الآن، دعونا نضيف بعض اللمسات الفنية من خلال تضمين العناصر الفنية!
+
+```csharp
 ArtElement art21 = taggedContent.CreateArtElement();
 sect2.AppendChild(art21);
 ArtElement art22 = taggedContent.CreateArtElement();
 sect2.AppendChild(art22);
+```
+
+لقد قمت بإنشاء عنصرين فنيين في القسم الثاني يمكنهما احتواء الصور أو الرسومات.
+
+## الخطوة 9: إضافة المزيد من عناصر Div أسفل عناصر الفن
+
+دعونا نملأ عناصر الفن هذه بالمحتوى عن طريق إضافة المزيد من عناصر div.
+
+```csharp
 DivElement div211 = taggedContent.CreateDivElement();
 art21.AppendChild(div211);
 DivElement div212 = taggedContent.CreateDivElement();
@@ -130,56 +143,60 @@ DivElement div221 = taggedContent.CreateDivElement();
 art22.AppendChild(div221);
 DivElement div222 = taggedContent.CreateDivElement();
 art22.AppendChild(div222);
-SectElement sect3 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect3);
-DivElement div31 = taggedContent.CreateDivElement();
-sect3.AppendChild(div31);
-// حفظ مستند PDF المُوسوم
-document.Save(dataDir + "StructureElementsTree.pdf");
-
 ```
 
+لقد أضفنا هنا أربعة أقسام أخرى! فكر في كل قسم على أنه حجرة صغيرة تملأ العرض الفني الخاص بك.
+
+## الخطوة 10: إنشاء قسم آخر
+
+لا نتوقف الآن! سنضيف قسمًا ثالثًا لاستيعاب المزيد من المحتوى.
+
+```csharp
+SectElement sect3 = taggedContent.CreateSectElement();
+rootElement.AppendChild(sect3);
+```
+
+وهنا فصل فارغ آخر جاهز ليتم ملؤه!
+
+## الخطوة 11: إضافة عنصر Div إلى القسم النهائي
+
+وأخيرًا، نحتاج إلى ملء هذا القسم الأخير بالمحتوى.
+
+```csharp
+DivElement div31 = taggedContent.CreateDivElement();
+sect3.AppendChild(div31);
+```
+
+وهكذا، تصبح مستندك مليئًا بالمحتوى المنظم.
+
+## الخطوة 12: احفظ المستند
+
+بعد كل هذا العمل الشاق، حان الوقت لإنقاذ إبداعك. فكر في الأمر كما لو كنت تضع كتابك على الرف بعد كتابته!
+
+```csharp
+// حفظ مستند PDF المُوسوم
+document.Save(dataDir + "StructureElementsTree.pdf");
+```
+
+يقوم هذا الأمر بحفظ مستند PDF الذي قمت بهيكلته حديثًا في الدليل المحدد.
+
 ## خاتمة
-لقد تعلمت كيفية إنشاء بنية من عناصر الشجرة باستخدام Aspose.PDF لـ .NET. لقد أوضح لك هذا الدليل الخطوات اللازمة لإعداد مستند PDF وإنشاء عناصر بنية منطقية وحفظ المستند النهائي. باستخدام Aspose.PDF، يمكنك بسهولة التعامل مع عناصر PDF وإنشاء مستندات منظمة.
 
-### الأسئلة الشائعة
+إن إنشاء شجرة عناصر هيكلية باستخدام Aspose.PDF لـ .NET يشبه إنشاء إطار مبنى. فكل خطوة تعتمد على الخطوة السابقة، مما يمنحك مستندًا قويًا ومنظمًا. والآن يمكنك إدارة ملفات PDF بشكل أكثر فعالية وحتى تحسين إمكانية الوصول إليها. سواء كنت تتعامل مع التقارير أو أدلة المستخدم أو أي مستندات أخرى، فإن تنظيم المحتوى بشكل صحيح يعد فوزًا كبيرًا.
 
-#### س: ما هو الغرض من إنشاء هيكل من عناصر الشجرة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
+## الأسئلة الشائعة
 
-أ: إن إنشاء بنية من عناصر الشجرة في مستند PDF باستخدام Aspose.PDF لـ .NET يسمح لك بتنظيم المحتوى بشكل هرمي. يعمل هذا النهج المنظم على تحسين إمكانية الوصول إلى المستند والتنقل فيه والدلالات، مما يجعل من السهل على المستخدمين وتقنيات المساعدة تفسير المحتوى والتفاعل معه.
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة قوية تستخدم لإنشاء مستندات PDF ومعالجتها وإدارتها في تطبيقات .NET.
 
-#### س: كيف يقوم الكود C# المقدم بإنشاء بنية من عناصر الشجرة في مستند PDF؟
+### كيف أبدأ مع Aspose.PDF؟
+ ابدأ بتنزيل المكتبة من[موقع اسبوس](https://releases.aspose.com/pdf/net/) وإعداده في بيئة .NET الخاصة بك.
 
-أ: يوضح مثال الكود كيفية إنشاء هيكل هرمي للعناصر المنطقية باستخدام`SectElement`, `DivElement` ، و`ArtElement` يتم توفير الفئات بواسطة Aspose.PDF. يتم تنظيم هذه العناصر كعقد رئيسية وعقد فرعية، مما يشكل بنية تشبه الشجرة داخل المستند.
+### هل يمكنني اختبار Aspose.PDF قبل الشراء؟
+ نعم! يمكنك تجربته مجانًا باستخدام[نسخة تجريبية مجانية](https://releases.aspose.com/).
 
-#### س: كيف يتم ذلك؟`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+### أين يمكنني العثور على المساعدة بخصوص Aspose.PDF؟
+ للحصول على الدعم، قم بزيارة[منتدى اسبوس](https://forum.aspose.com/c/pdf/10) حيث يمكنك طرح الأسئلة ومشاركة الأفكار.
 
- أ: ال`TaggedContent` تتيح لك الخاصية الوصول إلى ميزات المحتوى المميز في مستند PDF. يتيح لك هذا إنشاء عناصر منظمة ومعالجتها، وتحديد علاقاتها، وتنظيمها بشكل هرمي، مما يعزز بنية المستند وإمكانية الوصول إليه.
-
-####  س: لماذا من المهم تعيين عنوان المستند واللغة باستخدام`SetTitle` and `SetLanguage` methods?
-
- أ: ضبط عنوان المستند واللغة باستخدام`SetTitle` و`SetLanguage` تعمل الأساليب على تعزيز إمكانية الوصول إلى المستند ودلالاته. كما تساعد المستخدمين وتقنيات المساعدة على فهم الغرض من المستند ولغته.
-
-####  س: كيف حالك؟`SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
-
- أ: تمثل هذه الفئات أنواعًا مختلفة من عناصر البنية.`SectElement` يتم استخدامه لإنشاء الأقسام،`DivElement` للتقسيمات داخل الأقسام، و`ArtElement` للأعمال الفنية أو الرسوم التوضيحية. من خلال إضافة عناصر فرعية إلى عناصر رئيسية، يمكنك إنشاء هيكل هرمي.
-
-#### س: ما هي فوائد تنظيم العناصر بشكل هرمي في مستند PDF؟
-
-أ: يؤدي تنظيم العناصر بشكل هرمي إلى تحسين تنظيم المستندات والتنقل بينها ودلالاتها. كما يسمح للمستخدمين والتقنيات المساعدة بفهم بنية المحتوى والعلاقات بينه، مما يعزز تجربة المستخدم بشكل عام.
-
-#### س: كيف يتم ذلك؟`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
-
- أ: ال`Save` تحفظ الطريقة مستند PDF مع الهيكل الهرمي الذي تم إنشاؤه باستخدام`AppendChild` الطريقة تضمن بقاء البنية سليمة، مما يجعل الوثيقة سهلة الوصول إليها ومنظمة بشكل جيد.
-
-#### س: هل يمكنني تخصيص شجرة الهيكل بشكل أكبر عن طريق إضافة أنواع أخرى من العناصر المنطقية؟
-
-ج: نعم، يمكنك تخصيص شجرة الهيكل بشكل أكبر عن طريق إضافة أنواع أخرى من العناصر المنطقية التي يوفرها Aspose.PDF، مثل العناوين والفقرات والأشكال والمزيد. يمكنك تجربة أنواع مختلفة من العناصر لإنشاء هيكل مخصص.
-
-#### س: كيف يمكن للشجرة المنظمة التي تم إنشاؤها تحسين إمكانية الوصول إلى المستندات وإمكانية استخدامها؟
-
-ج: تعمل الشجرة المنظمة على تعزيز إمكانية الوصول إلى المستندات من خلال توفير تسلسل هرمي واضح ومعنى دلالي للمحتوى. ويمكن للتقنيات المساعدة والمستخدمين التنقل وفهم وتفسير بنية المستند والعلاقات بشكل أكثر فعالية.
-
-#### س: كيف يمكنني تطبيق هذه المعرفة لإنشاء مستندات PDF منظمة ومعقدة لحالات استخدام مختلفة؟
-
-ج: يمكنك الاستفادة من هذه المعرفة من خلال الجمع بين أنواع مختلفة من عناصر البنية وترتيبها هرميًا لتتناسب مع تنظيم المحتوى المطلوب. يعد هذا النهج مفيدًا لإنشاء مستندات معقدة مثل التقارير والمقالات والأدلة والمزيد.
+### كيف يمكنني التقدم بطلب للحصول على ترخيص مؤقت؟
+ يمكنك التقدم بطلب للحصول على ترخيص مؤقت[هنا](https://purchase.aspose.com/temporary-license/).

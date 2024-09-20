@@ -2,7 +2,7 @@
 title: Zmiana przestrzeni kolorów dokumentu PDF za pomocą Java
 linktitle: Zmiana przestrzeni kolorów dokumentu PDF za pomocą Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Dowiedz się, jak zmienić przestrzeń kolorów dokumentu PDF za pomocą Javy. Przewodnik krok po kroku z przykładami kodu. Zoptymalizuj swoje pliki PDF do drukowania i wyświetlania.
+description: Dowiedz się, jak zmienić przestrzeń kolorów dokumentu PDF za pomocą Java. Przewodnik krok po kroku z przykładami kodu. Zoptymalizuj swoje pliki PDF do drukowania i wyświetlania.
 type: docs
 weight: 12
 url: /pl/java/pdf-page-manipulation/change-color-space-of-pdf-document-using-java/

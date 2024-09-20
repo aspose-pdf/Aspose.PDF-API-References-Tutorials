@@ -2,127 +2,124 @@
 title: PDF ファイルのページ領域からテキストを抽出する
 linktitle: PDF ファイルのページ領域からテキストを抽出する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルのページ上の特定の領域からテキストを抽出する方法を学習します。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF 内の特定の領域からテキストを抽出する方法を学習します。ドキュメントからテキストを効率的に収集して保存します。
 type: docs
 weight: 190
 url: /ja/net/programming-with-text/extract-text-from-page-region/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルのページ上の特定の領域からテキストを抽出するプロセスについて説明します。提供されている C# ソース コードは、必要な手順を示しています。
+## 導入
 
-## 要件
-始める前に、次のものがあることを確認してください。
+PDF を操作する場合、フォーム、テーブル、またはドキュメントの特定のセクションからデータを取得するなど、特定のコンテンツを抽出する必要がある場合がよくあります。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF の特定の領域からテキストを抽出する方法について説明します。ドキュメント全体を精査するのではなく、テキストが存在する場所を正確に特定し、効率的に抽出します。
 
-- マシンにインストールされている Visual Studio またはその他の C# コンパイラ。
-- Aspose.PDF for .NET ライブラリ。公式 Aspose Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
+## 前提条件
 
-## ステップ1: プロジェクトを設定する
-1. 好みの開発環境で新しい C# プロジェクトを作成します。
-2. Aspose.PDF for .NET ライブラリへの参照を追加します。
+コードに進む前に、次の項目が揃っていることを確認してください。
 
-## ステップ2: 必要な名前空間をインポートする
-テキストを抽出するコード ファイルで、ファイルの先頭に次の using ディレクティブを追加します。
+1.  Aspose.PDF for .NET: まだダウンロードしていない場合は、Aspose.PDF for .NET ライブラリをダウンロードしてインストールします。[Aspose.PDF for .NET をダウンロード](https://releases.aspose.com/pdf/net/).
+2. IDE: Visual Studio などの任意の .NET 開発環境。
+3. .NET Framework: プロジェクトが適切な .NET Framework で設定されていることを確認します。
+4. PDF ドキュメント: テキストを抽出するサンプル PDF。
+
+忘れないでください[無料トライアルを受ける](https://releases.aspose.com/)Aspose.PDFを使用するか、[一時ライセンス](https://purchase.aspose.com/temporary-license/)完全な機能を実現します。
+
+## 必要なパッケージのインポート
+
+Aspose.PDF for .NET の使用を開始するには、必要な名前空間をプロジェクトにインポートする必要があります。これらのパッケージは、PDF ドキュメントの処理に必要なクラスとメソッドを提供します。
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## ステップ3: ドキュメントディレクトリを設定する
-コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを指定します。
+## ステップ1: ドキュメントディレクトリの設定とPDFの読み込み
 
-## ステップ4: PDF文書を開く
-既存のPDF文書を開くには、`Document`コンストラクターを呼び出して、入力 PDF ファイルへのパスを渡します。
+最初のステップは、PDF ファイルの場所を指定してプロジェクトに読み込むことです。操作する PDF ファイルへのローカル ディレクトリ パスを使用できます。
 
-```csharp
-Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-```
-
-## ステップ5: ページ領域からテキストを抽出する
-作成する`TextAbsorber`オブジェクトを使用して文書からテキストを抽出します。`TextSearchOptions`四角形で定義された特定のページ領域に検索を制限します。
-
-```csharp
-TextAbsorber absorb = new TextAbsorber();
-absorb.TextSearchOptions.LimitToPageBounds = true;
-absorb.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
-pdfDocument.Pages[1].Accept(absorb);
-```
-
-## ステップ6: 抽出したテキストを取得する
-抽出したテキストにアクセスする`TextAbsorber`物体。
-
-```csharp
-string extractedText = absorb.Text;
-```
-
-## ステップ7: 抽出したテキストを保存する
-作成する`TextWriter`抽出したテキストを保存するファイルを開きます。抽出したテキストをファイルに書き込み、ストリームを閉じます。
-
-```csharp
-TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-tw.WriteLine(extractedText);
-tw. Close();
-```
-
-### Aspose.PDF for .NET を使用してページ領域からテキストを抽出するためのサンプル ソース コード 
 ```csharp
 //ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
+
+// PDF文書を開く
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
+```
+
+この手順により、PDFファイルが正しく読み込まれ、作業の準備が整います。`Document` Aspose.PDF ライブラリのクラスを使用すると、PDF ファイルを操作できます。
+
+## ステップ2: 抽出用にテキストアブソーバーを初期化する
+
+このステップでは、`TextAbsorber`PDF文書からテキストを抽出するために設計されたオブジェクトです。`TextAbsorber`柔軟性があり、特定の地域やページに焦点を当てるようにカスタマイズできます。
+
+```csharp
 //テキストを抽出するためのTextAbsorberオブジェクトを作成する
 TextAbsorber absorber = new TextAbsorber();
+```
+
+の`TextAbsorber`クラスは、指定した境界内のすべてのテキストをキャプチャする強力なツールです。
+
+## ステップ3: テキストを抽出する領域を定義する
+
+ここで魔法が起こります。ページ全体からテキストを取得する代わりに、ページの特定の長方形領域に抽出を制限できます。これは、コンテンツがどこにあるかを正確に知っている場合に最適です。
+
+```csharp
+//テキスト抽出を特定の領域に制限する
 absorber.TextSearchOptions.LimitToPageBounds = true;
 absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
+```
+
+の`Rectangle`オブジェクトを使用すると、テキストを抽出する領域の座標（ポイント単位）を定義できます。`TextSearchOptions.LimitToPageBounds`指定された四角形内のテキストのみが抽出されるようにします。
+
+## ステップ4：希望のページでアブソーバーを受け入れる
+
+地域を設定したら、次のステップは`TextAbsorber`テキストを抽出したい特定のページを選択します。ここでは、PDF の最初のページに焦点を当てます。
+
+```csharp
 //最初のページの吸収剤を受け入れる
 pdfDocument.Pages[1].Accept(absorber);
+```
+
+電話をかけることで`Accept`ページ上のメソッドでは、Aspose.PDF にアブソーバーを実行して定義された領域からテキストを収集するように指示します。
+
+## ステップ5: 抽出したテキストを取得して保存する
+
+アブソーバーが仕事を終えたら、抽出したテキストを収集して保存します。このステップでは、テキストを取得して、`.txt`ファイル。
+
+```csharp
 //抽出したテキストを取得する
 string extractedText = absorber.Text;
-//ライターを作成してファイルを開く
+
+//抽出したテキストを保存するためのライターを作成する
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-//ファイルにテキスト行を書き込む
+
+//テキストをファイルに書き込む
 tw.WriteLine(extractedText);
+
 //ストリームを閉じる
 tw.Close();
 ```
 
+ここでは、`TextWriter`クラスは、抽出されたテキストをテキスト ファイルに書き込むために使用されます。これにより、抽出されたコンテンツが後で使用するために安全に保存されます。
+
 ## 結論
-Aspose.PDF for .NET を使用して、PDF ドキュメントのページ上の特定の領域からテキストを正常に抽出しました。抽出されたテキストは、指定された出力ファイルに保存されました。
 
-### よくある質問
+ PDFドキュメント内の特定の領域からテキストを抽出することは、特にフォームや表などの構造化されたコンテンツを扱う場合に非常に便利です。Aspose.PDF for .NETを使用すると、わずか数行のコードでこのタスクを実現できます。領域を定義し、`TextAbsorber`抽出したテキストを保存することで、PDF から抽出される内容を完全に制御できます。
 
-#### Q: このチュートリアルの目的は何ですか?
+小規模なプロジェクトに取り組んでいる場合でも、大規模なドキュメントを管理している場合でも、この方法を使用すると、ドキュメント全体を調べなくても PDF から関連データを効率的に抽出できます。
 
-A: このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルのページ上の特定の領域からテキストを抽出するプロセスについて説明します。付属の C# ソース コードには、このタスクを実行するための手順が段階的に説明されています。
+## よくある質問
 
-#### Q: どの名前空間をインポートすればよいですか?
+### 一度に複数のページからテキストを抽出できますか?
+はい、繰り返して`Pages`コレクションの`pdfDocument`、適用することができます`TextAbsorber`複数のページに。
 
-A: テキストを抽出するコード ファイルで、ファイルの先頭に次の using ディレクティブを含めます。
+### テキストが PDF の別の領域内にある場合はどうなりますか?
+簡単に調整できます`Rectangle`テキストが配置されている領域と一致する座標。
 
-```csharp
-using Aspose.Pdf;
-using System.IO;
-```
+### これはスキャンされた PDF でも機能しますか?
+いいえ、スキャンした PDF をテキストに変換するには OCR (光学式文字認識) が必要です。Aspose.PDF には OCR 機能も備わっています。
 
-#### Q: ドキュメントディレクトリを指定するにはどうすればよいですか?
+### 特定のキーワードに基づいてテキストを抽出する方法はありますか?
+はい、使えます`TextFragmentAbsorber`キーワードベースのテキスト抽出用。
 
- A: 線を見つける`string dataDir = "YOUR DOCUMENT DIRECTORY";`コード内の`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
-
-#### Q: 既存の PDF ドキュメントを開くにはどうすればよいですか?
-
- A: ステップ4では、既存のPDF文書を`Document`コンストラクターを呼び出して、入力 PDF ファイルへのパスを指定します。
-
-#### Q: 特定のページ領域からテキストを抽出するにはどうすればよいですか?
-
- A: ステップ5では、`TextAbsorber`オブジェクトを使用してPDF文書からテキストを抽出します。次に、`TextSearchOptions`座標を使用してページ上の特定の長方形領域を定義します。
-
-#### Q: 抽出されたテキストにアクセスするにはどうすればいいですか?
-
- A: ステップ6では、抽出したテキストにアクセスする手順を説明します。`TextAbsorber`物体。
-
-#### Q: 抽出したテキストをファイルに保存するにはどうすればよいですか?
-
- A: ステップ7では、`TextWriter`抽出したテキストを保存するファイルを開き、抽出したテキストをファイルに書き込んでから、ストリームを閉じます。
-
-#### Q: このチュートリアルから得られる重要なポイントは何ですか?
-
-A: このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントのページの特定の領域からテキストを抽出する方法を学習しました。抽出されたテキストは指定された出力ファイルに保存され、必要なテキスト コンテンツを正確にターゲットにして分析できます。
+### 暗号化された PDF からテキストを抽出するにはどうすればよいですか?
+まず正しいパスワードを入力して PDF を復号化し、その後テキストの抽出を続行する必要があります。

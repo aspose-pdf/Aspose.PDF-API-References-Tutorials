@@ -12,7 +12,7 @@ PDF-kommentarer blåser liv i statiska dokument, vilket gör dem dynamiska och i
 
 ## Låser upp PDF-interaktivitet
 
-Anteckningar är inkörsporten till interaktivitet i PDF-filer, och våra tutorials guidar dig genom processen steg för steg. Från enkla textmarkeringar till interaktiva formulär och multimediaelement, du lär dig hur du skapar engagerande och användarvänliga PDF-dokument med Aspose.PDF för Java. Dessa handledningar vänder sig till både nybörjare och erfarna utvecklare som vill höja sina färdigheter i PDF-kommentarer.
+Anteckningar är inkörsporten till interaktivitet i PDF-filer, och våra handledningar guidar dig genom processen steg för steg. Från enkla textmarkeringar till interaktiva formulär och multimediaelement, du lär dig hur du skapar engagerande och användarvänliga PDF-dokument med Aspose.PDF för Java. Dessa handledningar vänder sig till både nybörjare och erfarna utvecklare som vill höja sina färdigheter i PDF-kommentarer.
 
 ## Förbättra dokumentsamarbete
 

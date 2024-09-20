@@ -48,7 +48,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument PDF
 
-Dále musíme otevřít dokument PDF, který chceme upravit. Tady Aspose.PDF září! Potřebujete jen pár řádků kódu:
+Dále musíme otevřít dokument PDF, který chceme upravit. To je místo, kde Aspose.PDF září! Potřebujete jen pár řádků kódu:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImageStamp.pdf");
@@ -66,7 +66,7 @@ ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
  Tento řádek inicializuje`ImageStamp` objekt, který představuje obrázek, který chcete přidat. Je důležité zkontrolovat, zda je cesta k souboru obrázku správná.
 
-## Krok 4: Nakonfigurujte vlastnosti razítka obrázku
+## Krok 4: Konfigurace vlastností razítka obrázku
 
 Zde můžete být kreativní a upravit si razítko. Můžete nastavit vlastnosti, jako je poloha, velikost, otočení a krytí. Zde je příklad, jak to udělat:
 
@@ -129,7 +129,7 @@ Gratuluji! Právě jste přidali razítko obrázku do PDF pomocí Aspose.PDF pro
 Aspose.PDF podporuje různé formáty obrázků, včetně JPEG, PNG a BMP.
 
 ### Jak mohu otočit obrazové razítko?  
- Můžete nastavit`Rotate` vlastnictví`ImageStamp` objekt pro otočení obrázku v požadovaném úhlu. Možnosti zahrnují`Rotation.on90`, `Rotation.on180`atd.
+ Můžete nastavit`Rotate` vlastnictvím`ImageStamp` objekt pro otočení obrázku v požadovaném úhlu. Možnosti zahrnují`Rotation.on90`, `Rotation.on180`atd.
 
 ### Kde najdu další dokumentaci na Aspose.PDF?  
  Můžete prozkoumat kompletní referenční API a dokumentaci[zde](https://reference.aspose.com/pdf/net/).

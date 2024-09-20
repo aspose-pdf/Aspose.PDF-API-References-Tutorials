@@ -38,7 +38,7 @@ Most, hogy importálta a megfelelő névtereket, készen áll a kódolás megkez
 
 Először is – be kell töltenie azt a PDF-dokumentumot, amelyhez JavaScriptet szeretne hozzáadni. Ez a lépés megadja a terepet az összes további módosításhoz. Képzelje el, hogy van egy PDF-fájlja, amelyet dinamikus funkciókkal szeretne javítani, például a dokumentum automatikus kinyomtatását megnyitáskor.
 
-A PDF-fájlt a következőképpen töltheti be:
+A következőképpen töltheti be a PDF-fájlt:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.

@@ -116,5 +116,5 @@ En suivant ces étapes, vous pouvez créer des tableaux qui répondent à vos be
 ### Puis-je appliquer une mise en forme conditionnelle aux cellules d’un tableau ?
    Oui, vous pouvez appliquer une mise en forme conditionnelle aux cellules d'un tableau pour mettre en évidence des données spécifiques en fonction de conditions. Cette fonctionnalité est hautement personnalisable.
 
-### Où puis-je trouver des options avancées de personnalisation de table ?
+### Où puis-je trouver des options de personnalisation de table avancées ?
     Explorez le[Documentation Aspose.PDF pour Java](https://reference.aspose.com/pdf/java/) pour une liste complète des fonctionnalités et des options de personnalisation des tableaux PDF.

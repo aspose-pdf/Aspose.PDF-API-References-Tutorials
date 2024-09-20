@@ -7,153 +7,133 @@ type: docs
 weight: 420
 url: /ar/net/programming-with-text/search-and-get-text-all/
 ---
-يوضح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET للبحث عن نص من جميع صفحات مستند PDF والحصول عليه. يوضح كود المصدر C# المقدم العملية خطوة بخطوة.
+## مقدمة
+
+هل احتجت يومًا إلى استخراج نص معين من ملف PDF ولكنك وجدت الأمر صعبًا؟ قد تبدو ملفات PDF أحيانًا وكأنها حاويات مغلقة، مما يجعل من الصعب الحصول على المعلومات التي تحتاجها. ولكن إليك الأخبار الجيدة: باستخدام Aspose.PDF for .NET، يمكنك بسهولة البحث عن نص واسترداده من أي ملف PDF. توفر هذه المكتبة القوية كل ما تحتاجه للعمل مع ملفات PDF في تطبيقات .NET، مما يجعل استخراج النص أمرًا سهلاً. في هذا البرنامج التعليمي، سنرشدك خلال عملية البحث عن نص واستخراجه من ملف PDF باستخدام Aspose.PDF for .NET. سواء كنت تقوم ببناء أداة تحليل نص أو تحتاج فقط إلى أتمتة استخراج البيانات من تقارير PDF، فأنت في المكان الصحيح!
 
 ## المتطلبات الأساسية
 
-قبل المتابعة بالبرنامج التعليمي، تأكد من توفر ما يلي:
+قبل أن ننتقل إلى الكود، دعنا نتأكد من إعداد كل شيء:
 
-- المعرفة الأساسية للغة البرمجة C#.
-- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لتثبيتها في مشروعك.
+1. Aspose.PDF for .NET: ستحتاج إلى تنزيل Aspose.PDF for .NET وتثبيته. يمكنك الحصول عليه من صفحة التنزيل[هنا](https://releases.aspose.com/pdf/net/).
+2. بيئة .NET: تأكد من إعداد .NET Framework أو .NET Core على جهاز التطوير الخاص بك.
+3. المعرفة الأساسية بلغة C##: يوصى ببعض المعرفة بلغة C# والعمل مع مشاريع .NET.
+4.  مستند PDF: ملف PDF نموذجي سنستخرج منه النص. في هذا المثال، سنستخدم`SearchAndGetTextFromAll.pdf`.
 
-## الخطوة 1: إعداد المشروع
+## استيراد الحزم
 
-ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
-
-## الخطوة 2: استيراد المساحات الأساسية الضرورية
-
-أضف التوجيهات التالية في بداية ملف C# الخاص بك لاستيراد المساحات المطلوبة:
+قبل كتابة أي كود، يجب عليك استيراد المساحات الأساسية اللازمة إلى مشروعك للعمل مع Aspose.PDF.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
 
-## الخطوة 3: تحميل مستند PDF
+توفر هذه المساحات الاسمية إمكانية الوصول إلى نموذج كائن المستند الخاص بملف PDF وتسمح لنا بالتعامل مع النص داخل الملف.
 
- قم بتعيين المسار إلى دليل مستند PDF الخاص بك وقم بتحميل المستند باستخدام`Document` فصل:
+دعونا نقسم العملية إلى خطوات بسيطة حتى تتمكن من متابعتها بسهولة.
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-```
+## الخطوة 1: تعيين دليل المستندات
 
- تأكد من الاستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+أولاً وقبل كل شيء، عليك تحديد المسار إلى الدليل الذي يوجد به ملف PDF. يساعد هذا التطبيق في تحديد الملف الذي ستستخرج النص منه.
 
-## الخطوة 4: البحث عن النص واستخراجه
-
- إنشاء`TextFragmentAbsorber` كائن للعثور على جميع حالات عبارة البحث المدخلة:
-
-```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-```
-
- يستبدل`"text"` مع النص الفعلي الذي تريد البحث عنه.
-
-## الخطوة 5: البحث في جميع الصفحات
-
-قبول الامتصاص لجميع صفحات الوثيقة:
-
-```csharp
-pdfDocument.Pages.Accept(textFragmentAbsorber);
-```
-
-## الخطوة 6: الحصول على أجزاء نصية مستخرجة
-
- احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
-
-```csharp
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-```
-
-## الخطوة 7: التنقل عبر أجزاء النص
-
-قم بالتنقل عبر أجزاء النص getd والوصول إلى خصائصها:
-
-```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-    Console.WriteLine("Text: {0} ", textFragment.Text);
-    Console.WriteLine("Position: {0} ", textFragment.Position);
-    Console.WriteLine("XIndent: {0} ", textFragment.Position.XIndent);
-    Console.WriteLine("YIndent: {0} ", textFragment.Position.YIndent);
-    Console.WriteLine("Font - Name: {0}", textFragment.TextState.Font.FontName);
-    Console.WriteLine("Font - IsAccessible: {0} ", textFragment.TextState.Font.IsAccessible);
-    Console.WriteLine("Font - IsEmbedded: {0} ", textFragment.TextState.Font.IsEmbedded);
-    Console.WriteLine("Font - IsSubset: {0} ", textFragment.TextState.Font.IsSubset);
-    Console.WriteLine("Font Size: {0} ", textFragment.TextState.FontSize);
-    Console.WriteLine("Foreground Color: {0} ", textFragment.TextState.ForegroundColor);
-}
-```
-
-بإمكانك تعديل الكود داخل الحلقة لأداء إجراءات أخرى على كل جزء من النص.
-
-### عينة من كود المصدر للبحث والحصول على النص بالكامل باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+-  ال`dataDir` يجب أن يشير المتغير إلى الدليل الذي يوجد به`SearchAndGetTextFromAll.pdf` تم تخزين الملف.
+-  يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي على جهازك.
+
+## الخطوة 2: افتح مستند PDF
+
+بعد ذلك، سنفتح مستند PDF باستخدام Aspose.PDF`Document` هدف.
+
+```csharp
 // فتح المستند
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
+```
+
+-  نقوم بإنشاء مثيل جديد لـ`Document` الصف عن طريق تمرير مسار الملف الكامل لملف PDF.
+- سيؤدي هذا إلى تحميل ملف PDF في الذاكرة، مما يجعله جاهزًا للمعالجة.
+
+## الخطوة 3: إنشاء ممتص نص
+
+ ال`TextFragmentAbsorber` يتم استخدام الكائن للبحث عن نص معين داخل ملف PDF. في هذه الحالة، سنبحث عن كلمة "نص".
+
+```csharp
 // إنشاء كائن TextAbsorber للعثور على جميع حالات عبارة البحث المدخلة
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
+```
+
+-  ال`TextFragmentAbsorber` يتم تهيئة السلسلة بالسلسلة`"text"`وهذا يعني أنه سيبحث عن أي ظهور لكلمة "نص" داخل مستند PDF.
+
+## الخطوة 4: قبول الامتصاص لجميع الصفحات
+
+الآن، سنقوم بتوجيه مستند PDF لقبول الممتص والبحث عن النص عبر جميع صفحاته.
+
+```csharp
 // قبول الممتص لجميع الصفحات
 pdfDocument.Pages.Accept(textFragmentAbsorber);
+```
+
+-  ال`Accept` يتم تطبيق الطريقة على صفحات المستند. سيؤدي هذا إلى البحث في كافة الصفحات عن النص المحدد.
+
+## الخطوة 5: استخراج أجزاء النص
+
+بمجرد أن يقوم الممتص بمسح المستند، يمكننا استرجاع أجزاء النص المستخرجة.
+
+```csharp
 // احصل على أجزاء النص المستخرجة
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+-  ال`TextFragments` ممتلكات`TextFragmentAbsorber` يقوم بإرجاع مجموعة من كافة أجزاء النص التي تطابق مصطلح البحث.
+
+## الخطوة 6: تكرار أجزاء النص
+
+الآن بعد أن أصبح لدينا مجموعة من أجزاء النص، سنقوم بالمرور عليها واستخراج التفاصيل.
+
+```csharp
 // التنقل عبر الشظايا
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	Console.WriteLine("Text : {0} ", textFragment.Text);
-	Console.WriteLine("Position : {0} ", textFragment.Position);
-	Console.WriteLine("XIndent : {0} ", textFragment.Position.XIndent);
-	Console.WriteLine("YIndent : {0} ", textFragment.Position.YIndent);
-	Console.WriteLine("Font - Name : {0}", textFragment.TextState.Font.FontName);
-	Console.WriteLine("Font - IsAccessible : {0} ", textFragment.TextState.Font.IsAccessible);
-	Console.WriteLine("Font - IsEmbedded : {0} ", textFragment.TextState.Font.IsEmbedded);
-	Console.WriteLine("Font - IsSubset : {0} ", textFragment.TextState.Font.IsSubset);
-	Console.WriteLine("Font Size : {0} ", textFragment.TextState.FontSize);
-	Console.WriteLine("Foreground Color : {0} ", textFragment.TextState.ForegroundColor);
+    Console.WriteLine("Text : {0} ", textFragment.Text);
+    Console.WriteLine("Position : {0} ", textFragment.Position);
+    Console.WriteLine("XIndent : {0} ", textFragment.Position.XIndent);
+    Console.WriteLine("YIndent : {0} ", textFragment.Position.YIndent);
+    Console.WriteLine("Font - Name : {0}", textFragment.TextState.Font.FontName);
+    Console.WriteLine("Font - IsAccessible : {0} ", textFragment.TextState.Font.IsAccessible);
+    Console.WriteLine("Font - IsEmbedded : {0} ", textFragment.TextState.Font.IsEmbedded);
+    Console.WriteLine("Font - IsSubset : {0} ", textFragment.TextState.Font.IsSubset);
+    Console.WriteLine("Font Size : {0} ", textFragment.TextState.FontSize);
+    Console.WriteLine("Foreground Color : {0} ", textFragment.TextState.ForegroundColor);
 }
 ```
 
+-  ال`foreach` تتكرر الحلقة خلال كل`TextFragment` في المجموعة.
+- نقوم بطباعة خصائص مختلفة لكل جزء، مثل النص الفعلي، وموقعه على الصفحة، وتفاصيل الخط، وحجم الخط.
+-  ال`XIndent` و`YIndent` تعطي الخصائص الإحداثيات الدقيقة لشظية النص داخل ملف PDF.
+
 ## خاتمة
 
-مبروك! لقد تعلمت بنجاح كيفية البحث عن النص والحصول عليه من جميع صفحات مستند PDF باستخدام Aspose.PDF for .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، من تحميل المستند إلى الوصول إلى أجزاء النص المستخرجة. يمكنك الآن دمج هذا الكود في مشاريع C# الخاصة بك لتحليل ومعالجة محتوى النص في ملفات PDF.
+والآن، لقد انتهينا! فباستخدام بضعة أسطر من التعليمات البرمجية، نجحنا في البحث واستخراج نص من ملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك مرونة Aspose.PDF التعامل مع ملفات PDF بطرق عديدة، مما يجعلها خيارًا ممتازًا للمطورين الذين يحتاجون إلى حلول PDF قوية في بيئات .NET. يمكنك بسهولة توسيع هذا المثال للبحث عن كلمات أخرى، أو استخراج المزيد من التفاصيل، أو حتى التعامل مع محتوى PDF بناءً على احتياجاتك. نأمل أن يكون هذا الدليل قد أعطاك نهجًا واضحًا ومباشرًا للعمل مع ملفات PDF. انطلق وجربه مع ملفات PDF الخاصة بك!
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "البحث والحصول على النص الكامل"؟
+### هل يمكنني البحث عن كلمات متعددة في وقت واحد؟  
+ نعم يمكنك تعديل`TextFragmentAbsorber` للبحث عن عبارات متعددة عن طريق تعديل سلسلة البحث وفقًا لذلك.
 
-ج: يوضح البرنامج التعليمي "البحث والحصول على النص بالكامل" كيفية استخدام مكتبة Aspose.PDF لـ .NET للبحث عن نص واستخراجه من جميع صفحات مستند PDF. يوفر البرنامج التعليمي تعليمات خطوة بخطوة إلى جانب عينة من كود C# لإجراء البحث عن النص واسترجاعه.
+### ماذا لو كان النص يمتد على عدة أسطر؟  
+سيظل برنامج Aspose.PDF يتعرف على النص ويستخرجه حتى لو كان يتكون من عدة أسطر. ويمكنك التعامل مع هذه الأجزاء بشكل فردي.
 
-#### س: كيف يساعد هذا البرنامج التعليمي في استخراج النص من مستندات PDF؟
+### كيف أحفظ النص المستخرج في ملف؟  
+ يمكنك كتابة النص المستخرج إلى ملف باستخدام عمليات الإدخال/الإخراج القياسية لملف C#، مثل`StreamWriter`.
 
-ج: يرشدك هذا البرنامج التعليمي خلال عملية استخراج النص من جميع صفحات مستند PDF. ويستخدم مكتبة Aspose.PDF لتحديد عبارات نصية معينة واسترجاع المعلومات المرتبطة بها، مثل الموضع وخصائص الخط والألوان.
+### هل يدعم Aspose.PDF استخراج النص من ملفات PDF الممسوحة ضوئيًا؟  
+لا يدعم Aspose.PDF تقنية التعرف الضوئي على الحروف. بالنسبة لملفات PDF الممسوحة ضوئيًا، ستحتاج إلى أداة التعرف الضوئي على الحروف للتعرف على النص.
 
-#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي؟
-
-ج: قبل البدء في هذا البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، يجب أن يكون لديك مكتبة Aspose.PDF for .NET مثبتة. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لدمجها في مشروعك.
-
-#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
-
-ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF for .NET. سيتيح لك هذا الوصول إلى وظائف المكتبة في مشروعك.
-
-#### س: كيف يمكنني البحث عن نص محدد داخل مستند PDF؟
-
- أ: يمكنك استخدام`TextFragmentAbsorber`فئة للبحث عن حالات عبارة بحث محددة داخل مستند PDF. من خلال إنشاء مثيل لهذه الفئة وتحديد النص المستهدف، يمكنك التقاط جميع حالات هذا النص.
-
-#### س: هل يمكنني البحث عن نص في جميع صفحات مستند PDF؟
-
- ج: نعم، يوضح البرنامج التعليمي كيفية البحث عن نص عبر جميع صفحات مستند PDF.`pdfDocument.Pages.Accept(textFragmentAbsorber)` يتم استخدام الطريقة لقبول الممتص لجميع الصفحات، مما يسمح لك بالبحث عن النص المطلوب في كل صفحة.
-
-#### س: كيف يمكنني الوصول إلى أجزاء النص المستخرجة؟
-
- أ: بعد البحث عن النص، يمكنك الوصول إلى أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` الكائن. توفر هذه الخاصية إمكانية الوصول إلى مجموعة من`TextFragment` الكائنات التي تحتوي على النص المستخرج والمعلومات ذات الصلة.
-
-#### س: ما هي المعلومات التي يمكنني استرجاعها من أجزاء النص المستخرجة؟
-
-ج: يمكنك استرداد تفاصيل مختلفة من أجزاء النص المستخرجة، مثل محتوى النص الفعلي، والموضع (إحداثيات X وY)، ومعلومات الخط (الاسم والحجم واللون، وما إلى ذلك)، والمزيد. يوضح كود العينة في البرنامج التعليمي كيفية الوصول إلى هذه التفاصيل وطباعتها.
-
-#### س: هل يمكنني تنفيذ إجراءات أخرى على أجزاء النص المستخرجة؟
-
-ج: بالتأكيد. بمجرد استخراج أجزاء النص، يمكنك تعديل الكود داخل الحلقة لتنفيذ إجراءات مخصصة على كل جزء. قد يتضمن هذا حفظ النص المستخرج، أو تحليل أنماط النص، أو تطبيق تغييرات التنسيق.
+### كيف أتعامل مع ملفات PDF المشفرة؟  
+إذا كان ملف PDF الخاص بك محميًا بكلمة مرور، فيمكنك إلغاء قفله باستخدام Aspose.PDF عن طريق تقديم كلمة المرور عند تحميل المستند.

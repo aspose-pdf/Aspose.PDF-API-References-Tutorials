@@ -2,105 +2,47 @@
 title: Hiển thị bảng trong tài liệu PDF
 linktitle: Hiển thị bảng trong tài liệu PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách hiển thị bảng trong tài liệu PDF bằng Aspose.PDF cho .NET.
+description: Tạo PDF chuyên nghiệp dễ dàng bằng cách dựng bảng với Aspose.PDF cho .NET. Làm theo hướng dẫn từng bước của chúng tôi để thành thạo việc tạo tài liệu.
 type: docs
 weight: 170
 url: /vi/net/programming-with-tables/render-table/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước để hiển thị bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# được cung cấp và chỉ cho bạn cách triển khai nó.
+## Giới thiệu
 
-## Bước 1: Tạo tài liệu
-Đầu tiên, chúng ta sẽ tạo một tài liệu PDF mới:
+Việc tạo PDF chuyên nghiệp theo chương trình có vẻ như là một nhiệm vụ khó khăn, nhưng với Aspose.PDF cho .NET, nó trở nên dễ dàng. Cho dù bạn đang tạo báo cáo, hóa đơn hay bất kỳ loại tài liệu nào khác yêu cầu dữ liệu dạng bảng, Aspose.PDF đều cung cấp các công cụ bạn cần. Trong hướng dẫn này, chúng ta sẽ khám phá cách hiển thị bảng trong tài liệu PDF theo từng bước. Cuối cùng, bạn sẽ hiểu rõ cách thao tác bảng, quản lý thuộc tính trang và lưu tệp PDF một cách dễ dàng.
+
+## Điều kiện tiên quyết
+
+Trước khi đi sâu vào mã, đây là những gì bạn cần:
+
+-  Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Bạn có thể tải xuống[đây](https://visualstudio.microsoft.com/downloads/).
+-  Aspose.PDF cho .NET: Bạn có thể dễ dàng tải xuống thư viện Aspose.PDF từ[Trang phát hành Aspose](https://releases.aspose.com/pdf/net/).
+- Kiến thức cơ bản về C#: Hiểu được những nguyên tắc cơ bản của C# sẽ giúp bạn theo dõi tốt hơn.
+- .NET Framework: Tốt nhất là bạn nên đảm bảo rằng mình đang làm việc trong môi trường .NET tương thích.
+
+Sau khi đã thiết lập những điều kiện tiên quyết này, bạn đã sẵn sàng bắt đầu tạo tài liệu PDF!
+
+## Nhập gói
+
+Khi bắt đầu tệp C#, bạn sẽ cần nhập các không gian tên Aspose.PDF cần thiết. Điều này cho phép bạn sử dụng các chức năng thư viện trong dự án của chúng tôi.
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Tạo một tài liệu mới
-Document doc = new Document();
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Bước 2: Cấu hình lề và hướng trang
-Tiếp theo, chúng ta sẽ cấu hình lề trang và đặt hướng sang chế độ ngang:
+ Hãy đảm bảo rằng bạn đã thêm các tham chiếu cần thiết vào thư viện Aspose.PDF trong dự án của mình. Nếu bạn đang sử dụng NuGet, bạn có thể dễ dàng thêm nó bằng cách tìm kiếm`Aspose.PDF`.
+
+Bây giờ chúng ta đã thiết lập mọi thứ, hãy chia nhỏ quy trình thành các bước dễ quản lý để hiển thị bảng trong tài liệu PDF. Đừng lo lắng; Tôi sẽ hướng dẫn bạn từng bước với hướng dẫn rõ ràng!
+
+## Bước 1: Thiết lập thông tin trang và tài liệu
+
+Trước tiên, chúng ta cần tạo một tài liệu mới và cấu hình cài đặt trang của nó. Sau đây là cách thực hiện:
 
 ```csharp
-PageInfo pageInfo = doc.PageInfo;
-Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
-
-marginInfo. Left = 37;
-marginInfo. Right = 37;
-marginInfo. Top = 37;
-marginInfo.Bottom = 37;
-
-pageInfo.IsLandscape = true;
-```
-
-## Bước 3: Tạo bảng và cột
-Bây giờ chúng ta hãy tạo một bảng và thiết lập độ rộng cột:
-
-```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "50 100";
-```
-
-## Bước 4: Thêm hàng và ô vào bảng
-Tiếp theo, chúng ta sẽ thêm các hàng và ô vào bảng bằng vòng lặp:
-
-```csharp
-for (int i = 1; i <= 120; i++)
-{
-     Aspose.Pdf.Row row = table.Rows.Add();
-     row. FixedRowHeight = 15;
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("Content 1"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-```
-
-## Bước 5: Thêm bảng vào trang
-Bây giờ chúng ta hãy thêm bảng vào trang tài liệu:
-
-```csharp
-Page curPage = doc.Pages.Add();
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs. Add(table);
-```
-
-## Bước 6: Hiển thị bảng trên trang mới
-Tiếp theo, chúng ta sẽ tạo một bảng mới và đặt thuộc tính "IsInNewPage" thành "true" để hiển thị bảng trên một trang mới:
-
-```csharp
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table. ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-     Aspose.Pdf.Row row = table1.Rows.Add();
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-paragraphs. Add(table1);
-```
-
-## Bước 7: Lưu PDF
-Cuối cùng, chúng ta lưu tài liệu PDF:
-
-```csharp
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
-```
-
-### Mã nguồn ví dụ cho Render Table sử dụng Aspose.PDF cho .NET
-
-```csharp
-// Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 Document doc = new Document();
 PageInfo pageInfo = doc.PageInfo;
 Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
@@ -111,63 +53,123 @@ marginInfo.Top = 37;
 marginInfo.Bottom = 37;
 
 pageInfo.IsLandscape = true;
-
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table.ColumnWidths = "50 100";
-// Đã thêm trang.
-Page curPage = doc.Pages.Add();
-for (int i = 1; i <= 120; i++)
-{
-	Aspose.Pdf.Row row = table.Rows.Add();
-	row.FixedRowHeight = 15;
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("Content 1"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs.Add(table);
-/********************************************/
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table.ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-	Aspose.Pdf.Row row = table1.Rows.Add();
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-// Tôi muốn giữ bảng 1 ở trang tiếp theo nhé...
-paragraphs.Add(table1);
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dataDir);
 ```
 
+Giải thích: 
+- Chúng tôi bắt đầu bằng cách xác định nơi tài liệu của chúng tôi sẽ được lưu (`dataDir`). 
+-  Sau đó, chúng ta tạo một phiên bản mới của`Document` lớp học. 
+- Chúng tôi định cấu hình lề trang để tạo ra một số khoảng trống xung quanh bảng.
+- Cuối cùng, chúng tôi đặt tài liệu theo hướng ngang, điều này hữu ích khi hiển thị các bảng rộng hơn.
+
+## Bước 2: Tạo Bảng đầu tiên
+
+Tiếp theo, chúng ta hãy tạo bảng đầu tiên và điền vào đó một số dữ liệu mẫu:
+
+```csharp
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+table.ColumnWidths = "50 100"; // Xác định độ rộng cột
+```
+
+ Giải thích: Ở đây, chúng ta khởi tạo`Table` lớp và thiết lập độ rộng cột. Cột đầu tiên sẽ rộng 50 đơn vị và cột thứ hai sẽ rộng 100 đơn vị.
+
+## Bước 3: Điền hàng vào bảng
+
+Bây giờ, hãy thêm các hàng vào bảng của chúng ta trong một vòng lặp:
+
+```csharp
+Page curPage = doc.Pages.Add(); // Thêm trang mới
+for (int i = 1; i <= 120; i++)
+{
+    Aspose.Pdf.Row row = table.Rows.Add();
+    row.FixedRowHeight = 15; // Đặt chiều cao cố định cho các hàng
+    
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("Content 1"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("HHHHH"));
+}
+```
+
+Giải thích: 
+- Ở đây chúng ta tạo một trang mới để thêm bảng.
+-  Chúng tôi sử dụng một`for` vòng lặp để thêm 120 hàng vào bảng của chúng ta. Mỗi hàng có chiều cao cố định là 15 đơn vị.
+- Bên trong mỗi hàng, chúng ta thêm hai ô và điền văn bản vào đó.
+
+## Bước 4: Thêm Bảng Đầu Tiên vào Trang
+
+Sau khi điền đầy đủ thông tin vào bảng, chúng tôi sẽ thêm bảng đó vào trang hiện tại:
+
+```csharp
+Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
+paragraphs.Add(table);
+```
+
+Giải thích: Bước này chỉ đơn giản là thêm bảng chúng ta đã tạo vào các đoạn văn của trang hiện tại, làm cho bảng hiển thị trong tài liệu PDF.
+
+## Bước 5: Tạo Bảng thứ hai
+
+Bây giờ, chúng ta hãy tạo một bảng thứ hai có nội dung khác và thêm nó vào một trang mới:
+
+```csharp
+Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
+table1.ColumnWidths = "100 100";
+for (int i = 1; i <= 10; i++)
+{
+    Aspose.Pdf.Row row = table1.Rows.Add();
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
+}
+table1.IsInNewPage = true; // Thiết lập bảng thứ hai xuất hiện trên trang mới
+paragraphs.Add(table1);
+```
+
+Giải thích: 
+- Đoạn mã này tạo một bảng mới có hai cột, mỗi cột rộng 100 đơn vị.
+-  MỘT`for` vòng lặp thêm 10 hàng có nội dung mẫu.
+-  Bằng cách thiết lập`table1.IsInNewPage` để đảm bảo bảng này xuất hiện trên một trang mới, giúp mọi thứ được sắp xếp ngăn nắp và gọn gàng.
+
+## Bước 6: Lưu tài liệu
+
+Bây giờ bảng của chúng ta đã sẵn sàng, hãy lưu tài liệu:
+
+```csharp
+dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
+doc.Save(dataDir);
+```
+
+ Giải thích: Chúng tôi chỉ định tên tệp và lưu tài liệu trong thư mục đã xác định. Khi bạn chạy mã này, một tệp PDF có tiêu đề`IsNewPageProperty_Test_out.pdf` sẽ được tạo ở vị trí bạn chỉ định.
+
+## Bước 7: Tin nhắn xác nhận
+
+Cuối cùng, để người dùng biết rằng mọi thứ đều hoạt động trơn tru, chúng ta có thể thêm một thông báo bảng điều khiển thân thiện:
+
+```csharp
+Console.WriteLine("\nTable rendered successfully on a page.\nFile saved at " + dataDir);
+```
+
+Giải thích: Đây là cách đơn giản để xác nhận thao tác đã thành công và nơi người dùng có thể tìm thấy tệp PDF mới của mình.
+
 ## Phần kết luận
-Xin chúc mừng! Bây giờ bạn đã học được cách hiển thị bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước này chỉ cho bạn cách tạo tài liệu, cấu hình lề và hướng trang, thêm bảng và hiển thị bảng trên trang mới. Bây giờ bạn có thể áp dụng kiến thức này vào các dự án của riêng mình.
 
-### Câu hỏi thường gặp về bảng kết xuất trong tài liệu PDF
+Và bạn đã có nó! Bạn đã kết xuất thành công các bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Chỉ với một vài dòng mã, bạn có thể xử lý và trình bày lượng lớn dữ liệu theo định dạng có tổ chức, giúp tài liệu của bạn vừa mang tính thông tin vừa hấp dẫn về mặt thị giác. Cho dù bạn đang làm việc trên danh sách hàng tồn kho, báo cáo tài chính hay tài liệu giáo dục, bảng là một cách tuyệt vời để truyền đạt thông tin phức tạp trong nháy mắt.
 
-#### H: Làm thế nào để thay đổi giao diện của bảng, chẳng hạn như thay đổi màu ô hoặc thêm đường viền?
+## Câu hỏi thường gặp
 
- A: Để sửa đổi giao diện của bảng, bạn có thể thiết lập nhiều thuộc tính khác nhau của`Aspose.Pdf.Table` và các ô của nó. Ví dụ, bạn có thể thiết lập`BackgroundColor` thuộc tính của các ô để thay đổi màu nền của chúng. Bạn cũng có thể thiết lập`Border` thuộc tính của bảng hoặc các ô riêng lẻ để thêm đường viền. Ngoài ra, bạn có thể tùy chỉnh phông chữ, màu chữ và căn chỉnh nội dung bảng bằng cách sửa đổi`TextState` của`TextFragment` các đối tượng được thêm vào ô.
+### Tôi có thể tùy chỉnh giao diện của bảng trong Aspose.PDF không?  
+Chắc chắn rồi! Bạn có thể điều chỉnh màu sắc, đường viền, kiểu phông chữ và các thuộc tính khác để cải thiện giao diện của bảng.
 
-#### H: Tôi có thể thêm tiêu đề hoặc chân trang vào bảng không?
+### Aspose.PDF có miễn phí sử dụng không?  
+ Aspose.PDF cung cấp phiên bản dùng thử miễn phí, nhưng để sử dụng thương mại, bạn cần phải mua. Bạn có thể kiểm tra giá[đây](https://purchase.aspose.com/buy).
 
-A: Có, bạn có thể thêm tiêu đề hoặc chân trang vào bảng bằng cách tạo thêm các hàng ở đầu hoặc cuối bảng và đặt nội dung phù hợp vào các ô. Bạn có thể tùy chỉnh tiêu đề hoặc chân trang độc lập với phần còn lại của nội dung bảng bằng cách thêm các kiểu hoặc nội dung khác nhau vào các hàng cụ thể này.
+### Tôi có thể nhận được hỗ trợ cho các vấn đề liên quan đến Aspose.PDF như thế nào?  
+ Bạn có thể tìm kiếm sự hỗ trợ từ diễn đàn hỗ trợ Aspose[đây](https://forum.aspose.com/c/pdf/10).
 
-#### H: Làm thế nào tôi có thể kiểm soát vị trí của bảng trên trang?
+### Phiên bản dùng thử miễn phí có giới hạn nào không?  
+ Có, phiên bản dùng thử có thể có một số hạn chế nhất định, chẳng hạn như đóng dấu bản quyền trên các tài liệu đã tạo. Để có đầy đủ chức năng, hãy cân nhắc việc mua giấy phép tạm thời[đây](https://purchase.aspose.com/temporary-license/).
 
-A: Để kiểm soát vị trí của bảng trên trang, bạn có thể điều chỉnh`MarginInfo` của`PageInfo` đối tượng. Các`MarginInfo` cho phép bạn thiết lập lề trái, phải, trên và dưới của trang, điều này ảnh hưởng đến không gian có sẵn cho bảng. Bạn cũng có thể sử dụng`PositioningType` tài sản của`Aspose.Pdf.Table` để kiểm soát sự căn chỉnh theo chiều ngang và chiều dọc trong vùng nội dung của trang.
-
-#### H: Tôi có thể xuất bảng sang các định dạng tệp khác như Excel hoặc CSV không?
-
-A: Aspose.PDF for .NET chủ yếu được thiết kế để làm việc với các tài liệu PDF. Mặc dù có thể xuất tài liệu PDF dưới dạng hình ảnh hoặc XPS, nhưng nó không hỗ trợ trực tiếp việc xuất bảng sang các định dạng như Excel hoặc CSV. Để xuất dữ liệu bảng sang các định dạng tệp khác nhau, bạn có thể cần sử dụng các thư viện hoặc phương pháp bổ sung để chuyển đổi nội dung PDF sang định dạng mong muốn.
-
-#### H: Làm thế nào để thêm siêu liên kết vào các ô trong bảng?
-
- A: Để thêm siêu liên kết vào các ô của bảng, bạn có thể sử dụng`Aspose.Pdf.WebHyperlink` lớp để tạo siêu liên kết và sau đó thêm nó làm điểm neo vào`TextFragment`bên trong ô. Điều này cho phép bạn liên kết một URL hoặc mục tiêu liên kết với văn bản hoặc nội dung cụ thể trong ô, tạo ra các siêu liên kết có thể nhấp vào.
+### Tôi có thể tìm thêm thông tin về các tính năng của Aspose.PDF ở đâu?  
+ Bạn có thể khám phá tài liệu toàn diện có sẵn[đây](https://reference.aspose.com/pdf/net/).

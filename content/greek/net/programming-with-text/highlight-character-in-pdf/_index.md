@@ -2,235 +2,160 @@
 title: Επισημάνετε τον χαρακτήρα σε αρχείο PDF
 linktitle: Επισημάνετε τον χαρακτήρα σε αρχείο PDF
 second_title: Aspose.PDF για Αναφορά API .NET
-description: Μάθετε πώς να επισημαίνετε χαρακτήρες σε αρχείο PDF χρησιμοποιώντας το Aspose.PDF για .NET.
+description: Μάθετε να επισημαίνετε χαρακτήρες σε ένα PDF χρησιμοποιώντας το Aspose.PDF για .NET σε αυτόν τον αναλυτικό οδηγό βήμα προς βήμα.
 type: docs
 weight: 240
 url: /el/net/programming-with-text/highlight-character-in-pdf/
 ---
-Σε αυτό το σεμινάριο, θα εξηγήσουμε πώς να επισημάνετε χαρακτήρες σε ένα αρχείο PDF χρησιμοποιώντας τη βιβλιοθήκη Aspose.PDF για .NET. Θα ακολουθήσουμε τη διαδικασία βήμα προς βήμα για την επισήμανση χαρακτήρων σε ένα PDF χρησιμοποιώντας τον παρεχόμενο πηγαίο κώδικα C#.
+## Εισαγωγή
 
-## Απαιτήσεις
+Όταν πρόκειται για εργασία με αρχεία PDF, συχνά προκύπτει η ανάγκη επισήμανσης κειμένου ή χαρακτήρων — είτε για ακαδημαϊκούς σκοπούς, είτε για επεξεργασία, είτε απλώς για βελτίωση της αναγνωσιμότητας. Φανταστείτε ότι έχετε ένα όμορφο έγγραφο, αλλά θέλετε να τονίσετε ορισμένα σημεία. Εκεί είναι που η επισήμανση μπαίνει στην εικόνα! Σε αυτό το σεμινάριο, θα μάθουμε πώς να επισημάνετε χαρακτήρες σε ένα αρχείο PDF χρησιμοποιώντας την ισχυρή βιβλιοθήκη Aspose.PDF για .NET. 
 
-Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε τα ακόλουθα:
+## Προαπαιτούμενα
 
-- Εγκαταστάθηκε η βιβλιοθήκη Aspose.PDF για .NET.
-- Βασική κατανόηση του προγραμματισμού C#.
+Πριν μεταβούμε στον κώδικα, ας βεβαιωθούμε ότι έχουμε όλα όσα χρειαζόμαστε. Εδώ είναι τι θα χρειαστείτε:
 
-## Βήμα 1: Ρυθμίστε τον Κατάλογο Εγγράφων
+1. Ένα περιβάλλον ανάπτυξης: Αυτό το σεμινάριο προϋποθέτει ότι εργάζεστε σε Visual Studio ή σε παρόμοιο .NET IDE.
+2.  Aspose.PDF για .NET Library: Εάν δεν το έχετε κάνει ήδη, μπορείτε[κατεβάστε το εδώ](https://releases.aspose.com/pdf/net/) και προσθέστε το στο έργο σας. 
+3. Βασικές γνώσεις C#: Ένα primer στον προγραμματισμό C# θα σας βοηθήσει να κατανοήσετε εύκολα την υλοποίηση.
+4. Ένα έγγραφο PDF: Θα πρέπει να έχετε ένα δείγμα αρχείου PDF έτοιμο για εργασία. Μπορείτε να δημιουργήσετε ένα ή να χρησιμοποιήσετε ένα υπάρχον έγγραφο.
 
- Αρχικά, πρέπει να ορίσετε τη διαδρομή προς τον κατάλογο όπου βρίσκεται το αρχείο εισόδου PDF. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στο`dataDir` μεταβλητή με τη διαδρομή προς το αρχείο PDF σας.
+## Εισαγωγή πακέτων
+
+Για να ξεκινήσουμε, πρέπει να εισαγάγουμε τους απαραίτητους χώρους ονομάτων. Για να το κάνετε αυτό, θα θελήσετε να τα συμπεριλάβετε στην κορυφή του αρχείου C#:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf.Devices;
+using Aspose.Pdf.Text;
+using System;
+using System.Drawing;
 ```
 
-## Βήμα 2: Φορτώστε το έγγραφο PDF
+Αυτά τα πακέτα είναι απαραίτητα για τη δημιουργία, το χειρισμό και την επεξεργασία εγγράφων PDF χρησιμοποιώντας τη βιβλιοθήκη Aspose.
 
- Στη συνέχεια, φορτώνουμε το εισαγόμενο έγγραφο PDF χρησιμοποιώντας το`Aspose.Pdf.Document` τάξη.
+Τώρα, ας χωρίσουμε τη διαδικασία σε εύπεπτα βήματα για να επισημάνουμε χαρακτήρες στο PDF σας. 
+
+## Βήμα 1: Αρχικοποιήστε το έγγραφο PDF
+
+Το πρώτο βήμα είναι να αρχικοποιήσετε το έγγραφο PDF σας. Αυτό περιλαμβάνει τη φόρτωση του αρχείου PDF με το οποίο θα εργαστείτε. Δείτε πώς να το κάνετε:
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Βεβαιωθείτε ότι έχετε ορίσει τη σωστή διαδρομή.
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
+Σε αυτό το απόσπασμα, αντικαταστήστε`YOUR DOCUMENT DIRECTORY` με την πραγματική διαδρομή στο μηχάνημά σας όπου βρίσκεται το αρχείο εισόδου PDF. Ο`Aspose.Pdf.Document` Η τάξη δημιουργείται για να φορτώσει το PDF σας.
 
-## Βήμα 3: Μετατροπή PDF σε Εικόνα
+## Βήμα 2: Ρυθμίστε τη διαδικασία απόδοσης
 
- Για να επισημάνουμε χαρακτήρες, μετατρέπουμε το έγγραφο PDF σε εικόνα χρησιμοποιώντας το`PdfConverter` τάξη. Ορίζουμε την ανάλυση για τη μετατροπή και ανακτούμε την εικόνα ως α`Bitmap` αντικείμενο.
+Στη συνέχεια, πρέπει να προετοιμάσουμε τη διαδικασία απόδοσης για το έγγραφό μας. Αυτό είναι απαραίτητο για την ακριβή επισήμανση των χαρακτήρων στη σελίδα.
 
 ```csharp
-int resolution = 150;
+int resolution = 150; // Ρυθμίστε την ανάλυση για τη λήψη εικόνας.
 using (MemoryStream ms = new MemoryStream())
 {
-     PdfConverter conv = new PdfConverter(pdfDocument);
-     conv. Resolution = new Resolution(resolution, resolution);
-     conv. GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-     Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
+    PdfConverter conv = new PdfConverter(pdfDocument);
+    conv.Resolution = new Resolution(resolution, resolution);
+    conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
+ Ορίζουμε μια ανάλυση για σαφήνεια, επιτρέποντας στο κείμενο να αποδοθεί σωστά. Ο`PdfConverter`μετατρέπει τις σελίδες PDF σε εικόνες για να μπορούμε να σχεδιάσουμε πάνω τους.
 
-## Βήμα 4: Επισημάνετε τους χαρακτήρες
+## Βήμα 3: Δημιουργήστε ένα αντικείμενο γραφικών για σχέδιο
 
- Κάνουμε κύκλο σε κάθε σελίδα του εγγράφου PDF και χρησιμοποιούμε α`TextFragmentAbsorber` αντικείμενο για να βρείτε όλες τις λέξεις στη σελίδα. Στη συνέχεια επαναλαμβάνουμε τα τμήματα κειμένου, τα τμήματα και τους χαρακτήρες για να τα επισημάνουμε χρησιμοποιώντας ορθογώνια.
+Αφού ρυθμίσουμε τη διαδικασία σχεδίασης, πρέπει να δημιουργήσουμε ένα αντικείμενο γραφικών στο οποίο θα κάνουμε την επισήμανση:
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Ρύθμιση κλίμακας και μεταμόρφωση
-     float scale = resolution / 72f;
-     gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+    float scale = resolution / 72f; // Συντελεστής κλίμακας.
+    gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+```
+Εδώ, δημιουργούμε το αντικείμενο γραφικών από την εικόνα bitmap. Ο μετασχηματισμός βοηθά στην προσαρμογή της απόδοσης ώστε να ταιριάζει σωστά με την απαιτούμενη ανάλυση.
 
-     // Περιηγηθείτε στις σελίδες
-     for (int i = 0; i < pdfDocument.Pages.Count; i++)
-     {
-         Page page = pdfDocument.Pages[1];
+## Βήμα 4: Κάντε βρόχο μέσα από κάθε σελίδα και επισημάνετε το κείμενο
 
-         //Βρείτε όλες τις λέξεις στη σελίδα
-         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-         textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-         page. Accept(textFragmentAbsorber);
-         TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+Τώρα, ας περιηγηθούμε σε κάθε σελίδα στο PDF και ας βρούμε τα τμήματα κειμένου που θέλουμε να επισημάνουμε:
 
-         // Κάντε βρόχο μέσα από θραύσματα κειμένου
-         foreach(TextFragment textFragment in textFragmentCollection)
-         {
-             if (i == 0)
-             {
-                 // Επισημάνετε χαρακτήρες
-                 gr.DrawRectangle(
-                     Think.Yellow,
-                     (float)textFragment.Position.XIndent,
-                     (float)textFragment.Position.YIndent,
-                     (float)textFragment.Rectangle.Width,
-                     (float)textFragment.Rectangle.Height);
+```csharp
+for (int i = 0; i < pdfDocument.Pages.Count; i++)
+{
+    Page page = pdfDocument.Pages[i + 1]; // Οι σελίδες έχουν ευρετήριο 1 στο Aspose.
+    TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+    textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
+    page.Accept(textFragmentAbsorber);
+```
+ Έχουμε πρόσβαση σε κάθε σελίδα και αναζητούμε όλο το κείμενο χρησιμοποιώντας το`TextFragmentAbsorber` . Το πρότυπο κανονικής έκφρασης`@"[\S]+"` καταγράφει όλους τους χαρακτήρες χωρίς κενά.
 
-                 // Βρόχος μέσα από τμήματα
-                 foreach(TextSegment segment in textFragment.Segments)
-                 {
-                     // Επισήμανση τμήματος
-                     gr.DrawRectangle(
-                         Think Green,
-                         (float)segment.Rectangle.LLX,
-                         (float)segment.Rectangle.LLY,
-                         (float)segment.Rectangle.Width,
-                         (float)segment.Rectangle.Height);
+## Βήμα 5: Εξαγωγή τμημάτων κειμένου και επισήμανση
 
-                     // Περιηγηθείτε στους χαρακτήρες
-                     foreach(CharInfo characterInfo in segment.Characters)
-                     {
-                         // Χαρακτήρας επισήμανσης
-                         gr.DrawRectangle(
-                             Think.Black,
-                             (float)characterInfo.Rectangle.LLx,
-                             (float)characterInfo.Rectangle.LLY,
-                             (float)characterInfo.Rectangle.Width,
-                             (float)characterInfo.Rectangle.Height);
-                     }
-                 }
-             }
-         }
-     }
+Τώρα ήρθε η ώρα να εξαγάγετε τα τμήματα κειμένου και να τα επισημάνετε. Αυτή η διαδικασία περιλαμβάνει τη σχεδίαση ορθογωνίων γύρω από τους χαρακτήρες που θέλουμε να επισημάνουμε:
+
+```csharp
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+
+foreach (TextFragment textFragment in textFragmentCollection)
+{
+    // Επισήμανση της λογικής εδώ
+    for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
+    {
+        TextSegment segment = textFragment.Segments[segNum];
+        for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
+        {
+            CharInfo characterInfo = segment.Characters[charNum];
+            gr.DrawRectangle(Pens.Black, 
+                (float)characterInfo.Rectangle.LLX, 
+                (float)characterInfo.Rectangle.LLY, 
+                (float)characterInfo.Rectangle.Width, 
+                (float)characterInfo.Rectangle.Height);
+        }
+    }
 }
 ```
+Πραγματοποιούμε κύκλο σε κάθε τμήμα κειμένου, τα τμήματα του και μεμονωμένους χαρακτήρες, σχεδιάζοντας ορθογώνια γύρω τους χρησιμοποιώντας το αντικείμενο γραφικών που δημιουργήθηκε προηγουμένως.
 
-## Βήμα 5: Αποθηκεύστε την εικόνα εξόδου
+## Βήμα 6: Αποθηκεύστε την τροποποιημένη εικόνα
 
-Τέλος, αποθηκεύουμε την τροποποιημένη εικόνα με τους επισημασμένους χαρακτήρες στο καθορισμένο αρχείο εξόδου.
+Μετά την επισήμανση, θα πρέπει να αποθηκεύσετε την εικόνα που προκύπτει ως νέο αρχείο PNG:
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
+Αυτή η γραμμή αποθηκεύει την τροποποιημένη εικόνα bitmap ως αρχείο PNG στον καθορισμένο κατάλογο. 
 
-### Δείγμα πηγαίου κώδικα για τον χαρακτήρα επισήμανσης σε PDF χρησιμοποιώντας το Aspose.PDF για .NET 
+## Βήμα 7: Αναδίπλωση με χειρισμό εξαιρέσεων
+
+Τέλος, είναι καλή πρακτική να τυλίξετε τον κώδικά σας σε ένα μπλοκ try-catch, διασφαλίζοντας ότι χειριζόμαστε με χάρη τυχόν απροσδόκητα σφάλματα:
+
 ```csharp
-try
-{
-	// Η διαδρομή προς τον κατάλογο εγγράφων.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	int resolution = 150;
-	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
-	using (MemoryStream ms = new MemoryStream())
-	{
-		PdfConverter conv = new PdfConverter(pdfDocument);
-		conv.Resolution = new Resolution(resolution, resolution);
-		conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
-		using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
-		{
-			float scale = resolution / 72f;
-			gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
-			for (int i = 0; i < pdfDocument.Pages.Count; i++)
-			{
-				Page page = pdfDocument.Pages[1];
-				// Δημιουργήστε αντικείμενο TextAbsorber για να βρείτε όλες τις λέξεις
-				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-				page.Accept(textFragmentAbsorber);
-				// Λάβετε τα εξαγόμενα τμήματα κειμένου
-				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Περιηγηθείτε στα θραύσματα
-				foreach (TextFragment textFragment in textFragmentCollection)
-				{
-					if (i == 0)
-					{
-						gr.DrawRectangle(
-						Pens.Yellow,
-						(float)textFragment.Position.XIndent,
-						(float)textFragment.Position.YIndent,
-						(float)textFragment.Rectangle.Width,
-						(float)textFragment.Rectangle.Height);
-						for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
-						{
-							TextSegment segment = textFragment.Segments[segNum];
-							for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
-							{
-								CharInfo characterInfo = segment.Characters[charNum];
-								Aspose.Pdf.Rectangle rect = page.GetPageRect(true);
-								Console.WriteLine("TextFragment = " + textFragment.Text + "    Page URY = " + rect.URY +
-												  "   TextFragment URY = " + textFragment.Rectangle.URY);
-								gr.DrawRectangle(
-								Pens.Black,
-								(float)characterInfo.Rectangle.LLX,
-								(float)characterInfo.Rectangle.LLY,
-								(float)characterInfo.Rectangle.Width,
-								(float)characterInfo.Rectangle.Height);
-							}
-							gr.DrawRectangle(
-							Pens.Green,
-							(float)segment.Rectangle.LLX,
-							(float)segment.Rectangle.LLY,
-							(float)segment.Rectangle.Width,
-							(float)segment.Rectangle.Height);
-						}
-					}
-				}
-			}
-		}
-		dataDir = dataDir + "HighlightCharacterInPDF_out.png";
-		bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
-	}
-	Console.WriteLine("\nCharacters highlighted successfully in pdf document.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get a 30-day temporary license from [here](https://buy.aspose.com/temporary-license/).");
 }
 ```
 
+Αυτό το μπλοκ εντοπίζει τυχόν εξαιρέσεις που ενδέχεται να προκύψουν κατά τη διάρκεια της διαδικασίας και παρέχει ενημερωτικά σχόλια στον χρήστη.
+
 ## Σύναψη
 
-Σε αυτό το σεμινάριο, έχετε μάθει πώς να επισημαίνετε χαρακτήρες σε ένα έγγραφο PDF χρησιμοποιώντας τη βιβλιοθήκη Aspose.PDF για .NET. Ακολουθώντας τον οδηγό βήμα προς βήμα και εκτελώντας τον παρεχόμενο κώδικα C#, μπορείτε να επισημάνετε χαρακτήρες σε ένα PDF και να αποθηκεύσετε την έξοδο ως εικόνα.
+Και ορίστε το! Έχετε επισημάνει με επιτυχία χαρακτήρες σε ένα αρχείο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτή η ισχυρή βιβλιοθήκη ανοίγει πόρτες σε ατελείωτες δυνατότητες χειρισμού PDF—είτε εργάζεστε με σχολιασμούς, συμπλήρωση φόρμας ή ακόμα και μετατροπή εγγράφων. Καθώς συνεχίζετε το ταξίδι σας με το Aspose, να θυμάστε ότι η εξάσκηση είναι το κλειδί. Συνεχίστε να πειραματίζεστε με διαφορετικές δυνατότητες και γρήγορα θα γίνετε επαγγελματίας PDF!
 
-### Συχνές ερωτήσεις
+## Συχνές ερωτήσεις
 
-#### Ε: Ποιος είναι ο σκοπός του σεμιναρίου "Highlight Character In PDF File";
+### Τι είναι το Aspose.PDF για .NET;
+Το Aspose.PDF για .NET είναι μια βιβλιοθήκη που επιτρέπει τη δημιουργία, τον χειρισμό και τη μετατροπή εγγράφων PDF μέσω προγραμματισμού σε εφαρμογές .NET.
 
-Α: Το σεμινάριο "Επισήμανση χαρακτήρα σε αρχείο PDF" εξηγεί πώς να χρησιμοποιήσετε τη βιβλιοθήκη Aspose.PDF για .NET για να επισημάνετε χαρακτήρες σε ένα έγγραφο PDF. Το σεμινάριο παρέχει έναν οδηγό βήμα προς βήμα και τον πηγαίο κώδικα C# για να το πετύχετε.
+### Μπορώ να επισημάνω πολλά τμήματα κειμένου ταυτόχρονα;
+Ναι, ο παρεχόμενος κώδικας μπορεί να προσαρμοστεί για την επισήμανση πολλών θραυσμάτων κάνοντας κύκλο σε όλο το κείμενο εντός του PDF.
 
-#### Ε: Γιατί θα ήθελα να επισημάνω χαρακτήρες σε ένα έγγραφο PDF;
+### Υπάρχει δωρεάν έκδοση του Aspose.PDF;
+Ναι, το Aspose προσφέρει μια δωρεάν δοκιμή, ώστε να μπορείτε να δοκιμάσετε τη βιβλιοθήκη πριν την αγοράσετε.
 
-Α: Η επισήμανση χαρακτήρων σε ένα έγγραφο PDF μπορεί να είναι χρήσιμη για διάφορους σκοπούς, όπως η έμφαση σε συγκεκριμένο περιεχόμενο ή για να γίνει πιο ορατό και διακριτό συγκεκριμένο κείμενο.
+### Χρειάζομαι άδειες χρήσης για να χρησιμοποιήσω το Aspose.PDF;
+Ναι, απαιτείται έγκυρη άδεια για εμπορική χρήση, αλλά μπορείτε να αποκτήσετε μια προσωρινή άδεια 30 ημερών για δοκιμή.
 
-#### Ε: Πώς μπορώ να ρυθμίσω τον κατάλογο εγγράφων;
-
-Α: Για να ρυθμίσετε τον κατάλογο εγγράφων:
-
-1.  Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στο`dataDir` μεταβλητή με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το αρχείο εισόδου PDF.
-
-#### Ε: Πώς μπορώ να φορτώσω το έγγραφο PDF και να το μετατρέψω σε εικόνα;
-
- Α: Στο φροντιστήριο, το`Aspose.Pdf.Document` Η κλάση χρησιμοποιείται για τη φόρτωση του εισαγόμενου εγγράφου PDF. Στη συνέχεια, το`PdfConverter` Η κλάση χρησιμοποιείται για τη μετατροπή του εγγράφου PDF σε εικόνα. Η ανάλυση της εικόνας ορίζεται και η εικόνα ανακτάται ως α`Bitmap` αντικείμενο.
-
-#### Ε: Πώς μπορώ να επισημάνω χαρακτήρες στην εικόνα του εγγράφου PDF;
-
-Α: Το σεμινάριο σάς καθοδηγεί στη διαδικασία αναζήτησης σε κάθε σελίδα του εγγράφου PDF, εύρεση λέξεων χρησιμοποιώντας ένα`TextFragmentAbsorber`, και επανάληψη μέσω τμημάτων κειμένου, τμημάτων και χαρακτήρων για να τα επισημάνετε χρησιμοποιώντας ορθογώνια.
-
-#### Ε: Μπορώ να προσαρμόσω την εμφάνιση των επισημασμένων χαρακτήρων και τμημάτων;
-
-Α: Ναι, μπορείτε να προσαρμόσετε την εμφάνιση των επισημασμένων χαρακτήρων και τμημάτων τροποποιώντας τα χρώματα και τα στυλ που χρησιμοποιούνται στις λειτουργίες σχεδίασης.
-
-#### Ε: Πώς μπορώ να αποθηκεύσω την τροποποιημένη εικόνα με τους επισημασμένους χαρακτήρες;
-
- Α: Το σεμινάριο δείχνει πώς να αποθηκεύσετε την τροποποιημένη εικόνα με τους επισημασμένους χαρακτήρες στο καθορισμένο αρχείο εξόδου χρησιμοποιώντας το`Save` μέθοδος του`Bitmap` τάξη.
-
-#### Ε: Απαιτείται έγκυρη άδεια Aspose για αυτό το σεμινάριο;
-
-Α: Ναι, απαιτείται έγκυρη άδεια Aspose για να λειτουργήσει σωστά αυτό το σεμινάριο. Μπορείτε να αγοράσετε μια πλήρη άδεια χρήσης ή να αποκτήσετε μια προσωρινή άδεια 30 ημερών από τον ιστότοπο Aspose.
+### Πού μπορώ να βρω περισσότερα έγγραφα;
+ Μπορείτε να ανατρέξετε στο[Τεκμηρίωση Aspose.PDF](https://reference.aspose.com/pdf/net/) για πιο λεπτομερείς πληροφορίες σχετικά με την εφαρμογή και τα χαρακτηριστικά.

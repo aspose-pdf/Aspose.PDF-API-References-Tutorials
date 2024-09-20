@@ -2,138 +2,178 @@
 title: Integrasikan Dengan Basis Data Dalam File PDF
 linktitle: Integrasikan Dengan Basis Data Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Sematkan data dari database dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengintegrasikan data basis data ke dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah yang mudah ini.
 type: docs
 weight: 120
 url: /id/net/programming-with-tables/integrate-with-database/
 ---
-Dalam tutorial ini, kita akan mempelajari cara menyematkan data dari database ke dalam file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber dalam C# langkah demi langkah. Di akhir tutorial ini, Anda akan mengetahui cara mengimpor data tabel dari database ke dalam dokumen PDF. Mari kita mulai!
+## Perkenalan
 
-## Langkah 1: Menyiapkan lingkungan
-Pastikan Anda telah mengonfigurasi lingkungan pengembangan C# dengan Aspose.PDF untuk .NET. Tambahkan referensi ke pustaka dan impor namespace yang diperlukan.
+Membuat dokumen PDF dinamis yang menggabungkan data dari basis data mungkin tampak seperti tugas yang berat, terutama jika Anda baru dalam pemrograman. Jangan khawatir! Dengan Aspose.PDF untuk .NET, menggabungkan data ke dalam PDF menjadi mudah dan efisien, menjadikannya alat yang berharga bagi para pengembang. Dalam panduan ini, kita akan membahas cara mengintegrasikan data dari basis data ke dalam file PDF langkah demi langkah. Di akhir tutorial ini, Anda akan dapat membuat dokumen PDF yang tampak profesional yang diisi dengan data langsung dari aplikasi Anda. Jadi, ambil perlengkapan pengkodean Anda, dan mari kita mulai!
 
-## Langkah 2: Membuat DataTable
-Kami membuat contoh DataTable untuk mewakili data yang ingin kami sisipkan dalam dokumen PDF. Dalam contoh ini, kami membuat DataTable dengan tiga kolom: Employee_ID, Employee_Name, dan Gender. Kami juga menambahkan dua baris ke DataTable dengan data dummy.
+## Prasyarat
 
-```csharp
-DataTable dt = new DataTable("Employee");
-dt.Columns.Add("Employee_ID", typeof(Int32));
-dt.Columns.Add("Employee_Name", typeof(string));
-dt.Columns.Add("Gender", typeof(string));
+Sebelum kita memulai perjalanan pembuatan PDF ini, ada beberapa prasyarat yang perlu Anda penuhi. Jangan khawatir; semuanya mudah sekali! 
 
-DataRow dr = dt.NewRow();
-dr[0] = 1;
-dr[1] = "John Smith";
-dr[2] = "Male";
-dt.Rows.Add(dr);
+1. .NET Framework: Pastikan Anda memiliki versi .NET Framework yang didukung yang terpasang di komputer Anda.
+2.  Aspose.PDF untuk .NET: Anda bisa mendapatkannya dari[Situs web Aspose](https://releases.aspose.com/pdf/net/)Anda perlu mengunduh dan memasangnya ke proyek Anda.
+3. Visual Studio IDE: Lingkungan yang ramah untuk menulis kode Anda. Versi terbaru apa pun seharusnya berfungsi.
+4. Pengetahuan Dasar C#: Jika Anda memahami dasar-dasar C#, Anda akan menguasai tutorial ini dengan mudah.
 
-dr = dt. NewRow();
-dr[0] = 2;
-dr[1] = "Mary Miller";
-dr[2] = "Female";
-dt.Rows.Add(dr);
-```
+## Paket Impor
 
-## Langkah 3: Membuat Dokumen PDF dan Tabel
-Kita buat contoh Dokumen dan tambahkan halaman ke dokumen ini. Selanjutnya, kita buat contoh Tabel untuk mewakili tabel kita dalam dokumen PDF. Kita tentukan lebar kolom tabel dan gaya batas.
+Sebelum kita dapat mulai bekerja dengan file PDF, kita perlu mengimpor paket yang diperlukan. Dalam file C# Anda, tambahkan perintah berikut di bagian atas:
 
 ```csharp
-Document doc = new Document();
-doc.Pages.Add();
-
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "40 100 100 100";
-table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+using System.IO;
+using Aspose.Pdf;
+using System.Data;
+using System;
 ```
 
-## Langkah 4: Mengimpor data dari DataTable ke tabel
-Kami menggunakan metode ImportDataTable untuk mengimpor data dari DataTable ke dalam tabel dalam dokumen PDF.
+Paket-paket ini akan memberi Anda akses ke fungsionalitas yang Anda perlukan untuk membuat dan memanipulasi dokumen PDF dan bekerja dengan tabel data.
 
-```csharp
-table.ImportDataTable(dt, true, 0, 1, 3, 3);
-```
+Mari kita uraikan menjadi beberapa langkah yang mudah dilakukan. Jangan khawatir jika terasa panjang; saya akan memandu Anda melalui setiap langkah. 
 
-## Langkah 5: Menambahkan tabel ke dokumen
-Kami menambahkan tabel ke koleksi paragraf di halaman dokumen.
+## Langkah 1: Siapkan Direktori Dokumen Anda
 
-```csharp
-doc.Pages[1].Paragraphs.Add(table);
-```
-
-## Langkah 6: Simpan dokumen
-Kami menyimpan dokumen PDF dengan data dari basis data yang tertanam.
-
-```csharp
-doc.Save(dataDir + "DataIntegrated_out.pdf");
-```
-
-Selamat! Kini Anda tahu cara menyematkan data basis data ke dalam dokumen PDF menggunakan Aspose.PDF for .NET.
-
-### Contoh kode sumber untuk Integrasi dengan Basis Data menggunakan Aspose.PDF untuk .NET
+Menetapkan jalur untuk dokumen Anda seperti memilih alamat untuk rumah baru Anda. Mari kita mulai dengan menentukan tempat penyimpanan PDF Anda.
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat Anda ingin menyimpan PDF. Ini memudahkan pencarian nanti. 
+
+## Langkah 2: Buat DataTable
+
+Sekarang, mari kita buat DataTable yang akan menampung informasi karyawan kita. Anggap saja ini seperti membangun kontainer yang akan menampung semua data penting yang akan kita gunakan nanti.
+
+```csharp
 DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-//Tambahkan 2 baris ke objek DataTable secara terprogram
+```
+
+Di sini, kami telah menetapkan tiga kolom: ID Karyawan, Nama, dan Jenis Kelamin. Struktur ini akan membantu kami mengatur data dengan rapi.
+
+## Langkah 3: Mengisi DataTable
+
+Selanjutnya, mari tambahkan beberapa contoh data karyawan ke DataTable kita. Di sinilah kita memamerkan inventaris kita yang berharga!
+
+```csharp
+// Tambahkan 2 baris ke objek DataTable secara terprogram
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
 dr[2] = "Male";
 dt.Rows.Add(dr);
+
 dr = dt.NewRow();
 dr[0] = 2;
 dr[1] = "Mary Miller";
 dr[2] = "Female";
 dt.Rows.Add(dr);
-// Buat contoh Dokumen
+```
+
+Di sinilah kita membuat dan menambahkan baris ke dalam DataTable kita. Kita telah menambahkan dua karyawan: John dan Mary. Anda dapat menambahkan sebanyak yang Anda inginkan!
+
+## Langkah 4: Buat Contoh Dokumen
+
+Mari kita mulai dan membuat dokumen PDF. Ini sama seperti membuat kanvas kosong untuk karya agung kita.
+
+```csharp
 Document doc = new Document();
 doc.Pages.Add();
-// Menginisialisasi contoh baru Tabel
+```
+
+Kita memulai contoh baru dari suatu Dokumen dan menambahkan halaman baru yang nantinya akan menjadi tempat tabel kita berada.
+
+## Langkah 5: Inisialisasi Tabel
+
+Pada titik ini, saatnya membuat tabel yang akan menampilkan informasi karyawan kita. Bayangkan langkah ini sebagai penyusunan kerangka kerja untuk tabel kita.
+
+```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+```
+
+Kami telah mendeklarasikan tabel kami tetapi belum menetapkan propertinya. 
+
+## Langkah 6: Mengatur Lebar dan Batas Kolom
+
+Mari buat tabel kita menarik secara estetika dan mudah dibaca dengan mengatur beberapa properti gaya. 
+
+```csharp
 // Mengatur lebar kolom tabel
 table.ColumnWidths = "40 100 100 100";
 // Atur warna batas tabel menjadi LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 // Mengatur batas untuk sel tabel
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-table.ImportDataTable(dt, true, 0, 1, 3, 3);
+```
 
-// Tambahkan objek tabel ke halaman pertama dokumen input
+Di sini, kami menentukan lebar untuk setiap kolom dan menetapkan gaya batas untuk tabel. Langkah ini meningkatkan dampak visual, memastikan bahwa tabel Anda tidak hanya fungsional tetapi juga menarik secara visual.
+
+## Langkah 7: Mengimpor Data ke Tabel
+
+Setelah DataTable kita penuh dengan data karyawan dan tabel kita siap, saatnya untuk mentransfer data tersebut ke PDF kita. Ini seperti memindahkan furnitur Anda ke rumah baru!
+
+```csharp
+table.ImportDataTable(dt, true, 0, 1, 3, 3);
+```
+
+Baris ini pada dasarnya mentransfer semua data dari DataTable ke Tabel Aspose.PDF yang kita buat sebelumnya.
+
+## Langkah 8: Tambahkan Tabel ke Dokumen
+
+Sekarang tabel kita sudah terisi data, waktunya untuk memasukkannya ke dalam PDF!
+
+```csharp
 doc.Pages[1].Paragraphs.Add(table);
+```
+
+Kami menambahkan tabel ke halaman pertama dokumen kami, yang akan menjadi bagian dari kreasi PDF kami.
+
+## Langkah 9: Simpan Dokumen
+
+Terakhir, yang perlu dilakukan adalah menyimpan PDF yang baru dibuat ke direktori yang telah ditentukan. Ini seperti memberikan sentuhan akhir pada rumah Anda yang telah dilengkapi perabotan indah!
+
+```csharp
 dataDir = dataDir + "DataIntegrated_out.pdf";
 // Simpan dokumen yang diperbarui yang berisi objek tabel
 doc.Save(dataDir);
+```
 
+Kode ini menentukan jalur untuk menyimpan PDF Anda dan menjalankan operasi penyimpanan. 
+
+## Langkah 10: Pesan Konfirmasi
+
+Untuk menyelesaikan proses kami, selalu menyenangkan untuk menerima pesan konfirmasi yang memberi tahu kami bahwa semuanya berjalan lancar. 
+
+```csharp
 Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDir);
 ```
 
+
 ## Kesimpulan
-Dalam tutorial ini, kita mempelajari cara menanamkan data dari basis data ke dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan panduan langkah demi langkah ini untuk mengimpor data dari basis data Anda sendiri dan menampilkannya dalam dokumen PDF. Jelajahi dokumentasi Aspose.PDF lebih lanjut untuk menemukan fitur dan kemungkinan lain yang ditawarkan oleh pustaka hebat ini.
 
-### FAQ untuk integrasi dengan database dalam file PDF
+Nah, itu dia! Anda telah mempelajari cara mengintegrasikan data dari database dengan lancar ke dalam file PDF menggunakan Aspose.PDF for .NET. Dengan mengikuti langkah-langkah ini, Anda dapat membuat dokumen dinamis yang tidak hanya fungsional tetapi juga menarik secara visual. Jadi, lain kali Anda perlu membuat laporan atau dokumen apa pun yang memerlukan data terstruktur, ingatlah tutorial ini.
 
-#### T: Dapatkah saya menggunakan Aspose.PDF untuk .NET dengan tipe database yang berbeda seperti MySQL, SQL Server, atau Oracle?
+## Pertanyaan yang Sering Diajukan
 
-J: Ya, Anda dapat menggunakan Aspose.PDF untuk .NET dengan berbagai jenis basis data seperti MySQL, SQL Server, Oracle, dan lainnya. Aspose.PDF untuk .NET menyediakan fungsionalitas untuk membaca data dari berbagai sumber data, termasuk basis data, file XML, dan lainnya. Anda dapat mengambil data dari jenis basis data yang diinginkan dan mengisinya ke dalam DataTable atau struktur data lain yang kompatibel dengan Aspose.PDF untuk .NET.
+### Dapatkah saya menggunakan Aspose.PDF untuk format file lain?
+Ya! Aspose menawarkan berbagai pustaka untuk berbagai format file termasuk Excel, Word, dan banyak lagi.
 
-#### T: Bagaimana saya dapat menyesuaikan tampilan tabel dalam dokumen PDF?
+### Apakah ada versi uji coba yang tersedia untuk Aspose.PDF?
+ Tentu saja! Anda dapat mengunduh versi uji coba gratis dari[tautan ini](https://releases.aspose.com/).
 
-J: Anda dapat menyesuaikan tampilan tabel dalam dokumen PDF menggunakan berbagai properti yang disediakan oleh pustaka Aspose.PDF for .NET. Misalnya, Anda dapat mengatur berbagai gaya batas, warna latar belakang, gaya fon, dan perataan untuk tabel dan sel-selnya. Lihat dokumentasi Aspose.PDF for .NET untuk detail lebih lanjut tentang penyesuaian tampilan tabel.
+### Bagaimana saya bisa mendapatkan dukungan untuk produk Aspose?
+ Anda dapat menghubungi dukungan mereka melalui[Forum Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### T: Apakah mungkin untuk menambahkan hyperlink atau elemen interaktif ke data yang diimpor dari basis data?
+### Apa yang ditawarkan lisensi sementara?
+ Lisensi sementara memungkinkan Anda untuk menggunakan perangkat lunak dengan semua fitur yang tidak terkunci untuk waktu yang terbatas. Anda bisa mendapatkannya[Di Sini](https://purchase.aspose.com/temporary-license/).
 
-J: Ya, Anda dapat menambahkan hyperlink atau elemen interaktif lainnya ke data yang diimpor dari database. Aspose.PDF untuk .NET mendukung penambahan hyperlink, bookmark, dan elemen interaktif lainnya ke dokumen PDF. Anda dapat memanipulasi konten dalam DataTable sebelum mengimpornya ke dalam tabel dan menyertakan hyperlink atau fitur interaktif lainnya.
-
-#### T: Dapatkah saya membuat halaman pada tabel jika jumlah barisnya melebihi jumlah tertentu?
-
-A: Ya, Anda dapat membagi tabel menjadi beberapa halaman jika jumlahnya melebihi jumlah baris tertentu. Untuk mencapainya, Anda dapat menggunakan`IsInNewPage` properti objek Baris untuk menunjukkan bahwa halaman baru harus dimulai setelah baris tertentu. Anda dapat menghitung jumlah baris yang akan ditampilkan per halaman dan mengatur`IsInNewPage` properti sebagaimana mestinya.
-
-#### T: Bagaimana cara mengekspor dokumen PDF dengan data basis data tertanam ke format file lain seperti DOCX atau XLSX?
-
-J: Aspose.PDF untuk .NET memungkinkan Anda mengonversi dokumen PDF ke berbagai format file lain, termasuk DOCX (Microsoft Word) dan XLSX (Microsoft Excel). Anda dapat menggunakan pustaka Aspose.PDF untuk .NET bersama dengan pustaka Aspose lain seperti Aspose.Words dan Aspose.Cells untuk mencapainya. Pertama, simpan dokumen PDF dengan data basis data tertanam, lalu gunakan pustaka Aspose terkait untuk mengonversinya ke format file yang Anda inginkan.
+### Apakah format data dapat disesuaikan dalam PDF?
+Ya! Aspose.PDF menyediakan berbagai opsi penyesuaian untuk tabel, termasuk pemformatan sel, font, warna, dan banyak lagi.

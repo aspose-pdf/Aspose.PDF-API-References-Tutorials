@@ -54,7 +54,7 @@ pdfDoc.PageInfo.Margin.Bottom = 72;
 
 En procédant ainsi, votre document aura une taille de page standard, équivalente à une page de 8,5 x 11 pouces, et une marge de 72 points (ou 1 pouce) sur tous les côtés.
 
-## Étape 2 : Ajout d'une page au PDF
+## Étape 2 : Ajout d'une page au PDF
 
 Ensuite, nous ajouterons une nouvelle page au document PDF où nous appliquerons plus tard les styles de numérotation.
 

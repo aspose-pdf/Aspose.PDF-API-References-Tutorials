@@ -38,7 +38,7 @@ Most hozzunk létre egy új Java projektet az IDE-ben:
 
 1. Nyissa meg az IDE-jét.
 2. Válassza a "Fájl" > "Új projekt" lehetőséget.
-3. Projekttípusként válassza a „Java”-t.
+3. Válassza a „Java”-t projekttípusként.
 4. Kövesse a varázslót a projekt létrehozásához.
 
 ## Aspose.PDF for Java hozzáadása projektjéhez

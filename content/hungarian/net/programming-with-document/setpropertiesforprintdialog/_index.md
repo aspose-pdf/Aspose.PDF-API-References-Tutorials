@@ -16,7 +16,7 @@ Szeretné kihasználni a PDF-generálás erejét alkalmazásaiban? Az Aspose.PDF
 Mielőtt belevágna az oktatóanyagba, nézzük meg, mit kell a helyén tartani:
 
 1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a számítógépére.
-2.  Aspose.PDF for .NET: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Ne aggódj; ez egyértelmű! Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+2.  Aspose.PDF for .NET: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Ne aggódj; ez egyértelmű! Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 3. Alapvető C# ismerete: Hasznos lesz a C# programozás ismerete. Ha még új vagy, ne aggódj! Együtt végigjárjuk az alapokat. 
 
 Ha ezeket az előfeltételeket beállította, készen áll a PDF-ek készítésére!
@@ -116,7 +116,7 @@ Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztő
 Létrehozhat bármilyen alkalmazást, amelyhez PDF-generálás vagy -kezelés szükséges, például számlázórendszerek, dokumentumkezelési megoldások stb.
 
 ### Mi az a kétoldalas nyomtatás?
-A kétoldalas nyomtatás a lap mindkét oldalára történő nyomtatást jelenti, amivel papírt takaríthat meg, és javíthatja a dokumentumok megjelenését.
+A kétoldalas nyomtatás az oldal mindkét oldalára történő nyomtatást jelenti, amivel papírt takaríthat meg, és javíthatja a dokumentumok megjelenését.
 
 ### Hol találok támogatást az Aspose.PDF számára?
  A támogatást a következőn keresztül érheti el[Aspose fórum](https://forum.aspose.com/c/pdf/10).

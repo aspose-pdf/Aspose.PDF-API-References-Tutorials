@@ -52,7 +52,7 @@ Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 
 ## Passaggio 2: accedi al campo del modulo
 
- Dopo aver caricato il documento PDF, il compito successivo è accedere al campo modulo specifico che si desidera modificare. In questo caso, supponiamo che il campo modulo a cui siamo interessati sia una casella di testo con il nome del campo`"textbox1"`.
+ Dopo aver caricato il documento PDF, il compito successivo è accedere al campo modulo specifico che si desidera modificare. In questo caso, supponiamo che il campo modulo a cui siamo interessati sia una casella di testo con il nome campo`"textbox1"`.
 
 ```csharp
 // Ottieni il campo modulo specifico dal documento

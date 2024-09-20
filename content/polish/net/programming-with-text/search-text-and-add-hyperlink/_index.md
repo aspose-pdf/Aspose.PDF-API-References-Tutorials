@@ -2,189 +2,165 @@
 title: Wyszukaj tekst i dodaj hiperłącze
 linktitle: Wyszukaj tekst i dodaj hiperłącze
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak wyszukiwać tekst w pliku PDF, dodawać hiperłącza do znalezionego tekstu i zapisywać zmodyfikowany dokument za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak przeszukiwać tekst i dodawać hiperłącza w plikach PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z naszego samouczka krok po kroku.
 type: docs
 weight: 450
 url: /pl/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do wyszukiwania określonego tekstu w dokumencie PDF, dodawania hiperłącza do znalezionego tekstu i zapisywania zmodyfikowanego dokumentu. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
+## Wstęp
+
+Szukasz sposobu, aby nie tylko manipulować plikami PDF, ale także je ulepszać, wstawiając hiperłącza? Cóż, jesteś we właściwym miejscu! Dzięki potężnej bibliotece Aspose.PDF dla .NET możesz wyszukiwać wzorce tekstowe w dokumentach PDF i bezproblemowo dodawać hiperłącza. Wyobraź sobie dokument, który nie tylko przekazuje informacje, ale także łączy czytelników z odpowiednimi zasobami, po prostu klikając łącze. Brzmi fajnie, prawda? W tym samouczku poprowadzimy Cię krok po kroku, jak wyszukiwać tekst za pomocą wyrażeń regularnych i dodawać hiperłącza w plikach PDF. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz, uznasz ten proces za prosty i satysfakcjonujący.
 
 ## Wymagania wstępne
 
-Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
+Zanim przejdziemy do szczegółów, upewnijmy się, że masz wszystko, czego potrzebujesz, aby to zrobić. Oto przydatna lista kontrolna:
 
-- Podstawowa znajomość języka programowania C#.
-- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+- .NET Framework: Na Twoim komputerze powinna być zainstalowana platforma .NET Framework (wersja 4.0 lub nowsza).
+- Aspose.PDF dla biblioteki .NET: Nie zapomnij pobrać i dodać odniesienia do biblioteki Aspose.PDF w swoim projekcie. Możesz ją znaleźć[Tutaj](https://releases.aspose.com/pdf/net/).
+- IDE: Do pisania i uruchamiania kodu potrzebne będzie zintegrowane środowisko programistyczne (IDE), np. Visual Studio.
+- Przykładowy plik PDF: Pobierz przykładowy plik PDF, na którym możesz przetestować kod. Możesz utworzyć prosty plik PDF lub użyć jednego ze swoich istniejących dokumentów.
 
-## Krok 1: Skonfiguruj projekt
+Gdy już odhaczysz wszystkie pozycje z tej listy, będziemy gotowi do działania!
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+## Importuj pakiety
 
-## Krok 2: Importuj niezbędne przestrzenie nazw
+Pierwszym krokiem w naszej podróży jest zaimportowanie niezbędnych pakietów. Tutaj informujemy nasz projekt, jakich narzędzi będziemy używać. Oto, jak możesz to zrobić:
 
-Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
+W pliku C# zacznij od uwzględnienia na górze następujących przestrzeni nazw:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Content;
-using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## Krok 3: Ustaw ścieżkę do katalogu dokumentu
+Importując te przestrzenie nazw, udostępniasz swojemu programowi wszystkie świetne funkcje, jakie oferuje Aspose.PDF.
 
- Ustaw ścieżkę do katalogu dokumentów za pomocą`dataDir` zmienny:
+Teraz, gdy wszystko jest już gotowe, czas przejść do działania. Przejdziemy przez to w serii kroków, więc śledź uważnie!
+
+### Krok 1: Ustaw katalog dokumentów
+
+Najpierw musisz określić, gdzie przechowywane są Twoje pliki PDF. Zmień`dataDir` zmienna wskazująca na katalog twojego dokumentu. Oto jak to zrobić:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ Pamiętaj o wymianie`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do Twoich dokumentów.
 
-## Krok 4: Utwórz TextFragmentAbsorber
+### Krok 2: Utwórz TextFragmentAbsorber
 
- Utwórz`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie wystąpienia wprowadzonej frazy wyszukiwania:
+ Następnie potrzebujemy narzędzia, aby znaleźć tekst, który chcemy połączyć. Wprowadź`TextFragmentAbsorber`. Ten mały gość pomoże nam wyszukać konkretny wzór tekstu w naszym pliku PDF.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
- Zastępować`"\\d{4}-\\d{4}"` z wybranym przez Ciebie wzorcem wyrażenia regularnego.
+Tutaj szukamy określonego wzorca: czterech cyfr, myślnika, a następnie kolejnych czterech cyfr (np. numeru telefonu lub roku).
 
-## Krok 5: Włącz wyszukiwanie wyrażeń regularnych
+### Krok 3: Włącz wyszukiwanie wyrażeń regularnych
 
- Włącz wyszukiwanie wyrażeń regularnych, ustawiając`TextSearchOptions` Właściwość absorbera:
+ Używamy już wyrażenia regularnego, aby znaleźć wzorzec tekstu, ale musimy się upewnić, że nasz`absorber` wie, że jest włączony. Jest to kluczowe dla prawidłowego wyszukiwania.
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## Krok 6: Otwórz i powiąż dokument PDF
+### Krok 4: Zainicjuj PdfContentEditor
 
- Utwórz`PdfContentEditor` obiekt i powiąż go ze źródłowym plikiem PDF:
+ Teraz, gdy mamy już gotowy absorber, potrzebujemy`PdfContentEditor` do pracy z naszym plikiem PDF. Ta klasa pozwala nam połączyć się z naszym plikiem PDF i nim manipulować.
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
+```
+
+### Krok 5: Powiąż swój plik PDF źródłowy
+
+Mając już gotowy edytor treści, pora powiązać go z plikiem PDF, nad którym chcemy pracować.
+
+```csharp
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
- Zastępować`"SearchRegularExpressionPage.pdf"` z rzeczywistą nazwą pliku PDF.
+ Pamiętaj o wymianie`"SearchRegularExpressionPage.pdf"` z nazwą Twojego pliku PDF.
 
-## Krok 7: Zaakceptuj absorber dla strony
+### Krok 6: Zaakceptuj Absorber dla Strony
 
-Zaakceptuj absorber dla wybranej strony dokumentu:
+Musimy dać znać naszemu edytorowi, że chcemy przeszukać konkretną stronę dokumentu. W tym przypadku wybierzmy Stronę 1.
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
- Zastępować`1` z żądanym numerem strony.
+### Krok 7: Przygotuj się do pętli przez fragmenty tekstu
 
-## Krok 8: Dodaj hiperłącza do znalezionego tekstu
+Teraz jesteśmy gotowi, aby przejść przez wszystkie fragmenty tekstu znalezione przez nasz absorber. Poprawimy ich wygląd i skonfigurujemy nasz hiperłącze.
 
-Przejrzyj pobrane fragmenty tekstu i dodaj do nich hiperłącza:
+```csharp
+int[] dashArray = { };
+String[] LEArray = { };
+Color blue = Color.Blue;
+```
+
+Tutaj ustawiamy kilka parametrów, takich jak kolor naszego hiperłącza.
+
+### Krok 8: Przejrzyj każdy fragment tekstu
+
+Dla każdego fragmentu tekstu, który pasuje do naszego wyszukiwania, zmienimy jego kolor i utworzymy hiperłącze. Oto jak to wygląda:
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // Utwórz prostokąt na podstawie położenia fragmentu tekstu
-    System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
+    Rectangle rect = new Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    //Dodaj link internetowy do prostokąta
-    editor.CreateWebLink(rect, "http://www.aspose.com”, 1, System.Drawing.Color.Blue);
+    Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
+    
+    editor.CreateWebLink(rect, "http://www.aspose.com", 1, niebieski, actionName);
+    editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
+        (float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
 ```
 
- Zastępować`"http://www.aspose.com"` z żądanym adresem URL hiperłącza.
+### Krok 9: Zapisz edytowany plik PDF
 
-## Krok 9: Zapisz i zamknij zmodyfikowany dokument
-
-Zapisz zmodyfikowany dokument i zamknij edytor:
+Już prawie skończyliśmy! Teraz czas zapisać zmiany w nowym pliku PDF.
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
 editor.Save(dataDir);
-editor.Close();
-Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
- Pamiętaj o wymianie`"SearchTextAndAddHyperlink_out.pdf"` z żądaną nazwą pliku wyjściowego.
+### Krok 10: Zamknij Edytor
 
-### Przykładowy kod źródłowy dla wyszukiwania tekstu i dodawania hiperłącza przy użyciu Aspose.PDF dla .NET 
+Na koniec nie zapomnij zamknąć dokumentu, aby zwolnić zasoby!
+
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Utwórz obiekt absorbera, aby znaleźć wszystkie wystąpienia frazy wyszukiwania wejściowego
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// Włącz wyszukiwanie wyrażeń regularnych
-absorber.TextSearchOptions = new TextSearchOptions(true);
-// Otwórz dokument
-PdfContentEditor editor = new PdfContentEditor();
-// Powiąż plik źródłowy PDF
-editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// Zaakceptuj absorber dla strony
-editor.Document.Pages[1].Accept(absorber);
-int[] dashArray = { };
-String[] LEArray = { };
-System.Drawing.Color blue = System.Drawing.Color.Blue;
-// Przejrzyj fragmenty
-foreach (TextFragment textFragment in absorber.TextFragments)
-{
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
-		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
-		(int)Math.Round(textFragment.Rectangle.Height + 1));
-	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http:// Www.aspose.com", 1, niebieski, actionName);
-	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
-		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
-}
-dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
-editor.Save(dataDir);
 editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
+
+Właśnie utworzyłeś plik PDF z hiperłączem, który został dynamicznie wygenerowany na podstawie wyników wyszukiwania. Czy to nie jest fajne?
 
 ## Wniosek
 
-Gratulacje! Udało Ci się nauczyć, jak wyszukiwać określony tekst w dokumencie PDF, dodawać hiperłącza do znalezionego tekstu i zapisywać zmodyfikowany dokument za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od konfiguracji projektu do wykonania wymaganych działań. Teraz możesz włączyć ten kod do własnych projektów C#, aby manipulować tekstem i dodawać hiperłącza w plikach PDF.
+I masz to! Postępując zgodnie z tymi krokami, nauczyłeś się, jak przeszukiwać plik PDF i dodawać hiperłącza za pomocą biblioteki Aspose.PDF dla .NET. Może to otworzyć świat możliwości, zwłaszcza jeśli pracujesz z dokumentami wymagającymi interaktywności. Wyobraź sobie dodawanie łączy do powiązanych zasobów, witryn referencyjnych, a nawet stron wewnętrznych — wszystko za pomocą zaledwie kilku linijek kodu!
+## Najczęściej zadawane pytania
 
-### Najczęściej zadawane pytania
+### Czym jest Aspose.PDF dla .NET?  
+Aspose.PDF dla platformy .NET to biblioteka umożliwiająca programistom tworzenie, modyfikowanie i zarządzanie dokumentami PDF w aplikacjach .NET.
 
-#### P: Jaki jest cel poradnika „Wyszukaj tekst i dodaj hiperłącze”?
+### Jak mogę pobrać Aspose.PDF dla platformy .NET?  
+ Możesz pobrać bibliotekę[Tutaj](https://releases.aspose.com/pdf/net/).
 
-A: Samouczek „Wyszukaj tekst i dodaj hiperłącze” ma na celu zademonstrowanie, jak używać biblioteki Aspose.PDF dla .NET do wyszukiwania określonego tekstu w dokumencie PDF, dodawania hiperłączy do znalezionego tekstu, a następnie zapisywania zmodyfikowanego dokumentu. Samouczek zawiera kompleksowy przewodnik i przykłady kodu C#, aby zilustrować proces krok po kroku.
+### Czy mogę wypróbować Aspose.PDF za darmo?  
+ Oczywiście! Możesz otrzymać bezpłatną wersję próbną[Tutaj](https://releases.aspose.com/).
 
-#### P: W jaki sposób ten samouczek pomaga w dodawaniu hiperłączy do określonego tekstu w dokumencie PDF?
+### Czy jest dostępne wsparcie dla produktów Aspose?  
+ Tak, możesz znaleźć wsparcie i dyskusje społecznościowe[Tutaj](https://forum.aspose.com/c/pdf/10).
 
-A: Ten samouczek przeprowadzi Cię przez proces korzystania z biblioteki Aspose.PDF w celu zlokalizowania określonego tekstu w dokumencie PDF, zastosowania hiperłącza do zidentyfikowanego tekstu i zapisania zmodyfikowanego pliku PDF. Obejmuje on podstawowe kroki, takie jak skonfigurowanie projektu, załadowanie dokumentu, włączenie wyszukiwania wyrażeń regularnych i dodanie hiperłączy do znalezionego tekstu.
-
-#### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
-
-A: Zanim zaczniesz, powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET, którą możesz pobrać ze strony internetowej Aspose lub zainstalować za pomocą NuGet w swoim projekcie.
-
-#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
-
-A: Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE). Następnie dodaj odwołanie do biblioteki Aspose.PDF dla .NET, co umożliwi Ci wykorzystanie możliwości biblioteki w Twoim projekcie.
-
-#### P: Czy mogę dodać hiperłącza do określonego tekstu, korzystając z tego samouczka?
-
-A: Tak, ten samouczek koncentruje się konkretnie na dodawaniu hiperłączy do określonego tekstu w dokumencie PDF. Pokazuje, jak znaleźć i wyodrębnić żądany tekst za pomocą wyrażeń regularnych, utworzyć hiperłącza powiązane z fragmentami tekstu i zapisać zmodyfikowany plik PDF.
-
-#### P: Jak mogę zdefiniować tekst, w którym chcę wyszukiwać i dodać do niego hiperłącze?
-
- A: Aby określić tekst, w którym chcesz wyszukiwać i dodać do niego hiperłącze, utwórz`TextFragmentAbsorber` obiekt i ustaw jego wzorzec za pomocą`Text` parametr. Zastąp domyślny wzór`"\\d{4}-\\d{4}"` w kodzie samouczka, wpisując żądany wzorzec wyrażenia regularnego.
-
-#### P: Jak mogę włączyć wyszukiwanie tekstu za pomocą wyrażeń regularnych?
-
- A: Wyszukiwanie wyrażeń regularnych jest włączane poprzez utworzenie`TextSearchOptions` obiekt i ustawienie jego wartości na`true` . Przypisz ten obiekt do`TextSearchOptions` własność`TextFragmentAbsorber` instancji. Zapewnia to, że wzorzec wyrażenia regularnego jest stosowany podczas wyszukiwania tekstu.
-
-#### P: Jak dodać hiperłącza do znalezionego tekstu?
-
- A: Po zidentyfikowaniu fragmentów tekstu za pomocą`TextFragmentAbsorber` , samouczek zapewnia pętlę do iterowania przez te fragmenty. Dla każdego fragmentu tekstu samouczek pokazuje, jak ustawić kolor tekstu na niebieski i utworzyć hiperłącze za pomocą`CreateWebLink` metoda.
-
-#### P: Jakie kroki należy podjąć, aby zapisać zmodyfikowany plik PDF z hiperłączami?
-
- A: Po dodaniu hiperłączy do żądanych fragmentów tekstu użyj`PdfContentEditor` klasa do zapisania zmodyfikowanego dokumentu. Przykładowy kod samouczka pokazuje, jak zapisać edytowany plik PDF, zamknąć edytor i wyświetlić komunikat o powodzeniu.
+### Jak mogę uzyskać tymczasową licencję na Aspose.PDF?  
+ Możesz poprosić o tymczasową licencję[Tutaj](https://purchase.aspose.com/temporary-license/).

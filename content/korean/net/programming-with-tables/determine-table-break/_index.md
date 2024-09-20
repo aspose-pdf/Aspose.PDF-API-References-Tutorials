@@ -2,175 +2,193 @@
 title: PDF 파일에서 테이블 중단 확인
 linktitle: PDF 파일에서 테이블 중단 확인
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에서 표 나누기를 결정하는 방법을 알아보세요.
+description: 코드 예제와 문제 해결 팁을 포함한 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에서 테이블 나누기를 확인하는 방법을 알아보세요.
 type: docs
 weight: 60
 url: /ko/net/programming-with-tables/determine-table-break/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에서 테이블 나누기를 결정하는 방법을 알아봅니다. C# 소스 코드를 단계별로 설명합니다. 이 튜토리얼을 마치면 테이블이 페이지 여백을 초과하는지 확인하는 방법을 알게 됩니다. 시작해 봅시다!
+## 소개
 
-## 1단계: 환경 설정
-먼저 Aspose.PDF for .NET으로 C# 개발 환경을 설정했는지 확인하세요. 라이브러리에 참조를 추가하고 필요한 네임스페이스를 가져옵니다.
+PDF 파일을 만들고 조작하는 것은 마치 야수를 길들이는 것과 같습니다. 어느 순간, 알아냈다고 생각하다가 다음 순간에는 문서가 예측할 수 없이 동작합니다. PDF에서 표를 효과적으로 관리하는 방법, 특히 표가 끊어지는 시점을 판별하는 방법에 대해 생각해 본 적이 있습니까? 이 글에서는 Aspose.PDF for .NET을 사용하여 표가 페이지 크기를 넘어 확장되는 시점을 식별하는 방법을 알아봅니다. 안전띠를 매고 PDF 조작의 세계를 탐험해 보세요!
 
-## 2단계: PDF 문서 만들기
- 이 단계에서는 새로운 것을 만듭니다.`Document` PDF 문서를 나타내는 객체입니다.
+## 필수 조건
+
+실제 코딩에 들어가기 전에 모든 것이 제대로 되어 있는지 확인해 보겠습니다.
+
+1. .NET 개발 환경: Visual Studio나 호환되는 IDE가 설치되어 있는지 확인하세요.
+2.  Aspose.PDF 라이브러리: Aspose.PDF 라이브러리를 프로젝트에 추가해야 합니다. 다음에서 다운로드할 수 있습니다.[Aspose PDF 다운로드](https://releases.aspose.com/pdf/net/) 페이지 또는 NuGet 패키지 관리자를 통해 설치할 수 있습니다.
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. C#에 대한 기본 지식: 이 가이드에서는 사용자가 C#와 객체 지향 프로그래밍에 대한 상당한 이해가 있다고 가정합니다.
+
+이제 필수 구성 요소가 준비되었으므로 필요한 패키지를 가져와서 작업을 시작해 보겠습니다.
+
+## 패키지 가져오기
+
+프로젝트에서 Aspose.PDF를 사용하려면 관련 네임스페이스를 포함해야 합니다. 방법은 다음과 같습니다.
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-이 문서는 섹션과 표를 추가하는 데 사용됩니다.
+이러한 네임스페이스를 사용하면 PDF 파일을 조작하는 데 필요한 핵심 기능에 액세스할 수 있습니다.
 
-## 3단계: 섹션 및 테이블 추가
-이제 PDF 문서에 섹션을 추가하고 이 섹션 내에 표를 만들어 보겠습니다.
+프로세스를 관리 가능한 단계로 나누어 보겠습니다. PDF 문서를 만들고, 표를 추가하고, 행을 더 추가할 때 새 페이지로 나눌지 여부를 결정합니다.
+
+## 1단계: 문서 디렉토리 설정
+
+코딩을 시작하기 전에 출력 PDF가 저장될 위치를 결정하세요. 이는 나중에 생성된 문서를 찾을 수 있는 곳이기 때문에 중요합니다.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // 해당 디렉토리로 교체하세요.
 ```
 
-또한 표의 상단 여백을 300포인트로 지정합니다. 필요에 따라 이 값을 조정할 수 있습니다.
+## 2단계: PDF 문서 인스턴스화
 
-## 4단계: 테이블 설정
-이 단계에서는 열 너비, 테두리와 같은 테이블 속성을 구성합니다.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-여기서 테이블 열의 너비와 셀 테두리를 정의합니다. 선호도에 따라 이러한 값을 조정할 수 있습니다.
-
-## 5단계: 표에 행과 셀 추가
-이제 루프를 사용하여 표에 행과 셀을 생성해 보겠습니다.
+ 다음으로 새 인스턴스를 만듭니다.`Document` Aspose.PDF 라이브러리의 클래스입니다. 여기서 모든 PDF 마법이 일어납니다!
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-여기서 우리는 표에 17개의 행을 만들고 각 행에 3개의 셀을 추가합니다. 필요에 따라 버클을 조정할 수 있습니다.
-
-## 6단계: 테이블 브레이크 결정
-이제 페이지의 높이와 표에 있는 개체의 총 높이를 비교하여 표가 페이지 여백을 초과하는지 확인해보겠습니다.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-여백을 고려하여 페이지의 높이와 객체의 총 높이를 계산합니다. 차이가 10 이하이면 테이블이 페이지 여백을 초과합니다.
-
-## 7단계: PDF 문서 저장
-마지막으로 결과를 PDF 문서로 저장합니다.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-올바른 문서 디렉토리를 지정해야 합니다. 결과 PDF 파일은 결정된 테이블 구분과 함께 저장됩니다.
-
-### .NET용 Aspose.PDF를 사용하여 테이블 중단을 결정하기 위한 예제 소스 코드
-
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// PDF 클래스 객체 인스턴스화
 Document pdf = new Document();
-// PDF 문서 섹션 컬렉션에 섹션 추가
+```
+
+## 3단계: 페이지 만들기
+
+모든 PDF에는 페이지가 필요합니다. 문서에 새 페이지를 추가하는 방법은 다음과 같습니다.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// 테이블 객체 인스턴스화
+```
+
+## 4단계: 테이블 인스턴스화
+
+이제 휴식을 모니터링할 실제 테이블을 만들어 보겠습니다.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// 원하는 섹션의 문단 모음에 표를 추가합니다.
+table1.Margin.Top = 300; // 테이블 위에 약간의 공간을 확보할 수 있습니다.
+```
+
+## 5단계: 페이지에 표 추가
+
+표를 만든 후 다음 단계는 이전에 만든 페이지에 표를 추가하는 것입니다.
+
+```csharp
 page.Paragraphs.Add(table1);
-// 표의 열 너비로 설정
-table1.ColumnWidths = "100 100 100";
-// BorderInfo 객체를 사용하여 기본 셀 테두리 설정
+```
+
+## 6단계: 테이블 속성 정의
+
+열 너비와 테두리와 같은 표의 중요한 속성을 정의해 보겠습니다.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // 각 열의 너비는 100단위입니다.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// 다른 사용자 지정 BorderInfo 개체를 사용하여 테이블 테두리 설정
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// MarginInfo 객체를 생성하고 왼쪽, 아래쪽, 오른쪽 및 위쪽 여백을 설정합니다.
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// MarginInfo 개체에 기본 셀 패딩을 설정합니다.
+```
+
+## 7단계: 셀 여백 설정
+
+더 나은 프레젠테이션을 위해 셀에 패딩이 있는지 확인해야 합니다. 이를 설정하는 방법은 다음과 같습니다.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // 위, 왼쪽, 오른쪽, 아래
 table1.DefaultCellPadding = margin;
-// 카운터를 17로 늘리면 테이블이 깨집니다
-// 이 페이지에서 더 이상 수용할 수 없기 때문에
+```
+
+## 8단계: 테이블에 행 추가
+
+이제 행을 추가할 준비가 되었습니다! 루프를 돌면서 17개의 행을 만들겠습니다. (왜 17개일까요? 글쎄요, 여기서 테이블이 끊어지는 것을 볼 수 있을 겁니다!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//표에 행을 만든 다음 행에 셀을 만듭니다.
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// 페이지 높이 정보 가져오기
+```
+
+## 9단계: 페이지 높이 가져오기
+
+표가 맞는지 확인하려면 페이지의 높이를 알아야 합니다. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// 페이지 상단 및 하단 여백의 총 높이 정보를 가져옵니다.
-// 테이블 상단 여백과 테이블 높이.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// 페이지 높이, 테이블 높이, 테이블 위쪽 여백 및 페이지 위쪽 표시
-// 그리고 하단 여백 정보
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## 10단계: 개체의 총 높이 계산
 
-// Page top margin + Page Bottom margin의 합을 빼는지 확인해보세요
-// + 페이지 높이와 그보다 작은 테이블 상단 여백과 테이블 높이
-// 10보다 많음(평균 행은 10보다 클 수 있음)
+이제 페이지에 있는 모든 개체(페이지 여백, 표 여백, 표 높이)의 총 높이를 계산해 보겠습니다.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## 11단계: 높이 정보 표시
+
+디버그 정보를 보는 게 도움이 되지 않나요? 모든 관련 높이 정보를 콘솔에 출력해 봅시다.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## 12단계: 테이블 파손 조건 확인
+
+마지막으로, 행을 더 추가하면 표가 다른 페이지로 나눠지는지 확인해 보겠습니다.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// 값이 10보다 작으면 메시지를 표시합니다.
-	//이는 다른 행을 배치할 수 없으며 새 행을 추가하는 경우를 보여줍니다.
-	// 행, 테이블이 끊어집니다. 행 높이 값에 따라 달라집니다.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## 13단계: PDF 문서 저장
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// PDF 문서를 저장하세요
+모든 힘든 작업이 끝나면 이제 PDF 문서를 지정된 디렉토리에 저장해 보겠습니다.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## 14단계: 확인 메시지
+
+모든 것이 순조롭게 진행되었음을 알려드리기 위해 확인 메시지를 보내드리겠습니다.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## 결론
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에서 테이블 나누기를 결정하는 방법을 알아보았습니다. 이 단계별 가이드를 사용하여 테이블이 자신의 C# 프로젝트에서 페이지 여백을 초과하는지 확인할 수 있습니다.
 
-### PDF 파일에서 테이블 나누기를 결정하기 위한 FAQ
+이 가이드에서는 Aspose.PDF for .NET을 사용할 때 PDF 문서의 표가 끊어지는 시점을 결정하는 방법을 자세히 살펴보았습니다. 이러한 단계를 따르면 공간 제한을 쉽게 식별하고 PDF 레이아웃을 더 잘 관리할 수 있습니다. 연습하면 표를 효과적으로 조작하고 프로처럼 세련된 PDF를 만드는 기술을 습득하게 됩니다. 그러니 시도해보고 어떻게 작동하는지 확인해 보세요.
 
-#### 질문: PDF 문서에서 표 나누기를 결정하는 목적은 무엇입니까?
+## 자주 묻는 질문
 
-A: PDF 문서에서 표 나누기를 결정하는 목적은 표가 페이지 여백을 초과하는지 확인하는 것입니다. 이렇게 하면 표의 내용이 사용 가능한 페이지 공간 내에서 올바르게 표시됩니다. 표 나누기를 감지하면 콘텐츠 오버플로를 처리하고 그에 따라 표 레이아웃을 조정할 수 있습니다.
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 직접 PDF 문서를 만들고, 변환하고, 조작할 수 있는 강력한 라이브러리입니다.
 
-#### 질문: 표의 상단 여백을 어떻게 조정할 수 있나요?
+### Aspose.PDF 무료 평가판을 받을 수 있나요?
+ 네! 다운로드할 수 있습니다.[무료 체험](https://releases.aspose.com/) 구매하기 전에 기능을 알아보세요.
 
- A: 제공된 C# 소스 코드에서 값을 수정하여 테이블의 상단 여백을 조정할 수 있습니다.`table1.Margin.Top`속성. 필요에 따라 값을 늘리거나 줄여서 테이블의 원하는 상단 여백을 설정합니다.
+### Aspose.PDF에 대한 지원은 어떻게 찾을 수 있나요?
+ Aspose 커뮤니티에서 도움이 되는 정보를 찾고 지원을 받을 수 있습니다.[지원 포럼](https://forum.aspose.com/c/pdf/10).
 
-#### 질문: 셀 색상, 글꼴 크기 등 표의 모양을 사용자 지정할 수 있나요?
+### 표에 17개 이상의 행이 필요한 경우 어떻게 해야 합니까?
+사용 가능한 공간을 초과하면 표가 페이지에 맞지 않게 되므로 적절한 조치를 취해 표의 형식을 올바르게 지정해야 합니다.
 
-A: 네, Aspose.PDF for .NET에서 제공하는 다양한 속성과 메서드를 사용하여 테이블과 셀의 모양을 사용자 지정할 수 있습니다. 예를 들어, 셀 배경색, 글꼴 크기, 글꼴 패밀리, 텍스트 정렬 등을 변경할 수 있습니다. 테이블 모양을 사용자 지정하는 방법에 대한 자세한 내용은 공식 문서를 참조하세요.
-
-#### 질문: 표가 페이지 여백을 초과하면 어떻게 되나요?
-
-A: 표가 페이지 여백을 초과하면 콘텐츠가 잘리거나 겹쳐져 PDF 문서가 읽기 어렵고 정리가 잘 안 될 수 있습니다. 표 끊김을 감지하고 오버플로를 처리하면 콘텐츠가 사용 가능한 페이지 영역 내에서 제대로 표시되는지 확인할 수 있습니다.
-
-#### 질문: 동일한 PDF 문서에서 여러 표의 구분을 결정할 수 있나요?
-
-A: 네, 동일한 PDF 문서에서 여러 표에 대한 표 나누기를 결정할 수 있습니다. 분석하려는 각 표에 대해 단계를 반복하고 필요에 따라 표 레이아웃을 조정하여 콘텐츠 오버플로를 방지합니다.
+### Aspose.PDF 라이브러리는 어디서 구매할 수 있나요?
+ 도서관은 다음에서 구입할 수 있습니다.[구매 페이지](https://purchase.aspose.com/buy).

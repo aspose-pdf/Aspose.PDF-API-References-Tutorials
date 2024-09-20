@@ -93,7 +93,7 @@ if (sf != null)
 Stream cerStream = sf.ExtractCertificate();
 ```
 
- The`ExtractCertificate` yöntem bir döndürür`Stream` sertifika verilerini içeren nesne. Bu akış, sertifikayı daha fazla analiz veya depolama için kaydetmek için kullanılabilir.
+ The`ExtractCertificate` yöntem bir döndürür`Stream` sertifika verilerini içeren nesne. Bu akış, sertifikayı daha ileri analiz veya depolama için kaydetmek için kullanılabilir.
 
 ## Adım 6: Sertifikayı Bir Dosyaya Kaydetme
 

@@ -17,7 +17,7 @@ url: /zh-hant/net/document-conversion/web-page-to-pdf/
 
 1. Visual Studio：確保您的電腦上安裝了 Visual Studio。您將在此處編寫和執行 .NET 程式碼。
 2.  Aspose.PDF for .NET：您需要 Aspose.PDF 函式庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
-3. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 4. 網路存取：由於我們將從網頁取得內容，因此請確保您的開發環境可以存取網路。
 
 ## 導入包
@@ -144,7 +144,7 @@ catch (Exception ex)
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將網頁轉換為 PDF。只需幾行程式碼，您就可以自動執行儲存 Web 內容以供日後使用的程序。這對於想要建立報告、檔案或只是保存文章以供離線閱讀的開發人員來說非常有用。 
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將網頁轉換為 PDF。只需幾行程式碼，您就可以自動執行儲存 Web 內容以供日後使用的程序。這對於想要建立報告、檔案或只是保存文章以供離線閱讀的開發人員來說非常有用。 
 
 ## 常見問題解答
 

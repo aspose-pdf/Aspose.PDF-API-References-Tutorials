@@ -7,138 +7,135 @@ type: docs
 weight: 540
 url: /id/net/programming-with-text/text-segments/
 ---
-Tutorial ini menjelaskan cara mencari segmen teks tertentu dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan berbagai skenario menggunakan ekspresi reguler.
+## Perkenalan
+
+Dokumen PDF ada di mana-mana di dunia digital saat ini, sering digunakan untuk berbagai hal mulai dari laporan formal hingga e-book. Namun, mengekstrak teks dari dokumen tersebut terkadang terasa seperti mencari jarum dalam tumpukan jerami. Untungnya, dengan bantuan pustaka seperti Aspose.PDF untuk .NET, tugas ini menjadi jauh lebih mudah! Dalam panduan ini, kami akan membahas cara mengekstrak segmen teks tertentu dari PDF menggunakan Aspose.PDF, menguraikannya menjadi langkah-langkah yang jelas dan dapat ditindaklanjuti. 
 
 ## Prasyarat
 
-Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
+Sebelum menyelami seluk-beluk ekstraksi teks, ada beberapa hal yang Anda perlukan:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Di sinilah kita akan menulis kode.
+2. Lingkungan .NET Framework atau .NET Core: Pastikan Anda memiliki lingkungan yang tepat untuk aplikasi Anda. Aspose mendukung .NET Framework dan .NET Core.
+3.  Pustaka Aspose.PDF: Anda memerlukan pustaka Aspose.PDF untuk .NET. Jika Anda belum menginstalnya, Anda dapat mengunduhnya[Di Sini](https://releases.aspose.com/pdf/net/).
+4. Pengetahuan Dasar C#: Keakraban dengan C# akan membantu, tetapi bahkan jika Anda seorang pemula, kami akan memandu Anda langkah demi langkah melalui kode.
+5. Dokumen PDF: Siapkan berkas PDF yang ingin Anda ekstrak teksnya. Ini bisa berupa apa saja, mulai dari laporan keuangan hingga artikel.
 
-## Langkah 1: Siapkan proyek
+## Paket Impor
 
-Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Setelah semuanya siap, langkah selanjutnya adalah mengimpor paket yang diperlukan ke dalam program C# Anda. Hal ini penting karena memungkinkan Anda mengakses semua fitur hebat dari pustaka Aspose.PDF.
 
-## Langkah 2: Impor namespace yang diperlukan
+### Buat Proyek Baru
 
-Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+- Buka Visual Studio dan buat proyek C# baru. Anda dapat memilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+-  Klik kanan pada`References` folder di Solution Explorer.
+- Pilih "Tambahkan Referensi" dan telusuri lokasi tempat Anda mengunduh Aspose.PDF.dll.
+- Tambahkan DLL ini ke proyek Anda. Langkah ini menghubungkan proyek Anda ke pustaka Aspose.PDF, membuka berbagai fungsinya.
+
+### Impor Namespace
+
+Di bagian atas file C# Anda, Anda harus menyertakan namespace Aspose.PDF:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
+Ini memberitahu program Anda untuk menggunakan kelas dan metode dari pustaka Aspose.PDF.
 
-## Langkah 3: Gunakan TextFragmentAbsorber untuk pencarian teks
+Mari kita uraikan ekstraksi berbagai jenis segmen teks dengan contoh praktis. Kita akan menggunakan`TextFragmentAbsorber` kelas, yang merupakan kunci untuk menemukan dan mengekstrak teks dari dokumen PDF.
 
- Membuat sebuah`TextFragmentAbsorber` objek untuk mencari segmen teks tertentu menggunakan ekspresi reguler:
+## Langkah 1: Inisialisasi Dokumen
+
+Untuk bekerja dengan PDF apa pun, Anda perlu memuatnya ke dalam aplikasi Anda. Berikut caranya:
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber;
+// Muat dokumen PDF
+Document pdfDocument = new Document("Path/To/Your/PDFFile.pdf");
 ```
+ Mengganti`"Path/To/Your/PDFFile.pdf"` dengan jalur PDF Anda yang sebenarnya.
 
-## Langkah 4: Lakukan pencarian teks dengan ekspresi reguler
+## Langkah 2: Buat TextFragmentAbsorber
 
-Lakukan penelusuran teks berdasarkan berbagai skenario menggunakan ekspresi reguler. Berikut beberapa contohnya:
+ Sekarang, mari kita jelajahi berbagai contoh penggunaan`TextFragmentAbsorber` untuk mengambil teks.
 
-- Untuk mencari kecocokan kata yang tepat: 
+### Contoh 1: Mengekstrak Kata yang Tepat
+
+ Untuk menemukan kecocokan yang tepat untuk kata tertentu, Anda dapat menginisialisasi`TextFragmentAbsorber` seperti ini:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
+// Cari kecocokan persis dari "Kata"
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
 ```
+ Kode ini mengatur penyerap untuk menemukan kata "Word" secara tepat, memperlakukannya sebagai kata utuh.`\b` menunjukkan batas kata.
 
-- Untuk mencari string dalam huruf besar atau kecil: 
+### Contoh 2: Pencarian Tanpa Membedakan Huruf Besar dan Kecil
+
+Jika Anda ingin mencari string tertentu tanpa mempedulikan huruf besar atau kecil (seperti "line"), berikut cara melakukannya:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
+// Cari string "Line" tanpa memperhatikan huruf besar/kecil
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
 ```
+ Itu`(?i)` membuat pencarian mengabaikan huruf besar/kecil. 
 
-- Untuk mencari semua string di dalam dokumen PDF: 
+### Contoh 3: Ekstrak Semua Teks dari PDF
+
+Pernahkah Anda perlu mengurai semua teks dalam PDF? Berikut cara mudah untuk melakukannya:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+// Parsing semua string di dalam dokumen PDF
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
+ Ekspresi reguler`[\S]+` menangkap semua karakter selain spasi. 
 
-- Untuk menemukan teks setelah string tertentu hingga jeda baris: 
+## Langkah 3: Terima Penyerap dalam Dokumen
+
+Sekarang, Anda perlu menerima penyerap dalam dokumen PDF:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
+// Terima penyerap dalam dokumen
+pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
+Baris ini memberitahu dokumen PDF untuk memproses penyerap yang telah Anda inisialisasi.
 
-- Untuk menemukan teks setelah kecocokan regex: 
+## Langkah 4: Ambil dan Tampilkan Hasilnya
+
+Terakhir, mari kita ambil teks yang diekstrak dan tampilkan. Berikut cara melakukannya:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
+// Dapatkan fragmen teks yang diekstraksi
+TextFragmentCollection textFragments = textFragmentAbsorber.TextFragments;
+
+// Ulangi setiap fragmen dan keluarkan
+foreach (TextFragment textFragment in textFragments)
+{
+    Console.WriteLine(textFragment.Text);
+}
 ```
-
-- Untuk mencari Hyperlink/URL di dalam dokumen PDF: 
-
-```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
-Ganti ekspresi reguler dengan pola pencarian yang Anda inginkan.
-
-## Langkah 5: Lakukan pencarian dan proses hasilnya
-
- Lakukan pencarian menggunakan file yang dibuat`TextFragmentAbsorber` keberatan dan memproses hasilnya berdasarkan kebutuhan Anda.
-
-### Contoh kode sumber untuk Segmen Teks menggunakan Aspose.PDF untuk .NET 
-```csharp
-TextFragmentAbsorber textFragmentAbsorber;
-// Untuk mencari kecocokan kata yang tepat, Anda dapat mempertimbangkan untuk menggunakan ekspresi reguler.
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
-// Untuk mencari string dalam huruf besar atau kecil, Anda dapat mempertimbangkan untuk menggunakan ekspresi reguler.
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
-//Untuk mencari semua string (mengurai semua string) di dalam dokumen PDF, silakan coba gunakan ekspresi reguler berikut.
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-// Temukan kecocokan string pencarian dan dapatkan apa pun setelah string tersebut hingga jeda baris.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
-// Silakan gunakan ekspresi reguler berikut untuk menemukan teks yang sesuai dengan kecocokan regex.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// Untuk mencari Hyperlink/URL di dalam dokumen PDF, coba gunakan ekspresi reguler berikut.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
+Loop ini memproses setiap fragmen yang ditemukan dan mencetaknya ke konsol.
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara mencari segmen teks tertentu dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan contoh berbagai skenario pencarian menggunakan ekspresi reguler. Kini Anda dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk mencari dan memproses segmen teks dalam file PDF.
+ Mengekstrak teks dari file PDF tidak harus menjadi tugas yang menakutkan. Dengan Aspose.PDF untuk .NET, Anda dapat secara efisien menentukan dan menarik informasi yang Anda butuhkan. Apakah Anda ingin mengambil satu kata atau mengurai seluruh dokumen, fleksibilitas ekspresi reguler di`TextFragmentAbsorber`memberi Anda kemampuan pencarian yang hebat. Jadi, tunggu apa lagi? Jelajahi dokumen PDF Anda dan mulailah mengekstrak wawasan berharga hari ini!
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan dari tutorial "Segmen Teks dalam Berkas PDF"?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF adalah pustaka yang hebat untuk membuat, memanipulasi, dan mengonversi file PDF dalam aplikasi .NET.
 
-J: Tutorial "Segmen Teks dalam Berkas PDF" bertujuan untuk memandu pengguna tentang cara mencari segmen teks tertentu dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode C# untuk melakukan pencarian teks berdasarkan berbagai skenario menggunakan ekspresi reguler.
+### Dapatkah saya menggunakan Aspose.PDF dalam aplikasi .NET Core?
+Ya, Aspose.PDF untuk .NET mendukung aplikasi .NET Framework dan .NET Core.
 
-#### T: Bagaimana tutorial ini membantu dalam pencarian segmen teks dalam dokumen PDF?
+### Apakah ada uji coba gratis yang tersedia?
+ Tentu saja! Anda dapat mengunduh versi uji coba gratis[Di Sini](https://releases.aspose.com/).
 
-J: Tutorial ini membantu pengguna memahami cara memanfaatkan pustaka Aspose.PDF for .NET untuk mencari segmen teks tertentu dalam dokumen PDF. Dengan menyediakan berbagai contoh kode dan ekspresi reguler, pengguna dapat menyesuaikan kueri pencarian teks mereka untuk menemukan konten yang diinginkan dalam file PDF.
+### Di mana saya bisa mendapatkan dukungan untuk Aspose.PDF?
+ Anda dapat menghubungi komunitas dukungan Aspose[Di Sini](https://forum.aspose.com/c/pdf/10).
 
-#### T: Prasyarat apa yang diperlukan untuk mengikuti tutorial ini?
-
-J: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal pustaka Aspose.PDF for .NET. Anda dapat memperolehnya dari situs web Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
-
-#### T: Bagaimana cara menyiapkan proyek saya untuk mengikuti tutorial ini?
-
-J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terpadu (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini akan memungkinkan Anda memanfaatkan fungsionalitas pustaka untuk bekerja dengan dokumen PDF dan fragmen teks.
-
-#### T: Bagaimana saya dapat mencari segmen teks tertentu dalam berkas PDF?
-
- A: Untuk mencari segmen teks tertentu, Anda perlu membuat`TextFragmentAbsorber` objek. Tutorial ini menyediakan berbagai contoh kode menggunakan ekspresi reguler untuk menunjukkan berbagai skenario pencarian. Dengan memodifikasi ekspresi reguler, Anda dapat menentukan pola pencarian yang diinginkan.
-
-#### T: Jenis skenario pencarian apa yang dibahas dalam tutorial ini?
-
-A: Tutorial ini mencakup berbagai skenario pencarian menggunakan ekspresi reguler, seperti pencocokan kata yang tepat, pencarian tanpa memperhatikan huruf besar/kecil, pencarian semua string dalam dokumen, menemukan teks setelah string tertentu, dan mencari hyperlink/URL. Contoh kode yang diberikan dapat disesuaikan dengan kebutuhan pencarian spesifik Anda.
-
-#### T: Bagaimana cara memproses hasil pencarian setelah melakukan pencarian teks?
-
- A: Setelah membuat`TextFragmentAbsorber`objek dan melakukan pencarian, Anda dapat memproses hasil pencarian berdasarkan kebutuhan Anda. Tutorial ini berfokus pada demonstrasi proses pencarian itu sendiri, sedangkan cara Anda memproses dan memanfaatkan hasil pencarian bergantung pada kebutuhan proyek Anda.
-
-#### T: Dapatkah saya menggunakan contoh kode yang disediakan dalam proyek saya sendiri?
-
-J: Ya, Anda dapat menggunakan contoh kode yang diberikan sebagai referensi dalam proyek C# Anda sendiri. Contoh-contoh tersebut menunjukkan cara menyiapkan pencarian, menentukan ekspresi reguler, dan melakukan pencarian teks. Anda dapat mengadaptasi dan mengintegrasikan kode ini ke dalam aplikasi Anda untuk mencari segmen teks tertentu dalam file PDF.
-
-#### T: Di mana saya dapat menemukan tutorial lengkap beserta contoh kode?
-
- A: Anda dapat mengakses tutorial lengkap dan melihat contoh kode C# yang disediakan dengan mengunjungi tautan berikut:[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)
+### Bagaimana cara membeli lisensi untuk Aspose.PDF?
+ Anda dapat membeli lisensi[Di Sini](https://purchase.aspose.com/buy).

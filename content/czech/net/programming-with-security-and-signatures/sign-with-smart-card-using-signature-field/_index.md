@@ -1,6 +1,6 @@
 ---
-title: Podepsat S Chytrou Kartou Pomocí Pole Podpisu
-linktitle: Podepsat S Chytrou Kartou Pomocí Pole Podpisu
+title: Podepište Chytrou Kartou Pomocí Pole Podpisu
+linktitle: Podepište Chytrou Kartou Pomocí Pole Podpisu
 second_title: Aspose.PDF pro .NET API Reference
 description: Naučte se, jak bezpečně podepisovat soubory PDF pomocí čipové karty s Aspose.PDF pro .NET. Pro snadnou implementaci postupujte podle našeho podrobného průvodce.
 type: docs

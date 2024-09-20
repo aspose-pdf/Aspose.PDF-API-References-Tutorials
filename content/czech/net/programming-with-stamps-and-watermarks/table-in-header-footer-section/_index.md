@@ -15,7 +15,7 @@ Přistihli jste se někdy, že zíráte na obyčejný dokument PDF a přejete si
 
 Než přejdeme k samotné části kódování, ujistěte se, že máte vše, co potřebujete, abyste mohli začít. Zde je to, co budete potřebovat:
 
-1.  Visual Studio: Ujistěte se, že máte v počítači nainstalované Visual Studio. Pokud ne, můžete si jej stáhnout z[stránky společnosti Microsoft](https://visualstudio.microsoft.com/).
+1.  Visual Studio: Ujistěte se, že máte v počítači nainstalované Visual Studio. Pokud ne, můžete si ji stáhnout z[stránky společnosti Microsoft](https://visualstudio.microsoft.com/).
 2.  Knihovna Aspose.PDF: Musíte mít knihovnu Aspose.PDF pro .NET. K získání můžete použít následující odkaz[Aspose.PDF pro balíček .NET](https://releases.aspose.com/pdf/net/).
 3. Základní znalost C#: Měli byste mít alespoň základní znalosti C#. Nedělejte si starosti, pokud se stále učíte; Udělám to co nejjednodušší!
 
@@ -164,7 +164,7 @@ Tento krok nejen nastaví rozsah řádků, ale také změní barvu textu a písm
 
 ## Krok 13: Přidejte druhou řadu
 
-Přidáme další řádek do naší tabulky, ano?
+Přidáme další řádek do našeho stolu, ano?
 
 ```csharp
 // Vytvořte další řádek v tabulce

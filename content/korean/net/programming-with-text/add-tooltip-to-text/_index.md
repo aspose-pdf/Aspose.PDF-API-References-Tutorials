@@ -2,108 +2,107 @@
 title: PDF 파일의 텍스트에 툴팁 추가
 linktitle: PDF 파일의 텍스트에 툴팁 추가
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트에 도구 설명을 추가하는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트에 툴팁을 추가하는 방법을 알아보세요. 정보성 있는 호버 텍스트로 PDF를 손쉽게 강화하세요.
 type: docs
 weight: 90
 url: /ko/net/programming-with-text/add-tooltip-to-text/
 ---
-이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트에 도구 설명을 추가하는 과정을 안내합니다. 제공된 C# 소스 코드는 필요한 단계를 보여줍니다.
+## 소개
 
-## 요구 사항
-시작하기 전에 다음 사항이 있는지 확인하세요.
+매력적이고 대화형 PDF를 만드는 데 있어서 도구 설명은 매우 귀중할 수 있습니다. 무언가 위에 마우스를 올리면 추가 정보를 제공하는 작은 팝업 상자를 알고 계신가요? 문서를 어지럽히지 않고도 맥락, 설명 또는 약간의 조언을 제공할 수 있습니다. 이 튜토리얼에서는 Aspose.PDF for .NET 라이브러리를 사용하여 PDF 파일의 텍스트에 도구 설명을 추가하는 방법을 살펴보겠습니다. 노련한 개발자이든 PDF 세계에 발을 들이는 초보자이든, 여러분은 올바른 곳에 있습니다! 그럼 시작해 볼까요!
 
-- 컴퓨터에 Visual Studio나 다른 C# 컴파일러가 설치되어 있어야 합니다.
-- .NET 라이브러리용 Aspose.PDF. 공식 Aspose 웹사이트에서 다운로드하거나 NuGet과 같은 패키지 관리자를 사용하여 설치할 수 있습니다.
+## 필수 조건
 
-## 1단계: 프로젝트 설정
-1. 원하는 개발 환경에서 새로운 C# 프로젝트를 만듭니다.
-2. .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다.
+코딩 부분으로 넘어가기 전에, 원활하게 따라갈 수 있도록 필요한 모든 것이 있는지 확인해 보겠습니다.
 
-## 2단계: 필요한 네임스페이스 가져오기
-텍스트에 도구 설명을 추가하려는 코드 파일에서 다음 using 지시문을 파일 맨 위에 추가합니다.
+### Visual Studio 설치됨
+.NET 애플리케이션을 위한 기본 개발 환경이 되므로, 컴퓨터에 Visual Studio를 설치하는 것이 필수적입니다.
+
+### .NET 라이브러리용 Aspose.PDF
+ 또한 Aspose.PDF 라이브러리를 사용할 수 있어야 합니다.[여기서 다운로드하세요](https://releases.aspose.com/pdf/net/)프로젝트 참조에 포함시키세요.
+
+### C#의 기본 지식
+C#에 대한 배경 지식이 있으면 많은 도움이 될 겁니다. 그 언어로 코딩할 테니까요. 하지만 걱정하지 마세요. 제가 모든 단계를 안내해 드리겠습니다!
+
+### 작업할 PDF 문서
+이 예에서처럼 빈 PDF 문서로 시작할 수도 있고, 원한다면 기존 PDF 문서를 사용할 수도 있습니다.
+
+이제 코딩 부분으로 넘어가 보겠습니다!
+
+## 패키지 가져오기 
+
+ 코딩 모험의 첫 번째 단계는 필요한 패키지를 가져오는 것입니다. Visual Studio 프로젝트를 열고 C# 파일의 맨 위에 다음을 추가해야 합니다.`using` 지시사항:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## 3단계: 문서 디렉토리 설정
- 코드에서 다음 줄을 찾으세요.`string dataDir = "YOUR DOCUMENT DIRECTORY";` 그리고 교체하다`"YOUR DOCUMENT DIRECTORY"` 문서가 저장된 디렉토리 경로를 포함합니다.
+이 패키지를 사용하면 PDF 문서를 만들고 조작하는 데 필요한 모든 클래스와 기능에 액세스할 수 있습니다.
 
-## 4단계: 텍스트가 포함된 샘플 문서 만들기
- 새로운 것을 만드세요`Document`객체와 텍스트 조각이 있는 페이지를 추가합니다. 제공된 코드에서 두 개의 텍스트 조각이 해당 도구 설명 텍스트와 함께 문서에 추가됩니다.
+## 1단계: 문서 디렉토리 설정
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+가장 먼저 해야 할 일은 문서를 저장할 경로를 설정하는 것입니다. 파일 시스템에서 모든 창작물을 보관할 아늑한 장소를 찾는 것으로 생각하세요.
 
-## 5단계: 문서를 열고 텍스트 조각을 찾습니다.
- 생성된 문서를 로드하려면 다음을 사용합니다.`Document` 생성자를 사용하여 도구 설명이 필요한 텍스트 조각을 찾습니다.`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## 6단계: 텍스트 조각에 도구 설명 추가
- 추출된 텍스트 조각을 반복하고 해당 위치에 보이지 않는 버튼을 만듭니다. 원하는 도구 설명 텍스트를 다음에 할당합니다.`AlternateName` 의 속성`ButtonField`. 문서의 양식에 버튼 필드를 추가합니다.
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## 7단계: 긴 도구 설명이 있는 추가 텍스트 조각에 대해 반복
-긴 툴팁이 있는 텍스트 조각에 대해 5단계와 6단계를 반복합니다. 검색 기준과 툴팁 텍스트를 그에 따라 수정합니다.
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## 8단계: 수정된 문서 저장
- 수정된 PDF 문서를 다음을 사용하여 저장합니다.`Save` 의 방법`Document` 물체.
-
-```csharp
-document. Save(outputFile);
-```
-
-### .NET용 Aspose.PDF를 사용하여 텍스트에 도구 설명 추가를 위한 샘플 소스 코드 
 ```csharp
 // 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// 텍스트로 샘플 문서 만들기
+```
+
+ 교체를 꼭 해주세요`YOUR DOCUMENT DIRECTORY` 컴퓨터의 실제 경로와 일치합니다.
+
+## 2단계: 샘플 PDF 문서 만들기
+
+다음으로, 텍스트가 있는 간단한 PDF를 만들 시간입니다. 여기서 우리는 창작 과정을 시작합니다!
+
+```csharp
+//텍스트로 샘플 문서 만들기
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+이 단계에서는 문서를 만들고, 텍스트 조각 두 개를 추가하고, 이전에 지정한 경로에 저장합니다.
+
+## 3단계: 처리를 위해 문서 열기
+
+이제 문서를 만들었으니, 도구를 열어서 툴팁 작업을 시작해 볼까요!
+
+```csharp
 // 텍스트가 있는 문서 열기
 Document document = new Document(outputFile);
-//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
+```
+
+여기서는 방금 만든 문서를 로드합니다.
+
+## 4단계: 텍스트 조각을 찾기 위한 텍스트 흡수기 만들기
+
+툴팁을 추가하고 싶은 텍스트 조각을 찾아야 합니다. 이것은 돋보기를 사용하여 큰 지도의 특정 부분을 강조하는 것과 같습니다! 
+
+```csharp
+// 정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// 문서 페이지에 대한 흡수체를 수락합니다.
 document.Pages.Accept(absorber);
+```
+
+## 5단계: 텍스트 조각 추출
+
+다음으로, 이전 단계에서 찾은 텍스트 조각을 추출합니다.
+
+```csharp
 // 추출된 텍스트 조각을 가져옵니다
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+이 스니펫을 사용하면 관심 있는 텍스트 조각에 대한 참조를 보관할 수 있습니다.
+
+## 6단계: 조각을 반복하고 도구 설명 추가
+
+이제 재밌는 부분이 왔습니다! 각 텍스트 조각을 반복하고 각각에 툴팁을 추가합니다. 특정 항목(텍스트 조각) 주위에 작은 선물(툴팁)을 포장하는 것을 상상해 보세요.
+
+```csharp
 // 조각을 반복합니다
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,6 +113,15 @@ foreach (TextFragment fragment in textFragments)
 	// 문서에 버튼 필드 추가
 	document.Form.Add(field);
 }
+```
+
+각 반복에서 텍스트 조각의 위치에 해당하는 버튼 필드를 만들고 여기에 도구 설명 텍스트를 할당합니다.
+
+## 7단계: 긴 도구 설명에 대해 반복
+
+간단한 툴팁을 추가한 것처럼, 긴 텍스트에도 똑같이 할 수 있습니다. 창의력을 확장해 봅시다!
+
+```csharp
 // 다음은 매우 긴 툴팁의 샘플입니다.
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+여기서는 이전과 동일한 종류의 작업을 수행하지만, 훨씬 더 확장된 툴팁을 사용합니다.
+
+## 8단계: 문서 저장
+
+마지막 단계는 새로운 도구 설명이 적용된 문서를 저장하는 것입니다. 
+
+```csharp
 // 문서 저장
 document.Save(outputFile);
 ```
 
+그리고 그렇게 하면 끝입니다! PDF에 도구 설명을 추가하여 더욱 사용자 친화적이고 상호 작용적으로 만들었습니다.
+
 ## 결론
-Aspose.PDF for .NET을 사용하여 PDF 문서의 텍스트에 툴팁을 성공적으로 추가했습니다. 결과 PDF 파일은 이제 지정된 출력 파일 경로에서 찾을 수 있습니다.
+
+Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트에 도구 설명을 추가하는 방법에 대한 쉽게 따라할 수 있는 가이드가 있습니다. 이 기술은 사용자 경험을 크게 향상시켜 한 번에 너무 많은 텍스트로 독자를 압도하지 않고도 문서를 보다 유익한 정보로 만들 수 있습니다. 
+
+단어나 문구 위에 마우스를 올리기만 하면 독자는 어수선함 없이 가치를 더하는 관련 정보를 얻을 수 있습니다. 그러니 소매를 걷어붙이고 시도해 보세요! 눈 깜짝할 새에 눈에 띄는 모든 종류의 매력적인 문서를 만들 수 있을 것입니다.
 
 ## 자주 묻는 질문
 
-#### 질문: 이 튜토리얼의 초점은 무엇인가요?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 PDF 문서를 만들고, 조작하고, 변환할 수 있도록 해주는 라이브러리입니다.
 
-A: 이 튜토리얼은 Aspose.PDF for .NET 라이브러리를 사용하여 PDF 파일 내의 텍스트에 툴팁을 추가하는 데 중점을 둡니다. 제공된 C# 소스 코드는 이를 달성하는 데 필요한 단계를 보여줍니다.
+### Aspose.PDF를 무료로 사용할 수 있나요?
+ 네, Aspose는 여러분이 기능을 탐색할 수 있도록 무료 체험판을 제공합니다! 찾을 수 있습니다[여기](https://releases.aspose.com/).
 
-#### 질문: 이 튜토리얼에서는 어떤 네임스페이스를 가져와야 합니까?
+### Aspose.PDF에 사용할 수 있는 라이선스 옵션이 있나요?
+네, 라이센스를 구매하거나 임시 라이센스를 얻을 수 있습니다. 옵션을 확인하세요[여기](https://purchase.aspose.com/).
 
-A: 텍스트에 도구 설명을 추가하려는 코드 파일에서 다음 네임스페이스를 파일 시작 부분에 가져옵니다.
+### Aspose.PDF를 사용하여 도구 설명 외에 대화형 요소를 추가할 수 있나요?
+물론입니다! Aspose.PDF는 하이퍼링크, 버튼, 양식과 같은 다양한 대화형 요소를 추가할 수 있습니다.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
-
-#### 질문: 문서 디렉토리를 어떻게 지정하나요?
-
- A: 코드에서 다음 줄을 찾으세요.`string dataDir = "YOUR DOCUMENT DIRECTORY";` 그리고 교체하다`"YOUR DOCUMENT DIRECTORY"` 문서 디렉토리의 실제 경로를 포함합니다.
-
-#### 질문: 텍스트가 포함된 샘플 문서를 어떻게 만들 수 있나요?
-
- A: 4단계에서는 새 것을 만듭니다.`Document` 객체와 텍스트 조각이 있는 페이지를 추가합니다. 제공된 코드는 해당 도구 설명 텍스트가 있는 두 개의 텍스트 조각을 추가합니다.
-
-#### 질문: 문서를 열고 텍스트 조각을 찾으려면 어떻게 해야 하나요?
-
- A: 5단계에서는 다음을 사용하여 생성된 문서를 로드합니다.`Document` 생성자를 사용하여 도구 설명이 필요한 텍스트 조각을 찾습니다.`TextFragmentAbsorber`.
-
-#### 질문: 텍스트 조각에 도구 설명을 추가하려면 어떻게 해야 하나요?
-
- A: 6단계에서는 추출된 텍스트 조각을 반복하고 해당 위치에 보이지 않는 버튼을 만듭니다. 도구 설명 텍스트는 다음에 할당됩니다.`AlternateName` 의 속성`ButtonField`문서 양식에 추가됩니다.
-
-#### 질문: 긴 툴팁이 있는 추가 텍스트 조각에 대해 어떻게 이 과정을 반복합니까?
-
-A: 긴 툴팁이 있는 텍스트 조각의 경우 5단계와 6단계를 반복합니다. 검색 기준과 툴팁 텍스트를 이에 따라 수정합니다.
-
-#### 질문: 수정된 문서를 어떻게 저장하나요?
-
- A: 8단계에서는 수정된 PDF 문서를 다음을 사용하여 저장합니다.`Save` 의 방법`Document` 물체.
-
-#### 질문: 이 튜토리얼의 가장 중요한 점은 무엇인가요?
-
-A: 이 튜토리얼을 따라가면 Aspose.PDF for .NET을 사용하여 텍스트에 도구 설명을 추가하여 PDF 문서를 향상시키는 방법을 배웠습니다. 이는 독자가 PDF 콘텐츠와 상호 작용할 때 귀중한 추가 정보를 제공할 수 있습니다.
+### Aspose.PDF에 대한 추가 문서는 어디에서 찾을 수 있나요?
+ 문서를 확인할 수 있습니다[여기](https://reference.aspose.com/pdf/net/) 더 자세한 지침을 원하시면.

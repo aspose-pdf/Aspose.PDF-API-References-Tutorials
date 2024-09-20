@@ -69,7 +69,7 @@ Voici comment vous pouvez définir le chemin :
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
--  Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers le dossier où se trouve votre fichier PDF. Cela peut être aussi simple que`"C:/Documents/"` en fonction de l'organisation de vos fichiers.
+-  Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès réel au dossier où se trouve votre fichier PDF. Cela peut être aussi simple que`"C:/Documents/"` en fonction de l'organisation de vos fichiers.
 
 ## Étape 3 : Ouvrir le fichier PDF
 

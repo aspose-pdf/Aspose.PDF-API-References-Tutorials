@@ -17,7 +17,7 @@ Zanim zagłębimy się w kod, musisz spełnić kilka warunków wstępnych:
 
 1. Podstawowa znajomość języka C#: Znajomość języka programowania C# pomoże Ci lepiej zrozumieć przykłady.
 2.  Aspose.PDF dla .NET: Musisz mieć zainstalowaną bibliotekę Aspose.PDF. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/net/).
-3. Visual Studio: Do pisania i testowania kodu zaleca się korzystanie ze środowiska programistycznego, takiego jak Visual Studio.
+3. Visual Studio: Do pisania i testowania kodu zalecane jest korzystanie ze środowiska programistycznego, takiego jak Visual Studio.
 4. Formularz PDF: Powinieneś mieć formularz PDF z co najmniej jednym polem tekstowym, w którym chcesz wpisać tekst arabski. Możesz utworzyć prosty formularz PDF za pomocą dowolnego edytora PDF.
 
 ## Importuj pakiety

@@ -146,4 +146,4 @@ Kreslení čar v dokumentu PDF pomocí Aspose.PDF for .NET je jednoduchý proces
  Ano, můžete přidat text vytvořením`TextFragment` předměty a jejich umístění do`Paragraphs` kolekce stránky.
 
 ### Co když chci přidat řádky do existujícího PDF místo vytváření nového?
- Stávající PDF můžete načíst pomocí`Document` a poté použijte podobné metody k přidání řádků na existující stránky.
+ Existující PDF můžete načíst pomocí`Document` a poté použijte podobné metody k přidání řádků na existující stránky.

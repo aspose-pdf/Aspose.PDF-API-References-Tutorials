@@ -52,7 +52,7 @@ using Aspose.Pdf.Annotations;
 
 Ha a megfelelő beállítás kész, piszkáljuk meg a kezünket a kóddal!
 
-Készen áll arra, hogy megváltoztassa a hivatkozások működését a PDF-dokumentumokban? Bontsuk le a kódot lépésről lépésre, hogy kezelhetővé tegyük a célhivatkozások beállítását.
+Készen áll arra, hogy megváltoztassa a hivatkozások működését a PDF-dokumentumokban? Bontsuk le a kódot lépésről lépésre, hogy kezelhetővé tegyük a céllinkek beállítását.
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat 
 

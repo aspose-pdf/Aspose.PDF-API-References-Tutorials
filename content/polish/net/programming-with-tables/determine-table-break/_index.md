@@ -2,175 +2,193 @@
 title: Określ podział tabeli w pliku PDF
 linktitle: Określ podział tabeli w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak określić podziały tabeli w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak określić podział tabeli w plikach PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z naszego przewodnika krok po kroku, który zawiera przykłady kodu i wskazówki dotyczące rozwiązywania problemów.
 type: docs
 weight: 60
 url: /pl/net/programming-with-tables/determine-table-break/
 ---
-W tym samouczku nauczymy się, jak określić podziały tabeli w pliku PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy w C# krok po kroku. Na końcu tego samouczka będziesz wiedzieć, jak określić, czy tabela przekracza marginesy strony. Zaczynajmy!
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
-Najpierw upewnij się, że skonfigurowałeś środowisko programistyczne C# z Aspose.PDF dla .NET. Dodaj odwołanie do biblioteki i zaimportuj niezbędne przestrzenie nazw.
+Tworzenie i manipulowanie plikami PDF może przypominać oswajanie dzikiej bestii. W jednej chwili myślisz, że już to ogarnąłeś, a w drugiej dokument zachowuje się nieprzewidywalnie. Czy kiedykolwiek zastanawiałeś się, jak skutecznie zarządzać tabelami w pliku PDF — a konkretnie, jak określić, kiedy tabela ulegnie uszkodzeniu? W tym artykule zagłębiamy się w to, jak używać Aspose.PDF dla .NET, aby określić, kiedy tabela rozszerza się poza rozmiar strony. Więc zapnij pasy i odkryjmy świat manipulacji PDF!
 
-## Krok 2: Tworzenie dokumentu PDF
- W tym kroku tworzymy nowy`Document` obiekt reprezentujący dokument PDF.
+## Wymagania wstępne
+
+Zanim przejdziemy do właściwego kodowania, upewnijmy się, że wszystko jest na swoim miejscu:
+
+1. Środowisko programistyczne .NET: Upewnij się, że masz zainstalowany program Visual Studio lub inne zgodne środowisko IDE.
+2.  Biblioteka Aspose.PDF: Musisz dodać bibliotekę Aspose.PDF do swojego projektu. Możesz ją pobrać ze strony[Pliki do pobrania w formacie PDF Aspose](https://releases.aspose.com/pdf/net/) stronę lub możesz zainstalować ją za pomocą Menedżera pakietów NuGet:
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. Podstawowa wiedza o języku C#: W tym przewodniku zakładamy, że posiadasz umiarkowaną wiedzę o języku C# i programowaniu obiektowym.
+
+Teraz, gdy mamy już wszystkie niezbędne warunki, możemy przystąpić do działania i zaimportować niezbędne pakiety.
+
+## Importuj pakiety
+
+Aby rozpocząć używanie Aspose.PDF w swoim projekcie, musisz uwzględnić odpowiednie przestrzenie nazw. Oto, jak możesz to zrobić:
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Ten dokument będzie używany do dodawania sekcji i tabel.
+Te przestrzenie nazw dadzą Ci dostęp do podstawowych funkcjonalności niezbędnych do manipulowania plikami PDF.
 
-## Krok 3: Dodawanie sekcji i tabeli
-Teraz dodamy sekcję do naszego dokumentu PDF i utworzymy w niej tabelę.
+Podzielmy proces na łatwe do opanowania kroki. Utworzymy dokument PDF, dodamy tabelę i ustalimy, czy zostanie ona podzielona na nową stronę po dodaniu kolejnych wierszy.
+
+## Krok 1: Skonfiguruj katalog dokumentów
+
+Zanim zaczniesz kodować, określ lokalizację, w której zostanie zapisany Twój wyjściowy plik PDF. Jest to kluczowe, ponieważ to właśnie tam znajdziesz wygenerowany dokument później.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Zastąp swoim katalogiem.
 ```
 
-Określamy również górny margines 300 punktów dla tabeli. Możesz dostosować tę wartość według swoich potrzeb.
+## Krok 2: Utwórz dokument PDF
 
-## Krok 4: Przygotowanie stołu
-W tym kroku konfigurujemy właściwości tabeli, takie jak szerokości kolumn i obramowania.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-Tutaj definiujemy szerokość kolumn tabeli i obramowania komórek. Możesz dostosować te wartości według swoich preferencji.
-
-## Krok 5: Dodaj wiersze i komórki do tabeli
-Teraz utworzymy wiersze i komórki w tabeli za pomocą pętli.
+ Następnie utworzysz nową instancję`Document` klasa z biblioteki Aspose.PDF. To tutaj będzie się dziać cała Twoja magia PDF!
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-Tutaj tworzymy 17 wierszy w tabeli i dodajemy trzy komórki do każdego wiersza. Możesz dostosować klamrę zgodnie ze swoimi potrzebami.
-
-## Krok 6: Określanie podziałów stołu
-Teraz sprawdzimy, czy tabela wykracza poza marginesy strony, porównując wysokość strony z całkowitą wysokością obiektów w tabeli.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-Obliczamy wysokość strony i całkowitą wysokość obiektów, biorąc pod uwagę marginesy. Jeśli różnica wynosi 10 lub mniej, tabela przekracza marginesy strony.
-
-## Krok 7: Zapisywanie dokumentu PDF
-Na koniec zapisujemy dokument PDF z wynikami.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-Upewnij się, że określiłeś prawidłowy katalog dokumentu. Wynikowy plik PDF zostanie zapisany z określonymi podziałami tabeli.
-
-### Przykładowy kod źródłowy dla polecenia Determine Table Break przy użyciu Aspose.PDF dla platformy .NET
-
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Utwórz instancję klasy obiektu PDF
 Document pdf = new Document();
-// Dodaj sekcję do kolekcji sekcji dokumentu PDF
+```
+
+## Krok 3: Utwórz stronę
+
+Każdy plik PDF potrzebuje strony. Oto jak możesz dodać nową stronę do swojego dokumentu.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Utwórz obiekt tabeli
+```
+
+## Krok 4: Utwórz instancję tabeli
+
+Teraz utwórzmy faktyczną tabelę, w której będziemy monitorować przerwy.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// Dodaj tabelę w kolekcji akapitów żądanej sekcji
+table1.Margin.Top = 300; // Pozostawia trochę miejsca na stole.
+```
+
+## Krok 5: Dodaj tabelę do strony
+
+Po utworzeniu tabeli kolejnym krokiem jest dodanie jej do wcześniej utworzonej strony.
+
+```csharp
 page.Paragraphs.Add(table1);
-// Ustaw szerokości kolumn tabeli
-table1.ColumnWidths = "100 100 100";
-// Ustaw domyślną ramkę komórki za pomocą obiektu BorderInfo
+```
+
+## Krok 6: Zdefiniuj właściwości tabeli
+
+Zdefiniujmy kilka ważnych właściwości naszej tabeli, takich jak szerokości kolumn i obramowania.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // Każda kolumna ma 100 jednostek szerokości.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Ustaw obramowanie tabeli za pomocą innego dostosowanego obiektu BorderInfo
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Utwórz obiekt MarginInfo i ustaw jego marginesy: lewy, dolny, prawy i górny
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// Ustaw domyślne wypełnienie komórki na obiekt MarginInfo
+```
+
+## Krok 7: Ustaw marginesy komórek
+
+Musimy upewnić się, że nasze komórki mają trochę wypełnienia dla lepszej prezentacji. Oto jak to skonfigurować.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // Góra, Lewo, Prawo, Dół
 table1.DefaultCellPadding = margin;
-// Jeśli zwiększysz licznik do 17, stół się rozpadnie
-// Ponieważ nie można już tego więcej pomieścić na tej stronie
+```
+
+## Krok 8: Dodaj wiersze do tabeli
+
+Teraz jesteśmy gotowi, aby dodać wiersze! Przejdziemy przez pętlę i utworzymy 17 wierszy. (Dlaczego 17? Cóż, to właśnie tam zobaczymy podział tabeli!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//Utwórz wiersze w tabeli, a następnie komórki w wierszach
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// Uzyskaj informacje o wysokości strony
+```
+
+## Krok 9: Pobierz wysokość strony
+
+Aby sprawdzić czy nasza tabela się zmieści, musimy znać wysokość naszej strony. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// Uzyskaj informacje o całkowitej wysokości górnego i dolnego marginesu strony,
-// Margines blatu i wysokość tabeli.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// Wyświetl wysokość strony, wysokość tabeli, górny margines tabeli i górę strony
-// I informacje o dolnym marginesie
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## Krok 10: Oblicz całkowitą wysokość obiektów
 
-// Sprawdź, czy odejmujemy sumę marginesu górnego strony + marginesu dolnego strony
-// + Margines górny tabeli i wysokość tabeli z wysokości strony i jej mniejszej wartości
-// Niż 10 (średnia liczba wierszy może być większa niż 10)
+Teraz obliczmy całkowitą wysokość wszystkich obiektów (marginesy strony, marginesy tabeli i wysokość tabeli) na stronie.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## Krok 11: Wyświetl informacje o wysokości
+
+Przydatne jest zobaczenie pewnych informacji debugowania, prawda? Wydrukujmy wszystkie istotne informacje o wysokości na konsoli.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## Krok 12: Sprawdź stan przerwania tabeli
+
+Na koniec chcemy sprawdzić, czy dodanie kolejnych wierszy nie spowoduje przeniesienia tabeli na inną stronę.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Jeśli wartość jest mniejsza niż 10, wyświetl komunikat.
-	//Co pokazuje, że nie można umieścić kolejnego wiersza i jeśli dodamy nowy
-	// Wiersz, tabela zostanie przerwana. Zależy to od wartości wysokości wiersza.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## Krok 13: Zapisz dokument PDF
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Zapisz dokument PDF
+Po wykonaniu całej tej ciężkiej pracy możemy zapisać dokument PDF w wybranym katalogu.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## Krok 14: Wiadomość potwierdzająca
+
+Aby dać Ci znać, że wszystko poszło gładko, wyślemy Ci wiadomość potwierdzającą.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## Wniosek
-W tym samouczku nauczyliśmy się, jak określić podziały tabeli w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby sprawdzić, czy tabela przekracza marginesy strony w Twoich własnych projektach C#.
 
-### FAQ dotyczące określania podziału tabeli w pliku PDF
+W tym przewodniku przyjrzymy się bliżej, jak określić, kiedy tabela w dokumencie PDF ulegnie uszkodzeniu podczas korzystania z Aspose.PDF dla .NET. Postępując zgodnie z tymi krokami, możesz łatwo zidentyfikować ograniczenia przestrzeni i lepiej zarządzać układami PDF. Dzięki praktyce zdobędziesz umiejętności, aby skutecznie manipulować tabelami i tworzyć dopracowane pliki PDF jak profesjonalista. Więc dlaczego nie spróbować i zobaczyć, jak to może zadziałać w Twoim przypadku?
 
-#### P: Jaki jest cel określania podziałów tabeli w dokumencie PDF?
+## Najczęściej zadawane pytania
 
-A: Celem określania podziałów tabeli w dokumencie PDF jest sprawdzenie, czy tabela przekracza marginesy strony. Zapewnia to, że zawartość tabeli jest prawidłowo wyświetlana w dostępnej przestrzeni strony. Wykrywając podziały tabeli, możesz poradzić sobie z przepełnieniem zawartości i odpowiednio dostosować układ tabeli.
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to rozbudowana biblioteka umożliwiająca programistom tworzenie, konwertowanie i modyfikowanie dokumentów PDF bezpośrednio w aplikacjach .NET.
 
-#### P: Jak mogę dostosować górny margines tabeli?
+### Czy mogę otrzymać bezpłatną wersję próbną Aspose.PDF?
+ Tak! Możesz pobrać[bezpłatny okres próbny](https://releases.aspose.com/) aby zapoznać się z jego funkcjami przed dokonaniem zakupu.
 
- A: W podanym kodzie źródłowym C# możesz dostosować górny margines tabeli, modyfikując wartość`table1.Margin.Top`Właściwość. Zwiększ lub zmniejsz wartość w razie potrzeby, aby ustawić pożądany górny margines dla tabeli.
+### Gdzie mogę znaleźć pomoc dotyczącą Aspose.PDF?
+ Przydatne informacje i wsparcie społeczności Aspose można znaleźć na ich stronie[forum wsparcia](https://forum.aspose.com/c/pdf/10).
 
-#### P: Czy mogę dostosować wygląd tabeli, np. kolory komórek i rozmiar czcionki?
+### Co się stanie, jeśli w tabeli będę potrzebować więcej niż 17 wierszy?
+Jeśli przekroczysz dostępną ilość miejsca, tabela nie zmieści się na stronie i powinieneś podjąć odpowiednie działania, aby ją poprawnie sformatować.
 
-A: Tak, możesz dostosować wygląd tabeli i jej komórek, korzystając z różnych właściwości i metod udostępnianych przez Aspose.PDF dla .NET. Na przykład możesz zmienić kolory tła komórek, rozmiar czcionki, rodzinę czcionek, wyrównanie tekstu i wiele więcej. Zapoznaj się z oficjalną dokumentacją, aby uzyskać więcej informacji na temat dostosowywania wyglądu tabeli.
-
-#### P: Co się stanie, jeśli tabela przekroczy marginesy strony?
-
-A: Jeśli tabela przekracza marginesy strony, może to spowodować obcięcie lub nakładanie się treści, co sprawi, że dokument PDF będzie mniej czytelny i uporządkowany. Wykrywając podziały tabeli i obsługując przepełnienie, możesz zapewnić, że treść pozostanie prawidłowo wyświetlana w dostępnym obszarze strony.
-
-#### P: Czy mogę określić podziały tabel dla wielu tabel w tym samym dokumencie PDF?
-
-A: Tak, możesz określić podziały tabeli dla wielu tabel w tym samym dokumencie PDF. Po prostu powtórz kroki dla każdej tabeli, którą chcesz przeanalizować i dostosuj układ tabeli w razie potrzeby, aby zapobiec przepełnieniu zawartości.
+### Gdzie mogę kupić bibliotekę Aspose.PDF?
+ Bibliotekę można nabyć w[strona zakupu](https://purchase.aspose.com/buy).

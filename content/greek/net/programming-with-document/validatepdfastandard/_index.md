@@ -84,7 +84,7 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 Ναι, το Aspose.PDF προσφέρει ένα ευρύ φάσμα λειτουργιών, όπως δημιουργία, επεξεργασία και μετατροπή εγγράφων PDF.
 
 ### Υπάρχει διαθέσιμη δωρεάν δοκιμή για το Aspose.PDF;
- Ναι, μπορείτε να κάνετε λήψη μιας δωρεάν δοκιμής από το[Aspose ιστότοπο](https://releases.aspose.com/).
+ Ναι, μπορείτε να κάνετε λήψη μιας δωρεάν δοκιμής από το[Aspose website](https://releases.aspose.com/).
 
 ### Πού μπορώ να λάβω υποστήριξη για το Aspose.PDF;
  Μπορείτε να βρείτε υποστήριξη και να κάνετε ερωτήσεις στο[Aspose φόρουμ](https://forum.aspose.com/c/pdf/10).

@@ -47,7 +47,7 @@ public class CreatePDF {
 
 ## Vonal húzása az oldalon
 
- Ha vonalat szeretne húzni az oldalon, használja a`Line` osztályt az Aspose.PDF biztosítja. Íme egy példa egy egyszerű vízszintes vonal rajzolására:
+ Ha egy vonalat szeretne áthúzni az oldalon, használja a`Line` osztályt az Aspose.PDF biztosítja. Íme egy példa egy egyszerű vízszintes vonal rajzolására:
 
 ```java
 import com.aspose.pdf.*;

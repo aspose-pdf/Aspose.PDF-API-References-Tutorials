@@ -33,7 +33,7 @@ using System.Collections.Generic;
 using Aspose.Pdf.Text;
 ```
 
-NuGet または任意の方法でこれらのパッケージがプロジェクトに追加されていることを確認してください。
+NuGet または好みの方法でこれらのパッケージがプロジェクトに追加されていることを確認してください。
 
 ## ステップ1: PDFフォームを読み込む
 

@@ -89,7 +89,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## 第 6 步：向用戶提供回饋
 
-讓使用者知道操作成功始終是一個好的做法。這是一條簡單的控制台訊息，用於確認註釋已成功展平：
+讓使用者知道操作成功始終是一個好的做法。這是一個簡單的控制台訊息，用於確認註釋已成功展平：
 
 ```csharp
 Console.WriteLine("\nFlattened annotations successfully.\nFile saved at " + dataDir);

@@ -9,7 +9,7 @@ url: /nl/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
 ## Invoering
 
-Heb je ooit gemerkt dat je een PDF-document perfect wilde laten aansluiten? Misschien is het een titel die de toon zet, een datum om de inhoud te onderbouwen of zelfs een bedrijfslogo voor branding. Als je op zoek bent naar een manier om tekst in de header van een PDF-bestand te zetten, dan ben je hier aan het juiste adres! In deze tutorial leiden we je door het proces van het gebruik van Aspose.PDF voor .NET om naadloos tekst toe te voegen aan de header van een PDF-document. Aspose.PDF is een krachtige bibliotheek waarmee je PDF-bestanden eenvoudig programmatisch kunt bewerken. Of je nu een doorgewinterde ontwikkelaar bent of net begint, deze stapsgewijze handleiding helpt je om als een pro headers aan je PDF's toe te voegen!
+Heb je ooit gemerkt dat je een PDF-document perfect moest afwerken? Misschien is het een titel die de toon zet, een datum om de inhoud te onderbouwen of zelfs een bedrijfslogo voor branding. Als je op zoek bent naar een manier om tekst in de header van een PDF-bestand te plaatsen, ben je hier aan het juiste adres! In deze tutorial leiden we je door het proces van het gebruik van Aspose.PDF voor .NET om naadloos tekst toe te voegen aan de header van een PDF-document. Aspose.PDF is een krachtige bibliotheek waarmee je PDF-bestanden eenvoudig programmatisch kunt bewerken. Of je nu een doorgewinterde ontwikkelaar bent of net begint, deze stapsgewijze handleiding helpt je om als een pro headers aan je PDF's toe te voegen!
 
 ## Vereisten
 

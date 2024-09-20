@@ -2,128 +2,149 @@
 title: Maak PDF met getagde afbeelding
 linktitle: Maak PDF met getagde afbeelding
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het maken van PDF met getagde afbeeldingen met behulp van Aspose.PDF voor .NET.
+description: Leer hoe u een getagde PDF met afbeeldingen maakt met Aspose.PDF voor .NET. Volg onze stapsgewijze handleiding voor toegankelijke en professionele documentcreatie.
 type: docs
 weight: 40
 url: /nl/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-In deze tutorial geven we u een stapsgewijze handleiding over hoe u een PDF-document met een getagde afbeelding kunt maken met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt maken, bewerken en converteren. Met behulp van de functies voor getagde inhoudsstructuur van Aspose.PDF kunt u getagde afbeeldingen toevoegen aan uw PDF-document.
+## Invoering
+
+PDF's maken kan een ingewikkelde taak zijn, maar dat hoeft het niet te zijn! Vandaag gaan we dieper in op het maken van een PDF-document met een getagde afbeelding met Aspose.PDF voor .NET. Als u nieuwsgierig bent naar het opnemen van afbeeldingen in uw PDF's en het ervoor zorgen dat ze toegankelijk zijn, bent u hier aan het juiste adres. Laten we dit proces stap voor stap ontrafelen, zodat u eenvoudig professionele en toegankelijke PDF's kunt maken.
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat aan de volgende voorwaarden is voldaan:
+Voordat u begint met het maken van uw PDF met getagde afbeeldingen, hebt u een paar dingen nodig:
 
-1. Visual Studio geïnstalleerd met .NET Framework.
-2. De Aspose.PDF-bibliotheek voor .NET.
+1. Aspose.PDF voor .NET: Deze krachtige bibliotheek is essentieel voor het verwerken van PDF-documenten in .NET-applicaties. U kunt de bibliotheek hier vinden:[Aspose.PDF voor .NET Downloaden](https://releases.aspose.com/pdf/net/).
+2. .NET Framework of .NET Core: Zorg ervoor dat u een compatibele versie van .NET Framework of .NET Core op uw machine hebt. Deze bibliotheek ondersteunt beide.
+3. Afbeeldingsbestand: U hebt een afbeeldingsbestand nodig om in uw PDF te embedden. In ons voorbeeld gebruiken we 'aspose-logo.png'. Zorg ervoor dat u het in uw documentenmap hebt staan. 
 
-## Stap 1: Projectinstelling
+Zorg ervoor dat u aan deze vereisten voldoet, dan bent u helemaal klaar om te beginnen!
 
-Om te beginnen, maak een nieuw project in Visual Studio en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. U kunt de bibliotheek downloaden van de officiële Aspose-website en deze op uw machine installeren.
+## Pakketten importeren
 
-## Stap 2: Importeer de benodigde naamruimten
+Om ons codeeravontuur te starten, moeten we onze werkruimte instellen door de benodigde Aspose.PDF-naamruimten te importeren. Dit is hoe u dat kunt doen:
 
-Importeer in uw C#-codebestand de naamruimten die nodig zijn om toegang te krijgen tot de klassen en methoden die door Aspose.PDF worden aangeboden:
+### Een nieuw project maken
+
+- Open uw favoriete IDE (Visual Studio bijvoorbeeld).
+- Maak een nieuw Console Application-project. Waarom een Console Application? Het is simplistisch en perfect voor tutorials!
+
+### Voeg Aspose.PDF-referentie toe
+
+- Klik met de rechtermuisknop op uw project in Solution Explorer en selecteer NuGet-pakketten beheren.
+- Zoek naar "Aspose.PDF" en installeer het. 
+- Hiermee worden alle benodigde pakketten aan uw project toegevoegd, zodat u toegang krijgt tot de functionaliteiten die we nodig hebben voor PDF-bewerking.
+
+### Importeer de vereiste naamruimten
+
+ Bovenaan uw hoofdprogrammabestand (zoals`Program.cs`), importeer de volgende naamruimten:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Stap 3: Het PDF-document met een getagde afbeelding maken
+Door deze pakketten te importeren, geeft u uw toepassing opdracht om de Aspose.PDF-functionaliteiten te gebruiken die wij gaan gebruiken.
 
-Gebruik de volgende code om een PDF-document met een getagde afbeelding te maken:
+Nu we alles hebben ingesteld, gaan we stap voor stap onze PDF met een getagde afbeelding maken.
+
+## Stap 1: Initialiseer het document
+
+Allereerst moeten we een nieuw PDF-document maken:
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Stel het pad naar uw directory in
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-Deze code maakt een leeg PDF-document en voegt een getagde afbeelding toe met behulp van de methoden die door Aspose.PDF worden geleverd. De afbeelding wordt gespecificeerd met alt-tekst, titel en tag.
+-  Wat is hier aan de hand? We zijn een nieuwe aan het instantiëren`Document` object dat onze PDF vertegenwoordigt. Zie het als een leeg canvas dat wacht op jouw meesterwerken!
 
-## Stap 4: Het PDF-document opslaan
+## Stap 2: De getagde inhoud instellen
 
-Gebruik de volgende code om het PDF-document op te slaan:
+Vervolgens stellen we de getagde inhoud in:
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Met deze code wordt het PDF-document met de getagde afbeelding opgeslagen in een opgegeven bestand.
+- Waarom Tagged Content gebruiken? Tagged PDF's zijn essentieel voor toegankelijkheid, omdat ze ervoor zorgen dat schermlezers de structuur van het document kunnen begrijpen.
 
-### Voorbeeldbroncode voor PDF met getagde afbeelding maken met Aspose.PDF voor .NET 
+## Stap 3: Metagegevens configureren
+
+Laten we nu wat metagegevens toevoegen die onze PDF beschrijven:
+
 ```csharp
-
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- Meta wat? Een titel en taal toevoegen is als een naamkaartje op je creatie plakken — het helpt anderen te begrijpen waar het allemaal over gaat!
+
+## Stap 4: Maak een illustratie-element
+
+We moeten het element creëren dat onze afbeelding zal bevatten:
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+-  Zomaar?! Ja! De`CreateFigureElement` Met deze methode kunnen we een nieuwe illustratie maken en deze toevoegen aan het rootelement van onze getagde content.
+
+## Stap 5: Stel de eigenschappen van de afbeelding in
+
+Laten we nu de eigenschappen voor de afbeelding instellen:
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Voeg een afbeelding toe met een resolutie van 300 DPI (standaard)
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// PDF-document opslaan
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- Waarom al deze eigenschappen? Alternatieve tekst beschrijft de afbeelding voor degenen die deze niet kunnen zien, terwijl de titel en tag de afbeelding categoriseren voor betere toegankelijkheid.
+
+## Stap 6: Voeg de afbeelding toe
+
+Nu is het tijd om de daadwerkelijke afbeelding aan onze PDF toe te voegen:
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); // Zorg ervoor dat het pad naar uw afbeelding correct is!
+```
+
+- Dit is waar de magie gebeurt! Je voegt de afbeelding rechtstreeks in je PDF in. 
+
+## Stap 7: Sla het PDF-document op
+
+Laten we tot slot onze creatie opslaan in een bestand:
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- De grote finale! Nadat u deze regel hebt uitgevoerd, vindt u uw nieuwe PDF in de opgegeven directory.
 
 ## Conclusie
 
-In deze tutorial hebt u geleerd hoe u een PDF-document met een getagde afbeelding kunt maken met behulp van Aspose.PDF voor .NET. Getagde afbeeldingen voegen extra, gestructureerde informatie toe aan uw PDF-document.
+PDF's maken met getagde afbeeldingen met Aspose.PDF voor .NET is een fluitje van een cent als je het opdeelt in beheersbare stappen. Door deze gids te volgen, heb je geleerd om niet alleen een PDF te maken, maar ook om de toegankelijkheid ervan te verbeteren met getagde content. Of je nu documenten voorbereidt voor een breder publiek of gewoon je PDF-creaties oppoetst, deze kennis zal je goed van pas komen.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het doel van het maken van een PDF-document met een getagde afbeelding met behulp van Aspose.PDF voor .NET?
+### Wat is een getagde PDF?
+Een getagde PDF is ontworpen om toegankelijk te zijn. Het bevat metadata die ondersteunende technologieën in staat stelt om het correct te lezen en te navigeren.
 
-A: Door een PDF-document met een getagde afbeelding te maken met Aspose.PDF voor .NET kunt u getagde afbeeldingen toevoegen aan de inhoud van het document. Getagde afbeeldingen bieden gestructureerde informatie, zoals alt-tekst en titels, wat de toegankelijkheid en organisatie verbetert.
+### Kan ik meerdere afbeeldingen toevoegen met Aspose.PDF?
+ Absoluut! Herhaal gewoon de stappen voor het maken van nieuwe`IllustrationElement` instanties in uw document.
 
-#### V: Hoe helpt de Aspose.PDF-bibliotheek bij het maken van een PDF-document met een getagde afbeelding?
+### Waar kan ik meer documentatie over Aspose.PDF vinden?
+ Bekijk de documentatie[hier](https://reference.aspose.com/pdf/net/).
 
-A: Aspose.PDF voor .NET is een robuuste bibliotheek die functionaliteiten biedt voor het maken, bewerken en converteren van PDF-documenten via een programma. In deze tutorial worden de functies van de bibliotheek voor de structuur van getagde inhoud gebruikt om een getagde afbeelding toe te voegen aan het PDF-document.
+### Is er een gratis proefversie beschikbaar voor Aspose.PDF?
+ Ja! U kunt een gratis proefperiode aanvragen[hier](https://releases.aspose.com/).
 
-#### V: Wat zijn de vereisten voor het maken van een PDF-document met een getagde afbeelding met behulp van Aspose.PDF voor .NET?
-
-A: Voordat u begint, moet u ervoor zorgen dat Visual Studio met het .NET Framework is geïnstalleerd en dat de Aspose.PDF-bibliotheek voor .NET in uw project wordt vermeld.
-
-#### V: Hoe maakt de meegeleverde C#-code een PDF-document met een getagde afbeelding?
-
-A: De code laat zien hoe u een PDF-document maakt, een getagd afbeeldingselement definieert en het toevoegt aan de inhoud van het document. De getagde afbeelding bevat alt-tekst, een titel en een tag met behulp van methoden die worden geleverd door Aspose.PDF.
-
-#### V: Kan ik verschillende afbeeldingsformaten gebruiken voor de getagde afbeelding?
-
-A: Ja, u kunt verschillende afbeeldingsformaten gebruiken voor de getagde afbeelding, zoals JPEG, PNG, GIF, enz. Het codevoorbeeld in de tutorial gebruikt een JPEG-afbeelding, maar u kunt deze vervangen door het pad naar een afbeeldingsbestand in uw voorkeursformaat.
-
-#### V: Hoe wordt de alternatieve tekst (alt-tekst) gebruikt in getagde afbeeldingen?
-
- A: Alt-tekst biedt een tekstuele beschrijving van de afbeelding, die hardop wordt voorgelezen door schermlezers voor slechtziende gebruikers. In de meegeleverde code wordt de alt-tekst ingesteld met behulp van de`AlternativeText` eigendom van de`IllustrationElement` die de getagde afbeelding vertegenwoordigt.
-
-#### V: Hoe werkt de`SetTitle` method contribute to the PDF document's tagged image?
-
- A: De`SetTitle` methode stelt de titel van de getagde inhoud van het PDF-document in, wat extra context biedt voor de getagde afbeelding. Deze titel kan helpen het doel of onderwerp van de getagde inhoud te identificeren.
-
-#### V: Kan ik de tag en titel van de getagde afbeelding aanpassen?
-
- A: Ja, u kunt de tag en titel van de getagde afbeelding aanpassen met behulp van de`SetTag` En`Title` methoden van de`IllustrationElement`Het codevoorbeeld laat zien hoe u de tag instelt op "Fig" en de titel op "Picture 1".
-
-#### V: Hoe kan ik ervoor zorgen dat de getagde afbeelding toegankelijk is en voldoet aan de toegankelijkheidsnormen?
-
-A: Door de functies voor de structuur van getagde inhoud van Aspose.PDF te gebruiken en alt-tekst en andere relevante informatie te verstrekken, draagt u bij aan de toegankelijkheid van de getagde afbeelding. Om te zorgen voor naleving van toegankelijkheidsnormen, moet u de best practices voor alt-tekst en documentstructuur volgen.
-
-#### V: Is het mogelijk om meerdere getagde afbeeldingen aan hetzelfde PDF-document toe te voegen met behulp van vergelijkbare technieken?
-
-A: Ja, u kunt meerdere getagde afbeeldingen toevoegen aan hetzelfde PDF-document met behulp van vergelijkbare technieken. U zou extra`IllustrationElement` instanties voor elke getagde afbeelding en pas hun eigenschappen indien nodig aan.
+### Hoe kan ik ondersteuning krijgen voor Aspose.PDF?
+ U kunt ondersteuning krijgen door de[Aspose-forums](https://forum.aspose.com/c/pdf/10).

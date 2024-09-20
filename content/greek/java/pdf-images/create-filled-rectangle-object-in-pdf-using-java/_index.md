@@ -2,7 +2,7 @@
 title: Δημιουργήστε Γεμισμένο Ορθογώνιο Αντικείμενο σε PDF χρησιμοποιώντας Java
 linktitle: Δημιουργήστε Γεμισμένο Ορθογώνιο Αντικείμενο σε PDF χρησιμοποιώντας Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Μάθετε πώς να δημιουργείτε γεμάτα ορθογώνια σε αρχεία PDF χρησιμοποιώντας Java με το Aspose.PDF για Java. Βήμα προς βήμα σεμινάριο με παραδείγματα κώδικα.
+description: Μάθετε πώς να δημιουργείτε γεμάτα ορθογώνια σε αρχεία PDF χρησιμοποιώντας Java με το Aspose.PDF για Java. Βήμα-βήμα σεμινάριο με παραδείγματα κώδικα.
 type: docs
 weight: 12
 url: /el/java/pdf-images/create-filled-rectangle-object-in-pdf-using-java/

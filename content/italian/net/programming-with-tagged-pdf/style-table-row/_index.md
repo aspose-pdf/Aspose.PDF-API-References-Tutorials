@@ -2,156 +2,75 @@
 title: Riga della tabella di stile
 linktitle: Riga della tabella di stile
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come personalizzare le righe della tabella con Aspose.PDF per .NET, una guida dettagliata per la formattazione e lo stile delle righe.
+description: Scopri come formattare le righe di una tabella in un PDF utilizzando Aspose.PDF per .NET con una guida dettagliata per migliorare facilmente la formattazione del tuo documento.
 type: docs
 weight: 180
 url: /it/net/programming-with-tagged-pdf/style-table-row/
 ---
-In questo tutorial dettagliato, ti guideremo passo dopo passo attraverso il codice sorgente C# fornito per formattare la riga della tabella utilizzando Aspose.PDF per .NET. Segui le istruzioni sottostanti per capire come personalizzare stili e proprietà delle righe della tabella.
+## Introduzione
 
-## Fase 1: Impostazione dell'ambiente
+Quando si tratta di creare documenti PDF ben strutturati e splendidamente formattati, Aspose.PDF per .NET è una soluzione ideale. Che tu stia automatizzando report, fatture o creando tabelle dinamiche, formattare le tabelle con vari stili è fondamentale per un documento rifinito. In questo tutorial, ci immergeremo nello stile di una riga di tabella usando Aspose.PDF per .NET. E non preoccuparti, ti guiderò passo dopo passo, proprio come una bella conversazione davanti a un caffè!
 
-Prima di iniziare, assicurati di aver configurato il tuo ambiente di sviluppo per usare Aspose.PDF per .NET. Ciò include l'installazione della libreria Aspose.PDF e la configurazione del tuo progetto per farvi riferimento.
+## Prerequisiti
 
-## Fase 2: Creazione di un documento
+Prima di entrare nel vivo dell'argomento, assicuriamoci di aver messo tutto in ordine. Avrai bisogno di:
 
-In questo passaggio creeremo un nuovo oggetto documento Aspose.PDF.
+1. Aspose.PDF per la libreria .NET  
+    Se non lo hai già, puoi scaricarlo da[Qui](https://releases.aspose.com/pdf/net/) Puoi anche ottenere un[prova gratuita](https://releases.aspose.com/) per iniziare.
+2. Ambiente di sviluppo  
+   Imposta Visual Studio o qualsiasi IDE C# di tua scelta. Avrai anche bisogno di .NET installato, ma immagino che tu lo conosca già.
+3. Conoscenza di base di C# e .NET  
+   Una buona conoscenza di C# renderà questo tutorial un gioco da ragazzi. Ma non preoccuparti, spiegherò ogni passaggio in dettaglio!
+
+## Importa pacchetti
+
+Prima di poter iniziare a lavorare con Aspose.PDF, dobbiamo importare i namespace necessari. Nel tuo progetto C#, assicurati di includere quanto segue:
 
 ```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Creazione di documenti
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of Table Row Formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Abbiamo creato un nuovo documento e impostato il titolo e la lingua.
+Sono essenziali per creare e definire lo stile della tabella e, naturalmente, per lavorare con i contenuti taggati per la conformità.
 
-## Fase 3: Ottenere l'elemento della struttura radice
+Ora analizziamo il compito passo dopo passo, così potrai personalizzare le righe della tua tabella come un professionista!
 
-In questo passaggio otterremo l'elemento struttura radice per il nostro documento.
+## Passaggio 1: creare un nuovo documento PDF
 
-```csharp
-// Ottieni l'elemento della struttura radice
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Abbiamo ottenuto l'elemento della struttura radice che fungerà da contenitore per l'elemento array.
-
-## Fase 4: Creazione dell'elemento della struttura array
-
-Ora creiamo un nuovo elemento di struttura tabella per il nostro documento.
+Prima di tutto: creiamo un documento PDF completamente nuovo. Questo documento conterrà tutte le righe della tabella con stile.
 
 ```csharp
-// Crea l'elemento della struttura array
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-```
-
-Abbiamo creato un nuovo elemento della struttura array e lo abbiamo aggiunto all'elemento della struttura radice.
-
-## Passaggio 5: personalizzare gli stili e le proprietà delle righe della tabella
-
-In questa fase personalizzeremo gli stili e le proprietà delle righe della tabella.
-
-```csharp
-// Personalizza gli stili e le proprietà delle righe della tabella
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
-
-// Crea la riga dell'intestazione della tabella
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-}
-
-// Personalizza le righe del corpo della tabella
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-     trElement.BackgroundColor = Color.LightGoldenrodYellow;
-     trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-     trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-     trElement.MinRowHeight = 100.0;
-     trElement.FixedRowHeight = 120.0;
-     trElement. IsInNewPage = (rowIndex % 3 == 1);
-     trElement.IsRowBroken = true;
-     TextState cellTextState = new TextState();
-     cellTextState.ForegroundColor = Color.Red;
-     trElement. DefaultCellTextState = cellTextState;
-     trElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-     trElement.VerticalAlignment = VerticalAlignment.Bottom;
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Crea la riga del piè di pagina della tabella
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-Abbiamo personalizzato vari aspetti della riga della tabella, come il colore di sfondo, i bordi, l'altezza della riga, la paginazione, lo stile predefinito delle celle e altro ancora.
-
-## Passaggio 6: salvataggio del documento PDF taggato
-
-Ora che abbiamo creato il nostro documento con la riga della tabella formattata, lo salveremo come documento PDF con tag.
-```csharp
-// Salva il documento PDF taggato
-document.Save(dataDir + "StyleTableRow.pdf");
-```
-
-Abbiamo salvato il documento PDF taggato nella directory specificata.
-
-## Fase 7: convalida della conformità PDF/UA
-
-Successivamente valideremo la conformità PDF/UA del nostro documento.
-
-```csharp
-// Controllo di conformità PDF/UA
-document = new Document(dataDir + "StyleTableRow.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Abbiamo caricato il documento PDF taggato e ne abbiamo convalidato la conformità PDF/UA generando un report XML.
-
-
-### Esempio di codice sorgente per Style Table Row utilizzando Aspose.PDF per .NET 
-```csharp
-
 // Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Crea documento
 Document document = new Document();
+```
+
+ Qui, stiamo semplicemente inizializzando un nuovo`Document` oggetto che rappresenterà il nostro file PDF. Assicurati di impostare il percorso della directory in cui salverai i tuoi file di output.
+
+## Passaggio 2: lavorare con i contenuti taggati
+
+Per strutturare il tuo PDF per l'accessibilità, lavoreremo con contenuti taggati. Ciò aiuta a creare elementi strutturati come tabelle, assicurando che siano conformi agli standard di accessibilità come PDF/UA.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
+```
 
+Qui, stiamo impostando il titolo e la lingua per il contenuto taggato del PDF. È come dare un nome al tuo PDF e dirgli quale lingua deve parlare!
+
+## Passaggio 3: definire la struttura della tabella
+
+Ora definiamo la struttura della tabella che stiamo per creare. Ogni tabella ha bisogno di un'intestazione, un corpo e un piè di pagina, proprio come un post di blog ben organizzato!
+
+```csharp
 // Ottieni l'elemento della struttura radice
 StructureElement rootElement = taggedContent.RootElement;
 
@@ -161,103 +80,111 @@ rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
+```
+
+Quello che stiamo facendo qui è creare una tabella con un'intestazione (`THead`), corpo (`TBody`), e piè di pagina (`TFoot`). Questi elementi conterranno le nostre righe.
+
+## Passaggio 4: aggiungere la riga dell'intestazione della tabella
+
+Le tabelle senza intestazioni sono come libri senza titoli. Creiamo prima la riga di intestazione per fornire contesto ai dati.
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText(String.Format("Head {0}", colIndex));
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+Qui eseguiamo un ciclo e aggiungiamo tre celle di intestazione (`TableTHElement`), dando a ciascuno un testo descrittivo. Semplice, vero?
+
+## Passaggio 5: aggiungere righe del corpo con stile
+
+Ora arriva la parte divertente: lo stile delle righe! Creiamo sette righe con stili personalizzati. Imposteremo colori di sfondo, bordi, padding e allineamento del testo.
+
+```csharp
+for (int rowIndex = 0; rowIndex < 7; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	trElement.BackgroundColor = Color.LightGoldenrodYellow;
-	trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-	trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-	trElement.MinRowHeight = 100.0;
-	trElement.FixedRowHeight = 120.0;
-	trElement.IsInNewPage = (rowIndex % 3 == 1);
-	trElement.IsRowBroken = true;
-	TextState cellTextState = new TextState();
-	cellTextState.ForegroundColor = Color.Red;
-	trElement.DefaultCellTextState = cellTextState;
-	trElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	trElement.VerticalAlignment = VerticalAlignment.Bottom;
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = String.Format("Row {0}", rowIndex);
+    trElement.BackgroundColor = Color.LightGoldenrodYellow;
+    trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
+    trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
+    trElement.MinRowHeight = 100.0;
+    trElement.FixedRowHeight = 120.0;
+    trElement.IsInNewPage = (rowIndex % 3 == 1);
+    trElement.IsRowBroken = true;
+
+    for (int colIndex = 0; colIndex < 3; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+    }
 }
+```
+
+- Colore di sfondo: abbiamo utilizzato un giallo dorato chiaro per un tocco professionale ma caldo.
+- Bordi: ogni riga ha un bordo esterno grigio scuro e bordi delle celle blu per un aspetto più definito.
+- Altezza e spaziatura: vengono impostate le altezze delle righe e viene aggiunta una spaziatura per un aspetto più pulito.
+- Interruzioni di pagina: per rendere la tabella più leggibile, ogni seconda riga inizia su una nuova pagina.
+
+## Passaggio 6: aggiungere la riga del piè di pagina
+
+Proprio come l'intestazione, il piè di pagina ancora la tabella. Creiamone uno.
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
+```
 
-// Salva il documento PDF taggato
+Semplicemente eseguiamo un ciclo attraverso tre celle del footer e aggiungiamo un po' di testo. Il testo alternativo per il footer è "Foot Row" per renderlo accessibile.
+
+## Passaggio 7: Salvare il documento PDF
+
+Ora che il tavolo è pronto, è il momento di salvare il tuo capolavoro!
+
+```csharp
 document.Save(dataDir + "StyleTableRow.pdf");
+```
 
-// Controllo della conformità PDF/UA
+In questo modo, il tuo PDF verrà salvato con tutte le splendide righe della tabella che abbiamo appena formattato.
+
+## Fase 8: convalidare la conformità PDF/UA
+
+Per garantire che il nostro PDF rispetti gli standard di accessibilità, lo valideremo per la conformità PDF/UA.
+
+```csharp
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Ciò garantisce che il tuo PDF soddisfi lo standard PDF/UA, rendendolo accessibile a tutti. Accessibilità è il nome del gioco!
 
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come formattare le righe di tabella con Aspose.PDF per .NET. Abbiamo personalizzato gli stili e le proprietà delle righe di tabella, aggiunto le intestazioni, le righe del corpo e il piè di pagina, salvato il documento PDF taggato e convalidato la sua conformità PDF/UA.
+Ed ecco fatto! Con solo poche righe di codice, hai creato una tabella completamente stilizzata in un PDF usando Aspose.PDF per .NET. Dalle intestazioni ai piè di pagina, abbiamo stilizzato ogni riga, aggiunto elementi di accessibilità e persino convalidato il documento per la conformità. Che tu stia lavorando a report aziendali, presentazioni o semplicemente divertendoti con i PDF, questa guida ti copre. Ora, vai avanti e inizia a stilizzare le tue tabelle come un professionista!
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Qual è lo scopo di questo tutorial sulla formattazione delle righe di una tabella utilizzando Aspose.PDF per .NET?
+### Posso cambiare anche lo stile del carattere della tabella?  
+ Sì! Puoi modificare lo stile del carattere utilizzando`TextState` oggetto per ogni cella, consentendo una personalizzazione completa.
 
-R: Lo scopo di questo tutorial è guidarti attraverso il processo di formattazione delle righe di tabella in un documento PDF utilizzando Aspose.PDF per .NET. Fornisce istruzioni dettagliate ed esempi di codice sorgente C# per aiutarti a personalizzare stili e proprietà delle righe di tabella.
+### Come posso aggiungere altre colonne alla mia tabella?  
+ Basta regolare il`colCount`variabile e aggiungere altre celle nei cicli per intestazioni, corpo e piè di pagina.
 
-#### D: Quali sono i prerequisiti per seguire questo tutorial?
+### Cosa succede se non imposto l'altezza della riga?  
+Se non imposti l'altezza della riga, la tabella si adatterà automaticamente in base al contenuto.
 
-R: Prima di iniziare, assicurati di aver impostato il tuo ambiente di sviluppo per usare Aspose.PDF per .NET. Ciò comporta l'installazione della libreria Aspose.PDF e la configurazione del tuo progetto per farvi riferimento.
+### Posso usarlo per un numero dinamico di righe?  
+Assolutamente! Puoi recuperare dati da un database o da qualsiasi altra fonte e modificare dinamicamente i conteggi di righe e colonne.
 
-#### D: Come posso creare un nuovo documento PDF e impostarne il titolo e la lingua utilizzando Aspose.PDF per .NET?
-
- A: Per creare un nuovo documento PDF, è necessario creare un`Document` oggetto dalla libreria Aspose.PDF. Il codice sorgente C# fornito dal tutorial dimostra come creare un documento e impostarne le proprietà titolo e lingua.
-
-#### D: Qual è il significato dell'elemento struttura radice in un documento PDF?
-
-A: L'elemento struttura radice funge da contenitore per altri elementi struttura, aiutando a organizzare e categorizzare il contenuto del documento PDF. Svolge un ruolo cruciale nello stabilire la struttura logica del documento.
-
-#### D: Come posso creare e personalizzare un elemento della struttura della tabella per formattare le righe della tabella utilizzando Aspose.PDF per .NET?
-
-R: Il tutorial spiega come creare un elemento struttura tabella e personalizzare le sue proprietà per formattare le righe della tabella. Copre aspetti quali colore di sfondo, bordi, altezza riga, impaginazione, stile cella predefinito e altro.
-
-#### D: Posso personalizzare gli stili e le proprietà delle singole celle all'interno di una riga di una tabella?
-
-R: Sì, puoi personalizzare gli stili e le proprietà delle singole celle all'interno di una riga di tabella. Il tutorial mostra come impostare proprietà quali colore di sfondo, bordi, colore del testo, padding e altro per le celle di tabella all'interno della riga di tabella formattata.
-
-#### D: Come posso aggiungere intestazioni, righe del corpo e un piè di pagina alla riga della tabella formattata?
-
-R: Il tutorial fornisce esempi di creazione e aggiunta di intestazioni, righe del corpo e un piè di pagina all'elemento struttura tabella. Questi elementi possono essere ulteriormente personalizzati utilizzando le proprietà descritte nel tutorial.
-
-#### D: Che cos'è la conformità PDF/UA e come posso convalidarla per il mio documento PDF taggato?
-
- A: La conformità PDF/UA assicura che il documento PDF sia conforme agli standard di accessibilità, rendendolo più accessibile agli utenti con disabilità. Il tutorial mostra come convalidare la conformità PDF/UA utilizzando`Validate()` metodo e generare un report di conformità XML.
-
-#### D: Come posso integrare questi concetti nelle mie applicazioni .NET?
-
-R: Puoi usare gli esempi di codice sorgente C# forniti come guida per implementare la formattazione delle righe di tabella nelle tue applicazioni .NET. Modifica e adatta il codice per adattarlo ai tuoi requisiti e integralo nei tuoi progetti.
-
-#### D: Esistono delle buone pratiche consigliate per la formattazione delle righe delle tabelle nei documenti PDF?
-
-R: Quando formatti le righe della tabella, considera la leggibilità e l'accessibilità del contenuto. Assicurati che i colori abbiano un contrasto sufficiente, usa caratteri chiari e leggibili e mantieni un layout coerente. Convalida la conformità PDF/UA per garantire che gli standard di accessibilità siano rispettati.
-
-#### D: Quali altre funzionalità di Aspose.PDF per .NET posso esplorare per la personalizzazione dei documenti PDF?
-
-R: Aspose.PDF per .NET offre un'ampia gamma di funzionalità per la personalizzazione dei documenti PDF, tra cui manipolazione del testo, inserimento di immagini, gestione dei campi dei moduli, firme digitali, annotazioni e altro ancora. Consulta la documentazione e le risorse ufficiali per esplorare funzionalità aggiuntive.
+### Aspose.PDF per .NET è gratuito?  
+ Aspose.PDF per .NET è un prodotto concesso in licenza, ma puoi provarlo con un[prova gratuita](https://releases.aspose.com/) o ottenere un[licenza temporanea](https://purchase.aspose.com/temporary-license/).

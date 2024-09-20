@@ -17,7 +17,7 @@ Mielőtt belemerülnénk ennek az oktatóanyagnak az anyáiba és csavarjaiba, g
 
 -  Aspose.PDF .NET-hez: telepítenie kell ezt a hatékony könyvtárat. Ha még nem vetted meg, akkor letöltheted[itt](https://releases.aspose.com/pdf/net/).
 - Fejlesztői környezet: Visual Studio (vagy bármely tetszőleges C# IDE).
-- Alapvető C# ismeretek: Ne aggódjon, nem kell varázslónak lenned, elég egy alapismeret.
+- Alapvető C# ismerete: Ne aggódjon, nem kell varázslónak lenned, elég egy alapismeret.
 - PDF-fájl megjegyzésekkel: Olyan PDF-fájlra lesz szüksége, amely megjegyzéseket tartalmaz. Ha nem rendelkezik ilyennel, hozzon létre egy egyszerű PDF-fájlt, és a gyakorlathoz adjon hozzá néhány megjegyzést.
 
 ## Csomagok importálása

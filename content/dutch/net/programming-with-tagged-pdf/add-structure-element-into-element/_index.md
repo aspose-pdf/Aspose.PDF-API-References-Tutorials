@@ -2,135 +2,129 @@
 title: Structuurelement toevoegen aan element
 linktitle: Structuurelement toevoegen aan element
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het toevoegen van structuurelementen in een PDF-document met behulp van Aspose.PDF voor .NET.
+description: Leer in deze uitgebreide stapsgewijze zelfstudie hoe u toegankelijkheidsstructuurelementen toevoegt aan PDF's met behulp van Aspose.PDF voor .NET.
 type: docs
 weight: 20
 url: /nl/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-In deze tutorial geven we u een stapsgewijze handleiding over hoe u een structuurelement toevoegt aan een element in een PDF-document met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt maken, bewerken en converteren. Met behulp van de gemarkeerde inhoudsstructuurfuncties van Aspose.PDF kunt u een hiërarchische structuur in uw PDF-document maken.
+## Invoering
+
+In de digitale wereld van vandaag is toegankelijkheid essentieel. Iedereen zou gelijke toegang tot informatie moeten hebben en het is cruciaal om het in een formaat te verstrekken waar iedereen gemakkelijk doorheen kan navigeren. In deze tutorial duiken we in hoe je PDF-toegankelijkheid kunt verbeteren door structuurelementen toe te voegen met Aspose.PDF voor .NET. Deze krachtige bibliotheek stelt ontwikkelaars in staat om naadloos te werken met PDF-documenten, waardoor ze getagde PDF's kunnen maken die voldoen aan toegankelijkheidsnormen.
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat aan de volgende voorwaarden is voldaan:
+Voordat we beginnen met onze reis door de wereld van PDF-structuurelementen, controleren we eerst of u alles hebt wat u nodig hebt:
 
-1. Visual Studio geïnstalleerd met .NET Framework.
-2. De Aspose.PDF-bibliotheek voor .NET.
+1.  Visuele Studio: Dit is uw IDE waar u uw C#-code schrijft en uitvoert. U kunt het downloaden van[Visual Studio](https://visualstudio.microsoft.com/) als je dat nog niet gedaan hebt.
+2.  Aspose.PDF voor .NET-bibliotheek: U hebt de bibliotheek nodig om PDF's te bewerken. Download de nieuwste versie van de[Aspose-website](https://releases.aspose.com/pdf/net/)Deze bibliotheek is cruciaal voor ons project.
+3. Basiskennis van C#: Kennis van C#-syntaxis en objectgeoriënteerd programmeren is een pré. Als je met plezier een paar regels C# kunt schrijven, ben je klaar om te gaan!
+4. Een PDF-documentenmap: maak een map op uw systeem waar u de invoer- en uitvoer-PDF-bestanden voor deze tutorial bewaart.
 
-## Stap 1: Projectinstelling
+Nu we onze hulpmiddelen en kennis op orde hebben, kunnen we de benodigde pakketten inzetten om van start te gaan!
 
-Om te beginnen, maak een nieuw project in Visual Studio en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. U kunt de bibliotheek downloaden van de officiële Aspose-website en deze op uw machine installeren.
+## Pakketten importeren
 
-## Stap 2: Importeer de benodigde naamruimten
-
-Importeer in uw C#-codebestand de naamruimten die nodig zijn om toegang te krijgen tot de klassen en methoden die door Aspose.PDF worden aangeboden:
+Laten we eerst de benodigde namespaces importeren. Zorg ervoor dat het volgende bovenaan uw C#-bestand staat:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
 ```
 
-## Stap 3: Het PDF-document maken en de gestructureerde elementen definiëren
+Deze naamruimten geven u toegang tot de klassen en methoden die nodig zijn om met uw PDF-documenten te werken en om getagde content te maken. Laten we nu naar de kern van de zaak gaan en beginnen met coderen!
 
-Gebruik de volgende code om een PDF-document te maken en de gestructureerde elementen te definiëren:
+## Stap 1: Stel uw documentenmap in
+
+Voordat er codering plaatsvindt, moeten we vaststellen waar we onze bestanden opslaan. Dit is cruciaal om ons script soepel te laten verlopen.
 
 ```csharp
+// Definieer het pad naar de documentenmap.
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+```
 
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad waar u uw PDF-bestanden wilt bewaren. Dit kan zoiets zijn als`C:\\PDFs\\`.
 
+## Stap 2: Maak een nieuw PDF-document
+
+Nu we de directory hebben ingesteld, kunnen we een PDF-document maken waaraan we onze structuurelementen toevoegen.
+
+```csharp
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Text Items");
-taggedContent.SetLanguage("fr-FR");
-
-StructureElement rootElement = taggedContent.RootElement;
-
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-SpanElement span11 = taggedContent.CreateSpanElement();
-span11.SetText("Span_11");
-SpanElement span12 = taggedContent.CreateSpanElement();
-span12.SetText(" and Span_12.");
-p1.SetText("Paragraph with ");
-p1.AppendChild(span11);
-p1.AppendChild(span12);
-
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-SpanElement span21 = taggedContent.CreateSpanElement();
-span21.SetText("Span_21");
-SpanElement span22 = taggedContent.CreateSpanElement();
-span22.SetText("Span_22.");
-p2.AppendChild(span21);
-p2.SetText(" and ");
-p2.AppendChild(span22);
-
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-root
-
-Element.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
 ```
 
-Deze code creëert een leeg PDF-document en voegt gestructureerde elementen toe, zoals paragrafen en spans. Elk structuurelement wordt gecreëerd met behulp van de methoden die worden geleverd door Aspose.PDF.
+ Deze regel initialiseert een nieuw exemplaar van de`Document` klasse, zodat we met onze PDF-inhoud aan de slag kunnen.
 
-## Stap 4: Het PDF-document opslaan
+## Stap 3: Toegang tot en instellen van getagde inhoud
 
-Gebruik de volgende code om het PDF-document op te slaan:
+Zodra uw document klaar is, is het tijd om getagde inhoud in te stellen. Dit is essentieel voor de toegankelijkheid.
+
+### Gelabelde inhoud initialiseren
 
 ```csharp
-document. Save(outFile);
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Deze code slaat het PDF-document met de gestructureerde elementen op in een opgegeven bestand.
+Deze regel biedt toegang tot de getagde inhoud van uw PDF. Getagde inhoud is noodzakelijk voor schermlezers om uw document nauwkeurig te interpreteren.
 
-### Voorbeeldbroncode voor het toevoegen van structuurelementen aan elementen met behulp van Aspose.PDF voor .NET 
+### Documentmetagegevens instellen
+
+Geef uw document een passende titel en definieer de taal.
+
 ```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
-//Creatiedocument en getagde pdf-inhoud verkrijgen
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-// Titel en aardtaal voor document instellen
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Rootstructuurelement verkrijgen (Documentstructuurelement)
+```
+
+Hierdoor worden de metagegevens van het document verbeterd en is het document beter toegankelijk.
+
+## Stap 4: Structuurelementen maken en toevoegen
+
+Laten we wat structuur toevoegen! Dit houdt in dat we paragrafen en span-elementen moeten maken om een correct geformatteerd en getagd document te maken.
+
+### Maak een rootstructuurelement
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+Nu gaan we onze eerste set alinea's en overspanningselementen maken.
+
+### Eerste alinea-element maken
+
+```csharp
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+
+Hier initialiseren we een nieuw paragraafelement en voegen het toe aan het rootstructuurelement. Dit is het startpunt van uw content!
+
+### Span-elementen toevoegen aan alinea
+
+```csharp
 SpanElement span11 = taggedContent.CreateSpanElement();
 span11.SetText("Span_11");
 SpanElement span12 = taggedContent.CreateSpanElement();
 span12.SetText(" and Span_12.");
+```
+
+ De`span` elementen zijn als mini-paragrafen binnen onze grotere paragraaf. Ze bieden een fijnere controle over de tekstopmaak.
+
+### Combineer het allemaal
+
+Laten we nu de volledige alinea samenstellen met alle elementen samen:
+
+```csharp
 p1.SetText("Paragraph with ");
 p1.AppendChild(span11);
 p1.AppendChild(span12);
+```
+
+### Herhaal dit voor extra alinea's
+
+U herhaalt dit proces voor de volgende paragrafen:
+
+```csharp
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 SpanElement span21 = taggedContent.CreateSpanElement();
@@ -140,77 +134,60 @@ span22.SetText("Span_22.");
 p2.AppendChild(span21);
 p2.SetText(" and ");
 p2.AppendChild(span22);
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
-// Gelabeld PDF-document opslaan
+```
+
+ Blijf gewoon creëren`ParagraphElement` s en`SpanElement` s, door ze aan de`rootElement` op dezelfde manier als hierboven getoond voor`p1`.
+
+## Stap 5: Sla uw document op
+
+Zodra alle structuurelementen op hun plaats staan, is het tijd om uw PDF-document op te slaan.
+
+### Geef het pad van het uitvoerbestand op
+
+```csharp
+string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
+```
+
+### Document opslaan
+
+```csharp
 document.Save(outFile);
-// Controleren van PDF/UA-compatibiliteit
+```
+
+Dit is waar de magie gebeurt! Uw document wordt opgeslagen in het opgegeven pad naar het uitvoerbestand.
+
+## Stap 6: Valideer PDF/UA-naleving
+
+De laatste stap is controleren of uw document voldoet aan de PDF/UA-normen voor toegankelijkheid.
+
+Gebruik de volgende code om te controleren of er aan de vereisten wordt voldaan:
+
+```csharp
 document = new Document(outFile);
+string logFile = dataDir + "46144_log.xml";
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Hiermee wordt aangegeven of uw document voldoet aan de PDF/UA-standaarden, wat essentieel is voor de toegankelijkheid.
 
 ## Conclusie
 
-In deze tutorial hebt u geleerd hoe u een structuurelement toevoegt aan een element in een PDF-document met Aspose.PDF voor .NET. Met behulp van de gemarkeerde inhoudsstructuurfuncties van Aspose.PDF kunt u een hiërarchische structuur in uw PDF-document maken, waardoor het eenvoudiger wordt om inhoud te beheren en erdoorheen te navigeren.
+En daar heb je het! Je hebt zojuist geleerd hoe je structuurelementen toevoegt aan een PDF-document met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je elke PDF omzetten in een toegankelijk formaat dat voldoet aan de standaarden, zodat iedereen gelijke toegang heeft tot informatie. 
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het doel van het toevoegen van een structuurelement aan een element in een PDF-document met behulp van Aspose.PDF voor .NET?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-A: Door een structuurelement toe te voegen aan een element in een PDF-document met Aspose.PDF voor .NET kunt u een hiërarchische structuur maken binnen de inhoud van het document. Deze hiërarchische structuur verbetert de organisatie en navigatie van de inhoud, waardoor het eenvoudiger wordt om specifieke elementen te beheren en te openen.
+### Hoe controleer ik of mijn PDF toegankelijk is?
+U kunt uw PDF valideren aan de hand van PDF/UA-normen met behulp van de Aspose.PDF-bibliotheek om er zeker van te zijn dat deze voldoet aan de richtlijnen voor toegankelijkheid.
 
-#### V: Hoe helpt de Aspose.PDF-bibliotheek bij het toevoegen van structuurelementen aan een PDF-document?
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefversie, waarmee u de functies ervan gratis kunt verkennen. U kunt het downloaden[hier](https://releases.aspose.com/).
 
-A: Aspose.PDF voor .NET is een krachtige bibliotheek die mogelijkheden biedt voor het maken, manipuleren en converteren van PDF-documenten via een programma. In deze tutorial worden de gemarkeerde inhoudsstructuurfuncties van de bibliotheek gebruikt om structuurelementen te maken en toe te voegen aan de inhoud van het PDF-document.
+### Waar kan ik de documentatie voor Aspose.PDF vinden?
+ kunt uitgebreide documentatie voor Aspose.PDF vinden[hier](https://reference.aspose.com/pdf/net/).
 
-#### V: Wat zijn de vereisten voor het toevoegen van structuurelementen aan een PDF-document met Aspose.PDF voor .NET?
-
-A: Voordat u begint, moet u ervoor zorgen dat Visual Studio met het .NET Framework is geïnstalleerd en dat de Aspose.PDF-bibliotheek voor .NET in uw project wordt vermeld.
-
-#### V: Hoe worden met de meegeleverde C#-code structuurelementen aan de inhoud van het PDF-document toegevoegd?
-
-A: De code laat zien hoe u een PDF-document maakt, een rootstructuurelement definieert en verschillende gestructureerde elementen zoals paragrafen en spans eraan toevoegt. Elk gestructureerd element wordt gemaakt met behulp van methoden die worden geleverd door Aspose.PDF, zodat u een hiërarchische structuur kunt bouwen.
-
-#### V: Kan ik de typen structuurelementen die ik aan het PDF-document toevoeg, aanpassen?
-
-A: Ja, u kunt de typen structuurelementen aanpassen door verschillende methoden te verkennen die worden geboden door de Aspose.PDF-bibliotheek. De code toont paragrafen en spans als voorbeelden, maar u kunt indien nodig andere typen gestructureerde elementen maken en toevoegen.
-
-#### V: Hoe definieer ik de hiërarchische relatie tussen de toegevoegde structuurelementen?
-
- A: De hiërarchische relatie tussen structuurelementen wordt gedefinieerd door de volgorde waarin u ze aan hun bovenliggende elementen toevoegt. In de code worden de bovenliggende-onderliggende relaties vastgesteld met behulp van de`AppendChild` methode.
-
-#### V: Wat zijn de voordelen van het creëren van een hiërarchische structuur in een PDF-document?
-
-A: Het creëren van een hiërarchische structuur in een PDF-document verbetert de toegankelijkheid, navigatie en organisatie ervan. Het zorgt ervoor dat ondersteunende technologieën de inhoud van het document beter kunnen interpreteren en overbrengen, waardoor het gebruiksvriendelijker wordt voor personen met een beperking.
-
-#### V: Hoe kan ik de PDF/UA-conformiteit valideren nadat ik structuurelementen heb toegevoegd?
-
-A: De code in de tutorial laat zien hoe u PDF/UA-naleving kunt valideren met behulp van de`Validate` methode. Door het document te valideren tegen de PDF/UA-standaard, kunt u ervoor zorgen dat de toegevoegde structuurelementen voldoen aan de toegankelijkheidsrichtlijnen.
-
-#### V: Kan ik deze aanpak gebruiken om structuurelementen toe te voegen aan een bestaand PDF-document?
-
-A: Ja, u kunt de geboden aanpak aanpassen om structuurelementen toe te voegen aan een bestaand PDF-document. In plaats van een nieuw document te maken, laadt u het bestaande document met Aspose.PDF en volgt u vervolgens vergelijkbare stappen om structuurelementen toe te voegen.
+### Hoe koop ik een licentie voor Aspose.PDF?
+ U kunt een licentie rechtstreeks via de Aspose-website kopen[hier](https://purchase.aspose.com/buy).

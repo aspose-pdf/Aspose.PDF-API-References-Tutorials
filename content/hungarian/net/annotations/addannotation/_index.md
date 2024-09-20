@@ -44,7 +44,7 @@ string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
- Ez történik: megadja a könyvtárat, ahol a PDF-fájlt tárolja, majd betölti a`Document` osztályt az Aspose.PDF biztosítja. Ez a lépés döntő fontosságú, mert a dokumentum betöltése nélkül nem tud módosítani rajta.
+ Ez történik: megadja a könyvtárat, ahol a PDF-fájlt tárolja, majd betölti a`Document` osztály által biztosított Aspose.PDF. Ez a lépés döntő fontosságú, mert a dokumentum betöltése nélkül nem tud módosítani rajta.
 
 ## 2. lépés: Hozzon létre egy megjegyzést
 

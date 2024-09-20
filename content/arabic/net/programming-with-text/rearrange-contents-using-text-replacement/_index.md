@@ -2,136 +2,131 @@
 title: إعادة ترتيب المحتويات باستخدام استبدال النص
 linktitle: إعادة ترتيب المحتويات باستخدام استبدال النص
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية إعادة ترتيب المحتويات في مستند PDF باستخدام استبدال النص مع Aspose.PDF لـ .NET.
+description: تعرف على كيفية إعادة ترتيب محتويات PDF باستخدام استبدال النص باستخدام Aspose.PDF لـ .NET. برنامج تعليمي خطوة بخطوة لتحسين مهاراتك في تحرير المستندات.
 type: docs
 weight: 270
 url: /ar/net/programming-with-text/rearrange-contents-using-text-replacement/
 ---
-في هذا البرنامج التعليمي، سنشرح كيفية إعادة ترتيب المحتويات في مستند PDF باستخدام استبدال النص مع مكتبة Aspose.PDF لـ .NET. سنمر بعملية تحميل PDF خطوة بخطوة، والبحث عن أجزاء نصية محددة، واستبدال النص، وحفظ ملف PDF المعدل باستخدام كود المصدر C# المقدم.
+## مقدمة
 
-## متطلبات
+عندما يتعلق الأمر بالعمل مع مستندات PDF برمجيًا، فإن القدرة على إعادة ترتيب المحتويات يمكن أن تكون بمثابة تغيير كبير. سواء كنت تقوم بتحديث أسماء الشركات أو تغيير العناوين أو مجرد تحرير النص من أجل الوضوح، فإن Aspose.PDF for .NET يوفر أدوات قوية للتعامل مع ملفات PDF بسلاسة. في هذا البرنامج التعليمي، سنرشدك خلال استخدام Aspose.PDF لإعادة ترتيب المحتويات في مستند PDF عن طريق استبدال أجزاء نصية معينة. هل أنت مستعد للبدء؟ هيا بنا!
 
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+## المتطلبات الأساسية
 
-- تم تثبيت مكتبة Aspose.PDF لـ .NET.
-- فهم أساسي لبرمجة C#.
+قبل أن نبدأ، تأكد من أن لديك ما يلي جاهزًا:
 
-## الخطوة 1: إعداد دليل المستندات
+1.  Aspose.PDF لـ .NET: تأكد من تثبيت Aspose.PDF في مشروعك. يمكنك تنزيله من[هنا](https://releases.aspose.com/pdf/net/).
+2. بيئة تطوير .NET: تعد بيئة .NET (مثل Visual Studio) ضرورية. ستعمل أمثلة التعليمات البرمجية مع C#.
+3. الفهم الأساسي للغة C#: ستساعدك المعرفة ببرمجة C# على التنقل عبر الكود بشكل فعال.
 
- أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي توجد به ملفات PDF الخاصة بك. استبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى ملفات PDF الخاصة بك.
+## استيراد الحزم
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+للبدء، تحتاج إلى استيراد مساحات الأسماء الضرورية. إليك كيفية القيام بذلك:
+
+### أضف المراجع الضرورية
+
+ابدأ بإنشاء تطبيق وحدة تحكم جديد في بيئة التطوير المتكاملة .NET المفضلة لديك. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF. يمكنك القيام بذلك عبر مدير الحزم NuGet:
+
+```sh
+Install-Package Aspose.PDF
 ```
 
-## الخطوة 2: تحميل ملف PDF المصدر
+### تضمين مساحات الأسماء
 
- بعد ذلك، نقوم بتحميل مستند PDF المصدر باستخدام`Document` الفئة من مكتبة Aspose.PDF.
+في ملف البرنامج الرئيسي الخاص بك، قم بتضمين المساحات الأسماء التالية للوصول إلى الفئات المطلوبة:
 
 ```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+```
+
+الآن بعد أن هيأنا المسرح، دعونا نقسم العملية إلى خطوات واضحة وسهلة الهضم.
+
+## الخطوة 1: تهيئة المستند
+
+أولاً، ستحتاج إلى إعداد مستندك. يتضمن ذلك تحميل ملف PDF الذي تريد تعديله.
+
+```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// تحميل ملف PDF المصدر
 Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 ```
+ هنا، يمكنك تحديد الدليل الذي سيتم تخزين ملف PDF الخاص بك فيه.`Document`يتم استخدام الفئة لتحميل ملف PDF الموجود لدينا`ExtractTextPage.pdf`.
 
-## الخطوة 3: البحث عن أجزاء النص واستبدالها
+## الخطوة 2: إنشاء ممتص النص
 
- نحن ننشئ`TextFragmentAbsorber` كائن به تعبير عادي للبحث عن أجزاء نصية محددة. ثم نكرر البحث في أجزاء النص، ونخصص الخط والحجم واللون ونستبدل النص.
+ بعد ذلك، سنقوم بإنشاء`TextFragmentAbsorber` الكائن. يسمح لنا هذا بالعثور على أجزاء نصية محددة باستخدام تعبير عادي.
 
 ```csharp
+// إنشاء كائن امتصاص TextFragment باستخدام تعبير عادي
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 doc.Pages.Accept(textFragmentAbsorber);
+```
+ ال`TextFragmentAbsorber` يستخدم نمطًا لتحديد أجزاء النص التي تريد استبدالها. اضبط التعبير العادي حسب الحاجة للنص المحدد لديك.
 
-foreach(TextFragment textFragment in textFragmentAbsorber.TextFragments)
+## الخطوة 3: استبدال كل جزء من النص
+
+الآن يأتي الجزء الممتع: تعديل أجزاء النص التي تم العثور عليها.
+
+```csharp
+// استبدال كل جزء نصي
+foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 {
-     textFragment.TextState.Font = FontRepository.FindFont("Arial");
-     textFragment.TextState.FontSize = 12;
-     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
-     textFragment.Text = "This is a Larger String for the Testing of this issue";
+    // تعيين خط جزء النص الذي يتم استبداله
+    textFragment.TextState.Font = FontRepository.FindFont("Arial");
+    // ضبط حجم الخط
+    textFragment.TextState.FontSize = 12;
+    textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
+    // استبدال النص بسلسلة أكبر من العنصر النائب
+    textFragment.Text = "This is a Larger String for the Testing of this issue";
 }
 ```
+ داخل الحلقة، نكرر كل شيء`TextFragment` تم العثور عليها. هنا، نقوم بتخصيص نمط الخط وحجمه ولونه. والأهم من ذلك، نقوم باستبدال النص الأصلي بالسلسلة الجديدة.
 
-## الخطوة 4: احفظ ملف PDF المعدّل
+## الخطوة 4: حفظ المستند المعدل
 
-وأخيرًا، نقوم بحفظ مستند PDF المعدّل في ملف الإخراج المحدد.
+وأخيرًا، دعونا نحفظ تغييراتنا في ملف PDF جديد.
 
 ```csharp
 dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
+// حفظ ملف PDF الناتج
 doc.Save(dataDir);
 Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 ```
+ يتم حفظ ملف PDF المعدل باستخدام`Save`الطريقة. تأكد من إضافة اسم ملف مناسب لتجنب الكتابة فوق الملف الأصلي.
 
-### عينة من كود المصدر لإعادة ترتيب المحتويات باستخدام استبدال النص باستخدام Aspose.PDF لـ .NET 
+## الخطوة 5: التعامل مع الاستثناءات
+
+يعد دمج معالجة الأخطاء أمرًا ضروريًا، خاصة عند العمل مع عمليات الملفات.
+
 ```csharp
-try
-{
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// تحميل ملف PDF المصدر
-	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// إنشاء كائن امتصاص TextFragment باستخدام تعبير عادي
-	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
-	doc.Pages.Accept(textFragmentAbsorber);
-	// استبدال كل جزء نصي
-	foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
-	{
-		// تعيين خط جزء النص الذي يتم استبداله
-		textFragment.TextState.Font = FontRepository.FindFont("Arial");
-		// ضبط حجم الخط
-		textFragment.TextState.FontSize = 12;
-		textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
-		// استبدال النص بسلسلة أكبر من العنصر النائب
-		textFragment.Text = "This is a Larger String for the Testing of this issue";
-	}
-	dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
-	// حفظ ملف PDF الناتج
-	doc.Save(dataDir);
-	Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase a full license or get a 30-day temporary license from http://www.aspose.com/purchase/default.aspx.");
 }
 ```
+يتيح لك اكتشاف الاستثناءات التعامل بسلاسة مع أي مشكلات قد تنشأ—مثل مشكلات الوصول إلى الملفات أو التراخيص غير الصالحة. وهذه ممارسة مهمة في تطوير البرامج!
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية إعادة ترتيب المحتويات في مستند PDF باستخدام استبدال النص باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ التعليمات البرمجية C# المقدمة، يمكنك البحث عن أجزاء نصية معينة وتخصيص مظهرها واستبدال النص في مستند PDF.
+وهذا كل شيء! لقد نجحت في إعادة ترتيب المحتويات في مستند PDF باستخدام Aspose.PDF for .NET. باستخدام بضعة أسطر فقط من التعليمات البرمجية، يمكنك استبدال أجزاء نصية معينة وتخصيصها حسب رغبتك. من المدهش مدى القوة التي تمنحك إياها هذه المكتبة في التعامل مع ملفات PDF. يمكنك الآن المضي قدمًا واللعب بمزيد من عمليات استبدال النصوص أو حتى استكشاف الوظائف الأخرى التي توفرها Aspose.PDF.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "إعادة ترتيب المحتويات باستخدام استبدال النص"؟
+### هل يمكنني استبدال أجزاء نصية متعددة مختلفة؟
+نعم! ما عليك سوى ضبط تعبيرك العادي ليتوافق مع أنماط متعددة.
 
-ج: يوضح البرنامج التعليمي "إعادة ترتيب المحتويات باستخدام استبدال النص" كيفية استخدام مكتبة Aspose.PDF لـ .NET لإعادة ترتيب المحتويات في مستند PDF عن طريق استبدال النص. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لمساعدتك في تحميل ملف PDF والبحث عن أجزاء نصية معينة واستبدال النص وحفظ ملف PDF المعدل.
+### هل Aspose.PDF مجاني؟
+يقدم Aspose.PDF نسخة تجريبية مجانية محدودة. وللحصول على الميزات الكاملة، يلزم الحصول على ترخيص.
 
-#### س: لماذا أرغب في إعادة ترتيب المحتويات في مستند PDF؟
+### ماذا لو لم يتم العثور على جزء النص الخاص بي؟
+سيقوم الممتص ببساطة بإرجاع مجموعة فارغة. تأكد من تطابق نمط التعبيرات العادية.
 
-ج: يمكن أن تكون إعادة ترتيب المحتويات في مستند PDF مفيدة لأغراض مختلفة، مثل تحديث النص أو إعادة تنسيق التخطيط أو إجراء تصحيحات. تتيح لك هذه التقنية تعديل محتوى ملف PDF ديناميكيًا مع الحفاظ على بنيته ومظهره.
+### هل يمكنني تغيير الصور أو الرسومات في ملف PDF؟
+يوفر Aspose.PDF أيضًا طرقًا متنوعة للتعامل مع الصور.
 
-#### س: كيف أقوم بإعداد دليل المستندات؟
-
-أ: لإعداد دليل المستندات:
-
-1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل الذي توجد به ملفات PDF الخاصة بك.
-
-#### س: كيف أقوم باستبدال النص في مستند PDF؟
-
- أ: يرشدك البرنامج التعليمي خلال عملية البحث عن أجزاء نصية محددة في ملف PDF باستخدام`TextFragmentAbsorber`يوضح كيفية تخصيص مظهر أجزاء النص واستبدال محتواها.
-
-#### س: هل يمكنني تخصيص الخط والحجم ولون النص المستبدل؟
-
- ج: نعم، يمكنك تخصيص الخط والحجم ولون النص المستبدل عن طريق تعديل`TextState` خصائص`TextFragment` يوفر البرنامج التعليمي مثالاً لكيفية تعيين الخط وحجم الخط ولون مقدمة النص.
-
-#### س: كيف أحفظ مستند PDF المعدل؟
-
- أ: بعد إجراء استبدال النص وتخصيص أجزاء النص، يمكنك حفظ مستند PDF المعدل باستخدام`Save` طريقة`Document` الفئة. قم بتوفير مسار ملف الإخراج المطلوب كحجة لـ`Save` طريقة.
-
-#### س: ما هي النتيجة المتوقعة من هذا البرنامج التعليمي؟
-
-ج: باتباع البرنامج التعليمي وتنفيذ كود C# المقدم، ستتمكن من إنشاء مستند PDF معدّل حيث تم استبدال أجزاء نصية محددة وتخصيصها وفقًا لمواصفاتك.
-
-#### س: هل يمكنني استخدام تعبيرات منتظمة مختلفة للبحث النصي؟
-
- ج: نعم، يمكنك استخدام تعبيرات منتظمة مختلفة للبحث عن أجزاء نصية محددة في مستند PDF. يوضح المثال المقدم في البرنامج التعليمي كيفية إنشاء`TextFragmentAbsorber`كائن يحتوي على تعبير منتظم محدد للبحث عن نص واستبداله.
-
-#### س: هل يلزم الحصول على ترخيص Aspose صالح لهذا البرنامج التعليمي؟
-
-ج: نعم، يلزم الحصول على ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose على الويب.
+### كيف أحصل على الدعم لـ Aspose.PDF؟
+ يمكنك العثور على المساعدة على موقعهم[منتدى الدعم](https://forum.aspose.com/c/pdf/10).

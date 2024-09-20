@@ -63,7 +63,7 @@ LatexLoadOptions Latexoptions = new LatexLoadOptions();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "samplefile.tex", Latexoptions);
 ```
 
-この行では、`"samplefile.tex"` TeXファイルの名前にする必要があります。`Document`物体`doc`これで、変換の準備ができた TeX ファイル全体が含まれます。
+この行では、`"samplefile.tex"` TeXファイルの名前は`Document`物体`doc`これで、変換の準備ができた TeX ファイル全体が含まれます。
 
 ## ステップ4: ドキュメントをPDFとして保存する
 

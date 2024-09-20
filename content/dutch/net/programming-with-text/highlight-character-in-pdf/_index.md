@@ -2,235 +2,160 @@
 title: Markeer karakter in PDF-bestand
 linktitle: Markeer karakter in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekens in een PDF-bestand kunt markeren met Aspose.PDF voor .NET.
+description: Leer hoe u tekens in een PDF kunt markeren met Aspose.PDF voor .NET in deze uitgebreide stapsgewijze handleiding.
 type: docs
 weight: 240
 url: /nl/net/programming-with-text/highlight-character-in-pdf/
 ---
-In deze tutorial leggen we uit hoe u tekens in een PDF-bestand kunt markeren met behulp van de Aspose.PDF-bibliotheek voor .NET. We doorlopen het stapsgewijze proces van het markeren van tekens in een PDF met behulp van de meegeleverde C#-broncode.
+## Invoering
+
+Als het gaat om het werken met PDF's, is het vaak nodig om tekst of tekens te markeren, of het nu voor academische doeleinden is, voor bewerking of gewoon om de leesbaarheid te verbeteren. Stel je voor dat je een prachtig document hebt, maar je wilt bepaalde delen benadrukken. Dan komt markeren om de hoek kijken! In deze tutorial duiken we in het markeren van tekens in een PDF-bestand met behulp van de krachtige Aspose.PDF voor .NET-bibliotheek. 
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
+Voordat we in de code duiken, moeten we ervoor zorgen dat we alles hebben wat we nodig hebben. Dit is wat je nodig hebt:
 
-- De Aspose.PDF voor .NET-bibliotheek is geïnstalleerd.
-- Basiskennis van C#-programmering.
+1. Een ontwikkelomgeving: in deze zelfstudie gaan we ervan uit dat u in Visual Studio of een vergelijkbare .NET IDE werkt.
+2.  Aspose.PDF voor .NET-bibliotheek: Als u dat nog niet hebt gedaan, kunt u dat doen[download het hier](https://releases.aspose.com/pdf/net/) en voeg het toe aan uw project. 
+3. Basiskennis van C#: Met deze inleiding in C#-programmering begrijpt u de implementatie ervan eenvoudig.
+4. Een PDF-document: U moet een voorbeeld-PDF-bestand gereed hebben om mee te werken. U kunt er een maken of een bestaand document gebruiken.
 
-## Stap 1: De documentenmap instellen
+## Pakketten importeren
 
- Eerst moet u het pad instellen naar de map waar uw invoer-PDF-bestand zich bevindt. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de`dataDir` variabele met het pad naar uw PDF-bestand.
+Om te beginnen moeten we de benodigde namespaces importeren. Om dit te doen, moet u ze bovenaan uw C#-bestand opnemen:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf.Devices;
+using Aspose.Pdf.Text;
+using System;
+using System.Drawing;
 ```
 
-## Stap 2: Het PDF-document laden
+Deze pakketten zijn essentieel voor het maken, bewerken en verwerken van PDF-documenten met behulp van de Aspose-bibliotheek.
 
- Vervolgens laden we het invoer-PDF-document met behulp van de`Aspose.Pdf.Document` klas.
+Laten we het proces nu opsplitsen in overzichtelijke stappen om tekens in uw PDF te markeren. 
+
+## Stap 1: Initialiseer het PDF-document
+
+De eerste stap is het initialiseren van uw PDF-document. Dit houdt in dat u het PDF-bestand laadt waarmee u gaat werken. Dit is hoe u dat doet:
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Zorg ervoor dat u het juiste pad instelt.
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
+Vervang in dit fragment`YOUR DOCUMENT DIRECTORY` met het werkelijke pad op uw machine waar uw invoer-PDF-bestand zich bevindt.`Aspose.Pdf.Document` klasse wordt geïnstantieerd om uw PDF te laden.
 
-## Stap 3: PDF naar afbeelding converteren
+## Stap 2: Stel het renderingproces in
 
- Om tekens te markeren, converteren we het PDF-document naar een afbeelding met behulp van de`PdfConverter` klasse. We stellen de resolutie voor de conversie in en halen de afbeelding op als een`Bitmap` voorwerp.
+Vervolgens moeten we het renderingproces voor ons document voorbereiden. Dit is essentieel om de tekens op de pagina nauwkeurig te markeren.
 
 ```csharp
-int resolution = 150;
+int resolution = 150; // Stel de resolutie voor het vastleggen van afbeeldingen in.
 using (MemoryStream ms = new MemoryStream())
 {
-     PdfConverter conv = new PdfConverter(pdfDocument);
-     conv. Resolution = new Resolution(resolution, resolution);
-     conv. GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-     Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
+    PdfConverter conv = new PdfConverter(pdfDocument);
+    conv.Resolution = new Resolution(resolution, resolution);
+    conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
+ We definiëren een resolutie voor duidelijkheid, zodat de tekst correct kan worden weergegeven.`PdfConverter`zet de PDF-pagina's om in afbeeldingen, zodat we erop kunnen tekenen.
 
-## Stap 4: Markeer tekens
+## Stap 3: Maak een grafisch object voor tekenen
 
- We doorlopen elke pagina van het PDF-document en gebruiken een`TextFragmentAbsorber` object om alle woorden op de pagina te vinden. Vervolgens itereren we over de tekstfragmenten, segmenten en tekens om ze te markeren met rechthoeken.
+Nadat we het tekenproces hebben ingesteld, moeten we een grafisch object maken waarin we de markering gaan uitvoeren:
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Schaal instellen en transformeren
-     float scale = resolution / 72f;
-     gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+    float scale = resolution / 72f; // Schaalfactor.
+    gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+```
+Hier maken we het grafische object van de bitmapafbeelding. De transformatie helpt de rendering aan te passen om de benodigde resolutie correct te matchen.
 
-     // Door pagina's bladeren
-     for (int i = 0; i < pdfDocument.Pages.Count; i++)
-     {
-         Page page = pdfDocument.Pages[1];
+## Stap 4: Loop door elke pagina en markeer tekst
 
-         //Vind alle woorden op de pagina
-         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-         textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-         page. Accept(textFragmentAbsorber);
-         TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+Laten we nu door elke pagina in de PDF bladeren en de tekstfragmenten zoeken die we willen markeren:
 
-         // Door tekstfragmenten bladeren
-         foreach(TextFragment textFragment in textFragmentCollection)
-         {
-             if (i == 0)
-             {
-                 // Markeer tekens
-                 gr.DrawRectangle(
-                     Think.Yellow,
-                     (float)textFragment.Position.XIndent,
-                     (float)textFragment.Position.YIndent,
-                     (float)textFragment.Rectangle.Width,
-                     (float)textFragment.Rectangle.Height);
+```csharp
+for (int i = 0; i < pdfDocument.Pages.Count; i++)
+{
+    Page page = pdfDocument.Pages[i + 1]; // Pagina's worden in Aspose 1-geïndexeerd.
+    TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+    textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
+    page.Accept(textFragmentAbsorber);
+```
+ We openen elke pagina en zoeken naar alle tekst met behulp van de`TextFragmentAbsorber` Het reguliere expressiepatroon`@"[\S]+"` vangt alle niet-spatietekens op.
 
-                 // Door segmenten heen lussen
-                 foreach(TextSegment segment in textFragment.Segments)
-                 {
-                     // Markeer segment
-                     gr.DrawRectangle(
-                         Think Green,
-                         (float)segment.Rectangle.LLX,
-                         (float)segment.Rectangle.LLY,
-                         (float)segment.Rectangle.Width,
-                         (float)segment.Rectangle.Height);
+## Stap 5: Tekstfragmenten extraheren en markeren
 
-                     // Door tekens heen bladeren
-                     foreach(CharInfo characterInfo in segment.Characters)
-                     {
-                         // Markeer karakter
-                         gr.DrawRectangle(
-                             Think.Black,
-                             (float)characterInfo.Rectangle.LLx,
-                             (float)characterInfo.Rectangle.LLY,
-                             (float)characterInfo.Rectangle.Width,
-                             (float)characterInfo.Rectangle.Height);
-                     }
-                 }
-             }
-         }
-     }
+Nu is het tijd om de tekstfragmenten te extraheren en te markeren. Dit proces omvat het tekenen van rechthoeken rond de tekens die we willen markeren:
+
+```csharp
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+
+foreach (TextFragment textFragment in textFragmentCollection)
+{
+    // Hier wordt de logica benadrukt
+    for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
+    {
+        TextSegment segment = textFragment.Segments[segNum];
+        for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
+        {
+            CharInfo characterInfo = segment.Characters[charNum];
+            gr.DrawRectangle(Pens.Black, 
+                (float)characterInfo.Rectangle.LLX, 
+                (float)characterInfo.Rectangle.LLY, 
+                (float)characterInfo.Rectangle.Width, 
+                (float)characterInfo.Rectangle.Height);
+        }
+    }
 }
 ```
+We doorlopen elk tekstfragment, de segmenten en de individuele tekens en tekenen er rechthoeken omheen met behulp van het grafische object dat we eerder hebben gemaakt.
 
-## Stap 5: Sla de uitvoerafbeelding op
+## Stap 6: Sla de gewijzigde afbeelding op
 
-Tot slot slaan we de aangepaste afbeelding met de gemarkeerde tekens op in het opgegeven uitvoerbestand.
+Nadat u de afbeelding hebt gemarkeerd, moet u deze opslaan als een nieuw PNG-bestand:
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
+Met deze regel wordt uw gewijzigde bitmapafbeelding opgeslagen als een PNG-bestand in de aangewezen map. 
 
-### Voorbeeldbroncode voor Markeerteken in PDF met behulp van Aspose.PDF voor .NET 
+## Stap 7: Afronden met uitzonderingsafhandeling
+
+Ten slotte is het een goede gewoonte om uw code in een try-catch-blok te verpakken, zodat we onverwachte fouten netjes kunnen afhandelen:
+
 ```csharp
-try
-{
-	// Het pad naar de documentenmap.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	int resolution = 150;
-	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
-	using (MemoryStream ms = new MemoryStream())
-	{
-		PdfConverter conv = new PdfConverter(pdfDocument);
-		conv.Resolution = new Resolution(resolution, resolution);
-		conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
-		using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
-		{
-			float scale = resolution / 72f;
-			gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
-			for (int i = 0; i < pdfDocument.Pages.Count; i++)
-			{
-				Page page = pdfDocument.Pages[1];
-				// Maak een TextAbsorber-object om alle woorden te vinden
-				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-				page.Accept(textFragmentAbsorber);
-				// Haal de geëxtraheerde tekstfragmenten op
-				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Loop door de fragmenten
-				foreach (TextFragment textFragment in textFragmentCollection)
-				{
-					if (i == 0)
-					{
-						gr.DrawRectangle(
-						Pens.Yellow,
-						(float)textFragment.Position.XIndent,
-						(float)textFragment.Position.YIndent,
-						(float)textFragment.Rectangle.Width,
-						(float)textFragment.Rectangle.Height);
-						for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
-						{
-							TextSegment segment = textFragment.Segments[segNum];
-							for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
-							{
-								CharInfo characterInfo = segment.Characters[charNum];
-								Aspose.Pdf.Rectangle rect = page.GetPageRect(true);
-								Console.WriteLine("TextFragment = " + textFragment.Text + "    Page URY = " + rect.URY +
-												  "   TextFragment URY = " + textFragment.Rectangle.URY);
-								gr.DrawRectangle(
-								Pens.Black,
-								(float)characterInfo.Rectangle.LLX,
-								(float)characterInfo.Rectangle.LLY,
-								(float)characterInfo.Rectangle.Width,
-								(float)characterInfo.Rectangle.Height);
-							}
-							gr.DrawRectangle(
-							Pens.Green,
-							(float)segment.Rectangle.LLX,
-							(float)segment.Rectangle.LLY,
-							(float)segment.Rectangle.Width,
-							(float)segment.Rectangle.Height);
-						}
-					}
-				}
-			}
-		}
-		dataDir = dataDir + "HighlightCharacterInPDF_out.png";
-		bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
-	}
-	Console.WriteLine("\nCharacters highlighted successfully in pdf document.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx.");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get a 30-day temporary license from [here](https://aankoop.aspose.com/temporary-license/).");
 }
 ```
 
+Dit blok vangt eventuele uitzonderingen op die tijdens het proces kunnen optreden en geeft informatieve feedback aan de gebruiker.
+
 ## Conclusie
 
-In deze tutorial hebt u geleerd hoe u tekens in een PDF-document kunt markeren met behulp van de Aspose.PDF-bibliotheek voor .NET. Door de stapsgewijze handleiding te volgen en de meegeleverde C#-code uit te voeren, kunt u tekens in een PDF markeren en de uitvoer opslaan als een afbeelding.
+En daar heb je het! Je hebt met succes tekens gemarkeerd in een PDF-bestand met Aspose.PDF voor .NET. Deze krachtige bibliotheek opent deuren naar eindeloze mogelijkheden in PDF-manipulatie, of je nu werkt met annotaties, formulieren invult of zelfs documentconversie. Vergeet niet dat oefening de sleutel is terwijl je verdergaat met Aspose. Blijf experimenteren met verschillende functies en je zult snel een PDF-professional worden!
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het doel van de tutorial 'Teken markeren in PDF-bestand'?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee u programmatisch PDF-documenten kunt maken, bewerken en converteren in .NET-toepassingen.
 
-A: De tutorial "Markeer karakter in PDF-bestand" legt uit hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om karakters in een PDF-document te markeren. De tutorial biedt een stapsgewijze handleiding en C#-broncode om dit te bereiken.
+### Kan ik meerdere tekstfragmenten tegelijk markeren?
+Ja, de meegeleverde code kan worden aangepast om meerdere fragmenten te markeren door alle tekst in de PDF te doorlopen.
 
-#### V: Waarom zou ik tekens in een PDF-document willen markeren?
+### Bestaat er een gratis versie van Aspose.PDF?
+Ja, Aspose biedt een gratis proefperiode aan, zodat u de bibliotheek kunt testen voordat u tot aankoop overgaat.
 
-A: Het markeren van tekens in een PDF-document kan om verschillende redenen nuttig zijn, bijvoorbeeld om specifieke inhoud te benadrukken of om bepaalde tekst beter zichtbaar en herkenbaar te maken.
+### Heb ik licenties nodig om Aspose.PDF te gebruiken?
+Ja, voor commercieel gebruik is een geldige licentie vereist, maar u kunt een tijdelijke licentie van 30 dagen aanschaffen om te testen.
 
-#### V: Hoe stel ik de documentenmap in?
-
-A: Om de documentenmap in te stellen:
-
-1.  Vervangen`"YOUR DOCUMENT DIRECTORY"` in de`dataDir` variabele met het pad naar de map waar uw PDF-invoerbestand zich bevindt.
-
-#### V: Hoe laad ik een PDF-document en converteer ik het naar een afbeelding?
-
- A: In de tutorial wordt de`Aspose.Pdf.Document` klasse wordt gebruikt om het invoer-PDF-document te laden. Vervolgens wordt de`PdfConverter` klasse wordt gebruikt om het PDF-document naar een afbeelding te converteren. De resolutie van de afbeelding wordt ingesteld en de afbeelding wordt opgehaald als een`Bitmap` voorwerp.
-
-#### V: Hoe markeer ik tekens in de afbeelding van een PDF-document?
-
-A: De tutorial begeleidt u door het proces van het doorlopen van elke pagina van het PDF-document, waarbij u woorden vindt met behulp van een`TextFragmentAbsorber`en door tekstfragmenten, segmenten en tekens te itereren om ze te markeren met behulp van rechthoeken.
-
-#### V: Kan ik het uiterlijk van de gemarkeerde karakters en segmenten aanpassen?
-
-A: Ja, u kunt het uiterlijk van de gemarkeerde tekens en segmenten aanpassen door de kleuren en stijlen te wijzigen die worden gebruikt bij de tekenbewerkingen.
-
-#### V: Hoe kan ik de aangepaste afbeelding met de gemarkeerde tekens opslaan?
-
- A: De tutorial laat zien hoe je de gewijzigde afbeelding met de gemarkeerde tekens kunt opslaan in het opgegeven uitvoerbestand met behulp van de`Save` methode van de`Bitmap` klas.
-
-#### V: Is een geldige Aspose-licentie vereist voor deze tutorial?
-
-A: Ja, een geldige Aspose-licentie is vereist om deze tutorial correct te laten werken. U kunt een volledige licentie kopen of een tijdelijke licentie van 30 dagen verkrijgen via de Aspose-website.
+### Waar kan ik meer documentatie vinden?
+ U kunt verwijzen naar de[Aspose.PDF-documentatie](https://reference.aspose.com/pdf/net/) voor meer gedetailleerde informatie over implementatie en functies.

@@ -65,7 +65,7 @@ Aspose.Pdf.CgmLoadOptions cgmload = new Aspose.Pdf.CgmLoadOptions();
 
 ## Steg 3: Skapa ett dokumentobjekt
 
- Nu ska du skapa en`Document` objekt. Detta objekt kommer att representera din CGM-fil i minnet, vilket gör att du kan manipulera den innan du sparar den som en PDF.
+ Nu kommer du att skapa en`Document` objekt. Detta objekt kommer att representera din CGM-fil i minnet, vilket gör att du kan manipulera den innan du sparar den som en PDF.
 
 ```csharp
 // Instantiera dokumentobjekt

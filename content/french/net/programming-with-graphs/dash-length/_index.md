@@ -9,7 +9,7 @@ url: /fr/net/programming-with-graphs/dash-length/
 ---
 ## Introduction
 
-Vous souhaitez ajouter une touche de créativité à vos documents PDF en personnalisant les lignes avec différents motifs de tirets ? Avec Aspose.PDF pour .NET, vous pouvez facilement modifier les styles de ligne en fonction des besoins de votre document. Dans ce didacticiel, nous verrons comment ajuster la longueur des tirets des lignes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Que vous souhaitiez une ligne en pointillés ou un motif en pointillés, ce guide vous fournira les outils et les étapes nécessaires pour obtenir le résultat souhaité.
+Vous souhaitez ajouter une touche de créativité à vos documents PDF en personnalisant les lignes avec différents motifs de tirets ? Avec Aspose.PDF pour .NET, vous pouvez facilement modifier les styles de ligne en fonction des besoins de votre document. Dans ce didacticiel, nous verrons comment ajuster la longueur des tirets des lignes d'un document PDF à l'aide d'Aspose.PDF pour .NET. Que vous souhaitiez une ligne en pointillés ou un motif en pointillés, ce guide vous fournira les outils et les étapes nécessaires pour obtenir le résultat souhaité.
 
 ## Prérequis
 

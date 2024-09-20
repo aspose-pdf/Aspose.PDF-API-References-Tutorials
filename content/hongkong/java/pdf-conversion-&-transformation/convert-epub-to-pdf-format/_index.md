@@ -10,7 +10,7 @@ url: /zh-hant/java/pdf-conversion-transformation/convert-epub-to-pdf-format/
 
 ## 將 EPUB 轉換為 PDF 格式簡介
 
-EPUB 是一種流行的電子書格式，但有時您可能因各種原因需要將其轉換為 PDF，例如提高相容性或更易於分享。在本文中，我們將引導您完成使用 Aspose.PDF for Java 將 EPUB 轉換為 PDF 的過程。
+EPUB 是一種流行的電子書格式，但有時您可能出於各種原因（例如提高相容性或更容易共享）需要將其轉換為 PDF。在本文中，我們將引導您完成使用 Aspose.PDF for Java 將 EPUB 轉換為 PDF 的過程。
 
 ## Java 版 Aspose.PDF 入門
 

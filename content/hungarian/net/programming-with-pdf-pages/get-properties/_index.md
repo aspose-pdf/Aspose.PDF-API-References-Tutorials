@@ -19,7 +19,7 @@ Mielőtt belevágna a kódba, elengedhetetlen, hogy minden szükséges összetev
    
 2.  Aspose.PDF .NET-hez: Az Aspose.PDF-et telepíteni kell. A könyvtár letölthető a[Aspose PDF kiadások](https://releases.aspose.com/pdf/net/) oldalon.
 
-3. C# alapvető ismerete: A C# programozás ismerete hasznos lesz, mivel a kódot C# nyelven írjuk.
+3. C# alapvető ismerete: A C# programozás ismerete hasznos lesz, mivel a kódot C#-ban írjuk.
 
 4. PDF-fájl: A munkához egy minta PDF-fájlra van szüksége. Ebben a példában a "GetProperties.pdf" fájlra hivatkozunk.
 

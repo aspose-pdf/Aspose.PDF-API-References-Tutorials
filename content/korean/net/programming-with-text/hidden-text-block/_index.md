@@ -2,193 +2,190 @@
 title: PDF 파일의 숨겨진 텍스트 블록
 linktitle: PDF 파일의 숨겨진 텍스트 블록
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에서 숨겨진 텍스트 블록을 만드는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 숨겨진 텍스트 블록이 있는 대화형 PDF를 만듭니다. 이 튜토리얼은 문서를 향상시키는 단계별 가이드를 제공합니다.
 type: docs
 weight: 230
 url: /ko/net/programming-with-text/hidden-text-block/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 파일에 숨겨진 텍스트 블록을 만드는 방법을 설명합니다. 숨겨진 텍스트 블록은 마우스 커서가 특정 영역 위로 이동하면 표시되는 떠다니는 텍스트입니다. 제공된 C# 소스 코드를 사용하여 숨겨진 텍스트 블록을 만드는 단계별 프로세스를 살펴보겠습니다.
+## 소개
 
-## 요구 사항
+오늘날의 디지털 환경에서 PDF는 계약서부터 교육 자료에 이르기까지 모든 것에 대한 필수 형식으로 남아 있습니다. PDF의 다재다능함과 신뢰성은 타의 추종을 불허합니다. 하지만 PDF에 상호 작용성을 한 단계 더 추가할 수 있다면 어떨까요? Aspose.PDF for .NET으로 숨겨진 텍스트 블록의 세계로 뛰어듭니다. 이 강력한 도구는 매력적이고 사용자 친화적인 문서를 그 어느 때보다 쉽게 만들 수 있게 해줍니다. 노련한 개발자이든 방금 시작한 개발자이든, 이 튜토리얼은 여러분을 위해 설계되었으며 PDF의 잠재력을 최대한 활용하기 위한 단계별 지침과 팁이 가득합니다!
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+## 필수 조건
 
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다.
-- C# 프로그래밍에 대한 기본적인 이해.
+소매를 걷어붙이고 시작하기 전에 필요한 모든 것을 가지고 있는지 확인해 보겠습니다. 필요한 것은 다음과 같습니다.
 
-## 1단계: 문서 디렉토리 설정
+1. .NET용 Aspose.PDF: 이 라이브러리는 .NET 애플리케이션에서 PDF 파일을 작업하는 데 필수적입니다. 확인하거나 다운로드하거나 무료 평가판을 받을 수도 있습니다.[Aspose PDF 문서](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: Aspose.PDF 라이브러리를 실행하려면 .NET Framework가 설치되어 있는지 확인하세요.
+3. 개발 환경: Visual Studio와 같은 코드 편집기나 통합 개발 환경(IDE)을 사용하면 코딩이 매우 쉽습니다. 
+4. 기본 C# 지식: C#로 프로그래밍할 것이므로 언어에 대한 기본적인 이해가 있으면 개념을 훨씬 더 쉽게 파악하는 데 도움이 됩니다.
+5. 학습에 대한 열정: 마지막으로, 열정을 가져오세요! 오늘은 놀라운 것을 배울 겁니다.
 
- 먼저 생성된 PDF 파일을 저장할 디렉토리 경로를 설정해야 합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` 원하는 디렉토리의 경로를 담은 변수입니다.
+이러한 필수 구성 요소를 갖추면 PDF에서 대화형 숨겨진 텍스트 블록을 만들 준비가 된 것입니다!
+
+## 패키지 가져오기
+
+프로젝트에서 Aspose.PDF를 시작하려면 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
+
+### C# 프로젝트 만들기
+
+먼저 Visual Studio나 C# IDE를 열고 새 프로젝트를 만듭니다. 단순성을 위해 콘솔 애플리케이션 유형을 선택합니다.
+
+### 프로젝트에 Aspose.PDF 추가
+
+프로젝트에 Aspose.PDF 라이브러리를 추가해야 합니다. NuGet 패키지 관리자를 통해 이를 수행할 수 있습니다. 간단한 한 줄짜리 코드는 다음과 같습니다.
+
+```bash
+Install-Package Aspose.PDF
+```
+
+이 명령을 사용하면 PDF 문서 작업을 쉽게 하는 데 필요한 파일을 가져올 수 있습니다.
+
+### 필요한 네임스페이스 가져오기
+
+패키지가 설치되면 다음 단계는 C# 파일 맨 위에 있는 네임스페이스를 가져오는 것입니다. 이렇게 하면 모든 멋진 Aspose 기능을 사용할 수 있습니다.
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+이제 환경이 설정되었으니 PDF 파일에서 숨겨진 텍스트 블록을 만드는 과정을 단계별로 나누어 보겠습니다.
+
+## 1단계: 문서 디렉토리 정의
+
+파일이 상주할 위치를 정의합니다. 이는 문서를 원활하게 관리하는 데 도움이 됩니다. 다음 코드를 사용하여 설정하세요.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ 교체를 꼭 해주세요`"YOUR DOCUMENT DIRECTORY"` PDF를 만들려는 컴퓨터의 실제 경로를 입력합니다.
 
 ## 2단계: 샘플 문서 만들기
 
-이 단계에서는 샘플 PDF 문서를 만들고 텍스트 조각을 추가합니다. 텍스트 조각은 숨겨진 텍스트 블록을 표시하는 트리거 역할을 합니다.
+이제 기본 PDF 문서를 만들어 보겠습니다. 이 초기 단계에는 PDF 문서를 초기화하고 숨겨진 텍스트의 초점이 될 텍스트 조각을 추가하는 것이 포함됩니다.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## 3단계: 문서 열기
+여기서는 단순히 문서에 문자열을 추가합니다. 그러면 마우스가 문서 위에 올려지면 숨겨진 텍스트 작업이 트리거됩니다.
 
- 이제 이전에 만든 문서를 다음을 사용하여 엽니다.`Document` 수업.
+## 3단계: 생성된 문서 열기
+
+이제 초기 문서가 있으니 추가 편집을 위해 열어보겠습니다.
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## 4단계: 텍스트 조각 찾기
+이 줄은 우리가 방금 만든 문서를 로드하여 변경할 수 있도록 해줍니다.
 
- 우리는 ~을 사용합니다`TextFragmentAbsorber`숨겨진 텍스트 블록의 표시를 트리거할 텍스트 조각을 찾기 위한 객체입니다. 이 경우, 우리는 정확한 텍스트 "여기로 마우스 커서를 이동하여 떠다니는 텍스트를 표시합니다"를 검색합니다.
+## 4단계: 구문을 찾기 위한 TextAbsorber 만들기
+
+ 다음으로, 우리가 작업할 텍스트 조각을 식별하고 싶습니다. 여기가`TextFragmentAbsorber` 게임에 참여합니다:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## 5단계: 숨겨진 텍스트 필드 만들기
-
- 우리는 만듭니다`TextBoxField` 숨겨진 텍스트 필드를 나타내는 개체입니다. 이 필드에는 마우스 커서가 트리거 텍스트 위에 있을 때 표시되는 텍스트가 포함됩니다.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## 6단계: 문서에 숨겨진 텍스트 필드 추가
-
-숨겨진 텍스트 필드를 문서의 양식 컬렉션에 추가합니다.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## 7단계: 보이지 않는 버튼 만들기
-
-트리거 텍스트 조각 위에 배치될 보이지 않는 버튼 필드를 만듭니다. 이 버튼 필드에는 마우스 진입 및 종료 이벤트와 관련된 동작이 있습니다.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## 8단계: 문서 저장
-
-마지막으로 숨겨진 텍스트 블록과 함께 수정된 문서를 저장합니다.
-
-```csharp
-document. Save(outputFile);
-```
-
-### .NET용 Aspose.PDF를 사용한 숨겨진 텍스트 블록에 대한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// 텍스트로 샘플 문서 만들기
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// 텍스트가 있는 문서 열기
-Document document = new Document(outputFile);
-//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// 문서 페이지에 대한 흡수체를 수락합니다.
 document.Pages.Accept(absorber);
-// 첫 번째 추출된 텍스트 조각을 가져옵니다.
+```
+
+이 단계에서는 Aspose에게 앞서 지정한 텍스트를 찾도록 지시합니다.
+
+## 5단계: 텍스트 조각 추출
+
+텍스트 조각을 얻으면 다음 코드를 사용하여 이를 추출합니다. 이를 통해 이를 더욱 세부적으로 조작할 수 있습니다.
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//페이지의 지정된 사각형에 떠 있는 텍스트를 위한 숨겨진 텍스트 필드를 만듭니다.
+```
+
+여기서는 흡수된 첫 번째 조각에 초점을 맞춥니다. 텍스트가 더 많은 경우 컬렉션을 반복하고 싶을 수 있습니다.
+
+## 6단계: 숨겨진 텍스트 필드 만들기
+
+이제 마법을 부리자! 사용자가 지정된 텍스트 위에 마우스를 올리면 표시되는 숨겨진 텍스트 필드를 만듭니다. 이 코드 조각을 사용하세요.
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// 필드 값으로 표시할 텍스트를 설정합니다.
 floatingField.Value = "This is the \"floating text field\".";
-// 이 시나리오에서는 필드를 '읽기 전용'으로 만드는 것이 좋습니다.
 floatingField.ReadOnly = true;
-// 문서를 열 때 필드가 표시되지 않도록 '숨김' 플래그를 설정합니다.
 floatingField.Flags |= AnnotationFlags.Hidden;
-// 고유한 필드 이름을 설정하는 것은 필수는 아니지만 허용됩니다.
+```
+
+이 코드는 떠 있는 텍스트의 위치를 정의하고 속성을 설정합니다. 여기에는 텍스트를 읽기 전용으로 설정하고 기본적으로 숨기는 것이 포함됩니다.
+
+## 7단계: 필드 모양 사용자 지정
+
+떠 있는 텍스트에 약간의 화려함을 더하세요! 떠 있는 텍스트 필드의 기본 모양을 사용자 지정하세요:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// 필드 외관의 특성을 설정하는 것은 필수는 아니지만 더 좋게 만듭니다.
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// 문서에 텍스트 필드 추가
+```
+
+글꼴 크기부터 색상까지, 이러한 설정을 원하는 대로 조정하여 인터페이스를 보다 사용자 친화적이고 매력적으로 만들 수 있습니다.
+
+## 8단계: 문서에 텍스트 필드 추가
+
+텍스트 필드가 설정되었으니 이제 문서에 플로팅 필드를 추가할 차례입니다.
+
+```csharp
 document.Form.Add(floatingField);
-// 텍스트 조각 위치에 보이지 않는 버튼 만들기
+```
+
+이 줄은 새로 만든 숨겨진 텍스트 필드를 PDF에 통합합니다.
+
+## 9단계: 보이지 않는 버튼 필드 만들기
+
+이 버튼은 떠 있는 텍스트 필드의 호버 동작을 관리합니다. 다음 코드를 추가하여 보이지 않는 버튼을 만듭니다.
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// 지정된 필드(주석)와 숨기기 플래그에 대한 새로운 숨기기 작업을 만듭니다.
-// (위에 지정한 경우 이름으로 부동 필드를 참조할 수도 있습니다.)
-// 보이지 않는 버튼 필드에 마우스 진입/종료 시 동작 추가
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// 문서에 버튼 필드 추가
-document.Form.Add(buttonField);
-// 문서 저장
+```
+
+여기서는 마우스가 들어오면 떠 있는 텍스트가 표시되고 마우스가 나가면 숨겨지도록 버튼을 구성했습니다.
+
+## 10단계: 문서 저장
+
+마지막으로, 작업을 저장하고 결과를 확인할 시간입니다.
+
+```csharp
 document.Save(outputFile);
 ```
 
+이 작업을 통해 이제 PDF가 대화형 환경을 갖추고 사용자가 콘텐츠와 소통할 수 있는 완전히 새로운 방식을 제공합니다!
+
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET 라이브러리를 사용하여 숨겨진 텍스트 블록을 만드는 방법을 알아보았습니다. 단계별 가이드를 따르면 마우스 커서가 특정 영역 위로 이동하면 표시되는 숨겨진 텍스트 필드가 있는 PDF 문서를 생성할 수 있습니다. 요구 사항에 따라 숨겨진 텍스트 블록의 모양과 동작을 사용자 지정할 수 있습니다.
+이제 다 됐습니다! 다음 단계를 따르면 Aspose.PDF for .NET을 사용하여 PDF 파일에 숨겨진 텍스트 블록을 성공적으로 만들었습니다. 이 간단하지만 강력한 기능은 문서 내에서 사용자 상호 작용을 크게 향상시킬 수 있습니다. 교육 자료나 클라이언트 리소스를 제작하든 호버 시 정보를 숨기고 표시하는 기능은 세련되고 현대적인 느낌을 제공합니다. 
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "PDF 파일의 숨겨진 텍스트 블록" 튜토리얼의 목적은 무엇인가요?
+### .NET용 Aspose.PDF란 무엇인가요?  
+.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 PDF 문서를 만들고, 조작하고, 변환할 수 있는 강력한 라이브러리입니다.
 
-A: "PDF 파일에서 숨겨진 텍스트 블록" 튜토리얼은 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 파일에서 숨겨진 텍스트 블록을 만드는 방법을 설명합니다. 숨겨진 텍스트 블록은 마우스 커서가 특정 영역 위로 이동하면 표시되는 떠다니는 텍스트입니다. 이 튜토리얼은 C# 소스 코드를 사용하여 단계별 가이드를 제공합니다.
+### Aspose.PDF를 어떻게 설치하나요?  
+Visual Studio의 NuGet 패키지 관리자를 통해 설치할 수 있습니다. 다음 명령을 사용하세요.`Install-Package Aspose.PDF`.
 
-#### 질문: PDF 파일에 숨겨진 텍스트 블록을 만들어야 하는 이유는 무엇인가요?
+### PDF에서 다른 대화형 요소를 만들 수 있나요?  
+네, Aspose.PDF를 사용하면 숨겨진 텍스트 블록 외에도 버튼, 하이퍼링크, 주석 등을 더 많이 추가할 수 있습니다.
 
-답변: 숨겨진 텍스트 블록을 만드는 기능은 사용자가 마우스 커서를 지정된 영역 위에 올려놓았을 때만 표시되는 추가 정보나 컨텍스트를 제공하려는 대화형 PDF 문서에 유용할 수 있습니다.
+### 무료 체험판이 있나요?  
+ 물론입니다! 무료 체험판을 받으실 수 있습니다.[Aspose 릴리스 페이지](https://releases.aspose.com/).
 
-#### 질문: 문서 디렉토리를 어떻게 설정하나요?
-
-A: 문서 디렉토리를 설정하려면:
-
-1.  바꾸다`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` 생성된 PDF 파일을 저장할 디렉토리 경로가 있는 변수입니다.
-
-#### 질문: 샘플 문서를 만들고 텍스트 조각을 추가하려면 어떻게 해야 하나요?
-
- A: 튜토리얼에서는 다음을 사용합니다.`Document` 샘플 PDF 문서를 만들고 텍스트 조각을 추가하는 클래스입니다. 이 텍스트 조각은 숨겨진 텍스트 블록을 표시하는 트리거 역할을 합니다.
-
-#### 질문: 숨겨진 텍스트 블록을 트리거하는 텍스트 조각을 어떻게 찾을 수 있나요?
-
- A: 튜토리얼에서는 다음을 사용하는 방법을 보여줍니다.`TextFragmentAbsorber` 숨겨진 텍스트 블록의 표시를 트리거하는 텍스트 조각을 찾는 객체입니다. PDF 문서 내에서 특정 텍스트 문자열을 검색합니다.
-
-#### 질문: 숨겨진 텍스트 필드를 어떻게 만들고 사용자 지정하나요?
-
- A: 당신이 만듭니다`TextBoxField`숨겨진 텍스트 필드를 나타내는 객체입니다. 이 튜토리얼은 숨겨진 텍스트 필드의 위치, 값, 모양 및 동작과 같은 다양한 속성을 설정하는 코드를 제공합니다.
-
-#### 질문: 숨겨진 텍스트 블록과 연관된 보이지 않는 버튼을 어떻게 만듭니까?
-
- A: 보이지 않는 버튼 필드는 다음을 사용하여 생성됩니다.`ButtonField` 클래스. 이 버튼 필드는 트리거 텍스트 조각 위에 위치하며 마우스 진입 및 종료 이벤트와 관련된 동작을 갖습니다. 이러한 동작은 숨겨진 텍스트 블록의 가시성을 제어합니다.
-
-#### 질문: 숨겨진 텍스트 블록과 트리거 영역의 모양을 사용자 지정할 수 있나요?
-
-대답: 네, 숨겨진 텍스트 필드와 보이지 않는 버튼 모두의 글꼴, 색상, 크기, 위치 등 다양한 속성을 사용자 정의할 수 있습니다.
-
-#### 질문: 숨겨진 텍스트 블록이 포함된 수정된 문서를 저장하려면 어떻게 해야 하나요?
-
- A: 이 튜토리얼에서는 수정된 문서를 저장하는 방법을 보여줍니다.`Save` 의 방법`Document` 수업.
+### Aspose.PDF와 관련하여 도움이 필요하면 어떻게 해야 하나요?  
+ 지원을 자유롭게 요청하세요.[Aspose 포럼](https://forum.aspose.com/c/pdf/10) 질문이나 문제가 있으면 언제든지 문의하세요.

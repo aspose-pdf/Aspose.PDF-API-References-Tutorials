@@ -1,111 +1,45 @@
 ---
-title: Címke kép a meglévő PDF-ben
-linktitle: Címke kép a meglévő PDF-ben
+title: Kép címkézése a meglévő PDF-ben
+linktitle: Kép címkézése a meglévő PDF-ben
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan jelölhet meg egy képet egy meglévő PDF-ben az Aspose.PDF for .NET segítségével. Útmutató lépésről lépésre a képekhez címkék hozzáadásához.
+description: Ismerje meg, hogyan lehet képeket címkézni a meglévő PDF-fájlokban az Aspose.PDF for .NET használatával. Útmutató lépésről lépésre a PDF/UA-megfelelőséggel történő kisegítő lehetőségek javításához.
 type: docs
 weight: 210
 url: /hu/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-Ebben a részletes oktatóanyagban lépésről lépésre végigvezetjük a megadott C# forráskódon, hogy megjelölhessen egy képet egy meglévő PDF-ben az Aspose.PDF for .NET használatával. Kövesse az alábbi utasításokat, hogy megértse, hogyan lehet címkéket hozzáadni egy PDF-fájlhoz.
+## Bevezetés
 
-## 1. lépés: A környezet beállítása
+Ebben az oktatóanyagban végigvezetjük, hogyan címkézhet meg egy képet egy meglévő PDF-fájlban az Aspose.PDF for .NET használatával. Ennek az útmutatónak a végére beállíthat alternatív szöveget a képekhez, beállíthatja az elrendezési attribútumokat, és gondoskodhat arról, hogy PDF-je megfeleljen a kisegítő lehetőségek szabványainak.
 
-Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet úgy konfigurálta, hogy az Aspose.PDF for .NET fájlt használja. Ez magában foglalja az Aspose.PDF könyvtár telepítését és a projekt konfigurálását, hogy hivatkozzon rá.
+## Előfeltételek
 
-## 2. lépés: Nyissa meg a meglévő PDF-dokumentumot
+Mielőtt belemerülnénk, nézzük meg, mire lesz szüksége az induláshoz:
 
-Ebben a lépésben megnyitunk egy meglévő PDF dokumentumot az Aspose.PDF használatával.
+-  Aspose.PDF for .NET: Győződjön meg arról, hogy letöltötte és telepítette az Aspose.PDF for .NET legújabb verzióját.[Töltse le itt](https://releases.aspose.com/pdf/net/).
+- .NET-keretrendszer: Győződjön meg arról, hogy be van állítva egy .NET-fejlesztői környezet, például a Visual Studio.
+- A PDF szerkezetének alapvető ismerete: Ismerje meg a PDF szerkezeti elemeit, például bekezdéseket, szakaszokat, táblázatokat és képeket.
+-  Érvényes licenc: licencet vásárolhat[itt](https://purchase.aspose.com/buy) vagy használjon ideiglenest[itt](https://purchase.aspose.com/temporary-license/).
+
+## Csomagok importálása
+
+A kódolás megkezdéséhez importálnia kell az alapvető névtereket az Aspose.PDF for .NET fájlból. Ezek hozzáférést biztosítanak a PDF-dokumentum kezeléséhez szükséges osztályokhoz és módszerekhez.
 
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Bemeneti és kimeneti fájl elérési útja
-string inFile = dataDir + "TH.pdf";
-string outFile = dataDir + "TH_out.pdf";
-string logFile = dataDir + "TH_out.xml";
-
-// Nyissa meg a dokumentumot
-Document document = new Document(inFile);
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-A meglévő PDF dokumentumot az Aspose.PDF segítségével nyitottuk meg.
+Most, hogy készen állunk, bontsuk fel a kép címkézésének folyamatát több lépésre.
 
-## 3. lépés: Szerezze be a címkézett tartalmat és a gyökérstruktúra elemet
+## 1. lépés: Töltse be a meglévő PDF-dokumentumot
 
-Most megkapjuk a PDF dokumentum címkézett tartalmát és a hozzá tartozó gyökérstruktúra elemet.
-
-```csharp
-// Szerezzen be címkézett tartalmat és gyökérszerkezeti elemet
-ITaggedContent taggedContent = document.TaggedContent;
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Megkaptuk a PDF dokumentum címkézett tartalmát és a hozzá tartozó gyökérstruktúra elemet.
-
-## 4. lépés: A címkézett PDF-dokumentum címének beállítása
-
-Most állítsuk be a címkézett PDF-dokumentum címét.
+Az első lépés a PDF-fájl betöltése, amellyel dolgozni szeretne. Ez lehet bármilyen PDF-fájl, amelyen egy képet szeretne megjelölni.
 
 ```csharp
-// Adja meg a címkézett PDF-dokumentum címét
-taggedContent.SetTitle("Document with images");
-```
-
-Beállítottuk a címkézett PDF dokumentum címét.
-
-## 5. lépés: Rendeljen alternatív szövegeket és határolókeretet a képhez
-
-Most minden képelemhez alternatív szöveget és határolókeretet rendelünk.
-
-```csharp
-foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
-{
-     // Alternatív szöveg hozzárendelése a képhez
-     figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // A határolókeret (bbox) létrehozása és hozzárendelése
-     StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-     bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-     StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-     figureLayoutAttributes.SetAttribute(bboxAttribute);
-}
-```
-
-PDF dokumentumban minden képelemhez alternatív szöveget és határolókeretet rendeltünk.
-
-## 6. lépés: A Span elem áthelyezése a bekezdésbe
-
-Most helyezzük át a Span elemet a bekezdésbe.
-
-```csharp
-// A Span elem áthelyezése a bekezdésbe (helytelen terjedelem és bekezdés keresése az első TD-ben)
-TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
-SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
-TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
-ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
-
-// Mozgassa a Span elemet a bekezdésben
-spanElement.ChangeParentElement(paragraph);
-```
-
-A Span elemet áthelyeztük a megadott bekezdésbe.
-
-## 7. lépés: Mentse el a módosított PDF dokumentumot
-
-Most, hogy elvégeztük a szükséges változtatásokat, elmentjük a módosított PDF dokumentumot.
-
-```csharp
-// Mentse el a PDF dokumentumot
-document. Save(outFile);
-```
-
-A módosított PDF dokumentumot a megadott könyvtárba mentettük.
-
-### Minta forráskód a Tag Image In Existing PDF-ben az Aspose.PDF for .NET használatával 
-
-```csharp
-
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
@@ -114,89 +48,112 @@ string logFile = dataDir + "TH_out.xml";
 
 // Nyissa meg a dokumentumot
 Document document = new Document(inFile);
+```
 
-// Lekéri a címkézett tartalmat és a gyökérstruktúra elemet
+-  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a fájl tényleges elérési útjával.
+-  A`Document` osztály lehetővé teszi egy meglévő PDF betöltését. A kép címkézéséhez módosítani fogja ezt a PDF-fájlt.
+
+## 2. lépés: Hozzáférés a címkézett tartalomhoz és a gyökérstruktúra elemhez
+
+A PDF megnyitása után a következő lépés a címkézett tartalom elérése és a gyökérstruktúra elem azonosítása. Ez kulcsfontosságú, mivel lehetővé teszi a PDF elemei közötti navigálást és a módosítások végrehajtását.
+
+```csharp
+// Szerezzen be címkézett tartalmat és gyökérszerkezeti elemet
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
+```
 
-// Cím beállítása a címkézett pdf-dokumentumhoz
+- `TaggedContent` hozzáférést biztosít a PDF strukturált elemeihez.
+-  A`RootElement` a legfelső szerkezeti elem, ahonnan átléphet más elemekre, például bekezdésekre, táblázatokra és képekre.
+
+## 3. lépés: Állítsa be a címkézett PDF-dokumentum címét
+
+Ha címet ad a címkézett PDF-dokumentumhoz, akkor a dokumentum megfelelő címkével rendelkezik, ami segíti a kisegítő lehetőségeket és a PDF/UA megfelelőséget.
+
+```csharp
+// Adja meg a címkézett PDF-dokumentum címét
 taggedContent.SetTitle("Document with images");
+```
+
+- A címkézett PDF-fájl címének megadása javítja a képernyőolvasók és a kisegítő technológiák hozzáférhetőségét, és javítja a dokumentumok átláthatóságát.
+
+## 4. lépés: Keresse meg és címkézze meg a képet
+
+ Most keressük meg a képelemet (a továbbiakban: a`FigureElement` az Aspose.PDF-ben), állítson be egy alternatív szöveget, és állítsa be az elrendezési attribútumait.
+
+```csharp
+// Lapozzon át az összes ábraelemen (képen), és állítson be alternatív szöveg- és elrendezési attribútumokat
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Állítsa be az ábra alternatív szövegét
-	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// BBox attribútum létrehozása és beállítása
-	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-	figureLayoutAttributes.SetAttribute(bboxAttribute);
+    // Állítson be alternatív szöveget az ábrához
+    figureElement.AlternativeText = "Figure alternative text (technique 2)";
+    
+    // BBox attribútum létrehozása és beállítása (határoló doboz)
+    StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+    bboxAttribute.SetRectangleValue(new Aspose.Pdf.Rectangle(0.0, 0.0, 100.0, 100.0));
+    
+    // Állítsa be az ábra elrendezési attribútumait
+    StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+    figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
+```
 
-// Feszítőelem áthelyezése a bekezdésbe (rossz terjedelem és bekezdés keresése az első TD-ben)
+-  Ez a kód végigfut az összesen`FigureElement` a gyökérstruktúrában lévő objektumok, amelyek képeket reprezentálnak.
+- Beállítja a kisegítő lehetőségek alternatív szövegét (a képernyőolvasók ezt fogják használni a kép leírására).
+- A határoló doboz (`BBox`megadja a kép elrendezésének koordinátáit, biztosítva, hogy az megfelelően jelenjen meg a dokumentumban.
+
+## 5. lépés: Módosítsa a feszítőelemeket a táblázatban
+
+ Bizonyos esetekben előfordulhat, hogy módosítania kell a táblázaton belüli span elemeket. Itt bemutatjuk, hogyan lehet megtalálni a`SpanElement` és helyezze át egy bekezdésbe.
+
+```csharp
+// Keresse meg a táblázat-, span- és bekezdéselemeket
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// A Span elem áthelyezése a bekezdésbe
+// Helyezze át a span elemet a bekezdésbe
 spanElement.ChangeParentElement(paragraph);
+```
 
-// Dokumentum mentése
+-  Itt megtaláljuk a`TableElement`, `SpanElement` , és`ParagraphElement` a PDF-ben.
+-  A`ChangeParentElement` módszerrel áthelyezzük a szakaszt a bekezdésbe, hogy biztosítsuk a megfelelő címkézést és szerkezetet.
+
+## 6. lépés: Mentse el a dokumentumot, és ellenőrizze a PDF/UA megfelelőséget
+
+Az összes módosítás után az utolsó lépés a frissített PDF mentése, és annak ellenőrzése, hogy az megfelel-e a PDF/UA szabványoknak.
+
+```csharp
+// Mentse el a frissített PDF dokumentumot
 document.Save(outFile);
 
-// PDF/UA megfelelőség ellenőrzése a kiadott dokumentumhoz
+// Érvényesítse a PDF/UA megfelelőséget
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+-  A`Validate` metódus ellenőrzi a PDF dokumentumot a PDF/UA szabványoknak megfelelően, és naplózza az eredményeket.
+- A megfelelőség biztosítása elősegíti a hozzáférhetőség javítását és a dokumentumok közzétételére vonatkozó szabályozási követelmények teljesítését.
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan jelölhet meg egy képet egy meglévő PDF-ben az Aspose.PDF for .NET használatával. Az Aspose.PDF segítségével címkéket adhat hozzá, és szerkesztheti a PDF-dokumentumokban lévő képeket.
+Ebben az oktatóanyagban megmutattuk, hogyan címkézhet meg képeket egy meglévő PDF-ben az Aspose.PDF for .NET használatával. Alternatív szöveg beállításával, az elrendezési attribútumok módosításával és a dokumentum PDF/UA-megfelelőségének ellenőrzésével biztosíthatja, hogy PDF-fájljai elérhetőek legyenek, és megfeleljenek a modern szabványoknak. Az Aspose.PDF megkönnyíti a strukturált elemekkel való munkát, így Ön szabályozhatja a dokumentum elrendezését és hozzáférhetőségét.
 
-### GYIK
+## GYIK
 
-#### K: Mi a fő célja ennek az oktatóanyagnak a meglévő PDF-ben lévő képek Aspose.PDF for .NET használatával címkézésével kapcsolatban?
+### Mire használható az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely PDF-dokumentumok programozott létrehozására, szerkesztésére és manipulálására szolgál .NET környezetben.
 
-V: Ennek az oktatóanyagnak az elsődleges célja, hogy végigvezesse a kép megjelölésének folyamatán egy meglévő PDF-dokumentumban az Aspose.PDF for .NET használatával. Az oktatóanyag lépésenkénti utasításokat és C# forráskód példákat tartalmaz, amelyek segítenek megérteni, hogyan rendelhet hozzá alternatív szöveget és határolókereteket a képekhez, hogyan helyezhet át elemeket a dokumentumon belül, és hogyan adhat hozzá címkéket a képekhez.
+### Hogyan biztosíthatom a PDF/UA megfelelőséget?
+ Használhatja az Aspose.PDF-et`Validate` módszer a PDF/UA megfelelőség ellenőrzésére a dokumentum módosítása után.
 
-#### K: Milyen előfeltételei vannak ennek az oktatóanyagnak a PDF-ben található képek Aspose.PDF for .NET használatával történő címkézésével kapcsolatban?
+### Mi az alternatív szöveg a PDF-ekben?
+Az alternatív szöveg a PDF-fájlokban található képekhez hozzáadott leírás a hozzáférhetőség javítása érdekében, különösen a képernyőolvasókat használó felhasználók számára.
 
-V: Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet az Aspose.PDF for .NET használatára állította be. Ez magában foglalja az Aspose.PDF könyvtár telepítését és a projekt konfigurálását, hogy hivatkozzon rá.
+### Az Aspose.PDF segítségével manipulálhatom a táblázatokat és a terjedelmeket PDF-ben?
+Igen, az Aspose.PDF lehetővé teszi a táblázatok, ívek és egyéb strukturált elemek kezelését egy PDF-dokumentumban.
 
-#### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot, és érhetem el a címkézett tartalmát az Aspose.PDF for .NET használatával?
-
-V: Az oktatóanyag C#-forráskód példákat mutat be, amelyek bemutatják, hogyan lehet megnyitni egy meglévő PDF-dokumentumot az Aspose.PDF for .NET használatával, és hogyan lehet hozzáférni a címkézett tartalmához további kezelés céljából.
-
-#### K: Mi a célja alternatív szövegek és határolókeretek hozzárendelésének a PDF-dokumentum képeihez?
-
-V: Alternatív szövegek és határolókeretek hozzárendelése a képekhez javítja a hozzáférhetőséget azáltal, hogy leíró szöveget biztosít a képekhez, és meghatározza azok elrendezését és elhelyezkedését a dokumentumban. Ez az információ döntő fontosságú a képernyőolvasók és más segítő technológiák számára.
-
-#### K: Hogyan állíthatom be egy címkézett PDF-dokumentum címét az Aspose.PDF for .NET használatával?
-
-V: Az oktatóanyag C#-forráskód-példákat tartalmaz, amelyek bemutatják, hogyan lehet beállítani egy címkézett PDF-dokumentum címét az Aspose.PDF for .NET használatával.
-
-#### K: Mit foglal magában az elemek mozgatása egy PDF dokumentumon belül?
-
-V: A PDF dokumentumon belüli elemek áthelyezése egy adott elem szülőelemének megváltoztatását jelenti. Ebből az oktatóanyagból megtudhatja, hogyan helyezhet át egy Span elemet egy táblázatban megadott bekezdéselembe.
-
-#### K: Hogyan menthetem el a módosított PDF-dokumentumot a címkék hozzáadása és a képek szerkesztése után?
-
- V: Miután hozzáadta a címkéket, hozzárendelt alternatív szöveget, beállította a határolókereteket, és szerkesztette a PDF-dokumentumot, a mellékelt C#-forráskód-példák segítségével elmentheti a módosított PDF-dokumentumot a`Save()` módszer.
-
-#### K: Mi a célja az oktatóanyagban található mintaforráskódnak?
-
-V: A mintaforráskód gyakorlati referenciaként szolgál a képek címkézéséhez és manipulálásához az Aspose.PDF for .NET használatával. Ezt a kódot használhatja kiindulási pontként, és módosíthatja sajátos igényei szerint.
-
-#### K: Alkalmazhatom ezeket a technikákat egy PDF-dokumentum más típusú elemeire is, nem csak képekre?
-
-V: Igen, az ebben az oktatóanyagban bemutatott technikák adaptálhatók a PDF-dokumentum különféle elemeinek kezelésére. Hasonló elveket alkalmazhat más elemek, például szöveg, táblázatok és egyebek címkézésére és manipulálására.
-
-#### K: Hogyan ellenőrizhetem a módosított PDF dokumentum PDF/UA megfelelőségét?
-
- V: Az oktatóanyag C# forráskód példákat tartalmaz, amelyek bemutatják, hogyan ellenőrizhető a módosított PDF-dokumentum PDF/UA megfelelősége a`Validate()` módszert és XML jelentést generál.
-
-#### K: Milyen egyéb funkciókat kínál az Aspose.PDF for .NET a PDF-dokumentumok kezeléséhez?
-
-V: Az Aspose.PDF for .NET szolgáltatások széles skáláját kínálja a PDF-dokumentumokkal való munkavégzéshez, beleértve a szövegkezelést, a képbeszúrást, a táblázatkészítést, az űrlapmezők kezelését, a digitális aláírásokat, a megjegyzéseket stb. A további feltáráshoz tekintse meg a hivatalos dokumentációt és forrásokat.
+### Honnan tölthetem le az Aspose.PDF-et .NET-hez?
+ Letöltheti az Aspose.PDF legújabb verzióját .NET-hez[itt](https://releases.aspose.com/pdf/net/).

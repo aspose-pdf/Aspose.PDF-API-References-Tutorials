@@ -2,291 +2,191 @@
 title: 스타일 테이블 요소
 linktitle: 스타일 테이블 요소
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET으로 테이블 요소를 포맷하는 방법을 알아보세요. 스타일과 속성을 사용자 정의하는 단계별 가이드입니다.
+description: 단계별 지침, 사용자 정의 스타일, PDF/UA 준수를 통해 .NET용 Aspose.PDF에서 표 요소를 만들고 스타일을 지정하는 방법을 알아보세요.
 type: docs
 weight: 170
 url: /ko/net/programming-with-tagged-pdf/style-table-element/
 ---
-이 자세한 튜토리얼에서는 제공된 C# 소스 코드를 단계별로 안내하여 .NET용 Aspose.PDF를 사용하여 배열 요소를 포맷합니다. 아래 지침에 따라 배열 요소의 스타일과 속성을 사용자 지정하는 방법을 이해합니다.
+## 소개
 
-## 1단계: 환경 설정
+이 글에서는 Aspose.PDF for .NET을 사용하여 테이블 요소를 만들고 스타일을 지정하는 방법을 알아보겠습니다. 테이블을 구조화하고, 사용자 지정 스타일을 적용하고, 문서의 PDF/UA 준수 여부를 확인하는 방법을 알아봅니다. 이 튜토리얼을 마치면 PDF에서 전문적인 테이블을 쉽게 만들 수 있을 것입니다!
 
-시작하기 전에 Aspose.PDF for .NET을 사용하도록 개발 환경을 구성했는지 확인하세요. 여기에는 Aspose.PDF 라이브러리를 설치하고 이를 참조하도록 프로젝트를 구성하는 것이 포함됩니다.
+## 필수 조건
 
-## 2단계: 문서 만들기
+튜토리얼을 시작하기 전에 다음 사항이 있는지 확인하세요.
 
-이 단계에서는 Aspose.PDF라는 새 문서 개체를 만듭니다.
+1. 컴퓨터에 Visual Studio나 비슷한 IDE가 설치되어 있어야 합니다.
+2. 애플리케이션을 실행하려면 .NET Framework 또는 .NET Core SDK가 필요합니다.
+3.  .NET 라이브러리용 Aspose.PDF를 다운로드하여 프로젝트에서 참조합니다. 최신 버전은 다음에서 가져올 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+4.  유효한 Aspose 라이센스 또는[임시 면허](https://purchase.aspose.com/temporary-license/) 라이브러리의 모든 기능을 활용하세요.
+
+## 패키지 가져오기
+
+시작하려면 필요한 네임스페이스를 프로젝트로 가져옵니다.
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+이러한 네임스페이스는 핵심 PDF 작업, 태그가 지정된 콘텐츠, 표 및 텍스트 서식을 다룹니다.
+
+이제 Aspose.PDF에서 테이블을 만들고 스타일링하는 과정을 분석해 보겠습니다. 각 섹션을 자세히 살펴보겠습니다. 따라할 수 있도록요.
+
+## 1단계: 새 PDF 문서 만들기 및 태그가 지정된 콘텐츠 설정
+
+첫 번째 단계에서는 빈 PDF 문서를 만들고 태그가 지정된 콘텐츠를 설정합니다.
 
 ```csharp
 // 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// 문서 생성
+// 새 PDF 문서 만들기
 Document document = new Document();
+
+// 태그가 지정된 콘텐츠 설정
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
 ```
 
-새 문서를 만들고 문서 제목과 언어를 설정했습니다.
+ 우리는 새로운 것을 만드는 것으로 시작합니다`Document` PDF를 나타내는 객체입니다.`TaggedContent`객체는 문서의 구조를 관리하고 접근성 표준을 준수하는 데 사용됩니다. 적절한 태그를 위해 문서의 제목과 언어를 설정합니다.
 
-## 3단계: 루트 구조 요소 얻기
+## 2단계: 루트 요소 정의
 
-이 단계에서는 문서의 루트 구조 요소를 가져옵니다.
+다음으로, PDF에 있는 모든 콘텐츠의 컨테이너 역할을 하는 루트 구조 요소를 만들어 보겠습니다.
 
 ```csharp
-// 루트 구조 요소를 얻습니다
+// 루트 구조 요소를 가져옵니다
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-배열 요소를 담는 컨테이너 역할을 할 루트 구조 요소를 얻었습니다.
+ 그만큼`RootElement` 표를 포함한 모든 구조화된 요소의 기본 컨테이너 역할을 합니다. 문서의 구조적 계층을 유지하는 데 도움이 되며, 이는 조직과 접근성에 모두 중요합니다.
 
-## 4단계: 배열 구조 요소 생성
+## 3단계: 테이블 요소 만들기 및 스타일 지정
 
-이제 문서에 대한 새로운 테이블 구조 요소를 만들어 보겠습니다.
+ 이제 루트 요소가 설정되었으므로 다음을 생성합니다.`TableElement` 배경색, 테두리, 정렬 등의 스타일을 적용합니다.
 
 ```csharp
-// 배열 구조 요소 생성
+// 테이블 구조 요소 생성
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-```
 
-새로운 배열 구조 요소를 생성하여 루트 구조 요소에 추가했습니다.
-
-## 5단계: 배열 요소 스타일 및 속성 사용자 지정
-
-이 단계에서는 배열 요소의 스타일과 속성을 사용자 지정합니다.
-
-```csharp
-// 배열 요소의 스타일과 속성을 사용자 정의합니다.
+// 테이블 스타일 지정
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
+```
+
+ 우리는 만듭니다`TableElement` , 테이블 구조를 정의합니다.`BackgroundColor`, `Border` , 그리고`Alignment` 속성을 사용하면 테이블의 모양을 사용자 정의할 수 있습니다.`Broken` 이 속성은 표가 여러 페이지에 걸쳐 나누어질 경우 수직 방향으로 나누어지도록 보장합니다.
+
+## 4단계: 테이블 크기 및 셀 스타일 설정
+
+이 단계에서는 열 수, 셀 패딩 및 기타 중요한 표 속성을 정의합니다.
+
+```csharp
+tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
+```
 
-// 반복되는 선의 스타일을 사용자 정의합니다
+ 우리는 테이블의 각 열이 균일하게 간격을 두도록 열 너비를 지정합니다.`DefaultCellBorder`, `DefaultCellPadding` , 그리고`DefaultCellTextState` 테두리, 패딩, 텍스트 색상, 글꼴 크기 등 셀의 기본 스타일을 정의합니다.
+
+## 5단계: 반복되는 행 및 사용자 정의 스타일 추가
+
+반복되는 행과 머리글, 바닥글 같은 다른 특정 테이블 요소에 대한 스타일을 정의할 수도 있습니다.
+
+```csharp
+tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-배경색, 테두리, 정렬, 기본 셀 스타일, 여백, 열 너비 등 다양한 속성을 사용하여 테이블 요소를 사용자 정의했습니다.
+ 그만큼`RepeatingRowsCount` 테이블이 여러 페이지에 걸쳐 있는 경우 처음 세 행이 반복되도록 합니다.`RepeatingRowsStyle` 이러한 행에 사용자 지정 배경색을 적용합니다.
 
-## 6단계: 테이블 헤더, 본문 및 바닥글 추가
+## 6단계: 테이블 머리글, 본문 및 바닥 요소 추가
 
-이제 테이블 요소에 테이블 머리글, 본문, 바닥글을 추가해 보겠습니다.
+이제 표의 머리글, 본문, 바닥글 섹션을 만들고 여기에 콘텐츠를 채워보겠습니다.
+
 ```csharp
-// 테이블 헤더 추가
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// 표의 행과 열의 수
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// 테이블 헤더 행을 만듭니다
+// 헤더 행 만들기
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
+headTrElement.AlternativeText = "Head Row";
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-//테이블 본문의 행을 추가합니다.
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+// 테이블 본문 채우기
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
 {
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// 테이블의 기초선을 추가합니다
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
 }
 ```
 
-우리는 해당 요소를 사용하여 표에 머리글, 본문 행, 바닥글 행을 추가했습니다.
+ 테이블은 머리, 본문, 발의 세 부분으로 나뉩니다. 먼저 다음을 사용하여 헤더 행을 만듭니다.`TableTHElement`그리고 열 제목을 추가합니다. 그런 다음 테이블 본문을 다음과 같이 채웁니다.`TableTDElement`각 셀에 해당 위치가 포함된 라벨을 채웁니다.
 
-## 7단계: 태그가 지정된 PDF 문서 저장
+## 7단계: 문서 저장
 
-이제 스타일이 지정된 테이블 요소로 문서를 만들었으므로 이를 태그가 지정된 PDF 문서로 저장하겠습니다.
+마지막으로 PDF 문서를 지정된 디렉토리에 저장합니다.
 
 ```csharp
 // 태그가 지정된 PDF 문서를 저장합니다.
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-태그가 지정된 PDF 문서를 지정된 디렉토리에 저장했습니다.
+이 단계에서는 스타일이 지정된 표가 포함된 PDF 파일을 저장하여 문서 생성 프로세스를 마무리합니다.
 
-## 8단계: PDF/UA 준수 검증
+## 8단계: PDF/UA 준수 확인
 
-다음으로, 문서의 PDF/UA 적합성을 검증하겠습니다.
+문서를 저장한 후에는 해당 문서가 PDF/UA(Universal Accessibility) 표준을 준수하는지 확인하는 것이 중요합니다.
 
 ```csharp
 // PDF/UA 준수 확인
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
 
-태그가 지정된 PDF 문서를 업로드하고 XML 보고서를 생성하여 PDF/UA 준수 여부를 검증했습니다.
-
-### .NET용 Aspose.PDF를 사용한 Style Table Element의 샘플 소스 코드 
-
-```csharp
-
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// 문서 생성
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table style");
-taggedContent.SetLanguage("en-US");
-
-// 루트 구조 요소 가져오기
-StructureElement rootElement = taggedContent.RootElement;
-
-// 테이블 구조 요소 생성
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement.Alignment = HorizontalAlignment.Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement.ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
-
-// 태그가 지정된 PDF 문서 저장
-document.Save(dataDir + "StyleTableElement.pdf");
-
-// PDF/UA 준수 확인
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
-```
+여기서 문서를 다시 로드하고 PDF/UA 표준에 대해 검증합니다. 규정 준수를 통해 PDF가 접근성 요구 사항을 충족하여 광범위한 사용자에게 적합하게 만듭니다.
 
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET으로 배열 요소를 포맷하는 방법을 배웠습니다. 테이블 요소의 스타일과 속성을 사용자 지정하고, 헤더, 본문 행, 푸터를 추가하고, 태그가 지정된 PDF 문서를 저장하고, PDF/UA 준수 여부를 검증했습니다.
+Aspose.PDF for .NET을 사용하면 PDF 문서에서 표를 만들고 스타일을 지정하는 것이 간단하고 직관적입니다. 이 튜토리얼에 설명된 단계를 따르면 사용자 지정 스타일로 표를 작성하고 PDF가 접근성 표준을 충족하는지 확인할 수 있습니다. 보고서를 생성하든 구조화된 문서를 작성하든 표는 데이터를 명확하게 표현하는 강력한 도구입니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: Aspose.PDF for .NET을 사용하여 배열 요소를 서식 지정하는 방법에 대한 이 튜토리얼의 목적은 무엇입니까?
+### 표 셀 안에 이미지를 추가할 수 있나요?
+ 예, 다음을 사용하여 표 셀에 이미지를 삽입할 수 있습니다.`Image` 요소.
 
-A: 이 튜토리얼의 목적은 Aspose.PDF for .NET을 사용하여 PDF 문서에서 배열 요소를 포맷하는 과정을 안내하는 것입니다. 배열 요소의 스타일과 속성을 사용자 정의하는 데 도움이 되는 단계별 지침과 C# 소스 코드 예제를 제공합니다.
+### 열 너비를 동적으로 조정하려면 어떻게 해야 하나요?
+ 설정할 수 있습니다`ColumnAdjustment` 재산에`AutoFitToWindow` 콘텐츠에 따라 열 너비를 자동으로 조정합니다.
 
-#### 질문: 이 튜토리얼을 따르기 위한 전제 조건은 무엇입니까?
+### 모든 문서가 PDF/UA 규정을 준수해야 합니까?
+필수는 아니지만, 높은 접근성 표준이 요구되는 문서에 권장됩니다.
 
-A: 시작하기 전에 Aspose.PDF for .NET을 사용하도록 개발 환경을 설정했는지 확인하세요. 여기에는 Aspose.PDF 라이브러리를 설치하고 프로젝트를 구성하여 참조하도록 하는 것이 포함됩니다.
+### 특정 행에 다른 스타일을 적용할 수 있나요?
+ 예, 개별 행이나 셀을 조정하여 사용자 정의할 수 있습니다.`TextState` 또는`BackgroundColor`.
 
-#### 질문: Aspose.PDF for .NET을 사용하여 새 PDF 문서를 만들고 제목과 언어를 설정하려면 어떻게 해야 합니까?
-
- A: 새 PDF 문서를 만들려면 다음을 만들어야 합니다.`Document` Aspose.PDF 라이브러리의 개체입니다. 튜토리얼의 제공된 C# 소스 코드는 문서를 만들고 제목과 언어 속성을 설정하는 방법을 보여줍니다.
-
-#### 질문: PDF 문서에서 루트 구조 요소의 중요성은 무엇인가요?
-
-A: 루트 구조 요소는 다른 구조 요소의 컨테이너 역할을 하며 PDF 문서의 내용을 구성하고 분류하는 데 도움이 됩니다. 문서의 논리적 구조를 확립하는 데 중요한 역할을 합니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 배열 구조 요소를 만들고 사용자 지정하려면 어떻게 해야 합니까?
-
- A: 다음을 사용하여 배열 구조 요소를 생성할 수 있습니다.`CreateTableElement()` 방법. 튜토리얼의 소스 코드는 배경색, 테두리, 정렬, 열 너비 등과 같은 테이블 요소의 다양한 속성을 사용자 정의하는 예를 제공합니다.
-
-#### 질문: 배열 요소 내에서 테이블 셀의 스타일과 속성을 사용자 정의할 수 있나요?
-
-A: 네, 튜토리얼에서는 헤더, 본문 행, 푸터를 포함한 전체 테이블 요소의 스타일과 속성을 사용자 지정하는 방법을 다룹니다. 그러나 개별 테이블 셀을 사용자 지정하는 방법은 구체적으로 다루지 않습니다.
-
-#### 질문: 테이블 요소에 머리글, 본문 행, 바닥글을 추가하려면 어떻게 해야 하나요?
-
-답변: 이 튜토리얼에서는 Aspose.PDF for .NET에서 제공하는 적절한 메서드를 사용하여 테이블 요소에 머리글, 본문 행 및 바닥글을 만들고 추가하는 방법을 설명합니다.
-
-#### 질문: PDF/UA 준수란 무엇이며, 태그가 지정된 PDF 문서에 대해 어떻게 검증할 수 있습니까?
-
- A: PDF/UA 준수는 PDF 문서가 접근성 표준을 준수하여 장애가 있는 사용자가 더 쉽게 접근할 수 있도록 보장합니다. 이 튜토리얼은 다음을 사용하여 PDF/UA 준수를 검증하는 방법을 보여줍니다.`Validate()` 방법을 사용하여 XML 준수 보고서를 생성합니다.
-
-#### 질문: 이러한 개념을 내 .NET 애플리케이션에 어떻게 통합할 수 있습니까?
-
-A: 제공된 C# 소스 코드 예제를 가이드로 사용하여 자신의 .NET 애플리케이션에서 배열 요소 서식을 구현할 수 있습니다. 요구 사항에 맞게 코드를 수정하고 조정하여 프로젝트에 통합합니다.
-
-#### 질문: PDF 문서에서 배열 요소를 서식 지정하는 데 권장되는 모범 사례가 있나요?
-
-A: 배열 요소(표)를 포맷할 때 콘텐츠의 가독성과 접근성을 고려하세요. 명확하고 읽기 쉬운 글꼴, 적절한 색상을 사용하고 일관된 레이아웃을 유지하세요. PDF/UA 준수를 검증하여 접근성 표준이 충족되는지 확인하세요.
-
-#### 질문: PDF 문서 사용자 정의를 위해 .NET용 Aspose.PDF의 다른 어떤 기능을 살펴볼 수 있나요?
-
-A: Aspose.PDF for .NET은 텍스트 조작, 이미지 삽입, 양식 필드 관리, 디지털 서명, 주석 등을 포함하여 PDF 문서 사용자 지정을 위한 다양한 기능을 제공합니다. 추가 기능을 탐색하려면 공식 문서와 리소스를 참조하세요.
+### 태그가 달린 콘텐츠를 사용하면 어떤 이점이 있나요?
+태그가 지정된 콘텐츠는 문서 접근성을 개선하고 PDF/UA와 같은 표준을 준수하는 데 도움이 됩니다.

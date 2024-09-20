@@ -2,7 +2,7 @@
 title: Bepaalde aantekening in PDF-bestand verwijderen
 linktitle: Bepaalde aantekening in PDF-bestand verwijderen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een specifieke aantekening in een PDF-bestand verwijdert met Aspose.PDF voor .NET met behulp van deze stapsgewijze handleiding.
+description: Leer hoe u een specifieke aantekening in een PDF-bestand verwijdert met Aspose.PDF voor .NET met deze stapsgewijze handleiding.
 type: docs
 weight: 50
 url: /nl/net/annotations/deleteparticularannotation/

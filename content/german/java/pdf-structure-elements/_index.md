@@ -20,7 +20,7 @@ Im nächsten Abschnitt erfahren Sie, wie Sie dieses Wissen praktisch anwenden. W
 
 Der letzte Teil unserer Tutorials bringt Sie auf die nächste Ebene. Sie lernen fortgeschrittene Techniken zur Feinabstimmung Ihrer PDFs, zur Optimierung von Tagging-Strukturen, zur Handhabung von Formularen, Links und zur Definition von Sprachen kennen. Mit diesen Fähigkeiten können Sie mühelos allgemein zugängliche PDF-Dokumente erstellen.
 
-Begleiten Sie uns auf dieser Reise, um mit Aspose.PDF für Java ein Experte für die PDF-Strukturierung zu werden und Dokumente zu erstellen, die ein vielfältiges Publikum ansprechen, darunter auch Menschen mit Behinderungen.
+Begleiten Sie uns auf diesem Weg, mit Aspose.PDF für Java ein Experte für die PDF-Strukturierung zu werden und Dokumente zu erstellen, die ein vielfältiges Publikum ansprechen, auch Menschen mit Behinderungen.
 ## Tutorials zu PDF-Strukturelementen
 ### [Zugriff auf untergeordnete Elemente von Strukturelementen in PDF mit Java](./access-children-elements-of-structure-element-in-pdf-using-java/)
 Erfahren Sie, wie Sie mit Java auf untergeordnete Elemente von Strukturelementen in PDF zugreifen. Diese Schritt-für-Schritt-Anleitung mit Quellcode behandelt die PDF-Bearbeitung mit Aspose.PDF für Java.

@@ -9,7 +9,7 @@ url: /fr/net/programming-with-forms/move-form-field/
 ---
 ## Introduction
 
-Modifier des champs de formulaire dans des documents PDF peut sembler compliqué au début, mais avec Aspose.PDF pour .NET, c'est un jeu d'enfant ! Que vous travailliez sur le déplacement de zones de texte, le réglage précis des mises en page ou l'ajustement d'éléments interactifs, Aspose.PDF offre une solution puissante pour vos projets .NET. Dans ce didacticiel, nous vous guiderons à travers les étapes à suivre pour déplacer un champ de formulaire dans un document PDF à l'aide d'Aspose.PDF pour .NET.
+Modifier des champs de formulaire dans des documents PDF peut sembler compliqué au début, mais avec Aspose.PDF pour .NET, c'est un jeu d'enfant ! Que vous travailliez sur le déplacement de zones de texte, le réglage fin des mises en page ou l'ajustement d'éléments interactifs, Aspose.PDF offre une solution puissante pour vos projets .NET. Dans ce didacticiel, nous vous guiderons à travers les étapes à suivre pour déplacer un champ de formulaire dans un document PDF à l'aide d'Aspose.PDF pour .NET.
 
 ## Prérequis
 

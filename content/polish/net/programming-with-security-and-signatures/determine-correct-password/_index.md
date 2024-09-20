@@ -56,7 +56,7 @@ Install-Package Aspose.PDF
 
 To polecenie pobiera i instaluje plik Aspose.PDF w projekcie, co gwarantuje powodzenie projektu.
 
-Teraz omówmy główne kroki związane z identyfikacją prawidłowego hasła do pliku PDF. Przejdziemy przez przykładową implementację krok po kroku, aby uzyskać jasność.
+Teraz omówmy główne kroki związane z identyfikacją prawidłowego hasła do pliku PDF. Przeprowadzimy przykładową implementację krok po kroku, aby uzyskać jasność.
 
 ## Krok 1: Ustaw ścieżkę pliku
 

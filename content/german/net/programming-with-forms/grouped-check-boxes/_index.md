@@ -80,7 +80,7 @@ opt2.OptionName = "Option2";
 
 ## Schritt 4: Passen Sie den Stil der Optionsfelder an
 
- Sie können das Erscheinungsbild der Optionsfelder anpassen, indem Sie deren`Style` Eigenschaft. Sie möchten vielleicht quadratische oder kreuzförmige Kontrollkästchen.
+ Sie können das Erscheinungsbild der Optionsfelder anpassen, indem Sie deren`Style` Eigenschaft. Sie möchten beispielsweise quadratische oder kreuzförmige Kontrollkästchen.
 
 ```csharp
 // Legen Sie den Stil der Optionsfelder fest

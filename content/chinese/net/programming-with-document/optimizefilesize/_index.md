@@ -95,7 +95,7 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 pdfDocument.OptimizeResources(optimizationOptions);
 ```
 
-这行代码调用`OptimizeResources`我们的方法`pdfDocument`对象，应用我们之前配置的所有设置。
+这行代码调用`OptimizeResources`方法`pdfDocument`对象，应用我们之前配置的所有设置。
 
 ## 步骤 6：保存优化后的 PDF
 

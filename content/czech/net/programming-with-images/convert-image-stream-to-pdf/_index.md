@@ -1,6 +1,6 @@
 ---
-title: Převést tok obrázků na soubor PDF
-linktitle: Převést tok obrázků na soubor PDF
+title: Převést tok obrázků do souboru PDF
+linktitle: Převést tok obrázků do souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
 description: Pomocí tohoto podrobného průvodce krok za krokem snadno převeďte proud obrázků do formátu PDF pomocí Aspose.PDF for .NET. Naučte se, jak bez námahy zacházet s převody obrázků do PDF.
 type: docs

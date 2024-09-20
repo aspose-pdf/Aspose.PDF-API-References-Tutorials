@@ -2,30 +2,58 @@
 title: Trích xuất đường viền trong tệp PDF
 linktitle: Trích xuất đường viền trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách trích xuất đường viền trong tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách trích xuất đường viền từ tệp PDF và lưu chúng dưới dạng hình ảnh bằng Aspose.PDF cho .NET. Hướng dẫn từng bước với các mẫu mã và mẹo để thành công.
 type: docs
 weight: 80
 url: /vi/net/programming-with-tables/extract-border/
 ---
-Trong hướng dẫn này, chúng ta sẽ học cách trích xuất đường viền trong tệp PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn bằng C# từng bước. Vào cuối hướng dẫn này, bạn sẽ biết cách trích xuất đường viền từ tài liệu PDF và lưu dưới dạng hình ảnh. Hãy bắt đầu!
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
-Trước tiên, hãy đảm bảo bạn đã thiết lập môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu đến thư viện và nhập các không gian tên cần thiết.
+Khi làm việc với PDF, việc trích xuất các thành phần cụ thể như đường viền hoặc đường dẫn đồ họa có vẻ là một nhiệm vụ khó khăn. Nhưng với Aspose.PDF cho .NET, bạn có thể dễ dàng trích xuất đường viền hoặc hình dạng từ tệp PDF và lưu chúng dưới dạng hình ảnh. Trong hướng dẫn này, chúng ta sẽ tìm hiểu sâu hơn về quy trình trích xuất đường viền từ PDF và lưu dưới dạng hình ảnh PNG. Hãy sẵn sàng để kiểm soát nội dung đồ họa của PDF!
 
-## Bước 2: Tải tài liệu PDF
-Ở bước này, chúng ta tải tài liệu PDF từ tệp đã chỉ định.
+## Điều kiện tiên quyết
+
+Trước khi tìm hiểu mã, hãy đảm bảo bạn đã thiết lập mọi thứ:
+
+1.  Aspose.PDF cho .NET: Nếu bạn chưa cài đặt thư viện Aspose.PDF, bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/). Bạn cũng cần phải áp dụng giấy phép, thông qua bản dùng thử miễn phí hoặc giấy phép đã mua.
+2. Thiết lập IDE: Thiết lập dự án C# trong Visual Studio hoặc bất kỳ IDE .NET nào khác. Đảm bảo bạn đã thêm các tham chiếu cần thiết vào thư viện Aspose.PDF.
+3. Đầu vào tệp PDF: Chuẩn bị tệp PDF mà bạn sẽ trích xuất các đường viền. Hướng dẫn này sẽ tham chiếu đến tệp có tên`input.pdf`.
+
+## Nhập các gói cần thiết
+
+Hãy bắt đầu bằng cách nhập các không gian tên cần thiết. Các gói này cung cấp các công cụ cần thiết để thao tác nội dung PDF.
 
 ```csharp
+using System.IO;
+using System;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Collections;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Bây giờ chúng ta đã nắm được những kiến thức cơ bản, hãy cùng chuyển sang hướng dẫn từng bước, trong đó chúng tôi sẽ phân tích từng phần của mã để giải thích chi tiết.
+
+
+## Bước 1: Tải tài liệu PDF
+
+Bước đầu tiên là tải tài liệu PDF có chứa đường viền bạn muốn trích xuất. Hãy nghĩ về việc này giống như việc mở một cuốn sách trước khi bạn bắt đầu đọc — bạn cần truy cập vào nội dung!
+
+ Chúng tôi sẽ bắt đầu bằng cách chỉ định thư mục lưu trữ tệp PDF của bạn và tải tài liệu bằng cách sử dụng`Aspose.Pdf.Document` lớp học.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Hãy nhớ thay thế "YOUR DOCUMENT DIRECTORY" bằng thư mục thực tế chứa tệp PDF của bạn.
+ Mã này tải`input.pdf` tệp từ thư mục bạn chỉ định. Đảm bảo đường dẫn tệp là chính xác, nếu không bạn có thể gặp lỗi không tìm thấy tệp.
 
-## Bước 3: Trích xuất cạnh
-Chúng tôi sẽ trích xuất đường viền từ tài liệu PDF bằng cách lặp lại các thao tác có trong tài liệu.
+## Bước 2: Thiết lập đồ họa và Bitmap
+
+Trước khi bắt đầu trích xuất, chúng ta cần tạo một canvas để vẽ. Trong thế giới .NET, điều này có nghĩa là thiết lập các đối tượng Bitmap và Graphics. Bitmap biểu diễn hình ảnh và đối tượng Graphics sẽ cho phép chúng ta vẽ các hình dạng, chẳng hạn như đường viền, được trích xuất từ PDF.
 
 ```csharp
-Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
@@ -33,226 +61,106 @@ System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.M
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
 System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+```
 
-using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
+Sau đây là thông tin chi tiết:
+- Chúng tôi tạo một hình ảnh bitmap có kích thước bằng trang đầu tiên của tệp PDF.
+- GraphicsPath được sử dụng để xác định hình dạng (trong trường hợp này là đường viền).
+- Ma trận xác định cách đồ họa sẽ được chuyển đổi; chúng ta cần một ma trận đảo ngược vì PDF và .NET có hệ tọa độ khác nhau.
+
+## Bước 3: Xử lý nội dung PDF
+
+
+Tệp PDF là một chuỗi các lệnh vẽ và chúng ta cần xử lý từng lệnh này để xác định và trích xuất thông tin đường viền.
+
+```csharp
+foreach (Operator op in doc.Pages[1].Contents)
 {
-     // Xử lý tất cả các hoạt động nội dung
-     foreach(Operator op in doc.Pages[1].Contents)
-     {
-         // Kiểm tra loại hoạt động
-         // ...
-         // Thêm mã để xử lý từng thao tác
-     }
+    // Xử lý các lệnh như lưu/khôi phục trạng thái, vẽ đường, tô hình, v.v.
 }
 ```
 
- Chúng tôi tạo ra một`graphicsState` ngăn xếp để lưu trữ trạng thái đồ họa, một hình ảnh bitmap để chụp đường viền được trích xuất, một`GraphicsPath` đối tượng để lưu trữ đường dẫn vẽ và các biến khác để theo dõi trạng thái và màu sắc.
+Mã lặp qua mọi toán tử vẽ trong luồng nội dung của PDF. Mỗi toán tử có thể biểu diễn một đường thẳng, hình chữ nhật hoặc hướng dẫn đồ họa khác.
 
-## Bước 4: Xử lý giao dịch
-Ở bước này, chúng ta xử lý từng thao tác của tài liệu để trích xuất đường viền.
+## Bước 4: Xử lý các toán tử PDF
+
+Mỗi toán tử trong tệp PDF điều khiển một hành động. Để trích xuất đường viền, chúng ta cần xác định các lệnh như "di chuyển đến", "đường thẳng đến" và "vẽ hình chữ nhật". Các toán tử sau xử lý các hành động này:
+
+- MoveTo: Di chuyển con trỏ đến điểm bắt đầu.
+- LineTo: Vẽ một đường thẳng từ điểm hiện tại đến một điểm mới.
+- Trả lời: Vẽ một hình chữ nhật (đây có thể là một phần của đường viền).
 
 ```csharp
-// Kiểm tra loại hoạt động
-if (opSaveState != null)
-{
-     // Lưu trạng thái trước đó và đẩy trạng thái hiện tại lên đầu ngăn xếp
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opRestoreState != null)
-{
-     // Xóa trạng thái hiện tại và khôi phục trạng thái trước đó
-     graphicsState. Pop();
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opCtm != null)
-{
-     // Lấy lại ma trận biến đổi hiện tại
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-         (float)opCtm.Matrix.A,
-         (float)opCtm.Matrix.B,
-         (float)opCtm.Matrix.C,
-         (float)opCtm.Matrix.D,
-         (float)opCtm.Matrix.E,
-         (float)opCtm.Matrix.F);
+Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
+Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
+Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
 
-     // Nhân ma trận hiện tại với ma trận trạng thái
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opMoveTo != null)
+if (opMoveTo != null)
 {
-     // Cập nhật điểm vẽ cuối cùng
-     lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
+    lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Xử lý bản vẽ của một đường thẳng
-     // ...
-     // Thêm mã để xử lý việc vẽ một đường thẳng
+    System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
+    graphicsPath.AddLine(lastPoint, linePoint);
+    lastPoint = linePoint;
 }
-// ...
-// Thêm các khối else if cho các hoạt động khác
+else if (opRe != null)
+{
+    System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
+    graphicsPath.AddRectangle(re);
+}
 ```
 
-Chúng tôi kiểm tra loại hoạt động bằng cách sử dụng các điều kiện và chạy mã phù hợp cho từng hoạt động.
+Ở bước này:
+- Chúng tôi ghi lại các điểm cho mỗi đường thẳng hoặc hình dạng được vẽ.
+- Đối với hình chữ nhật (`opRe` ), chúng tôi thêm chúng trực tiếp vào`graphicsPath`, chúng ta sẽ sử dụng sau để vẽ đường viền.
 
-## Bước 5: Sao lưu hình ảnh
-Cuối cùng, chúng ta lưu ảnh bitmap chứa đường viền đã trích xuất vào một tệp được chỉ định.
+## Bước 5: Vẽ đường viền
 
-```csharp
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-```
-
-Hãy chắc chắn chỉ định đúng thư mục và tên tệp để lưu hình ảnh đầu ra.
-
-### Mã nguồn ví dụ cho Trích xuất đường viền bằng Aspose.PDF cho .NET
+Sau khi xác định được các đường thẳng và hình chữ nhật tạo thành đường viền, chúng ta cần thực sự vẽ chúng vào đối tượng Bitmap. Đây chính là lúc đối tượng Graphics xuất hiện.
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document(dataDir + "input.pdf");
-
-Stack graphicsState = new Stack();
-System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
-System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Giá trị ma trận ctm mặc định là 1,0,0,1,0,0
-System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Hệ thống. Hệ tọa độ bản vẽ dựa trên góc trên bên trái, trong khi hệ tọa độ pdf dựa trên góc dưới bên trái, do đó chúng ta phải áp dụng ma trận đảo ngược
-System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
-System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
-System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
-System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-	gr.SmoothingMode = SmoothingMode.HighQuality;
-	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-
-	// Xử lý tất cả các lệnh nội dung
-	foreach (Operator op in doc.Pages[1].Contents)
-	{
-		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-		Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-		Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-		Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
-		Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
-		Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
-		Aspose.Pdf.Operators.EndPath opEndPath = op as Aspose.Pdf.Operators.EndPath;
-		Aspose.Pdf.Operators.Stroke opStroke = op as Aspose.Pdf.Operators.Stroke;
-		Aspose.Pdf.Operators.Fill opFill = op as Aspose.Pdf.Operators.Fill;
-		Aspose.Pdf.Operators.EOFill opEOFill = op as Aspose.Pdf.Operators.EOFill;
-		Aspose.Pdf.Operators.SetRGBColor opRGBFillColor = op as Aspose.Pdf.Operators.SetRGBColor;
-		Aspose.Pdf.Operators.SetRGBColorStroke opRGBStrokeColor = op as Aspose.Pdf.Operators.SetRGBColorStroke;
-
-		if (opSaveState != null)
-		{
-			// Lưu trạng thái trước đó và đẩy trạng thái hiện tại lên đầu ngăn xếp
-			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opRestoreState != null)
-		{
-			// Bỏ trạng thái hiện tại và khôi phục trạng thái trước đó
-			graphicsState.Pop();
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opCtm != null)
-		{
-			System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-				(float)opCtm.Matrix.A,
-				(float)opCtm.Matrix.B,
-				(float)opCtm.Matrix.C,
-				(float)opCtm.Matrix.D,
-				(float)opCtm.Matrix.E,
-				(float)opCtm.Matrix.F);
-
-			// Nhân ma trận hiện tại với ma trận trạng thái
-			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opMoveTo != null)
-		{
-			lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
-		}
-		else if (opLineTo != null)
-		{
-			System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
-			graphicsPath.AddLine(lastPoint, linePoint);
-
-			lastPoint = linePoint;
-		}
-		else if (opRe != null)
-		{
-			System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
-			graphicsPath.AddRectangle(re);
-		}
-		else if (opEndPath != null)
-		{
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opRGBFillColor != null)
-		{
-			fillColor = opRGBFillColor.getColor();
-		}
-		else if (opRGBStrokeColor != null)
-		{
-			strokeColor = opRGBStrokeColor.getColor();
-		}
-		else if (opStroke != null)
-		{
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Winding;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opEOFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Alternate;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-	}
+    gr.SmoothingMode = SmoothingMode.HighQuality;
+    gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
 }
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-
-Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
+- Chúng ta tạo một đối tượng Đồ họa dựa trên bitmap.
+- SmoothingMode.HighQuality đảm bảo chúng ta có được hình ảnh mịn đẹp.
+- Cuối cùng, chúng ta sử dụng DrawPath để vẽ đường viền.
+
+## Bước 6: Lưu đường viền đã trích xuất
+
+Bây giờ chúng ta đã trích xuất đường viền, đã đến lúc lưu nó dưới dạng tệp hình ảnh. Thao tác này sẽ lưu đường viền dưới dạng PNG.
+
+```csharp
+dataDir = dataDir + "ExtractBorder_out.png";
+bitmap.Save(dataDir, ImageFormat.Png);
+```
+
+- Ảnh bitmap được lưu dưới dạng ảnh PNG.
+- Bây giờ bạn có thể mở hình ảnh này để xem đường viền đã trích xuất.
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng ta đã học cách trích xuất đường viền từ tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể sử dụng hướng dẫn từng bước này để trích xuất đường viền từ các tài liệu PDF khác.
 
-### Câu hỏi thường gặp về trích xuất đường viền trong tệp PDF
+Trích xuất đường viền từ tệp PDF bằng Aspose.PDF cho .NET có vẻ khó khăn lúc đầu, nhưng khi bạn phân tích kỹ, nó trở nên đơn giản. Bằng cách hiểu các toán tử vẽ trong PDF và sử dụng các thư viện .NET mạnh mẽ, bạn có thể thao tác và trích xuất nội dung đồ họa một cách hiệu quả. Hướng dẫn này cung cấp cho bạn nền tảng vững chắc để bắt đầu thao tác PDF!
 
-#### H: Mục đích của việc trích xuất đường viền từ tệp PDF là gì?
+## Câu hỏi thường gặp
 
-A: Trích xuất đường viền từ tệp PDF có thể hữu ích cho nhiều mục đích khác nhau. Nó cho phép bạn cô lập và phân tích các thành phần cấu trúc của tài liệu, chẳng hạn như bảng, sơ đồ hoặc thành phần đồ họa. Bạn có thể sử dụng đường viền đã trích xuất để xác định bố cục, kích thước và vị trí của nội dung trong tài liệu PDF.
+### Tôi phải xử lý nhiều trang trong tệp PDF như thế nào?  
+ Bạn có thể lặp qua từng trang trong tài liệu bằng cách lặp lại`doc.Pages` thay vì mã hóa cứng`doc.Pages[1]`.
 
-#### H: Tôi có thể trích xuất đường viền từ các trang hoặc khu vực cụ thể trong tài liệu PDF không?
+### Tôi có thể trích xuất các thành phần khác, như văn bản, bằng cách sử dụng phương pháp tương tự không?  
+Có, Aspose.PDF cung cấp các API phong phú để trích xuất văn bản, hình ảnh và nội dung khác từ tệp PDF.
 
- A: Có, bạn có thể sửa đổi mã nguồn C# được cung cấp để trích xuất đường viền từ các trang hoặc vùng cụ thể trong tài liệu PDF. Bằng cách thao tác`doc.Pages` thu thập và chỉ định tiêu chí tùy chỉnh, bạn có thể chọn trích xuất đường viền từ các trang hoặc khu vực quan tâm cụ thể.
+### Tôi phải áp dụng giấy phép như thế nào để tránh bị hạn chế?  
+ Bạn có thể[áp dụng giấy phép](https://purchase.aspose.com/temporary-license/) bằng cách tải nó thông qua`License` lớp học do Aspose cung cấp.
 
-#### H: Làm thế nào để tùy chỉnh định dạng và chất lượng hình ảnh đầu ra?
+### Nếu tệp PDF của tôi không có đường viền thì sao?  
+Nếu PDF của bạn không có đường viền nào có thể nhìn thấy, quá trình trích xuất đồ họa có thể không mang lại kết quả nào. Đảm bảo rằng nội dung PDF bao gồm đường viền có thể vẽ được.
 
- A: Trong mã C# được cung cấp, đường viền được trích xuất được lưu dưới dạng hình ảnh PNG. Nếu bạn muốn thay đổi định dạng hình ảnh đầu ra, bạn có thể sửa đổi`ImageFormat.Png` tham số trong`bitmap.Save` phương pháp này sang các định dạng hình ảnh được hỗ trợ khác, chẳng hạn như JPEG, BMP hoặc GIF. Ngoài ra, bạn có thể điều chỉnh chất lượng hình ảnh hoặc cài đặt nén dựa trên yêu cầu của mình.
-
-#### H: Tôi có thể thực hiện những thao tác nào khác trên đường viền đã trích xuất?
-
-A: Sau khi trích xuất đường viền dưới dạng hình ảnh, bạn có thể xử lý thêm bằng các thư viện hoặc thuật toán xử lý hình ảnh. Bạn có thể phân tích hình ảnh, áp dụng bộ lọc hình ảnh, phát hiện mẫu hoặc thực hiện OCR (Nhận dạng ký tự quang học) để trích xuất văn bản từ hình ảnh nếu cần.
-
-#### H: Có bất kỳ hạn chế hoặc cân nhắc nào khi trích xuất đường viền từ các tài liệu PDF phức tạp không?
-
-A: Quá trình trích xuất có thể khác nhau tùy thuộc vào độ phức tạp của tài liệu PDF. Các tệp PDF phức tạp với nhiều lớp, độ trong suốt hoặc đồ họa nâng cao có thể yêu cầu xử lý hoặc điều chỉnh bổ sung để trích xuất chính xác đường viền. Điều cần thiết là phải kiểm tra kỹ lưỡng quá trình trích xuất trên nhiều tài liệu PDF khác nhau để đảm bảo kết quả đáng tin cậy.
+### Tôi có thể lưu đầu ra ở định dạng khác ngoài PNG không?  
+ Vâng, chỉ cần thay đổi`ImageFormat.Png` sang một định dạng được hỗ trợ khác như`ImageFormat.Jpeg`.

@@ -48,7 +48,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
-In deze stap opent u in feite het PDF-bestand waaraan u wilt werken. Als u ooit een boek op een bepaalde pagina hebt geopend, is dit vrijwel hetzelfde – maar in plaats daarvan opent u een PDF-document om toegang te krijgen tot de pagina's.
+In deze stap opent u in feite het PDF-bestand waaraan u wilt werken. Als u ooit een boek op een bepaalde pagina hebt geopend, is dit vrijwel hetzelfde, maar in plaats daarvan opent u een PDF-document om toegang te krijgen tot de pagina's.
 
 ## Stap 2: Voeg een lege pagina toe als er geen pagina's bestaan
 

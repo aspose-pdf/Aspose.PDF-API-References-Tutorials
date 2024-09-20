@@ -2,7 +2,7 @@
 title: Kényszerített táblázat-megjelenítés új oldalon PDF-ben Java használatával
 linktitle: Kényszerített táblázat-megjelenítés új oldalon PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan kényszeríthet táblázat-megjelenítést egy új PDF-oldalon Java használatával az Aspose.PDF fájlban. Ez a lépésenkénti útmutató forráskódot és szakértői tippeket tartalmaz a PDF-dokumentumok pontos formázásához.
+description: Ismerje meg, hogyan kényszeríthet táblázat-megjelenítést egy új PDF-oldalon Java használatával az Aspose.PDF fájlban. Ez a lépésenkénti útmutató forráskódot és szakértői tippeket tartalmaz a PDF-dokumentum precíz formázásához.
 type: docs
 weight: 11
 url: /hu/java/pdf-tables/force-table-rendering-on-new-page-in-pdf-using-java/

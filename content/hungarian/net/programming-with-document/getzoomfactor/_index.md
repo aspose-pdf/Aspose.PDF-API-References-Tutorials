@@ -106,7 +106,7 @@ Igen, az Aspose.PDF lehetővé teszi a különféle tulajdonságok kezelését, 
 ### Az Aspose.PDF alkalmas nagyméretű PDF-fájlokhoz?
 Igen, az Aspose.PDF-et a nagy PDF-fájlok hatékony kezelésére tervezték, de a teljesítmény a dokumentum összetettségétől függően változhat.
 
-### Hogyan kaphatok támogatást az Aspose.PDF-hez?
+### Hogyan kaphatok támogatást az Aspose.PDF fájlhoz?
  Támogatást kaphat, ha ellátogat a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10).
 
 ### Használhatom az Aspose.PDF-et webes alkalmazásokban?

@@ -135,10 +135,10 @@ Győződjön meg arról, hogy a megadott elérési út tartalmazza a kívánt f�
  Igen, személyre szabhatja a szöveg tulajdonságait, például a betűméretet, a színt és a stílust a`TextFragment` tulajdonságait.
 
 ### Ingyenesen használható az Aspose.PDF?  
- Míg az Aspose.PDF ingyenes próbaverziót kínál, ez egy fizetős termék éles használatra. Tudod[vásárold meg itt](https://purchase.aspose.com/buy).
+ Míg az Aspose.PDF ingyenes próbaverziót kínál, ez egy fizetős termék éles használatra. Megteheti[vásárold meg itt](https://purchase.aspose.com/buy).
 
 ### Hol találok részletesebb dokumentációt?  
- Részletes dokumentációt találhat a[Aspose.PDF Dokumentációs oldal](https://reference.aspose.com/pdf/net/).
+ Részletes dokumentációt találhat a[Aspose.PDF dokumentációs oldal](https://reference.aspose.com/pdf/net/).
 
 ### Hogyan alkalmazhatok fejlécet és láblécet több oldalra?  
 Végigpörgetheti a dokumentum összes oldalát, és mindegyikre hasonlóan alkalmazhatja a Lebegő dobozt.

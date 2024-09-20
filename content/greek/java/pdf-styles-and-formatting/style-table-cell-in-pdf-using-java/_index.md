@@ -57,7 +57,7 @@ pdfDocument.save("SimpleTable.pdf");
 // Φορτώστε το υπάρχον έγγραφο PDF
 Document pdfDocument = new Document("SimpleTable.pdf");
 
-// Πρόσβαση στην πρώτη σελίδα και πίνακα
+// Πρόσβαση στην πρώτη σελίδα και τον πίνακα
 Page page = pdfDocument.getPages().get_Item(1);
 Table table = (Table) page.getParagraphs().get_Item(1);
 

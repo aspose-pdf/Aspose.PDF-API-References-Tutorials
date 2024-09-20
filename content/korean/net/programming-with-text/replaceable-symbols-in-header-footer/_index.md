@@ -7,37 +7,57 @@ type: docs
 weight: 320
 url: /ko/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서의 머리글과 바닥글에 대체 가능한 심볼을 사용하는 방법을 설명합니다. PDF를 만들고, 여백을 설정하고, 대체 가능한 심볼이 있는 머리글과 바닥글을 추가하고, 제공된 C# 소스 코드를 사용하여 PDF를 저장하는 단계별 프로세스를 살펴보겠습니다.
+## 소개
+
+PDF 파일을 작업할 때 페이지 번호, 보고서 이름 또는 생성된 날짜와 같은 동적 콘텐츠로 머리글과 바닥글을 사용자 지정해야 할 때가 있습니다. 다행히도 Aspose.PDF for .NET은 이 프로세스를 간소화하여 머리글과 바닥글에 페이지 번호 또는 보고서 생성 세부 정보와 같은 자동으로 업데이트된 기호가 있는 PDF를 만들 수 있습니다. 이 문서에서는 Aspose.PDF for .NET을 사용하여 머리글과 바닥글의 기호를 바꾸는 단계별 프로세스를 안내합니다. 간단할 뿐만 아니라 놀라울 정도로 효율적인 방법입니다.
 
 ## 필수 조건
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+단계별 가이드를 살펴보기 전에 다음 사항이 있는지 확인하세요.
 
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다.
-- C# 프로그래밍에 대한 기본적인 이해.
+-  .NET 라이브러리용 Aspose.PDF –[다운로드](https://releases.aspose.com/pdf/net/) 또는 얻을[무료 체험](https://releases.aspose.com/).
+- 시스템에 Visual Studio 또는 C# IDE가 설치되어 있어야 합니다.
+- C# 및 .NET 개발에 대한 기본 지식.
+-  유효한[특허](https://purchase.aspose.com/temporary-license/) Aspose.PDF의 경우 체험판을 사용하실 수 있습니다.
 
-## 1단계: 문서 디렉토리 설정
+## 패키지 가져오기
 
- 먼저 생성된 PDF 파일을 저장할 디렉토리 경로를 설정해야 합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` 원하는 디렉토리의 경로를 담은 변수입니다.
+시작하려면 Aspose.PDF for .NET의 기능을 활성화하는 데 필요한 네임스페이스를 가져와야 합니다. 필요한 가져오기는 다음과 같습니다.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## 2단계: PDF 문서 및 페이지 만들기
+이러한 기능은 PDF 생성, 텍스트 조작, 머리글/바닥글 관리에 필수적입니다.
 
- 다음으로 새 PDF 문서를 만들고 이를 사용하여 페이지를 추가합니다.`Document` 수업과`Page` Aspose.PDF 라이브러리의 클래스입니다.
+예제 코드를 이해하기 쉬운 단계로 나누어 보겠습니다.
+
+## 1단계: 문서 및 페이지 설정
+
+먼저, 문서를 초기화하고 페이지를 추가해야 합니다. 이렇게 하면 헤더와 푸터를 추가하기 위한 기초가 마련됩니다.
 
 ```csharp
+// 문서 디렉토리 설정
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// 문서 객체를 초기화합니다
 Document doc = new Document();
+
+// 문서에 페이지 추가
 Page page = doc.Pages.Add();
 ```
 
-## 3단계: 여백 설정
+ 여기서는 다음을 사용하여 PDF 문서를 설정합니다.`Document` 클래스와 페이지 추가`doc.Pages.Add()`이 페이지에는 머리글, 바닥글 및 기타 콘텐츠가 포함됩니다.
 
- 우리는 페이지의 여백을 다음을 사용하여 설정합니다.`MarginInfo` 클래스. 요구 사항에 따라 여백 값을 조정하세요.
+## 2단계: 페이지 여백 구성
+
+다음으로, 콘텐츠가 가장자리까지 늘어나지 않도록 페이지의 여백을 정의하겠습니다.
 
 ```csharp
+// 여백 구성
 MarginInfo marginInfo = new MarginInfo();
 marginInfo.Top = 90;
 marginInfo.Bottom = 50;
@@ -46,209 +66,142 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## 4단계: 교체 가능한 기호가 있는 헤더 추가
+ 여기서 우리는 다음을 사용하여 위쪽, 아래쪽, 왼쪽 및 오른쪽 여백을 정의했습니다.`MarginInfo` 클래스를 사용하여 페이지에 적용했습니다.`page.PageInfo.Margin`.
 
- 우리는 만듭니다`HeaderFooter` 페이지에 대한 객체를 추가하고`TextFragment` 대체 가능한 기호가 포함되어 있습니다.
+## 3단계: 헤더 생성 및 구성
+
+이제 헤더를 만들어 페이지에 추가해 보겠습니다. 헤더에는 보고서 제목과 이름이 포함됩니다.
 
 ```csharp
+// 헤더 생성
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
+
+// 헤더 여백 설정
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
-TextFragment t1 = new TextFragment("report title");
-// 원하는 경우 텍스트 속성을 설정하세요
-t1.TextState.Font = FontRepository.FindFont("Arial");
-t1.TextState.FontSize = 16;
-t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t1.TextState.FontStyle = FontStyles.Bold;
-t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
-
-hfFirst.Paragraphs.Add(t1);
-
-// 필요에 따라 더 많은 TextFragments를 추가하거나 사용자 정의하세요
-```
-
-## 5단계: 교체 가능한 기호로 바닥글 추가
-
- 마찬가지로 우리는 다음을 생성합니다.`HeaderFooter` 페이지 바닥글에 대한 객체를 추가하고`TextFragment` 대체 가능한 기호가 있는 개체입니다.
-
-```csharp
-HeaderFooter hfFoot = new HeaderFooter();
-page.Footer = hfFoot;
-hfFoot.Margin.Left = 50;
-hfFoot.Margin.Right = 50;
-
-TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
-TextFragment t5 = new TextFragment("Page $p of $P");
-
-// 필요에 따라 더 많은 TextFragments를 추가하거나 사용자 정의하세요
-
-hfFoot.Paragraphs.Add(tab2);
-```
-
-## 6단계: PDF 문서 저장
-
-마지막으로 PDF 문서를 지정된 출력 파일에 저장합니다.
-
-```csharp
-dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
-doc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
-```
-
-### .NET용 Aspose.PDF를 사용하여 헤더 푸터의 교체 가능한 심볼에 대한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-Page page = doc.Pages.Add();
-MarginInfo marginInfo = new MarginInfo();
-marginInfo.Top = 90;
-marginInfo.Bottom = 50;
-marginInfo.Left = 50;
-marginInfo.Right = 50;
-//sec1.PageInfo의 Margin 속성에 marginInfo 인스턴스를 할당합니다.
-page.PageInfo.Margin = marginInfo;
-HeaderFooter hfFirst = new HeaderFooter();
-page.Header = hfFirst;
-hfFirst.Margin.Left = 50;
-hfFirst.Margin.Right = 50;
-// 헤더로 표시할 콘텐츠를 저장할 텍스트 문단을 인스턴스화합니다.
+// 헤더에 제목 추가
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
 t1.TextState.FontStyle = FontStyles.Bold;
 t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
 hfFirst.Paragraphs.Add(t1);
+
+// 헤더에 보고서 이름 추가
 TextFragment t2 = new TextFragment("Report_Name");
 t2.TextState.Font = FontRepository.FindFont("Arial");
-t2.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
+t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 hfFirst.Paragraphs.Add(t2);
-// 섹션에 대한 HeaderFooter 객체를 만듭니다.
+```
+
+ 우리는 두 개를 추가했습니다`TextFragment` 헤더에 대한 개체: 하나는 보고서 제목용이고 다른 하나는 보고서 이름용입니다. 텍스트는 다음을 사용하여 스타일이 지정됩니다.`TextState` 글꼴, 크기, 정렬과 같은 속성.
+
+## 4단계: 바닥글 만들기 및 구성
+
+이제 페이지 번호와 생성 날짜와 같은 동적 콘텐츠를 보관할 바닥글을 설정할 시간입니다.
+
+```csharp
+// 푸터 만들기
 HeaderFooter hfFoot = new HeaderFooter();
-// HeaderFooter 객체를 홀수 및 짝수 바닥글로 설정합니다.
 page.Footer = hfFoot;
+
+// 바닥글 여백 설정
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// 현재 페이지 번호 또는 총 페이지 번호를 포함하는 텍스트 단락을 추가합니다.
+
+// 푸터 콘텐츠 추가
 TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
+TextFragment t4 = new TextFragment("Report Name");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// 테이블 객체 인스턴스화
+```
+
+바닥글에는 생성 날짜, 보고서 이름 및 동적 페이지 번호에 대한 조각을 포함합니다.`$p` 그리고`$P` 각각 현재 페이지 번호와 전체 페이지 수를 나타냅니다).
+
+## 5단계: 바닥글에 표 만들기
+
+또한, 푸터에 표와 같은 더 복잡한 요소를 추가하여 데이터를 더 효과적으로 구성할 수 있습니다.
+
+```csharp
+// 푸터용 테이블 생성
 Table tab2 = new Table();
-// 원하는 섹션의 문단 모음에 표를 추가합니다.
 hfFoot.Paragraphs.Add(tab2);
-// 표의 열 너비로 설정
 tab2.ColumnWidths = "165 172 165";
-//표에 행을 만든 다음 행에 셀을 만듭니다.
+
+// 표의 행과 셀을 만듭니다
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// 텍스트의 수직 정렬을 중앙 정렬로 설정합니다.
+
+// 각 셀에 대한 정렬 설정
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
+
+// 표 셀에 내용 추가
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java는 Aspose에서 제공하는 모든 Java 구성 요소를 컴파일한 것입니다. 각 Java 구성 요소의 최신 버전을 포함하도록 매일 #$NL" + "컴파일합니다. #$NL " + "Aspose.Total for Java 개발자는 다양한 애플리케이션을 만들 수 있습니다. #$NL #$NL #$NP" + "Aspose.Total for Java는 Aspose에서 제공하는 모든 Java 구성 요소를 컴파일한 것입니다. 각 Java 구성 요소의 최신 버전을 포함하도록 매일 #$NL" + "컴파일합니다. #$NL " + "Aspose.Total for Java 개발자는 다양한 애플리케이션을 만들 수 있습니다. #$NL #$NL #$NP" + "Aspose.Total for Java는 Aspose에서 제공하는 모든 Java 구성 요소를 컴파일한 것입니다. 각 Java 구성 요소의 최신 버전을 포함하도록 매일 #$NL" + "컴파일합니다. #$NL " + "Aspose.Total을 사용하면 Java 개발자는 다양한 애플리케이션을 만들 수 있습니다. #$NL #$NL"))
+```
+
+이 코드 블록은 바닥글에 3열로 된 표를 만듭니다. 각 열은 생성 날짜, 보고서 이름, 페이지 번호와 같은 다른 정보를 포함합니다.
+
+## 6단계: 페이지에 콘텐츠 추가
+
+머리글과 바닥글 외에도 PDF 페이지의 본문에 콘텐츠를 추가할 수 있습니다. 여기서는 플레이스홀더 텍스트가 있는 표를 추가합니다.
+
+```csharp
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
-table.DefaultCellPadding = new MarginInfo();
-table.DefaultCellPadding.Top = 10;
-table.DefaultCellPadding.Bottom = 10;
-// 원하는 섹션의 문단 모음에 표를 추가합니다.
 page.Paragraphs.Add(table);
-// BorderInfo 객체를 사용하여 기본 셀 테두리 설정
-table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// 다른 사용자 지정 BorderInfo 개체를 사용하여 테이블 테두리 설정
-table.Border = new BorderInfo(BorderSide.All, 1f);
-table.RepeatingRowsCount = 1;
-//표에 행을 만든 다음 행에 셀을 만듭니다.
-Row row1 = table.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-const string CRLF = "\r\n";
+
+// 테이블 내용 추가
 for (int i = 0; i <= 10; i++)
 {
-	Row row = table.Rows.Add();
-	row.IsRowBroken = true;
-	for (int c = 0; c <= 2; c++)
-	{
-		Cell c1;
-		if (c == 2)
-			c1 = row.Cells.Add("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a" + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "Using Aspose.Total for Java developers can create a wide range of applications.");
-		else
-			c1 = row.Cells.Add("item1" + c);
-		c1.Margin = new MarginInfo();
-		c1.Margin.Left = 30;
-		c1.Margin.Top = 10;
-		c1.Margin.Bottom = 10;
-	}
+    Row row = table.Rows.Add();
+    for (int c = 0; c <= 2; c++)
+    {
+        Cell cell = row.Cells.Add("Content " + c);
+        cell.Margin = new MarginInfo { Left = 30, Top = 10, Bottom = 10 };
+    }
 }
+```
+
+이 코드는 페이지에 세 개의 열이 있는 간단한 표를 추가합니다. 귀하의 특정 요구 사항에 맞게 수정할 수 있습니다.
+
+## 7단계: PDF 저장
+
+모든 것이 설정되면 마지막 단계는 원하는 위치에 PDF 문서를 저장하는 것입니다.
+
+```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
+Console.WriteLine("Symbols replaced successfully in header and footer. File saved at " + dataDir);
 ```
+
+ 파일 경로를 지정하고 다음을 사용하여 문서를 저장합니다.`doc.Save()`. 그게 다입니다! 사용자 지정 헤더와 푸터가 있는 PDF를 성공적으로 만들었습니다.
 
 ## 결론
 
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서의 머리글과 바닥글에 대체 가능한 심볼을 사용하는 방법을 알아보았습니다. 단계별 가이드를 따르고 제공된 C# 코드를 실행하면 PDF를 만들고, 여백을 설정하고, 대체 가능한 심볼이 있는 머리글과 바닥글을 추가하고, PDF를 저장할 수 있습니다.
+Aspose.PDF for .NET을 사용하여 헤더와 푸터의 심볼을 바꾸는 것은 간단할 뿐만 아니라 강력합니다. 위의 단계별 가이드를 따르면 페이지 번호, 보고서 이름, 날짜와 같은 동적 콘텐츠로 PDF를 쉽게 사용자 지정할 수 있습니다. 이 방법은 매우 유연하여 표를 삽입하고, 서식을 조정하고, 특정 요구 사항에 맞게 레이아웃을 제어할 수 있습니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "헤더 푸터의 바꿀 수 있는 기호" 튜토리얼의 목적은 무엇인가요?
+### 머리글과 바닥글의 글꼴을 사용자 정의할 수 있나요?  
+네, 머리글과 바닥글의 텍스트에 대한 글꼴, 크기, 색상 및 스타일을 완전히 사용자 지정할 수 있습니다.
 
-A: "헤더 푸터의 대체 가능한 심볼" 튜토리얼은 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서의 헤더와 푸터에 대체 가능한 심볼을 추가하는 과정을 안내합니다. 대체 가능한 심볼을 사용하면 PDF를 생성할 때 특정 플레이스홀더를 실제 값으로 동적으로 대체할 수 있습니다.
+### 헤더와 푸터에 이미지를 추가하려면 어떻게 해야 하나요?  
+ 사용할 수 있습니다`ImageStamp` 헤더와 푸터에 이미지를 삽입합니다.
 
-#### 질문: PDF 머리글과 바닥글에서 대체 가능한 기호는 무엇입니까?
+### 헤더나 푸터에 하이퍼링크를 추가할 수 있나요?  
+ 네, 사용할 수 있습니다`TextFragment` 하이퍼링크를 설정하여`Hyperlink` 재산.
 
-A: 대체 가능한 심볼은 PDF 문서의 머리글과 바닥글에 삽입할 수 있는 플레이스홀더입니다. 이러한 심볼은 페이지 번호, 날짜 및 사용자 정의 정보와 같이 런타임에 채울 수 있는 값에 대한 동적 플레이스홀더 역할을 합니다.
+### 홀수 페이지와 짝수 페이지에 다른 머리글을 사용할 수 있나요?  
+네, Aspose.PDF를 사용하면 홀수 및 짝수 페이지에 대해 다른 머리글과 바닥글을 지정할 수 있습니다.
 
-#### 질문: PDF 머리글과 바닥글에 대체 가능한 기호를 사용해야 하는 이유는 무엇입니까?
-
-답변: 머리글과 바닥글의 바꿀 수 있는 기호는 페이지 번호, 날짜 또는 문서가 생성될 때 변경될 수 있는 다른 가변 데이터와 같은 동적 정보를 PDF 문서에 포함하려는 경우 유용합니다.
-
-#### 질문: PDF 페이지의 여백을 어떻게 설정할 수 있나요?
-
- A: PDF 페이지의 여백은 다음을 사용하여 설정할 수 있습니다.`MarginInfo` 클래스와 그것을 할당`Margin` 의 속성`PageInfo` 페이지의. 필요에 따라 여백 값을 조정합니다.
-
-#### 질문: 머리글과 바닥글에 바꿀 수 있는 기호를 추가하려면 어떻게 해야 하나요?
-
- A: 다음을 생성하여 교체 가능한 심볼을 추가할 수 있습니다.`HeaderFooter` 페이지의 헤더와 푸터에 대한 개체입니다. 그런 다음 추가할 수 있습니다.`TextFragment`원하는 텍스트가 있는 개체, 교체 가능한 기호 포함`Paragraphs` 의 컬렉션`HeaderFooter` 물체.
-
-#### 질문: 교체 가능한 심볼의 모양을 사용자 지정할 수 있나요?
-
- A: 예, 속성을 수정하여 교체 가능한 기호의 모양을 사용자 정의할 수 있습니다.`TextFragment` 심볼을 포함하는 객체. 글꼴, 글꼴 크기, 색상, 정렬 및 줄 간격과 같은 속성을 설정할 수 있습니다.
-
-#### 질문: 어떤 종류의 대체 기호를 사용할 수 있나요?
-
-A: 다음과 같은 다양한 대체 가능한 기호를 사용할 수 있습니다.
-
-- `$p`: 현재 페이지 번호.
-- `$P`: 총 페이지 수.
-- `$d`: 현재 날짜.
-- `$t`: 현재 시간.
-- 사용자가 정의하는 사용자 정의 플레이스홀더.
-
-#### 질문: 대체 가능한 기호 주위에 다른 텍스트와 서식을 포함할 수 있나요?
-
- A: 예, 교체 가능한 기호 주위에 다른 텍스트와 서식을 포함할 수 있습니다.`TextFragment` 객체. 이를 통해 동적 및 정적 콘텐츠를 통합하는 더 복잡한 헤더와 푸터를 만들 수 있습니다.
-
-#### 질문: 생성된 PDF 문서를 어떻게 저장할 수 있나요?
-
- A: 생성된 PDF 문서를 저장하려면 다음을 사용할 수 있습니다.`Save` 의 방법`Document`클래스. 원하는 출력 파일 경로와 이름을 인수로 제공합니다.
-
-#### 질문: 이 튜토리얼을 사용하려면 유효한 Aspose 라이선스가 필요합니까?
-
-A: 네, 이 튜토리얼에서 코드를 성공적으로 실행하려면 유효한 Aspose 라이선스가 필요합니다. Aspose 웹사이트에서 전체 라이선스 또는 30일 임시 라이선스를 얻을 수 있습니다.
+### 헤더와 푸터 위치를 어떻게 조정합니까?  
+여백과 정렬 속성을 조정하여 머리글과 바닥글의 위치를 제어할 수 있습니다.

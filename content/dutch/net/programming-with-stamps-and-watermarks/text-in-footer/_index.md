@@ -77,7 +77,7 @@ textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 ```
 
-Hier hebben we de onderste marge ingesteld op 10 eenheden, de tekst horizontaal gecentreerd en verticaal onderaan de pagina geplaatst. U kunt deze waarden aanpassen aan uw specifieke lay-outbehoeften.
+Hier hebben we de onderste marge ingesteld op 10 eenheden, de tekst horizontaal uitgelijnd op het midden en verticaal onderaan de pagina geplaatst. U kunt deze waarden aanpassen aan uw specifieke lay-outbehoeften.
 
 ## Stap 5: Voettekst op alle pagina's toepassen
 

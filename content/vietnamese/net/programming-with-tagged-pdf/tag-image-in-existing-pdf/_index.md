@@ -2,110 +2,44 @@
 title: Gắn thẻ hình ảnh trong PDF hiện có
 linktitle: Gắn thẻ hình ảnh trong PDF hiện có
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách đánh dấu hình ảnh trong PDF hiện có bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để thêm thẻ vào hình ảnh.
+description: Tìm hiểu cách gắn thẻ hình ảnh trong các tệp PDF hiện có bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tăng cường khả năng truy cập với sự tuân thủ PDF/UA.
 type: docs
 weight: 210
 url: /vi/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-Trong hướng dẫn chi tiết này, chúng tôi sẽ hướng dẫn bạn từng bước mã nguồn C# được cung cấp để đánh dấu hình ảnh trong PDF hiện có bằng Aspose.PDF cho .NET. Làm theo hướng dẫn bên dưới để hiểu cách thêm thẻ vào hình ảnh trong PDF.
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
+Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn cách gắn thẻ hình ảnh trong PDF hiện có bằng Aspose.PDF cho .NET. Đến cuối hướng dẫn này, bạn sẽ có thể đặt văn bản thay thế cho hình ảnh, điều chỉnh thuộc tính bố cục và đảm bảo PDF của bạn tuân thủ các tiêu chuẩn về khả năng truy cập.
 
-Trước khi bắt đầu, hãy đảm bảo bạn đã cấu hình môi trường phát triển của mình để sử dụng Aspose.PDF cho .NET. Điều này bao gồm cài đặt thư viện Aspose.PDF và cấu hình dự án của bạn để tham chiếu đến nó.
+## Điều kiện tiên quyết
 
-## Bước 2: Mở tài liệu PDF hiện có
+Trước khi bắt đầu, chúng ta hãy xem qua những gì bạn cần để bắt đầu:
 
-Ở bước này, chúng ta sẽ mở một tài liệu PDF hiện có bằng Aspose.PDF.
+-  Aspose.PDF cho .NET: Đảm bảo bạn đã tải xuống và cài đặt phiên bản mới nhất của Aspose.PDF cho .NET.[Tải xuống tại đây](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Đảm bảo rằng bạn đã thiết lập môi trường phát triển .NET như Visual Studio.
+- Hiểu biết cơ bản về cấu trúc PDF: Làm quen với các thành phần cấu trúc PDF như đoạn văn, khoảng, bảng và hình ảnh.
+-  Giấy phép hợp lệ: Bạn có thể mua giấy phép[đây](https://purchase.aspose.com/buy) hoặc sử dụng tạm thời[đây](https://purchase.aspose.com/temporary-license/).
+
+## Nhập gói
+
+Để bắt đầu mã hóa, bạn cần nhập các không gian tên cần thiết từ Aspose.PDF cho .NET. Chúng sẽ cung cấp cho bạn quyền truy cập vào các lớp và phương thức cần thiết để thao tác với tài liệu PDF.
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Đường dẫn tập tin đầu vào và đầu ra
-string inFile = dataDir + "TH.pdf";
-string outFile = dataDir + "TH_out.pdf";
-string logFile = dataDir + "TH_out.xml";
-
-// Mở tài liệu
-Document document = new Document(inFile);
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Chúng tôi đã mở tài liệu PDF hiện có bằng Aspose.PDF.
+Bây giờ chúng ta đã thiết lập xong bối cảnh, hãy chia nhỏ quy trình gắn thẻ hình ảnh thành nhiều bước.
 
-## Bước 3: Lấy nội dung được gắn thẻ và phần tử cấu trúc gốc
+## Bước 1: Tải tài liệu PDF hiện có
 
-Bây giờ chúng ta sẽ lấy nội dung được gắn thẻ của tài liệu PDF và phần tử cấu trúc gốc tương ứng.
-
-```csharp
-// Nhận nội dung được gắn thẻ và phần tử cấu trúc gốc
-ITaggedContent taggedContent = document.TaggedContent;
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Chúng tôi đã có nội dung được gắn thẻ của tài liệu PDF và phần tử cấu trúc gốc tương ứng.
-
-## Bước 4: Đặt tiêu đề cho tài liệu PDF được gắn thẻ
-
-Bây giờ chúng ta hãy đặt tiêu đề cho tài liệu PDF được gắn thẻ.
+Bước đầu tiên là tải tệp PDF mà bạn muốn làm việc. Đây có thể là bất kỳ tệp PDF nào có hình ảnh mà bạn muốn gắn thẻ.
 
 ```csharp
-// Xác định tiêu đề cho tài liệu PDF được gắn thẻ
-taggedContent.SetTitle("Document with images");
-```
-
-Chúng tôi đã đặt tiêu đề cho tài liệu PDF được gắn thẻ.
-
-## Bước 5: Gán văn bản thay thế và hộp giới hạn cho hình ảnh
-
-Bây giờ, đối với mỗi phần tử hình ảnh, chúng ta sẽ gán văn bản thay thế và hộp giới hạn.
-
-```csharp
-foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
-{
-     // Gán văn bản thay thế cho hình ảnh
-     figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Tạo và chỉ định hộp giới hạn (bbox)
-     StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-     bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-     StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-     figureLayoutAttributes.SetAttribute(bboxAttribute);
-}
-```
-
-Chúng tôi đã chỉ định văn bản thay thế và hộp giới hạn cho mỗi phần tử hình ảnh trong tài liệu PDF.
-
-## Bước 6: Di chuyển phần tử Span vào đoạn văn
-
-Bây giờ chúng ta hãy di chuyển phần tử Span vào trong đoạn văn.
-
-```csharp
-// Di chuyển phần tử Span vào đoạn văn (tìm khoảng cách và đoạn văn không chính xác trong TD đầu tiên)
-TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
-SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
-TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
-ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
-
-// Di chuyển phần tử Span trong đoạn văn
-spanElement.ChangeParentElement(paragraph);
-```
-
-Chúng tôi đã di chuyển phần tử Span vào đoạn văn đã chỉ định.
-
-## Bước 7: Lưu tài liệu PDF đã sửa đổi
-
-Bây giờ chúng ta đã thực hiện những thay đổi cần thiết, chúng ta sẽ lưu tài liệu PDF đã sửa đổi.
-
-```csharp
-// Lưu tài liệu PDF
-document. Save(outFile);
-```
-
-Chúng tôi đã lưu tài liệu PDF đã chỉnh sửa vào thư mục đã chỉ định.
-
-### Mã nguồn mẫu cho Thẻ hình ảnh trong PDF hiện có bằng cách sử dụng Aspose.PDF cho .NET 
-
-```csharp
-
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
@@ -114,89 +48,112 @@ string logFile = dataDir + "TH_out.xml";
 
 // Mở tài liệu
 Document document = new Document(inFile);
+```
 
+-  Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến tập tin của bạn.
+-  Các`Document` lớp cho phép bạn tải PDF hiện có. Bạn sẽ sửa đổi PDF này để gắn thẻ hình ảnh.
+
+## Bước 2: Truy cập Nội dung được gắn thẻ và Phần tử cấu trúc gốc
+
+Sau khi bạn mở PDF, bước tiếp theo là truy cập nội dung được gắn thẻ và xác định phần tử cấu trúc gốc. Điều này rất quan trọng vì nó cho phép bạn điều hướng qua các phần tử trong PDF và thực hiện các sửa đổi.
+
+```csharp
 // Nhận nội dung được gắn thẻ và phần tử cấu trúc gốc
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
+```
 
-// Đặt tiêu đề cho tài liệu pdf được gắn thẻ
+- `TaggedContent` cung cấp quyền truy cập vào các thành phần có cấu trúc trong PDF.
+-  Các`RootElement` là phần tử cấu trúc trên cùng, từ đó bạn có thể di chuyển xuống các phần tử khác như đoạn văn, bảng và hình ảnh.
+
+## Bước 3: Đặt Tiêu đề cho Tài liệu PDF được gắn thẻ
+
+Việc thêm tiêu đề vào tài liệu PDF được gắn thẻ sẽ đảm bảo rằng tài liệu của bạn được gắn nhãn chính xác, điều này hữu ích cho khả năng truy cập và tuân thủ PDF/UA.
+
+```csharp
+// Đặt tiêu đề cho tài liệu PDF được gắn thẻ
 taggedContent.SetTitle("Document with images");
+```
+
+- Đặt tiêu đề cho tệp PDF được gắn thẻ của bạn sẽ tăng cường khả năng truy cập và cải thiện độ rõ ràng của tài liệu đối với trình đọc màn hình và công nghệ hỗ trợ.
+
+## Bước 4: Tìm và gắn thẻ hình ảnh
+
+ Bây giờ, chúng ta hãy tìm phần tử hình ảnh (được gọi là`FigureElement` trong Aspose.PDF), đặt văn bản thay thế cho nó và cấu hình các thuộc tính bố cục của nó.
+
+```csharp
+// Lặp qua tất cả các phần tử Hình (hình ảnh) và đặt văn bản thay thế và các thuộc tính bố cục
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Đặt Văn bản thay thế cho Hình
-	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Tạo và thiết lập thuộc tính BBox
-	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-	figureLayoutAttributes.SetAttribute(bboxAttribute);
+    // Đặt văn bản thay thế cho hình ảnh
+    figureElement.AlternativeText = "Figure alternative text (technique 2)";
+    
+    // Tạo và thiết lập thuộc tính BBox (hộp giới hạn)
+    StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+    bboxAttribute.SetRectangleValue(new Aspose.Pdf.Rectangle(0.0, 0.0, 100.0, 100.0));
+    
+    // Đặt thuộc tính bố cục cho hình
+    StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+    figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
+```
 
-// Di chuyển phần tử Span vào đoạn văn (tìm khoảng cách và đoạn văn sai trong TD đầu tiên)
+-  Mã này lặp qua tất cả`FigureElement` các đối tượng trong cấu trúc gốc, biểu diễn hình ảnh.
+- Thiết lập văn bản thay thế để dễ truy cập (trình đọc màn hình sẽ sử dụng văn bản này để mô tả hình ảnh).
+- Hộp giới hạn (`BBox`chỉ định tọa độ cho bố cục của hình ảnh, đảm bảo hình ảnh được hiển thị chính xác trong tài liệu.
+
+## Bước 5: Sửa đổi các phần tử Span trong Bảng
+
+ Trong một số trường hợp, bạn có thể cần phải sửa đổi các phần tử span trong một bảng. Ở đây, chúng tôi sẽ trình bày cách tìm một`SpanElement` và chuyển nó vào một đoạn văn.
+
+```csharp
+// Tìm các thành phần bảng, khoảng và đoạn văn
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Di chuyển phần tử Span vào đoạn văn
+// Di chuyển phần tử span vào đoạn văn
 spanElement.ChangeParentElement(paragraph);
+```
 
-// Lưu tài liệu
+-  Ở đây, chúng tôi xác định vị trí`TableElement`, `SpanElement` , Và`ParagraphElement` trong PDF.
+-  Sử dụng`ChangeParentElement` phương pháp này, chúng ta di chuyển khoảng vào trong đoạn văn để đảm bảo gắn thẻ và cấu trúc phù hợp.
+
+## Bước 6: Lưu tài liệu và xác thực sự tuân thủ PDF/UA
+
+Khi tất cả các thay đổi đã được thực hiện, bước cuối cùng là lưu tệp PDF đã cập nhật và kiểm tra xem nó có tuân thủ các tiêu chuẩn PDF/UA hay không.
+
+```csharp
+// Lưu tài liệu PDF đã cập nhật
 document.Save(outFile);
 
-//Kiểm tra sự tuân thủ PDF/UA cho tài liệu của chúng tôi
+// Xác thực sự tuân thủ PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+-  Các`Validate` Phương pháp này kiểm tra tài liệu PDF theo các tiêu chuẩn PDF/UA và ghi lại kết quả.
+- Đảm bảo tuân thủ giúp cải thiện khả năng truy cập và đáp ứng các yêu cầu quy định về xuất bản tài liệu.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách đánh dấu hình ảnh trong PDF hiện có bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng Aspose.PDF để thêm thẻ và chỉnh sửa hình ảnh trong tài liệu PDF của mình.
+Trong hướng dẫn này, chúng tôi đã chỉ cho bạn cách gắn thẻ hình ảnh trong PDF hiện có bằng Aspose.PDF cho .NET. Bằng cách thiết lập văn bản thay thế, điều chỉnh các thuộc tính bố cục và xác thực tài liệu để tuân thủ PDF/UA, bạn có thể đảm bảo rằng PDF của mình có thể truy cập được và đáp ứng các tiêu chuẩn hiện đại. Aspose.PDF giúp bạn dễ dàng làm việc với các thành phần có cấu trúc, giúp bạn kiểm soát bố cục và khả năng truy cập của tài liệu.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục tiêu chính của hướng dẫn này về gắn thẻ hình ảnh trong tệp PDF hiện có bằng Aspose.PDF cho .NET là gì?
+### Aspose.PDF for .NET được sử dụng để làm gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ được sử dụng để tạo, chỉnh sửa và thao tác các tài liệu PDF theo chương trình trong môi trường .NET.
 
-A: Mục tiêu chính của hướng dẫn này là hướng dẫn bạn quy trình đánh dấu hình ảnh trong tài liệu PDF hiện có bằng Aspose.PDF cho .NET. Hướng dẫn cung cấp hướng dẫn từng bước và ví dụ mã nguồn C# để giúp bạn hiểu cách gán văn bản thay thế và hộp giới hạn cho hình ảnh, di chuyển các thành phần trong tài liệu và thêm thẻ vào hình ảnh.
+### Làm thế nào để đảm bảo tuân thủ PDF/UA?
+ Bạn có thể sử dụng Aspose.PDF`Validate` phương pháp kiểm tra sự tuân thủ PDF/UA sau khi thực hiện sửa đổi đối với tài liệu.
 
-#### H: Cần có những điều kiện tiên quyết nào để thực hiện theo hướng dẫn này về cách gắn thẻ hình ảnh trong PDF bằng Aspose.PDF cho .NET?
+### Văn bản thay thế trong PDF là gì?
+Văn bản thay thế là mô tả được thêm vào hình ảnh trong tệp PDF để cải thiện khả năng truy cập, đặc biệt đối với người dùng sử dụng trình đọc màn hình.
 
-A: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã thiết lập môi trường phát triển để sử dụng Aspose.PDF cho .NET. Điều này bao gồm cài đặt thư viện Aspose.PDF và cấu hình dự án của bạn để tham chiếu đến nó.
+### Tôi có thể thao tác các bảng và khoảng trong PDF bằng Aspose.PDF không?
+Có, Aspose.PDF cho phép bạn thao tác các bảng, khoảng và các thành phần có cấu trúc khác trong tài liệu PDF.
 
-#### H: Làm thế nào tôi có thể mở một tài liệu PDF hiện có và truy cập vào nội dung được gắn thẻ của nó bằng Aspose.PDF cho .NET?
-
-A: Bài hướng dẫn cung cấp các ví dụ về mã nguồn C# để chứng minh cách mở tài liệu PDF hiện có bằng Aspose.PDF cho .NET và truy cập nội dung được gắn thẻ của tài liệu đó để thao tác thêm.
-
-#### H: Mục đích của việc gán văn bản thay thế và hộp giới hạn cho hình ảnh trong tài liệu PDF là gì?
-
-A: Việc gán văn bản thay thế và hộp giới hạn cho hình ảnh giúp tăng khả năng truy cập bằng cách cung cấp văn bản mô tả cho hình ảnh và xác định bố cục và vị trí của chúng trong tài liệu. Thông tin này rất quan trọng đối với trình đọc màn hình và các công nghệ hỗ trợ khác.
-
-#### H: Làm thế nào tôi có thể đặt tiêu đề cho tài liệu PDF được gắn thẻ bằng Aspose.PDF cho .NET?
-
-A: Bài hướng dẫn bao gồm các ví dụ về mã nguồn C# minh họa cách đặt tiêu đề cho tài liệu PDF được gắn thẻ bằng Aspose.PDF cho .NET.
-
-#### H: Quá trình di chuyển các thành phần trong tài liệu PDF bao gồm những gì?
-
-A: Di chuyển các phần tử trong tài liệu PDF liên quan đến việc thay đổi phần tử cha của một phần tử cụ thể. Trong hướng dẫn này, bạn sẽ học cách di chuyển phần tử Span vào phần tử Paragraph được chỉ định trong bảng.
-
-#### H: Làm thế nào để lưu tài liệu PDF đã chỉnh sửa sau khi thêm thẻ và chỉnh sửa hình ảnh?
-
- A: Sau khi bạn đã thêm thẻ, chỉ định văn bản thay thế, đặt hộp giới hạn và chỉnh sửa tài liệu PDF, bạn có thể sử dụng các ví dụ mã nguồn C# được cung cấp để lưu tài liệu PDF đã sửa đổi bằng cách sử dụng`Save()` phương pháp.
-
-#### H: Mục đích của mã nguồn mẫu được cung cấp trong hướng dẫn là gì?
-
-A: Mã nguồn mẫu đóng vai trò là tài liệu tham khảo thực tế để triển khai gắn thẻ và thao tác hình ảnh bằng Aspose.PDF cho .NET. Bạn có thể sử dụng mã này làm điểm khởi đầu và sửa đổi cho phù hợp với yêu cầu cụ thể của mình.
-
-#### H: Tôi có thể áp dụng những kỹ thuật này cho các loại thành phần khác trong tài liệu PDF, không chỉ hình ảnh không?
-
-A: Có, các kỹ thuật được trình bày trong hướng dẫn này có thể được điều chỉnh để làm việc với nhiều loại thành phần khác nhau trong tài liệu PDF. Bạn có thể áp dụng các nguyên tắc tương tự để gắn thẻ và thao tác các thành phần khác như văn bản, bảng, v.v.
-
-#### H: Làm thế nào tôi có thể xác thực tính tuân thủ PDF/UA của tài liệu PDF đã sửa đổi?
-
- A: Hướng dẫn cung cấp các ví dụ về mã nguồn C# cho thấy cách xác thực tính tuân thủ PDF/UA của tài liệu PDF đã sửa đổi bằng cách sử dụng`Validate()` phương pháp và tạo báo cáo XML.
-
-#### H: Aspose.PDF for .NET còn cung cấp những tính năng nào khác để làm việc với tài liệu PDF?
-
-A: Aspose.PDF for .NET cung cấp nhiều tính năng để làm việc với tài liệu PDF, bao gồm thao tác văn bản, chèn hình ảnh, tạo bảng, quản lý trường biểu mẫu, chữ ký số, chú thích, v.v. Tham khảo tài liệu và tài nguyên chính thức để khám phá thêm.
+### Tôi có thể tải xuống Aspose.PDF cho .NET ở đâu?
+ Bạn có thể tải xuống phiên bản mới nhất của Aspose.PDF cho .NET[đây](https://releases.aspose.com/pdf/net/).

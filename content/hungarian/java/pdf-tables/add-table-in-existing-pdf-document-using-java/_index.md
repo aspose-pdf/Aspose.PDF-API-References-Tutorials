@@ -117,7 +117,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet táblázatot hozzáadni egy m
 
 ## GYIK
 
-### Hogyan telepíthetem az Aspose.PDF for Java-t?
+### Hogyan telepíthetem az Aspose.PDF for Java fájlt?
 
  Az Aspose.PDF for Java letölthető innen:[itt](https://releases.aspose.com/pdf/java/). Kövesse a webhelyükön található telepítési utasításokat.
 

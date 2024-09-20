@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /vi/net/programming-with-text/extract-text-using-text-device/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn quy trình trích xuất văn bản từ tài liệu PDF bằng Text Device trong Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết.
+## Giới thiệu
 
-## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Trích xuất văn bản từ PDF có thể rất khó khăn, đặc biệt là khi xử lý các tài liệu có nhiều định dạng, phông chữ nhúng hoặc bố cục phức tạp. Nhưng với Aspose.PDF cho .NET, quá trình này trở nên dễ dàng! Cho dù bạn muốn chuyển đổi các trang của PDF thành văn bản thuần túy để phân tích thêm hay chỉ cần trích xuất các phần cụ thể, Aspose.PDF đều có thể giúp bạn. Trong hướng dẫn này, chúng tôi sẽ chia nhỏ từng bước cách trích xuất văn bản từ PDF bằng lớp TextDevice trong Aspose.PDF. Chúng tôi cũng sẽ cung cấp các giải thích rõ ràng để bạn có thể dễ dàng áp dụng các phương pháp tương tự vào các dự án của riêng mình.
 
-- Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
+## Điều kiện tiên quyết
 
-## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
-2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Trước khi chúng ta bắt đầu với mã, hãy đảm bảo bạn đã có mọi thứ để làm theo. Sau đây là những gì bạn cần:
 
-## Bước 2: Nhập các không gian tên cần thiết
-Trong tệp mã mà bạn muốn trích xuất văn bản, hãy thêm lệnh using sau vào đầu tệp:
+1.  Aspose.PDF cho .NET: Tải xuống phiên bản mới nhất từ[Trang tải xuống Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net/).
+2. Môi trường phát triển: Visual Studio hoặc bất kỳ môi trường phát triển C# nào khác.
+3. .NET Framework: Đảm bảo rằng dự án của bạn hướng tới .NET Framework 4.x trở lên.
+4. Tệp PDF đầu vào: Tệp PDF mà bạn sẽ sử dụng để trích xuất văn bản. Đặt tệp này vào một thư mục trên máy của bạn (chúng tôi sẽ gọi đây là`YOUR DOCUMENT DIRECTORY`).
+
+## Nhập gói
+
+Ở đầu mã của bạn, bạn sẽ cần nhập các không gian tên cần thiết để làm việc với Aspose.PDF:
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## Bước 3: Thiết lập thư mục tài liệu
- Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
+## Bước 1: Tải tài liệu PDF của bạn
 
-## Bước 4: Mở tài liệu PDF
- Mở một tài liệu PDF hiện có bằng cách sử dụng`Document`hàm tạo và truyền đường dẫn đến tệp PDF đầu vào.
+ Trước khi trích xuất văn bản, chúng ta cần tải tài liệu PDF vào bộ nhớ. Trong bước này, bạn sẽ mở PDF của mình bằng Aspose.PDF`Document` lớp. Điều này sẽ cho phép bạn truy cập tất cả các trang và nội dung trong tệp.
 
 ```csharp
+// Xác định đường dẫn đến tài liệu PDF của bạn
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Tải tài liệu PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Bước 5: Trích xuất văn bản bằng Text Device
- Tạo một`StringBuilder` đối tượng để giữ văn bản đã trích xuất. Lặp lại qua từng trang của tài liệu và sử dụng`TextDevice` để trích xuất văn bản từ mỗi trang.
+ Ở đây, chúng tôi đang sử dụng`Document pdfDocument = new Document(dataDir + "input.pdf");` để tải PDF.`dataDir` biến giữ đường dẫn thư mục của tệp PDF của bạn. Điều này sẽ cho phép chúng ta truy cập vào toàn bộ tài liệu, cho phép chúng ta lặp qua các trang và trích xuất nội dung.
+
+## Bước 2: Thiết lập trình tạo chuỗi để lưu trữ văn bản
+
+ Bây giờ tài liệu đã được tải, chúng ta cần một cách để lưu trữ văn bản đã trích xuất. Đối với điều này, chúng ta sẽ sử dụng`StringBuilder` cho phép nối chuỗi hiệu quả.
 
 ```csharp
+// StringBuilder để giữ văn bản đã trích xuất
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## Bước 6: Lưu văn bản đã trích xuất
- Chỉ định đường dẫn tệp đầu ra và lưu văn bản đã trích xuất vào tệp văn bản bằng cách sử dụng`File.WriteAllText` phương pháp.
+ Chúng tôi khởi tạo một`StringBuilder`Ví dụ, sẽ thu thập văn bản được trích xuất từ mỗi trang. Đây là cách hiệu quả hơn để xử lý các chuỗi lớn so với việc nối chuỗi thông thường trong một vòng lặp.
+
+## Bước 3: Lặp qua các trang PDF
+
+ Tiếp theo, chúng tôi lặp qua từng trang của tài liệu PDF để trích xuất văn bản. Chúng tôi sẽ xử lý từng trang riêng lẻ bằng cách sử dụng`TextDevice` Lớp này có nhiệm vụ chuyển đổi nội dung PDF sang định dạng văn bản.
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### Mã nguồn mẫu cho Trích xuất văn bản bằng thiết bị văn bản sử dụng Aspose.PDF cho .NET 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Mở tài liệu
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//Chuỗi để giữ văn bản đã trích xuất
-string extractedText = "";
+// Lặp qua tất cả các trang trong PDF
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		// Tạo thiết bị văn bản
-		TextDevice textDevice = new TextDevice();
-		// Thiết lập tùy chọn trích xuất văn bản - thiết lập chế độ trích xuất văn bản (Raw hoặc Pure)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		// Chuyển đổi một trang cụ thể và lưu văn bản vào luồng
-		textDevice.Process(pdfPage, textStream);
-		// Chuyển đổi một trang cụ thể và lưu văn bản vào luồng
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Đóng luồng bộ nhớ
-		textStream.Close();
-		// Lấy văn bản từ luồng bộ nhớ
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    // Xử lý từng trang để trích xuất văn bản
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Lưu văn bản đã trích xuất vào tệp văn bản
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Phần kết luận
-Bạn đã trích xuất thành công văn bản từ tài liệu PDF bằng Text Device trong Aspose.PDF cho .NET. Văn bản trích xuất đã được lưu vào tệp đầu ra đã chỉ định.
+Vòng lặp này đi qua mọi trang của PDF (`pdfDocument.Pages` ). Đối với mỗi trang, chúng tôi sẽ trích xuất văn bản và thêm nó vào`StringBuilder`.
 
-### Câu hỏi thường gặp
+## Bước 4: Trích xuất văn bản từ mỗi trang
 
-#### H: Mục đích của hướng dẫn này là gì?
-
-A: Hướng dẫn này cung cấp hướng dẫn về cách trích xuất văn bản từ tài liệu PDF bằng tính năng Text Device trong Aspose.PDF cho .NET. Mã nguồn C# đi kèm trình bày các bước cần thiết để thực hiện nhiệm vụ này.
-
-#### H: Tôi nên nhập những không gian tên nào?
-
-A: Trong tệp mã mà bạn định trích xuất văn bản, hãy bao gồm lệnh using sau vào đầu tệp:
+ Bây giờ, chúng ta thiết lập quy trình trích xuất văn bản cho từng trang. Ở đây, chúng ta sẽ tạo một`TextDevice` đối tượng và sử dụng nó để xử lý các trang PDF.`TextDevice` trích xuất văn bản thô hoặc đã định dạng dựa trên các tùy chọn trích xuất mà chúng tôi thiết lập.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    // Tạo một thiết bị văn bản để trích xuất văn bản
+    TextDevice textDevice = new TextDevice();
+    
+    // Đặt tùy chọn trích xuất văn bản ở chế độ 'Pure'
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //Trích xuất văn bản từ trang hiện tại và lưu vào luồng bộ nhớ
+    textDevice.Process(pdfPage, textStream);
+
+    // Chuyển đổi luồng bộ nhớ thành văn bản
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    // Thêm văn bản đã trích xuất vào StringBuilder
+    builder.Append(extractedText);
+}
 ```
 
-#### H: Làm thế nào để chỉ định thư mục tài liệu?
+- `TextDevice textDevice = new TextDevice();` : Các`TextDevice` lớp được sử dụng để trích xuất văn bản từ PDF.
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` : Tùy chọn này trích xuất văn bản thô mà không giữ lại bất kỳ định dạng nào như phông chữ hoặc vị trí. Bạn cũng có thể sử dụng`TextFormattingMode.Raw` nếu bạn cần kiểm soát định dạng nhiều hơn.
+- `textDevice.Process(pdfPage, textStream);` : Quá trình này xử lý từng trang của PDF và lưu trữ văn bản đã trích xuất trong một`MemoryStream`.
+-  Cuối cùng, chúng tôi chuyển đổi văn bản từ`MemoryStream` vào một chuỗi và thêm nó vào`StringBuilder`.
 
- A: Trong mã, hãy tìm dòng có nội dung`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+## Bước 5: Lưu văn bản đã trích xuất vào một tệp
 
-#### H: Làm thế nào để mở một tài liệu PDF hiện có?
+ Sau khi xử lý tất cả các trang, văn bản được lưu trữ trong`StringBuilder`Bước cuối cùng là lưu văn bản đã trích xuất này vào một tệp.
 
- A: Ở Bước 4, bạn sẽ mở một tài liệu PDF hiện có bằng cách sử dụng`Document` hàm tạo và cung cấp đường dẫn đến tệp PDF đầu vào.
+```csharp
+// Xác định đường dẫn đầu ra cho tệp văn bản
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### H: Làm thế nào để trích xuất văn bản bằng Text Device?
+// Lưu văn bản đã trích xuất vào một tập tin
+File.WriteAllText(dataDir, builder.ToString());
 
- A: Bước 5 bao gồm việc tạo ra một`StringBuilder` đối tượng để giữ văn bản đã trích xuất. Sau đó, bạn sẽ lặp lại qua từng trang của tài liệu và sử dụng`TextDevice` cùng với`TextExtractionOptions` để trích xuất văn bản từ mỗi trang.
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### H: Làm thế nào để lưu văn bản đã trích xuất vào một tệp?
+- `File.WriteAllText(dataDir, builder.ToString());` : Điều này ghi toàn bộ nội dung của`StringBuilder` vào một tập tin văn bản.
+- Đường dẫn cho tệp đầu ra được thiết lập bằng cách thêm tên tệp (`"input_Text_Extracted_out.txt"` ) đến`dataDir` con đường.
 
- A: Ở Bước 6, bạn sẽ chỉ định đường dẫn tệp đầu ra và sử dụng`File.WriteAllText`phương pháp lưu văn bản đã trích xuất vào tệp văn bản.
+## Phần kết luận
 
-#### H: Điểm chính cần lưu ý trong hướng dẫn này là gì?
+Trích xuất văn bản từ PDF bằng Aspose.PDF cho .NET là một quá trình đơn giản và hiệu quả. Bằng cách làm theo các bước được nêu trong hướng dẫn này, bạn có thể dễ dàng mở tài liệu PDF, lặp qua các trang và trích xuất văn bản vào tệp văn bản. Điều này đặc biệt hữu ích khi xử lý khối lượng lớn dữ liệu PDF, thực hiện phân tích văn bản hoặc chuyển đổi tài liệu để thao tác thêm.
 
-A: Bằng cách làm theo hướng dẫn này, bạn đã học cách tận dụng tính năng Text Device trong Aspose.PDF cho .NET để trích xuất văn bản từ tài liệu PDF. Văn bản đã trích xuất đã được lưu vào tệp đầu ra được chỉ định, cho phép bạn thao tác và sử dụng nội dung đã trích xuất khi cần.
+Với Aspose.PDF, bạn không chỉ giới hạn ở việc trích xuất văn bản—bạn có thể xử lý chú thích, thao tác hình ảnh hoặc thậm chí chuyển đổi PDF sang các định dạng khác như HTML hoặc Word. Tính linh hoạt và sức mạnh của thư viện này khiến nó trở thành một công cụ vô giá để quản lý PDF trong các ứng dụng .NET.
+
+## Câu hỏi thường gặp
+
+### Aspose.PDF có thể trích xuất văn bản từ tệp PDF dạng hình ảnh không?
+Không, Aspose.PDF được thiết kế để trích xuất văn bản từ PDF dựa trên nội dung. Đối với PDF dựa trên hình ảnh, cần có công nghệ OCR.
+
+### Aspose.PDF có giữ nguyên định dạng khi trích xuất văn bản không?
+Theo mặc định, văn bản được trích xuất mà không có định dạng, nhưng bạn có thể điều chỉnh các tùy chọn trích xuất nếu muốn giữ lại một số định dạng.
+
+### Tôi có thể trích xuất văn bản từ một phạm vi trang cụ thể không?
+Có, bạn có thể sửa đổi mã để lặp qua một phạm vi trang cụ thể thay vì tất cả các trang.
+
+### Có những chế độ trích xuất văn bản nào trong Aspose.PDF?
+Aspose.PDF cung cấp hai chế độ: Raw và Pure. Chế độ Raw cố gắng giữ nguyên bố cục gốc, trong khi chế độ Pure chỉ trích xuất văn bản mà không định dạng.
+
+### Aspose.PDF cho .NET có tương thích với .NET Core không?
+Có, Aspose.PDF cho .NET hoàn toàn tương thích với .NET Core và .NET Framework.

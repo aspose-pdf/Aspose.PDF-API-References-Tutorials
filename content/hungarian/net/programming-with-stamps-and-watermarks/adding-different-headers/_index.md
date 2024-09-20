@@ -79,7 +79,7 @@ stamp1.TextState.FontSize = 14;
 
 ## 5. lépés: A második fejléc testreszabása
 
-Ezután fordítsunk egy kis figyelmet a második fejlécre. Módosítjuk a nagyítási szintjét is, ami miatt a szöveg nagyobbnak vagy kisebbnek tűnhet a PDF-ben.
+Ezután fordítsunk egy kis figyelmet a második fejlécre. Módosítjuk a nagyítási szintjét is, így a szöveg nagyobbnak vagy kisebbnek tűnhet a PDF-ben.
 
 ```csharp
 stamp2.VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;

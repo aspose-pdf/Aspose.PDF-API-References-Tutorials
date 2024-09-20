@@ -20,7 +20,7 @@ Voordat we in de code duiken, moeten we ervoor zorgen dat alle essentiële zaken
 - .NET Framework: Zorg ervoor dat .NET op uw systeem is geïnstalleerd.
 - PDF-document: Zorg dat u een PDF-document met formuliervelden gereed hebt om te testen.
   
-Zodra u deze basisprincipes onder de knie hebt, kunt u formuliervelden in tabbladvolgorde als een professional ophalen en bewerken.
+Zodra u deze basisprincipes onder de knie hebt, kunt u als een pro formuliervelden in tabbladvolgorde ophalen en bewerken.
 
 ## Pakketten importeren
 
@@ -83,7 +83,7 @@ Hier doorlopen we elk veld in de lijst en verbinden we de`PartialName` van elk v
 
 ## Stap 5: Tabvolgorde wijzigen
 
-Soms wilt u de tabvolgorde van de formuliervelden wijzigen om de gebruikerservaring te verbeteren. Het formulier kan bijvoorbeeld vereisen dat het eerste veld het derde is en het derde veld het eerste. Zo kunt u de tabvolgorde aanpassen:
+Soms wilt u de tabvolgorde van de formuliervelden wijzigen om de gebruikerservaring te verbeteren. Het formulier kan bijvoorbeeld vereisen dat het eerste veld het derde is en het derde het eerste. Zo kunt u de tabvolgorde aanpassen:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;

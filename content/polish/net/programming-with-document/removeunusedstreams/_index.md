@@ -9,7 +9,7 @@ url: /pl/net/programming-with-document/removeunusedstreams/
 ---
 ## Wstęp
 
-Skuteczne zarządzanie plikami PDF jest koniecznością w dzisiejszej erze cyfrowej. Niezależnie od tego, czy pracujesz z dużymi dokumentami, czy optymalizujesz plik w celu uzyskania lepszej wydajności, zapewnienie, że nieużywane dane nie zaśmiecają pliku, jest niezbędne. Aspose.PDF dla .NET zapewnia potężną funkcję, która pozwala programistom optymalizować pliki PDF poprzez usuwanie nieużywanych strumieni. W tym artykule przeprowadzimy Cię przez przewodnik krok po kroku, jak usuwać nieużywane strumienie w pliku PDF za pomocą Aspose.PDF dla .NET.
+Skuteczne zarządzanie plikami PDF jest koniecznością w dzisiejszej erze cyfrowej. Niezależnie od tego, czy pracujesz z dużymi dokumentami, czy optymalizujesz plik w celu uzyskania lepszej wydajności, zapewnienie, że nieużywane dane nie zaśmiecają pliku, jest niezbędne. Aspose.PDF dla .NET zapewnia potężną funkcję, która pozwala deweloperom optymalizować pliki PDF poprzez usuwanie nieużywanych strumieni. W tym artykule przeprowadzimy Cię przez przewodnik krok po kroku, jak usuwać nieużywane strumienie w pliku PDF za pomocą Aspose.PDF dla .NET.
 
 ## Wymagania wstępne
 
@@ -75,7 +75,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-Ta pojedyncza linia wykonuje ciężką pracę, optymalizując zasoby w pliku PDF, szczególnie skupiając się na nieużywanych strumieniach. Pomyśl o tym jak o wiosennym czyszczeniu pliku PDF, usuwając wszystko, co nie jest konieczne do płynnego działania dokumentu.
+Ta pojedyncza linia wykonuje ciężką pracę, optymalizując zasoby w pliku PDF, szczególnie skupiając się na nieużywanych strumieniach. Pomyśl o tym jak o wiosennym sprzątaniu pliku PDF, usuwając wszystko, co nie jest konieczne do płynnego działania dokumentu.
 
 ## Krok 5: Zapisz zoptymalizowany plik PDF
 

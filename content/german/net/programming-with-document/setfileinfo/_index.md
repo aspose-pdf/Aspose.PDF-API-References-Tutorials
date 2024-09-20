@@ -37,7 +37,7 @@ using Aspose.Pdf;
 
 Diese Namespaces bieten Zugriff auf die Klassen und Methoden, die zur effektiven Bearbeitung von PDF-Dokumenten erforderlich sind.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Als Erstes müssen Sie das Verzeichnis angeben, in dem sich Ihre PDF-Datei befindet. Dies ist wichtig, da Sie die Datei von diesem Pfad aus öffnen.
 

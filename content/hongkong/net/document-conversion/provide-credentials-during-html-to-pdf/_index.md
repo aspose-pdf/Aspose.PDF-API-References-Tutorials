@@ -17,7 +17,7 @@ url: /zh-hant/net/document-conversion/provide-credentials-during-html-to-pdf/
 
 1. Visual Studio：確保您的電腦上安裝了 Visual Studio。這將是我們的開發環境。
 2.  Aspose.PDF for .NET：您可以從下列位置下載程式庫：[網站](https://releases.aspose.com/pdf/net/) 。如果您想先嘗試一下，您還可以獲得[免費試用](https://releases.aspose.com/).
-3. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 4. 網路存取：由於我們將從 URL 取得 HTML 內容，因此請確保您擁有有效的網路連線。
 
 ## 導入包
@@ -117,7 +117,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 HTML 轉換為 PDF，同時提供了安全存取憑證。這個強大的庫可以輕鬆處理 PDF 文檔，只需幾行程式碼，您就可以從 HTML 內容生成具有專業外觀的 PDF。 
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 HTML 轉換為 PDF，同時提供了安全存取憑證。這個強大的庫可以輕鬆處理 PDF 文檔，只需幾行程式碼，您就可以從 HTML 內容生成具有專業外觀的 PDF。 
 
 ## 常見問題解答
 

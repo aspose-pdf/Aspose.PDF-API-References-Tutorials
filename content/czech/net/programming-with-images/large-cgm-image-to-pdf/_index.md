@@ -109,7 +109,7 @@ CGM (Computer Graphics Metafile) je souborový formát pro ukládání vektorov�
 ### Musím si koupit Aspose.PDF?
  Můžete začít s a[zkušební verze zdarma](https://releases.aspose.com/) než se rozhodnete pro koupi, abyste zjistili, zda vyhovuje vašim potřebám.
 
-### Co když narazím na problémy s používáním Aspose.PDF?
+### Co když při používání Aspose.PDF narazím na problémy?
  The[fórum podpory](https://forum.aspose.com/c/pdf/10) je skvělým zdrojem pomoci.
 
 ### Existuje dočasná licence pro Aspose.PDF?

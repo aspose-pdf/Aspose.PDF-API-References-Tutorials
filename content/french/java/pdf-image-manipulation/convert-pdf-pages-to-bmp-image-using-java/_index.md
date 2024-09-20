@@ -10,7 +10,7 @@ url: /fr/java/pdf-image-manipulation/convert-pdf-pages-to-bmp-image-using-java/
 
 ## Introduction à la conversion de pages PDF en images BMP à l'aide de Java
 
-À l'ère du numérique, il est de plus en plus nécessaire de travailler avec différents formats de fichiers, notamment les PDF. Il arrive souvent que nous devions convertir des pages spécifiques d'un document PDF en formats d'image tels que BMP. Cette tâche peut s'avérer pratique pour diverses applications, telles que la génération de vignettes, l'extraction de graphiques ou même la création de présentations basées sur des images. Dans ce guide, nous verrons comment y parvenir à l'aide d'Aspose.PDF pour Java.
+À l'ère du numérique, il est de plus en plus nécessaire de travailler avec différents formats de fichiers, notamment les PDF. Il arrive souvent que nous ayons besoin de convertir des pages spécifiques d'un document PDF en formats d'image tels que BMP. Cette tâche peut s'avérer pratique pour diverses applications, telles que la génération de vignettes, l'extraction de graphiques ou même la création de présentations basées sur des images. Dans ce guide, nous verrons comment y parvenir à l'aide d'Aspose.PDF pour Java.
 
 ## Prérequis
 

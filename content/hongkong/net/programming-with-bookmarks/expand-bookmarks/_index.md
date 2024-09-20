@@ -105,7 +105,7 @@ Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功擴充了 PDF 檔案中的書籤。這個簡單但功能強大的庫可讓您輕鬆操作 PDF 文檔，讓您的生活變得更加輕鬆。無論您是在處理個人專案還是專業應用程序，Aspose.PDF 都是您的工具庫中的絕佳工具。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功擴充了 PDF 檔案中的書籤。這個簡單但功能強大的庫可讓您輕鬆操作 PDF 文檔，讓您的生活變得更加輕鬆。無論您是在處理個人專案還是專業應用程序，Aspose.PDF 都是您的工具庫中的絕佳工具。
 
 ## 常見問題解答
 

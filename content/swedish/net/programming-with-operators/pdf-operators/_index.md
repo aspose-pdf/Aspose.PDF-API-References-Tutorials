@@ -19,7 +19,7 @@ Innan vi hoppar in i det snåriga med PDF-operatörer, låt oss se till att du h
 2.  Aspose.PDF-bibliotek: Se till att du har Aspose.PDF-biblioteket installerat i din .NET-miljö. Du kan ladda ner den från[Aspose PDF för .NET-versioner sida](https://releases.aspose.com/pdf/net/).
 3. Visual Studio eller vilken IDE som helst: Du behöver en integrerad utvecklingsmiljö (IDE) som Visual Studio för att skriva och köra din kod.
 4.  Bildfiler: Förbered bilderna du vill lägga till i din PDF. För den här handledningen kommer vi att använda en exempelbild med namnet`PDFOperators.jpg`.
-5.  PDF-mall: Låt ett exempel på PDF-fil namnges`PDFOperators.pdf` redo i din projektkatalog.
+5.  PDF-mall: Låt ett exempel på en PDF-fil namnges`PDFOperators.pdf` redo i din projektkatalog.
 
 När du har dessa förutsättningar på plats är du redo att börja manipulera PDF-filer som ett proffs!
 

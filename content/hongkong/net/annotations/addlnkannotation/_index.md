@@ -134,7 +134,7 @@ Console.WriteLine("\nInk annotation added successfully.\nFile saved at " + dataD
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將墨跡註解新增至 PDF 文件。這個簡單而有效的功能可以增強您的文件並使它們具有互動性。無論您是添加簽名、註釋還是塗鴉，墨跡註釋都提供了豐富內容的獨特方式。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將墨跡註解新增至 PDF 文件。這個簡單而有效的功能可以增強您的文件並使它們具有互動性。無論您是添加簽名、註釋還是塗鴉，墨跡註釋都提供了豐富內容的獨特方式。
 
 ## 常見問題解答
 

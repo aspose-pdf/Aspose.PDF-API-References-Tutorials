@@ -2,128 +2,149 @@
 title: タグ付き画像付きPDFを作成
 linktitle: タグ付き画像付きPDFを作成
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して、タグ付き画像を含む PDF を作成する手順ガイド。
+description: Aspose.PDF for .NET を使用して、画像付きのタグ付き PDF を作成する方法を学びます。アクセスしやすくプロフェッショナルなドキュメントを作成するには、ステップ バイ ステップ ガイドに従ってください。
 type: docs
 weight: 40
 url: /ja/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して、タグ付き画像を含む PDF ドキュメントを作成する方法をステップ バイ ステップで説明します。Aspose.PDF は、PDF ドキュメントをプログラムで作成、操作、変換できる強力なライブラリです。Aspose.PDF のタグ付きコンテンツ構造機能を使用すると、タグ付き画像を PDF ドキュメントに追加できます。
+## 導入
+
+PDF の作成は複雑な作業になることがあります。しかし、必ずしもそうである必要はありません。今日は、Aspose.PDF for .NET を使用して、タグ付き画像を含む PDF ドキュメントを作成する方法について詳しく説明します。PDF に画像を組み込み、その画像がアクセス可能であることを確認する方法に興味がある場合は、ここが最適な場所です。このプロセスを段階的に説明して、プロフェッショナルでアクセスしやすい PDF を簡単に作成できるようにしましょう。
 
 ## 前提条件
 
-始める前に、次の前提条件が満たされていることを確認してください。
+タグ付き画像を含む PDF の作成を開始する前に、いくつか必要なものがあります。
 
-1. .NET フレームワークとともにインストールされた Visual Studio。
-2. .NET 用の Aspose.PDF ライブラリ。
+1. Aspose.PDF for .NET: この強力なライブラリは、.NET アプリケーションで PDF ドキュメントを処理するために不可欠です。ライブラリは次の場所にあります:[Aspose.PDF for .NET のダウンロード](https://releases.aspose.com/pdf/net/).
+2. .NET Framework または .NET Core: お使いのマシンに互換性のあるバージョンの .NET Framework または .NET Core がインストールされていることを確認してください。このライブラリは両方をサポートしています。
+3. 画像ファイル: PDF に埋め込む画像ファイルが必要です。この例では、「aspose-logo.png」を使用します。ドキュメント ディレクトリに準備しておいてください。 
 
-## ステップ1: プロジェクトのセットアップ
+これらの前提条件が満たされていることを確認して、開始する準備は完了です。
 
-まず、Visual Studio で新しいプロジェクトを作成し、Aspose.PDF for .NET ライブラリへの参照を追加します。ライブラリは Aspose の公式 Web サイトからダウンロードして、マシンにインストールできます。
+## パッケージのインポート
 
-## ステップ2: 必要な名前空間をインポートする
+コーディングの冒険を始めるには、必要な Aspose.PDF 名前空間をインポートしてワークスペースを設定する必要があります。手順は次のとおりです。
 
-C# コード ファイルで、Aspose.PDF によって提供されるクラスとメソッドにアクセスするために必要な名前空間をインポートします。
+### 新しいプロジェクトを作成する
+
+- 好みの IDE (Visual Studio など) を開きます。
+- 新しいコンソール アプリケーション プロジェクトを作成します。コンソール アプリケーションを使用する理由は、シンプルでチュートリアルに最適だからです。
+
+### Aspose.PDF 参照の追加
+
+- ソリューション エクスプローラーでプロジェクトを右クリックし、[NuGet パッケージの管理] を選択します。
+- 「Aspose.PDF」を検索してインストールします。 
+- これにより、必要なすべてのパッケージがプロジェクトに追加され、PDF 操作に必要な機能にアクセスできるようになります。
+
+### 必要な名前空間をインポートする
+
+メインプログラムファイルの先頭（`Program.cs`)、次の名前空間をインポートします。
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## ステップ3: タグ付き画像を含むPDFドキュメントを作成する
+これらのパッケージをインポートすることで、使用する Aspose.PDF 機能をアプリケーションに取り込むように指示することになります。
 
-タグ付き画像を含む PDF ドキュメントを作成するには、次のコードを使用します。
+すべての設定が完了したので、タグ付き画像を使用して PDF を段階的に作成してみましょう。
+
+## ステップ1: ドキュメントを初期化する
+
+まず、新しい PDF ドキュメントを作成する必要があります。
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //ディレクトリへのパスを設定する
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-このコードは、空の PDF ドキュメントを作成し、Aspose.PDF が提供するメソッドを使用してタグ付き画像を追加します。画像は、代替テキスト、タイトル、およびタグで指定されます。
+- ここで何が起こっているのでしょうか？新しいインスタンスを作成しています`Document`これは PDF を表すオブジェクトです。傑作を待つ空白のキャンバスと考えてください。
 
-## ステップ4: PDFドキュメントを保存する
+## ステップ2: タグ付けされたコンテンツを設定する
 
-PDF ドキュメントを保存するには、次のコードを使用します。
+次に、タグ付けされたコンテンツを設定します。
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-このコードは、タグ付けされた画像を含む PDF ドキュメントを指定されたファイルに保存します。
+- タグ付きコンテンツを使用する理由 タグ付き PDF はアクセシビリティに不可欠であり、スクリーン リーダーがドキュメントの構造を理解できるようにします。
 
-### Aspose.PDF for .NET を使用してタグ付き画像付き PDF を作成するためのサンプル ソース コード 
+## ステップ3: メタデータを構成する
+
+ここで、PDF を説明するメタデータを追加しましょう。
+
 ```csharp
-
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- メタって何ですか? タイトルと言語を追加することは、作品に名札を付けるようなものです。他の人が作品の内容を理解するのに役立ちます。
+
+## ステップ4: イラスト要素を作成する
+
+画像を保持する要素を作成する必要があります。
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+- まさにその通り？！そう！`CreateFigureElement`メソッドを使用すると、新しいイラストを作成し、それをタグ付けされたコンテンツのルート要素に追加することができます。
+
+## ステップ5: 画像のプロパティを設定する
+
+次に、画像のプロパティを設定しましょう。
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-//解像度300 DPIの画像を追加（デフォルト）
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// PDF文書を保存
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- なぜこれらすべてのプロパティが必要なのでしょうか? 代替テキストは画像を見ることができない人のために画像を説明し、タイトルとタグは画像を分類してアクセシビリティを向上させるためです。
+
+## ステップ6: 画像を追加する
+
+次に、実際の画像を PDF に追加します。
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); //画像パスが正しいことを確認してください。
+```
+
+- ここで魔法が起こります。画像を PDF に直接埋め込みます。 
+
+## ステップ7: PDFドキュメントを保存する
+
+最後に、作成したものをファイルに保存します。
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- グランドフィナーレ！この行を実行すると、指定されたディレクトリに新しい PDF が見つかります。
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して、タグ付き画像を含む PDF ドキュメントを作成する方法を学習しました。タグ付き画像は、PDF ドキュメントに追加の構造化された情報を追加します。
+Aspose.PDF for .NET を使用してタグ付き画像を含む PDF を作成するのは、扱いやすい手順に分解すれば簡単です。このガイドに従うことで、PDF を作成するだけでなく、タグ付きコンテンツを使用してアクセシビリティを強化する方法も学習できます。より幅広いユーザー向けにドキュメントを準備する場合でも、PDF 作成物を単に磨き上げる場合でも、この知識は大いに役立ちます。
 
-### よくある質問
+## よくある質問
 
-#### Q: Aspose.PDF for .NET を使用してタグ付き画像を含む PDF ドキュメントを作成する目的は何ですか?
+### タグ付き PDF とは何ですか?
+タグ付き PDF は、アクセスしやすいように設計されています。補助技術が PDF を適切に読み取り、ナビゲートできるようにするメタデータが含まれています。
 
-A: Aspose.PDF for .NET を使用してタグ付き画像を含む PDF ドキュメントを作成すると、ドキュメントのコンテンツにタグ付き画像を追加できます。タグ付き画像は、代替テキストやタイトルなどの構造化された情報を提供し、アクセシビリティと整理を強化します。
+### Aspose.PDF を使用して複数の画像を追加できますか?
+もちろんです！新規作成の手順を繰り返すだけです`IllustrationElement`ドキュメント内のインスタンス。
 
-#### Q: Aspose.PDF ライブラリは、タグ付き画像を含む PDF ドキュメントの作成にどのように役立ちますか?
+### Aspose.PDF に関する詳細なドキュメントはどこで見つかりますか?
+ドキュメントをご覧ください[ここ](https://reference.aspose.com/pdf/net/).
 
-A: Aspose.PDF for .NET は、PDF ドキュメントをプログラムで作成、操作、変換する機能を提供する強力なライブラリです。このチュートリアルでは、ライブラリのタグ付きコンテンツ構造機能を使用して、タグ付き画像を PDF ドキュメントに追加します。
+### Aspose.PDF の無料試用版はありますか?
+はい！無料トライアルをご利用いただけます[ここ](https://releases.aspose.com/).
 
-#### Q: Aspose.PDF for .NET を使用してタグ付き画像を含む PDF ドキュメントを作成するための前提条件は何ですか?
-
-A: 始める前に、.NET フレームワークとともに Visual Studio がインストールされており、プロジェクトで .NET 用の Aspose.PDF ライブラリが参照されていることを確認してください。
-
-#### Q: 提供された C# コードはどのようにしてタグ付き画像を含む PDF ドキュメントを作成しますか?
-
-A: このコードは、PDF ドキュメントを作成し、タグ付き画像要素を定義し、それをドキュメントのコンテンツに追加する方法を示しています。タグ付き画像には、Aspose.PDF が提供するメソッドを使用して、代替テキスト、タイトル、タグが含まれます。
-
-#### Q: タグ付けされた画像に異なる画像形式を使用できますか?
-
-A: はい、タグ付けされた画像には、JPEG、PNG、GIF などのさまざまな画像形式を使用できます。チュートリアルで提供されているコード例では JPEG 画像を使用していますが、好みの形式の画像ファイルへのパスに置き換えることができます。
-
-#### Q: タグ付けされた画像では代替テキスト (alt テキスト) はどのように使用されますか?
-
- A: 代替テキストは、視覚障害のあるユーザー向けのスクリーンリーダーによって読み上げられる画像の説明文です。提供されているコードでは、代替テキストは次のように設定されています。`AlternativeText`の財産`IllustrationElement`タグ付けされた画像を表します。
-
-#### Q:`SetTitle` method contribute to the PDF document's tagged image?
-
- A:`SetTitle`メソッドは、PDF ドキュメントのタグ付けされたコンテンツのタイトルを設定し、タグ付けされた画像に追加のコンテキストを提供します。このタイトルは、タグ付けされたコンテンツの目的や主題を識別するのに役立ちます。
-
-#### Q: タグ付けされた画像のタグとタイトルをカスタマイズできますか?
-
- A: はい、タグ付き画像のタグとタイトルをカスタマイズできます。`SetTag`そして`Title`の`IllustrationElement`コード例では、タグを「Fig」に設定し、タイトルを「Picture 1」に設定する方法を示しています。
-
-#### Q: タグ付けされた画像がアクセス可能であり、アクセシビリティ標準に準拠していることをどのように確認すればよいですか?
-
-A: Aspose.PDF のタグ付きコンテンツ構造機能を使用し、代替テキストやその他の関連情報を提供することで、タグ付き画像のアクセシビリティに貢献できます。アクセシビリティ標準への準拠を確保するには、代替テキストとドキュメント構造のベスト プラクティスに従う必要があります。
-
-#### Q: 同様の手法を使用して、同じ PDF ドキュメントに複数のタグ付き画像を追加することは可能ですか?
-
-A: はい、同様のテクニックを使って、同じPDF文書に複数のタグ付き画像を追加できます。`IllustrationElement`タグ付けされた画像ごとにインスタンスを作成し、必要に応じてプロパティをカスタマイズします。
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+サポートを受けるには、[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).

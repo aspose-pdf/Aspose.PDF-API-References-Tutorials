@@ -2,7 +2,7 @@
 title: TeX в PDF
 linktitle: TeX в PDF
 second_title: Справочник по API Aspose.PDF для .NET
-description: Узнайте, как преобразовать TeX в PDF с помощью Aspose.PDF для .NET с помощью этого подробного пошагового руководства. Идеально подходит для разработчиков и специалистов по документам.
+description: Узнайте, как преобразовать TeX в PDF с помощью Aspose.PDF для .NET с помощью этого подробного пошагового руководства. Идеально подходит для разработчиков и профессионалов в области документов.
 type: docs
 weight: 290
 url: /ru/net/document-conversion/tex-to-pdf/

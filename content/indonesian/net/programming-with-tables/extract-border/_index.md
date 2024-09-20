@@ -2,30 +2,58 @@
 title: Ekstrak Batas Dalam File PDF
 linktitle: Ekstrak Batas Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara mengekstrak batas dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak batas dari file PDF dan menyimpannya sebagai gambar menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah dengan contoh kode dan kiat untuk meraih keberhasilan.
 type: docs
 weight: 80
 url: /id/net/programming-with-tables/extract-border/
 ---
-Dalam tutorial ini, kita akan mempelajari cara mengekstrak border dalam file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber dalam C# langkah demi langkah. Di akhir tutorial ini, Anda akan mengetahui cara mengekstrak border dari dokumen PDF dan menyimpannya sebagai gambar. Mari kita mulai!
+## Perkenalan
 
-## Langkah 1: Menyiapkan lingkungan
-Pertama, pastikan Anda telah menyiapkan lingkungan pengembangan C# dengan Aspose.PDF untuk .NET. Tambahkan referensi ke pustaka dan impor namespace yang diperlukan.
+Saat bekerja dengan PDF, mengekstrak elemen tertentu seperti border atau jalur grafis mungkin tampak seperti tugas yang sulit. Namun dengan Aspose.PDF untuk .NET, Anda dapat dengan mudah mengekstrak border atau bentuk dari file PDF dan menyimpannya sebagai gambar. Dalam tutorial ini, kita akan menyelami proses mengekstrak border dari PDF dan menyimpannya sebagai gambar PNG. Bersiaplah untuk mengendalikan konten grafis PDF Anda!
 
-## Langkah 2: Memuat Dokumen PDF
-Pada langkah ini, kami memuat dokumen PDF dari berkas yang ditentukan.
+## Prasyarat
+
+Sebelum kita masuk ke kode, pastikan Anda telah menyiapkan semuanya:
+
+1.  Aspose.PDF untuk .NET: Jika Anda belum menginstal pustaka Aspose.PDF, Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/)Anda juga perlu menerapkan lisensi, baik melalui uji coba gratis atau lisensi yang dibeli.
+2. Penyiapan IDE: Siapkan proyek C# di Visual Studio atau IDE .NET lainnya. Pastikan Anda telah menambahkan referensi yang diperlukan ke pustaka Aspose.PDF.
+3. Masukkan File PDF: Siapkan file PDF yang akan Anda gunakan untuk mengekstrak batas. Tutorial ini akan merujuk ke file bernama`input.pdf`.
+
+## Mengimpor Paket yang Diperlukan
+
+Mari kita mulai dengan mengimpor namespace yang diperlukan. Paket-paket ini menyediakan alat yang dibutuhkan untuk memanipulasi konten PDF.
 
 ```csharp
+using System.IO;
+using System;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Collections;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Sekarang setelah kita membahas dasar-dasarnya, mari beralih ke panduan langkah demi langkah di mana kita akan menguraikan setiap bagian kode untuk menjelaskannya secara terperinci.
+
+
+## Langkah 1: Memuat Dokumen PDF
+
+Langkah pertama adalah memuat dokumen PDF yang berisi border yang ingin Anda ekstrak. Anggap saja seperti membuka buku sebelum mulai membaca — Anda perlu mengakses isinya!
+
+ Kita akan mulai dengan menentukan direktori tempat file PDF Anda disimpan dan memuat dokumen menggunakan`Aspose.Pdf.Document` kelas.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan direktori sebenarnya tempat berkas PDF Anda berada.
+ Kode ini memuat`input.pdf` file dari direktori yang Anda tentukan. Pastikan jalur file sudah benar, atau Anda mungkin mendapatkan kesalahan file tidak ditemukan.
 
-## Langkah 3: Ekstraksi Tepi
-Kita akan mengekstrak batas dari dokumen PDF dengan mengulangi operasi yang terdapat dalam dokumen.
+## Langkah 2: Menyiapkan Grafik dan Bitmap
+
+Sebelum kita mulai mengekstrak, kita perlu membuat kanvas untuk menggambar. Dalam dunia .NET, ini berarti menyiapkan objek Bitmap dan Graphics. Bitmap mewakili gambar, dan objek Graphics akan memungkinkan kita menggambar bentuk, seperti batas, yang diekstrak dari PDF.
 
 ```csharp
-Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
@@ -33,226 +61,106 @@ System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.M
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
 System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+```
 
-using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
+Berikut rinciannya:
+- Kami membuat gambar bitmap seukuran halaman pertama PDF.
+- GraphicsPath digunakan untuk menentukan bentuk (dalam kasus ini, batas).
+- Matriks mendefinisikan bagaimana grafik akan diubah; kita memerlukan matriks inversi karena PDF dan .NET memiliki sistem koordinat yang berbeda.
+
+## Langkah 3: Memproses Konten PDF
+
+
+Berkas PDF adalah serangkaian perintah gambar, dan kita perlu memproses setiap perintah ini untuk mengidentifikasi dan mengekstrak informasi batas.
+
+```csharp
+foreach (Operator op in doc.Pages[1].Contents)
 {
-     // Memproses semua operasi konten
-     foreach(Operator op in doc.Pages[1].Contents)
-     {
-         // Periksa jenis operasinya
-         // ...
-         // Tambahkan kode untuk memproses setiap operasi
-     }
+    // Memproses perintah seperti menyimpan/mengembalikan status, menggambar garis, mengisi bentuk, dan lain-lain.
 }
 ```
 
- Kami menciptakan sebuah`graphicsState` tumpukan untuk menyimpan status grafik, gambar bitmap untuk menangkap perbatasan yang diekstraksi,`GraphicsPath` objek untuk menyimpan jalur gambar, dan variabel lain untuk melacak status dan warna.
+Kode tersebut mengulang setiap operator gambar dalam aliran konten PDF. Setiap operator dapat mewakili garis, persegi panjang, atau instruksi grafis lainnya.
 
-## Langkah 4: Pemrosesan Transaksi
-Pada langkah ini, kami memproses setiap operasi dokumen untuk mengekstraksi batas.
+## Langkah 4: Menangani Operator PDF
+
+Setiap operator dalam berkas PDF mengendalikan suatu tindakan. Untuk mengekstrak batas, kita perlu mengidentifikasi perintah seperti "pindah ke", "garis ke", dan "gambar persegi panjang". Operator berikut menangani tindakan ini:
+
+- MoveTo: Memindahkan kursor ke titik awal.
+- LineTo: Menggambar garis dari titik saat ini ke titik baru.
+- Re: Menggambar persegi panjang (ini bisa menjadi bagian dari perbatasan).
 
 ```csharp
-// Periksa jenis operasinya
-if (opSaveState != null)
-{
-     // Simpan status sebelumnya dan pindahkan status saat ini ke bagian atas tumpukan
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opRestoreState != null)
-{
-     // Hapus status saat ini dan pulihkan status sebelumnya
-     graphicsState. Pop();
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opCtm != null)
-{
-     // Ambil matriks transformasi saat ini
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-         (float)opCtm.Matrix.A,
-         (float)opCtm.Matrix.B,
-         (float)opCtm.Matrix.C,
-         (float)opCtm.Matrix.D,
-         (float)opCtm.Matrix.E,
-         (float)opCtm.Matrix.F);
+Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
+Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
+Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
 
-     // Kalikan matriks saat ini dengan matriks status
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opMoveTo != null)
+if (opMoveTo != null)
 {
-     // Perbarui titik gambar terakhir
-     lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
+    lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Proses menggambar garis
-     // ...
-     // Tambahkan kode untuk menangani penggambaran garis
+    System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
+    graphicsPath.AddLine(lastPoint, linePoint);
+    lastPoint = linePoint;
 }
-// ...
-// Tambahkan blok else if untuk operasi lainnya
+else if (opRe != null)
+{
+    System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
+    graphicsPath.AddRectangle(re);
+}
 ```
 
-Kami memeriksa jenis operasi menggunakan kondisi dan menjalankan kode yang sesuai untuk setiap operasi.
+Pada langkah ini:
+- Kami menangkap titik untuk setiap garis atau bentuk yang digambar.
+- Untuk persegi panjang (`opRe` ), kami menambahkannya langsung ke`graphicsPath`, yang akan kita gunakan nanti untuk menggambar batas.
 
-## Langkah 5: Cadangkan Gambar
-Terakhir, kita simpan gambar bitmap berisi batas yang diekstrak ke berkas yang ditentukan.
+## Langkah 5: Menggambar Batas
 
-```csharp
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-```
-
-Pastikan untuk menentukan direktori dan nama file yang benar untuk menyimpan gambar keluaran.
-
-### Contoh kode sumber untuk Ekstraksi Batas menggunakan Aspose.PDF untuk .NET
+Setelah kita mengidentifikasi garis dan persegi panjang yang membentuk batas, kita perlu menggambarnya pada objek Bitmap. Di sinilah objek Graphics berperan.
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document(dataDir + "input.pdf");
-
-Stack graphicsState = new Stack();
-System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
-System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Nilai matriks ctm default adalah 1,0,0,1,0,0
-System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Sistem koordinat gambar berbasis kiri atas, sedangkan sistem koordinat pdf berbasis kiri bawah, jadi kita harus menerapkan matriks inversi
-System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
-System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
-System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
-System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-	gr.SmoothingMode = SmoothingMode.HighQuality;
-	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-
-	// Memproses semua perintah konten
-	foreach (Operator op in doc.Pages[1].Contents)
-	{
-		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-		Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-		Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-		Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
-		Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
-		Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
-		Aspose.Pdf.Operators.EndPath opEndPath = op as Aspose.Pdf.Operators.EndPath;
-		Aspose.Pdf.Operators.Stroke opStroke = op as Aspose.Pdf.Operators.Stroke;
-		Aspose.Pdf.Operators.Fill opFill = op as Aspose.Pdf.Operators.Fill;
-		Aspose.Pdf.Operators.EOFill opEOFill = op as Aspose.Pdf.Operators.EOFill;
-		Aspose.Pdf.Operators.SetRGBColor opRGBFillColor = op as Aspose.Pdf.Operators.SetRGBColor;
-		Aspose.Pdf.Operators.SetRGBColorStroke opRGBStrokeColor = op as Aspose.Pdf.Operators.SetRGBColorStroke;
-
-		if (opSaveState != null)
-		{
-			// Simpan status sebelumnya dan pindahkan status saat ini ke bagian atas tumpukan
-			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opRestoreState != null)
-		{
-			// Buang status saat ini dan pulihkan status sebelumnya
-			graphicsState.Pop();
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opCtm != null)
-		{
-			System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-				(float)opCtm.Matrix.A,
-				(float)opCtm.Matrix.B,
-				(float)opCtm.Matrix.C,
-				(float)opCtm.Matrix.D,
-				(float)opCtm.Matrix.E,
-				(float)opCtm.Matrix.F);
-
-			// Kalikan matriks saat ini dengan matriks status
-			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opMoveTo != null)
-		{
-			lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
-		}
-		else if (opLineTo != null)
-		{
-			System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
-			graphicsPath.AddLine(lastPoint, linePoint);
-
-			lastPoint = linePoint;
-		}
-		else if (opRe != null)
-		{
-			System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
-			graphicsPath.AddRectangle(re);
-		}
-		else if (opEndPath != null)
-		{
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opRGBFillColor != null)
-		{
-			fillColor = opRGBFillColor.getColor();
-		}
-		else if (opRGBStrokeColor != null)
-		{
-			strokeColor = opRGBStrokeColor.getColor();
-		}
-		else if (opStroke != null)
-		{
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Winding;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opEOFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Alternate;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-	}
+    gr.SmoothingMode = SmoothingMode.HighQuality;
+    gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
 }
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-
-Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
+- Kami membuat objek Grafik berdasarkan bitmap.
+- SmoothingMode.HighQuality memastikan kita mendapatkan gambar yang halus dan bagus.
+- Terakhir, kita menggunakan DrawPath untuk menggambar batas.
+
+## Langkah 6: Menyimpan Border yang Diekstrak
+
+Setelah kita mengekstrak border, sekarang saatnya menyimpannya sebagai file gambar. Ini akan menyimpan border sebagai PNG.
+
+```csharp
+dataDir = dataDir + "ExtractBorder_out.png";
+bitmap.Save(dataDir, ImageFormat.Png);
+```
+
+- Bitmap disimpan sebagai gambar PNG.
+- Anda sekarang dapat membuka gambar ini untuk melihat batas yang diekstrak.
+
 ## Kesimpulan
-Dalam tutorial ini, kita mempelajari cara mengekstrak border dari dokumen PDF menggunakan Aspose.PDF for .NET. Anda dapat menggunakan panduan langkah demi langkah ini untuk mengekstrak border dari dokumen PDF lainnya.
 
-### FAQ untuk mengekstrak batas dalam file PDF
+Mengekstrak batas dari berkas PDF menggunakan Aspose.PDF untuk .NET mungkin tampak rumit pada awalnya, tetapi setelah Anda menguraikannya, semuanya menjadi mudah. Dengan memahami operator gambar dalam PDF dan memanfaatkan pustaka .NET yang canggih, Anda dapat memanipulasi dan mengekstrak konten grafis secara efisien. Panduan ini memberi Anda dasar yang kuat untuk memulai manipulasi PDF!
 
-#### T: Apa tujuan mengekstrak batas dari berkas PDF?
+## Pertanyaan yang Sering Diajukan
 
-A: Mengekstrak border dari file PDF dapat berguna untuk berbagai keperluan. Hal ini memungkinkan Anda untuk mengisolasi dan menganalisis elemen struktural dokumen, seperti tabel, diagram, atau elemen grafis. Anda dapat menggunakan border yang diekstrak untuk mengidentifikasi tata letak, dimensi, dan posisi konten dalam dokumen PDF.
+### Bagaimana cara menangani banyak halaman dalam PDF?  
+ Anda dapat mengulang setiap halaman dalam dokumen dengan mengulanginya`doc.Pages` alih-alih hardcoding`doc.Pages[1]`.
 
-#### T: Dapatkah saya mengekstrak batas dari halaman atau area tertentu dalam dokumen PDF?
+### Bisakah saya mengekstrak elemen lain, seperti teks, menggunakan pendekatan yang sama?  
+Ya, Aspose.PDF menyediakan API yang kaya untuk mengekstrak teks, gambar, dan konten lainnya dari file PDF.
 
- A: Ya, Anda dapat memodifikasi kode sumber C# yang disediakan untuk mengekstrak batas dari halaman atau wilayah tertentu dalam dokumen PDF. Dengan memanipulasi`doc.Pages` koleksi dan menentukan kriteria khusus, Anda dapat memilih untuk mengekstrak batas dari halaman atau area minat tertentu.
+### Bagaimana cara mengajukan lisensi untuk menghindari batasan?  
+ Kamu bisa[menerapkan lisensi](https://purchase.aspose.com/temporary-license/) dengan memuatnya melalui`License` kelas yang disediakan oleh Aspose.
 
-#### T: Bagaimana saya dapat menyesuaikan format dan kualitas gambar keluaran?
+### Bagaimana jika PDF saya tidak memiliki batas?  
+Jika PDF Anda tidak memiliki batas yang terlihat, proses ekstraksi grafik mungkin tidak akan memberikan hasil apa pun. Pastikan konten PDF menyertakan batas yang dapat digambar.
 
- A: Dalam kode C# yang diberikan, border yang diekstrak disimpan sebagai gambar PNG. Jika Anda ingin mengubah format gambar output, Anda dapat memodifikasi`ImageFormat.Png` parameternya di dalam`bitmap.Save` metode ini ke format gambar lain yang didukung, seperti JPEG, BMP, atau GIF. Selain itu, Anda dapat menyesuaikan kualitas gambar atau pengaturan kompresi berdasarkan kebutuhan Anda.
-
-#### T: Operasi apa lagi yang dapat saya lakukan pada perbatasan yang diekstraksi?
-
-J: Setelah Anda mengekstraksi border sebagai gambar, Anda dapat memprosesnya lebih lanjut menggunakan pustaka atau algoritma pemrosesan gambar. Anda dapat menganalisis gambar, menerapkan filter gambar, mendeteksi pola, atau menjalankan OCR (Optical Character Recognition) untuk mengekstraksi teks dari gambar jika diperlukan.
-
-#### T: Apakah ada batasan atau pertimbangan saat mengekstrak batas dari dokumen PDF yang kompleks?
-
-A: Proses ekstraksi dapat bervariasi tergantung pada kompleksitas dokumen PDF. PDF yang kompleks dengan beberapa lapisan, transparansi, atau grafik canggih mungkin memerlukan pemrosesan atau penyesuaian tambahan untuk mengekstraksi batas secara akurat. Sangat penting untuk menguji proses ekstraksi secara menyeluruh pada berbagai dokumen PDF guna memastikan hasil yang dapat diandalkan.
+### Bisakah saya menyimpan output dalam format selain PNG?  
+ Ya, cukup ubah`ImageFormat.Png` ke format lain yang didukung seperti`ImageFormat.Jpeg`.

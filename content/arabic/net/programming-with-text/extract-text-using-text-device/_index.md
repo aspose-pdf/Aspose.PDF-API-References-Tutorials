@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /ar/net/programming-with-text/extract-text-using-text-device/
 ---
-سيرشدك هذا البرنامج التعليمي خلال عملية استخراج النص من مستند PDF باستخدام أداة Text Device في Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة.
+## مقدمة
 
-## متطلبات
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+قد يكون استخراج النص من ملف PDF أمرًا صعبًا، وخاصة عند التعامل مع مستندات ذات تنسيقات مختلفة أو خطوط مضمنة أو تخطيطات معقدة. ولكن مع Aspose.PDF لـ .NET، تصبح هذه العملية سهلة للغاية! سواء كنت تريد تحويل صفحات ملف PDF إلى نص عادي لمزيد من التحليل أو كنت بحاجة ببساطة إلى استخراج أقسام معينة، فإن Aspose.PDF يغطيك. في هذا البرنامج التعليمي، سنوضح خطوة بخطوة كيفية استخراج النص من ملف PDF باستخدام فئة TextDevice في Aspose.PDF. وسنقدم أيضًا تفسيرات واضحة، حتى تتمكن من تطبيق نفس الأساليب على مشاريعك الخاصة بسهولة.
 
-- Visual Studio أو أي مُجمِّع C# آخر مُثبت على جهازك.
-- مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من موقع Aspose الرسمي أو استخدام مدير حزم مثل NuGet لتثبيتها.
+## المتطلبات الأساسية
 
-## الخطوة 1: إعداد المشروع
-1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
-2. أضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+قبل أن ننتقل إلى التعليمات البرمجية، تأكد من أن كل شيء جاهز للمتابعة. إليك ما ستحتاج إليه:
 
-## الخطوة 2: استيراد المساحات المطلوبة
-في ملف الكود الذي تريد استخراج النص منه، أضف ما يلي باستخدام التوجيهات في أعلى الملف:
+1.  Aspose.PDF لـ .NET: قم بتنزيل أحدث إصدار من[صفحة تنزيل Aspose.PDF لـ .NET](https://releases.aspose.com/pdf/net/).
+2. بيئة التطوير: Visual Studio أو أي بيئة تطوير C# أخرى.
+3. .NET Framework: تأكد من أن مشروعك يستهدف .NET Framework 4.x أو أعلى.
+4. ملف PDF المدخل: ملف PDF الذي ستستخدمه لاستخراج النص. ضع هذا الملف في دليل على جهازك (سنشير إليه باسم`YOUR DOCUMENT DIRECTORY`).
+
+## استيراد الحزم
+
+في الجزء العلوي من الكود الخاص بك، ستحتاج إلى استيراد المساحات الأساسية اللازمة للعمل مع Aspose.PDF:
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## الخطوة 3: تعيين دليل المستند
- في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
+## الخطوة 1: قم بتحميل مستند PDF الخاص بك
 
-## الخطوة 4: افتح مستند PDF
- افتح مستند PDF موجودًا باستخدام`Document`المنشئ وتمرير المسار إلى ملف PDF المدخل.
+ قبل استخراج النص، نحتاج إلى تحميل مستند PDF إلى الذاكرة. في هذه الخطوة، ستفتح ملف PDF باستخدام Aspose.PDF`Document` سيسمح لك هذا بالوصول إلى كافة الصفحات والمحتوى داخل الملف.
 
 ```csharp
+// حدد المسار إلى مستند PDF الخاص بك
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// تحميل مستند PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## الخطوة 5: استخراج النص باستخدام Text Device
- إنشاء`StringBuilder` الكائن الذي يحمل النص المستخرج. قم بالتكرار عبر كل صفحة من المستند واستخدم`TextDevice` لاستخراج النص من كل صفحة.
+ هنا، نحن نستخدم`Document pdfDocument = new Document(dataDir + "input.pdf");` لتحميل ملف PDF.`dataDir` يحتوي المتغير على مسار الدليل لملف PDF الخاص بك. سيتيح لنا هذا الوصول إلى المستند بالكامل، مما يسمح لنا بالتنقل عبر الصفحات واستخراج المحتوى.
+
+## الخطوة 2: إعداد منشئ سلسلة لتخزين النصوص
+
+ الآن بعد تحميل المستند، نحتاج إلى طريقة لتخزين النص المستخرج. لهذا، سنستخدم`StringBuilder` الذي يسمح بتسلسل السلسلة بكفاءة.
 
 ```csharp
+// StringBuilder لحفظ النص المستخرج
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## الخطوة 6: احفظ النص المستخرج
- حدد مسار ملف الإخراج واحفظ النص المستخرج في ملف نصي باستخدام`File.WriteAllText` طريقة.
+ نحن نقوم بتهيئة`StringBuilder`مثال، والذي سيجمع النص المستخرج من كل صفحة. إنها طريقة أكثر كفاءة للتعامل مع السلاسل الكبيرة مقارنة بتسلسل السلاسل العادي في حلقة.
+
+## الخطوة 3: التنقل عبر صفحات PDF
+
+ بعد ذلك، ننتقل عبر كل صفحة من مستند PDF لاستخراج النص. وسنقوم بمعالجة كل صفحة على حدة باستخدام`TextDevice` الفئة المسؤولة عن تحويل محتوى PDF إلى تنسيق نصي.
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### عينة من كود المصدر لاستخراج النص باستخدام جهاز النص باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// فتح المستند
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//سلسلة لحفظ النص المستخرج
-string extractedText = "";
+// قم بالتنقل عبر جميع الصفحات في ملف PDF
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		// إنشاء جهاز نصي
-		TextDevice textDevice = new TextDevice();
-		// تعيين خيارات استخراج النص - تعيين وضع استخراج النص (خام أو نقي)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		// تحويل صفحة معينة وحفظ النص في الدفق
-		textDevice.Process(pdfPage, textStream);
-		// تحويل صفحة معينة وحفظ النص في الدفق
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// إغلاق مجرى الذاكرة
-		textStream.Close();
-		// الحصول على نص من مجرى الذاكرة
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    // معالجة كل صفحة لاستخراج النص
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-// حفظ النص المستخرج في ملف نصي
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## خاتمة
-لقد نجحت في استخراج نص من مستند PDF باستخدام أداة Text Device في Aspose.PDF for .NET. تم حفظ النص المستخرج في ملف الإخراج المحدد.
+تمر هذه الحلقة عبر كل صفحة من ملف PDF (`pdfDocument.Pages` ). لكل صفحة، سنقوم باستخراج النص وإضافته إلى`StringBuilder`.
 
-### الأسئلة الشائعة
+## الخطوة 4: استخراج النص من كل صفحة
 
-#### س: ما هو الغرض من هذا البرنامج التعليمي؟
-
-ج: يوفر هذا البرنامج التعليمي إرشادات حول استخراج النص من مستند PDF باستخدام ميزة Text Device في Aspose.PDF for .NET. يوضح كود المصدر C# المصاحب الخطوات اللازمة لتحقيق هذه المهمة.
-
-#### س: ما هي المساحات الأسماء التي يجب أن أستوردها؟
-
-أ: في ملف الكود الذي تخطط لاستخراج النص منه، قم بتضمين ما يلي باستخدام التوجيهات في بداية الملف:
+ الآن، قمنا بإعداد عملية استخراج النص لكل صفحة. هنا، سنقوم بإنشاء`TextDevice` الكائن واستخدامه لمعالجة صفحات PDF.`TextDevice` يستخرج النص الخام أو المنسق استنادًا إلى خيارات الاستخراج التي قمنا بتعيينها.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    // إنشاء جهاز نصي لاستخراج النص
+    TextDevice textDevice = new TextDevice();
+    
+    // تعيين خيارات استخراج النص إلى الوضع "الخالص"
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //استخراج النص من الصفحة الحالية وحفظه في مجرى الذاكرة
+    textDevice.Process(pdfPage, textStream);
+
+    // تحويل تدفق الذاكرة إلى نص
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    // إضافة النص المستخرج إلى StringBuilder
+    builder.Append(extractedText);
+}
 ```
 
-#### س: كيف أحدد دليل المستند؟
+- `TextDevice textDevice = new TextDevice();` : ال`TextDevice` يتم استخدام الفئة لاستخراج النص من ملف PDF.
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` :يستخرج هذا الخيار النص الخام دون الاحتفاظ بأي تنسيق مثل الخطوط أو المواضع. يمكنك أيضًا استخدام`TextFormattingMode.Raw` إذا كنت بحاجة إلى مزيد من التحكم في التنسيق.
+- `textDevice.Process(pdfPage, textStream);` :تعمل هذه العملية على معالجة كل صفحة من ملف PDF وتخزين النص المستخرج في`MemoryStream`.
+-  وأخيرًا، نقوم بتحويل النص من`MemoryStream` إلى سلسلة وإضافتها إلى`StringBuilder`.
 
- أ: في الكود، ابحث عن السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+## الخطوة 5: حفظ النص المستخرج في ملف
 
-#### س: كيف يمكنني فتح مستند PDF موجود؟
+ بعد معالجة كافة الصفحات، يتم تخزين النص في`StringBuilder`الخطوة الأخيرة هي حفظ هذا النص المستخرج في ملف.
 
- أ: في الخطوة 4، ستفتح مستند PDF موجودًا باستخدام`Document` المنشئ وتوفير المسار إلى ملف PDF المدخل.
+```csharp
+// تحديد مسار الإخراج لملف النص
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### س: كيف يمكنني استخراج النص باستخدام جهاز النص؟
+// حفظ النص المستخرج في ملف
+File.WriteAllText(dataDir, builder.ToString());
 
- أ: تتضمن الخطوة 5 إنشاء`StringBuilder` الكائن الذي يحمل النص المستخرج. ثم ستنتقل عبر كل صفحة من المستند وتستخدم`TextDevice` جنبا إلى جنب مع`TextExtractionOptions` لاستخراج النص من كل صفحة.
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### س: كيف أحفظ النص المستخرج في ملف؟
+- `File.WriteAllText(dataDir, builder.ToString());` :هذا يكتب المحتوى الكامل لـ`StringBuilder` إلى ملف نصي.
+- يتم تعيين مسار ملف الإخراج عن طريق إضافة اسم الملف (`"input_Text_Extracted_out.txt"` ) إلى`dataDir` طريق.
 
- أ: في الخطوة 6، ستحدد مسار ملف الإخراج وتستخدم`File.WriteAllText`طريقة لحفظ النص المستخرج في ملف نصي.
+## خاتمة
 
-#### س: ما هو أهم ما يمكن تعلمه من هذا البرنامج التعليمي؟
+إن استخراج النص من ملف PDF باستخدام Aspose.PDF for .NET هو عملية بسيطة وفعالة. باتباع الخطوات الموضحة في هذا الدليل، يمكنك بسهولة فتح مستندات PDF، والتنقل بين الصفحات، واستخراج النص إلى ملف نصي. وهذا مفيد بشكل خاص لمعالجة كميات كبيرة من بيانات PDF، أو إجراء تحليل نصي، أو تحويل المستندات لمزيد من المعالجة.
 
-ج: باتباع هذا البرنامج التعليمي، ستتعلم كيفية الاستفادة من ميزة Text Device في Aspose.PDF for .NET لاستخراج نص من مستند PDF. يتم حفظ النص المستخرج في ملف إخراج محدد، مما يتيح لك معالجة المحتوى المستخرج والاستفادة منه حسب الحاجة.
+مع Aspose.PDF، لن تقتصر قدراتك على استخراج النصوص فحسب، بل يمكنك أيضًا التعامل مع التعليقات التوضيحية، أو معالجة الصور، أو حتى تحويل ملفات PDF إلى تنسيقات أخرى مثل HTML أو Word. إن مرونة وقوة هذه المكتبة تجعلها أداة لا تقدر بثمن لإدارة ملفات PDF في تطبيقات .NET.
+
+## الأسئلة الشائعة
+
+### هل يمكن لـ Aspose.PDF استخراج النص من ملفات PDF القائمة على الصور؟
+لا، تم تصميم Aspose.PDF لاستخراج النص من ملفات PDF المستندة إلى المحتوى. بالنسبة لملفات PDF المستندة إلى الصور، هناك حاجة إلى تقنية التعرف الضوئي على الحروف.
+
+### هل يحتفظ Aspose.PDF بالتنسيق عند استخراج النص؟
+بشكل افتراضي، يتم استخراج النص دون تنسيق، ولكن يمكنك تعديل خيارات الاستخراج إذا كنت تريد الاحتفاظ ببعض التنسيق.
+
+### هل يمكنني استخراج النص من نطاق صفحة محددة؟
+نعم، يمكنك تعديل الكود ليتم تكراره على نطاق محدد من الصفحات بدلاً من جميع الصفحات.
+
+### ما هي أوضاع استخراج النص في Aspose.PDF؟
+يوفر Aspose.PDF وضعين: Raw وPure. يحاول الوضع Raw الاحتفاظ بالتخطيط الأصلي، بينما يستخرج الوضع Pure النص فقط دون تنسيق.
+
+### هل Aspose.PDF for .NET متوافق مع .NET Core؟
+نعم، Aspose.PDF لـ .NET متوافق تمامًا مع .NET Core و.NET Framework.

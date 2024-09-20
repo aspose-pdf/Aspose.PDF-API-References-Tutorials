@@ -2,140 +2,137 @@
 title: محاذاة النص لمحتوى صف الجدول
 linktitle: محاذاة النص لمحتوى صف الجدول
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية محاذاة محتوى الصف في جدول PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية محاذاة النص في صفوف الجدول باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية لإنشاء مستندات PDF احترافية.
 type: docs
 weight: 210
 url: /ar/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لمحاذاة محتويات صف في جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح كود المصدر C# المقدم ونوضح لك كيفية تنفيذه.
+## مقدمة
 
-## الخطوة 1: إنشاء مستند PDF
-أولاً، سنقوم بإنشاء مستند PDF:
+عندما يتعلق الأمر بإنشاء مستندات PDF ذات مظهر احترافي، غالبًا ما تلعب الجداول دورًا محوريًا في عرض البيانات بطريقة واضحة ومنظمة. في هذا الدليل، سنستكشف كيفية محاذاة النص داخل صفوف الجدول في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. سواء كنت تقوم بإنشاء تقارير أو فواتير أو أي مستند يتطلب عرضًا منظمًا للمعلومات، فإن إتقان إنشاء الجداول يمكن أن يعزز إنتاجيتك بشكل كبير. 
+
+## المتطلبات الأساسية
+
+قبل التعمق في الكود، من الضروري التأكد من إعداد الأدوات والبيئة اللازمة. فيما يلي المتطلبات الأساسية التي ستحتاجها للبدء:
+
+1. Visual Studio: تأكد من تثبيت Visual Studio على جهازك. سيساعدك هذا البرنامج المتكامل في كتابة وتنفيذ كود C#.
+2.  Aspose.PDF for .NET: قم بتنزيل مكتبة Aspose.PDF والرجوع إليها في مشروع Visual Studio الخاص بك. يمكنك الحصول على أحدث إصدار من[صفحة التحميل](https://releases.aspose.com/pdf/net/). 
+3. الفهم الأساسي لـ C#: ستساعدك المعرفة الأساسية لبرمجة C# على فهم مقتطفات التعليمات البرمجية بشكل أفضل.
+4. .NET Framework: تأكد من أن مشروعك يستهدف إصدارًا متوافقًا من .NET Framework مدعومًا بواسطة Aspose.PDF.
+5.  الترخيص: إذا قمت بشراء Aspose.PDF، فيجب أن يكون مفتاح الترخيص جاهزًا. بالنسبة لأولئك الذين قاموا بتجربته، يتوفر ترخيص تجريبي مجاني[هنا](https://releases.aspose.com/).
+6.  التوثيق: تعرف على[توثيق Aspose.PDF](https://reference.aspose.com/pdf/net/) حيث أنه يوفر قدرًا كبيرًا من المعلومات حول الميزات والوظائف المتاحة.
+
+## استيراد الحزم
+
+للبدء في استخدام Aspose.PDF، تحتاج أولاً إلى استيراد المساحات الأساسية اللازمة في ملف C# الخاص بك. وإليك كيفية إعداده:
 
 ```csharp
-var dataDir = "YOUR DOCUMENTS DIRECTORY";
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 2: تهيئة الجدول
-بعد ذلك، سنقوم بتهيئة الجدول:
+يؤدي هذا إلى استيراد الفئات الضرورية التي ستسمح لك بإنشاء مستندات وجداول PDF ومعالجتها.
+
+الآن بعد أن تم إعداد كل شيء، فلنبدأ في شرح عملية إنشاء مستند PDF يحتوي على جدول يحتوي على نص محاذٍ بشكل صحيح. وسنتناول الأمر خطوة بخطوة.
+
+## الخطوة 1: تهيئة مستند PDF
+
+قبل إضافة أي محتوى، يجب علينا إنشاء مثيل جديد من مستند PDF.
 
 ```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-```
-
-## الخطوة 3: ضبط لون حدود الجدول
-سنقوم بتكوين لون حدود الجدول:
-
-```csharp
-table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-```
-
-## الخطوة 4: تكوين حدود خلية الجدول
-سنقوم بتكوين حدود خلية الجدول:
-
-```csharp
-table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-```
-
-## الخطوة 5: تكرار لإضافة 10 صفوف إلى الجدول
-سنستخدم الآن حلقة لإضافة 10 صفوف إلى الجدول:
-
-```csharp
-for (int row_count = 0; row_count < 10; row_count++)
-{
-     Aspose.Pdf.Row row = table.Rows.Add();
-     row.VerticalAlignment = VerticalAlignment.Center;
-
-     row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
-     row.Cells.Add("Column("+row_count+",2)");
-     row.Cells.Add("Column("+row_count+",3)");
-}
-```
-
-## الخطوة 6: تكوين محاذاة الخط العمودي
-سنقوم بتكوين المحاذاة الرأسية لصفوف الجدول:
-
-```csharp
-row.VerticalAlignment = VerticalAlignment.Center;
-```
-
-## الخطوة 7: إضافة المحتوى إلى خلايا الصف
-سنقوم بإضافة المحتوى إلى خلايا الصف:
-
-```csharp
-row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
-row.Cells.Add("Column("+row_count+",2)");
-row.Cells.Add("Column("+row_count+",3)");
-```
-
-## الخطوة 8: إضافة الجدول إلى صفحة المستند
-الآن دعونا نضيف الجدول إلى صفحة المستند:
-
-```csharp
-Page tocPage = doc.Pages.Add();
-tocPage.Paragraphs.Add(table);
-```
-
-## الخطوة 9: حفظ مستند PDF
-وأخيرًا، سنقوم بحفظ مستند PDF:
-
-```csharp
-doc.Save(dataDir + "43620_ByWords_out.pdf");
-```
-
-### مثال على كود المصدر لمحاذاة النص لمحتوى صف الجدول باستخدام Aspose.PDF لـ .NET
-
-```csharp
+// حدد الدليل لحفظ المستند
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // إنشاء مستند PDF
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// يقوم بتهيئة مثيل جديد للجدول
+```
+ هنا، قمنا بتعيين الدليل الذي سيتم حفظ ملف PDF فيه وإنشاء مثيل لـ`Document` هذه الحالة بمثابة لوحة قماشية لبناء ملف PDF.
+
+## الخطوة 2: إعداد الطاولة
+
+بعد ذلك، نحتاج إلى تهيئة مثيل جديد للجدول، والذي سيحمل بياناتنا.
+
+```csharp
+//يقوم بتهيئة مثيل جديد للجدول
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+```
+ ال`Table` تساعدنا الفئة على إنشاء كائن جدول جديد. وهذا يسمح لنا بإضافة صفوف وأعمدة بسهولة.
+
+## الخطوة 3: تكوين حدود الجدول
+
+لتحسين المظهر البصري للجدول، يمكننا تعيين حدود للجدول بأكمله وخلاياه.
+
+```csharp
 // تعيين لون حدود الجدول إلى LightGray
-table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(Color.LightGray));
+
 // تعيين الحدود لخلايا الجدول
-table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(Color.LightGray));
+```
+تعطي الحدود بنية للجداول، مما يجعلها أسهل للقراءة. هنا، نستخدم لونًا رماديًا فاتحًا لكل من الجدول والخلايا الفردية.
+
+## الخطوة 4: إضافة صفوف إلى الجدول
+
+بعد ذلك، دعنا ننشئ حلقة لإضافة صفوف إلى جدولنا. في هذا المثال، سنملأها بعشرة صفوف.
+
+```csharp
 // إنشاء حلقة لإضافة 10 صفوف
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// إضافة صف إلى الجدول
-	Aspose.Pdf.Row row = table.Rows.Add();
-	row.VerticalAlignment = VerticalAlignment.Center;
-
-	row.Cells.Add("Column (" + row_count + ", 1)" + DateTime.Now.Ticks);
-	row.Cells.Add("Column (" + row_count + ", 2)");
-	row.Cells.Add("Column (" + row_count + ", 3)");
+    // إضافة صف إلى الجدول
+    Aspose.Pdf.Row row = table.Rows.Add();
+    row.VerticalAlignment = VerticalAlignment.Center;
+    
+    // إضافة خلايا إلى الصف
+    row.Cells.Add("Column (" + row_count + ", 1)" + DateTime.Now.Ticks);
+    row.Cells.Add("Column (" + row_count + ", 2)");
+    row.Cells.Add("Column (" + row_count + ", 3)");
 }
+```
+ في هذه الحلقة، نضيف إجمالي 10 صفوف، ولكل صف، يتم إنشاء ثلاث خلايا. نستخدم`DateTime.Now.Ticks` لإضافة علامة زمنية إلى الخلية الأولى من كل صف، مما يجعل المحتوى ديناميكيًا وفريدًا.`VerticalAlignment` تم ضبطه على`Center`، مع التأكد من أن النص في كل خلية متمركز عموديًا.
+
+## الخطوة 5: إضافة الجدول إلى المستند
+
+بمجرد ملء جدولنا، حان الوقت لإضافته إلى مستند PDF.
+
+```csharp
 Page tocPage = doc.Pages.Add();
 // إضافة كائن الجدول إلى الصفحة الأولى من مستند الإدخال
 tocPage.Paragraphs.Add(table);
+```
+نقوم بإنشاء صفحة جديدة في مستند PDF ونضيف جدولنا كفقرة إلى هذه الصفحة. يعمل هذا الإجراء على ربط كل شيء معًا في مستند متماسك واحد.
+
+## الخطوة 6: احفظ المستند
+
+وأخيرًا، نحتاج إلى حفظ التغييرات التي أجريناها على مستندنا.
+
+```csharp
 // حفظ المستند المحدث الذي يحتوي على كائن الجدول
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
+يكتب هذا السطر المستند إلى مسار ملف محدد على القرص، مما يجعل الجدول ومحتوياته مكتملين.
 
 ## خاتمة
-تهانينا! لقد تعلمت الآن كيفية محاذاة محتويات صف في جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية إنشاء مستند، وتهيئة جدول، وتكوين الحدود والمحاذاة، وإضافة المحتوى، وحفظ مستند PDF. يمكنك الآن تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### الأسئلة الشائعة
+تهانينا! لقد نجحت في تعلم كيفية محاذاة النص داخل محتويات صف الجدول في مستند PDF باستخدام Aspose.PDF لـ .NET. إن إنشاء الجداول بهذه الطريقة لا يعزز البنية المرئية لمستنداتك فحسب، بل يسمح أيضًا بتقديم البيانات بشكل ديناميكي. سواء كنت تقوم بإعداد التقارير أو الفواتير، فإن إتقان إنشاء الجداول باستخدام Aspose يمكن أن يرفع عرض مستندك إلى المستوى التالي.
 
-#### س: كيف يمكنني محاذاة محتويات خلايا الجدول أفقيا؟
+ إذا كنت تريد التعمق أكثر في Aspose.PDF واستكشاف إمكانياته المتنوعة، فتأكد من مراجعة[التوثيق](https://reference.aspose.com/pdf/net/) أو جرب المكتبة مع[نسخة تجريبية مجانية](https://releases.aspose.com/).
 
- أ: يمكنك محاذاة محتويات خلايا الجدول أفقيًا عن طريق ضبط`HorizontalAlign` خاصية الخلية`TextState` الكائن. على سبيل المثال، لمحاذاة النص في المنتصف، استخدم`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` يمكنك أيضًا ضبطه على`HorizontalAlignment.Left` أو`HorizontalAlignment.Right` للمحاذاة إلى اليسار واليمين على التوالي.
+## الأسئلة الشائعة
 
-#### س: هل يمكنني تطبيق أنماط وألوان حدود مختلفة على خلايا فردية داخل الجدول؟
+### ما هو Aspose.PDF؟
+Aspose.PDF عبارة عن مكتبة قوية لإنشاء مستندات PDF ومعالجتها برمجيًا باستخدام .NET.
 
- ج: نعم، يمكنك تطبيق أنماط وألوان حدود مختلفة على خلايا فردية داخل الجدول. لتخصيص الحدود لخلية معينة، اضبط`cell.Border` الملكية إلى جديدة`BorderInfo`الكائن بالإعدادات المطلوبة، مثل جوانب الحدود والعرض واللون.
+### هل أحتاج إلى ترخيص لاستخدام Aspose.PDF؟
+على الرغم من أن Aspose.PDF يقدم نسخة تجريبية مجانية، إلا أنه يلزم الحصول على ترخيص للاستخدام طويل الأمد. يمكنك شراء ترخيص[هنا](https://purchase.aspose.com/buy).
 
-#### س: كيف يمكنني ضبط المحاذاة الرأسية لمحتوى الجدول داخل الخلايا؟
+### كيف يمكنني محاذاة النص في خلايا الجدول؟
+ يمكنك ضبط`VerticalAlignment` خاصية الصف للتحكم في المحاذاة الرأسية للنص داخل الخلايا.
 
- أ: يمكنك ضبط المحاذاة الرأسية لمحتوى الجدول داخل الخلايا عن طريق ضبط`VerticalAlignment` خاصية الصف إلى`VerticalAlignment.Center`, `VerticalAlignment.Top` ، أو`VerticalAlignment.Bottom`تتحكم هذه الخاصية في المحاذاة الرأسية لجميع الخلايا في هذا الصف.
+### هل يمكنني استخدام Aspose.PDF في تطبيقات الويب الخاصة بي؟
+نعم، يمكن دمج Aspose.PDF بسلاسة في تطبيقات الويب التي تعمل على أطر عمل .NET.
 
-#### س: هل من الممكن إضافة المزيد من الأعمدة أو الصفوف إلى الجدول بشكل ديناميكي؟
-
- ج: نعم، يمكنك إضافة المزيد من الأعمدة والصفوف إلى الجدول ديناميكيًا باستخدام`table.Rows.Add()` طريقة إضافة صفوف جديدة و`row.Cells.Add()` طريقة لإضافة خلايا جديدة إلى الصفوف. يمكنك القيام بذلك داخل الحلقات أو بناءً على متطلباتك المحددة.
-
-#### س: كيف يمكنني تعيين لون الخلفية لخلايا محددة أو الجدول بأكمله؟
-
- أ: لتعيين لون الخلفية لخلايا معينة أو الجدول بأكمله، استخدم`BackgroundColor` ممتلكات`Cell` أو`Table` الكائن. على سبيل المثال، لتعيين لون الخلفية لخلية، استخدم`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+### أين يمكنني الحصول على الدعم لـ Aspose.PDF؟
+ لأي استفسارات أو مشكلات، يمكنك التواصل مع دعم مجتمع Aspose[هنا](https://forum.aspose.com/c/pdf/10).

@@ -14,7 +14,7 @@ Tài liệu PDF đã trở thành tiêu chuẩn để chia sẻ thông tin kỹ 
 
 ## Bắt đầu với Aspose.PDF cho Java
 
- Để bắt đầu, bạn sẽ cần thiết lập môi trường phát triển của mình. Đảm bảo bạn đã cài đặt thư viện Aspose.PDF cho Java. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/java/).
+Để bắt đầu, bạn sẽ cần thiết lập môi trường phát triển của mình. Đảm bảo bạn đã cài đặt thư viện Aspose.PDF cho Java. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/java/).
 
 ## Tạo một tài liệu PDF
 

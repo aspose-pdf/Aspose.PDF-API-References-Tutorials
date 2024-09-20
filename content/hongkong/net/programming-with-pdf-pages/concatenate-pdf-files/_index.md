@@ -103,7 +103,7 @@ pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at " + dataDir);
 ```
 
-在任何應用中，回饋都很重要。此訊息確認合併過程按預期進行，並指示在哪裡可以找到新建立的文件。
+在任何應用中，回饋都很重要。此訊息確認合併過程按預期進行，並指示在哪裡可以找到新建立的檔案。
 
 ## 結論
 

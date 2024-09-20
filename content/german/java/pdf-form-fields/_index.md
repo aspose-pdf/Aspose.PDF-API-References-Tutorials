@@ -26,7 +26,7 @@ Bei PDF-Formularen ist die Benutzererfahrung von größter Bedeutung. Unsere Tut
 ### [Formularfeld mit Java in PDF-Dokument einfügen](./add-form-field-in-pdf-document-using-java/)
 Erfahren Sie, wie Sie mit Java und Aspose.PDF für Java interaktive Formularfelder zu Ihren PDF-Dokumenten hinzufügen. Erstellen Sie mühelos benutzerfreundliche PDF-Formulare.
 ### [Tooltip mit Java zum PDF-Formularfeld hinzufügen](./add-tooltip-to-pdf-form-field-with-java/)
-Erfahren Sie, wie Sie mit Java Tooltips zu PDF-Formularfeldern hinzufügen. Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für Java API.
+Erfahren Sie, wie Sie mit Java Tooltips zu PDF-Formularfeldern hinzufügen. Schritt-für-Schritt-Anleitung zur Verwendung der Aspose.PDF für Java-API.
 ### [Konvertieren Sie das dynamische XFA-Formular in ein Standard-AcroForm im PDF-Format](./convert-dynamic-xfa-form-to-standard-acroform-in-pdf/)
 Erfahren Sie, wie Sie mit Aspose.PDF für Java dynamische XFA-Formulare mühelos in Standard-AcroForms im PDF-Format konvertieren. Stellen Sie Kompatibilität und Zugänglichkeit sicher.
 ### [Bestimmte Formularfelder aus einem PDF-Dokument in Java löschen](./delete-particular-form-field-from-pdf-document-in-java/)

@@ -64,7 +64,7 @@ pdfDocument.Pages[1].Resources.Images.Delete(1);
 
  Questa riga di codice elimina la prima immagine (rappresentata da`1`) dalla prima pagina (`Pages[1]`) del documento PDF. Se hai bisogno di eliminare immagini da pagine o posizioni diverse, puoi modificare di conseguenza l'indice delle pagine e delle immagini.
 
-> Suggerimento: puoi scorrere le immagini se vuoi eliminarle tutte da una pagina specifica o dall'intero documento.
+> Suggerimento: puoi scorrere le immagini se vuoi eliminare tutte le immagini su una pagina specifica o nell'intero documento.
 
 ## Passaggio 4: Salva il PDF aggiornato
 
@@ -96,7 +96,7 @@ Congratulazioni! Hai eliminato con successo un'immagine da un file PDF usando As
 ## Domande frequenti
 
 ### Posso eliminare più immagini da un PDF?
-Sì! Puoi eliminare più immagini scorrendo le immagini su una pagina specifica o nell'intero documento PDF. Regola semplicemente gli indici di pagina e immagine come necessario.
+Sì! Puoi eliminare più immagini scorrendo le immagini su una pagina specifica o nell'intero documento PDF. Basta regolare gli indici di pagina e immagine come necessario.
 
 ### L'eliminazione delle immagini riduce la dimensione del file PDF?
 Sì, rimuovere le immagini da un PDF può ridurre notevolmente le dimensioni del file, soprattutto se le immagini sono di grandi dimensioni.

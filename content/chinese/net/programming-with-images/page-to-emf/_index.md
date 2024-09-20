@@ -131,7 +131,7 @@ System.Console.WriteLine("PDF page is converted to EMF successfully!");
 
 ## 结论
 
-就是这样！只需几个步骤，您就学会了如何使用 Aspose.PDF for .NET 将 PDF 页面转换为 EMF 格式。借助这个库的强大功能，您可以轻松处理各种与 PDF 相关的任务。如果您发现本教程有用，请毫不犹豫地与可能面临相同挑战的其他开发人员分享，或深入了解 Aspose.PDF 文档以了解更多高级功能。
+就是这样！只需几个步骤，您就学会了如何使用 Aspose.PDF for .NET 将 PDF 页面转换为 EMF 格式。借助这个库的强大功能，您可以轻松处理各种与 PDF 相关的任务。如果您发现本教程有用，请毫不犹豫地与可能面临相同挑战的其他开发人员分享，或者深入了解 Aspose.PDF 文档以了解更多高级功能。
 
 ## 常见问题解答
 

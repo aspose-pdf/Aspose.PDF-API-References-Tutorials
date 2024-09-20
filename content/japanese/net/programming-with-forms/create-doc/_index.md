@@ -24,7 +24,7 @@ PDF 内にインタラクティブなフォームを作成すると、ユーザ�
 
 ## パッケージのインポート
 
-まず、必要な Aspose.PDF コンポーネントをプロジェクトにインポートする必要があります。手順は次のとおりです。
+開始するには、必要な Aspose.PDF コンポーネントをプロジェクトにインポートする必要があります。手順は次のとおりです。
 
 ### Aspose.PDF ライブラリをインストールする
 
@@ -122,7 +122,7 @@ opt3.Border = new Border(opt3);
 opt3.Border.Width = 1;
 opt3.Characteristics.Border = System.Drawing.Color.Black;
 ```
-これらのブロックのそれぞれで、`RadioButtonOptionField`オブジェクトの位置を定義して`.Rect`、名前を割り当てるには`.OptionName`、境界属性を設定します。
+これらのブロックのそれぞれで、`RadioButtonOptionField`オブジェクトの位置を定義し、`.Rect`、名前を割り当てるには`.OptionName`、境界属性を設定します。
 
 ## ステップ6: フィールドにオプションを追加する
 

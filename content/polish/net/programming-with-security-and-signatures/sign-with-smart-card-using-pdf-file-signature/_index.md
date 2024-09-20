@@ -159,7 +159,7 @@ Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca program
 Choć korzystanie z karty inteligentnej nie jest obowiązkowe, jest ona zdecydowanie zalecana w przypadku bezpiecznych podpisów cyfrowych, gdyż zapewnia dodatkową warstwę bezpieczeństwa.
 
 ### Czy mogę podpisać się przy użyciu dowolnego pliku PDF?
-Tak, możesz użyć dowolnego pliku PDF, ale upewnij się, że nie jest on chroniony hasłem. Jeśli jest, musisz go najpierw odblokować.
+Tak, możesz użyć dowolnego pliku PDF, ale upewnij się, że nie jest chroniony hasłem. Jeśli jest, musisz go najpierw odblokować.
 
 ### A co jeśli nie mam certyfikatu cyfrowego?
 Możesz uzyskać certyfikat cyfrowy od zaufanego urzędu certyfikacji (CA) lub użyć certyfikatu podpisanego samodzielnie w celach testowych.

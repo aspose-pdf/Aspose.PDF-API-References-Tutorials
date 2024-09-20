@@ -13,7 +13,7 @@ Přistihli jste se někdy, že procházíte dlouhým dokumentem PDF a zoufale se
 
 ## Předpoklady
 
-Než začneme, je potřeba mít připraveno několik věcí:
+Než začneme, je třeba mít připraveno několik věcí:
 
 1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Je to výchozí IDE pro vývoj .NET.
 2.  Aspose.PDF for .NET: Budete si muset stáhnout a nainstalovat knihovnu Aspose.PDF. Můžete to najít[zde](https://releases.aspose.com/pdf/net/).
@@ -88,7 +88,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 
 ## Závěr
 
-Gratuluji! Úspěšně jste extrahovali záložky ze souboru PDF pomocí Aspose.PDF pro .NET. Tato výkonná knihovna nejen zjednodušuje proces, ale také zlepšuje použitelnost vašich dokumentů PDF. Implementací záložek usnadňujete čtenářům navigaci ve vašem obsahu.
+Gratuluji! Úspěšně jste extrahovali záložky ze souboru PDF pomocí Aspose.PDF pro .NET. Tato výkonná knihovna nejen zjednodušuje proces, ale také zlepšuje použitelnost vašich dokumentů PDF. Implementací záložek usnadňujete čtenářům procházení vašeho obsahu.
 
 ## FAQ
 

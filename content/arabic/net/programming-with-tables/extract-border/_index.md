@@ -2,30 +2,58 @@
 title: استخراج الحدود في ملف PDF
 linktitle: استخراج الحدود في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية استخراج الحدود في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية استخراج الحدود من ملف PDF وحفظها كصورة باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع عينات التعليمات البرمجية ونصائح للنجاح.
 type: docs
 weight: 80
 url: /ar/net/programming-with-tables/extract-border/
 ---
-في هذا البرنامج التعليمي، سنتعلم كيفية استخراج الحدود في ملف PDF باستخدام Aspose.PDF لـ .NET. وسنشرح الكود المصدري في C# خطوة بخطوة. وفي نهاية هذا البرنامج التعليمي، ستعرف كيفية استخراج الحدود من مستند PDF وحفظه كصورة. لنبدأ!
+## مقدمة
 
-## الخطوة 1: إعداد البيئة
-أولاً، تأكد من إعداد بيئة تطوير C# الخاصة بك باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد المساحات الأساسية اللازمة.
+عند العمل مع ملفات PDF، قد يبدو استخراج عناصر معينة مثل الحدود أو المسارات الرسومية مهمة شاقة. ولكن باستخدام Aspose.PDF for .NET، يمكنك بسهولة استخراج الحدود أو الأشكال من ملف PDF وحفظها كصورة. في هذا البرنامج التعليمي، سنتعمق في عملية استخراج حدود من ملف PDF وحفظها كصورة PNG. استعد للتحكم في المحتويات الرسومية لملف PDF الخاص بك!
 
-## الخطوة 2: تحميل مستند PDF
-في هذه الخطوة، نقوم بتحميل مستند PDF من الملف المحدد.
+## المتطلبات الأساسية
+
+قبل أن نتعمق في الكود، تأكد من إعداد كل شيء:
+
+1.  Aspose.PDF لـ .NET: إذا لم تقم بتثبيت مكتبة Aspose.PDF بعد، فيمكنك[تحميله هنا](https://releases.aspose.com/pdf/net/)سيتعين عليك أيضًا تطبيق الترخيص، إما من خلال الإصدار التجريبي المجاني أو الترخيص الذي تم شراؤه.
+2. إعداد IDE: قم بإعداد مشروع C# في Visual Studio أو أي .NET IDE آخر. تأكد من إضافة المراجع الضرورية إلى مكتبة Aspose.PDF.
+3. إدخال ملف PDF: قم بإعداد ملف PDF لاستخراج الحدود منه. سيشير هذا البرنامج التعليمي إلى ملف باسم`input.pdf`.
+
+## استيراد الحزم المطلوبة
+
+لنبدأ باستيراد المساحات المطلوبة. توفر هذه الحزم الأدوات اللازمة للتعامل مع محتوى PDF.
 
 ```csharp
+using System.IO;
+using System;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Collections;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+الآن بعد أن قمنا بتغطية الأساسيات، دعنا ننتقل إلى الدليل خطوة بخطوة حيث سنقوم بتقسيم كل جزء من الكود لشرحه بالتفصيل.
+
+
+## الخطوة 1: تحميل مستند PDF
+
+الخطوة الأولى هي تحميل مستند PDF الذي يحتوي على الحدود التي تريد استخراجها. فكر في الأمر كما لو كنت تفتح كتابًا قبل أن تبدأ في القراءة — فأنت بحاجة إلى الوصول إلى المحتوى!
+
+ سنبدأ بتحديد الدليل الذي يتم تخزين ملف PDF الخاص بك فيه وتحميل المستند باستخدام`Aspose.Pdf.Document` فصل.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-تأكد من استبدال "دليل المستندات الخاص بك" بالدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
+ يقوم هذا الكود بتحميل`input.pdf` الملف من الدليل المحدد. تأكد من صحة مسار الملف، وإلا فقد تتلقى خطأ عدم العثور على الملف.
 
-## الخطوة 3: استخراج الحافة
-سوف نقوم باستخراج الحدود من مستند PDF عن طريق تكرار العمليات الموجودة في المستند.
+## الخطوة 2: إعداد الرسومات والخرائط النقطية
+
+قبل أن نبدأ في الاستخراج، نحتاج إلى إنشاء لوحة قماشية للرسم عليها. في عالم .NET، يعني هذا إعداد كائنات Bitmap وGraphics. تمثل Bitmap الصورة، وسيسمح لنا كائن Graphics برسم الأشكال، مثل الحدود، المستخرجة من ملف PDF.
 
 ```csharp
-Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
@@ -33,226 +61,106 @@ System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.M
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
 System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+```
 
-using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
+فيما يلي تفصيل:
+- نقوم بإنشاء صورة نقطية بحجم الصفحة الأولى من ملف PDF.
+- يتم استخدام GraphicsPath لتحديد الأشكال (في هذه الحالة، الحدود).
+- تعرف المصفوفة كيفية تحويل الرسومات؛ نحن بحاجة إلى مصفوفة عكسية لأن PDF و.NET لديهما أنظمة إحداثيات مختلفة.
+
+## الخطوة 3: معالجة محتويات PDF
+
+
+ملف PDF عبارة عن سلسلة من أوامر الرسم، ونحن بحاجة إلى معالجة كل من هذه الأوامر لتحديد معلومات الحدود واستخراجها.
+
+```csharp
+foreach (Operator op in doc.Pages[1].Contents)
 {
-     // معالجة كافة عمليات المحتوى
-     foreach(Operator op in doc.Pages[1].Contents)
-     {
-         // التحقق من نوع العملية
-         // ...
-         // أضف الكود لمعالجة كل عملية
-     }
+    // معالجة الأوامر مثل حفظ/استعادة الحالة، رسم الخطوط، ملء الأشكال، وما إلى ذلك.
 }
 ```
 
- نحن ننشئ`graphicsState` مكدس لتخزين حالات الرسومات، وصورة نقطية لالتقاط الحدود المستخرجة،`GraphicsPath` كائن لتخزين مسارات الرسم، ومتغيرات أخرى لتتبع الحالة والألوان.
+يتكرر الكود عبر كل عامل رسم في مجرى محتوى ملف PDF. قد يمثل كل عامل خطًا أو مستطيلًا أو تعليمات رسومية أخرى.
 
-## الخطوة 4: معالجة المعاملات
-في هذه الخطوة، نقوم بمعالجة كل عملية في المستند لاستخراج الحدود.
+## الخطوة 4: التعامل مع مشغلات PDF
+
+يتحكم كل عامل في ملف PDF في إجراء ما. لاستخراج الحدود، نحتاج إلى تحديد أوامر مثل "move to" و"line to" و"draw triangle". تتولى العوامل التالية التعامل مع هذه الإجراءات:
+
+- MoveTo: نقل المؤشر إلى نقطة البداية.
+- LineTo: يرسم خطًا من النقطة الحالية إلى نقطة جديدة.
+- رد: رسم مستطيل (يمكن أن يكون جزءًا من الحدود).
 
 ```csharp
-// التحقق من نوع العملية
-if (opSaveState != null)
-{
-     // احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opRestoreState != null)
-{
-     // حذف الحالة الحالية واستعادة الحالة السابقة
-     graphicsState. Pop();
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opCtm != null)
-{
-     // استرجاع مصفوفة التحويل الحالية
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-         (float)opCtm.Matrix.A,
-         (float)opCtm.Matrix.B,
-         (float)opCtm.Matrix.C,
-         (float)opCtm.Matrix.D,
-         (float)opCtm.Matrix.E,
-         (float)opCtm.Matrix.F);
+Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
+Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
+Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
 
-     // ضرب المصفوفة الحالية بمصفوفة الحالة
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opMoveTo != null)
+if (opMoveTo != null)
 {
-     // تحديث نقطة الرسم الأخيرة
-     lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
+    lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // معالجة رسم الخط
-     // ...
-     // إضافة كود للتعامل مع رسم الخط
+    System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
+    graphicsPath.AddLine(lastPoint, linePoint);
+    lastPoint = linePoint;
 }
-// ...
-// إضافة كتل else if لعمليات أخرى
+else if (opRe != null)
+{
+    System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
+    graphicsPath.AddRectangle(re);
+}
 ```
 
-نتحقق من نوع العملية باستخدام الشروط ونقوم بتشغيل الكود المناسب لكل عملية.
+في هذه الخطوة:
+- نقوم بالتقاط النقاط لكل خط أو شكل مرسوم.
+- للمستطيلات (`opRe` ), نضيفها مباشرة إلى`graphicsPath`والتي سنستخدمها لاحقًا لرسم الحدود.
 
-## الخطوة 5: النسخ الاحتياطي للصورة
-وأخيرًا، نقوم بحفظ صورة الخريطة النقطية التي تحتوي على الحدود المستخرجة في ملف محدد.
+## الخطوة 5: رسم الحدود
 
-```csharp
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-```
-
-تأكد من تحديد الدليل واسم الملف الصحيح لحفظ الصورة الناتجة.
-
-### مثال على كود المصدر لاستخراج الحدود باستخدام Aspose.PDF لـ .NET
+بمجرد تحديد الخطوط والمستطيلات التي تشكل الحدود، نحتاج إلى رسمها فعليًا على كائن Bitmap. وهنا يأتي دور كائن Graphics.
 
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document(dataDir + "input.pdf");
-
-Stack graphicsState = new Stack();
-System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
-System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// القيمة الافتراضية لمصفوفة ctm هي 1,0,0,1,0,0
-System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//نظام رسم إحداثيات النظام يعتمد على الجزء العلوي الأيسر، بينما يعتمد نظام إحداثيات pdf على الجزء السفلي الأيسر، لذا يتعين علينا تطبيق مصفوفة العكس
-System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
-System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
-System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
-System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-	gr.SmoothingMode = SmoothingMode.HighQuality;
-	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-
-	// معالجة كافة أوامر المحتويات
-	foreach (Operator op in doc.Pages[1].Contents)
-	{
-		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-		Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-		Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-		Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
-		Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
-		Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
-		Aspose.Pdf.Operators.EndPath opEndPath = op as Aspose.Pdf.Operators.EndPath;
-		Aspose.Pdf.Operators.Stroke opStroke = op as Aspose.Pdf.Operators.Stroke;
-		Aspose.Pdf.Operators.Fill opFill = op as Aspose.Pdf.Operators.Fill;
-		Aspose.Pdf.Operators.EOFill opEOFill = op as Aspose.Pdf.Operators.EOFill;
-		Aspose.Pdf.Operators.SetRGBColor opRGBFillColor = op as Aspose.Pdf.Operators.SetRGBColor;
-		Aspose.Pdf.Operators.SetRGBColorStroke opRGBStrokeColor = op as Aspose.Pdf.Operators.SetRGBColorStroke;
-
-		if (opSaveState != null)
-		{
-			// احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
-			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opRestoreState != null)
-		{
-			// التخلص من الحالة الحالية واستعادة الحالة السابقة
-			graphicsState.Pop();
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opCtm != null)
-		{
-			System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-				(float)opCtm.Matrix.A,
-				(float)opCtm.Matrix.B,
-				(float)opCtm.Matrix.C,
-				(float)opCtm.Matrix.D,
-				(float)opCtm.Matrix.E,
-				(float)opCtm.Matrix.F);
-
-			// ضرب مصفوفة التيار بمصفوفة الحالة
-			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opMoveTo != null)
-		{
-			lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
-		}
-		else if (opLineTo != null)
-		{
-			System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
-			graphicsPath.AddLine(lastPoint, linePoint);
-
-			lastPoint = linePoint;
-		}
-		else if (opRe != null)
-		{
-			System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
-			graphicsPath.AddRectangle(re);
-		}
-		else if (opEndPath != null)
-		{
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opRGBFillColor != null)
-		{
-			fillColor = opRGBFillColor.getColor();
-		}
-		else if (opRGBStrokeColor != null)
-		{
-			strokeColor = opRGBStrokeColor.getColor();
-		}
-		else if (opStroke != null)
-		{
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Winding;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opEOFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Alternate;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-	}
+    gr.SmoothingMode = SmoothingMode.HighQuality;
+    gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
 }
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-
-Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
+- نقوم بإنشاء كائن رسومي بناءً على الخريطة النقطية.
+- يضمن SmoothingMode.HighQuality الحصول على صورة ناعمة لطيفة.
+- وأخيرًا، نستخدم DrawPath لرسم الحدود.
+
+## الخطوة 6: حفظ الحدود المستخرجة
+
+الآن بعد أن استخرجنا الحدود، حان الوقت لحفظها كملف صورة. سيؤدي هذا إلى حفظ الحدود بصيغة PNG.
+
+```csharp
+dataDir = dataDir + "ExtractBorder_out.png";
+bitmap.Save(dataDir, ImageFormat.Png);
+```
+
+- يتم حفظ الخريطة النقطية كصورة PNG.
+- يمكنك الآن فتح هذه الصورة لعرض الحدود المستخرجة.
+
 ## خاتمة
-في هذا البرنامج التعليمي، تعلمنا كيفية استخراج الحدود من مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل خطوة بخطوة لاستخراج الحدود من مستندات PDF أخرى.
 
-### الأسئلة الشائعة حول استخراج الحدود في ملف PDF
+قد يبدو استخراج الحدود من ملف PDF باستخدام Aspose.PDF لـ .NET أمرًا صعبًا في البداية، ولكن بمجرد فهمه، يصبح الأمر بسيطًا. من خلال فهم عوامل الرسم في ملف PDF والاستفادة من مكتبات .NET القوية، يمكنك معالجة المحتوى الرسومي واستخراجه بكفاءة. يمنحك هذا الدليل أساسًا قويًا للبدء في معالجة PDF!
 
-#### س: ما هو الغرض من استخراج الحدود من ملف PDF؟
+## الأسئلة الشائعة
 
-ج: يمكن أن يكون استخراج الحدود من ملف PDF مفيدًا لأغراض مختلفة. فهو يسمح لك بعزل العناصر البنيوية للمستند وتحليلها، مثل الجداول أو المخططات أو العناصر الرسومية. ويمكنك استخدام الحدود المستخرجة لتحديد تخطيط وأبعاد وموضع المحتوى داخل مستند PDF.
+### كيف أتعامل مع صفحات متعددة في ملف PDF؟  
+ يمكنك التنقل عبر كل صفحة في المستند عن طريق التكرار`doc.Pages` بدلا من الترميز الثابت`doc.Pages[1]`.
 
-#### س: هل يمكنني استخراج الحدود من صفحات أو مناطق محددة داخل مستند PDF؟
+### هل يمكنني استخراج عناصر أخرى، مثل النص، باستخدام نفس النهج؟  
+نعم، يوفر Aspose.PDF واجهات برمجة تطبيقات غنية لاستخراج النصوص والصور والمحتويات الأخرى من ملفات PDF.
 
- ج: نعم، يمكنك تعديل كود المصدر C# المقدم لاستخراج الحدود من صفحات أو مناطق معينة داخل مستند PDF. من خلال التلاعب بـ`doc.Pages` من خلال جمع وتحديد معايير مخصصة، يمكنك اختيار استخراج الحدود من صفحات أو مناطق اهتمام معينة.
+### كيف يمكنني التقدم بطلب الترخيص لتجنب القيود؟  
+ أنت تستطيع[تطبيق الترخيص](https://purchase.aspose.com/temporary-license/) عن طريق تحميله من خلال`License` الفئة المقدمة من قبل Aspose.
 
-#### س: كيف يمكنني تخصيص تنسيق الصورة الناتجة والجودة؟
+### ماذا لو كان ملف PDF الخاص بي لا يحتوي على حدود؟  
+إذا لم يكن ملف PDF الخاص بك يحتوي على حدود مرئية، فقد لا تسفر عملية استخراج الرسومات عن أي نتيجة. تأكد من أن محتوى ملف PDF يتضمن حدودًا قابلة للرسم.
 
- ج: في الكود C# المقدم، يتم حفظ الحدود المستخرجة كصورة PNG. إذا كنت تريد تغيير تنسيق الصورة الناتجة، يمكنك تعديل`ImageFormat.Png` المعلمة في`bitmap.Save` يمكنك أيضًا تحويل تنسيقات الصور المدعومة الأخرى، مثل JPEG أو BMP أو GIF. بالإضافة إلى ذلك، يمكنك ضبط جودة الصورة أو إعدادات الضغط وفقًا لمتطلباتك.
-
-#### س: ما هي العمليات الأخرى التي يمكنني إجراؤها على الحدود المستخرجة؟
-
-ج: بمجرد استخراج الحدود كصورة، يمكنك معالجتها بشكل أكبر باستخدام مكتبات أو خوارزميات معالجة الصور. يمكنك تحليل الصورة، وتطبيق مرشحات الصور، واكتشاف الأنماط، أو إجراء التعرف الضوئي على الحروف (OCR) لاستخراج النص من الصورة إذا لزم الأمر.
-
-#### س: هل هناك أي قيود أو اعتبارات عند استخراج الحدود من مستندات PDF المعقدة؟
-
-ج: قد تختلف عملية الاستخراج وفقًا لتعقيد مستند PDF. قد تتطلب ملفات PDF المعقدة ذات الطبقات المتعددة أو الشفافية أو الرسومات المتقدمة معالجة إضافية أو تعديلات لاستخراج الحدود بدقة. من الضروري اختبار عملية الاستخراج بدقة على مستندات PDF المختلفة لضمان الحصول على نتائج موثوقة.
+### هل يمكنني حفظ الإخراج بتنسيق آخر غير PNG؟  
+ نعم، قم بتغيير ببساطة`ImageFormat.Png` إلى تنسيق آخر مدعوم مثل`ImageFormat.Jpeg`.

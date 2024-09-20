@@ -9,7 +9,7 @@ url: /cs/net/programming-with-document/validatepdfabstandard/
 ---
 ## Zavedení
 
-dnešním rychle se rozvíjejícím digitálním světě hrají standardy shody PDF klíčovou roli při zajišťování životnosti, dostupnosti a spolehlivosti digitálních dokumentů. Pokud s PDF pravidelně pracujete, pravděpodobně jste se setkali se standardem PDF/A, který je určen k archivaci elektronických dokumentů způsobem, který dlouhodobě zachovává jejich obsah a vzhled. Jak ale ověříte, zda PDF splňuje tento standard?
+dnešním rychle se rozvíjejícím digitálním světě hrají standardy shody PDF klíčovou roli při zajišťování životnosti, dostupnosti a spolehlivosti digitálních dokumentů. Pokud s PDF pracujete pravidelně, pravděpodobně jste se setkali se standardem PDF/A, který je určen pro archivaci elektronických dokumentů způsobem, který dlouhodobě zachovává jejich obsah a vzhled. Jak ale ověříte, zda PDF splňuje tento standard?
 
 Pomocí Aspose.PDF for .NET je ověření PDF pro shodu s PDF/A jednodušší, než si možná myslíte. Pojďme se ponořit do toho, jak můžete pomocí několika řádků kódu ověřit PDF podle standardu PDF/A. 
 

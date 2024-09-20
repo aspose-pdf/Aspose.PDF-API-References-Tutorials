@@ -2,146 +2,132 @@
 title: Kolommentekst uit PDF-bestand extraheren
 linktitle: Kolommentekst uit PDF-bestand extraheren
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekst uit kolommen uit een PDF-bestand kunt extraheren met Aspose.PDF voor .NET.
+description: Leer hoe u tekstkolommen uit PDF-bestanden kunt extraheren met Aspose.PDF voor .NET. Deze gids geeft elke stap weer met codevoorbeelden en uitleg.
 type: docs
 weight: 150
 url: /nl/net/programming-with-text/extract-columns-text/
 ---
-Deze tutorial begeleidt u door het proces van het extraheren van kolomtekst in een PDF-bestand met behulp van Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de benodigde stappen.
+## Invoering
+
+Werkt u met PDF-bestanden en moet u tekst in een specifiek kolomformaat extraheren? Of u nu facturen, rapporten of gestructureerde documenten verwerkt, het nauwkeurig extraheren van tekst uit een PDF kan een lastige klus zijn. Dit is waar Aspose.PDF voor .NET in beeld komt om het proces te vereenvoudigen. In deze tutorial laten we u zien hoe u eenvoudig kolommen tekst uit een PDF-bestand kunt extraheren. 
 
 ## Vereisten
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
-- Visual Studio of een andere C#-compiler die op uw computer is geïnstalleerd.
-- Aspose.PDF voor .NET-bibliotheek. U kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
+Voordat we in de code duiken, bespreken we eerst de essentiële zaken die je nodig hebt:
 
-## Stap 1: Het project opzetten
-1. Maak een nieuw C#-project in uw favoriete ontwikkelomgeving.
-2. Voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+-  Aspose.PDF voor .NET: Zorg ervoor dat u de nieuwste versie van Aspose.PDF voor .NET hebt geïnstalleerd. Als dat niet zo is, kunt u[download het hier](https://releases.aspose.com/pdf/net/).
+- Ontwikkelomgeving: U hebt Visual Studio of een andere .NET-ontwikkelomgeving nodig om met de code te kunnen werken.
+- PDF-document: Zorg dat u een voorbeeld-PDF-document bij de hand hebt, bij voorkeur een document met tekstkolommen, aangezien we er tekst uit gaan halen.
 
-## Stap 2: Importeer de vereiste naamruimten
-Voeg in het codebestand waaruit u de tekst uit de kolommen wilt extraheren, het volgende toe met behulp van richtlijnen boven aan het bestand:
+ Als u Aspose.PDF voor .NET nog niet hebt geïnstalleerd, kunt u een[gratis proefperiode](https://releases.aspose.com/) of[een licentie kopen](https://purchase.aspose.com/buy) voor alle functies. U kunt ook een aanvraag indienen voor een[tijdelijke licentie](https://purchase.aspose.com/temporary-license) indien nodig.
+
+## Naamruimten importeren
+
+Om Aspose.PDF voor .NET in uw project te gebruiken, moet u de volgende naamruimten importeren:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using System.IO;
+using System;
 ```
 
-## Stap 3: Stel de documentdirectory in
- Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
+## Stapsgewijze handleiding: kolommen tekst uit een PDF extraheren
 
-## Stap 4: Open het PDF-document
- Open een bestaand PDF-document met behulp van de`Document`constructor en het pad naar het PDF-invoerbestand doorgeven.
+Laten we nu elk deel van de code opsplitsen om beter te begrijpen hoe het werkt. Volg ons terwijl we stap voor stap elk segment van het proces uitleggen.
+
+## Stap 1: Laad het PDF-document
+
+ Het eerste wat u moet doen, is uw PDF-bestand in de`Document`object. Dit is hoe Aspose.PDF met uw document communiceert.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Stap 5: Pas de lettergrootte aan
-Verklein de lettergrootte van de tekstfragmenten met een factor 0,7 om de leesbaarheid te verbeteren en kolomtekst beter weer te geven.
+ In deze stap definiëren we eenvoudigweg de directory waar uw PDF-document is opgeslagen. Vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar uw lokale PDF-bestand. De`Document` object laadt de PDF in het geheugen, waardoor deze toegankelijk is voor verdere verwerking.
+
+## Stap 2: De tekstfragmentabsorber instellen
+
+ Vervolgens gebruiken we een`TextFragmentAbsorber` om alle tekst uit het PDF-bestand te absorberen of vast te leggen. Deze absorberklasse is ontworpen om tekstfragmenten uit specifieke gebieden in uw PDF te extraheren, wat het ideaal maakt voor het extraheren van tekstkolommen.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
-foreach(TextFragment tf in tfc)
-{
-     tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
-}
 ```
 
-## Stap 6: Tekst uit kolommen extraheren
- Sla het gewijzigde PDF-document op in een geheugenstroom en laad het opnieuw als een nieuw document. Gebruik vervolgens de`TextAbsorber` klasse om tekst uit de kolommen te extraheren.
+Hier maken we een instantie van`TextFragmentAbsorber` en pas het toe op alle pagina's van de PDF met behulp van`Accept()` . De`TextFragmentCollection` slaat de geëxtraheerde tekst op en uit deze verzameling kunnen we tekst naar behoefte manipuleren of extraheren.
+
+## Stap 3: Pas de lettergrootte van de geëxtraheerde tekst aan
+
+Zodra u de tekstfragmenten hebt vastgelegd, wilt u mogelijk de lettergrootte verkleinen, vooral als de originele tekst te groot is. In dit voorbeeld verkleinen we de lettergrootte met 70%.
 
 ```csharp
-Stream st = new MemoryStream();
-pdfDocument.Save(st);
-pdfDocument = new Document(st);
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument);
-```
-
-## Stap 7: Sla de geëxtraheerde tekst op
-Sla de geëxtraheerde tekst op in een tekstbestand op het opgegeven pad naar het uitvoerbestand.
-
-```csharp
-dataDir = dataDir + "ExtractColumnsText_out.txt";
-File.WriteAllText(dataDir, extractedText);
-Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
-```
-
-### Voorbeeldbroncode voor Extract Columns Text met behulp van Aspose.PDF voor .NET 
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Document openen
-Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
-TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-pdfDocument.Pages.Accept(tfa);
-TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Het is nodig om de lettergrootte met ten minste 70% te verkleinen
-	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
+    // Verklein de lettergrootte met 70%
+    tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
+```
+
+Deze code loopt door elk`TextFragment` in de collectie en verkleint de lettergrootte met 70%. Door de lettergrootte aan te passen, kunt u de geëxtraheerde tekst gemakkelijker beheren, vooral als u deze voor verschillende doeleinden formatteert.
+
+## Stap 4: Sla het document op in een geheugenstroom
+
+ Nadat we de tekst hebben aangepast, slaan we de PDF op in een`MemoryStream`Hierdoor kunnen we het document in het geheugen bewaren voor verdere verwerking, zonder dat we het terug naar de schijf hoeven te schrijven.
+
+```csharp
 Stream st = new MemoryStream();
 pdfDocument.Save(st);
 pdfDocument = new Document(st);
+```
+
+Hier slaan we de PDF op in een geheugenstroom en laden het document vervolgens opnieuw. Deze methode is handig als u met grote bestanden werkt en onnodige schijfbewerkingen wilt vermijden.
+
+## Stap 5: Alle tekst extraheren met Text Absorber
+
+ Nu we de PDF hebben voorbereid, is het tijd om de tekst te extraheren. We gebruiken`TextAbsorber` om alle tekst uit het document te halen.
+
+```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument); 
+```
+
+ In deze stap wordt de`TextAbsorber` absorbeert alle tekst uit de PDF en de geëxtraheerde tekst wordt opgeslagen in de`extractedText` string. Dit is waar de magie gebeurt: uw tekstkolommen zijn nu in platte-tekstformaat!
+
+## Stap 6: Sla de geëxtraheerde tekst op in een bestand
+
+ Ten slotte slaan we de geëxtraheerde tekst op in een`.txt` bestand voor eenvoudige toegang en verder gebruik.
+
+```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
-System.IO.File.WriteAllText(dataDir, extractedText);           
+System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
+ Deze code schrijft de geëxtraheerde tekst naar een nieuw`.txt` bestand en slaat het op in de door u opgegeven directory. Er wordt een bericht weergegeven in de console om te bevestigen dat het proces succesvol was.
+
 ## Conclusie
-U hebt succesvol kolomtekst uit een PDF-document geëxtraheerd met Aspose.PDF voor .NET. De geëxtraheerde tekst is opgeslagen in het opgegeven uitvoerbestand.
 
-### Veelgestelde vragen
+Daar heb je het! Kolommen tekst extraheren uit een PDF-bestand met Aspose.PDF voor .NET is makkelijker dan je zou denken. Met slechts een paar regels code kun je een PDF laden, specifieke tekst extraheren, de opmaak aanpassen en de resultaten opslaan in een tekstbestand.
 
-#### V: Wat is het doel van deze tutorial?
+Deze techniek is ongelooflijk handig voor het verwerken van gestructureerde documenten zoals tabellen, rapporten of inhoud die in kolommen is georganiseerd. Of u nu gegevensextractie wilt automatiseren of bulkdocumenten wilt verwerken, Aspose.PDF biedt de tools om dit efficiënt te doen.
 
-A: Deze tutorial biedt een stapsgewijze handleiding voor het extraheren van tekstkolommen uit een PDF-bestand met Aspose.PDF voor .NET. De bijbehorende C#-broncode biedt een praktische demonstratie van de vereiste procedures.
+## Veelgestelde vragen
 
-#### V: Welke naamruimten moet ik importeren?
+### Kan ik tekst uit specifieke pagina's van een PDF halen?  
+ Ja! U kunt de`TextFragmentAbsorber` om specifieke pagina's te targeten met behulp van de`pdfDocument.Pages[pageIndex].Accept(tfa);` methode.
 
-A: In het codebestand waaruit u tekstkolommen wilt extraheren, voegt u de volgende richtlijnen toe aan het begin van het bestand:
+### Is het mogelijk om tekst uit slechts één kolom te extraheren in een PDF met meerdere kolommen?  
+ Ja, maar u moet met de coördinaten van de tekstfragmenten werken met behulp van`TextFragment.Rectangle` om specifieke delen van het document te targeten.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-using System.IO;
-```
+### Hoe kan ik de nauwkeurigheid van tekstextractie verbeteren?  
+ Voor een betere nauwkeurigheid, zorg ervoor dat de structuur van de PDF goed gedefinieerd is en vermijd documenten met complexe lay-outs. U kunt ook de`TextFragmentAbsorber` om tekst te extraheren op basis van lettertypen, -groottes of -regio's.
 
-#### V: Hoe geef ik de documentenmap op?
+### Ondersteunt Aspose.PDF het extraheren van tekst uit gescande documenten?  
+Ja, maar je moet OCR (Optical Character Recognition) technologie gebruiken. Aspose biedt ook tools hiervoor.
 
- A: Zoek de lijn`string dataDir = "YOUR DOCUMENT DIRECTORY";` in de code en vervang`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
-
-#### V: Hoe open ik een bestaand PDF-document?
-
- A: In stap 4 opent u een bestaand PDF-document met behulp van de`Document` constructor en het pad naar het PDF-invoerbestand opgeven.
-
-#### V: Waarom wordt de lettergrootte aangepast?
-
-A: Stap 5 houdt in dat u de lettergrootte van tekstfragmenten met een factor 0,7 verkleint. Deze aanpassing verbetert de leesbaarheid en geeft kolomtekst nauwkeuriger weer.
-
-#### V: Hoe haal ik tekst uit kolommen?
-
- A: Stap 6 bestaat uit het opslaan van het gewijzigde PDF-document in een geheugenstroom, het opnieuw laden als een nieuw document en vervolgens het gebruik van de`TextAbsorber` klasse om tekst uit de kolommen te extraheren.
-
-#### V: Wat is het doel van het opslaan van de geëxtraheerde tekst?
-
-A: In stap 7 slaat u de geëxtraheerde tekst op in een tekstbestand op het opgegeven uitvoerbestandspad.
-
-#### V: Waarom wordt het lettertype verkleind voordat het wordt geëxtraheerd?
-
-A: Door de lettergrootte te verkleinen, zorgt u ervoor dat de geëxtraheerde tekst correct wordt uitgelijnd binnen de kolommen. Dit zorgt voor een nauwkeurigere weergave van de oorspronkelijke lay-out.
-
-#### V: Wat is de belangrijkste les die je uit deze tutorial hebt geleerd?
-
-A: Door deze tutorial te volgen, hebt u de kennis en vaardigheden verworven die nodig zijn om tekstkolommen uit een PDF-document te extraheren met Aspose.PDF voor .NET. De resulterende tekst is opgeslagen in het opgegeven uitvoerbestand.
+### Hoe verwerk ik grote PDF-bestanden met duizenden pagina's?  
+Bij grote PDF-bestanden kunt u het document in stukken verwerken door tekst van een paar pagina's tegelijk te extraheren. Zo voorkomt u een hoog geheugengebruik.

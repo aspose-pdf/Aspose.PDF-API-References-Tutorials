@@ -9,7 +9,7 @@ url: /de/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
 ## Einführung
 
-Haben Sie sich schon einmal mit einem PDF-Dokument herumgeschlagen und sich Seitenzahlen für eine einfachere Navigation gewünscht? Egal, ob Sie ein Student sind, der Notizen teilt, ein Profi, der Berichte präsentiert, oder jemand, der mehrseitige Dokumente verwaltet, das Hinzufügen von Seitenzahlen kann die Übersichtlichkeit Ihrer PDF-Dateien wirklich verbessern. Glücklicherweise können Sie mit der leistungsstarken Aspose.PDF-Bibliothek für .NET Ihren PDF-Dokumenten ganz einfach Seitenzahlenstempel hinzufügen. In dieser Anleitung führen wir Sie Schritt für Schritt durch den gesamten Prozess und stellen sicher, dass Sie mit allen erforderlichen Kenntnissen ausgestattet sind. Lassen Sie uns eintauchen!
+Haben Sie sich schon einmal mit einem PDF-Dokument herumgeschlagen und sich Seitenzahlen für eine einfachere Navigation gewünscht? Egal, ob Sie ein Student sind, der Notizen teilt, ein Profi, der Berichte präsentiert, oder jemand, der mehrseitige Dokumente verwaltet, das Hinzufügen von Seitenzahlen kann die Übersichtlichkeit Ihrer PDF-Dateien wirklich verbessern. Glücklicherweise können Sie mit der leistungsstarken Aspose.PDF-Bibliothek für .NET Ihren PDF-Dokumenten ganz einfach Seitenzahlenstempel hinzufügen. In dieser Anleitung führen wir Sie Schritt für Schritt durch den gesamten Prozess und stellen sicher, dass Sie mit allen erforderlichen Kenntnissen ausgestattet sind. Tauchen Sie ein!
 
 ## Voraussetzungen
 

@@ -10,7 +10,7 @@ url: /fr/java/pdf-form-fields/control-image-quality-when-adding-image-stamp-in-p
 
 ## Introduction au contrôle de la qualité de l'image lors de l'ajout d'un tampon d'image dans un PDF à l'aide de Java
 
-À l'ère du numérique, les documents PDF sont un moyen courant de partager des informations et ils incluent souvent des images pour améliorer le contenu. Cependant, lors de l'ajout de tampons d'image aux PDF à l'aide de Java, il est essentiel de garder le contrôle sur la qualité de l'image. Dans ce guide, nous vous expliquerons le processus de contrôle de la qualité de l'image lors de l'ajout de tampons d'image aux PDF à l'aide de la bibliothèque Aspose.PDF pour Java.
+À l'ère du numérique, les documents PDF sont un moyen courant de partager des informations et ils incluent souvent des images pour améliorer le contenu. Cependant, lorsque vous ajoutez des tampons d'image aux PDF à l'aide de Java, il est essentiel de garder le contrôle sur la qualité de l'image. Dans ce guide, nous vous expliquerons le processus de contrôle de la qualité de l'image lors de l'ajout de tampons d'image aux PDF à l'aide de la bibliothèque Aspose.PDF pour Java.
 
 ## Prérequis
 

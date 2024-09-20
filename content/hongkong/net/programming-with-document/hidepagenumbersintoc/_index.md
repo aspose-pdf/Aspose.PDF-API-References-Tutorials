@@ -2,7 +2,7 @@
 title: 隱藏目錄中的頁碼
 linktitle: 隱藏目錄中的頁碼
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在目錄中隱藏頁碼。請按照包含程式碼範例的詳細指南來建立專業的 PDF。
+description: 了解如何使用 Aspose.PDF for .NET 在目錄中隱藏頁碼。請按照此包含程式碼範例的詳細指南來建立專業的 PDF。
 type: docs
 weight: 220
 url: /zh-hant/net/programming-with-document/hidepagenumbersintoc/

@@ -106,7 +106,7 @@ Ja, Aspose.PDF für Java unterstützt verschiedene PDF-Versionen, einschließlic
 Sie können den einzelnen Ebenen unterschiedliche Eigenschaften zuweisen, indem Sie auf die jeweiligen Eigenschaften wie Name, Sichtbarkeit und Inhalt zugreifen. So können Sie jede Ebene Ihren Anforderungen entsprechend anpassen.
 
 ### Wo finde ich weitere Dokumentation und Beispiele für Aspose.PDF für Java?
- Eine umfassende Dokumentation und Codebeispiele für Aspose.PDF für Java finden Sie auf der Aspose-Website:[Aspose.PDF für Java-Dokumentation](https://reference.aspose.com/pdf/java/).
+ Ausführliche Dokumentation und Codebeispiele für Aspose.PDF für Java finden Sie auf der Aspose-Website:[Aspose.PDF für Java-Dokumentation](https://reference.aspose.com/pdf/java/).
 
 
 In dieser umfassenden Anleitung haben wir den Prozess des Hinzufügens von Ebenen zu einer PDF-Datei mit Java und Aspose.PDF für Java behandelt. Sie haben gelernt, wie Sie Ihre Entwicklungsumgebung einrichten, die Bibliothek integrieren, ein PDF-Dokument erstellen, Ebenen hinzufügen, sie organisieren und das geänderte PDF speichern. Wir hoffen, dass dieses Tutorial informativ und hilfreich für Ihre PDF-Bearbeitungsanforderungen war. Wenn Sie weitere Fragen haben, lesen Sie bitte die FAQs oder besuchen Sie die Dokumentation zu Aspose.PDF für Java, um weitere Einzelheiten zu erfahren.
